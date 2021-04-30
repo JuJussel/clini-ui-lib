@@ -5,11 +5,17 @@
             v-bind:class="{
                 danger: danger,
                 primary: primary,
-                warn: warn
+                warn: warn,
+                disabled: disabled || loading,
+                loading: loading,
+                plain: plain
             }"
-            > 
+            @click="$emit('click')"
+            >
             <i :class="icon" v-if="icon !== ''"></i>
             <span> {{ label }} </span> 
+            <div class="loader" v-if="loading"></div>
+            <div class="ripple"></div>
         </button>
     </div>
 </template>
@@ -37,11 +43,18 @@ export default {
         warn: {
             default: false,
             type: Boolean
-        }
-    },
-    data() {
-        return {
-            
+        },
+        disabled: {
+            default: false,
+            type: Boolean
+        },
+        loading: {
+            default: false,
+            type: Boolean
+        },
+        plain: {
+            default: false,
+            type: Boolean
         }
     }
 }
@@ -52,7 +65,7 @@ export default {
     border: 0px;
     margin: 5px;
     border-radius: 12px;
-    transition: all .35s ease;
+    transition: all .40s ease;
     position: relative;
     user-select: none;
     z-index: 1;
@@ -66,31 +79,45 @@ export default {
     box-sizing: border-box;
     background: var(--dark);
     color: white;
-    cursor: pointer
+    cursor: pointer;
 }
-.cui-button:hover {
+.cui-button:not(.disabled):not(.plain):hover {
     margin-top: -3px;
     box-shadow: 0 10px 20px -10px var(--dark);
 }
 .cui-button.danger {
     background: var(--danger);
 }
-.cui-button.danger:hover {
+.cui-button.danger:not(.disabled):hover {
     box-shadow: 0 10px 20px -10px var(--danger);
 }
 .cui-button.primary {
     background: var(--primary);
 }
-.cui-button.primary:hover {
+.cui-button.primary:not(.disabled):hover {
     box-shadow: 0 10px 20px -10px var(--primary);
 }
 .cui-button.warn {
     background: var(--warn);
 }
-.cui-button.warn:hover {
+.cui-button.warn:not(.disabled):hover {
     box-shadow: 0 10px 20px -10px var(--warn);
 }
 .cui-button > i {
     margin-right: 5px
+}
+.cui-button.disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+.cui-button.loading {
+    color: rgba(255,255,255,0.5)
+}
+.cui-button.plain {
+    background: none;
+    color: var(--font-color)
+}
+.cui-button.plain:hover {
+    background: var(--gray-1)
 }
 </style>
