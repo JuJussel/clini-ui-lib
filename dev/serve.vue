@@ -26,6 +26,16 @@ export default defineComponent({
         <cui-menu-bar-item icon="fas fa-sign-out-alt" />
       </template>
     </cui-menu-bar>
-    <cui-button icon="fas fa-lock" label="Go!"/>
+    <div style="height: 400px; width: 300px">
+      <cui-card>
+        <template v-slot:header>
+          <h2>患者一覧</h2>
+        </template>
+        <div>Body</div>
+        <template v-slot:footer>
+          <h2>Footer</h2>
+        </template>
+      </cui-card>
+    </div>
   </div>
 </template>

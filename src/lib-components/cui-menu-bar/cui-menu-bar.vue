@@ -25,7 +25,7 @@ export default {
 
 <style>
     .cui-menu-bar {
-        background: var(--dark);
+        background: var(--cui-dark);
         height: 45px;
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
@@ -34,7 +34,7 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        color: var(--gray-2);
+        color: var(--cui-gray-2);
         font-weight: bold;
         font-size: 16px;
     }

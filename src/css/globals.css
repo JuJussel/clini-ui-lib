@@ -1,18 +1,27 @@
 :root {
-    --dark: #37474f;
-    --primary: #009688;
-    --danger: #d81b60;
-    --warn: #ff8f00;
+    --cui-dark: #37474f;
+    --cui-primary: #009688;
+    --cui-danger: #d81b60;
+    --cui-warn: #ff8f00;
 
-    --font-color: black;
+    --cui-font-color: #2c3e50;
 
-    --gray-1: #e0e0e0;
-    --gray-2: #9e9e9e;
-    --gray-3: #616161;
+    --cui-gray-0: #f4f7f8;
+    --cui-gray-1: #e0e0e0;
+    --cui-gray-2: #9e9e9e;
+    --cui-gray-3: #616161;
+
 }
-
+html, body, #app {
+    height: 100%
+}
 body {
-    margin: 0
+    margin: 0;
+    color: var(--cui-font-color)
+}
+h2 {
+    margin: 0;
+    font-size: 21px
 }
 
 .loader {

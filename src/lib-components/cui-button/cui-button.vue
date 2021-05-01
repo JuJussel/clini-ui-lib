@@ -83,31 +83,31 @@ export default {
         outline: none;
         font-size: .8rem;
         box-sizing: border-box;
-        background: var(--dark);
+        background: var(--cui-cui-dark);
         color: white;
         cursor: pointer;
     }
     .cui-button:not(.disabled):not(.plain):hover {
         margin-top: 0px;
-        box-shadow: 0 10px 20px -10px var(--dark);
+        box-shadow: 0 10px 20px -10px var(--cui-dark);
     }
     .cui-button.danger {
-        background: var(--danger);
+        background: var(--cui-danger);
     }
     .cui-button.danger:not(.disabled):hover {
-        box-shadow: 0 10px 20px -10px var(--danger);
+        box-shadow: 0 10px 20px -10px var(--cui-danger);
     }
     .cui-button.primary {
-        background: var(--primary);
+        background: var(--cui-primary);
     }
     .cui-button.primary:not(.disabled):hover {
-        box-shadow: 0 10px 20px -10px var(--primary);
+        box-shadow: 0 10px 20px -10px var(--cui-primary);
     }
     .cui-button.warn {
-        background: var(--warn);
+        background: var(--cui-warn);
     }
     .cui-button.warn:not(.disabled):hover {
-        box-shadow: 0 10px 20px -10px var(--warn);
+        box-shadow: 0 10px 20px -10px var(--cui-warn);
     }
     .cui-button > i:not(:last-child) {
         margin-right: 5px
@@ -121,13 +121,13 @@ export default {
     }
     .cui-button.plain {
         background: none;
-        color: var(--font-color)
+        color: var(--cui-font-color)
     }
     .cui-button.plain:hover {
-        background: var(--gray-1)
+        background: var(--cui-gray-1)
     }
     .cui-button.white {
         background: white;
-        color: var(--font-color)
+        color: var(--cui-font-color)
     }
 </style>
