@@ -65,7 +65,7 @@ export default {
     border: 0px;
     margin: 5px;
     border-radius: 12px;
-    transition: all .40s ease;
+    transition: all .3s ease;
     position: relative;
     user-select: none;
     z-index: 1;
