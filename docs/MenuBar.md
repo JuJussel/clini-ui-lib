@@ -1,18 +1,19 @@
-<script>
-import { defineComponent } from 'vue';
-// Uncomment import and local "components" registration if library is not registered globally.
-// import { CliniUiLibSample } from '@/entry.esm';
+---
+title: Menu Bar
+parent: Components
+has_children: false
+nav_order: 1
+---
 
-export default defineComponent({
-  name: 'ServeDev',
-  // components: {
-  //  CliniUiLibSample,
-  // }
-});
-</script>
+# Menu Bar
 
-<template>
-  <div id="app">
+Has 3 slots - left,center,right.
+Use "cui-menu-bar-item" to add menu buttons.
+Slots can have any other kind of content.
+On menu item click "cui-menu-bar" will emit value of clicked item.
+
+Example
+```
     <cui-menu-bar @change="handelChange">
       <template v-slot:left>
         <cui-menu-bar-item icon="fa fa-home menu-icon" />
@@ -26,6 +27,11 @@ export default defineComponent({
         <cui-menu-bar-item icon="fas fa-sign-out-alt" />
       </template>
     </cui-menu-bar>
-    <cui-button icon="fas fa-lock" label="Go!"/>
-  </div>
-</template>
+
+```
+# Menu Bar item
+
+Props:
+- label: Text displayed
+- icon: icon displayed
+- value: Value emited when clicked

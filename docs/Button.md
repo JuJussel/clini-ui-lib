@@ -20,4 +20,4 @@ Props:
 - warn: Warning color button
 - disabled: Button is disabled
 - loading: Button is loading
-- plain: button has no background. Useful for cancel actions.
+- plain: Button has no background. Useful for cancel actions.

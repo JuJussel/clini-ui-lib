@@ -8,14 +8,15 @@
                 warn: warn,
                 disabled: disabled || loading,
                 loading: loading,
-                plain: plain
+                plain: plain,
+                white: white
             }"
             @click="$emit('click')"
             >
-            <i :class="icon" v-if="icon !== ''"></i>
-            <span> {{ label }} </span> 
             <div class="loader" v-if="loading"></div>
             <div class="ripple"></div>
+            <i :class="icon" v-if="icon !== ''"></i>
+            <span v-if="label !==''"> {{ label }} </span> 
         </button>
     </div>
 </template>
@@ -25,7 +26,7 @@ export default {
     name: 'CuiButton',
     props: {
         label: {
-            default: 'Label',
+            default: '',
             type: String
         },
         icon: {
@@ -41,6 +42,10 @@ export default {
             type: Boolean
         },
         warn: {
+            default: false,
+            type: Boolean
+        },
+        white: {
             default: false,
             type: Boolean
         },
@@ -61,63 +66,68 @@ export default {
 </script>
 
 <style>
-.cui-button {
-    border: 0px;
-    margin: 5px;
-    border-radius: 12px;
-    transition: all .3s ease;
-    position: relative;
-    user-select: none;
-    z-index: 1;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    outline: none;
-    font-size: .8rem;
-    box-sizing: border-box;
-    background: var(--dark);
-    color: white;
-    cursor: pointer;
-}
-.cui-button:not(.disabled):not(.plain):hover {
-    margin-top: -3px;
-    box-shadow: 0 10px 20px -10px var(--dark);
-}
-.cui-button.danger {
-    background: var(--danger);
-}
-.cui-button.danger:not(.disabled):hover {
-    box-shadow: 0 10px 20px -10px var(--danger);
-}
-.cui-button.primary {
-    background: var(--primary);
-}
-.cui-button.primary:not(.disabled):hover {
-    box-shadow: 0 10px 20px -10px var(--primary);
-}
-.cui-button.warn {
-    background: var(--warn);
-}
-.cui-button.warn:not(.disabled):hover {
-    box-shadow: 0 10px 20px -10px var(--warn);
-}
-.cui-button > i {
-    margin-right: 5px
-}
-.cui-button.disabled {
-    cursor: not-allowed;
-    opacity: 0.7;
-}
-.cui-button.loading {
-    color: rgba(255,255,255,0.5)
-}
-.cui-button.plain {
-    background: none;
-    color: var(--font-color)
-}
-.cui-button.plain:hover {
-    background: var(--gray-1)
-}
+    .cui-button {
+        height: 35px;
+        border: 0px;
+        margin: 5px;
+        border-radius: 12px;
+        transition: all .2s ease;
+        position: relative;
+        user-select: none;
+        z-index: 1;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        outline: none;
+        font-size: .8rem;
+        box-sizing: border-box;
+        background: var(--dark);
+        color: white;
+        cursor: pointer;
+    }
+    .cui-button:not(.disabled):not(.plain):hover {
+        margin-top: 0px;
+        box-shadow: 0 10px 20px -10px var(--dark);
+    }
+    .cui-button.danger {
+        background: var(--danger);
+    }
+    .cui-button.danger:not(.disabled):hover {
+        box-shadow: 0 10px 20px -10px var(--danger);
+    }
+    .cui-button.primary {
+        background: var(--primary);
+    }
+    .cui-button.primary:not(.disabled):hover {
+        box-shadow: 0 10px 20px -10px var(--primary);
+    }
+    .cui-button.warn {
+        background: var(--warn);
+    }
+    .cui-button.warn:not(.disabled):hover {
+        box-shadow: 0 10px 20px -10px var(--warn);
+    }
+    .cui-button > i:not(:last-child) {
+        margin-right: 5px
+    }
+    .cui-button.disabled {
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+    .cui-button.loading {
+        color: rgba(255,255,255,0.5)
+    }
+    .cui-button.plain {
+        background: none;
+        color: var(--font-color)
+    }
+    .cui-button.plain:hover {
+        background: var(--gray-1)
+    }
+    .cui-button.white {
+        background: white;
+        color: var(--font-color)
+    }
 </style>
