@@ -1,6 +1,6 @@
 <template>
     <div class="cui-card">
-        <div class="header">
+        <div class="header" v-if="$slots.header">
             <slot name="header"></slot>
         </div>
         <div class="body" v-bind:class="{'no-padding': noPadding}">
@@ -20,6 +20,9 @@ export default {
             default: false,
             type: Boolean
         }
+    },
+    data() {
+        return { test: false}
     }
 }
 </script>
@@ -33,6 +36,7 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        background: white
     }
     .cui-card:not(adaptive) {
         height: calc(100% - 20px);

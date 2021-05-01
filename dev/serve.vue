@@ -5,6 +5,18 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'ServeDev',
+  data() {
+    return{
+      visible: false
+    }
+  },
+  methods: {
+    handleClose() {
+      this.visible = false
+      console.log(this.visible);
+    }
+  }
+
   // components: {
   //  CliniUiLibSample,
   // }
@@ -13,7 +25,7 @@ export default defineComponent({
 
 <template>
   <div id="app">
-    <cui-menu-bar @change="handelChange">
+    <cui-menu-bar>
       <template v-slot:left>
         <cui-menu-bar-item icon="fa fa-home menu-icon" />
         <cui-menu-bar-item icon="fas fa-user-clock" label="受付" value="reception"/>
@@ -32,10 +44,17 @@ export default defineComponent({
           <h2>患者一覧</h2>
         </template>
         <div>Body</div>
+        <cui-button @click="visible = true" label="Show" />
         <template v-slot:footer>
           <h2>Footer</h2>
         </template>
       </cui-card>
     </div>
+    <cui-modal :visible="visible" @close="handleClose">
+      <cui-card style="width: 400px; height: 300px">
+        <template #header>Header</template>
+          Hello
+        </cui-card>
+    </cui-modal>
   </div>
 </template>

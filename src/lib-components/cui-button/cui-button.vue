@@ -83,7 +83,7 @@ export default {
         outline: none;
         font-size: .8rem;
         box-sizing: border-box;
-        background: var(--cui-cui-dark);
+        background: var(--cui-dark);
         color: white;
         cursor: pointer;
     }

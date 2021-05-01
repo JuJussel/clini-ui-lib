@@ -35,3 +35,6 @@ Props:
 - label: Text displayed
 - icon: icon displayed
 - value: Value emited when clicked
+
+Emits:
+- change: Selection changed. Returns value prop of item
