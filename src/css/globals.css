@@ -11,6 +11,8 @@
     --cui-gray-2: #9e9e9e;
     --cui-gray-3: #616161;
 
+    --cui-button-radius: 12px
+
 }
 html, body, #app {
     height: 100%

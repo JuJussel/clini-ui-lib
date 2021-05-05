@@ -1,24 +1,22 @@
 <template>
-    <div>
-        <button 
-            class="cui-button"
-            v-bind:class="{
-                danger: danger,
-                primary: primary,
-                warn: warn,
-                disabled: disabled || loading,
-                loading: loading,
-                plain: plain,
-                white: white
-            }"
-            @click="$emit('click')"
-            >
-            <div class="loader" v-if="loading"></div>
-            <div class="ripple"></div>
-            <i :class="icon" v-if="icon !== ''"></i>
-            <span v-if="label !==''"> {{ label }} </span> 
-        </button>
-    </div>
+    <button 
+        class="cui-button"
+        v-bind:class="{
+            danger: danger,
+            primary: primary,
+            warn: warn,
+            disabled: disabled || loading,
+            loading: loading,
+            plain: plain,
+            white: white
+        }"
+        @click="$emit('click')"
+        >
+        <div class="loader" v-if="loading"></div>
+        <div class="ripple"></div>
+        <i :class="icon" v-if="icon !== ''"></i>
+        <span v-if="label !==''"> {{ label }} </span> 
+    </button>
 </template>
 
 <script>
@@ -65,12 +63,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .cui-button {
         height: 35px;
         border: 0px;
         margin: 5px;
-        border-radius: 12px;
+        border-radius: var(--cui-button-radius);
         transition: all .2s ease;
         position: relative;
         user-select: none;

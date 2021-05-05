@@ -38,6 +38,13 @@ export default defineComponent({
         <cui-menu-bar-item icon="fas fa-sign-out-alt" />
       </template>
     </cui-menu-bar>
+    <cui-button-group>
+      <cui-button-group-item icon="fas fa-sign-out-alt" label="Button1" value="1"></cui-button-group-item>
+      <cui-button-group-item label="Button2" value="2"></cui-button-group-item>
+      <cui-button-group-item label="Button3" value="3"></cui-button-group-item>
+      <cui-button-group-item label="Button4" value="4"></cui-button-group-item>
+    </cui-button-group>
+
     <div style="height: 400px; width: 300px">
       <cui-card>
         <template v-slot:header>

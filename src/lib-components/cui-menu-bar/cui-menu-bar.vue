@@ -23,7 +23,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .cui-menu-bar {
         background: var(--cui-dark);
         height: 45px;
