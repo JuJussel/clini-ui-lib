@@ -7,7 +7,8 @@ export default defineComponent({
   name: 'ServeDev',
   data() {
     return{
-      visible: false
+      visible: false,
+      input: 'Hello'
     }
   },
   methods: {
@@ -50,7 +51,9 @@ export default defineComponent({
         <template v-slot:header>
           <h2>患者一覧</h2>
         </template>
-        <div>Body</div>
+        <div>
+          <cui-input v-model="input"></cui-input>
+        </div>
         <cui-button @click="visible = true" label="Show" />
         <template v-slot:footer>
           <h2>Footer</h2>
