@@ -10,7 +10,6 @@
             plain: plain,
             white: white
         }"
-        @click="$emit('click')"
         >
         <div class="loader" v-if="loading"></div>
         <div class="ripple"></div>
@@ -88,6 +87,7 @@ export default {
     .cui-button:not(.disabled):not(.plain):hover {
         margin-top: 0px;
         box-shadow: 0 10px 20px -10px var(--cui-dark);
+        margin-bottom: 10px
     }
     .cui-button.danger {
         background: var(--cui-danger);

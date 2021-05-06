@@ -10,4 +10,4 @@ Object.entries(components).forEach(([componentName, component]) => {
   }
 });
 
-export default plugin;
+export default plugin
