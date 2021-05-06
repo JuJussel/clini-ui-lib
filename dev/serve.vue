@@ -8,7 +8,13 @@ export default defineComponent({
   data() {
     return{
       visible: false,
-      input: 'Hello'
+      input: 'Hello',
+      rules: {
+        name: {
+          requied: true,
+          validateFunction: 
+        }
+      }
     }
   },
   methods: {
@@ -52,7 +58,14 @@ export default defineComponent({
           <h2>患者一覧</h2>
         </template>
         <div>
-          <cui-input v-model="input"></cui-input>
+
+          <cui-form ref="form" :rules="rules">
+            <cui-input v-model="input" prop="name" label="名前" required></cui-input>
+            <cui-input v-model="input"></cui-input>
+          </cui-form>
+          <cui-button @click="$refs.form.validate()" label="Validate"></cui-button>
+
+          <div>{{input}}</div>
         </div>
         <cui-button @click="visible = true" label="Show" />
         <template v-slot:footer>
