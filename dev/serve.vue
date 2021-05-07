@@ -8,13 +8,7 @@ export default defineComponent({
   data() {
     return{
       visible: false,
-      input: 'Hello',
-      rules: {
-        name: {
-          requied: true,
-          validateFunction: 
-        }
-      }
+      input: 'Hello'
     }
   },
   methods: {
@@ -59,11 +53,8 @@ export default defineComponent({
         </template>
         <div>
 
-          <cui-form ref="form" :rules="rules">
-            <cui-input v-model="input" prop="name" label="名前" required></cui-input>
-            <cui-input v-model="input"></cui-input>
-          </cui-form>
-          <cui-button @click="$refs.form.validate()" label="Validate"></cui-button>
+          <cui-input v-model="input" prop="name" label="名前" required icon="fas fa-sign-out-alt"></cui-input>
+          <cui-input v-model="input"></cui-input>
 
           <div>{{input}}</div>
         </div>

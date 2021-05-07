@@ -4,9 +4,19 @@
             <span style="margin-right: 10px"> {{ label }} </span>
             <span v-if="required"> {{ trans.required }} </span>
         </label>
-        <input class="cui-input" :id="prop" :type="type" v-model="modelValue" @input="changeValue">
+        <div>
+            <span :class="icon + ' cui-input-icon'" v-if="icon"></span>
+            <input
+                class="cui-input" 
+                v-bind:class="{'has-icon': icon}"
+                v-bind:style="{width: width}"
+                :type="type" 
+                v-model="modelValue" 
+                @input="changeValue"
+            >
+        </div>
         <div class="cui-input-note">
-            <span> {{ note }} </span>
+            <span> {{ error }} </span>
         </div>
     </div>
 </template>
@@ -15,9 +25,6 @@
 export default {
     name: 'CuiInput',
     props: {
-        prop: {
-            default: Math.floor(Math.random() * 10000)
-        },
         modelValue: {
             default: ''
         },
@@ -30,6 +37,12 @@ export default {
         required: {
             default: false,
             type: Boolean
+        },
+        icon: {
+            default: null
+        },
+        width: {
+            default: 'calc(100% - 40px)'
         }
     },
     emits: ['update:modelValue'],
@@ -43,13 +56,13 @@ export default {
             trans: {
                 required: '*必須'
             },
-            note: ''
+            error: ''
         }
     }
 }
 </script>
 
-<style>
+<style scoped>
     .cui-input-label {
         font-size: 14px;
         margin-left: 10px
@@ -61,7 +74,6 @@ export default {
         height: 25px;
         padding: 5px 10px;
         transition: all .2s ease
-
     }
     .cui-input:focus {
         outline: none;
@@ -74,5 +86,14 @@ export default {
         margin-left: 10px;
         color: var(--cui-danger);
         height: 15px
+    }
+    .cui-input-icon {
+        position: absolute;
+        background: white;
+        border-radius: 12px;
+        padding: 9px;
+    }
+    .has-icon {
+        text-indent: 30px;
     }
 </style>
