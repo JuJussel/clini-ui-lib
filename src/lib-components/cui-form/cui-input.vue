@@ -4,8 +4,7 @@
             <span style="margin-right: 10px"> {{ label }} </span>
             <span v-if="required"> {{ trans.required }} </span>
         </label>
-        <div>
-            <span :class="icon + ' cui-input-icon'" v-if="icon"></span>
+        <div style="display: flex">
             <input
                 class="cui-input" 
                 v-bind:class="{'has-icon': icon}"
@@ -14,6 +13,7 @@
                 v-model="modelValue" 
                 @input="changeValue"
             >
+            <span :class="icon + ' cui-input-icon'" v-if="icon"></span>
         </div>
         <div class="cui-input-note">
             <span> {{ error }} </span>
@@ -71,7 +71,7 @@ export default {
         background: var(--cui-gray-0);
         border: none;
         border-radius: 12px;
-        height: 25px;
+        height: 26px;
         padding: 5px 10px;
         transition: all .2s ease
     }
@@ -91,9 +91,15 @@ export default {
         position: absolute;
         background: white;
         border-radius: 12px;
-        padding: 9px;
+        padding: 10px;
+        transition: all .2s ease;
+        box-shadow: 0 10px 20px -13px var(--cui-dark);
     }
     .has-icon {
-        text-indent: 30px;
+        text-indent: 28px;
+    }
+    .cui-input:focus + .cui-input-icon {
+        margin: -3px;
+        box-shadow: 0 10px 20px -10px var(--cui-dark);
     }
 </style>
