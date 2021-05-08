@@ -4,7 +4,8 @@
             <span style="margin-right: 10px"> {{ label }} </span>
             <span v-if="required"> {{ trans.required }} </span>
         </label>
-        <div style="display: flex">
+        <div style="position: relative">
+            <span class="cui-input-append" v-if="append"> {{ append }} </span>
             <input
                 class="cui-input" 
                 v-bind:class="{'has-icon': icon}"
@@ -12,8 +13,11 @@
                 :type="type" 
                 v-model="modelValue" 
                 @input="changeValue"
+                :disabled="disabled"
+                clearable
             >
             <span :class="icon + ' cui-input-icon'" v-if="icon"></span>
+
         </div>
         <div class="cui-input-note">
             <span> {{ error }} </span>
@@ -42,7 +46,14 @@ export default {
             default: null
         },
         width: {
-            default: 'calc(100% - 40px)'
+            default: 'calc(100% - 20px)'
+        },
+        disabled: {
+            default: false,
+            type: Boolean
+        },
+        append: {
+            default: null
         }
     },
     emits: ['update:modelValue'],
@@ -79,21 +90,22 @@ export default {
         outline: none;
         padding-left: 13px;
         padding-right: 7px;
-        background: var(--cui-gray-1);
+        background: var(--cui-gray-1)
     }
     .cui-input-note {
         font-size: 12px;
         margin-left: 10px;
         color: var(--cui-danger);
-        height: 15px
+        height: 15px;
+        line-height: 12px;
     }
     .cui-input-icon {
         position: absolute;
-        background: white;
+        left:0;
+        background: var(--cui-gray-0);
         border-radius: 12px;
         padding: 10px;
         transition: all .2s ease;
-        box-shadow: 0 10px 20px -13px var(--cui-dark);
     }
     .has-icon {
         text-indent: 28px;
@@ -101,5 +113,17 @@ export default {
     .cui-input:focus + .cui-input-icon {
         margin: -3px;
         box-shadow: 0 10px 20px -10px var(--cui-dark);
+        background: white;
+    }
+    .cui-input-append {
+        position: absolute;
+        right: 0;
+        height: 34px;
+        background: white;
+        border-radius: 12px;
+        line-height: 34px;
+        padding: 0 10px;
+        border: solid 1px var(--cui-gray-1);
+        font-size: 14px
     }
 </style>

@@ -14,7 +14,6 @@ export default defineComponent({
   methods: {
     handleClose() {
       this.visible = false
-      console.log(this.visible);
     }
   }
 
@@ -53,8 +52,8 @@ export default defineComponent({
         </template>
         <div>
 
-          <cui-input v-model="input" prop="name" label="名前" required icon="fas fa-sign-out-alt"></cui-input>
-          <cui-input v-model="input"></cui-input>
+          <cui-input v-model="input" prop="name" label="名前" required icon="fas fa-sign-out-alt" append="kg"></cui-input>
+          <cui-input v-model="input" disabled></cui-input>
 
           <div>{{input}}</div>
         </div>
