@@ -8,7 +8,14 @@ export default defineComponent({
   data() {
     return{
       visible: false,
-      input: 'Hello'
+      input: 'Hello',
+      tableData: [
+        {name: 'Peter', age: '36', perf: 'Awesome', ok: true},
+        {name: 'Paul', age: '22', perf: 'Soso', ok: true, selected: true},
+        {name: 'Guy', age: '54', perf: 'Awesome', ok: false},
+        {name: 'Eri', age: '34', perf: 'Good', ok: true},
+        {name: 'Kathi', age: '41', perf: 'Ok', ok: false}
+      ]
     }
   },
   methods: {
@@ -17,14 +24,11 @@ export default defineComponent({
     }
   }
 
-  // components: {
-  //  CliniUiLibSample,
-  // }
 });
 </script>
 
 <template>
-  <div id="app">
+  <div id="app" style="position: relative">
     <cui-menu-bar>
       <template v-slot:left>
         <cui-menu-bar-item icon="fa fa-home menu-icon" />
@@ -45,14 +49,14 @@ export default defineComponent({
       <cui-button-group-item label="Button4" value="4"></cui-button-group-item>
     </cui-button-group>
 
-    <div style="height: 400px; width: 300px">
+    <div style="height: 400px; width: 300px; display: none">
       <cui-card>
         <template v-slot:header>
           <h2>患者一覧</h2>
         </template>
         <div>
 
-          <cui-input v-model="input" prop="name" label="名前" required icon="fas fa-sign-out-alt" append="kg"></cui-input>
+          <cui-input v-model="input" label="名前" required icon="fas fa-sign-out-alt" append="kg"></cui-input>
           <cui-input v-model="input" disabled></cui-input>
 
           <div>{{input}}</div>
@@ -63,6 +67,32 @@ export default defineComponent({
         </template>
       </cui-card>
     </div>
+
+    <cui-card style="height: 300px">
+      <cui-table :data="tableData" striped multipleSelect clickable>
+        <template #header>
+          <h2>The Table</h2>
+        </template>
+        <template #thead>
+          <cui-th>Name</cui-th>
+          <cui-th>Age</cui-th>
+          <cui-th>Performance</cui-th>
+          <cui-th>Is OK</cui-th>
+          <cui-th></cui-th>
+        </template>
+        <template v-slot:tbody="{ row }">
+            <td> {{ row.name }} </td>
+            <td> {{ row.age }} </td>
+            <td> {{ row.perf }} </td>
+            <td> {{ row.ok }} </td>
+            <td><cui-button label="delete"/></td>
+        </template>
+        <template #footer>
+          This table has stuff
+        </template>
+      </cui-table>
+    </cui-card>
+
     <cui-modal :visible="visible" @close="handleClose">
       <cui-card style="width: 400px; height: 300px">
         <template #header>Header</template>

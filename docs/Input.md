@@ -9,7 +9,7 @@ nav_order: 1
 
 Example
 ```
-<cui-input v-model="input" prop="name" label="名前" required icon="fas fa-sign-out-alt" append="kg"></cui-input>
+<cui-input v-model="input" label="名前" required icon="fas fa-sign-out-alt" append="kg"></cui-input>
 <cui-input v-model="input" disabled></cui-input>
 
 ```

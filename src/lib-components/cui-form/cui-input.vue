@@ -1,6 +1,6 @@
 <template>
     <div>
-        <label :for="prop" class="cui-input-label" v-if="label">
+        <label class="cui-input-label" v-if="label">
             <span style="margin-right: 10px"> {{ label }} </span>
             <span v-if="required"> {{ trans.required }} </span>
         </label>

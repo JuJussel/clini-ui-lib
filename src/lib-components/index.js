@@ -7,3 +7,8 @@ export { default as CuiMenuBarItem } from './cui-menu-bar/cui-menu-bar-item.vue'
 export { default as CuiCard } from './cui-card/cui-card.vue';
 export { default as CuiModal } from './cui-modal/cui-modal.vue';
 export { default as CuiInput } from './cui-form/cui-input.vue';
+export { default as CuiCheckbox } from './cui-form/cui-checkbox.vue';
+
+export { default as CuiTable } from './cui-table/cui-table.vue';
+export { default as CuiTh } from './cui-table/cui-th.vue';
+export { default as CuiTr } from './cui-table/cui-tr.vue';

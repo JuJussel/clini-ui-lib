@@ -9,16 +9,18 @@
   
 :root {
     --cui-dark: #37474f;
-    --cui-primary: #009688;
+    --cui-primary: #2ec1ac;
     --cui-danger: #d81b60;
     --cui-warn: #ff8f00;
 
     --cui-font-color: #2c3e50;
 
-    --cui-gray-0: #eef2f4;
-    --cui-gray-1: #e9edef;
-    --cui-gray-2: #9e9e9e;
-    --cui-gray-3: #616161;
+    --cui-gray-0: #f7f7f9;
+    --cui-gray-1: #f3f3f5;
+    --cui-gray-2: #e9e9eb;
+    --cui-gray-3: #dfdfe1;
+    --cui-gray-4: #d5d5d7;
+    --cui-gray-5: #cbcbcd;
 
     --cui-button-radius: 12px
 
@@ -28,6 +30,24 @@
     background: var(--cui-primary);
     color: white
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #eef2f4;
+    border-radius: 4px
+}
+::-webkit-scrollbar-button {
+      background-color: #eef2f4;
+      height: 12px;
+      border-radius: 4px
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #d4d4d4;
+    border-radius: 4px;
+}
+
 
 html, body, #app {
     height: 100%;
