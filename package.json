@@ -1,6 +1,6 @@
 {
   "name": "clini-ui-lib",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "description": "",
   "main": "dist/clini-ui-lib.ssr.js",
   "browser": "dist/clini-ui-lib.esm.js",
@@ -8,7 +8,9 @@
   "unpkg": "dist/clini-ui-lib.min.js",
   "files": [
     "dist/*",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "src/css/globals.css",
+    "src/fonts/*"
   ],
   "sideEffects": false,
   "scripts": {
