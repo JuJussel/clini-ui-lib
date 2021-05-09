@@ -11,9 +11,9 @@ export default defineComponent({
       input: 'Hello',
       tableData: [
         {name: 'Peter', age: '36', perf: 'Awesome', ok: true},
-        {name: 'Paul', age: '22', perf: 'Soso', ok: true, selected: true},
-        {name: 'Guy', age: '54', perf: 'Awesome', ok: false},
+        {name: 'Paul', age: '22', perf: 'Soso', ok: true, selected: false},
         {name: 'Eri', age: '34', perf: 'Good', ok: true},
+        {name: 'Guy', age: '54', perf: 'Awesome', ok: false},
         {name: 'Kathi', age: '41', perf: 'Ok', ok: false}
       ]
     }
@@ -68,28 +68,31 @@ export default defineComponent({
       </cui-card>
     </div>
 
-    <cui-card style="height: 300px">
-      <cui-table :data="tableData" striped multipleSelect clickable>
+    <cui-card style="height: 500px" noPadding>
+      <cui-table :data="tableData">
         <template #header>
           <h2>The Table</h2>
         </template>
         <template #thead>
-          <cui-th>Name</cui-th>
-          <cui-th>Age</cui-th>
+          <cui-th sort="name">Name</cui-th>
+          <cui-th sort="age">Age</cui-th>
           <cui-th>Performance</cui-th>
           <cui-th>Is OK</cui-th>
           <cui-th></cui-th>
         </template>
-        <template v-slot:tbody="{ row }">
+        <template v-slot:row="{ row }">
             <td> {{ row.name }} </td>
             <td> {{ row.age }} </td>
             <td> {{ row.perf }} </td>
             <td> {{ row.ok }} </td>
-            <td><cui-button label="delete"/></td>
+            <td><cui-button label="delete" @click.stop=""/></td>
         </template>
-        <template #footer>
+        <template v-slot:expand="{ expand }">
+          <div> {{ expand.name }} </div>
+        </template>
+        <!-- <template #footer>
           This table has stuff
-        </template>
+        </template> -->
       </cui-table>
     </cui-card>
 

@@ -3,7 +3,7 @@
         <div class="cui-table-header" v-if="$slots.header">
             <slot name="header"></slot>
         </div>
-        <div>
+        <div class="cui-table-container">
             <table>
                 <thead>
                     <tr>
@@ -13,15 +13,20 @@
                 </thead>
                 <tbody ref="body">
                     <cui-tr
-                        v-for="(row, index) in data"
+                        v-for="(row, index) in displayData"
                         :key="index"
                         :rowData="row"
                         :ref="setItemRef"
-                        @click="rowClick(row, index)"
+                        v-on:click="rowClick(row, index)"
                         :multipleSelect="multipleSelect"
                         :clickable="clickable"
                         >
-                        <slot name="tbody" :row="row"></slot>
+                        <template #parentRow>
+                            <slot name="row" :row="row"></slot>
+                        </template>
+                        <template #expand>
+                            <slot name="expand" :expand="row"></slot>
+                        </template>
                     </cui-tr>
                 </tbody>
             </table>
@@ -59,7 +64,11 @@ export default {
     },
     data() {
         return {
-            trRefs: []
+            trRefs: [],
+            sort: {
+                direction: null,
+                prop: null
+            }
         }
     },
       beforeUpdate() {
@@ -82,8 +91,27 @@ export default {
                 this.trRefs[index].selected = true
                 this.$emit('select', {row: row, index: index, selected: this.trRefs[index].selected})
             }
+        },
+        toggleSort(direction, prop) {
+            this.sort.direction = direction
+            this.sort.prop = prop
         }
-    }   
+    },
+    computed: {
+        displayData() {
+
+            let data = JSON.parse(JSON.stringify(this.data))
+            let direction = this.sort.direction
+            let prop = this.sort.prop
+            if (direction === 'desc') {
+                data.sort((a,b) => (a[prop] > b[prop]) ? 1 : -1)
+            } else if (direction === 'asc') {
+                data.sort((a,b) => (a[prop] < b[prop]) ? 1 : -1)
+            }
+
+            return data
+        }
+    }
 }
 </script>
 
@@ -109,24 +137,34 @@ export default {
     }
     .cui-table thead tr {
         background: var(--cui-gray-0);
-        box-shadow: 0 2px 4px -2px rgb(0 0 0 / 15%);
+        
+    }
+    .cui-table-container {
+        overflow: auto;
+        flex: 1
     }
 
 </style>
 
 <style >
-    .cui-table th {
+    .cui-table th:not([scope=row]) {
         text-align: left;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background: var(--cui-gray-0);
+        box-shadow: 0 2px 4px -2px rgb(0 0 0 / 15%)
     }
     .cui-table th,
     .cui-table td {
         padding: 3px 5px;
     }
-    .cui-table tbody tr {
+    .cui-table tbody tr:not(.no-border) {
         border-bottom: 1px solid var(--cui-gray-2);
-        transition: all .2s ease
+        transition: background .2s ease;
     }
-    .cui-table tbody tr:not(.selected):hover {
+    .cui-table tbody tr:not(.selected, .expanded):hover {
         background: var(--cui-gray-2)!important;
         font-weight: bold
     }
