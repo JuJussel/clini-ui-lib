@@ -33,14 +33,14 @@ Example
           <cui-th></cui-th>
         </template>
         <template v-slot:row="{ row }">
-            <td> {{ row.name }} </td>
-            <td> {{ row.age }} </td>
-            <td> {{ row.perf }} </td>
-            <td> {{ row.ok }} </td>
+            <td> { row.name } </td>
+            <td> { row.age } </td>
+            <td> { row.perf } </td>
+            <td> { row.ok } </td>
             <td><cui-button label="delete" @click.stop=""/></td>
         </template>
         <template v-slot:expand="{ expand }">
-          <div> {{ expand.name }} </div>
+          <div> { expand.name } </div>
         </template>
         <!-- <template #footer>
           This table has stuff
@@ -50,8 +50,18 @@ Example
 ```
 
 Slots:
-
-
+- header: Table heading
+- thead: Teable head. Use cui-th here
+- row: Content of row. Add td here. Use "row" to access data
+- expand: Content of expandable row. Use "expand" to access data
+- footer: Table footer
 
 
 Props:
+- striped: Adds stripes. Does not work with expand
+- singleSelect: Select single row. Emits selected row
+- multipleSelect: Select multiple rows. Emits row selected and all selected rows
+- clickable: Adds clickable class (pointer)
+
+Th properties:
+- sort: if set, sort by prop used.
