@@ -150,7 +150,6 @@ export default {
 
 <style >
     .cui-table th:not([scope=row]) {
-        text-align: left;
         position: -webkit-sticky;
         position: sticky;
         top: 0;
@@ -160,6 +159,7 @@ export default {
     }
     .cui-table th,
     .cui-table td {
+        text-align: left;
         padding: 3px 5px;
     }
     .cui-table tbody tr:not(.no-border) {
