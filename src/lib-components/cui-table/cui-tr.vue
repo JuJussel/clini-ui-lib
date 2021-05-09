@@ -13,7 +13,7 @@
         </td>
         <slot name="parentRow"></slot>
     </tr>
-    <tr class="cui-tr-expand" v-bind:class="{expanded: expanded}">
+    <tr class="cui-tr-expand" v-bind:class="{expanded: expanded}" v-if="$slots.expand">
         <td colspan="100%">
             <slot name="expand"></slot>
         </td>

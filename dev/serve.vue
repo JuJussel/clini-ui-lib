@@ -87,9 +87,6 @@ export default defineComponent({
             <td> {{ row.ok }} </td>
             <td><cui-button label="delete" @click.stop=""/></td>
         </template>
-        <template v-slot:expand="{ expand }">
-          <div> {{ expand.name }} </div>
-        </template>
         <!-- <template #footer>
           This table has stuff
         </template> -->

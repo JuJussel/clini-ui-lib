@@ -1,5 +1,6 @@
 <template>
     <div class="cui-table" v-bind:class="{striped: striped}">
+        <!-- <div class="loader" v-if="loading"></div> -->
         <div class="cui-table-header" v-if="$slots.header">
             <slot name="header"></slot>
         </div>
@@ -24,7 +25,7 @@
                         <template #parentRow>
                             <slot name="row" :row="row"></slot>
                         </template>
-                        <template #expand>
+                        <template #expand v-if="$slots.expand">
                             <slot name="expand" :expand="row"></slot>
                         </template>
                     </cui-tr>
@@ -64,6 +65,7 @@ export default {
     },
     data() {
         return {
+            loading: false,
             trRefs: [],
             sort: {
                 direction: null,
