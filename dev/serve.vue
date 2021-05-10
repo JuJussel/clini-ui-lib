@@ -69,7 +69,6 @@ export default defineComponent({
         </template>
       </cui-card>
     </div>
-    <cui-avatar :image="'https://localhost/files/user4.png?1'"></cui-avatar>
     <cui-card style="height: 500px" noPadding>
       <cui-table :data="tableData">
         <template #header>
