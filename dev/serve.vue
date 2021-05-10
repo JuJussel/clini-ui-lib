@@ -40,7 +40,7 @@ export default defineComponent({
       </template>
       <template v-slot:center>CliniClean</template>
       <template v-slot:right>
-        <cui-button icon="fas fa-sign-out-alt" white/>
+        <cui-avatar :image="'https://localhost/files/user4.png?1'"></cui-avatar>
         <cui-menu-bar-item icon="fas fa-sign-out-alt" />
       </template>
     </cui-menu-bar>

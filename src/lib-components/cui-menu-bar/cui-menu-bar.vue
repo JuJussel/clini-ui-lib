@@ -40,5 +40,6 @@ export default {
     }
     .cui-menu-bar > .menu-item {
         display: flex;
+        align-items: center;
     }
 </style>
