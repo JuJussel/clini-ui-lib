@@ -51,7 +51,7 @@ export default defineComponent({
       <cui-button-group-item label="Button4" value="4"></cui-button-group-item>
     </cui-button-group>
 
-    <div style="height: 400px; width: 300px; display: none">
+    <div style="height: 400px; width: 300px">
       <cui-card>
         <template v-slot:header>
           <h2>患者一覧</h2>
@@ -62,6 +62,8 @@ export default defineComponent({
           <cui-input v-model="input" disabled></cui-input>
 
           <div>{{input}}</div>
+
+          <cui-select label="Select"></cui-select>
         </div>
         <cui-button @click="visible = true" label="Show" />
         <template v-slot:footer>
