@@ -1,11 +1,13 @@
 <script>
 import { defineComponent } from 'vue';
+import CuiAvatar from '../src/lib-components/cui-avatar/cui-avatar.vue';
 // Uncomment import and local "components" registration if library is not registered globally.
 // import { CliniUiLibSample } from '@/entry.esm';
 
 export default defineComponent({
   name: 'ServeDev',
   data() {
+    CuiAvatar
     return{
       visible: false,
       input: 'Hello',
@@ -67,7 +69,7 @@ export default defineComponent({
         </template>
       </cui-card>
     </div>
-
+    <cui-avatar :image="'https://localhost/files/user4.png?1'"></cui-avatar>
     <cui-card style="height: 500px" noPadding>
       <cui-table :data="tableData">
         <template #header>
