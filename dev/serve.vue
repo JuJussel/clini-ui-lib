@@ -84,15 +84,13 @@ export default defineComponent({
             <td> {{ row.name }} </td>
             <td> {{ row.age }} </td>
             <td> {{ row.perf }} </td>
-            <td> {{ row.ok }} </td>
+            <td> 
+              <cui-tag primary>
+                Content
+              </cui-tag>
+            </td>
             <td><cui-button label="delete" @click.stop=""/></td>
         </template>
-        <template v-slot:expand="{expand}">
-          <div>{{expand.name}}</div>
-        </template>
-        <!-- <template #footer>
-          This table has stuff
-        </template> -->
       </cui-table>
     </cui-card>
 

@@ -85,9 +85,8 @@ export default {
         cursor: pointer;
     }
     .cui-button:not(.disabled):not(.plain):hover {
-        margin-top: 0px;
+        transform: translate(0px, -5px);
         box-shadow: 0 10px 20px -10px var(--cui-dark);
-        margin-bottom: 10px
     }
     .cui-button.danger {
         background: var(--cui-danger);
