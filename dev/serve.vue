@@ -63,7 +63,14 @@ export default defineComponent({
 
           <div>{{input}}</div>
 
-          <cui-select label="Select"></cui-select>
+          <cui-select 
+            label="Select"
+            :data="tableData"
+            prop="name"
+            >
+          </cui-select>
+
+
         </div>
         <cui-button @click="visible = true" label="Show" />
         <template v-slot:footer>
