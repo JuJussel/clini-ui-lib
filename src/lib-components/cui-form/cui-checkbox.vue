@@ -1,13 +1,13 @@
 <template>
-    <div class="cui-checkbox-container" v-bind:class="{selected: modelValue, disabled: disabled}">
+    <label class="cui-checkbox-container" for="checkbox" v-bind:class="{selected: modelValue, disabled: disabled}">
         <div class="cui-checkbox-con">
             <i class="cui-checkbox-icon fas fa-check"></i>
         </div>
         <input @change="toggleSelected" class="cui-checkbox" type="checkbox" id="checkbox" v-model="modelValue" :disabled="disabled"/>
-        <label class="cui-checkbox-label" for="checkbox">
+        <div class="cui-checkbox-label">
             {{ label }}    
-        </label>  
-    </div>
+        </div>  
+    </label>
 </template>
 
 <script>
@@ -45,15 +45,11 @@ export default {
         margin: 5px 0;
         position: relative
     }
-    .cui-checkbox-container:not(.disabled) label {
+    .cui-checkbox-container:not(.disabled) {
         cursor: pointer
     }
     .cui-checkbox {
-        opacity: 0;
-        margin: 0
-    }
-    .cui-checkbox-container:not(.disabled) .cui-checkbox {
-        cursor: pointer
+        display: none
     }
     .cui-checkbox-con {
         position: absolute;
@@ -65,7 +61,7 @@ export default {
         display: flex
     }
     .cui-checkbox-label {
-        padding-left: 10px
+        padding-left: 25px
     }
 
     /* Hover State */

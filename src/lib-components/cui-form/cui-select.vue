@@ -39,7 +39,7 @@
                 retracted: retracting
             }"
             v-bind:style="{width: dropdownWidth + 'px'}"
-            >
+        >
             <div class="loader" v-if="loading"></div>
 
             <div v-if="data.length > 0">
@@ -48,11 +48,13 @@
                     v-for="(item, index) in data"
                     :key="index"
                     @click="selectItem(item, index)"
-                    >
+                >
+                    <cui-checkbox v-if="multiple"></cui-checkbox>
                     <span v-if="dataIsObject"> {{ item[prop] }} </span>
                     <span v-else> {{ item }} </span>
                 </div>
             </div>
+
             <div v-else>
                 <div class="cui-select-empty">
                     {{ trans.empty }}
@@ -75,7 +77,7 @@ export default {
             type: Boolean
         },
         multiple: {
-            default: false,
+            default: true,
             type: Boolean
         },
         label: {
@@ -158,7 +160,6 @@ export default {
             const target = event?.target?.classList[0]
             if (
                 this.focused && 
-                target !== "cui-select-dropdown-item" ||
                 !this.multiple
             ) {
                 this.closeDropdown()
@@ -244,7 +245,8 @@ export default {
     }
     .cui-select-dropdown-item {
         padding: 8px 10px;
-        transition: all .2s ease
+        transition: all .2s ease;
+        display: flex
     }
     .cui-select-dropdown-item:hover {
         background: var(--cui-gray-1);
