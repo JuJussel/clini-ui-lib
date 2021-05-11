@@ -19,7 +19,8 @@ export default defineComponent({
         {name: 'Kathi', age: '41', perf: 'Ok', ok: false}
       ],
       selectData: [],
-      loading: false
+      loading: false,
+      check: false
     }
   },
   methods: {
@@ -71,6 +72,9 @@ export default defineComponent({
           <cui-input v-model="input" disabled></cui-input>
 
           <div>{{input}}</div>
+          <div>{{check}}</div>
+
+          <cui-checkbox v-model="check" label="Check"></cui-checkbox>
 
           <cui-select 
             label="Select"
@@ -91,7 +95,7 @@ export default defineComponent({
       </cui-card>
     </div>
     <cui-card style="height: 500px" noPadding>
-      <cui-table :data="tableData">
+      <cui-table :data="tableData" multipleSelect>
         <template #header>
           <h2>The Table</h2>
         </template>

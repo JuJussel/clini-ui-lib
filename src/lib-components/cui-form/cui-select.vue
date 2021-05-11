@@ -143,7 +143,7 @@ export default {
             }
             if (this.search) {
                 setTimeout(function() {
-                    this.$refs.input.focus()
+                    this.$refs.input?.focus()
                 }.bind(this), 100)
             }
         },
@@ -160,7 +160,7 @@ export default {
                 this.focused && 
                 target !== "cui-select-dropdown-item" ||
                 !this.multiple
-                ) {
+            ) {
                 this.closeDropdown()
             }
         },

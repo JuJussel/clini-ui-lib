@@ -167,7 +167,7 @@ export default {
         transition: background .2s ease;
     }
     .cui-table tbody tr:not(.selected, .expanded):hover {
-        background: var(--cui-gray-2)!important;
+        background: var(--cui-gray-1)!important;
         font-weight: bold
     }
 
