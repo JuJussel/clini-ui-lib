@@ -17,12 +17,21 @@ export default defineComponent({
         {name: 'Eri', age: '34', perf: 'Good', ok: true},
         {name: 'Guy', age: '54', perf: 'Awesome', ok: false},
         {name: 'Kathi', age: '41', perf: 'Ok', ok: false}
-      ]
+      ],
+      selectData: [],
+      loading: false
     }
   },
   methods: {
     handleClose() {
       this.visible = false
+    },
+    search() {
+      this.loading = true
+      setTimeout(function() {
+        this.selectData = this.tableData
+        this.loading = false
+      }.bind(this), 1000)
     }
   }
 
@@ -65,8 +74,11 @@ export default defineComponent({
 
           <cui-select 
             label="Select"
-            :data="tableData"
+            :data="selectData"
             prop="name"
+            :loading="loading"
+            search
+            @input="search"
             >
           </cui-select>
 

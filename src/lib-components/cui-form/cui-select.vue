@@ -4,7 +4,7 @@
             <span style="margin-right: 10px"> {{ label }} </span>
             <span v-if="required"> {{ trans.required }} </span>
         </label>
-        <div  ref="select" class="cui-select" @click="handleClick" v-bind:class="{focused: focused}">
+        <div  ref="select" class="cui-select" @click.stop="handleClick" v-bind:class="{focused: focused}">
             <div v-if="!focused">
                 <div class="cui-placeholder" v-if="!value"> {{ placeholder }} </div>
                 <div v-else-if="multiple"></div>
@@ -12,11 +12,23 @@
             </div>
             <div v-else>
                 <div v-if="search">
-                    <input>
+                    <input 
+                        ref="input" 
+                        class="cui-select-input" 
+                        v-model="searchValue"
+                        @click.stop=""
+                        @input="searchInput"
+                        >
                 </div>
                 <div v-else-if="!value" class="cui-placeholder"> {{ placeholder }} </div>
                 <div v-else-if="multiple"></div>
                 <div v-else> {{ displayValue }} </div>
+            </div>
+            <div>
+                <i 
+                    class="cui-select-icon fas fa-chevron-down"
+                    v-bind:class="{focused: focused}"
+                ></i>
             </div>
         </div>
         <div 
@@ -28,9 +40,23 @@
             }"
             v-bind:style="{width: dropdownWidth + 'px'}"
             >
-            <div v-for="(item, index) in data" :key="index">
-                <span v-if="dataIsObject"> {{ item[prop] }} </span>
-                <span v-else> {{ item }} </span>
+            <div class="loader" v-if="loading"></div>
+
+            <div v-if="data.length > 0">
+                <div
+                    class="cui-select-dropdown-item"
+                    v-for="(item, index) in data"
+                    :key="index"
+                    @click="selectItem(item, index)"
+                    >
+                    <span v-if="dataIsObject"> {{ item[prop] }} </span>
+                    <span v-else> {{ item }} </span>
+                </div>
+            </div>
+            <div v-else>
+                <div class="cui-select-empty">
+                    {{ trans.empty }}
+                </div>
             </div>
         </div>
     </div>
@@ -68,39 +94,82 @@ export default {
         },
         prop: {
             default: null
+        },
+        loading: {
+            default: false,
+            type: Boolean
         }
     },
     data() {
         return {
             value: null,
             focused: false,
-            displayValue: null,
             dropdownWidth: 100,
-            retracting: false
+            retracting: false,
+            searchValue: "",
+            trans: {
+                empty: 'データなし'
+            },
+
         }
     },
     computed: {
         dataIsObject() {
             return typeof this.data[0] === 'object' && this.data[0] !== null
+        },
+        displayValue() {
+            let value = this.value
+            if (this.dataIsObject) {
+                value = value[this.prop]
+            }
+            return value
         }
+    },
+    mounted() {
+        document.addEventListener('click', this.handleOutsideClick)
     },
     methods: {
         handleClick() {
-            this.dropdownWidth = this.$refs.select.clientWidth - 20
+            this.dropdownWidth = this.$refs.select.clientWidth
             const select = this.$refs.select
             const dropdown = this.$refs.dropdown
             if (this.focused) {
-                this.retracting = true
-                setTimeout(function() {
-                    this.focused = false
-                    this.retracting = false
-                }.bind(this), 150)
+                this.closeDropdown()
             } else {
                 this.focused = true
                 createPopper(select, dropdown, {
                     placement: 'bottom',
                 })
             }
+            if (this.search) {
+                setTimeout(function() {
+                    this.$refs.input.focus()
+                }.bind(this), 100)
+            }
+        },
+        closeDropdown() {
+            this.retracting = true
+            setTimeout(function() {
+                this.focused = false
+                this.retracting = false
+            }.bind(this), 50)
+        },
+        handleOutsideClick(event) {
+            const target = event?.target?.classList[0]
+            if (
+                this.focused && 
+                target !== "cui-select-dropdown-item" ||
+                !this.multiple
+                ) {
+                this.closeDropdown()
+            }
+        },
+        selectItem(item, index) {
+            this.value = item
+            this.$emit('select', this.value)
+        },
+        searchInput() {
+            this.$emit('input', this.searchValue)
         }
     }
 }
@@ -140,6 +209,7 @@ export default {
         font-size: 13.3333px;
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
     .cui-select.focused {
         border-bottom-right-radius: 0;
@@ -160,10 +230,8 @@ export default {
         border-bottom-right-radius: 12px;
         border-bottom-left-radius: 12px;
         box-shadow:0px 14px 13px 2px var(--cui-gray-4);
-        padding: 10px;
         z-index: 10;
         width: 240px;
-        border-top: solid 1px var(--cui-gray-1);
         overflow: auto;
         max-height: 200px;
     }
@@ -174,5 +242,33 @@ export default {
     .cui-select-list.retracted {
         animation: retract .2s ease-out 0s;
     }
+    .cui-select-dropdown-item {
+        padding: 8px 10px;
+        transition: all .2s ease
+    }
+    .cui-select-dropdown-item:hover {
+        background: var(--cui-gray-1);
+        cursor: pointer
+    }
+    .cui-select-input,
+    .cui-select-input:focus {
+        border: none;
+        outline: none
+    }
+    .cui-select-empty {
+        padding: 8px 10px;
+        color: var(--cui-gray-5);
+        font-size: 12px
+    }
+    .cui-select-icon {
+        transition: all .2s ease;
+        font-size: 12px;
+        color: var(--cui-gray-5);
+        padding: 5px
+    }
+    .cui-select-icon.focused {
+        transform: rotate(180deg)
+    }
+
 
 </style>

@@ -11,7 +11,7 @@
             white: white
         }"
         >
-        <div class="loader" v-if="loading"></div>
+        <div class="loader-button" v-if="loading"></div>
         <div class="ripple"></div>
         <i :class="icon" v-if="icon !== ''"></i>
         <span v-if="label !==''"> {{ label }} </span> 
