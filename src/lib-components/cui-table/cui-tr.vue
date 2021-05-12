@@ -9,7 +9,7 @@
         @click="handleClick"
         >
         <td style="width: 15px" v-if="multipleSelect">
-            <cui-checkbox v-model="selected"/>
+            <cui-checkbox @click.stop="" v-model="selected"/>
         </td>
         <slot name="parentRow"></slot>
     </tr>

@@ -1,9 +1,9 @@
 <template>
-    <label class="cui-checkbox-container" for="checkbox" v-bind:class="{selected: modelValue, disabled: disabled}">
+    <label class="cui-checkbox-container" :for="id" v-bind:class="{selected: modelValue, disabled: disabled}">
         <div class="cui-checkbox-con">
             <i class="cui-checkbox-icon fas fa-check"></i>
         </div>
-        <input @change="toggleSelected" class="cui-checkbox" type="checkbox" id="checkbox" v-model="modelValue" :disabled="disabled"/>
+        <input @change="toggleSelected" class="cui-checkbox" type="checkbox" :id="id" v-model="modelValue" :disabled="disabled"/>
         <div class="cui-checkbox-label">
             {{ label }}    
         </div>  
@@ -31,6 +31,14 @@ export default {
         toggleSelected() {
             this.$emit('update:modelValue', this.modelValue)
         }
+    },
+    data() {
+        return {
+            id: null         
+        }
+    },
+    mounted() {
+        this.id = Math.floor(Math.random() * 100000)
     }
 }
 </script>

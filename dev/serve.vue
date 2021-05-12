@@ -12,15 +12,17 @@ export default defineComponent({
       visible: false,
       input: 'Hello',
       tableData: [
-        {name: 'Peter', age: '36', perf: 'Awesome', ok: true},
+        {name: 'Peter', age: '36', perf: 'Awesome', ok: true, selected: false},
         {name: 'Paul', age: '22', perf: 'Soso', ok: true, selected: false},
-        {name: 'Eri', age: '34', perf: 'Good', ok: true},
-        {name: 'Guy', age: '54', perf: 'Awesome', ok: false},
-        {name: 'Kathi', age: '41', perf: 'Ok', ok: false}
+        {name: 'Eri', age: '34', perf: 'Good', ok: true, selected: false},
+        {name: 'Guy', age: '54', perf: 'Awesome', ok: false, selected: false},
+        {name: 'Kathi', age: '41', perf: 'Ok', ok: false, selected: false}
       ],
       selectData: [],
       loading: false,
-      check: false
+      check: false,
+      check2: false
+
     }
   },
   methods: {
@@ -75,14 +77,14 @@ export default defineComponent({
           <div>{{check}}</div>
 
           <cui-checkbox v-model="check" label="Check"></cui-checkbox>
+          <cui-checkbox v-model="check2" label="Check2"></cui-checkbox>
 
           <cui-select 
             label="Select"
-            :data="selectData"
+            :data="tableData"
             prop="name"
             :loading="loading"
-            search
-            @input="search"
+            multiple
             >
           </cui-select>
 

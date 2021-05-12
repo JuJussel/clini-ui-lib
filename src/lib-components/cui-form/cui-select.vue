@@ -18,7 +18,7 @@
                         v-model="searchValue"
                         @click.stop=""
                         @input="searchInput"
-                        >
+                    >
                 </div>
                 <div v-else-if="!value" class="cui-placeholder"> {{ placeholder }} </div>
                 <div v-else-if="multiple"></div>
@@ -45,11 +45,11 @@
             <div v-if="data.length > 0">
                 <div
                     class="cui-select-dropdown-item"
-                    v-for="(item, index) in data"
+                    v-for="(item, index) in dropdownValues"
                     :key="index"
-                    @click="selectItem(item, index)"
+                    @click.stop="selectItem(item, index)"
                 >
-                    <cui-checkbox v-if="multiple"></cui-checkbox>
+                    <cui-checkbox v-if="multiple" v-model="item.selected" @click.stop=""></cui-checkbox>
                     <span v-if="dataIsObject"> {{ item[prop] }} </span>
                     <span v-else> {{ item }} </span>
                 </div>
@@ -66,6 +66,8 @@
 
 <script>
 
+//If multiple NEEDS to have slected key in object value!!
+
 import { createPopper } from '@popperjs/core'
  
 
@@ -77,7 +79,7 @@ export default {
             type: Boolean
         },
         multiple: {
-            default: true,
+            default: false,
             type: Boolean
         },
         label: {
@@ -112,6 +114,7 @@ export default {
             trans: {
                 empty: 'データなし'
             },
+            dropdownValues: []
 
         }
     },
@@ -129,6 +132,14 @@ export default {
     },
     mounted() {
         document.addEventListener('click', this.handleOutsideClick)
+        let arr = JSON.parse(JSON.stringify(this.data))
+        if(this.multiple) {
+            arr.forEach(element => {
+                element.selected = element.selected? element.selected : false
+            })
+        }
+        this.dropdownValues = arr
+
     },
     methods: {
         handleClick() {
@@ -158,14 +169,23 @@ export default {
         },
         handleOutsideClick(event) {
             const target = event?.target?.classList[0]
-            if (
-                this.focused && 
-                !this.multiple
-            ) {
-                this.closeDropdown()
+            if (this.focused) {
+                if (this.multiple) {
+                   if (
+                        target !== 'cui-select-dropdown-item' &&
+                        target !== 'cui-checkbox-con' &&
+                        target !== 'cui-checkbox-icon' &&
+                        target !== 'cui-checkbox' 
+                    ) {  
+                        this.closeDropdown()
+                    }
+                } else {
+                    this.closeDropdown()
+                }
             }
         },
         selectItem(item, index) {
+            item.selected = !item.selected
             this.value = item
             this.$emit('select', this.value)
         },
