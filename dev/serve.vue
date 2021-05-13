@@ -74,6 +74,8 @@ export default defineComponent({
         </template>
         <div>
 
+          <cui-datepicker label="Date"></cui-datepicker>
+
           <cui-input v-model="input" label="名前" required icon="fas fa-sign-out-alt" append="kg"></cui-input>
           <cui-input v-model="input" disabled></cui-input>
 

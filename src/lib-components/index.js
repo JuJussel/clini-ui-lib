@@ -9,6 +9,7 @@ export { default as CuiModal } from './cui-modal/cui-modal.vue';
 export { default as CuiInput } from './cui-form/cui-input.vue';
 export { default as CuiCheckbox } from './cui-form/cui-checkbox.vue';
 export { default as CuiSelect } from './cui-form/cui-select.vue';
+export { default as CuiDatepicker } from './cui-form/cui-datepicker.vue';
 
 export { default as CuiTable } from './cui-table/cui-table.vue';
 export { default as CuiTh } from './cui-table/cui-th.vue';

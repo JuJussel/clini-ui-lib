@@ -332,8 +332,6 @@ export default {
 
 </style>
 
-</style>
-
 <style >
     .cui-select-tag {
         font-size: 12px!important;
