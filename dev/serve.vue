@@ -18,10 +18,14 @@ export default defineComponent({
         {name: 'Guy', age: '54', perf: 'Awesome', ok: false, selected: false},
         {name: 'Kathi', age: '41', perf: 'Ok', ok: false, selected: false}
       ],
-      selectData: [],
+      tableData2: [
+        'Value1', 'Value2', 'Value3'
+      ],
+      selectData: null,
       loading: false,
       check: false,
-      check2: false
+      check2: false,
+      
 
     }
   },
@@ -84,7 +88,9 @@ export default defineComponent({
             :data="tableData"
             prop="name"
             :loading="loading"
+            v-model="selectData"
             multiple
+            search
             >
           </cui-select>
 

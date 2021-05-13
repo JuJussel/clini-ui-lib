@@ -5,13 +5,20 @@
             <span v-if="required"> {{ trans.required }} </span>
         </label>
         <div  ref="select" class="cui-select" @click.stop="handleClick" v-bind:class="{focused: focused}">
+            <!-- non focused state -->
             <div v-if="!focused">
-                <div class="cui-placeholder" v-if="!value"> {{ placeholder }} </div>
-                <div v-else-if="multiple"></div>
+                <div class="cui-placeholder" v-if="!value || value.length < 1"> {{ placeholder }} </div>
+                <div v-else-if="multiple" class="cui-select-multiple-cont">
+                    <cui-tag class="cui-select-tag" v-for="(valueItem, index) in modelValue" :key="index"> 
+                        {{ valueItem[prop] }} 
+                        <i class="cui-select-tag-icon fas fa-times-circle" @click.stop="selectItem(valueItem)"></i>
+                    </cui-tag>
+                </div>
                 <div v-else> {{ displayValue }} </div>
             </div>
+            <!-- focused state -->
             <div v-else>
-                <div v-if="search">
+                <div v-if="search && !multiple">
                     <input 
                         ref="input" 
                         class="cui-select-input" 
@@ -21,7 +28,12 @@
                     >
                 </div>
                 <div v-else-if="!value" class="cui-placeholder"> {{ placeholder }} </div>
-                <div v-else-if="multiple"></div>
+                <div v-else-if="multiple" class="cui-select-multiple-cont">
+                    <cui-tag class="cui-select-tag" v-for="(valueItem, index) in modelValue" :key="index"> 
+                        {{ valueItem[prop] }}
+                        <i class="cui-select-tag-icon fas fa-times-circle" @click.stop="selectItem(valueItem)"></i>
+                    </cui-tag>
+                </div>
                 <div v-else> {{ displayValue }} </div>
             </div>
             <div>
@@ -54,7 +66,6 @@
                     <span v-else> {{ item }} </span>
                 </div>
             </div>
-
             <div v-else>
                 <div class="cui-select-empty">
                     {{ trans.empty }}
@@ -74,6 +85,9 @@ import { createPopper } from '@popperjs/core'
 export default {
     name: 'CuiSelect',
     props: {
+        modelValue: {
+            default: null
+        },
         search: {   
             default: false,
             type: Boolean
@@ -104,6 +118,7 @@ export default {
             type: Boolean
         }
     },
+    emits: ['update:modelValue', 'select', 'input'],
     data() {
         return {
             value: null,
@@ -123,9 +138,15 @@ export default {
             return typeof this.data[0] === 'object' && this.data[0] !== null
         },
         displayValue() {
-            let value = this.value
-            if (this.dataIsObject) {
-                value = value[this.prop]
+            let value = this.modelValue
+            if (this.multiple) {
+                value = value.map(function(item) {
+                    return item.name
+                })
+            } else {
+                if (this.dataIsObject) {
+                    value = value[this.prop]
+                }
             }
             return value
         }
@@ -168,25 +189,27 @@ export default {
             }.bind(this), 50)
         },
         handleOutsideClick(event) {
-            const target = event?.target?.classList[0]
-            if (this.focused) {
-                if (this.multiple) {
-                   if (
-                        target !== 'cui-select-dropdown-item' &&
-                        target !== 'cui-checkbox-con' &&
-                        target !== 'cui-checkbox-icon' &&
-                        target !== 'cui-checkbox' 
-                    ) {  
-                        this.closeDropdown()
-                    }
-                } else {
+            if (this.focused && this.multiple) {
+                const target = event?.target?.classList[0]
+                if (
+                    target !== 'cui-select-dropdown-item' &&
+                    target !== 'cui-checkbox-con' &&
+                    target !== 'cui-checkbox-icon' &&
+                    target !== 'cui-checkbox' 
+                ) {  
                     this.closeDropdown()
                 }
             }
         },
-        selectItem(item, index) {
-            item.selected = !item.selected
-            this.value = item
+        selectItem(item) {
+            if (this.multiple) {
+                item.selected = !item.selected
+                this.value = this.dropdownValues.filter(item => item.selected)
+            } else {
+                this.value = item
+                this.closeDropdown()
+            }
+            this.$emit('update:modelValue', this.value)
             this.$emit('select', this.value)
         },
         searchInput() {
@@ -215,8 +238,6 @@ export default {
             opacity: 0;
         }
     }
-
-
     .cui-select-label {
         font-size: 14px;
         margin-left: 10px
@@ -225,12 +246,15 @@ export default {
         background: var(--cui-gray-0);
         border-radius: 12px;
         height: 26px;
-        padding: 5px 10px;
+        padding: 2px 10px;
         transition: all .2s ease;
         font-size: 13.3333px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        overflow: hidden;
+        height: fit-content;
+        min-height: 32px
     }
     .cui-select.focused {
         border-bottom-right-radius: 0;
@@ -291,6 +315,31 @@ export default {
     .cui-select-icon.focused {
         transform: rotate(180deg)
     }
+    .cui-select-multiple-cont {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap
+    }
+    .cui-select-tag-icon {
+        margin-left: 2px;
+        color: var(--cui-font-color);
+        opacity: 0.6;
+        transition: all .2s ease;
+    }
+    .cui-select-tag-icon:hover {
+        opacity: 1;
+    }
 
 
+</style>
+
+<style >
+    .cui-select-tag {
+        font-size: 12px!important;
+        height: 28px!important;
+        background: var(--cui-gray-3)!important;
+        color: var(--cui-font-color)!important;
+        margin: 2px!important;
+        padding: 0 5px!important
+    }
 </style>
