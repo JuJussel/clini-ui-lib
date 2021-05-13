@@ -10,7 +10,7 @@
             v-model="date"
             :placeholder="placeholder"
             :format="format"
-            
+            range
             value-type="YYYY-MM-DD"
             input-class="cui-datepicker-input"
             popup-class="cui-datepicker-popup"
