@@ -4,14 +4,14 @@
             <span style="margin-right: 10px"> {{ label }} </span>
             <span v-if="required"> {{ trans.required }} </span>
         </label>
-
         <date-picker
             :disabled="disabled"
-            v-model="date"
+            v-model="modelValue"
             :placeholder="placeholder"
             :format="format"
             range
-            value-type="YYYY-MM-DD"
+            @input="changeValue"
+            :value-type="valueFormat"
             input-class="cui-datepicker-input"
             popup-class="cui-datepicker-popup"
             class="cui-datepicker"
@@ -28,6 +28,9 @@ export default {
     name: 'CuiDatepicker',
     components: { DatePicker },
     props: {
+        modelValue: {
+            default: ''
+        },
         label: {
             default: null
         },
@@ -36,8 +39,17 @@ export default {
         },
         format: {
             default: 'YYYY年MM月DD日'
+        },
+        valueFormat: {
+            default: 'YYYY-MM-DD'
         }
-
+    },
+    emits: ['update:modelValue'],
+    methods: {
+        changeValue() {
+            this.$emit('update:modelValue', this.modelValue)
+            this.$emit('change', this.modelValue)
+        }
     },
     data() {
         return {

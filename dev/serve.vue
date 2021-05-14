@@ -25,7 +25,7 @@ export default defineComponent({
       loading: false,
       check: false,
       check2: false,
-      
+      date: ''
 
     }
   },
@@ -74,7 +74,7 @@ export default defineComponent({
         </template>
         <div>
 
-          <cui-datepicker label="Date"></cui-datepicker>
+          <cui-datepicker label="Date" v-model="date"></cui-datepicker>
 
           <cui-input v-model="input" label="名前" required icon="fas fa-sign-out-alt" append="kg"></cui-input>
           <cui-input v-model="input" disabled></cui-input>
