@@ -1,9 +1,11 @@
 
 // Import vue components
 import * as components from '@/lib-components/index';
+import * as Functions from '@/lib-functions/functions'
 
 // install function executed by Vue.use()
 const install = function installCliniUiLib(app) {
+  app.config.globalProperties.$cui = Functions
   Object.entries(components).forEach(([componentName, component]) => {
     app.component(componentName, component);
   });

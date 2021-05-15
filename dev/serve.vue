@@ -39,6 +39,13 @@ export default defineComponent({
         this.selectData = this.tableData
         this.loading = false
       }.bind(this), 1000)
+    },
+    showPop() {
+      this.$cui.notification({
+        title: 'Yeah',
+        text: 'You did it!',
+        color: 'primary'
+      })
     }
   }
 
@@ -98,7 +105,7 @@ export default defineComponent({
 
 
         </div>
-        <cui-button @click="visible = true" label="Show" />
+        <cui-button @click="showPop" label="Show" />
         <template v-slot:footer>
           <h2>Footer</h2>
         </template>
