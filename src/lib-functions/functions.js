@@ -19,8 +19,6 @@ export function notification(props) {
         notifApp.mount(div)
 
         setTimeout(function() {
-                // console.log(notifApp);
-                // notifApp = null
                 notifApp.unmount();
                 console.log(notifApp);
                 notifApp = null
