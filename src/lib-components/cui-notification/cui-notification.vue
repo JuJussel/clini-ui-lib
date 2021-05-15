@@ -44,7 +44,7 @@ export default {
         z-index: 100;
         width: 300px;
         background: red;
-        padding: 30px;
+        padding: 20px;
         border-radius: 24px;
         text-align: center
     }
