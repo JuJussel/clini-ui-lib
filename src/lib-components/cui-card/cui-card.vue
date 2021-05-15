@@ -1,13 +1,15 @@
 <template>
-    <div class="cui-card">
-        <div class="cui-card-header" v-if="$slots.header">
-            <slot name="header"></slot>
-        </div>
-        <div class="cui-card-body" v-bind:class="{'no-padding': noPadding}">
-            <slot></slot>
-        </div>
-        <div class="footer" v-if="$slots.footer">
-            <slot name="footer"></slot>
+    <div class="cui-card-padding">
+        <div class="cui-card">
+            <div class="cui-card-header" v-if="$slots.header">
+                <slot name="header"></slot>
+            </div>
+            <div class="cui-card-body" v-bind:class="{'no-padding': noPadding}">
+                <slot></slot>
+            </div>
+            <div class="footer" v-if="$slots.footer">
+                <slot name="footer"></slot>
+            </div>
         </div>
     </div>
 </template>
@@ -28,19 +30,23 @@ export default {
 </script>
 
 <style>
+    .cui-card-padding {
+        padding: 10px;
+        width: calc(100% - 20px);
+        height: calc(100% - 20px)
+    }
     .cui-card {
         border-radius: 20px;
         box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);
-        margin: 10px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         background: white;
     }
-    .cui-card:not(adaptive) {
-        height: calc(100% - 20px);
-        width: calc(100% - 20px);
+    .cui-card:not(.adaptive) {
+        height: calc(100%);
+        width: calc(100%);
     }
     .cui-card-header {
         background: var(--cui-gray-0);

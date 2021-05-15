@@ -227,14 +227,14 @@ const _hoisted_2$b = {
 const _hoisted_3$7 = {
   class: "menu-item"
 };
-const _hoisted_4$5 = {
+const _hoisted_4$6 = {
   class: "menu-item"
 };
 
 popScopeId();
 
 const render$h = /*#__PURE__*/_withId$8((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("div", _hoisted_1$c, [createVNode("div", _hoisted_2$b, [renderSlot(_ctx.$slots, "left")]), createVNode("div", _hoisted_3$7, [renderSlot(_ctx.$slots, "center")]), createVNode("div", _hoisted_4$5, [renderSlot(_ctx.$slots, "right")])], 512);
+  return openBlock(), createBlock("div", _hoisted_1$c, [createVNode("div", _hoisted_2$b, [renderSlot(_ctx.$slots, "left")]), createVNode("div", _hoisted_3$7, [renderSlot(_ctx.$slots, "center")]), createVNode("div", _hoisted_4$6, [renderSlot(_ctx.$slots, "right")])], 512);
 });
 
 var css_248z$g = "\n.cui-menu-bar[data-v-155803fa] {\n        background: var(--cui-dark);\n        height: 45px;\n        border-bottom-left-radius: 15px;\n        border-bottom-right-radius: 15px;\n        padding: 0 15px;\n        position: relative;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        color: var(--cui-gray-2);\n        font-weight: bold;\n        font-size: 16px;\n}\n.cui-menu-bar > .menu-item[data-v-155803fa] {\n        display: flex;\n        align-items: center;\n}\n";
@@ -282,7 +282,7 @@ const _hoisted_2$a = /*#__PURE__*/createVNode("div", {
 const _hoisted_3$6 = {
   class: "content"
 };
-const _hoisted_4$4 = {
+const _hoisted_4$5 = {
   key: 1
 };
 function render$g(_ctx, _cache, $props, $setup, $data, $options) {
@@ -293,7 +293,7 @@ function render$g(_ctx, _cache, $props, $setup, $data, $options) {
   }, [_hoisted_1$b, _hoisted_2$a, createVNode("div", _hoisted_3$6, [$props.icon !== '' ? (openBlock(), createBlock("i", {
     key: 0,
     class: $props.icon
-  }, null, 2)) : createCommentVNode("", true), $props.label !== '' ? (openBlock(), createBlock("span", _hoisted_4$4, toDisplayString($props.label), 1)) : createCommentVNode("", true)])], 512);
+  }, null, 2)) : createCommentVNode("", true), $props.label !== '' ? (openBlock(), createBlock("span", _hoisted_4$5, toDisplayString($props.label), 1)) : createCommentVNode("", true)])], 512);
 }
 
 var css_248z$f = "\n.cui-menu-bar-item {\n        height: 45px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        margin: 0 10px;\n        position: relative;\n        padding: 0 5px\n}\n.cui-menu-bar-item:hover {\n        cursor: pointer;\n        color: white;\n}\n.cui-menu-bar-item > .content {\n        transition: all .2s ease;\n}\n.cui-menu-bar-item:hover > .content {\n        padding-bottom: 5px;\n}\n.cui-menu-bar-item > i:not(:last-child) {\n        margin-right: 5px\n}\n.cui-menu-bar-item.selected {\n        color: white;\n}\n.menu-bar-line {\n        opacity: 0;\n        transition: all .2s;\n        background: white;\n        width: 100%;\n        height: 2px;\n        bottom: 0;\n        position: absolute;\n}\n.cui-menu-bar-item.selected > .menu-bar-line {\n        opacity: 100\n}\n";
@@ -319,25 +319,28 @@ var script$f = {
 };
 
 const _hoisted_1$a = {
-  class: "cui-card"
+  class: "cui-card-padding"
 };
 const _hoisted_2$9 = {
+  class: "cui-card"
+};
+const _hoisted_3$5 = {
   key: 0,
   class: "cui-card-header"
 };
-const _hoisted_3$5 = {
+const _hoisted_4$4 = {
   key: 1,
   class: "footer"
 };
 function render$f(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createBlock("div", _hoisted_1$a, [_ctx.$slots.header ? (openBlock(), createBlock("div", _hoisted_2$9, [renderSlot(_ctx.$slots, "header")])) : createCommentVNode("", true), createVNode("div", {
+  return openBlock(), createBlock("div", _hoisted_1$a, [createVNode("div", _hoisted_2$9, [_ctx.$slots.header ? (openBlock(), createBlock("div", _hoisted_3$5, [renderSlot(_ctx.$slots, "header")])) : createCommentVNode("", true), createVNode("div", {
     class: ["cui-card-body", {
       'no-padding': $props.noPadding
     }]
-  }, [renderSlot(_ctx.$slots, "default")], 2), _ctx.$slots.footer ? (openBlock(), createBlock("div", _hoisted_3$5, [renderSlot(_ctx.$slots, "footer")])) : createCommentVNode("", true)]);
+  }, [renderSlot(_ctx.$slots, "default")], 2), _ctx.$slots.footer ? (openBlock(), createBlock("div", _hoisted_4$4, [renderSlot(_ctx.$slots, "footer")])) : createCommentVNode("", true)])]);
 }
 
-var css_248z$e = "\n.cui-card {\n        border-radius: 20px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        margin: 10px;\n        overflow: hidden;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n        background: white;\n}\n.cui-card:not(adaptive) {\n        height: calc(100% - 20px);\n        width: calc(100% - 20px);\n}\n.cui-card-header {\n        background: var(--cui-gray-0);\n        padding: 10px;\n        box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 15%);\n        display: flex;\n        align-items: center;\n}\n.cui-card-body {\n        flex: 1;\n        overflow: auto;\n}\n.cui-card-body:not(.no-padding) {\n        padding: 10px\n}\n.cui-card > .footer {\n        padding: 10px;\n        display: flex;\n        align-items: center;\n}\n\n";
+var css_248z$e = "\n.cui-card-padding {\n        padding: 10px;\n        width: calc(100% - 20px);\n        height: calc(100% - 20px)\n}\n.cui-card {\n        border-radius: 20px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        overflow: hidden;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n        background: white;\n}\n.cui-card:not(.adaptive) {\n        height: calc(100%);\n        width: calc(100%);\n}\n.cui-card-header {\n        background: var(--cui-gray-0);\n        padding: 10px;\n        box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 15%);\n        display: flex;\n        align-items: center;\n}\n.cui-card-body {\n        flex: 1;\n        overflow: auto;\n}\n.cui-card-body:not(.no-padding) {\n        padding: 10px\n}\n.cui-card > .footer {\n        padding: 10px;\n        display: flex;\n        align-items: center;\n}\n\n";
 styleInject(css_248z$e);
 
 script$f.render = render$f;

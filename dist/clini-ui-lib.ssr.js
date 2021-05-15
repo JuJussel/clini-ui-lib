@@ -267,14 +267,14 @@ var _hoisted_2$b = {
 var _hoisted_3$7 = {
   class: "menu-item"
 };
-var _hoisted_4$5 = {
+var _hoisted_4$6 = {
   class: "menu-item"
 };
 
 vue.popScopeId();
 
 var render$h = /*#__PURE__*/_withId$8(function (_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createBlock("div", _hoisted_1$c, [vue.createVNode("div", _hoisted_2$b, [vue.renderSlot(_ctx.$slots, "left")]), vue.createVNode("div", _hoisted_3$7, [vue.renderSlot(_ctx.$slots, "center")]), vue.createVNode("div", _hoisted_4$5, [vue.renderSlot(_ctx.$slots, "right")])], 512);
+  return vue.openBlock(), vue.createBlock("div", _hoisted_1$c, [vue.createVNode("div", _hoisted_2$b, [vue.renderSlot(_ctx.$slots, "left")]), vue.createVNode("div", _hoisted_3$7, [vue.renderSlot(_ctx.$slots, "center")]), vue.createVNode("div", _hoisted_4$6, [vue.renderSlot(_ctx.$slots, "right")])], 512);
 });var css_248z$g = "\n.cui-menu-bar[data-v-155803fa] {\n        background: var(--cui-dark);\n        height: 45px;\n        border-bottom-left-radius: 15px;\n        border-bottom-right-radius: 15px;\n        padding: 0 15px;\n        position: relative;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        color: var(--cui-gray-2);\n        font-weight: bold;\n        font-size: 16px;\n}\n.cui-menu-bar > .menu-item[data-v-155803fa] {\n        display: flex;\n        align-items: center;\n}\n";
 styleInject(css_248z$g);script$h.render = render$h;
 script$h.__scopeId = "data-v-155803fa";var script$g = {
@@ -313,7 +313,7 @@ var _hoisted_2$a = /*#__PURE__*/vue.createVNode("div", {
 var _hoisted_3$6 = {
   class: "content"
 };
-var _hoisted_4$4 = {
+var _hoisted_4$5 = {
   key: 1
 };
 function render$g(_ctx, _cache, $props, $setup, $data, $options) {
@@ -326,7 +326,7 @@ function render$g(_ctx, _cache, $props, $setup, $data, $options) {
   }, [_hoisted_1$b, _hoisted_2$a, vue.createVNode("div", _hoisted_3$6, [$props.icon !== '' ? (vue.openBlock(), vue.createBlock("i", {
     key: 0,
     class: $props.icon
-  }, null, 2)) : vue.createCommentVNode("", true), $props.label !== '' ? (vue.openBlock(), vue.createBlock("span", _hoisted_4$4, vue.toDisplayString($props.label), 1)) : vue.createCommentVNode("", true)])], 512);
+  }, null, 2)) : vue.createCommentVNode("", true), $props.label !== '' ? (vue.openBlock(), vue.createBlock("span", _hoisted_4$5, vue.toDisplayString($props.label), 1)) : vue.createCommentVNode("", true)])], 512);
 }var css_248z$f = "\n.cui-menu-bar-item {\n        height: 45px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        margin: 0 10px;\n        position: relative;\n        padding: 0 5px\n}\n.cui-menu-bar-item:hover {\n        cursor: pointer;\n        color: white;\n}\n.cui-menu-bar-item > .content {\n        transition: all .2s ease;\n}\n.cui-menu-bar-item:hover > .content {\n        padding-bottom: 5px;\n}\n.cui-menu-bar-item > i:not(:last-child) {\n        margin-right: 5px\n}\n.cui-menu-bar-item.selected {\n        color: white;\n}\n.menu-bar-line {\n        opacity: 0;\n        transition: all .2s;\n        background: white;\n        width: 100%;\n        height: 2px;\n        bottom: 0;\n        position: absolute;\n}\n.cui-menu-bar-item.selected > .menu-bar-line {\n        opacity: 100\n}\n";
 styleInject(css_248z$f);script$g.render = render$g;var script$f = {
   name: "CuiCard",
@@ -342,23 +342,26 @@ styleInject(css_248z$f);script$g.render = render$g;var script$f = {
     };
   }
 };var _hoisted_1$a = {
-  class: "cui-card"
+  class: "cui-card-padding"
 };
 var _hoisted_2$9 = {
+  class: "cui-card"
+};
+var _hoisted_3$5 = {
   key: 0,
   class: "cui-card-header"
 };
-var _hoisted_3$5 = {
+var _hoisted_4$4 = {
   key: 1,
   class: "footer"
 };
 function render$f(_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createBlock("div", _hoisted_1$a, [_ctx.$slots.header ? (vue.openBlock(), vue.createBlock("div", _hoisted_2$9, [vue.renderSlot(_ctx.$slots, "header")])) : vue.createCommentVNode("", true), vue.createVNode("div", {
+  return vue.openBlock(), vue.createBlock("div", _hoisted_1$a, [vue.createVNode("div", _hoisted_2$9, [_ctx.$slots.header ? (vue.openBlock(), vue.createBlock("div", _hoisted_3$5, [vue.renderSlot(_ctx.$slots, "header")])) : vue.createCommentVNode("", true), vue.createVNode("div", {
     class: ["cui-card-body", {
       'no-padding': $props.noPadding
     }]
-  }, [vue.renderSlot(_ctx.$slots, "default")], 2), _ctx.$slots.footer ? (vue.openBlock(), vue.createBlock("div", _hoisted_3$5, [vue.renderSlot(_ctx.$slots, "footer")])) : vue.createCommentVNode("", true)]);
-}var css_248z$e = "\n.cui-card {\n        border-radius: 20px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        margin: 10px;\n        overflow: hidden;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n        background: white;\n}\n.cui-card:not(adaptive) {\n        height: calc(100% - 20px);\n        width: calc(100% - 20px);\n}\n.cui-card-header {\n        background: var(--cui-gray-0);\n        padding: 10px;\n        box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 15%);\n        display: flex;\n        align-items: center;\n}\n.cui-card-body {\n        flex: 1;\n        overflow: auto;\n}\n.cui-card-body:not(.no-padding) {\n        padding: 10px\n}\n.cui-card > .footer {\n        padding: 10px;\n        display: flex;\n        align-items: center;\n}\n\n";
+  }, [vue.renderSlot(_ctx.$slots, "default")], 2), _ctx.$slots.footer ? (vue.openBlock(), vue.createBlock("div", _hoisted_4$4, [vue.renderSlot(_ctx.$slots, "footer")])) : vue.createCommentVNode("", true)])]);
+}var css_248z$e = "\n.cui-card-padding {\n        padding: 10px;\n        width: calc(100% - 20px);\n        height: calc(100% - 20px)\n}\n.cui-card {\n        border-radius: 20px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        overflow: hidden;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n        background: white;\n}\n.cui-card:not(.adaptive) {\n        height: calc(100%);\n        width: calc(100%);\n}\n.cui-card-header {\n        background: var(--cui-gray-0);\n        padding: 10px;\n        box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 15%);\n        display: flex;\n        align-items: center;\n}\n.cui-card-body {\n        flex: 1;\n        overflow: auto;\n}\n.cui-card-body:not(.no-padding) {\n        padding: 10px\n}\n.cui-card > .footer {\n        padding: 10px;\n        display: flex;\n        align-items: center;\n}\n\n";
 styleInject(css_248z$e);script$f.render = render$f;var script$e = {
   name: 'CuiModal',
   props: {
