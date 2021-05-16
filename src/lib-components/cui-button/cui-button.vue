@@ -127,4 +127,12 @@ export default {
         background: white;
         color: var(--cui-font-color)
     }
+    .loader-button {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex
+    }
 </style>

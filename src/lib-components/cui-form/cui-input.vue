@@ -8,13 +8,14 @@
             <span class="cui-input-append" v-if="append"> {{ append }} </span>
             <input
                 class="cui-input" 
-                v-bind:class="{'has-icon': icon}"
+                v-bind:class="{'has-icon': icon, disabled: disabled}"
                 v-bind:style="{width: width}"
                 :type="type" 
                 v-model="modelValue" 
                 @input="changeValue"
                 :disabled="disabled"
                 clearable
+                :placeholder="placeholder"
             >
             <span :class="icon + ' cui-input-icon'" v-if="icon"></span>
 
@@ -54,6 +55,9 @@ export default {
         },
         append: {
             default: null
+        },
+        placeholder: {
+            default: 'yyyyy'
         }
     },
     emits: ['update:modelValue'],
@@ -85,6 +89,9 @@ export default {
         height: 26px;
         padding: 5px 10px;
         transition: all .2s ease
+    }
+    .cui-input.disabled {
+        color: var(--cui-gray-3)
     }
     .cui-input:focus {
         outline: none;

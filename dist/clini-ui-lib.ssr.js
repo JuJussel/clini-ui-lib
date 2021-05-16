@@ -452,6 +452,9 @@ styleInject(css_248z$d);script$e.render = render$e;var script$d = {
     },
     append: {
       default: null
+    },
+    placeholder: {
+      default: 'yyyyy'
     }
   },
   emits: ['update:modelValue'],
@@ -468,9 +471,9 @@ styleInject(css_248z$d);script$e.render = render$e;var script$d = {
       error: ''
     };
   }
-};var _withId$7 = /*#__PURE__*/vue.withScopeId("data-v-73c5365b");
+};var _withId$7 = /*#__PURE__*/vue.withScopeId("data-v-1ffedc6a");
 
-vue.pushScopeId("data-v-73c5365b");
+vue.pushScopeId("data-v-1ffedc6a");
 
 var _hoisted_1$8 = {
   key: 0,
@@ -515,14 +518,15 @@ var render$d = /*#__PURE__*/_withId$7(function (_ctx, _cache, $props, $setup, $d
       return $options.changeValue && $options.changeValue.apply($options, arguments);
     }),
     disabled: $props.disabled,
-    clearable: ""
-  }, null, 46, ["type", "disabled"]), [[vue.vModelDynamic, $props.modelValue]]), $props.icon ? (vue.openBlock(), vue.createBlock("span", {
+    clearable: "",
+    placeholder: $props.placeholder
+  }, null, 46, ["type", "disabled", "placeholder"]), [[vue.vModelDynamic, $props.modelValue]]), $props.icon ? (vue.openBlock(), vue.createBlock("span", {
     key: 1,
     class: $props.icon + ' cui-input-icon'
   }, null, 2)) : vue.createCommentVNode("", true)]), vue.createVNode("div", _hoisted_6$1, [vue.createVNode("span", null, vue.toDisplayString($data.error), 1)])]);
-});var css_248z$c = "\n.cui-input-label[data-v-73c5365b] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-input[data-v-73c5365b] {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease\n}\n.cui-input[data-v-73c5365b]:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n        background: var(--cui-gray-1)\n}\n.cui-input-note[data-v-73c5365b] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n.cui-input-icon[data-v-73c5365b] {\n        position: absolute;\n        left:0;\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        padding: 10px;\n        transition: all .2s ease;\n}\n.has-icon[data-v-73c5365b] {\n        text-indent: 28px;\n}\n.cui-input:focus + .cui-input-icon[data-v-73c5365b] {\n        margin: -3px;\n        box-shadow: 0 10px 20px -10px var(--cui-dark);\n        background: white;\n}\n.cui-input-append[data-v-73c5365b] {\n        position: absolute;\n        right: 0;\n        height: 34px;\n        background: white;\n        border-radius: 12px;\n        line-height: 34px;\n        padding: 0 10px;\n        border: solid 1px var(--cui-gray-1);\n        font-size: 14px\n}\n";
+});var css_248z$c = "\n.cui-input-label[data-v-1ffedc6a] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-input[data-v-1ffedc6a] {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease\n}\n.cui-input[data-v-1ffedc6a]:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n        background: var(--cui-gray-1)\n}\n.cui-input-note[data-v-1ffedc6a] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n.cui-input-icon[data-v-1ffedc6a] {\n        position: absolute;\n        left:0;\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        padding: 10px;\n        transition: all .2s ease;\n}\n.has-icon[data-v-1ffedc6a] {\n        text-indent: 28px;\n}\n.cui-input:focus + .cui-input-icon[data-v-1ffedc6a] {\n        margin: -3px;\n        box-shadow: 0 10px 20px -10px var(--cui-dark);\n        background: white;\n}\n.cui-input-append[data-v-1ffedc6a] {\n        position: absolute;\n        right: 0;\n        height: 34px;\n        background: white;\n        border-radius: 12px;\n        line-height: 34px;\n        padding: 0 10px;\n        border: solid 1px var(--cui-gray-1);\n        font-size: 14px\n}\n";
 styleInject(css_248z$c);script$d.render = render$d;
-script$d.__scopeId = "data-v-73c5365b";var script$c = {
+script$d.__scopeId = "data-v-1ffedc6a";var script$c = {
   name: 'CuiCheckbox',
   props: {
     modelValue: {
