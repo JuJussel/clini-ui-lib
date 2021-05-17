@@ -25,13 +25,18 @@ export default defineComponent({
       loading: false,
       check: false,
       check2: false,
-      date: ''
+      date: '',
+      menu: "reception"
 
     }
   },
   methods: {
     handleClose() {
       this.visible = false
+    },
+    changeMenu(value) {
+      console.log(value);
+      this.menu = value
     },
     search() {
       this.loading = true
@@ -54,11 +59,11 @@ export default defineComponent({
 
 <template>
   <div id="app" style="position: relative">
-    <cui-menu-bar>
+    <cui-menu-bar :value="menu" @change="changeMenu">
       <template v-slot:left>
-        <cui-menu-bar-item icon="fa fa-home menu-icon" />
+        <cui-menu-bar-item icon="fa fa-home menu-icon" value="1" />
         <cui-menu-bar-item icon="fas fa-user-clock" label="受付" value="reception"/>
-        <cui-menu-bar-item icon="fa fa-home menu-icon" label="患者" />
+        <cui-menu-bar-item icon="fa fa-home menu-icon" label="患者" value="2"/>
         <cui-menu-bar-item icon="fa fa-home menu-icon" label="医療" />
       </template>
       <template v-slot:center>CliniClean</template>

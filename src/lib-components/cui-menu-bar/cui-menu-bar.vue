@@ -14,10 +14,32 @@
 
 <script>
 export default {
+    props: {
+        value: {
+            default: null
+        }
+    },
     name: 'CuiMenuBar',
+    mounted() {
+        this.propChange()
+    },
     methods: {
         changeValue(value) {
-            this.$emit('change', value)            
+            this.$emit('change', value)   
+        },
+        propChange() {
+            let menuItems = document.querySelectorAll(".cui-menu-bar-item");
+            menuItems.forEach(item => {
+                item.classList.remove('selected')
+                if (item.getAttribute("value") === this.value) {
+                    item.classList.add("selected")
+                }
+            })
+        }
+    },
+    watch: {
+        value() {
+            this.propChange()
         }
     }
 }

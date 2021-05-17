@@ -1,8 +1,8 @@
 <template>
-    <span class="cui-menu-bar-item" @click="handelClick" ref="item">
+    <span class="cui-menu-bar-item" @click="handelClick" ref="item" :value="value">
         <div class="ripple"></div>
         <div class="menu-bar-line"></div>
-        <div class="content">
+        <div class="cui-menu-bar-item-content">
             <i :class="icon" v-if="icon !== ''"></i>
             <span v-if="label !==''"> {{ label }} </span>
         </div>
@@ -28,11 +28,6 @@ export default {
     methods: {
         handelClick() {
             this.$parent.changeValue(this.value)
-            let menuItems = document.querySelectorAll(".cui-menu-bar-item");
-            menuItems.forEach(item => {
-                item.classList.remove('selected')
-            })
-            this.$refs.item.classList.add("selected")
         }
     }
 }
@@ -75,5 +70,8 @@ export default {
     }
     .cui-menu-bar-item.selected > .menu-bar-line {
         opacity: 100
+    }
+    .cui-menu-bar-item-content i {
+        margin-right: 5px;
     }
 </style>

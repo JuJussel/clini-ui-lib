@@ -20,7 +20,6 @@ export function notification(props) {
 
         setTimeout(function() {
                 notifApp.unmount();
-                console.log(notifApp);
                 notifApp = null
                 document.body.removeChild(div);
         }.bind(this), props.duration ? props.duration : 3000)

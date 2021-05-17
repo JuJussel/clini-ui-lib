@@ -42,6 +42,14 @@ export default {
         },
         valueFormat: {
             default: 'YYYY-MM-DD'
+        },
+        required: {
+            default: false,
+            type: Boolean
+        },
+        disabled: {
+            default: false,
+            type: Boolean
         }
     },
     emits: ['update:modelValue'],
