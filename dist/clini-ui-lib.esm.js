@@ -42,9 +42,9 @@ var script$k = {
   }
 };
 
-const _withId$b = /*#__PURE__*/withScopeId("data-v-86e452b8");
+const _withId$b = /*#__PURE__*/withScopeId("data-v-46408e21");
 
-pushScopeId("data-v-86e452b8");
+pushScopeId("data-v-46408e21");
 
 const _hoisted_1$f = {
   key: 0,
@@ -105,11 +105,11 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$k = "\n.cui-button[data-v-86e452b8] {\n        height: 35px;\n        border: 0px;\n        margin: 5px;\n        border-radius: var(--cui-button-radius);\n        transition: all .2s ease;\n        position: relative;\n        user-select: none;\n        z-index: 1;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 10px;\n        outline: none;\n        font-size: .8rem;\n        box-sizing: border-box;\n        background: var(--cui-dark);\n        color: white;\n        cursor: pointer;\n}\n.cui-button[data-v-86e452b8]:not(.disabled):not(.plain):hover {\n        transform: translate(0px, -5px);\n        box-shadow: 0 10px 20px -10px var(--cui-dark);\n}\n.cui-button.danger[data-v-86e452b8] {\n        background: var(--cui-danger);\n}\n.cui-button.danger[data-v-86e452b8]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-danger);\n}\n.cui-button.primary[data-v-86e452b8] {\n        background: var(--cui-primary);\n}\n.cui-button.primary[data-v-86e452b8]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-primary);\n}\n.cui-button.warn[data-v-86e452b8] {\n        background: var(--cui-warn);\n}\n.cui-button.warn[data-v-86e452b8]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-warn);\n}\n.cui-button > i[data-v-86e452b8]:not(:last-child) {\n        margin-right: 5px\n}\n.cui-button.disabled[data-v-86e452b8] {\n        cursor: not-allowed;\n        opacity: 0.7;\n}\n.cui-button.loading[data-v-86e452b8] {\n        color: rgba(255,255,255,0.5)\n}\n.cui-button.plain[data-v-86e452b8] {\n        background: none;\n        color: var(--cui-font-color)\n}\n.cui-button.plain[data-v-86e452b8]:hover {\n        background: var(--cui-gray-1)\n}\n.cui-button.white[data-v-86e452b8] {\n        background: white;\n        color: var(--cui-font-color)\n}\n";
+var css_248z$k = "\n.cui-button[data-v-46408e21] {\n        height: 35px;\n        border: 0px;\n        margin: 5px;\n        border-radius: var(--cui-button-radius);\n        transition: all .2s ease;\n        position: relative;\n        user-select: none;\n        z-index: 1;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 10px;\n        outline: none;\n        font-size: .8rem;\n        box-sizing: border-box;\n        background: var(--cui-dark);\n        color: white;\n        cursor: pointer;\n}\n.cui-button[data-v-46408e21]:not(.disabled):not(.plain):hover {\n        transform: translate(0px, -5px);\n        box-shadow: 0 10px 20px -10px var(--cui-dark);\n}\n.cui-button.danger[data-v-46408e21] {\n        background: var(--cui-danger);\n}\n.cui-button.danger[data-v-46408e21]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-danger);\n}\n.cui-button.primary[data-v-46408e21] {\n        background: var(--cui-primary);\n}\n.cui-button.primary[data-v-46408e21]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-primary);\n}\n.cui-button.warn[data-v-46408e21] {\n        background: var(--cui-warn);\n}\n.cui-button.warn[data-v-46408e21]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-warn);\n}\n.cui-button > i[data-v-46408e21]:not(:last-child) {\n        margin-right: 5px\n}\n.cui-button.disabled[data-v-46408e21] {\n        cursor: not-allowed;\n        opacity: 0.7;\n}\n.cui-button.loading[data-v-46408e21] {\n        color: rgba(255,255,255,0.5)\n}\n.cui-button.plain[data-v-46408e21] {\n        background: none;\n        color: var(--cui-font-color)\n}\n.cui-button.plain[data-v-46408e21]:hover {\n        background: var(--cui-gray-1)\n}\n.cui-button.white[data-v-46408e21] {\n        background: white;\n        color: var(--cui-font-color)\n}\n.loader-button[data-v-46408e21] {\n        justify-content: center;\n        align-items: center;\n        width: 100%;\n        height: 100%;\n        position: absolute;\n        display: flex\n}\n";
 styleInject(css_248z$k);
 
 script$k.render = render$k;
-script$k.__scopeId = "data-v-86e452b8";
+script$k.__scopeId = "data-v-46408e21";
 
 var script$j = {
   name: 'ButtonGroup',
@@ -204,18 +204,45 @@ script$i.render = render$i;
 script$i.__scopeId = "data-v-5085d32b";
 
 var script$h = {
+  props: {
+    value: {
+      default: null
+    }
+  },
   name: 'CuiMenuBar',
+
+  mounted() {
+    this.propChange();
+  },
+
   methods: {
     changeValue(value) {
       this.$emit('change', value);
+    },
+
+    propChange() {
+      let menuItems = document.querySelectorAll(".cui-menu-bar-item");
+      menuItems.forEach(item => {
+        item.classList.remove('selected');
+
+        if (item.getAttribute("value") === this.value) {
+          item.classList.add("selected");
+        }
+      });
+    }
+
+  },
+  watch: {
+    value() {
+      this.propChange();
     }
 
   }
 };
 
-const _withId$8 = /*#__PURE__*/withScopeId("data-v-155803fa");
+const _withId$8 = /*#__PURE__*/withScopeId("data-v-4289ed8a");
 
-pushScopeId("data-v-155803fa");
+pushScopeId("data-v-4289ed8a");
 
 const _hoisted_1$c = {
   class: "cui-menu-bar",
@@ -237,11 +264,11 @@ const render$h = /*#__PURE__*/_withId$8((_ctx, _cache, $props, $setup, $data, $o
   return openBlock(), createBlock("div", _hoisted_1$c, [createVNode("div", _hoisted_2$b, [renderSlot(_ctx.$slots, "left")]), createVNode("div", _hoisted_3$7, [renderSlot(_ctx.$slots, "center")]), createVNode("div", _hoisted_4$6, [renderSlot(_ctx.$slots, "right")])], 512);
 });
 
-var css_248z$g = "\n.cui-menu-bar[data-v-155803fa] {\n        background: var(--cui-dark);\n        height: 45px;\n        border-bottom-left-radius: 15px;\n        border-bottom-right-radius: 15px;\n        padding: 0 15px;\n        position: relative;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        color: var(--cui-gray-2);\n        font-weight: bold;\n        font-size: 16px;\n}\n.cui-menu-bar > .menu-item[data-v-155803fa] {\n        display: flex;\n        align-items: center;\n}\n";
+var css_248z$g = "\n.cui-menu-bar[data-v-4289ed8a] {\n        background: var(--cui-dark);\n        height: 45px;\n        border-bottom-left-radius: 15px;\n        border-bottom-right-radius: 15px;\n        padding: 0 15px;\n        position: relative;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        color: var(--cui-gray-2);\n        font-weight: bold;\n        font-size: 16px;\n}\n.cui-menu-bar > .menu-item[data-v-4289ed8a] {\n        display: flex;\n        align-items: center;\n}\n";
 styleInject(css_248z$g);
 
 script$h.render = render$h;
-script$h.__scopeId = "data-v-155803fa";
+script$h.__scopeId = "data-v-4289ed8a";
 
 var script$g = {
   name: 'CuiMenuBarItem',
@@ -261,11 +288,6 @@ var script$g = {
   methods: {
     handelClick() {
       this.$parent.changeValue(this.value);
-      let menuItems = document.querySelectorAll(".cui-menu-bar-item");
-      menuItems.forEach(item => {
-        item.classList.remove('selected');
-      });
-      this.$refs.item.classList.add("selected");
     }
 
   }
@@ -280,7 +302,7 @@ const _hoisted_2$a = /*#__PURE__*/createVNode("div", {
 }, null, -1);
 
 const _hoisted_3$6 = {
-  class: "content"
+  class: "cui-menu-bar-item-content"
 };
 const _hoisted_4$5 = {
   key: 1
@@ -289,14 +311,15 @@ function render$g(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock("span", {
     class: "cui-menu-bar-item",
     onClick: _cache[1] || (_cache[1] = (...args) => $options.handelClick && $options.handelClick(...args)),
-    ref: "item"
+    ref: "item",
+    value: $props.value
   }, [_hoisted_1$b, _hoisted_2$a, createVNode("div", _hoisted_3$6, [$props.icon !== '' ? (openBlock(), createBlock("i", {
     key: 0,
     class: $props.icon
-  }, null, 2)) : createCommentVNode("", true), $props.label !== '' ? (openBlock(), createBlock("span", _hoisted_4$5, toDisplayString($props.label), 1)) : createCommentVNode("", true)])], 512);
+  }, null, 2)) : createCommentVNode("", true), $props.label !== '' ? (openBlock(), createBlock("span", _hoisted_4$5, toDisplayString($props.label), 1)) : createCommentVNode("", true)])], 8, ["value"]);
 }
 
-var css_248z$f = "\n.cui-menu-bar-item {\n        height: 45px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        margin: 0 10px;\n        position: relative;\n        padding: 0 5px\n}\n.cui-menu-bar-item:hover {\n        cursor: pointer;\n        color: white;\n}\n.cui-menu-bar-item > .content {\n        transition: all .2s ease;\n}\n.cui-menu-bar-item:hover > .content {\n        padding-bottom: 5px;\n}\n.cui-menu-bar-item > i:not(:last-child) {\n        margin-right: 5px\n}\n.cui-menu-bar-item.selected {\n        color: white;\n}\n.menu-bar-line {\n        opacity: 0;\n        transition: all .2s;\n        background: white;\n        width: 100%;\n        height: 2px;\n        bottom: 0;\n        position: absolute;\n}\n.cui-menu-bar-item.selected > .menu-bar-line {\n        opacity: 100\n}\n";
+var css_248z$f = "\n.cui-menu-bar-item {\n        height: 45px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        margin: 0 10px;\n        position: relative;\n        padding: 0 5px\n}\n.cui-menu-bar-item:hover {\n        cursor: pointer;\n        color: white;\n}\n.cui-menu-bar-item > .content {\n        transition: all .2s ease;\n}\n.cui-menu-bar-item:hover > .content {\n        padding-bottom: 5px;\n}\n.cui-menu-bar-item > i:not(:last-child) {\n        margin-right: 5px\n}\n.cui-menu-bar-item.selected {\n        color: white;\n}\n.menu-bar-line {\n        opacity: 0;\n        transition: all .2s;\n        background: white;\n        width: 100%;\n        height: 2px;\n        bottom: 0;\n        position: absolute;\n}\n.cui-menu-bar-item.selected > .menu-bar-line {\n        opacity: 100\n}\n.cui-menu-bar-item-content i {\n        margin-right: 5px;\n}\n";
 styleInject(css_248z$f);
 
 script$g.render = render$g;
@@ -465,9 +488,9 @@ var script$d = {
 
 };
 
-const _withId$7 = /*#__PURE__*/withScopeId("data-v-1ffedc6a");
+const _withId$7 = /*#__PURE__*/withScopeId("data-v-23b943a2");
 
-pushScopeId("data-v-1ffedc6a");
+pushScopeId("data-v-23b943a2");
 
 const _hoisted_1$8 = {
   key: 0,
@@ -499,7 +522,8 @@ popScopeId();
 const render$d = /*#__PURE__*/_withId$7((_ctx, _cache, $props, $setup, $data, $options) => {
   return openBlock(), createBlock("div", null, [$props.label ? (openBlock(), createBlock("label", _hoisted_1$8, [createVNode("span", _hoisted_2$8, toDisplayString($props.label), 1), $props.required ? (openBlock(), createBlock("span", _hoisted_3$4, toDisplayString($data.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createVNode("div", _hoisted_4$3, [$props.append ? (openBlock(), createBlock("span", _hoisted_5$2, toDisplayString($props.append), 1)) : createCommentVNode("", true), withDirectives(createVNode("input", {
     class: ["cui-input", {
-      'has-icon': $props.icon
+      'has-icon': $props.icon,
+      disabled: $props.disabled
     }],
     style: {
       width: $props.width
@@ -516,11 +540,11 @@ const render$d = /*#__PURE__*/_withId$7((_ctx, _cache, $props, $setup, $data, $o
   }, null, 2)) : createCommentVNode("", true)]), createVNode("div", _hoisted_6$1, [createVNode("span", null, toDisplayString($data.error), 1)])]);
 });
 
-var css_248z$c = "\n.cui-input-label[data-v-1ffedc6a] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-input[data-v-1ffedc6a] {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease\n}\n.cui-input[data-v-1ffedc6a]:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n        background: var(--cui-gray-1)\n}\n.cui-input-note[data-v-1ffedc6a] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n.cui-input-icon[data-v-1ffedc6a] {\n        position: absolute;\n        left:0;\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        padding: 10px;\n        transition: all .2s ease;\n}\n.has-icon[data-v-1ffedc6a] {\n        text-indent: 28px;\n}\n.cui-input:focus + .cui-input-icon[data-v-1ffedc6a] {\n        margin: -3px;\n        box-shadow: 0 10px 20px -10px var(--cui-dark);\n        background: white;\n}\n.cui-input-append[data-v-1ffedc6a] {\n        position: absolute;\n        right: 0;\n        height: 34px;\n        background: white;\n        border-radius: 12px;\n        line-height: 34px;\n        padding: 0 10px;\n        border: solid 1px var(--cui-gray-1);\n        font-size: 14px\n}\n";
+var css_248z$c = "\n.cui-input-label[data-v-23b943a2] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-input[data-v-23b943a2] {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease\n}\n.cui-input.disabled[data-v-23b943a2] {\n        color: var(--cui-gray-3)\n}\n.cui-input[data-v-23b943a2]:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n        background: var(--cui-gray-1)\n}\n.cui-input-note[data-v-23b943a2] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n.cui-input-icon[data-v-23b943a2] {\n        position: absolute;\n        left:0;\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        padding: 10px;\n        transition: all .2s ease;\n}\n.has-icon[data-v-23b943a2] {\n        text-indent: 28px;\n}\n.cui-input:focus + .cui-input-icon[data-v-23b943a2] {\n        margin: -3px;\n        box-shadow: 0 10px 20px -10px var(--cui-dark);\n        background: white;\n}\n.cui-input-append[data-v-23b943a2] {\n        position: absolute;\n        right: 0;\n        height: 34px;\n        background: white;\n        border-radius: 12px;\n        line-height: 34px;\n        padding: 0 10px;\n        border: solid 1px var(--cui-gray-1);\n        font-size: 14px\n}\n";
 styleInject(css_248z$c);
 
 script$d.render = render$d;
-script$d.__scopeId = "data-v-1ffedc6a";
+script$d.__scopeId = "data-v-23b943a2";
 
 var script$c = {
   name: 'CuiCheckbox',
@@ -6402,6 +6426,14 @@ var script$6 = {
     },
     valueFormat: {
       default: 'YYYY-MM-DD'
+    },
+    required: {
+      default: false,
+      type: Boolean
+    },
+    disabled: {
+      default: false,
+      type: Boolean
     }
   },
   emits: ['update:modelValue'],
@@ -6436,8 +6468,8 @@ const _hoisted_3$2 = {
 function render$6(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_date_picker = resolveComponent("date-picker");
 
-  return openBlock(), createBlock("div", null, [$props.label ? (openBlock(), createBlock("label", _hoisted_1$4, [createVNode("span", _hoisted_2$4, toDisplayString($props.label), 1), _ctx.required ? (openBlock(), createBlock("span", _hoisted_3$2, toDisplayString(_ctx.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createVNode(_component_date_picker, {
-    disabled: _ctx.disabled,
+  return openBlock(), createBlock("div", null, [$props.label ? (openBlock(), createBlock("label", _hoisted_1$4, [createVNode("span", _hoisted_2$4, toDisplayString($props.label), 1), $props.required ? (openBlock(), createBlock("span", _hoisted_3$2, toDisplayString(_ctx.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createVNode(_component_date_picker, {
+    disabled: $props.disabled,
     modelValue: $props.modelValue,
     "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $props.modelValue = $event),
     placeholder: $props.placeholder,
@@ -6934,7 +6966,6 @@ function notification(props) {
   notifApp.mount(div);
   setTimeout(function () {
     notifApp.unmount();
-    console.log(notifApp);
     notifApp = null;
     document.body.removeChild(div);
   }.bind(this), props.duration ? props.duration : 3000);

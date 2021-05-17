@@ -41,11 +41,13 @@ export default {
         justify-content: center;
         margin: 0 10px;
         position: relative;
-        padding: 0 5px
+        padding: 0 5px;
+        transition: all .2s ease
     }
-    .cui-menu-bar-item:hover {
+    .cui-menu-bar-item:not(.selected):hover {
         cursor: pointer;
         color: white;
+        transform: translateY(-3px);
     }
     .cui-menu-bar-item > .content {
         transition: all .2s ease;
