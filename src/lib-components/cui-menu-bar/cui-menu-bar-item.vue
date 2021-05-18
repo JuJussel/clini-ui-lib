@@ -41,7 +41,7 @@ export default {
         justify-content: center;
         margin: 0 10px;
         position: relative;
-        padding: 0 5px;
+        padding: 0;
         transition: all .2s ease
     }
     .cui-menu-bar-item:not(.selected):hover {
