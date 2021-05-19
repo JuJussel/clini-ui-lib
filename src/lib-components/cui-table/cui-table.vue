@@ -160,7 +160,7 @@ export default {
     .cui-table th,
     .cui-table td {
         text-align: left;
-        padding: 3px 5px
+        padding: 10px
     }
     .cui-table tbody tr:not(.no-border) {
         border-bottom: 1px solid var(--cui-gray-2);
