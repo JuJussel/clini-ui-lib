@@ -15,6 +15,7 @@ Example
         prop="name"
         :loading="loading"
         v-model="selectData"
+        color="var(--cui-dark)"
         multiple
         >
     </cui-select>
@@ -39,6 +40,7 @@ Props:
 - placeholder: Empty text
 - prop: key of object to display when selected. Only needed when data is Object
 - loading: Shows loading in dropdown
+- color: Background color while not focused. Text color will cahnge to white.
 
 Emits:
 

@@ -4,7 +4,13 @@
             <span style="margin-right: 10px"> {{ label }} </span>
             <span v-if="required"> {{ trans.required }} </span>
         </label>
-        <div  ref="select" class="cui-select" @click.stop="handleClick" v-bind:class="{focused: focused}">
+        <div
+            ref="select"
+            class="cui-select" 
+            @click.stop="handleClick" 
+            v-bind:class="{focused: focused, 'has-color': color}" 
+            v-bind:style="{background: selectBackground}"
+            >
             <!-- non focused state -->
             <div v-if="!focused">
                 <div class="cui-placeholder" v-if="!value || value.length < 1"> {{ placeholder }} </div>
@@ -116,6 +122,10 @@ export default {
         loading: {
             default: false,
             type: Boolean
+        },
+        color: {
+            default: null,
+            type: String
         }
     },
     emits: ['update:modelValue', 'select', 'input'],
@@ -149,6 +159,14 @@ export default {
                 }
             }
             return value
+        },
+        selectBackground() {
+            if(this.color && !this.focused) {
+                return this.color
+            } else {
+                return null
+            }
+                
         }
     },
     mounted() {
@@ -199,6 +217,8 @@ export default {
                 ) {  
                     this.closeDropdown()
                 }
+            } else if (this.focused) {
+                this.closeDropdown()
             }
         },
         selectItem(item) {
@@ -255,6 +275,11 @@ export default {
         overflow: hidden;
         height: fit-content;
         min-height: 32px
+    }
+    .cui-select:not(.focused).has-color,
+    .cui-select:not(.focused).has-color .cui-placeholder,
+    .cui-select:not(.focused).has-color .cui-select-icon {
+        color: white
     }
     .cui-select.focused {
         border-bottom-right-radius: 0;

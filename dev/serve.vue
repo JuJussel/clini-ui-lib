@@ -103,7 +103,7 @@ export default defineComponent({
             prop="name"
             :loading="loading"
             v-model="selectData"
-            multiple
+            color="var(--cui-dark)"
             search
             >
           </cui-select>
