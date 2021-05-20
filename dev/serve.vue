@@ -12,22 +12,29 @@ export default defineComponent({
       visible: false,
       input: 'Hello',
       tableData: [
-        {name: 'Peter', age: '36', perf: 'Awesome', ok: true, selected: false},
-        {name: 'Paul', age: '22', perf: 'Soso', ok: true, selected: false},
-        {name: 'Eri', age: '34', perf: 'Good', ok: true, selected: false},
-        {name: 'Guy', age: '54', perf: 'Awesome', ok: false, selected: false},
-        {name: 'Kathi', age: '41', perf: 'Ok', ok: false, selected: false}
+        {name: 'Peter', age: '36', perf: 'Awesome', type: 1, selected: false},
+        {name: 'Paul', age: '22', perf: 'Soso', type: 2, selected: false},
+        {name: 'Eri', age: '34', perf: 'Good', type: 2, selected: false},
+        {name: 'Guy', age: '54', perf: 'Awesome', 1: false, selected: false},
+        {name: 'Kathi', age: '41', perf: 'type', 2: false, selected: false}
       ],
       tableData2: [
         'Value1', 'Value2', 'Value3'
       ],
-      selectData: null,
+      selectReturnData: null,
       loading: false,
       check: false,
       check2: false,
       date: '',
-      menu: "reception"
-
+      menu: "reception",
+      selectData : [
+        {"id":"1","name":"診察"},{"id":"2","name":"薬のみ"},{"id":"3","name":"注射のみ"},{"id":"4","name":"検査のみ"}
+      ],
+      selectData2: [
+        'A',
+        'B',
+        'C'
+      ]
     }
   },
   methods: {
@@ -97,12 +104,12 @@ export default defineComponent({
           <cui-checkbox v-model="check" label="Check"></cui-checkbox>
           <cui-checkbox v-model="check2" label="Check2"></cui-checkbox>
 
+          {{ selectReturnData }}
           <cui-select 
             label="Select"
-            :data="tableData"
-            prop="name"
+            :data="selectData2"
             :loading="loading"
-            v-model="selectData"
+            v-model="selectReturnData"
             color="var(--cui-dark)"
             search
             >
@@ -130,8 +137,20 @@ export default defineComponent({
         </template>
         <template v-slot:row="{ row }">
             <td> {{ row.name }} </td>
-            <td> {{ row.age }} </td>
-            <td> {{ row.perf }} </td>
+            <td> {{ row.type }} </td>
+            <td> 
+              <cui-select 
+              label="Select"
+              :data="selectData2"
+              displayValueProp="name"
+              returnValueProp="id"
+              :loading="loading"
+              v-model="row.type"
+              color="var(--cui-dark)"
+              >
+          </cui-select>
+  
+            </td>
             <td> 
               <cui-tag primary>
                 Content

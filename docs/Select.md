@@ -7,6 +7,8 @@ nav_order: 1
 
 # Select
 
+If multiple is true, value MUST be object!
+
 Example
 ```
     <cui-select 
@@ -38,7 +40,8 @@ Props:
 - required: Required text will be displayed
 - data: data for dropdown list. Array
 - placeholder: Empty text
-- prop: key of object to display when selected. Only needed when data is Object
+- displayValueProp: key of object to display when selected. Only needed when data is Object
+- returnValueProp: key to return if Object. If not set, Object will be returned
 - loading: Shows loading in dropdown
 - color: Background color while not focused. Text color will cahnge to white.
 

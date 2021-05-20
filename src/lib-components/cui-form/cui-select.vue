@@ -15,8 +15,8 @@
             <div v-if="!focused">
                 <div class="cui-placeholder" v-if="!value || value.length < 1"> {{ placeholder }} </div>
                 <div v-else-if="multiple" class="cui-select-multiple-cont">
-                    <cui-tag class="cui-select-tag" v-for="(valueItem, index) in modelValue" :key="index"> 
-                        {{ valueItem[prop] }} 
+                    <cui-tag class="cui-select-tag" v-for="(valueItem, index) in value" :key="index"> 
+                        {{ valueItem[displayValueProp] }} 
                         <i class="cui-select-tag-icon fas fa-times-circle" @click.stop="selectItem(valueItem)"></i>
                     </cui-tag>
                 </div>
@@ -36,7 +36,7 @@
                 <div v-else-if="!value" class="cui-placeholder"> {{ placeholder }} </div>
                 <div v-else-if="multiple" class="cui-select-multiple-cont">
                     <cui-tag class="cui-select-tag" v-for="(valueItem, index) in modelValue" :key="index"> 
-                        {{ valueItem[prop] }}
+                        {{ valueItem[displayValueProp] }}
                         <i class="cui-select-tag-icon fas fa-times-circle" @click.stop="selectItem(valueItem)"></i>
                     </cui-tag>
                 </div>
@@ -68,7 +68,7 @@
                     @click.stop="selectItem(item, index)"
                 >
                     <cui-checkbox v-if="multiple" v-model="item.selected" @click.stop=""></cui-checkbox>
-                    <span v-if="dataIsObject"> {{ item[prop] }} </span>
+                    <span v-if="dataIsObject"> {{ item[displayValueProp] }} </span>
                     <span v-else> {{ item }} </span>
                 </div>
             </div>
@@ -116,9 +116,13 @@ export default {
         placeholder: {
             default: '選択'
         },
-        prop: {
+        displayValueProp: {
             default: null
         },
+        returnValueProp: {
+            default: null
+        },
+
         loading: {
             default: false,
             type: Boolean
@@ -149,13 +153,18 @@ export default {
         },
         displayValue() {
             let value = this.modelValue
-            if (this.multiple) {
+            if (this.multiple && this.dataIsObject) {
+                console.log(value);
                 value = value.map(function(item) {
-                    return item.name
+                    console.log(item);
+                    return item[this.displayValueProp]
                 })
             } else {
+                if (this.dataIsObject && this.returnValueProp) {
+                    value = this.data.find(o => o[this.returnValueProp] === value);
+                }
                 if (this.dataIsObject) {
-                    value = value[this.prop]
+                    value = value[this.displayValueProp]
                 }
             }
             return value
@@ -186,7 +195,7 @@ export default {
             let arr = JSON.parse(JSON.stringify(this.data))
             if(this.multiple) {
                 arr.forEach(element => {
-                    element.selected = element.selected? element.selected : false
+                    element.selected = element.selected ? element.selected : false
                 })
             }
             this.dropdownValues = arr
@@ -232,15 +241,28 @@ export default {
             }
         },
         selectItem(item) {
+
+            let returnValue = item
+            let emitValue = returnValue
             if (this.multiple) {
                 item.selected = !item.selected
-                this.value = this.dropdownValues.filter(item => item.selected)
+                returnValue = this.dropdownValues.filter(item => item.selected)
+                emitValue = returnValue
+                if (this.returnValueProp) {
+                    emitValue = emitValue.map(function(item) {
+                        return item[this.returnValueProp]
+                    }.bind(this))
+                }
             } else {
-                this.value = item
                 this.closeDropdown()
             }
-            this.$emit('update:modelValue', this.value)
-            this.$emit('select', this.value)
+            if (this.returnValueProp && !this.multiple) {
+                returnValue = returnValue[this.returnValueProp]
+                emitValue = returnValue
+            }
+            this.value = returnValue
+            this.$emit('update:modelValue', emitValue)
+            this.$emit('select', emitValue)
         },
         searchInput() {
             this.$emit('input', this.searchValue)
