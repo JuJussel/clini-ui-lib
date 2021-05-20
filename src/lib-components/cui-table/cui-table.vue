@@ -148,7 +148,7 @@ export default {
 
 </style>
 
-<style >
+<style>
     .cui-table th:not([scope=row]) {
         position: -webkit-sticky;
         position: sticky;
