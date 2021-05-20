@@ -171,16 +171,26 @@ export default {
     },
     mounted() {
         document.addEventListener('click', this.handleOutsideClick)
-        let arr = JSON.parse(JSON.stringify(this.data))
-        if(this.multiple) {
-            arr.forEach(element => {
-                element.selected = element.selected? element.selected : false
-            })
+        this.setDropdownItems()
+    },
+    watch: {
+        data: {
+            handler(val, oldVal) {
+                this.setDropdownItems()
+            },
+            deep: true
         }
-        this.dropdownValues = arr
-
     },
     methods: {
+        setDropdownItems() {
+            let arr = JSON.parse(JSON.stringify(this.data))
+            if(this.multiple) {
+                arr.forEach(element => {
+                    element.selected = element.selected? element.selected : false
+                })
+            }
+            this.dropdownValues = arr
+        },
         handleClick() {
             this.dropdownWidth = this.$refs.select.clientWidth
             const select = this.$refs.select

@@ -2300,17 +2300,28 @@ var script$b = {
   },
   mounted: function mounted() {
     document.addEventListener('click', this.handleOutsideClick);
-    var arr = JSON.parse(JSON.stringify(this.data));
-
-    if (this.multiple) {
-      arr.forEach(function (element) {
-        element.selected = element.selected ? element.selected : false;
-      });
+    this.setDropdownItems();
+  },
+  watch: {
+    data: {
+      handler: function handler(val, oldVal) {
+        this.setDropdownItems();
+      },
+      deep: true
     }
-
-    this.dropdownValues = arr;
   },
   methods: {
+    setDropdownItems: function setDropdownItems() {
+      var arr = JSON.parse(JSON.stringify(this.data));
+
+      if (this.multiple) {
+        arr.forEach(function (element) {
+          element.selected = element.selected ? element.selected : false;
+        });
+      }
+
+      this.dropdownValues = arr;
+    },
     handleClick: function handleClick() {
       this.dropdownWidth = this.$refs.select.clientWidth;
       var select = this.$refs.select;
@@ -2371,9 +2382,9 @@ var script$b = {
       this.$emit('input', this.searchValue);
     }
   }
-};var _withId$5 = /*#__PURE__*/vue.withScopeId("data-v-42470b16");
+};var _withId$5 = /*#__PURE__*/vue.withScopeId("data-v-5ea652bb");
 
-vue.pushScopeId("data-v-42470b16");
+vue.pushScopeId("data-v-5ea652bb");
 
 var _hoisted_1$6 = {
   class: "cui-select-container"
@@ -2529,10 +2540,10 @@ var render$b = /*#__PURE__*/_withId$5(function (_ctx, _cache, $props, $setup, $d
       onClick: _cache[5] || (_cache[5] = vue.withModifiers(function () {}, ["stop"]))
     }, null, 8, ["modelValue", "onUpdate:modelValue"])) : vue.createCommentVNode("", true), $options.dataIsObject ? (vue.openBlock(), vue.createBlock("span", _hoisted_16, vue.toDisplayString(item[$props.prop]), 1)) : (vue.openBlock(), vue.createBlock("span", _hoisted_17, vue.toDisplayString(item), 1))], 8, ["onClick"]);
   }), 128))])) : (vue.openBlock(), vue.createBlock("div", _hoisted_18, [vue.createVNode("div", _hoisted_19, vue.toDisplayString($data.trans.empty), 1)]))], 6)]);
-});var css_248z$a = "\n@keyframes expand-42470b16{\nfrom{\n            margin-top: -10px;\n            opacity: 0\n}\nto{\n            opacity: 1\n}\n}\n@keyframes retract-42470b16{\nfrom{\n            opacity: 1;\n}\nto{\n            margin-top: -10px;\n            opacity: 0;\n}\n}\n.cui-select-label[data-v-42470b16] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-select[data-v-42470b16] {\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        height: 26px;\n        padding: 2px 10px;\n        transition: all .2s ease;\n        font-size: 13.3333px;\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        overflow: hidden;\n        height: fit-content;\n        min-height: 32px\n}\n.cui-select:not(.focused).has-color[data-v-42470b16],\n    .cui-select:not(.focused).has-color .cui-placeholder[data-v-42470b16],\n    .cui-select:not(.focused).has-color .cui-select-icon[data-v-42470b16] {\n        color: white\n}\n.cui-select.focused[data-v-42470b16] {\n        border-bottom-right-radius: 0;\n        border-bottom-left-radius: 0;\n}\n.cui-select[data-v-42470b16]:hover,\n    .cui-select.focused[data-v-42470b16] {\n        padding-left: 13px;\n        padding-right: 7px;\n        background: white;\n        transform: translate(0px, -4px);\n        box-shadow: 0px 5px 25px -4px var(--cui-gray-4);\n        cursor: pointer\n}\n.cui-select-list[data-v-42470b16] {\n        display: none;\n        background: white;\n        border-bottom-right-radius: 12px;\n        border-bottom-left-radius: 12px;\n        box-shadow:0px 14px 13px 2px var(--cui-gray-4);\n        z-index: 10;\n        width: 240px;\n        overflow: auto;\n        max-height: 200px;\n}\n.cui-select-list.expanded[data-v-42470b16] {\n        display: block;\n        animation: expand-42470b16 .2s ease-out 0s;\n}\n.cui-select-list.retracted[data-v-42470b16] {\n        animation: retract-42470b16 .2s ease-out 0s;\n}\n.cui-select-dropdown-item[data-v-42470b16] {\n        padding: 8px 10px;\n        transition: all .2s ease;\n        display: flex\n}\n.cui-select-dropdown-item[data-v-42470b16]:hover {\n        background: var(--cui-gray-1);\n        cursor: pointer\n}\n.cui-select-input[data-v-42470b16],\n    .cui-select-input[data-v-42470b16]:focus {\n        border: none;\n        outline: none\n}\n.cui-select-empty[data-v-42470b16] {\n        padding: 8px 10px;\n        color: var(--cui-gray-5);\n        font-size: 12px\n}\n.cui-select-icon[data-v-42470b16] {\n        transition: all .2s ease;\n        font-size: 12px;\n        color: var(--cui-gray-5);\n        padding: 5px\n}\n.cui-select-icon.focused[data-v-42470b16] {\n        transform: rotate(180deg)\n}\n.cui-select-multiple-cont[data-v-42470b16] {\n        display: flex;\n        align-items: center;\n        flex-wrap: wrap\n}\n.cui-select-tag-icon[data-v-42470b16] {\n        margin-left: 2px;\n        color: var(--cui-font-color);\n        opacity: 0.6;\n        transition: all .2s ease;\n}\n.cui-select-tag-icon[data-v-42470b16]:hover {\n        opacity: 1;\n}\n\n";
+});var css_248z$a = "\n@keyframes expand-5ea652bb{\nfrom{\n            margin-top: -10px;\n            opacity: 0\n}\nto{\n            opacity: 1\n}\n}\n@keyframes retract-5ea652bb{\nfrom{\n            opacity: 1;\n}\nto{\n            margin-top: -10px;\n            opacity: 0;\n}\n}\n.cui-select-label[data-v-5ea652bb] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-select[data-v-5ea652bb] {\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        height: 26px;\n        padding: 2px 10px;\n        transition: all .2s ease;\n        font-size: 13.3333px;\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        overflow: hidden;\n        height: fit-content;\n        min-height: 32px\n}\n.cui-select:not(.focused).has-color[data-v-5ea652bb],\n    .cui-select:not(.focused).has-color .cui-placeholder[data-v-5ea652bb],\n    .cui-select:not(.focused).has-color .cui-select-icon[data-v-5ea652bb] {\n        color: white\n}\n.cui-select.focused[data-v-5ea652bb] {\n        border-bottom-right-radius: 0;\n        border-bottom-left-radius: 0;\n}\n.cui-select[data-v-5ea652bb]:hover,\n    .cui-select.focused[data-v-5ea652bb] {\n        padding-left: 13px;\n        padding-right: 7px;\n        background: white;\n        transform: translate(0px, -4px);\n        box-shadow: 0px 5px 25px -4px var(--cui-gray-4);\n        cursor: pointer\n}\n.cui-select-list[data-v-5ea652bb] {\n        display: none;\n        background: white;\n        border-bottom-right-radius: 12px;\n        border-bottom-left-radius: 12px;\n        box-shadow:0px 14px 13px 2px var(--cui-gray-4);\n        z-index: 10;\n        width: 240px;\n        overflow: auto;\n        max-height: 200px;\n}\n.cui-select-list.expanded[data-v-5ea652bb] {\n        display: block;\n        animation: expand-5ea652bb .2s ease-out 0s;\n}\n.cui-select-list.retracted[data-v-5ea652bb] {\n        animation: retract-5ea652bb .2s ease-out 0s;\n}\n.cui-select-dropdown-item[data-v-5ea652bb] {\n        padding: 8px 10px;\n        transition: all .2s ease;\n        display: flex\n}\n.cui-select-dropdown-item[data-v-5ea652bb]:hover {\n        background: var(--cui-gray-1);\n        cursor: pointer\n}\n.cui-select-input[data-v-5ea652bb],\n    .cui-select-input[data-v-5ea652bb]:focus {\n        border: none;\n        outline: none\n}\n.cui-select-empty[data-v-5ea652bb] {\n        padding: 8px 10px;\n        color: var(--cui-gray-5);\n        font-size: 12px\n}\n.cui-select-icon[data-v-5ea652bb] {\n        transition: all .2s ease;\n        font-size: 12px;\n        color: var(--cui-gray-5);\n        padding: 5px\n}\n.cui-select-icon.focused[data-v-5ea652bb] {\n        transform: rotate(180deg)\n}\n.cui-select-multiple-cont[data-v-5ea652bb] {\n        display: flex;\n        align-items: center;\n        flex-wrap: wrap\n}\n.cui-select-tag-icon[data-v-5ea652bb] {\n        margin-left: 2px;\n        color: var(--cui-font-color);\n        opacity: 0.6;\n        transition: all .2s ease;\n}\n.cui-select-tag-icon[data-v-5ea652bb]:hover {\n        opacity: 1;\n}\n\n";
 styleInject(css_248z$a);var css_248z$9 = "\n.cui-select-tag {\n        font-size: 12px!important;\n        height: 28px!important;\n        background: var(--cui-gray-3)!important;\n        color: var(--cui-font-color)!important;\n        margin: 2px!important;\n        padding: 0 5px!important\n}\n";
 styleInject(css_248z$9);script$b.render = render$b;
-script$b.__scopeId = "data-v-42470b16";function isDate(value) {
+script$b.__scopeId = "data-v-5ea652bb";function isDate(value) {
   return value instanceof Date || Object.prototype.toString.call(value) === '[object Date]';
 }
 function toDate(value) {
