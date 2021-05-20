@@ -21,14 +21,14 @@ export default defineComponent({
       tableData2: [
         'Value1', 'Value2', 'Value3'
       ],
-      selectReturnData: null,
+      selectReturnData: 3,
       loading: false,
       check: false,
       check2: false,
       date: '',
       menu: "reception",
       selectData : [
-        {"id":"1","name":"診察"},{"id":"2","name":"薬のみ"},{"id":"3","name":"注射のみ"},{"id":"4","name":"検査のみ"}
+        {"id":"01","name":"診察"},{"id":"02","name":"薬のみ"},{"id":"03","name":"注射のみ"},{"id":"04","name":"検査のみ"}
       ],
       selectData2: [
         'A',
@@ -107,7 +107,9 @@ export default defineComponent({
           {{ selectReturnData }}
           <cui-select 
             label="Select"
-            :data="selectData2"
+            :data="selectData"
+            displayValueProp="name"
+            returnValueProp="id"
             :loading="loading"
             v-model="selectReturnData"
             color="var(--cui-dark)"
