@@ -306,7 +306,8 @@ export default {
         justify-content: space-between;
         overflow: hidden;
         height: fit-content;
-        min-height: 32px
+        min-height: 32px;
+        font-weight: normal !important;
     }
     .cui-select:not(.focused).has-color,
     .cui-select:not(.focused).has-color .cui-placeholder,
@@ -347,7 +348,9 @@ export default {
     .cui-select-dropdown-item {
         padding: 8px 10px;
         transition: all .2s ease;
-        display: flex
+        display: flex;
+        font-weight: normal !important;
+        color: var(--cui-font-color)!important
     }
     .cui-select-dropdown-item:hover {
         background: var(--cui-gray-1);
