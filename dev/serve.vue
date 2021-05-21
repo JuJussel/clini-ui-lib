@@ -144,8 +144,6 @@ export default defineComponent({
               <cui-select 
               label="Select"
               :data="selectData2"
-              displayValueProp="name"
-              returnValueProp="id"
               :loading="loading"
               v-model="row.type"
               color="var(--cui-dark)"

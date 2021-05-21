@@ -102,7 +102,7 @@ export default {
     computed: {
         displayData() {
 
-            let data = JSON.parse(JSON.stringify(this.data))
+            let data = this.data // JSON.parse(JSON.stringify(this.data))
             let direction = this.sort.direction
             let prop = this.sort.prop
             if (direction === 'desc') {
