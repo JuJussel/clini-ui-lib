@@ -11,7 +11,6 @@
                 @click="toggleSort"
                 v-if="sort"
                 >
-                <div class="ripple"></div>
                 <i class="cui-th-sort-icon-1 fas fa-chevron-up"></i>
                 <i class="cui-th-sort-icon-2 fas fa-chevron-down"></i>
             </div>

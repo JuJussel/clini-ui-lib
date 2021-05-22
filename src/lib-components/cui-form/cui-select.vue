@@ -154,7 +154,6 @@ export default {
         displayValue() {
             let value = this.modelValue
             if (this.multiple && this.dataIsObject) {
-                console.log(value);
                 value = value.map(function(item) {
                     console.log(item);
                     return item[this.displayValueProp]

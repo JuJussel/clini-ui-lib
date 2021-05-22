@@ -133,9 +133,9 @@ export default defineComponent({
         <template #thead>
           <cui-th sort="name">Name</cui-th>
           <cui-th sort="age">Age</cui-th>
-          <cui-th>Performance</cui-th>
-          <cui-th>Is OK</cui-th>
-          <cui-th></cui-th>
+          <cui-th sort="name">Performance</cui-th>
+          <cui-th sort="name">Is OK</cui-th>
+          <cui-th sort="name"></cui-th>
         </template>
         <template v-slot:row="{ row }">
             <td> {{ row.name }} </td>
@@ -143,7 +143,9 @@ export default defineComponent({
             <td> 
               <cui-select 
               label="Select"
-              :data="selectData2"
+              :data="selectData"
+              displayValueProp="name"
+              returnValueProp="id"
               :loading="loading"
               v-model="row.type"
               color="var(--cui-dark)"
