@@ -131,6 +131,7 @@ export default {
         background: var(--cui-gray-0);
         padding: 10px;
         display: flex;
+        justify-content: space-between;
         align-items: center
     }
     .cui-table table {

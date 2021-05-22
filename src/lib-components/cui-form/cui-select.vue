@@ -180,6 +180,7 @@ export default {
     mounted() {
         document.addEventListener('click', this.handleOutsideClick)
         this.setDropdownItems()
+        this.setInitialValue()
     },
     watch: {
         data: {
@@ -190,6 +191,18 @@ export default {
         }
     },
     methods: {
+        setInitialValue() {
+            if (this.dataIsObject) {
+                const value = this.data.find(
+                    item => item[this.returnValueProp] === this.modelValue
+                )
+                console.log(this.data);
+                console.log(value);
+                this.value = value
+            } else {
+                this.value = this.modelValue
+            }
+        },
         setDropdownItems() {
             let arr = JSON.parse(JSON.stringify(this.data))
             if(this.multiple) {

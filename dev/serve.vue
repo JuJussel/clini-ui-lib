@@ -12,8 +12,8 @@ export default defineComponent({
       visible: false,
       input: 'Hello',
       tableData: [
-        {name: 'Peter', age: '36', perf: 'Awesome', type: 1, selected: false},
-        {name: 'Paul', age: '22', perf: 'Soso', type: 2, selected: false},
+        {name: 'Peter', age: '36', perf: 'Awesome', type: "01", selected: false},
+        {name: 'Paul', age: '22', perf: 'Soso', type: "02", selected: false},
         {name: 'Eri', age: '34', perf: 'Good', type: 2, selected: false},
         {name: 'Guy', age: '54', perf: 'Awesome', 1: false, selected: false},
         {name: 'Kathi', age: '41', perf: 'type', 2: false, selected: false}
@@ -90,6 +90,7 @@ export default defineComponent({
       <cui-card>
         <template v-slot:header>
           <h2>患者一覧</h2>
+          <a>Test</a>
         </template>
         <div>
 
@@ -142,13 +143,13 @@ export default defineComponent({
             <td> {{ row.type }} </td>
             <td> 
               <cui-select 
-              label="Select"
-              :data="selectData"
-              displayValueProp="name"
-              returnValueProp="id"
-              :loading="loading"
-              v-model="row.type"
-              color="var(--cui-dark)"
+                label="Select"
+                :data="selectData"
+                displayValueProp="name"
+                returnValueProp="id"
+                :loading="loading"
+                v-model="row.type"
+                color="var(--cui-dark)"
               >
           </cui-select>
   
