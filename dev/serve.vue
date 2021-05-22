@@ -25,7 +25,7 @@ export default defineComponent({
       loading: false,
       check: false,
       check2: false,
-      date: '',
+      date: {start: '', end: ''},
       menu: "reception",
       selectData : [
         {"id":"01","name":"診察"},{"id":"02","name":"薬のみ"},{"id":"03","name":"注射のみ"},{"id":"04","name":"検査のみ"}
@@ -86,7 +86,7 @@ export default defineComponent({
       <cui-button-group-item label="Button4" value="4"></cui-button-group-item>
     </cui-button-group>
 
-    <div style="height: 400px; width: 300px">
+    <div style="height: 400px; width: 600px">
       <cui-card>
         <template v-slot:header>
           <h2>患者一覧</h2>
@@ -95,6 +95,8 @@ export default defineComponent({
         <div>
 
           <cui-datepicker label="Date" v-model="date"></cui-datepicker>
+
+          <div style="margin-top: 100px"></div>
 
           <cui-input v-model="input" label="名前" required icon="fas fa-sign-out-alt" append="kg"></cui-input>
           <cui-input v-model="input" disabled></cui-input>

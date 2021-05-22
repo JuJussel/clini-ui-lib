@@ -57,7 +57,7 @@ export default {
             default: null
         },
         placeholder: {
-            default: 'yyyyy'
+            default: ''
         }
     },
     emits: ['update:modelValue'],
