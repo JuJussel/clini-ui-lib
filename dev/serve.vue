@@ -23,6 +23,7 @@ export default defineComponent({
       ],
       selectReturnData: 3,
       loading: false,
+      tableLoading: false,
       check: false,
       check2: false,
       date: {start: '', end: ''},
@@ -132,7 +133,7 @@ export default defineComponent({
       </cui-card>
     </div>
     <cui-card style="height: 500px" noPadding>
-      <cui-table :data="tableData" multipleSelect>
+      <cui-table :data="tableData" singleSelect :loading="tableLoading">
         <template #header>
           <h2>The Table</h2>
         </template>

@@ -1,11 +1,10 @@
 <template>
-    <div class="cui-table" v-bind:class="{striped: striped}">
-        <!-- <div class="loader" v-if="loading"></div> -->
+    <div class="cui-table" v-bind:class="{striped: striped, select: singleSelect}">
         <div class="cui-table-header" v-if="$slots.header">
             <slot name="header"></slot>
         </div>
         <div class="cui-table-container">
-            <table>
+            <table v-bind:class="{loading: loading}">
                 <thead>
                     <tr>
                         <th v-if="multipleSelect"></th>
@@ -13,6 +12,19 @@
                     </tr>
                 </thead>
                 <tbody ref="body">
+                    <tr v-if="loading">
+                        <td colspan="999" class="cui-table-loader-td">
+                            <div class="table-loader loader" v-if="loading"></div>
+                        </td>
+                    </tr>
+                    <tr v-if="data.length < 1 && !loading" class="noHover">
+                        <td colspan="900">
+                            <div class="cui-table-empty-content">
+                                <slot name="emptyImage"></slot>
+                                <b>データなし</b>
+                            </div>
+                        </td>
+                    </tr>
                     <cui-tr
                         v-for="(row, index) in displayData"
                         :key="index"
@@ -61,11 +73,14 @@ export default {
         clickable: {
             default: false,
             type: Boolean
+        },
+        loading: {
+            default: false,
+            type: Boolean
         }
     },
     data() {
         return {
-            loading: false,
             trRefs: [],
             sort: {
                 direction: null,
@@ -101,6 +116,10 @@ export default {
     },
     computed: {
         displayData() {
+
+            if(this.loading) {
+                return []
+            }
 
             let data = this.data // JSON.parse(JSON.stringify(this.data))
             let direction = this.sort.direction
@@ -146,10 +165,19 @@ export default {
         overflow: auto;
         flex: 1
     }
-
+    .cui-table-empty-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
+    .cui-table-loader-td {
+        position: relative;
+        height: 100px
+    }
 </style>
 
 <style>
+
     .cui-table th:not([scope=row]) {
         position: -webkit-sticky;
         position: sticky;
@@ -163,11 +191,14 @@ export default {
         text-align: left;
         padding: 10px
     }
-    .cui-table tbody tr:not(.no-border) {
+    .cui-table.select tbody tr {
+        cursor: pointer
+    }
+    .cui-table tbody tr:not(.no-border, .noHover) {
         border-bottom: 1px solid var(--cui-gray-2);
         transition: background .2s ease;
     }
-    .cui-table tbody tr:not(.selected, .expanded):hover {
+    .cui-table tbody tr:not(.selected, .expanded, .noHover):hover {
         background: var(--cui-gray-1)!important;
         font-weight: bold
     }

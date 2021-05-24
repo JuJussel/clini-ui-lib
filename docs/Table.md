@@ -55,6 +55,7 @@ Slots:
 - row: Content of row. Add td here. Use "row" to access data
 - expand: Content of expandable row. Use "expand" to access data
 - footer: Table footer
+- emptyImage: Image for empty state
 
 
 Props:
@@ -62,6 +63,7 @@ Props:
 - singleSelect: Select single row. Emits selected row
 - multipleSelect: Select multiple rows. Emits row selected and all selected rows
 - clickable: Adds clickable class (pointer)
+- loading: Set loading state
 
 Th properties:
 - sort: if set, sort by prop used.

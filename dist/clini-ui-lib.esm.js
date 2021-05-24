@@ -513,7 +513,7 @@ const _hoisted_5$2 = {
   key: 0,
   class: "cui-input-append"
 };
-const _hoisted_6$1 = {
+const _hoisted_6$2 = {
   class: "cui-input-note"
 };
 
@@ -537,7 +537,7 @@ const render$d = /*#__PURE__*/_withId$7((_ctx, _cache, $props, $setup, $data, $o
   }, null, 46, ["type", "disabled", "placeholder"]), [[vModelDynamic, $props.modelValue]]), $props.icon ? (openBlock(), createBlock("span", {
     key: 1,
     class: $props.icon + ' cui-input-icon'
-  }, null, 2)) : createCommentVNode("", true)]), createVNode("div", _hoisted_6$1, [createVNode("span", null, toDisplayString($data.error), 1)])]);
+  }, null, 2)) : createCommentVNode("", true)]), createVNode("div", _hoisted_6$2, [createVNode("span", null, toDisplayString($data.error), 1)])]);
 });
 
 var css_248z$c = "\n.cui-input-label[data-v-64fba41c] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-input[data-v-64fba41c] {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease\n}\n.cui-input.disabled[data-v-64fba41c] {\n        color: var(--cui-gray-3)\n}\n.cui-input[data-v-64fba41c]:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n        background: var(--cui-gray-1)\n}\n.cui-input-note[data-v-64fba41c] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n.cui-input-icon[data-v-64fba41c] {\n        position: absolute;\n        left:0;\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        padding: 10px;\n        transition: all .2s ease;\n}\n.has-icon[data-v-64fba41c] {\n        text-indent: 28px;\n}\n.cui-input:focus + .cui-input-icon[data-v-64fba41c] {\n        margin: -3px;\n        box-shadow: 0 10px 20px -10px var(--cui-dark);\n        background: white;\n}\n.cui-input-append[data-v-64fba41c] {\n        position: absolute;\n        right: 0;\n        height: 34px;\n        background: white;\n        border-radius: 12px;\n        line-height: 34px;\n        padding: 0 10px;\n        border: solid 1px var(--cui-gray-1);\n        font-size: 14px\n}\n";
@@ -2567,28 +2567,28 @@ const _hoisted_4$1 = {
 const _hoisted_5$1 = {
   key: 0
 };
-const _hoisted_6 = {
+const _hoisted_6$1 = {
   key: 0,
   class: "cui-placeholder"
 };
-const _hoisted_7 = {
+const _hoisted_7$1 = {
   key: 1,
   class: "cui-select-multiple-cont"
 };
-const _hoisted_8 = {
+const _hoisted_8$1 = {
   key: 2
 };
-const _hoisted_9 = {
+const _hoisted_9$1 = {
   key: 1
 };
-const _hoisted_10 = {
+const _hoisted_10$1 = {
   key: 0
 };
-const _hoisted_11 = {
+const _hoisted_11$1 = {
   key: 1,
   class: "cui-placeholder"
 };
-const _hoisted_12 = {
+const _hoisted_12$1 = {
   key: 2,
   class: "cui-select-multiple-cont"
 };
@@ -2638,7 +2638,7 @@ const render$b = /*#__PURE__*/_withId$5((_ctx, _cache, $props, $setup, $data, $o
     style: {
       background: $options.selectBackground
     }
-  }, [!$data.focused ? (openBlock(), createBlock("div", _hoisted_5$1, [!$data.value || $data.value.length < 1 ? (openBlock(), createBlock("div", _hoisted_6, toDisplayString($props.placeholder), 1)) : $props.multiple ? (openBlock(), createBlock("div", _hoisted_7, [(openBlock(true), createBlock(Fragment, null, renderList($data.value, (valueItem, index) => {
+  }, [!$data.focused ? (openBlock(), createBlock("div", _hoisted_5$1, [!$data.value || $data.value.length < 1 ? (openBlock(), createBlock("div", _hoisted_6$1, toDisplayString($props.placeholder), 1)) : $props.multiple ? (openBlock(), createBlock("div", _hoisted_7$1, [(openBlock(true), createBlock(Fragment, null, renderList($data.value, (valueItem, index) => {
     return openBlock(), createBlock(_component_cui_tag, {
       class: "cui-select-tag",
       key: index
@@ -2649,14 +2649,14 @@ const render$b = /*#__PURE__*/_withId$5((_ctx, _cache, $props, $setup, $data, $o
       }, null, 8, ["onClick"])]),
       _: 2
     }, 1024);
-  }), 128))])) : (openBlock(), createBlock("div", _hoisted_8, toDisplayString($options.displayValue), 1))])) : (openBlock(), createBlock("div", _hoisted_9, [$props.search && !$props.multiple ? (openBlock(), createBlock("div", _hoisted_10, [withDirectives(createVNode("input", {
+  }), 128))])) : (openBlock(), createBlock("div", _hoisted_8$1, toDisplayString($options.displayValue), 1))])) : (openBlock(), createBlock("div", _hoisted_9$1, [$props.search && !$props.multiple ? (openBlock(), createBlock("div", _hoisted_10$1, [withDirectives(createVNode("input", {
     ref: "input",
     class: "cui-select-input",
     "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $data.searchValue = $event),
     onClick: _cache[2] || (_cache[2] = withModifiers(() => {}, ["stop"])),
     onInput: _cache[3] || (_cache[3] = (...args) => $options.searchInput && $options.searchInput(...args)),
     plcaeholder: $props.placeholder
-  }, null, 40, ["plcaeholder"]), [[vModelText, $data.searchValue]])])) : !$data.value ? (openBlock(), createBlock("div", _hoisted_11, toDisplayString($props.placeholder), 1)) : $props.multiple ? (openBlock(), createBlock("div", _hoisted_12, [(openBlock(true), createBlock(Fragment, null, renderList($props.modelValue, (valueItem, index) => {
+  }, null, 40, ["plcaeholder"]), [[vModelText, $data.searchValue]])])) : !$data.value ? (openBlock(), createBlock("div", _hoisted_11$1, toDisplayString($props.placeholder), 1)) : $props.multiple ? (openBlock(), createBlock("div", _hoisted_12$1, [(openBlock(true), createBlock(Fragment, null, renderList($props.modelValue, (valueItem, index) => {
     return openBlock(), createBlock(_component_cui_tag, {
       class: "cui-select-tag",
       key: index
@@ -6679,12 +6679,15 @@ var script$5 = {
     clickable: {
       default: false,
       type: Boolean
+    },
+    loading: {
+      default: false,
+      type: Boolean
     }
   },
 
   data() {
     return {
-      loading: false,
       trRefs: [],
       sort: {
         direction: null,
@@ -6733,6 +6736,10 @@ var script$5 = {
   },
   computed: {
     displayData() {
+      if (this.loading) {
+        return [];
+      }
+
       let data = this.data; // JSON.parse(JSON.stringify(this.data))
 
       let direction = this.sort.direction;
@@ -6750,9 +6757,9 @@ var script$5 = {
   }
 };
 
-const _withId$4 = /*#__PURE__*/withScopeId("data-v-3fcc9fdf");
+const _withId$4 = /*#__PURE__*/withScopeId("data-v-6d32abec");
 
-pushScopeId("data-v-3fcc9fdf");
+pushScopeId("data-v-6d32abec");
 
 const _hoisted_1$3 = {
   key: 0,
@@ -6768,6 +6775,30 @@ const _hoisted_4 = {
   ref: "body"
 };
 const _hoisted_5 = {
+  key: 0
+};
+const _hoisted_6 = {
+  colspan: "999",
+  class: "cui-table-loader-td"
+};
+const _hoisted_7 = {
+  key: 0,
+  class: "table-loader loader"
+};
+const _hoisted_8 = {
+  key: 1,
+  class: "noHover"
+};
+const _hoisted_9 = {
+  colspan: "900"
+};
+const _hoisted_10 = {
+  class: "cui-table-empty-content"
+};
+
+const _hoisted_11 = /*#__PURE__*/createVNode("b", null, "データなし", -1);
+
+const _hoisted_12 = {
   key: 1,
   class: "cui-table-footer"
 };
@@ -6779,9 +6810,14 @@ const render$5 = /*#__PURE__*/_withId$4((_ctx, _cache, $props, $setup, $data, $o
 
   return openBlock(), createBlock("div", {
     class: ["cui-table", {
-      striped: $props.striped
+      striped: $props.striped,
+      select: $props.singleSelect
     }]
-  }, [_ctx.$slots.header ? (openBlock(), createBlock("div", _hoisted_1$3, [renderSlot(_ctx.$slots, "header")])) : createCommentVNode("", true), createVNode("div", _hoisted_2$3, [createVNode("table", null, [createVNode("thead", null, [createVNode("tr", null, [$props.multipleSelect ? (openBlock(), createBlock("th", _hoisted_3$1)) : createCommentVNode("", true), renderSlot(_ctx.$slots, "thead")])]), createVNode("tbody", _hoisted_4, [(openBlock(true), createBlock(Fragment, null, renderList($options.displayData, (row, index) => {
+  }, [_ctx.$slots.header ? (openBlock(), createBlock("div", _hoisted_1$3, [renderSlot(_ctx.$slots, "header")])) : createCommentVNode("", true), createVNode("div", _hoisted_2$3, [createVNode("table", {
+    class: {
+      loading: $props.loading
+    }
+  }, [createVNode("thead", null, [createVNode("tr", null, [$props.multipleSelect ? (openBlock(), createBlock("th", _hoisted_3$1)) : createCommentVNode("", true), renderSlot(_ctx.$slots, "thead")])]), createVNode("tbody", _hoisted_4, [$props.loading ? (openBlock(), createBlock("tr", _hoisted_5, [createVNode("td", _hoisted_6, [$props.loading ? (openBlock(), createBlock("div", _hoisted_7)) : createCommentVNode("", true)])])) : createCommentVNode("", true), $props.data.length < 1 && !$props.loading ? (openBlock(), createBlock("tr", _hoisted_8, [createVNode("td", _hoisted_9, [createVNode("div", _hoisted_10, [renderSlot(_ctx.$slots, "emptyImage"), _hoisted_11])])])) : createCommentVNode("", true), (openBlock(true), createBlock(Fragment, null, renderList($options.displayData, (row, index) => {
     return openBlock(), createBlock(_component_cui_tr, {
       key: index,
       rowData: row,
@@ -6800,17 +6836,17 @@ const render$5 = /*#__PURE__*/_withId$4((_ctx, _cache, $props, $setup, $data, $o
         expand: row
       })])
     } : undefined]), 1032, ["rowData", "onClick", "multipleSelect", "clickable"]);
-  }), 128))], 512)])]), _ctx.$slots.footer ? (openBlock(), createBlock("div", _hoisted_5, [renderSlot(_ctx.$slots, "footer")])) : createCommentVNode("", true)], 2);
+  }), 128))], 512)], 2)]), _ctx.$slots.footer ? (openBlock(), createBlock("div", _hoisted_12, [renderSlot(_ctx.$slots, "footer")])) : createCommentVNode("", true)], 2);
 });
 
-var css_248z$6 = "\n.cui-table[data-v-3fcc9fdf] {\n        border-radius: 20px;\n        overflow: hidden;\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n}\n.cui-table-header[data-v-3fcc9fdf], \n    .cui-table-footer[data-v-3fcc9fdf] {\n        background: var(--cui-gray-0);\n        padding: 10px;\n        display: flex;\n        justify-content: space-between;\n        align-items: center\n}\n.cui-table table[data-v-3fcc9fdf] {\n        border-collapse: collapse;\n        width: 100%;\n}\n.cui-table thead tr[data-v-3fcc9fdf] {\n        background: var(--cui-gray-0);\n}\n.cui-table-container[data-v-3fcc9fdf] {\n        overflow: auto;\n        flex: 1\n}\n\n";
+var css_248z$6 = "\n.cui-table[data-v-6d32abec] {\n        border-radius: 20px;\n        overflow: hidden;\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n}\n.cui-table-header[data-v-6d32abec], \n    .cui-table-footer[data-v-6d32abec] {\n        background: var(--cui-gray-0);\n        padding: 10px;\n        display: flex;\n        justify-content: space-between;\n        align-items: center\n}\n.cui-table table[data-v-6d32abec] {\n        border-collapse: collapse;\n        width: 100%;\n}\n.cui-table thead tr[data-v-6d32abec] {\n        background: var(--cui-gray-0);\n}\n.cui-table-container[data-v-6d32abec] {\n        overflow: auto;\n        flex: 1\n}\n.cui-table-empty-content[data-v-6d32abec] {\n        display: flex;\n        flex-direction: column;\n        align-items: center\n}\n.cui-table-loader-td[data-v-6d32abec] {\n        position: relative;\n        height: 100px\n}\n";
 styleInject(css_248z$6);
 
-var css_248z$5 = "\n.cui-table th:not([scope=row]) {\n        position: -webkit-sticky;\n        position: sticky;\n        top: 0;\n        z-index: 2;\n        background: var(--cui-gray-0);\n        box-shadow: 0 2px 4px -2px rgb(0 0 0 / 15%)\n}\n.cui-table th,\n    .cui-table td {\n        text-align: left;\n        padding: 10px\n}\n.cui-table tbody tr:not(.no-border) {\n        border-bottom: 1px solid var(--cui-gray-2);\n        transition: background .2s ease;\n}\n.cui-table tbody tr:not(.selected, .expanded):hover {\n        background: var(--cui-gray-1)!important;\n        font-weight: bold\n}\n.cui-table.striped tbody tr:nth-of-type(even) {\n        background-color: var(--cui-gray-0);\n}\n.cui-table tbody tr:last-of-type {\n        border-bottom: 2px solid var(--cui-gray-2);\n}\n";
+var css_248z$5 = "\n.cui-table th:not([scope=row]) {\n        position: -webkit-sticky;\n        position: sticky;\n        top: 0;\n        z-index: 2;\n        background: var(--cui-gray-0);\n        box-shadow: 0 2px 4px -2px rgb(0 0 0 / 15%)\n}\n.cui-table th,\n    .cui-table td {\n        text-align: left;\n        padding: 10px\n}\n.cui-table.select tbody tr {\n        cursor: pointer\n}\n.cui-table tbody tr:not(.no-border, .noHover) {\n        border-bottom: 1px solid var(--cui-gray-2);\n        transition: background .2s ease;\n}\n.cui-table tbody tr:not(.selected, .expanded, .noHover):hover {\n        background: var(--cui-gray-1)!important;\n        font-weight: bold\n}\n.cui-table.striped tbody tr:nth-of-type(even) {\n        background-color: var(--cui-gray-0);\n}\n.cui-table tbody tr:last-of-type {\n        border-bottom: 2px solid var(--cui-gray-2);\n}\n";
 styleInject(css_248z$5);
 
 script$5.render = render$5;
-script$5.__scopeId = "data-v-3fcc9fdf";
+script$5.__scopeId = "data-v-6d32abec";
 
 var script$4 = {
   name: 'CuiTh',
