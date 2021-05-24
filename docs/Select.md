@@ -30,6 +30,18 @@ Example
         {name: 'Kathi', age: '41', perf: 'Ok', ok: false, selected: false}
     ],
 
+Slots:
+- dropdownItem: Dorpdown item content. nod needed.
+```
+    <template v-slot:dropdownItem="{ item }">
+        <span style="margin-right: 40px">{ item.id }</span>
+        <span>{ item.name }</span>
+    </template>
+
+```
+
+
+
 
 ```
 Props:

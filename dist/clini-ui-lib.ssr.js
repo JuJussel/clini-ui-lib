@@ -2258,6 +2258,10 @@ var script$b = {
     color: {
       default: null,
       type: String
+    },
+    error: {
+      default: '',
+      type: String
     }
   },
   emits: ['update:modelValue', 'select', 'input'],
@@ -2424,9 +2428,9 @@ var script$b = {
       this.$emit('input', this.searchValue);
     }
   }
-};var _withId$5 = /*#__PURE__*/vue.withScopeId("data-v-42335680");
+};var _withId$5 = /*#__PURE__*/vue.withScopeId("data-v-f04399c4");
 
-vue.pushScopeId("data-v-42335680");
+vue.pushScopeId("data-v-f04399c4");
 
 var _hoisted_1$6 = {
   class: "cui-select-container"
@@ -2485,13 +2489,19 @@ var _hoisted_16 = {
   key: 1
 };
 var _hoisted_17 = {
-  key: 2
+  key: 0
 };
 var _hoisted_18 = {
-  key: 2
+  key: 1
 };
 var _hoisted_19 = {
+  key: 2
+};
+var _hoisted_20 = {
   class: "cui-select-empty"
+};
+var _hoisted_21 = {
+  class: "cui-select-note"
 };
 
 vue.popScopeId();
@@ -2537,8 +2547,9 @@ var render$b = /*#__PURE__*/_withId$5(function (_ctx, _cache, $props, $setup, $d
     onClick: _cache[2] || (_cache[2] = vue.withModifiers(function () {}, ["stop"])),
     onInput: _cache[3] || (_cache[3] = function () {
       return $options.searchInput && $options.searchInput.apply($options, arguments);
-    })
-  }, null, 544), [[vue.vModelText, $data.searchValue]])])) : !$data.value ? (vue.openBlock(), vue.createBlock("div", _hoisted_11, vue.toDisplayString($props.placeholder), 1)) : $props.multiple ? (vue.openBlock(), vue.createBlock("div", _hoisted_12, [(vue.openBlock(true), vue.createBlock(vue.Fragment, null, vue.renderList($props.modelValue, function (valueItem, index) {
+    }),
+    plcaeholder: $props.placeholder
+  }, null, 40, ["plcaeholder"]), [[vue.vModelText, $data.searchValue]])])) : !$data.value ? (vue.openBlock(), vue.createBlock("div", _hoisted_11, vue.toDisplayString($props.placeholder), 1)) : $props.multiple ? (vue.openBlock(), vue.createBlock("div", _hoisted_12, [(vue.openBlock(true), vue.createBlock(vue.Fragment, null, vue.renderList($props.modelValue, function (valueItem, index) {
     return vue.openBlock(), vue.createBlock(_component_cui_tag, {
       class: "cui-select-tag",
       key: index
@@ -2580,12 +2591,14 @@ var render$b = /*#__PURE__*/_withId$5(function (_ctx, _cache, $props, $setup, $d
         return item.selected = $event;
       },
       onClick: _cache[5] || (_cache[5] = vue.withModifiers(function () {}, ["stop"]))
-    }, null, 8, ["modelValue", "onUpdate:modelValue"])) : vue.createCommentVNode("", true), $options.dataIsObject ? (vue.openBlock(), vue.createBlock("span", _hoisted_16, vue.toDisplayString(item[$props.displayValueProp]), 1)) : (vue.openBlock(), vue.createBlock("span", _hoisted_17, vue.toDisplayString(item), 1))], 8, ["onClick"]);
-  }), 128))])) : (vue.openBlock(), vue.createBlock("div", _hoisted_18, [vue.createVNode("div", _hoisted_19, vue.toDisplayString($data.trans.empty), 1)]))], 6)]);
-});var css_248z$a = "\n@keyframes expand-42335680{\nfrom{\n            margin-top: -10px;\n            opacity: 0\n}\nto{\n            opacity: 1\n}\n}\n@keyframes retract-42335680{\nfrom{\n            opacity: 1;\n}\nto{\n            margin-top: -10px;\n            opacity: 0;\n}\n}\n.cui-select-label[data-v-42335680] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-select[data-v-42335680] {\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        height: 26px;\n        padding: 2px 10px;\n        transition: all .2s ease;\n        font-size: 13.3333px;\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        overflow: hidden;\n        height: fit-content;\n        min-height: 32px;\n        font-weight: normal !important;\n}\n.cui-select:not(.focused).has-color[data-v-42335680],\n    .cui-select:not(.focused).has-color .cui-placeholder[data-v-42335680],\n    .cui-select:not(.focused).has-color .cui-select-icon[data-v-42335680] {\n        color: white\n}\n.cui-select.focused[data-v-42335680] {\n        border-bottom-right-radius: 0;\n        border-bottom-left-radius: 0;\n}\n.cui-select[data-v-42335680]:hover,\n    .cui-select.focused[data-v-42335680] {\n        padding-left: 13px;\n        padding-right: 7px;\n        background: white;\n        transform: translate(0px, -4px);\n        box-shadow: 0px 5px 25px -4px var(--cui-gray-4);\n        cursor: pointer\n}\n.cui-select-list[data-v-42335680] {\n        display: none;\n        background: white;\n        border-bottom-right-radius: 12px;\n        border-bottom-left-radius: 12px;\n        box-shadow:0px 14px 13px 2px var(--cui-gray-4);\n        z-index: 10;\n        width: 240px;\n        overflow: auto;\n        max-height: 200px;\n}\n.cui-select-list.expanded[data-v-42335680] {\n        display: block;\n        animation: expand-42335680 .2s ease-out 0s;\n}\n.cui-select-list.retracted[data-v-42335680] {\n        animation: retract-42335680 .2s ease-out 0s;\n}\n.cui-select-dropdown-item[data-v-42335680] {\n        padding: 8px 10px;\n        transition: all .2s ease;\n        display: flex;\n        font-weight: normal !important;\n        color: var(--cui-font-color)!important\n}\n.cui-select-dropdown-item[data-v-42335680]:hover {\n        background: var(--cui-gray-1);\n        cursor: pointer\n}\n.cui-select-input[data-v-42335680],\n    .cui-select-input[data-v-42335680]:focus {\n        border: none;\n        outline: none\n}\n.cui-select-empty[data-v-42335680] {\n        padding: 8px 10px;\n        color: var(--cui-gray-5);\n        font-size: 12px\n}\n.cui-select-icon[data-v-42335680] {\n        transition: all .2s ease;\n        font-size: 12px;\n        color: var(--cui-gray-5);\n        padding: 5px\n}\n.cui-select-icon.focused[data-v-42335680] {\n        transform: rotate(180deg)\n}\n.cui-select-multiple-cont[data-v-42335680] {\n        display: flex;\n        align-items: center;\n        flex-wrap: wrap\n}\n.cui-select-tag-icon[data-v-42335680] {\n        margin-left: 2px;\n        color: var(--cui-font-color);\n        opacity: 0.6;\n        transition: all .2s ease;\n}\n.cui-select-tag-icon[data-v-42335680]:hover {\n        opacity: 1;\n}\n\n";
+    }, null, 8, ["modelValue", "onUpdate:modelValue"])) : vue.createCommentVNode("", true), !_ctx.$slots.dropdownItem ? (vue.openBlock(), vue.createBlock("span", _hoisted_16, [$options.dataIsObject ? (vue.openBlock(), vue.createBlock("span", _hoisted_17, vue.toDisplayString(item[$props.displayValueProp]), 1)) : (vue.openBlock(), vue.createBlock("span", _hoisted_18, vue.toDisplayString(item), 1))])) : vue.createCommentVNode("", true), vue.renderSlot(_ctx.$slots, "dropdownItem", {
+      item: item
+    })], 8, ["onClick"]);
+  }), 128))])) : (vue.openBlock(), vue.createBlock("div", _hoisted_19, [vue.createVNode("div", _hoisted_20, vue.toDisplayString($data.trans.empty), 1)]))], 6), vue.createVNode("div", _hoisted_21, [vue.createVNode("span", null, vue.toDisplayString($props.error), 1)])]);
+});var css_248z$a = "\n@keyframes expand-f04399c4{\nfrom{\n            margin-top: -10px;\n            opacity: 0\n}\nto{\n            opacity: 1\n}\n}\n@keyframes retract-f04399c4{\nfrom{\n            opacity: 1;\n}\nto{\n            margin-top: -10px;\n            opacity: 0;\n}\n}\n.cui-select-label[data-v-f04399c4] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-select[data-v-f04399c4] {\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        height: 26px;\n        padding: 2px 10px;\n        transition: all .2s ease;\n        font-size: 13.3333px;\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        overflow: hidden;\n        height: fit-content;\n        min-height: 32px;\n        font-weight: normal !important;\n}\n.cui-select:not(.focused).has-color[data-v-f04399c4],\n    .cui-select:not(.focused).has-color .cui-placeholder[data-v-f04399c4],\n    .cui-select:not(.focused).has-color .cui-select-icon[data-v-f04399c4] {\n        color: white\n}\n.cui-select.focused[data-v-f04399c4] {\n        border-bottom-right-radius: 0;\n        border-bottom-left-radius: 0;\n}\n.cui-select[data-v-f04399c4]:hover,\n    .cui-select.focused[data-v-f04399c4] {\n        padding-left: 13px;\n        padding-right: 7px;\n        background: white;\n        transform: translate(0px, -4px);\n        box-shadow: 0px 5px 25px -4px var(--cui-gray-4);\n        cursor: pointer\n}\n.cui-select-list[data-v-f04399c4] {\n        display: none;\n        background: white;\n        border-bottom-right-radius: 12px;\n        border-bottom-left-radius: 12px;\n        box-shadow:0px 14px 13px 2px var(--cui-gray-4);\n        z-index: 10;\n        width: 240px;\n        overflow: auto;\n        max-height: 200px;\n}\n.cui-select-list.expanded[data-v-f04399c4] {\n        display: block;\n        animation: expand-f04399c4 .2s ease-out 0s;\n}\n.cui-select-list.retracted[data-v-f04399c4] {\n        animation: retract-f04399c4 .2s ease-out 0s;\n}\n.cui-select-dropdown-item[data-v-f04399c4] {\n        padding: 8px 10px;\n        transition: all .2s ease;\n        display: flex;\n        font-weight: normal !important;\n        color: var(--cui-font-color)!important\n}\n.cui-select-dropdown-item[data-v-f04399c4]:hover {\n        background: var(--cui-gray-1);\n        cursor: pointer\n}\n.cui-select-input[data-v-f04399c4],\n    .cui-select-input[data-v-f04399c4]:focus {\n        border: none;\n        outline: none\n}\n.cui-select-empty[data-v-f04399c4] {\n        padding: 8px 10px;\n        color: var(--cui-gray-5);\n        font-size: 12px\n}\n.cui-select-icon[data-v-f04399c4] {\n        transition: all .2s ease;\n        font-size: 12px;\n        color: var(--cui-gray-5);\n        padding: 5px\n}\n.cui-select-icon.focused[data-v-f04399c4] {\n        transform: rotate(180deg)\n}\n.cui-select-multiple-cont[data-v-f04399c4] {\n        display: flex;\n        align-items: center;\n        flex-wrap: wrap\n}\n.cui-select-tag-icon[data-v-f04399c4] {\n        margin-left: 2px;\n        color: var(--cui-font-color);\n        opacity: 0.6;\n        transition: all .2s ease;\n}\n.cui-select-tag-icon[data-v-f04399c4]:hover {\n        opacity: 1;\n}\n.cui-select-note[data-v-f04399c4] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n\n";
 styleInject(css_248z$a);var css_248z$9 = "\n.cui-select-tag {\n        font-size: 12px!important;\n        height: 28px!important;\n        background: var(--cui-gray-3)!important;\n        color: var(--cui-font-color)!important;\n        margin: 2px!important;\n        padding: 0 5px!important\n}\n";
 styleInject(css_248z$9);script$b.render = render$b;
-script$b.__scopeId = "data-v-42335680";function isDate(value) {
+script$b.__scopeId = "data-v-f04399c4";function isDate(value) {
   return value instanceof Date || Object.prototype.toString.call(value) === '[object Date]';
 }
 function toDate(value) {

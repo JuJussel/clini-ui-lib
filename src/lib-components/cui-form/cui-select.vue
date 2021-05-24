@@ -31,6 +31,7 @@
                         v-model="searchValue"
                         @click.stop=""
                         @input="searchInput"
+                        :plcaeholder="placeholder"
                     >
                 </div>
                 <div v-else-if="!value" class="cui-placeholder"> {{ placeholder }} </div>
@@ -68,8 +69,11 @@
                     @click.stop="selectItem(item, index)"
                 >
                     <cui-checkbox v-if="multiple" v-model="item.selected" @click.stop=""></cui-checkbox>
-                    <span v-if="dataIsObject"> {{ item[displayValueProp] }} </span>
-                    <span v-else> {{ item }} </span>
+                    <span v-if="!$slots.dropdownItem">
+                        <span v-if="dataIsObject"> {{ item[displayValueProp] }} </span>
+                        <span v-else> {{ item }} </span>
+                    </span>
+                    <slot name="dropdownItem" :item="item"></slot>
                 </div>
             </div>
             <div v-else>
@@ -77,6 +81,9 @@
                     {{ trans.empty }}
                 </div>
             </div>
+        </div>
+        <div class="cui-select-note">
+            <span> {{ error }} </span>
         </div>
     </div>
 </template>
@@ -129,6 +136,10 @@ export default {
         },
         color: {
             default: null,
+            type: String
+        },
+        error: {
+            default: '',
             type: String
         }
     },
@@ -400,6 +411,13 @@ export default {
     }
     .cui-select-tag-icon:hover {
         opacity: 1;
+    }
+    .cui-select-note {
+        font-size: 12px;
+        margin-left: 10px;
+        color: var(--cui-danger);
+        height: 15px;
+        line-height: 12px;
     }
 
 </style>

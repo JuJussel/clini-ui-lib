@@ -118,6 +118,9 @@ export default defineComponent({
             color="var(--cui-dark)"
             search
             >
+            <template v-slot:dropdownItem="{ item }">
+              <span>{{ item.name }}</span>
+            </template>
           </cui-select>
 
 
