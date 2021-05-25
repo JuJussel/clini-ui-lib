@@ -6460,6 +6460,10 @@ function createCommonjsModule(fn) {
     placeholder: {
       default: '選択'
     },
+    range: {
+      default: false,
+      type: Boolean
+    },
     format: {
       default: 'YYYY年MM月DD日'
     },
@@ -6473,6 +6477,14 @@ function createCommonjsModule(fn) {
     disabled: {
       default: false,
       type: Boolean
+    },
+    timePickerOptions: {
+      default: {},
+      Type: Object
+    },
+    type: {
+      default: null,
+      type: String
     }
   },
   emits: ['update:modelValue'],
@@ -6510,13 +6522,15 @@ function render$6(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     placeholder: $props.placeholder,
     format: $props.format,
-    range: "",
+    type: $props.type,
+    "time-picker-options": $props.timePickerOptions,
+    range: $props.range,
     onInput: $options.changeValue,
     "value-type": $props.valueFormat,
     "input-class": "cui-datepicker-input",
     "popup-class": "cui-datepicker-popup",
     class: "cui-datepicker"
-  }, null, 8, ["disabled", "modelValue", "placeholder", "format", "onInput", "value-type"])]);
+  }, null, 8, ["disabled", "modelValue", "placeholder", "format", "type", "time-picker-options", "range", "onInput", "value-type"])]);
 }var css_248z$7 = "\n.cui-datepicker-label {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-datepicker {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease;\n        width: calc(100% - 20px);\n}\n.cui-datepicker-input {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 0;\n        transition: all .2s ease\n}\n.cui-datepicker-input:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n}\n.cui-datepicker-popup {\n            border-radius: 12px;\n            color: var(--cui-font-color)\n}\n.cui-datepicker-popup .cell {\n        transition: all .2s ease\n}\n.cui-datepicker-popup .cell.today {\n        color: var(--cui-primary);\n}\n.cui-datepicker-popup .cell.active,\n    .cui-datepicker-popup .cell.in-range,\n    .cui-datepicker-popup .cell:hover {\n        background: var(--cui-primary);\n        color: white;\n}\n\n\n";
 styleInject(css_248z$7);script$6.render = render$6;var script$5 = {
   name: 'CuiTable',

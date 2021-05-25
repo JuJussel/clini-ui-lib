@@ -9,7 +9,9 @@
             v-model="modelValue"
             :placeholder="placeholder"
             :format="format"
-            range
+            :type="type"
+            :time-picker-options = "timePickerOptions"
+            :range="range"
             @input="changeValue"
             :value-type="valueFormat"
             input-class="cui-datepicker-input"
@@ -38,6 +40,10 @@ export default {
         placeholder: {
             default: '選択'
         },
+        range: {
+            default: false,
+            type: Boolean
+        },
         format: {
             default: 'YYYY年MM月DD日'
         },
@@ -51,6 +57,14 @@ export default {
         disabled: {
             default: false,
             type: Boolean
+        },
+        timePickerOptions: {
+            default: {},
+            Type: Object
+        },
+        type: {
+            default: null,
+            type: String
         }
     },
     emits: ['update:modelValue'],

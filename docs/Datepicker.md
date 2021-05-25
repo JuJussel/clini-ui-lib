@@ -18,6 +18,7 @@ Props:
 - format: Date display format
 - valueFormat: Date value format
 - label: Select label
+- range: Select Data range. Returns array
 
 Emits:
 
