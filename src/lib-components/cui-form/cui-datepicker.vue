@@ -18,6 +18,10 @@
             popup-class="cui-datepicker-popup"
             class="cui-datepicker"
          ></date-picker>
+        <div class="cui-datepicker-note">
+            <span> {{ error }} </span>
+        </div>
+
     </div>
 </template>
 
@@ -63,7 +67,11 @@ export default {
             Type: Object
         },
         type: {
-            default: null,
+            default: 'date',
+            type: String
+        },
+        error: {
+            default: '',
             type: String
         }
     },
@@ -81,6 +89,16 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .cui-datepicker-note {
+        font-size: 12px;
+        margin-left: 10px;
+        color: var(--cui-danger);
+        height: 15px;
+        line-height: 12px
+    }
+</style>
 
 <style>
     .cui-datepicker-label {
@@ -116,7 +134,10 @@ export default {
     }
     .cui-datepicker-popup .cell,
     .mx-time-option {
-        transition: all .2s ease
+        transition: all .1s ease
+    }
+    .cui-datepicker-popup .mx-time-option.active {
+        color: var(--cui-primary)
     }
     .cui-datepicker-popup .cell.today {
         color: var(--cui-primary);

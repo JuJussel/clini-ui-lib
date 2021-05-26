@@ -19,6 +19,8 @@ Props:
 - valueFormat: Date value format
 - label: Select label
 - range: Select Data range. Returns array
+- type: set to "time" for timepicker
+- timePickerOptions: options for time picker (if type is time)
 
 Emits:
 
