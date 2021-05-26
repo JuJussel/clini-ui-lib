@@ -10,7 +10,7 @@
             :placeholder="placeholder"
             :format="format"
             :type="type"
-            :time-picker-options = "timePickerOptions"
+            :timePickerOptions="timePickerOptions"
             :range="range"
             @input="changeValue"
             :value-type="valueFormat"
@@ -111,9 +111,11 @@ export default {
     }
     .cui-datepicker-popup {
             border-radius: 12px;
-            color: var(--cui-font-color)
+            color: var(--cui-font-color);
+            overflow: hidden
     }
-    .cui-datepicker-popup .cell {
+    .cui-datepicker-popup .cell,
+    .mx-time-option {
         transition: all .2s ease
     }
     .cui-datepicker-popup .cell.today {
@@ -121,10 +123,10 @@ export default {
     }
     .cui-datepicker-popup .cell.active,
     .cui-datepicker-popup .cell.in-range,
-    .cui-datepicker-popup .cell:hover {
+    .cui-datepicker-popup .cell:hover,
+    .mx-time-option:hover {
         background: var(--cui-primary);
         color: white;
     }
-
 
 </style>
