@@ -10,6 +10,7 @@
             plain: plain,
             white: white
         }"
+        @click="handelClick"
         >
         <div class="loader-button" v-if="loading"></div>
         <div class="ripple"></div>
@@ -57,6 +58,14 @@ export default {
         plain: {
             default: false,
             type: Boolean
+        }
+    },
+    emits: ['click'],
+    methods: {
+        handelClick() {
+            if (!this.disabled) {
+                this.$emit('click')
+            }
         }
     }
 }

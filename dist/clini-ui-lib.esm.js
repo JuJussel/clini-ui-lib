@@ -39,12 +39,21 @@ var script$k = {
       default: false,
       type: Boolean
     }
+  },
+  emits: ['click'],
+  methods: {
+    handelClick() {
+      if (!this.disabled) {
+        this.$emit('click');
+      }
+    }
+
   }
 };
 
-const _withId$c = /*#__PURE__*/withScopeId("data-v-46408e21");
+const _withId$c = /*#__PURE__*/withScopeId("data-v-00ca57b2");
 
-pushScopeId("data-v-46408e21");
+pushScopeId("data-v-00ca57b2");
 
 const _hoisted_1$f = {
   key: 0,
@@ -71,7 +80,8 @@ const render$k = /*#__PURE__*/_withId$c((_ctx, _cache, $props, $setup, $data, $o
       loading: $props.loading,
       plain: $props.plain,
       white: $props.white
-    }]
+    }],
+    onClick: _cache[1] || (_cache[1] = (...args) => $options.handelClick && $options.handelClick(...args))
   }, [$props.loading ? (openBlock(), createBlock("div", _hoisted_1$f)) : createCommentVNode("", true), _hoisted_2$d, $props.icon !== '' ? (openBlock(), createBlock("i", {
     key: 1,
     class: $props.icon
@@ -105,11 +115,11 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$l = "\n.cui-button[data-v-46408e21] {\n        height: 35px;\n        border: 0px;\n        margin: 5px;\n        border-radius: var(--cui-button-radius);\n        transition: all .2s ease;\n        position: relative;\n        user-select: none;\n        z-index: 1;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 10px;\n        outline: none;\n        font-size: .8rem;\n        box-sizing: border-box;\n        background: var(--cui-dark);\n        color: white;\n        cursor: pointer;\n}\n.cui-button[data-v-46408e21]:not(.disabled):not(.plain):hover {\n        transform: translate(0px, -5px);\n        box-shadow: 0 10px 20px -10px var(--cui-dark);\n}\n.cui-button.danger[data-v-46408e21] {\n        background: var(--cui-danger);\n}\n.cui-button.danger[data-v-46408e21]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-danger);\n}\n.cui-button.primary[data-v-46408e21] {\n        background: var(--cui-primary);\n}\n.cui-button.primary[data-v-46408e21]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-primary);\n}\n.cui-button.warn[data-v-46408e21] {\n        background: var(--cui-warn);\n}\n.cui-button.warn[data-v-46408e21]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-warn);\n}\n.cui-button > i[data-v-46408e21]:not(:last-child) {\n        margin-right: 5px\n}\n.cui-button.disabled[data-v-46408e21] {\n        cursor: not-allowed;\n        opacity: 0.7;\n}\n.cui-button.loading[data-v-46408e21] {\n        color: rgba(255,255,255,0.5)\n}\n.cui-button.plain[data-v-46408e21] {\n        background: none;\n        color: var(--cui-font-color)\n}\n.cui-button.plain[data-v-46408e21]:hover {\n        background: var(--cui-gray-1)\n}\n.cui-button.white[data-v-46408e21] {\n        background: white;\n        color: var(--cui-font-color)\n}\n.loader-button[data-v-46408e21] {\n        justify-content: center;\n        align-items: center;\n        width: 100%;\n        height: 100%;\n        position: absolute;\n        display: flex\n}\n";
+var css_248z$l = "\n.cui-button[data-v-00ca57b2] {\n        height: 35px;\n        border: 0px;\n        margin: 5px;\n        border-radius: var(--cui-button-radius);\n        transition: all .2s ease;\n        position: relative;\n        user-select: none;\n        z-index: 1;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 10px;\n        outline: none;\n        font-size: .8rem;\n        box-sizing: border-box;\n        background: var(--cui-dark);\n        color: white;\n        cursor: pointer;\n}\n.cui-button[data-v-00ca57b2]:not(.disabled):not(.plain):hover {\n        transform: translate(0px, -5px);\n        box-shadow: 0 10px 20px -10px var(--cui-dark);\n}\n.cui-button.danger[data-v-00ca57b2] {\n        background: var(--cui-danger);\n}\n.cui-button.danger[data-v-00ca57b2]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-danger);\n}\n.cui-button.primary[data-v-00ca57b2] {\n        background: var(--cui-primary);\n}\n.cui-button.primary[data-v-00ca57b2]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-primary);\n}\n.cui-button.warn[data-v-00ca57b2] {\n        background: var(--cui-warn);\n}\n.cui-button.warn[data-v-00ca57b2]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-warn);\n}\n.cui-button > i[data-v-00ca57b2]:not(:last-child) {\n        margin-right: 5px\n}\n.cui-button.disabled[data-v-00ca57b2] {\n        cursor: not-allowed;\n        opacity: 0.7;\n}\n.cui-button.loading[data-v-00ca57b2] {\n        color: rgba(255,255,255,0.5)\n}\n.cui-button.plain[data-v-00ca57b2] {\n        background: none;\n        color: var(--cui-font-color)\n}\n.cui-button.plain[data-v-00ca57b2]:hover {\n        background: var(--cui-gray-1)\n}\n.cui-button.white[data-v-00ca57b2] {\n        background: white;\n        color: var(--cui-font-color)\n}\n.loader-button[data-v-00ca57b2] {\n        justify-content: center;\n        align-items: center;\n        width: 100%;\n        height: 100%;\n        position: absolute;\n        display: flex\n}\n";
 styleInject(css_248z$l);
 
 script$k.render = render$k;
-script$k.__scopeId = "data-v-46408e21";
+script$k.__scopeId = "data-v-00ca57b2";
 
 var script$j = {
   name: 'ButtonGroup',

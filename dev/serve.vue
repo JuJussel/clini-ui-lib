@@ -94,7 +94,7 @@ export default defineComponent({
           <a>Test</a>
         </template>
         <div>
-
+          <cui-button label="3333" @click="console.log('click')"></cui-button>
           <cui-datepicker label="Date" v-model="date"></cui-datepicker>
 
           <div style="margin-top: 100px"></div>

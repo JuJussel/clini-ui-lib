@@ -75,7 +75,7 @@ export default {
             type: String
         }
     },
-    emits: ['update:modelValue'],
+    emits: ['update:modelValue', 'change'],
     methods: {
         changeValue() {
             this.$emit('update:modelValue', this.modelValue)
