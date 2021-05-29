@@ -10,10 +10,9 @@ export { default as CuiInput } from './cui-form/cui-input.vue';
 export { default as CuiCheckbox } from './cui-form/cui-checkbox.vue';
 export { default as CuiSelect } from './cui-form/cui-select.vue';
 export { default as CuiDatepicker } from './cui-form/cui-datepicker.vue';
-
 export { default as CuiTable } from './cui-table/cui-table.vue';
 export { default as CuiTh } from './cui-table/cui-th.vue';
 export { default as CuiTr } from './cui-table/cui-tr.vue';
-
 export { default as CuiTag } from './cui-tag/cui-tag.vue';
 export { default as CuiAvatar } from './cui-avatar/cui-avatar.vue';
+export { default as Cuitooltip } from './cui-tooltip/cui-tooltip.vue';

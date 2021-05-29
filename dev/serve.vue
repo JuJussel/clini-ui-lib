@@ -91,7 +91,10 @@ export default defineComponent({
       <cui-card>
         <template v-slot:header>
           <h2>患者一覧</h2>
-          <a>Test</a>
+          <cui-tooltip>
+             <a>Test</a>
+             <template #tooltip>ABC</template>
+          </cui-tooltip>
         </template>
         <div>
           <cui-button label="3333" @click="console.log('click')"></cui-button>
