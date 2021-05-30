@@ -37,6 +37,14 @@ export default {
             const tooltip = this.$refs.tooltip
             createPopper(parent, tooltip, {
                 placement: this.position,
+                modifiers: [
+                    {
+                        name: 'preventOverflow',
+                        options: {
+                            mainAxis: false
+                        },
+                    }
+                ]
             })
         },
         handleOutsideClick(event) {
@@ -60,6 +68,7 @@ export default {
         background: white;
         border-radius: 10px;
         box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);
+        z-index: 5
     }
     .visible {
         display: block;
