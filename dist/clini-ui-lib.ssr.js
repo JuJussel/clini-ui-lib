@@ -6988,7 +6988,7 @@ script$2.__scopeId = "data-v-2d42819a";var script$1 = {
       }
     }
   }
-};var _withId = /*#__PURE__*/vue.withScopeId("data-v-db6671ca");
+};var _withId = /*#__PURE__*/vue.withScopeId("data-v-14d4a248");
 
 var render$1 = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("div", null, [vue.createVNode("div", {
@@ -7004,9 +7004,9 @@ var render$1 = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $dat
   }, [vue.renderSlot(_ctx.$slots, "tooltip"), vue.createVNode("div", {
     class: ["arrow", $props.position]
   }, null, 2)], 2)]);
-});var css_248z$1 = "\n.tooltip-cont[data-v-db6671ca] {\n        display: none;\n        padding: 10px;\n        background: white;\n        border-radius: 10px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        z-index: 5\n}\n.visible[data-v-db6671ca] {\n        display: block;\n}\n.arrow[data-v-db6671ca],\n    .arrow[data-v-db6671ca]::before {\n        position: absolute;\n        width: 8px;\n        height: 8px;\n        background: inherit;\n}\n.arrow[data-v-db6671ca] {\n        visibility: hidden;\n}\n.arrow[data-v-db6671ca]::before {\n        visibility: visible;\n        content: '';\n        transform: rotate(45deg);\n}\n.arrow.top[data-v-db6671ca] {\n        bottom: -4px;\n        left: calc(50% - 4px);\n}\n.arrow.bottom[data-v-db6671ca] {\n        top: -4px;\n        left: calc(50% - 4px);\n}\n.arrow.left[data-v-db6671ca] {\n        right: -4px;\n        top: calc(50% - 4px);\n}\n.arrow.right[data-v-db6671ca] {\n        left: -4px;\n        top: calc(50% - 4px);\n}\n\n";
+});var css_248z$1 = "\n.tooltip-cont[data-v-14d4a248] {\n        display: none;\n        padding: 10px;\n        background: white;\n        border-radius: 20px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        z-index: 5\n}\n.visible[data-v-14d4a248] {\n        display: block;\n}\n.arrow[data-v-14d4a248],\n    .arrow[data-v-14d4a248]::before {\n        position: absolute;\n        width: 8px;\n        height: 8px;\n        background: inherit;\n}\n.arrow[data-v-14d4a248] {\n        visibility: hidden;\n}\n.arrow[data-v-14d4a248]::before {\n        visibility: visible;\n        content: '';\n        transform: rotate(45deg);\n}\n.arrow.top[data-v-14d4a248] {\n        bottom: -4px;\n        left: calc(50% - 4px);\n}\n.arrow.bottom[data-v-14d4a248] {\n        top: -4px;\n        left: calc(50% - 4px);\n}\n.arrow.left[data-v-14d4a248] {\n        right: -4px;\n        top: calc(50% - 4px);\n}\n.arrow.right[data-v-14d4a248] {\n        left: -4px;\n        top: calc(50% - 4px);\n}\n\n";
 styleInject(css_248z$1);script$1.render = render$1;
-script$1.__scopeId = "data-v-db6671ca";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,CuiButton: script$k,CuiButtonGroup: script$j,CuiButtonGroupItem: script$i,CuiMenuBar: script$h,CuiMenuBarItem: script$g,CuiCard: script$f,CuiModal: script$e,CuiInput: script$d,CuiCheckbox: script$c,CuiSelect: script$b,CuiDatepicker: script$7,CuiTable: script$6,CuiTh: script$5,CuiTr: script$4,CuiTag: script$3,CuiAvatar: script$2,CuiTooltip: script$1});var script = {
+script$1.__scopeId = "data-v-14d4a248";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,CuiButton: script$k,CuiButtonGroup: script$j,CuiButtonGroupItem: script$i,CuiMenuBar: script$h,CuiMenuBarItem: script$g,CuiCard: script$f,CuiModal: script$e,CuiInput: script$d,CuiCheckbox: script$c,CuiSelect: script$b,CuiDatepicker: script$7,CuiTable: script$6,CuiTh: script$5,CuiTr: script$4,CuiTag: script$3,CuiAvatar: script$2,CuiTooltip: script$1});var script = {
   name: 'CuiNotification',
   data: function data() {
     return {

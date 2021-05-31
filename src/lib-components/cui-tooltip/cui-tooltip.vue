@@ -66,7 +66,7 @@ export default {
         display: none;
         padding: 10px;
         background: white;
-        border-radius: 10px;
+        border-radius: 20px;
         box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);
         z-index: 5
     }
