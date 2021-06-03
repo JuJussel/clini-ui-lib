@@ -8,7 +8,7 @@
             ref="select"
             class="cui-select" 
             @click.stop="handleClick" 
-            v-bind:class="{focused: focused, 'has-color': color}" 
+            v-bind:class="{focused: focused, 'has-color': color, disabled: disabled}" 
             v-bind:style="{background: selectBackground}"
             >
             <!-- non focused state -->
@@ -82,7 +82,7 @@
                 </div>
             </div>
         </div>
-        <div class="cui-select-note">
+        <div class="cui-select-note" v-if="!noNote">
             <span> {{ error }} </span>
         </div>
     </div>
@@ -129,7 +129,6 @@ export default {
         returnValueProp: {
             default: null
         },
-
         loading: {
             default: false,
             type: Boolean
@@ -141,6 +140,14 @@ export default {
         error: {
             default: '',
             type: String
+        },
+        noNote: {
+            defaut: false,
+            type: Boolean
+        },
+        disabled: {
+            default: false,
+            type: Boolean
         }
     },
     emits: ['update:modelValue', 'select', 'input'],
@@ -224,6 +231,9 @@ export default {
             this.dropdownValues = arr
         },
         handleClick() {
+            if (this.disabled) {
+                return
+            }
             this.dropdownWidth = this.$refs.select.clientWidth
             const select = this.$refs.select
             const dropdown = this.$refs.dropdown
@@ -341,7 +351,10 @@ export default {
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
     }
-    .cui-select:hover,
+    .cui-select.disabled {
+        cursor: not-allowed
+    }
+    .cui-select:not(.disabled):hover,
     .cui-select.focused {
         padding-left: 13px;
         padding-right: 7px;

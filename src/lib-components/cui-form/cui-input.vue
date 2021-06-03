@@ -20,7 +20,7 @@
             <span :class="icon + ' cui-input-icon'" v-if="icon"></span>
 
         </div>
-        <div class="cui-input-note">
+        <div class="cui-input-note" v-if="!noNote">
             <span> {{ error }} </span>
         </div>
     </div>
@@ -58,6 +58,14 @@ export default {
         },
         placeholder: {
             default: ''
+        },
+        noNote: {
+            default: false,
+            type: Boolean
+        },
+        lightTheme: {
+            default: false,
+            type: Boolean
         }
     },
     emits: ['update:modelValue'],

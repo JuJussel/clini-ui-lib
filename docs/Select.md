@@ -56,6 +56,8 @@ Props:
 - returnValueProp: key to return if Object. If not set, Object will be returned
 - loading: Shows loading in dropdown
 - color: Background color while not focused. Text color will cahnge to white.
+- disabled: Disabled state
+- noNote: REmove bottom dive for not (To better align vertically if not needed)
 
 Emits:
 
