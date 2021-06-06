@@ -6635,6 +6635,10 @@ script$7.__scopeId = "data-v-5539870c";var script$6 = {
     loading: {
       default: false,
       type: Boolean
+    },
+    square: {
+      default: false,
+      type: Boolean
     }
   },
   data: function data() {
@@ -6708,9 +6712,9 @@ script$7.__scopeId = "data-v-5539870c";var script$6 = {
       return data;
     }
   }
-};var _withId$5 = /*#__PURE__*/vue.withScopeId("data-v-6d32abec");
+};var _withId$5 = /*#__PURE__*/vue.withScopeId("data-v-84c7c8f2");
 
-vue.pushScopeId("data-v-6d32abec");
+vue.pushScopeId("data-v-84c7c8f2");
 
 var _hoisted_1$3 = {
   key: 0,
@@ -6762,7 +6766,8 @@ var render$6 = /*#__PURE__*/_withId$5(function (_ctx, _cache, $props, $setup, $d
   return vue.openBlock(), vue.createBlock("div", {
     class: ["cui-table", {
       striped: $props.striped,
-      select: $props.singleSelect
+      select: $props.singleSelect,
+      square: $props.square
     }]
   }, [_ctx.$slots.header ? (vue.openBlock(), vue.createBlock("div", _hoisted_1$3, [vue.renderSlot(_ctx.$slots, "header")])) : vue.createCommentVNode("", true), vue.createVNode("div", _hoisted_2$3, [vue.createVNode("table", {
     class: {
@@ -6794,10 +6799,10 @@ var render$6 = /*#__PURE__*/_withId$5(function (_ctx, _cache, $props, $setup, $d
       })
     } : undefined]), 1032, ["rowData", "onClick", "multipleSelect", "clickable"]);
   }), 128))], 512)], 2)]), _ctx.$slots.footer ? (vue.openBlock(), vue.createBlock("div", _hoisted_12, [vue.renderSlot(_ctx.$slots, "footer")])) : vue.createCommentVNode("", true)], 2);
-});var css_248z$7 = "\n.cui-table[data-v-6d32abec] {\n        border-radius: 20px;\n        overflow: hidden;\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n}\n.cui-table-header[data-v-6d32abec], \n    .cui-table-footer[data-v-6d32abec] {\n        background: var(--cui-gray-0);\n        padding: 10px;\n        display: flex;\n        justify-content: space-between;\n        align-items: center\n}\n.cui-table table[data-v-6d32abec] {\n        border-collapse: collapse;\n        width: 100%;\n}\n.cui-table thead tr[data-v-6d32abec] {\n        background: var(--cui-gray-0);\n}\n.cui-table-container[data-v-6d32abec] {\n        overflow: auto;\n        flex: 1\n}\n.cui-table-empty-content[data-v-6d32abec] {\n        display: flex;\n        flex-direction: column;\n        align-items: center\n}\n.cui-table-loader-td[data-v-6d32abec] {\n        position: relative;\n        height: 100px\n}\n";
+});var css_248z$7 = "\n.cui-table[data-v-84c7c8f2] {\n        border-radius: 20px;\n        overflow: hidden;\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n}\n.cui-table.square[data-v-84c7c8f2] {\n        border-radius: 0\n}\n.cui-table-header[data-v-84c7c8f2], \n    .cui-table-footer[data-v-84c7c8f2] {\n        background: var(--cui-gray-0);\n        padding: 10px;\n        display: flex;\n        justify-content: space-between;\n        align-items: center\n}\n.cui-table table[data-v-84c7c8f2] {\n        border-collapse: collapse;\n        width: 100%;\n}\n.cui-table thead tr[data-v-84c7c8f2] {\n        background: var(--cui-gray-0);\n}\n.cui-table-container[data-v-84c7c8f2] {\n        overflow: auto;\n        flex: 1\n}\n.cui-table-empty-content[data-v-84c7c8f2] {\n        display: flex;\n        flex-direction: column;\n        align-items: center\n}\n.cui-table-loader-td[data-v-84c7c8f2] {\n        position: relative;\n        height: 100px\n}\n";
 styleInject(css_248z$7);var css_248z$6 = "\n.cui-table th:not([scope=row]) {\n        position: -webkit-sticky;\n        position: sticky;\n        top: 0;\n        z-index: 2;\n        background: var(--cui-gray-0);\n        box-shadow: 0 2px 4px -2px rgb(0 0 0 / 15%)\n}\n.cui-table th,\n    .cui-table td {\n        text-align: left;\n        padding: 10px\n}\n.cui-table.select tbody tr {\n        cursor: pointer\n}\n.cui-table tbody tr:not(.no-border, .noHover) {\n        border-bottom: 1px solid var(--cui-gray-2);\n        transition: background .2s ease;\n}\n.cui-table tbody tr:not(.selected, .expanded, .noHover):hover {\n        background: var(--cui-gray-1)!important;\n        font-weight: bold\n}\n.cui-table.striped tbody tr:nth-of-type(even) {\n        background-color: var(--cui-gray-0);\n}\n.cui-table tbody tr:last-of-type {\n        border-bottom: 2px solid var(--cui-gray-2);\n}\n";
 styleInject(css_248z$6);script$6.render = render$6;
-script$6.__scopeId = "data-v-6d32abec";var script$5 = {
+script$6.__scopeId = "data-v-84c7c8f2";var script$5 = {
   name: 'CuiTh',
   props: {
     sort: {
