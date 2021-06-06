@@ -491,6 +491,10 @@ styleInject(css_248z$f);script$e.render = render$e;var script$d = {
     noNote: {
       default: false,
       type: Boolean
+    },
+    darker: {
+      default: false,
+      type: Boolean
     }
   },
   emits: ['update:modelValue'],
@@ -507,9 +511,9 @@ styleInject(css_248z$f);script$e.render = render$e;var script$d = {
       error: ''
     };
   }
-};var _withId$9 = /*#__PURE__*/vue.withScopeId("data-v-f9ecc008");
+};var _withId$9 = /*#__PURE__*/vue.withScopeId("data-v-d19b959e");
 
-vue.pushScopeId("data-v-f9ecc008");
+vue.pushScopeId("data-v-d19b959e");
 
 var _hoisted_1$8 = {
   key: 0,
@@ -543,7 +547,8 @@ var render$d = /*#__PURE__*/_withId$9(function (_ctx, _cache, $props, $setup, $d
   return vue.openBlock(), vue.createBlock("div", null, [$props.label ? (vue.openBlock(), vue.createBlock("label", _hoisted_1$8, [vue.createVNode("span", _hoisted_2$8, vue.toDisplayString($props.label), 1), $props.required ? (vue.openBlock(), vue.createBlock("span", _hoisted_3$4, vue.toDisplayString($data.trans.required), 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), vue.createVNode("div", _hoisted_4$3, [$props.append ? (vue.openBlock(), vue.createBlock("span", _hoisted_5$2, vue.toDisplayString($props.append), 1)) : vue.createCommentVNode("", true), vue.withDirectives(vue.createVNode("input", {
     class: ["cui-input", {
       'has-icon': $props.icon,
-      disabled: $props.disabled
+      disabled: $props.disabled,
+      darker: $props.darker
     }],
     style: {
       width: $props.width
@@ -562,9 +567,9 @@ var render$d = /*#__PURE__*/_withId$9(function (_ctx, _cache, $props, $setup, $d
     key: 1,
     class: $props.icon + ' cui-input-icon'
   }, null, 2)) : vue.createCommentVNode("", true)]), !$props.noNote ? (vue.openBlock(), vue.createBlock("div", _hoisted_6$2, [vue.createVNode("span", null, vue.toDisplayString($data.error), 1)])) : vue.createCommentVNode("", true)]);
-});var css_248z$e = "\n.cui-input-label[data-v-f9ecc008] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-input[data-v-f9ecc008] {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease\n}\n.cui-input.disabled[data-v-f9ecc008] {\n        color: var(--cui-gray-3)\n}\n.cui-input[data-v-f9ecc008]:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n        background: var(--cui-gray-1)\n}\n.cui-input-note[data-v-f9ecc008] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n.cui-input-icon[data-v-f9ecc008] {\n        position: absolute;\n        left:0;\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        padding: 10px;\n        transition: all .2s ease;\n}\n.has-icon[data-v-f9ecc008] {\n        text-indent: 28px;\n}\n.cui-input:focus + .cui-input-icon[data-v-f9ecc008] {\n        margin: -3px;\n        box-shadow: 0 10px 20px -10px var(--cui-dark);\n        background: white;\n}\n.cui-input-append[data-v-f9ecc008] {\n        position: absolute;\n        right: 0;\n        height: 34px;\n        background: white;\n        border-radius: 12px;\n        line-height: 34px;\n        padding: 0 10px;\n        border: solid 1px var(--cui-gray-1);\n        font-size: 14px\n}\n";
+});var css_248z$e = "\n.cui-input-label[data-v-d19b959e] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-input[data-v-d19b959e] {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease\n}\n.cui-input.darker[data-v-d19b959e] {\n        background: var(--cui-gray-3);\n}\n.cui-input.disabled[data-v-d19b959e] {\n        color: var(--cui-gray-3)\n}\n.cui-input[data-v-d19b959e]:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n        background: var(--cui-gray-1)\n}\n.cui-input.darker[data-v-d19b959e]:focus {\n        background: var(--cui-gray-4)\n}\n.cui-input.darker[data-v-d19b959e]:hover {\n        background: var(--cui-gray-4)\n}\n.cui-input-note[data-v-d19b959e] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n.cui-input-icon[data-v-d19b959e] {\n        position: absolute;\n        left:0;\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        padding: 10px;\n        transition: all .2s ease;\n}\n.has-icon[data-v-d19b959e] {\n        text-indent: 28px;\n}\n.cui-input:focus + .cui-input-icon[data-v-d19b959e] {\n        margin: -3px;\n        box-shadow: 0 10px 20px -10px var(--cui-dark);\n        background: white;\n}\n.cui-input-append[data-v-d19b959e] {\n        position: absolute;\n        right: 0;\n        height: 34px;\n        background: white;\n        border-radius: 12px;\n        line-height: 34px;\n        padding: 0 10px;\n        border: solid 1px var(--cui-gray-1);\n        font-size: 14px\n}\n";
 styleInject(css_248z$e);script$d.render = render$d;
-script$d.__scopeId = "data-v-f9ecc008";var script$c = {
+script$d.__scopeId = "data-v-d19b959e";var script$c = {
   name: 'CuiCheckbox',
   props: {
     modelValue: {

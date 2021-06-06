@@ -139,6 +139,7 @@ export default defineComponent({
       <cui-table :data="tableData" singleSelect :loading="tableLoading">
         <template #header>
           <h2>The Table</h2>
+          <cui-input darker></cui-input>
         </template>
         <template #thead>
           <cui-th sort="name">Name</cui-th>

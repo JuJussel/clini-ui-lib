@@ -8,7 +8,7 @@
             <span class="cui-input-append" v-if="append"> {{ append }} </span>
             <input
                 class="cui-input" 
-                v-bind:class="{'has-icon': icon, disabled: disabled}"
+                v-bind:class="{'has-icon': icon, disabled, darker}"
                 v-bind:style="{width: width}"
                 :type="type" 
                 v-model="modelValue" 
@@ -63,7 +63,7 @@ export default {
             default: false,
             type: Boolean
         },
-        lightTheme: {
+        darker: {
             default: false,
             type: Boolean
         }
@@ -98,6 +98,9 @@ export default {
         padding: 5px 10px;
         transition: all .2s ease
     }
+    .cui-input.darker {
+        background: var(--cui-gray-3);
+    }
     .cui-input.disabled {
         color: var(--cui-gray-3)
     }
@@ -106,6 +109,12 @@ export default {
         padding-left: 13px;
         padding-right: 7px;
         background: var(--cui-gray-1)
+    }
+    .cui-input.darker:focus {
+        background: var(--cui-gray-4)
+    }
+    .cui-input.darker:hover {
+        background: var(--cui-gray-4)
     }
     .cui-input-note {
         font-size: 12px;
