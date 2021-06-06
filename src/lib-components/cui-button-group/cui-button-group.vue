@@ -8,9 +8,36 @@
 
 export default {
     name: 'ButtonGroup',
+    props: {
+        modelValue: {
+            default: ''
+        }
+    },
+    emits: ['update:modelValue', 'change'],
     methods: {
         changeValue(value) {
-            this.$emit('change', value)            
+            this.$emit('change', value)
+            this.$emit('update:modelValue', value)
+        },
+        selectItem() {
+            let menuItems = document.querySelectorAll(".cui-button-group-item");
+            menuItems.forEach(item => {
+                item.classList.remove('selected')
+                console.log(item.attributes.value);
+                console.log(this.modelValue);
+                if (item.attributes.value.value == this.modelValue) {
+                    console.log('add');
+                    item.classList.add("selected")
+                }
+            })
+        }
+    },
+    mounted() {
+        this.selectItem()
+    },
+    watch: {
+        modelValue() {
+            this.selectItem()
         }
     }
 }

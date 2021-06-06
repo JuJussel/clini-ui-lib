@@ -28,6 +28,7 @@ export default defineComponent({
       check2: false,
       date: {start: '', end: ''},
       menu: "reception",
+      activeMenu: '4',
       selectData : [
         {"id":"01","name":"診察"},{"id":"02","name":"薬のみ"},{"id":"03","name":"注射のみ"},{"id":"04","name":"検査のみ"}
       ],
@@ -80,7 +81,7 @@ export default defineComponent({
         <cui-menu-bar-item icon="fas fa-sign-out-alt" />
       </template>
     </cui-menu-bar>
-    <cui-button-group>
+    <cui-button-group v-model="activeMenu">
       <cui-button-group-item icon="fas fa-sign-out-alt" label="Button1" value="1"></cui-button-group-item>
       <cui-button-group-item label="Button2" value="2"></cui-button-group-item>
       <cui-button-group-item label="Button3" value="3"></cui-button-group-item>

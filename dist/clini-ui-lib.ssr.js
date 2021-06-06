@@ -185,14 +185,44 @@ var render$k = /*#__PURE__*/_withId$d(function (_ctx, _cache, $props, $setup, $d
 styleInject(css_248z$m);script$k.render = render$k;
 script$k.__scopeId = "data-v-00ca57b2";var script$j = {
   name: 'ButtonGroup',
+  props: {
+    modelValue: {
+      default: ''
+    }
+  },
+  emits: ['update:modelValue', 'change'],
   methods: {
     changeValue: function changeValue(value) {
       this.$emit('change', value);
+      this.$emit('update:modelValue', value);
+    },
+    selectItem: function selectItem() {
+      var _this = this;
+
+      var menuItems = document.querySelectorAll(".cui-button-group-item");
+      menuItems.forEach(function (item) {
+        item.classList.remove('selected');
+        console.log(item.attributes.value);
+        console.log(_this.modelValue);
+
+        if (item.attributes.value.value == _this.modelValue) {
+          console.log('add');
+          item.classList.add("selected");
+        }
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.selectItem();
+  },
+  watch: {
+    modelValue: function modelValue() {
+      this.selectItem();
     }
   }
-};var _withId$c = /*#__PURE__*/vue.withScopeId("data-v-7469df4e");
+};var _withId$c = /*#__PURE__*/vue.withScopeId("data-v-10783aa5");
 
-vue.pushScopeId("data-v-7469df4e");
+vue.pushScopeId("data-v-10783aa5");
 
 var _hoisted_1$e = {
   class: "cui-button-group"
@@ -202,10 +232,10 @@ vue.popScopeId();
 
 var render$j = /*#__PURE__*/_withId$c(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("div", _hoisted_1$e, [vue.renderSlot(_ctx.$slots, "default")]);
-});var css_248z$l = "\n.cui-button-group[data-v-7469df4e] {\n        display:flex;\n        margin: 5px 0\n}\n";
+});var css_248z$l = "\n.cui-button-group[data-v-10783aa5] {\n        display:flex;\n        margin: 5px 0\n}\n";
 styleInject(css_248z$l);var css_248z$k = "\n.cui-button-group .cui-button  {\n        margin-left: 0;\n        margin-right: 0;\n        border-radius: 0\n}\n.cui-button-group .cui-button:first-of-type {\n        margin-left: 5px;\n        border-top-left-radius:15px;\n        border-bottom-left-radius: 15px;\n}\n.cui-button-group .cui-button:last-of-type {\n        border-top-left-radius: 0px!important;\n        border-bottom-left-radius: 0px!important;\n}\n\n";
 styleInject(css_248z$k);script$j.render = render$j;
-script$j.__scopeId = "data-v-7469df4e";var script$i = {
+script$j.__scopeId = "data-v-10783aa5";var script$i = {
   name: 'ButtonGroupItem',
   props: {
     label: {
@@ -223,16 +253,11 @@ script$j.__scopeId = "data-v-7469df4e";var script$i = {
   methods: {
     handelClick: function handelClick() {
       this.$parent.changeValue(this.value);
-      var menuItems = document.querySelectorAll(".cui-button-group-item");
-      menuItems.forEach(function (item) {
-        item.classList.remove('selected');
-      });
-      this.$refs.item.classList.add("selected");
     }
   }
-};var _withId$b = /*#__PURE__*/vue.withScopeId("data-v-5085d32b");
+};var _withId$b = /*#__PURE__*/vue.withScopeId("data-v-1f8e1c39");
 
-vue.pushScopeId("data-v-5085d32b");
+vue.pushScopeId("data-v-1f8e1c39");
 
 var _hoisted_1$d = /*#__PURE__*/vue.createVNode("div", {
   class: "ripple"
@@ -250,14 +275,15 @@ var render$i = /*#__PURE__*/_withId$b(function (_ctx, _cache, $props, $setup, $d
     onClick: _cache[1] || (_cache[1] = function () {
       return $options.handelClick && $options.handelClick.apply($options, arguments);
     }),
-    ref: "item"
+    ref: "item",
+    value: $props.value
   }, [_hoisted_1$d, $props.icon !== '' ? (vue.openBlock(), vue.createBlock("i", {
     key: 0,
     class: $props.icon
-  }, null, 2)) : vue.createCommentVNode("", true), $props.label !== '' ? (vue.openBlock(), vue.createBlock("span", _hoisted_2$c, vue.toDisplayString($props.label), 1)) : vue.createCommentVNode("", true)], 512);
-});var css_248z$j = "\n.cui-button-group-item[data-v-5085d32b] {\n        height: 35px;\n        border: 0px;\n        margin: 5px 0;\n        transition: all .2s ease;\n        position: relative;\n        user-select: none;\n        z-index: 1;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 10px;\n        outline: none;\n        font-size: .8rem;\n        box-sizing: border-box;\n        background: white;\n        cursor: pointer;\n        border: solid 2px var(--cui-dark);\n        border-right: none\n}\n.cui-button-group-item[data-v-5085d32b]:first-of-type {\n        margin-left: 5px;\n        border-top-left-radius: var(--cui-button-radius);\n        border-bottom-left-radius: var(--cui-button-radius);\n}\n.cui-button-group-item[data-v-5085d32b]:last-of-type {\n        margin-right: 5px;\n        border-top-right-radius: var(--cui-button-radius);\n        border-bottom-right-radius: var(--cui-button-radius);\n        border-right: solid 2px var(--cui-dark)\n}\n.selected[data-v-5085d32b] {\n        background: var(--cui-dark);\n        color: white\n}\n.cui-button-group-item > i[data-v-5085d32b]:not(:last-child) {\n        margin-right: 5px\n}\n\n\n";
+  }, null, 2)) : vue.createCommentVNode("", true), $props.label !== '' ? (vue.openBlock(), vue.createBlock("span", _hoisted_2$c, vue.toDisplayString($props.label), 1)) : vue.createCommentVNode("", true)], 8, ["value"]);
+});var css_248z$j = "\n.cui-button-group-item[data-v-1f8e1c39] {\n        height: 35px;\n        border: 0px;\n        margin: 5px 0;\n        transition: all .2s ease;\n        position: relative;\n        user-select: none;\n        z-index: 1;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 10px;\n        outline: none;\n        font-size: .8rem;\n        box-sizing: border-box;\n        background: white;\n        cursor: pointer;\n        border: solid 2px var(--cui-dark);\n        border-right: none\n}\n.cui-button-group-item[data-v-1f8e1c39]:first-of-type {\n        margin-left: 5px;\n        border-top-left-radius: var(--cui-button-radius);\n        border-bottom-left-radius: var(--cui-button-radius);\n}\n.cui-button-group-item[data-v-1f8e1c39]:last-of-type {\n        margin-right: 5px;\n        border-top-right-radius: var(--cui-button-radius);\n        border-bottom-right-radius: var(--cui-button-radius);\n        border-right: solid 2px var(--cui-dark)\n}\n.selected[data-v-1f8e1c39] {\n        background: var(--cui-dark);\n        color: white\n}\n.cui-button-group-item > i[data-v-1f8e1c39]:not(:last-child) {\n        margin-right: 5px\n}\n\n\n";
 styleInject(css_248z$j);script$i.render = render$i;
-script$i.__scopeId = "data-v-5085d32b";var script$h = {
+script$i.__scopeId = "data-v-1f8e1c39";var script$h = {
   props: {
     value: {
       default: null

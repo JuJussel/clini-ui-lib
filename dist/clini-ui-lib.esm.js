@@ -123,17 +123,49 @@ script$k.__scopeId = "data-v-00ca57b2";
 
 var script$j = {
   name: 'ButtonGroup',
+  props: {
+    modelValue: {
+      default: ''
+    }
+  },
+  emits: ['update:modelValue', 'change'],
   methods: {
     changeValue(value) {
       this.$emit('change', value);
+      this.$emit('update:modelValue', value);
+    },
+
+    selectItem() {
+      let menuItems = document.querySelectorAll(".cui-button-group-item");
+      menuItems.forEach(item => {
+        item.classList.remove('selected');
+        console.log(item.attributes.value);
+        console.log(this.modelValue);
+
+        if (item.attributes.value.value == this.modelValue) {
+          console.log('add');
+          item.classList.add("selected");
+        }
+      });
+    }
+
+  },
+
+  mounted() {
+    this.selectItem();
+  },
+
+  watch: {
+    modelValue() {
+      this.selectItem();
     }
 
   }
 };
 
-const _withId$c = /*#__PURE__*/withScopeId("data-v-7469df4e");
+const _withId$c = /*#__PURE__*/withScopeId("data-v-10783aa5");
 
-pushScopeId("data-v-7469df4e");
+pushScopeId("data-v-10783aa5");
 
 const _hoisted_1$e = {
   class: "cui-button-group"
@@ -145,14 +177,14 @@ const render$j = /*#__PURE__*/_withId$c((_ctx, _cache, $props, $setup, $data, $o
   return openBlock(), createBlock("div", _hoisted_1$e, [renderSlot(_ctx.$slots, "default")]);
 });
 
-var css_248z$l = "\n.cui-button-group[data-v-7469df4e] {\n        display:flex;\n        margin: 5px 0\n}\n";
+var css_248z$l = "\n.cui-button-group[data-v-10783aa5] {\n        display:flex;\n        margin: 5px 0\n}\n";
 styleInject(css_248z$l);
 
 var css_248z$k = "\n.cui-button-group .cui-button  {\n        margin-left: 0;\n        margin-right: 0;\n        border-radius: 0\n}\n.cui-button-group .cui-button:first-of-type {\n        margin-left: 5px;\n        border-top-left-radius:15px;\n        border-bottom-left-radius: 15px;\n}\n.cui-button-group .cui-button:last-of-type {\n        border-top-left-radius: 0px!important;\n        border-bottom-left-radius: 0px!important;\n}\n\n";
 styleInject(css_248z$k);
 
 script$j.render = render$j;
-script$j.__scopeId = "data-v-7469df4e";
+script$j.__scopeId = "data-v-10783aa5";
 
 var script$i = {
   name: 'ButtonGroupItem',
@@ -172,19 +204,14 @@ var script$i = {
   methods: {
     handelClick() {
       this.$parent.changeValue(this.value);
-      let menuItems = document.querySelectorAll(".cui-button-group-item");
-      menuItems.forEach(item => {
-        item.classList.remove('selected');
-      });
-      this.$refs.item.classList.add("selected");
     }
 
   }
 };
 
-const _withId$b = /*#__PURE__*/withScopeId("data-v-5085d32b");
+const _withId$b = /*#__PURE__*/withScopeId("data-v-1f8e1c39");
 
-pushScopeId("data-v-5085d32b");
+pushScopeId("data-v-1f8e1c39");
 
 const _hoisted_1$d = /*#__PURE__*/createVNode("div", {
   class: "ripple"
@@ -200,18 +227,19 @@ const render$i = /*#__PURE__*/_withId$b((_ctx, _cache, $props, $setup, $data, $o
   return openBlock(), createBlock("div", {
     class: "cui-button-group-item",
     onClick: _cache[1] || (_cache[1] = (...args) => $options.handelClick && $options.handelClick(...args)),
-    ref: "item"
+    ref: "item",
+    value: $props.value
   }, [_hoisted_1$d, $props.icon !== '' ? (openBlock(), createBlock("i", {
     key: 0,
     class: $props.icon
-  }, null, 2)) : createCommentVNode("", true), $props.label !== '' ? (openBlock(), createBlock("span", _hoisted_2$c, toDisplayString($props.label), 1)) : createCommentVNode("", true)], 512);
+  }, null, 2)) : createCommentVNode("", true), $props.label !== '' ? (openBlock(), createBlock("span", _hoisted_2$c, toDisplayString($props.label), 1)) : createCommentVNode("", true)], 8, ["value"]);
 });
 
-var css_248z$j = "\n.cui-button-group-item[data-v-5085d32b] {\n        height: 35px;\n        border: 0px;\n        margin: 5px 0;\n        transition: all .2s ease;\n        position: relative;\n        user-select: none;\n        z-index: 1;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 10px;\n        outline: none;\n        font-size: .8rem;\n        box-sizing: border-box;\n        background: white;\n        cursor: pointer;\n        border: solid 2px var(--cui-dark);\n        border-right: none\n}\n.cui-button-group-item[data-v-5085d32b]:first-of-type {\n        margin-left: 5px;\n        border-top-left-radius: var(--cui-button-radius);\n        border-bottom-left-radius: var(--cui-button-radius);\n}\n.cui-button-group-item[data-v-5085d32b]:last-of-type {\n        margin-right: 5px;\n        border-top-right-radius: var(--cui-button-radius);\n        border-bottom-right-radius: var(--cui-button-radius);\n        border-right: solid 2px var(--cui-dark)\n}\n.selected[data-v-5085d32b] {\n        background: var(--cui-dark);\n        color: white\n}\n.cui-button-group-item > i[data-v-5085d32b]:not(:last-child) {\n        margin-right: 5px\n}\n\n\n";
+var css_248z$j = "\n.cui-button-group-item[data-v-1f8e1c39] {\n        height: 35px;\n        border: 0px;\n        margin: 5px 0;\n        transition: all .2s ease;\n        position: relative;\n        user-select: none;\n        z-index: 1;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 10px;\n        outline: none;\n        font-size: .8rem;\n        box-sizing: border-box;\n        background: white;\n        cursor: pointer;\n        border: solid 2px var(--cui-dark);\n        border-right: none\n}\n.cui-button-group-item[data-v-1f8e1c39]:first-of-type {\n        margin-left: 5px;\n        border-top-left-radius: var(--cui-button-radius);\n        border-bottom-left-radius: var(--cui-button-radius);\n}\n.cui-button-group-item[data-v-1f8e1c39]:last-of-type {\n        margin-right: 5px;\n        border-top-right-radius: var(--cui-button-radius);\n        border-bottom-right-radius: var(--cui-button-radius);\n        border-right: solid 2px var(--cui-dark)\n}\n.selected[data-v-1f8e1c39] {\n        background: var(--cui-dark);\n        color: white\n}\n.cui-button-group-item > i[data-v-1f8e1c39]:not(:last-child) {\n        margin-right: 5px\n}\n\n\n";
 styleInject(css_248z$j);
 
 script$i.render = render$i;
-script$i.__scopeId = "data-v-5085d32b";
+script$i.__scopeId = "data-v-1f8e1c39";
 
 var script$h = {
   props: {

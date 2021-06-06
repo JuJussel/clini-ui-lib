@@ -1,5 +1,5 @@
 <template>
-    <div class="cui-button-group-item" @click="handelClick" ref="item">
+    <div class="cui-button-group-item" @click="handelClick" ref="item" :value="value">
         <div class="ripple"></div>
         <i :class="icon" v-if="icon !== ''"></i>
         <span v-if="label !==''"> {{ label }} </span> 
@@ -26,11 +26,6 @@ export default {
     methods: {
         handelClick() {
             this.$parent.changeValue(this.value)
-            let menuItems = document.querySelectorAll(".cui-button-group-item");
-            menuItems.forEach(item => {
-                item.classList.remove('selected')
-            })
-            this.$refs.item.classList.add("selected")
         }
     }
 }
