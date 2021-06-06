@@ -23,10 +23,7 @@ export default {
             let menuItems = document.querySelectorAll(".cui-button-group-item");
             menuItems.forEach(item => {
                 item.classList.remove('selected')
-                console.log(item.attributes.value);
-                console.log(this.modelValue);
                 if (item.attributes.value.value == this.modelValue) {
-                    console.log('add');
                     item.classList.add("selected")
                 }
             })

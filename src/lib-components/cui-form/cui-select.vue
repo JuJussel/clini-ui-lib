@@ -173,7 +173,6 @@ export default {
             let value = this.modelValue
             if (this.multiple && this.dataIsObject) {
                 value = value.map(function(item) {
-                    console.log(item);
                     return item[this.displayValueProp]
                 })
             } else {
@@ -214,8 +213,6 @@ export default {
                 const value = this.data.find(
                     item => item[this.returnValueProp] === this.modelValue
                 )
-                console.log(this.data);
-                console.log(value);
                 this.value = value
             } else {
                 this.value = this.modelValue

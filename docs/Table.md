@@ -64,6 +64,7 @@ Props:
 - multipleSelect: Select multiple rows. Emits row selected and all selected rows
 - clickable: Adds clickable class (pointer)
 - loading: Set loading state
+- square: Will remove rounded corners
 
 Th properties:
 - sort: if set, sort by prop used.
