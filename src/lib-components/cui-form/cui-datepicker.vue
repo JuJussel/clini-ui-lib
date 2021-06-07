@@ -84,7 +84,11 @@ export default {
     },
     data() {
         return {
-            date: null
+            date: null,
+            trans: {
+                required: '*必須'
+            },
+
         }
     }
 }

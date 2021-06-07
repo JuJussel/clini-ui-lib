@@ -6688,15 +6688,18 @@ var script$7 = {
 
   data() {
     return {
-      date: null
+      date: null,
+      trans: {
+        required: '*必須'
+      }
     };
   }
 
 };
 
-const _withId$6 = /*#__PURE__*/withScopeId("data-v-5539870c");
+const _withId$6 = /*#__PURE__*/withScopeId("data-v-2f681ccc");
 
-pushScopeId("data-v-5539870c");
+pushScopeId("data-v-2f681ccc");
 
 const _hoisted_1$4 = {
   key: 0,
@@ -6719,7 +6722,7 @@ popScopeId();
 const render$7 = /*#__PURE__*/_withId$6((_ctx, _cache, $props, $setup, $data, $options) => {
   const _component_date_picker = resolveComponent("date-picker");
 
-  return openBlock(), createBlock("div", null, [$props.label ? (openBlock(), createBlock("label", _hoisted_1$4, [createVNode("span", _hoisted_2$4, toDisplayString($props.label), 1), $props.required ? (openBlock(), createBlock("span", _hoisted_3$2, toDisplayString(_ctx.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createVNode(_component_date_picker, {
+  return openBlock(), createBlock("div", null, [$props.label ? (openBlock(), createBlock("label", _hoisted_1$4, [createVNode("span", _hoisted_2$4, toDisplayString($props.label), 1), $props.required ? (openBlock(), createBlock("span", _hoisted_3$2, toDisplayString($data.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createVNode(_component_date_picker, {
     disabled: $props.disabled,
     modelValue: $props.modelValue,
     "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $props.modelValue = $event),
@@ -6736,14 +6739,14 @@ const render$7 = /*#__PURE__*/_withId$6((_ctx, _cache, $props, $setup, $data, $o
   }, null, 8, ["disabled", "modelValue", "placeholder", "format", "type", "timePickerOptions", "range", "onInput", "value-type"]), createVNode("div", _hoisted_4$1, [createVNode("span", null, toDisplayString($props.error), 1)])]);
 });
 
-var css_248z$9 = "\n.cui-datepicker-note[data-v-5539870c] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px\n}\n";
+var css_248z$9 = "\n.cui-datepicker-note[data-v-2f681ccc] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px\n}\n";
 styleInject(css_248z$9);
 
 var css_248z$8 = "\n.cui-datepicker-label {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-datepicker {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease;\n        width: calc(100% - 20px);\n}\n.cui-datepicker-input {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 0;\n        transition: all .2s ease\n}\n.cui-datepicker-input:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n}\n.cui-datepicker-popup {\n            border-radius: 12px;\n            color: var(--cui-font-color);\n            overflow: hidden\n}\n.cui-datepicker-popup .cell,\n    .mx-time-option {\n        transition: all .1s ease\n}\n.cui-datepicker-popup .mx-time-option.active {\n        color: var(--cui-primary)\n}\n.cui-datepicker-popup .cell.today {\n        color: var(--cui-primary);\n}\n.cui-datepicker-popup .cell.active,\n    .cui-datepicker-popup .cell.in-range,\n    .cui-datepicker-popup .cell:hover,\n    .mx-time-option:hover {\n        background: var(--cui-primary);\n        color: white;\n}\n\n";
 styleInject(css_248z$8);
 
 script$7.render = render$7;
-script$7.__scopeId = "data-v-5539870c";
+script$7.__scopeId = "data-v-2f681ccc";
 
 var script$6 = {
   name: 'CuiTable',

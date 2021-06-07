@@ -6555,12 +6555,15 @@ function createCommonjsModule(fn) {
   },
   data: function data() {
     return {
-      date: null
+      date: null,
+      trans: {
+        required: '*必須'
+      }
     };
   }
-};var _withId$6 = /*#__PURE__*/vue.withScopeId("data-v-5539870c");
+};var _withId$6 = /*#__PURE__*/vue.withScopeId("data-v-2f681ccc");
 
-vue.pushScopeId("data-v-5539870c");
+vue.pushScopeId("data-v-2f681ccc");
 
 var _hoisted_1$4 = {
   key: 0,
@@ -6583,7 +6586,7 @@ vue.popScopeId();
 var render$7 = /*#__PURE__*/_withId$6(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_date_picker = vue.resolveComponent("date-picker");
 
-  return vue.openBlock(), vue.createBlock("div", null, [$props.label ? (vue.openBlock(), vue.createBlock("label", _hoisted_1$4, [vue.createVNode("span", _hoisted_2$4, vue.toDisplayString($props.label), 1), $props.required ? (vue.openBlock(), vue.createBlock("span", _hoisted_3$2, vue.toDisplayString(_ctx.trans.required), 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), vue.createVNode(_component_date_picker, {
+  return vue.openBlock(), vue.createBlock("div", null, [$props.label ? (vue.openBlock(), vue.createBlock("label", _hoisted_1$4, [vue.createVNode("span", _hoisted_2$4, vue.toDisplayString($props.label), 1), $props.required ? (vue.openBlock(), vue.createBlock("span", _hoisted_3$2, vue.toDisplayString($data.trans.required), 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), vue.createVNode(_component_date_picker, {
     disabled: $props.disabled,
     modelValue: $props.modelValue,
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
@@ -6600,10 +6603,10 @@ var render$7 = /*#__PURE__*/_withId$6(function (_ctx, _cache, $props, $setup, $d
     "popup-class": "cui-datepicker-popup",
     class: "cui-datepicker"
   }, null, 8, ["disabled", "modelValue", "placeholder", "format", "type", "timePickerOptions", "range", "onInput", "value-type"]), vue.createVNode("div", _hoisted_4$1, [vue.createVNode("span", null, vue.toDisplayString($props.error), 1)])]);
-});var css_248z$9 = "\n.cui-datepicker-note[data-v-5539870c] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px\n}\n";
+});var css_248z$9 = "\n.cui-datepicker-note[data-v-2f681ccc] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px\n}\n";
 styleInject(css_248z$9);var css_248z$8 = "\n.cui-datepicker-label {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-datepicker {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease;\n        width: calc(100% - 20px);\n}\n.cui-datepicker-input {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 0;\n        transition: all .2s ease\n}\n.cui-datepicker-input:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n}\n.cui-datepicker-popup {\n            border-radius: 12px;\n            color: var(--cui-font-color);\n            overflow: hidden\n}\n.cui-datepicker-popup .cell,\n    .mx-time-option {\n        transition: all .1s ease\n}\n.cui-datepicker-popup .mx-time-option.active {\n        color: var(--cui-primary)\n}\n.cui-datepicker-popup .cell.today {\n        color: var(--cui-primary);\n}\n.cui-datepicker-popup .cell.active,\n    .cui-datepicker-popup .cell.in-range,\n    .cui-datepicker-popup .cell:hover,\n    .mx-time-option:hover {\n        background: var(--cui-primary);\n        color: white;\n}\n\n";
 styleInject(css_248z$8);script$7.render = render$7;
-script$7.__scopeId = "data-v-5539870c";var script$6 = {
+script$7.__scopeId = "data-v-2f681ccc";var script$6 = {
   name: 'CuiTable',
   props: {
     data: {
