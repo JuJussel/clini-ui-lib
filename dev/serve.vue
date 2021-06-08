@@ -36,7 +36,8 @@ export default defineComponent({
         'A',
         'B',
         'C'
-      ]
+      ],
+      radio: "2"
     }
   },
   methods: {
@@ -98,6 +99,9 @@ export default defineComponent({
           </cui-tooltip>
         </template>
         <div>
+            <cui-radio label="1" value="1" v-model="radio" />
+            <cui-radio label="2" value="2" v-model="radio" disabled/>
+            <cui-radio label="3" value="3" v-model="radio" />
           <cui-button label="3333" @click="console.log('click')"></cui-button>
           <cui-datepicker label="Date" v-model="date"></cui-datepicker>
 
@@ -108,7 +112,6 @@ export default defineComponent({
 
           <div>{{input}}</div>
           <div>{{check}}</div>
-
           <cui-checkbox v-model="check" label="Check"></cui-checkbox>
           <cui-checkbox v-model="check2" label="Check2"></cui-checkbox>
 
