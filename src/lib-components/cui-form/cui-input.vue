@@ -15,6 +15,7 @@
                 @input="changeValue"
                 :disabled="disabled"
                 clearable
+                :pattern="pattern"
                 :placeholder="placeholder"
             >
             <span :class="icon + ' cui-input-icon'" v-if="icon"></span>
@@ -66,7 +67,8 @@ export default {
         darker: {
             default: false,
             type: Boolean
-        }
+        },
+        pattern: {default: '', type: String}
     },
     emits: ['update:modelValue'],
     methods: {

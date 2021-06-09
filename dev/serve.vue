@@ -99,7 +99,7 @@ export default defineComponent({
           </cui-tooltip>
         </template>
         <div>
-            <cui-radio label="1" value="1" v-model="radio" />
+            <cui-radio caption="caption" label="女性" value="1" v-model="radio" />
             <cui-radio label="2" value="2" v-model="radio" disabled/>
             <cui-radio label="3" value="3" v-model="radio" />
           <cui-button label="3333" @click="console.log('click')"></cui-button>

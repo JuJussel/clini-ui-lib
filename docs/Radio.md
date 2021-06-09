@@ -19,3 +19,4 @@ Props:
 - label: Label of Radio
 - value: REtunr value
 - disabled: Radio is disabled
+- Caption: Label on top 
