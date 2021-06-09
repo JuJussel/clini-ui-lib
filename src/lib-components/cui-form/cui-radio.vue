@@ -33,7 +33,6 @@ export default {
   },
   methods: {
     select() {
-      console.log(this.value);
       this.$emit("update:modelValue", this.value);
     },
   },
