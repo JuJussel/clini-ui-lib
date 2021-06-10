@@ -35,7 +35,7 @@
                         :clickable="clickable"
                         >
                         <template #parentRow>
-                            <slot name="row" :row="row" v-bind="row"></slot>
+                            <slot name="row" :row="Object.assign(row, {_index: index})" v-bind="row"></slot>
                         </template>
                         <template #expand v-if="$slots.expand">
                             <slot name="expand" :expand="row"></slot>

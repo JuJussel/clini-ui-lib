@@ -1,10 +1,12 @@
 <script>
 import { defineComponent } from 'vue';
 import CuiAvatar from '../src/lib-components/cui-avatar/cui-avatar.vue';
+import cuiFileUpload from '../src/lib-components/cui-file-upload/cui-file-upload.vue';
 // Uncomment import and local "components" registration if library is not registered globally.
 // import { CliniUiLibSample } from '@/entry.esm';
 
 export default defineComponent({
+  components: { cuiFileUpload },
   name: 'ServeDev',
   data() {
     CuiAvatar
@@ -99,6 +101,10 @@ export default defineComponent({
           </cui-tooltip>
         </template>
         <div>
+          <cui-file-upload></cui-file-upload>
+
+
+
             <cui-radio caption="caption" label="女性" value="1" v-model="radio" />
             <cui-radio label="2" value="2" v-model="radio" disabled/>
             <cui-radio label="3" value="3" v-model="radio" />

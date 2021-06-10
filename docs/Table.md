@@ -52,7 +52,7 @@ Example
 Slots:
 - header: Table heading
 - thead: Teable head. Use cui-th here
-- row: Content of row. Add td here. Use "row" to access data
+- row: Content of row. Add td here. Use "row" to access data. row._index will be the row index in the data array
 - expand: Content of expandable row. Use "expand" to access data
 - footer: Table footer
 - emptyImage: Image for empty state

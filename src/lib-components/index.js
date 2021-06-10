@@ -17,3 +17,5 @@ export { default as CuiTr } from './cui-table/cui-tr.vue';
 export { default as CuiTag } from './cui-tag/cui-tag.vue';
 export { default as CuiAvatar } from './cui-avatar/cui-avatar.vue';
 export { default as CuiTooltip } from './cui-tooltip/cui-tooltip.vue';
+export { default as CuiFileUpload } from './cui-file-upload/cui-file-upload.vue';
+
