@@ -101,7 +101,7 @@ export default defineComponent({
           </cui-tooltip>
         </template>
         <div>
-          <cui-file-upload></cui-file-upload>
+          <cui-file-upload accept=".png"></cui-file-upload>
 
 
 
