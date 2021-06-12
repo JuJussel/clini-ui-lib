@@ -19,7 +19,7 @@
             class="cui-datepicker"
          ></date-picker>
         <div class="cui-datepicker-note">
-            <span> {{ error }} </span>
+            <span> {{ noteDisplay }} </span>
         </div>
 
     </div>
@@ -70,7 +70,7 @@ export default {
             default: 'date',
             type: String
         },
-        error: {
+        note: {
             default: '',
             type: String
         }
@@ -88,9 +88,16 @@ export default {
             trans: {
                 required: '*必須'
             },
+            noteDisplay: ''
 
         }
+    },
+    watch: {
+        note() {
+            this.noteDisplay = this.note
+        }
     }
+
 }
 </script>
 

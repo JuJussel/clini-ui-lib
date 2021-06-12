@@ -83,7 +83,7 @@
             </div>
         </div>
         <div class="cui-select-note" v-if="!noNote">
-            <span> {{ error }} </span>
+            <span> {{ noteDisplay }} </span>
         </div>
     </div>
 </template>
@@ -153,6 +153,7 @@ export default {
     emits: ['update:modelValue', 'select', 'input'],
     data() {
         return {
+            noteDisplay: '',
             value: null,
             focused: false,
             dropdownWidth: 100,
@@ -205,7 +206,11 @@ export default {
                 this.setDropdownItems()
             },
             deep: true
+        },
+        note() {
+            this.noteDisplay = this.note
         }
+
     },
     methods: {
         setInitialValue() {

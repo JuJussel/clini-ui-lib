@@ -22,7 +22,7 @@
 
         </div>
         <div class="cui-input-note" v-if="!noNote">
-            <span> {{ error }} </span>
+            <span> {{ noteDisplay }} </span>
         </div>
     </div>
 </template>
@@ -64,6 +64,10 @@ export default {
             default: false,
             type: Boolean
         },
+        note: {
+            default: '',
+            type: String
+        },
         darker: {
             default: false,
             type: Boolean
@@ -73,15 +77,21 @@ export default {
     emits: ['update:modelValue'],
     methods: {
         changeValue() {
+            this.noteDisplay = ''
             this.$emit('update:modelValue', this.modelValue)
         }
     },
     data() {
         return {
             trans: {
-                required: '*必須'
+                required: '*必須',
             },
-            error: ''
+            noteDisplay: ''
+        }
+    },
+    watch: {
+        note() {
+            this.noteDisplay = this.note
         }
     }
 }

@@ -27,7 +27,7 @@ export default {
     components: {Table},
     props: {
         title: {default: 'ファイルアップロード', type: String},
-        accept: {default: ['.txt','.csv','.bmp','.png','.jpeg','.jpg','.pdf','.pptx','.xlsx','.docx'], type: String}
+        accept: {default: ['.txt','.csv','.bmp','.png','.jpeg','.jpg','.pdf','.pptx','.xlsx','.docx'], type: Array}
     },
     data() {
         return {
