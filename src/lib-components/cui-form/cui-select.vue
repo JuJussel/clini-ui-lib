@@ -1,5 +1,5 @@
 <template>
-    <div class="cui-select-container">
+    <div class="cui-select-container" v-bind:class="{disabled}" @click.stop="handleClick">
         <label class="cui-select-label" v-if="label">
             <span style="margin-right: 10px"> {{ label }} </span>
             <span v-if="required"> {{ trans.required }} </span>
@@ -7,7 +7,7 @@
         <div
             ref="select"
             class="cui-select" 
-            @click.stop="handleClick" 
+             
             v-bind:class="{focused: focused, 'has-color': color, disabled: disabled}" 
             v-bind:style="{background: selectBackground}"
             >
@@ -353,10 +353,13 @@ export default {
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
     }
-    .cui-select.disabled {
+    .cui-select-container {
+        cursor: pointer
+    }
+    .cui-select-container.disabled, .cui-select.disabled {
         cursor: not-allowed
     }
-    .cui-select:not(.disabled):hover,
+    .cui-select-container:hover .cui-select:not(.disabled),
     .cui-select.focused {
         padding-left: 13px;
         padding-right: 7px;

@@ -1,23 +1,24 @@
 <template>
-    <button 
-        class="cui-button"
-        v-bind:class="{
-            danger: danger,
-            primary: primary,
-            warn: warn,
-            disabled: disabled || loading,
-            loading: loading,
-            plain: plain,
-            white: white,
-            bigIcon: bigIcon
-        }"
-        @click="handelClick"
-        >
-        <div class="loader-button" v-if="loading"></div>
-        <div class="ripple"></div>
-        <i :class="icon" v-if="icon !== ''"></i>
-        <span v-if="label !==''"> {{ label }} </span> 
-    </button>
+    <div class="cui-button-wrapper" @click="handelClick" v-bind:class="{disabled}">
+        <button
+            class="cui-button"
+            v-bind:class="{
+                danger: danger,
+                primary: primary,
+                warn: warn,
+                disabled: disabled || loading,
+                loading: loading,
+                plain: plain,
+                white: white,
+                bigIcon: bigIcon
+            }"
+            >
+            <div class="loader-button" v-if="loading"></div>
+            <div class="ripple"></div>
+            <i :class="icon" v-if="icon !== ''"></i>
+            <span v-if="label !==''"> {{ label }} </span>
+        </button>
+    </div>
 </template>
 
 <script>
@@ -77,6 +78,17 @@ export default {
 </script>
 
 <style scoped>
+    .cui-button-wrapper {
+        width: fit-content;
+    }
+    .cui-button-wrapper:not(.disabled) {
+        cursor: pointer
+    }
+    .cui-button-wrapper:hover .cui-button:not(.disabled):not(.plain) {
+        transform: translate(0px, -5px);
+        margin-bottom: 5px;
+        box-shadow: 0 10px 20px -10px var(--cui-dark)
+    }
     .cui-button {
         height: 35px;
         border: 0px;
@@ -96,11 +108,7 @@ export default {
         box-sizing: border-box;
         background: var(--cui-dark);
         color: white;
-        cursor: pointer;
-    }
-    .cui-button:not(.disabled):not(.plain):hover {
-        transform: translate(0px, -5px);
-        box-shadow: 0 10px 20px -10px var(--cui-dark);
+        cursor: pointer
     }
     .cui-button.danger {
         background: var(--cui-danger);

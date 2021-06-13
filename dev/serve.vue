@@ -109,7 +109,7 @@ export default defineComponent({
             <cui-radio caption="caption" label="女性" value="1" v-model="radio" />
             <cui-radio label="2" value="2" v-model="radio" disabled/>
             <cui-radio label="3" value="3" v-model="radio" />
-          <cui-button label="3333" @click="console.log('click')"></cui-button>
+          <cui-button label="3333" @click="console.log('click')" disabled></cui-button>
           <cui-datepicker label="Date" v-model="date"></cui-datepicker>
 
           <div style="margin-top: 100px"></div>
