@@ -23,3 +23,4 @@ Props:
 - disabled: Disable input and make read only
 - append: Text to append
 - darker: for table headers. makes input darker
+- note: Error message

@@ -6707,6 +6707,7 @@ var script$9 = {
   emits: ['update:modelValue', 'change'],
   methods: {
     changeValue() {
+      this.noteDisplay = '';
       this.$emit('update:modelValue', this.modelValue);
       this.$emit('change', this.modelValue);
     }
@@ -6731,9 +6732,9 @@ var script$9 = {
   }
 };
 
-const _withId$7 = /*#__PURE__*/withScopeId("data-v-296e7ec6");
+const _withId$7 = /*#__PURE__*/withScopeId("data-v-513df46f");
 
-pushScopeId("data-v-296e7ec6");
+pushScopeId("data-v-513df46f");
 
 const _hoisted_1$6 = {
   key: 0,
@@ -6773,14 +6774,14 @@ const render$9 = /*#__PURE__*/_withId$7((_ctx, _cache, $props, $setup, $data, $o
   }, null, 8, ["disabled", "modelValue", "placeholder", "format", "type", "timePickerOptions", "range", "onInput", "value-type"]), createVNode("div", _hoisted_4$1, [createVNode("span", null, toDisplayString($data.noteDisplay), 1)])]);
 });
 
-var css_248z$b = "\n.cui-datepicker-note[data-v-296e7ec6] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px\n}\n";
+var css_248z$b = "\n.cui-datepicker-note[data-v-513df46f] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px\n}\n";
 styleInject(css_248z$b);
 
 var css_248z$a = "\n.cui-datepicker-label {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-datepicker {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease;\n        width: calc(100% - 20px);\n}\n.cui-datepicker-input {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 0;\n        transition: all .2s ease\n}\n.cui-datepicker-input:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n}\n.cui-datepicker-popup {\n            border-radius: 12px;\n            color: var(--cui-font-color);\n            overflow: hidden\n}\n.cui-datepicker-popup .cell,\n    .mx-time-option {\n        transition: all .1s ease\n}\n.cui-datepicker-popup .mx-time-option.active {\n        color: var(--cui-primary)\n}\n.cui-datepicker-popup .cell.today {\n        color: var(--cui-primary);\n}\n.cui-datepicker-popup .cell.active,\n    .cui-datepicker-popup .cell.in-range,\n    .cui-datepicker-popup .cell:hover,\n    .mx-time-option:hover {\n        background: var(--cui-primary);\n        color: white;\n}\n\n";
 styleInject(css_248z$a);
 
 script$9.render = render$9;
-script$9.__scopeId = "data-v-296e7ec6";
+script$9.__scopeId = "data-v-513df46f";
 
 var script$8 = {
   props: {
@@ -7409,11 +7410,8 @@ var script$1 = {
     addFile() {
       let file = this.$refs.file.files[0];
       let ext = file.name.split('.');
-      console.log(ext);
       let last = ext.length - 1;
-      console.log(last);
       ext = '.' + ext[last];
-      console.log(ext);
 
       if (this.accept.includes(ext)) {
         this.files.push(file);

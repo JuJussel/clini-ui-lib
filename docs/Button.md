@@ -21,3 +21,4 @@ Props:
 - disabled: Button is disabled
 - loading: Button is loading
 - plain: Button has no background. Useful for cancel actions.
+- bigIcon: Show large icon. Default: true
