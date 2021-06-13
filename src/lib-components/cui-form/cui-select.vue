@@ -7,7 +7,6 @@
         <div
             ref="select"
             class="cui-select" 
-             
             v-bind:class="{focused: focused, 'has-color': color, disabled: disabled}" 
             v-bind:style="{background: selectBackground}"
             >
