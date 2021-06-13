@@ -38,6 +38,10 @@ var script$k = {
     plain: {
       default: false,
       type: Boolean
+    },
+    bigIcon: {
+      default: true,
+      type: Boolean
     }
   },
   emits: ['click'],
@@ -51,16 +55,16 @@ var script$k = {
   }
 };
 
-const _withId$e = /*#__PURE__*/withScopeId("data-v-00ca57b2");
+const _withId$e = /*#__PURE__*/withScopeId("data-v-c237001c");
 
-pushScopeId("data-v-00ca57b2");
+pushScopeId("data-v-c237001c");
 
 const _hoisted_1$h = {
   key: 0,
   class: "loader-button"
 };
 
-const _hoisted_2$e = /*#__PURE__*/createVNode("div", {
+const _hoisted_2$f = /*#__PURE__*/createVNode("div", {
   class: "ripple"
 }, null, -1);
 
@@ -79,10 +83,11 @@ const render$k = /*#__PURE__*/_withId$e((_ctx, _cache, $props, $setup, $data, $o
       disabled: $props.disabled || $props.loading,
       loading: $props.loading,
       plain: $props.plain,
-      white: $props.white
+      white: $props.white,
+      bigIcon: $props.bigIcon
     }],
     onClick: _cache[1] || (_cache[1] = (...args) => $options.handelClick && $options.handelClick(...args))
-  }, [$props.loading ? (openBlock(), createBlock("div", _hoisted_1$h)) : createCommentVNode("", true), _hoisted_2$e, $props.icon !== '' ? (openBlock(), createBlock("i", {
+  }, [$props.loading ? (openBlock(), createBlock("div", _hoisted_1$h)) : createCommentVNode("", true), _hoisted_2$f, $props.icon !== '' ? (openBlock(), createBlock("i", {
     key: 1,
     class: $props.icon
   }, null, 2)) : createCommentVNode("", true), $props.label !== '' ? (openBlock(), createBlock("span", _hoisted_3$9, toDisplayString($props.label), 1)) : createCommentVNode("", true)], 2);
@@ -115,11 +120,11 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$o = "\n.cui-button[data-v-00ca57b2] {\n        height: 35px;\n        border: 0px;\n        margin: 5px;\n        border-radius: var(--cui-button-radius);\n        transition: all .2s ease;\n        position: relative;\n        user-select: none;\n        z-index: 1;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 10px;\n        outline: none;\n        font-size: .8rem;\n        box-sizing: border-box;\n        background: var(--cui-dark);\n        color: white;\n        cursor: pointer;\n}\n.cui-button[data-v-00ca57b2]:not(.disabled):not(.plain):hover {\n        transform: translate(0px, -5px);\n        box-shadow: 0 10px 20px -10px var(--cui-dark);\n}\n.cui-button.danger[data-v-00ca57b2] {\n        background: var(--cui-danger);\n}\n.cui-button.danger[data-v-00ca57b2]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-danger);\n}\n.cui-button.primary[data-v-00ca57b2] {\n        background: var(--cui-primary);\n}\n.cui-button.primary[data-v-00ca57b2]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-primary);\n}\n.cui-button.warn[data-v-00ca57b2] {\n        background: var(--cui-warn);\n}\n.cui-button.warn[data-v-00ca57b2]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-warn);\n}\n.cui-button > i[data-v-00ca57b2]:not(:last-child) {\n        margin-right: 5px\n}\n.cui-button.disabled[data-v-00ca57b2] {\n        cursor: not-allowed;\n        opacity: 0.7;\n}\n.cui-button.loading[data-v-00ca57b2] {\n        color: rgba(255,255,255,0.5)\n}\n.cui-button.plain[data-v-00ca57b2] {\n        background: none;\n        color: var(--cui-font-color)\n}\n.cui-button.plain[data-v-00ca57b2]:hover {\n        background: var(--cui-gray-1)\n}\n.cui-button.white[data-v-00ca57b2] {\n        background: white;\n        color: var(--cui-font-color)\n}\n.loader-button[data-v-00ca57b2] {\n        justify-content: center;\n        align-items: center;\n        width: 100%;\n        height: 100%;\n        position: absolute;\n        display: flex\n}\n";
+var css_248z$o = "\n.cui-button[data-v-c237001c] {\n        height: 35px;\n        border: 0px;\n        margin: 5px;\n        border-radius: var(--cui-button-radius);\n        transition: all .2s ease;\n        position: relative;\n        user-select: none;\n        z-index: 1;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 10px;\n        outline: none;\n        font-size: .8rem;\n        box-sizing: border-box;\n        background: var(--cui-dark);\n        color: white;\n        cursor: pointer;\n}\n.cui-button[data-v-c237001c]:not(.disabled):not(.plain):hover {\n        transform: translate(0px, -5px);\n        box-shadow: 0 10px 20px -10px var(--cui-dark);\n}\n.cui-button.danger[data-v-c237001c] {\n        background: var(--cui-danger);\n}\n.cui-button.danger[data-v-c237001c]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-danger);\n}\n.cui-button.primary[data-v-c237001c] {\n        background: var(--cui-primary);\n}\n.cui-button.primary[data-v-c237001c]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-primary);\n}\n.cui-button.warn[data-v-c237001c] {\n        background: var(--cui-warn);\n}\n.cui-button.warn[data-v-c237001c]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-warn);\n}\n.cui-button > i[data-v-c237001c]:not(:last-child) {\n        margin-right: 5px\n}\n.cui-button.disabled[data-v-c237001c] {\n        cursor: not-allowed;\n        opacity: 0.7;\n}\n.cui-button.loading[data-v-c237001c] {\n        color: rgba(255,255,255,0.5)\n}\n.cui-button.plain[data-v-c237001c] {\n        background: none;\n        color: var(--cui-font-color)\n}\n.cui-button.plain[data-v-c237001c]:hover {\n        background: var(--cui-gray-1)\n}\n.cui-button.white[data-v-c237001c] {\n        background: white;\n        color: var(--cui-font-color)\n}\n.loader-button[data-v-c237001c] {\n        justify-content: center;\n        align-items: center;\n        width: 100%;\n        height: 100%;\n        position: absolute;\n        display: flex\n}\n.cui-button.bigIcon i[data-v-c237001c] {\n        font-size: 20px;\n}\n";
 styleInject(css_248z$o);
 
 script$k.render = render$k;
-script$k.__scopeId = "data-v-00ca57b2";
+script$k.__scopeId = "data-v-c237001c";
 
 var script$j = {
   name: 'ButtonGroup',
@@ -214,7 +219,7 @@ const _hoisted_1$f = /*#__PURE__*/createVNode("div", {
   class: "ripple"
 }, null, -1);
 
-const _hoisted_2$d = {
+const _hoisted_2$e = {
   key: 1
 };
 
@@ -229,7 +234,7 @@ const render$i = /*#__PURE__*/_withId$c((_ctx, _cache, $props, $setup, $data, $o
   }, [_hoisted_1$f, $props.icon !== '' ? (openBlock(), createBlock("i", {
     key: 0,
     class: $props.icon
-  }, null, 2)) : createCommentVNode("", true), $props.label !== '' ? (openBlock(), createBlock("span", _hoisted_2$d, toDisplayString($props.label), 1)) : createCommentVNode("", true)], 8, ["value"]);
+  }, null, 2)) : createCommentVNode("", true), $props.label !== '' ? (openBlock(), createBlock("span", _hoisted_2$e, toDisplayString($props.label), 1)) : createCommentVNode("", true)], 8, ["value"]);
 });
 
 var css_248z$l = "\n.cui-button-group-item[data-v-1f8e1c39] {\n        height: 35px;\n        border: 0px;\n        margin: 5px 0;\n        transition: all .2s ease;\n        position: relative;\n        user-select: none;\n        z-index: 1;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 10px;\n        outline: none;\n        font-size: .8rem;\n        box-sizing: border-box;\n        background: white;\n        cursor: pointer;\n        border: solid 2px var(--cui-dark);\n        border-right: none\n}\n.cui-button-group-item[data-v-1f8e1c39]:first-of-type {\n        margin-left: 5px;\n        border-top-left-radius: var(--cui-button-radius);\n        border-bottom-left-radius: var(--cui-button-radius);\n}\n.cui-button-group-item[data-v-1f8e1c39]:last-of-type {\n        margin-right: 5px;\n        border-top-right-radius: var(--cui-button-radius);\n        border-bottom-right-radius: var(--cui-button-radius);\n        border-right: solid 2px var(--cui-dark)\n}\n.selected[data-v-1f8e1c39] {\n        background: var(--cui-dark);\n        color: white\n}\n.cui-button-group-item > i[data-v-1f8e1c39]:not(:last-child) {\n        margin-right: 5px\n}\n\n\n";
@@ -283,7 +288,7 @@ const _hoisted_1$e = {
   class: "cui-menu-bar",
   ref: "menuBar"
 };
-const _hoisted_2$c = {
+const _hoisted_2$d = {
   class: "menu-item"
 };
 const _hoisted_3$8 = {
@@ -296,7 +301,7 @@ const _hoisted_4$6 = {
 popScopeId();
 
 const render$h = /*#__PURE__*/_withId$b((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("div", _hoisted_1$e, [createVNode("div", _hoisted_2$c, [renderSlot(_ctx.$slots, "left")]), createVNode("div", _hoisted_3$8, [renderSlot(_ctx.$slots, "center")]), createVNode("div", _hoisted_4$6, [renderSlot(_ctx.$slots, "right")])], 512);
+  return openBlock(), createBlock("div", _hoisted_1$e, [createVNode("div", _hoisted_2$d, [renderSlot(_ctx.$slots, "left")]), createVNode("div", _hoisted_3$8, [renderSlot(_ctx.$slots, "center")]), createVNode("div", _hoisted_4$6, [renderSlot(_ctx.$slots, "right")])], 512);
 });
 
 var css_248z$k = "\n.cui-menu-bar[data-v-4289ed8a] {\n        background: var(--cui-dark);\n        height: 45px;\n        border-bottom-left-radius: 15px;\n        border-bottom-right-radius: 15px;\n        padding: 0 15px;\n        position: relative;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        color: var(--cui-gray-2);\n        font-weight: bold;\n        font-size: 16px;\n}\n.cui-menu-bar > .menu-item[data-v-4289ed8a] {\n        display: flex;\n        align-items: center;\n}\n";
@@ -332,7 +337,7 @@ const _hoisted_1$d = /*#__PURE__*/createVNode("div", {
   class: "ripple"
 }, null, -1);
 
-const _hoisted_2$b = /*#__PURE__*/createVNode("div", {
+const _hoisted_2$c = /*#__PURE__*/createVNode("div", {
   class: "menu-bar-line"
 }, null, -1);
 
@@ -348,7 +353,7 @@ function render$g(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[1] || (_cache[1] = (...args) => $options.handelClick && $options.handelClick(...args)),
     ref: "item",
     value: $props.value
-  }, [_hoisted_1$d, _hoisted_2$b, createVNode("div", _hoisted_3$7, [$props.icon !== '' ? (openBlock(), createBlock("i", {
+  }, [_hoisted_1$d, _hoisted_2$c, createVNode("div", _hoisted_3$7, [$props.icon !== '' ? (openBlock(), createBlock("i", {
     key: 0,
     class: $props.icon
   }, null, 2)) : createCommentVNode("", true), $props.label !== '' ? (openBlock(), createBlock("span", _hoisted_4$5, toDisplayString($props.label), 1)) : createCommentVNode("", true)])], 8, ["value"]);
@@ -379,7 +384,7 @@ var script$f = {
 const _hoisted_1$c = {
   class: "cui-card-padding"
 };
-const _hoisted_2$a = {
+const _hoisted_2$b = {
   class: "cui-card"
 };
 const _hoisted_3$6 = {
@@ -391,7 +396,7 @@ const _hoisted_4$4 = {
   class: "footer"
 };
 function render$f(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createBlock("div", _hoisted_1$c, [createVNode("div", _hoisted_2$a, [_ctx.$slots.header ? (openBlock(), createBlock("div", _hoisted_3$6, [renderSlot(_ctx.$slots, "header")])) : createCommentVNode("", true), createVNode("div", {
+  return openBlock(), createBlock("div", _hoisted_1$c, [createVNode("div", _hoisted_2$b, [_ctx.$slots.header ? (openBlock(), createBlock("div", _hoisted_3$6, [renderSlot(_ctx.$slots, "header")])) : createCommentVNode("", true), createVNode("div", {
     class: ["cui-card-body", {
       'no-padding': $props.noPadding
     }]
@@ -458,8 +463,8 @@ function render$e(_ctx, _cache, $props, $setup, $data, $options) {
       default: withCtx(() => [$data.showContent ? (openBlock(), createBlock("div", {
         key: 0,
         class: "cui-modal-content",
-        onClick: _cache[1] || (_cache[1] = (...args) => $options.handelClick && $options.handelClick(...args))
-      }, [renderSlot(_ctx.$slots, "default")])) : createCommentVNode("", true)]),
+        onMousedown: _cache[1] || (_cache[1] = (...args) => $options.handelClick && $options.handelClick(...args))
+      }, [renderSlot(_ctx.$slots, "default")], 32)) : createCommentVNode("", true)]),
       _: 3
     })])) : createCommentVNode("", true)]),
     _: 1
@@ -554,7 +559,7 @@ const _hoisted_1$a = {
   key: 0,
   class: "cui-input-label"
 };
-const _hoisted_2$9 = {
+const _hoisted_2$a = {
   style: {
     "margin-right": "10px"
   }
@@ -579,7 +584,7 @@ const _hoisted_6$2 = {
 popScopeId();
 
 const render$d = /*#__PURE__*/_withId$a((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("div", null, [$props.label ? (openBlock(), createBlock("label", _hoisted_1$a, [createVNode("span", _hoisted_2$9, toDisplayString($props.label), 1), $props.required ? (openBlock(), createBlock("span", _hoisted_3$5, toDisplayString($data.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createVNode("div", _hoisted_4$3, [$props.append ? (openBlock(), createBlock("span", _hoisted_5$2, toDisplayString($props.append), 1)) : createCommentVNode("", true), withDirectives(createVNode("input", {
+  return openBlock(), createBlock("div", null, [$props.label ? (openBlock(), createBlock("label", _hoisted_1$a, [createVNode("span", _hoisted_2$a, toDisplayString($props.label), 1), $props.required ? (openBlock(), createBlock("span", _hoisted_3$5, toDisplayString($data.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createVNode("div", _hoisted_4$3, [$props.append ? (openBlock(), createBlock("span", _hoisted_5$2, toDisplayString($props.append), 1)) : createCommentVNode("", true), withDirectives(createVNode("input", {
     class: ["cui-input", {
       'has-icon': $props.icon,
       disabled: $props.disabled,
@@ -652,7 +657,7 @@ const _hoisted_1$9 = /*#__PURE__*/createVNode("div", {
   class: "cui-checkbox-icon fas fa-check"
 })], -1);
 
-const _hoisted_2$8 = {
+const _hoisted_2$9 = {
   class: "cui-checkbox-label"
 };
 
@@ -672,7 +677,7 @@ const render$c = /*#__PURE__*/_withId$9((_ctx, _cache, $props, $setup, $data, $o
     id: $data.id,
     "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $props.modelValue = $event),
     disabled: $props.disabled
-  }, null, 40, ["id", "disabled"]), [[vModelCheckbox, $props.modelValue]]), createVNode("div", _hoisted_2$8, toDisplayString($props.label), 1)], 10, ["for"]);
+  }, null, 40, ["id", "disabled"]), [[vModelCheckbox, $props.modelValue]]), createVNode("div", _hoisted_2$9, toDisplayString($props.label), 1)], 10, ["for"]);
 });
 
 var css_248z$f = "\n\n    /* Base State */\n.cui-checkbox-container[data-v-6b76e5f7] {\n        display: flex;\n        align-items: center;\n        width: fit-content; \n        margin: 5px 0;\n        position: relative\n}\n.cui-checkbox-container[data-v-6b76e5f7]:not(.disabled) {\n        cursor: pointer\n}\n.cui-checkbox[data-v-6b76e5f7] {\n        display: none\n}\n.cui-checkbox-con[data-v-6b76e5f7] {\n        position: absolute;\n        width: 15px;\n        height: 15px;\n        border-radius: 5px;\n        border: solid 2px var(--cui-gray-2);\n        transition: all .2s ease;\n        display: flex\n}\n.cui-checkbox-label[data-v-6b76e5f7] {\n        padding-left: 25px\n}\n\n    /* Hover State */\n.cui-checkbox-container:not(.disabled):not(.selected):hover .cui-checkbox-con[data-v-6b76e5f7],\n    .cui-checkbox-container.disabled .cui-checkbox-con[data-v-6b76e5f7] {\n        background: var(--cui-gray-1)\n}\n\n    /* Selected State */\n.cui-checkbox-container.selected .cui-checkbox-con[data-v-6b76e5f7] {\n        background: var(--cui-primary);\n        border-color: var(--cui-primary);\n        box-shadow: 0 0 0 0 var(--cui-primary);\n}\n.cui-checkbox-icon[data-v-6b76e5f7] {\n        color: white;\n        transform: scale(.1);\n        opacity: 0;\n        transition: all .2s ease\n}\n.cui-checkbox-container.selected .cui-checkbox-icon[data-v-6b76e5f7] {\n        transform: scale(.8);\n        opacity: 1\n}\n\n\n";
@@ -2628,7 +2633,7 @@ pushScopeId("data-v-47aea993");
 const _hoisted_1$8 = {
   class: "cui-select-container"
 };
-const _hoisted_2$7 = {
+const _hoisted_2$8 = {
   key: 0,
   class: "cui-select-label"
 };
@@ -2705,7 +2710,7 @@ const render$b = /*#__PURE__*/_withId$8((_ctx, _cache, $props, $setup, $data, $o
 
   const _component_cui_checkbox = resolveComponent("cui-checkbox");
 
-  return openBlock(), createBlock("div", _hoisted_1$8, [$props.label ? (openBlock(), createBlock("label", _hoisted_2$7, [createVNode("span", _hoisted_3$4, toDisplayString($props.label), 1), $props.required ? (openBlock(), createBlock("span", _hoisted_4$2, toDisplayString($data.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createVNode("div", {
+  return openBlock(), createBlock("div", _hoisted_1$8, [$props.label ? (openBlock(), createBlock("label", _hoisted_2$8, [createVNode("span", _hoisted_3$4, toDisplayString($props.label), 1), $props.required ? (openBlock(), createBlock("span", _hoisted_4$2, toDisplayString($data.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createVNode("div", {
     ref: "select",
     class: ["cui-select", {
       focused: $data.focused,
@@ -4024,12 +4029,12 @@ var _hoisted_1$7 = {
   height: "1em"
 };
 
-var _hoisted_2$6 = /*#__PURE__*/createVNode("path", {
+var _hoisted_2$7 = /*#__PURE__*/createVNode("path", {
   d: "M940.218182 107.054545h-209.454546V46.545455h-65.163636v60.50909H363.054545V46.545455H297.890909v60.50909H83.781818c-18.618182 0-32.581818 13.963636-32.581818 32.581819v805.236363c0 18.618182 13.963636 32.581818 32.581818 32.581818h861.090909c18.618182 0 32.581818-13.963636 32.581818-32.581818V139.636364c-4.654545-18.618182-18.618182-32.581818-37.236363-32.581819zM297.890909 172.218182V232.727273h65.163636V172.218182h307.2V232.727273h65.163637V172.218182h176.872727v204.8H116.363636V172.218182h181.527273zM116.363636 912.290909V442.181818h795.927273v470.109091H116.363636z"
 }, null, -1);
 
 function render$1$1(_ctx, _cache) {
-  return openBlock(), createBlock("svg", _hoisted_1$7, [_hoisted_2$6]);
+  return openBlock(), createBlock("svg", _hoisted_1$7, [_hoisted_2$7]);
 }
 
 var script$1$1 = {};
@@ -6734,7 +6739,7 @@ const _hoisted_1$6 = {
   key: 0,
   class: "cui-datepicker-label"
 };
-const _hoisted_2$5 = {
+const _hoisted_2$6 = {
   style: {
     "margin-right": "10px"
   }
@@ -6751,7 +6756,7 @@ popScopeId();
 const render$9 = /*#__PURE__*/_withId$7((_ctx, _cache, $props, $setup, $data, $options) => {
   const _component_date_picker = resolveComponent("date-picker");
 
-  return openBlock(), createBlock("div", null, [$props.label ? (openBlock(), createBlock("label", _hoisted_1$6, [createVNode("span", _hoisted_2$5, toDisplayString($props.label), 1), $props.required ? (openBlock(), createBlock("span", _hoisted_3$3, toDisplayString($data.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createVNode(_component_date_picker, {
+  return openBlock(), createBlock("div", null, [$props.label ? (openBlock(), createBlock("label", _hoisted_1$6, [createVNode("span", _hoisted_2$6, toDisplayString($props.label), 1), $props.required ? (openBlock(), createBlock("span", _hoisted_3$3, toDisplayString($data.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createVNode(_component_date_picker, {
     disabled: $props.disabled,
     modelValue: $props.modelValue,
     "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $props.modelValue = $event),
@@ -6807,22 +6812,23 @@ var script$8 = {
   },
   methods: {
     select() {
+      this.$emit('select', this.value);
       this.$emit("update:modelValue", this.value);
     }
 
   }
 };
 
-const _withId$6 = /*#__PURE__*/withScopeId("data-v-876f07de");
+const _withId$6 = /*#__PURE__*/withScopeId("data-v-fa1c4062");
 
-pushScopeId("data-v-876f07de");
+pushScopeId("data-v-fa1c4062");
 
 const _hoisted_1$5 = {
   style: {
     "margin": "10px 0"
   }
 };
-const _hoisted_2$4 = {
+const _hoisted_2$5 = {
   key: 0,
   class: "cui-radio-label"
 };
@@ -6835,7 +6841,7 @@ const _hoisted_3$2 = {
 popScopeId();
 
 const render$8 = /*#__PURE__*/_withId$6((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("div", _hoisted_1$5, [$props.caption ? (openBlock(), createBlock("div", _hoisted_2$4, [createVNode("span", _hoisted_3$2, toDisplayString($props.caption), 1)])) : createCommentVNode("", true), createVNode("label", {
+  return openBlock(), createBlock("div", _hoisted_1$5, [$props.caption ? (openBlock(), createBlock("div", _hoisted_2$5, [createVNode("span", _hoisted_3$2, toDisplayString($props.caption), 1)])) : createCommentVNode("", true), createVNode("label", {
     class: ["cui-radio", {
       disabled: $props.disabled
     }]
@@ -6848,11 +6854,11 @@ const render$8 = /*#__PURE__*/_withId$6((_ctx, _cache, $props, $setup, $data, $o
   }, null, 40, ["checked", "value", "disabled"]), createVNode("span", null, toDisplayString($props.label), 1)], 2)]);
 });
 
-var css_248z$9 = "\n.cui-radio-label[data-v-876f07de] {\n    font-size: 14px;\n    margin-left: 10px;\n    margin-bottom: 5px\n}\n.cui-radio[data-v-876f07de] {\n  margin: 0;\n  display: block;\n  cursor: pointer;\n  font-size: 14px;\n}\n.cui-radio.disabled[data-v-876f07de] {\n  cursor: not-allowed;\n}\n.cui-radio input[data-v-876f07de] {\n  display: none;\n}\n.cui-radio input + span[data-v-876f07de] {\n  line-height: 18px;\n  height: 18px;\n  padding-left: 18px;\n  display: block;\n  position: relative;\n}\n.cui-radio input + span[data-v-876f07de]:not(:empty) {\n  padding-left: 25px;\n}\n.cui-radio input + span[data-v-876f07de]:before,\n.cui-radio input + span[data-v-876f07de]:after {\n  content: \"\";\n  width: 18px;\n  height: 18px;\n  display: block;\n  border-radius: 50%;\n  left: 0;\n  top: 0;\n  position: absolute;\n}\n.cui-radio input + span[data-v-876f07de]:before {\n  background: var(--cui-gray-5);\n  transition: background 0.2s ease,\n    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);\n}\n.cui-radio.disabled input + span[data-v-876f07de]:before {\n  background: var(--cui-gray-2);\n}\n.cui-radio input + span[data-v-876f07de]:after {\n  background: #fff;\n  transform: scale(0.78);\n  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);\n}\n.cui-radio input:checked + span[data-v-876f07de]:before {\n  transform: scale(1.04);\n  background: var(--cui-primary);\n}\n.cui-radio input:checked + span[data-v-876f07de]:after {\n  transform: scale(0.4);\n  transition: transform 0.3s ease;\n}\n.cui-radio:not(.disabled):hover input + span[data-v-876f07de]:before {\n  transform: scale(0.92);\n}\n.cui-radio:not(.disabled):hover input + span[data-v-876f07de]:after {\n  transform: scale(0.74);\n}\n.cui-radio:not(.disabled):hover input:checked + span[data-v-876f07de]:after {\n  transform: scale(0.4);\n}\n";
+var css_248z$9 = "\n.cui-radio-label[data-v-fa1c4062] {\n    font-size: 14px;\n    margin-left: 10px;\n    margin-bottom: 5px\n}\n.cui-radio[data-v-fa1c4062] {\n  margin: 0;\n  display: block;\n  cursor: pointer;\n  font-size: 14px;\n}\n.cui-radio.disabled[data-v-fa1c4062] {\n  cursor: not-allowed;\n}\n.cui-radio input[data-v-fa1c4062] {\n  display: none;\n}\n.cui-radio input + span[data-v-fa1c4062] {\n  line-height: 18px;\n  height: 18px;\n  padding-left: 18px;\n  display: block;\n  position: relative;\n}\n.cui-radio input + span[data-v-fa1c4062]:not(:empty) {\n  padding-left: 25px;\n}\n.cui-radio input + span[data-v-fa1c4062]:before,\n.cui-radio input + span[data-v-fa1c4062]:after {\n  content: \"\";\n  width: 18px;\n  height: 18px;\n  display: block;\n  border-radius: 50%;\n  left: 0;\n  top: 0;\n  position: absolute;\n}\n.cui-radio input + span[data-v-fa1c4062]:before {\n  background: var(--cui-gray-5);\n  transition: background 0.2s ease,\n    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);\n}\n.cui-radio.disabled input + span[data-v-fa1c4062]:before {\n  background: var(--cui-gray-2);\n}\n.cui-radio input + span[data-v-fa1c4062]:after {\n  background: #fff;\n  transform: scale(0.78);\n  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);\n}\n.cui-radio input:checked + span[data-v-fa1c4062]:before {\n  transform: scale(1.04);\n  background: var(--cui-primary);\n}\n.cui-radio input:checked + span[data-v-fa1c4062]:after {\n  transform: scale(0.4);\n  transition: transform 0.3s ease;\n}\n.cui-radio:not(.disabled):hover input + span[data-v-fa1c4062]:before {\n  transform: scale(0.92);\n}\n.cui-radio:not(.disabled):hover input + span[data-v-fa1c4062]:after {\n  transform: scale(0.74);\n}\n.cui-radio:not(.disabled):hover input:checked + span[data-v-fa1c4062]:after {\n  transform: scale(0.4);\n}\n";
 styleInject(css_248z$9);
 
 script$8.render = render$8;
-script$8.__scopeId = "data-v-876f07de";
+script$8.__scopeId = "data-v-fa1c4062";
 
 var script$7 = {
   name: 'CuiTable',
@@ -6966,7 +6972,7 @@ const _hoisted_1$4 = {
   key: 0,
   class: "cui-table-header"
 };
-const _hoisted_2$3 = {
+const _hoisted_2$4 = {
   class: "cui-table-container"
 };
 const _hoisted_3$1 = {
@@ -7015,7 +7021,7 @@ const render$7 = /*#__PURE__*/_withId$5((_ctx, _cache, $props, $setup, $data, $o
       select: $props.singleSelect,
       square: $props.square
     }]
-  }, [_ctx.$slots.header ? (openBlock(), createBlock("div", _hoisted_1$4, [renderSlot(_ctx.$slots, "header")])) : createCommentVNode("", true), createVNode("div", _hoisted_2$3, [createVNode("table", {
+  }, [_ctx.$slots.header ? (openBlock(), createBlock("div", _hoisted_1$4, [renderSlot(_ctx.$slots, "header")])) : createCommentVNode("", true), createVNode("div", _hoisted_2$4, [createVNode("table", {
     class: {
       loading: $props.loading
     }
@@ -7091,7 +7097,7 @@ const _hoisted_1$3 = {
   class: "cui-th"
 };
 
-const _hoisted_2$2 = /*#__PURE__*/createVNode("i", {
+const _hoisted_2$3 = /*#__PURE__*/createVNode("i", {
   class: "cui-th-sort-icon-1 fas fa-chevron-up"
 }, null, -1);
 
@@ -7109,7 +7115,7 @@ const render$6 = /*#__PURE__*/_withId$4((_ctx, _cache, $props, $setup, $data, $o
       asc: $data.sortDirection === 'asc'
     }],
     onClick: _cache[1] || (_cache[1] = (...args) => $options.toggleSort && $options.toggleSort(...args))
-  }, [_hoisted_2$2, _hoisted_3], 2)) : createCommentVNode("", true)])]);
+  }, [_hoisted_2$3, _hoisted_3], 2)) : createCommentVNode("", true)])]);
 });
 
 var css_248z$6 = "\n.cui-th[data-v-33b1bfbf] {\n        display: flex\n}\n.cui-th-sort[data-v-33b1bfbf] {\n        display: flex;\n        flex-direction: column;\n        font-size: 10px;\n        align-items: center;\n        justify-content: center;\n        margin-left: 5px;\n        cursor: pointer;\n        height: 23px;\n        overflow: hidden\n}\n.cui-th-sort i[data-v-33b1bfbf] {\n        transition: all .2s ease\n}\n.cui-th-sort.desc .cui-th-sort-icon-2[data-v-33b1bfbf],\n    .cui-th-sort.asc .cui-th-sort-icon-2[data-v-33b1bfbf] {\n        opacity: 0;\n        transform: rotate(180deg);\n        margin-top: -11px\n}\n.cui-th-sort.desc .cui-th-sort-icon-1[data-v-33b1bfbf] {\n        transform: rotate(180deg)\n}\n.cui-th-sort.asc .cui-th-sort-icon-1[data-v-33b1bfbf] {\n        transform: rotate(0deg)\n}   \n\n";
@@ -7183,7 +7189,7 @@ const _hoisted_1$2 = {
     "width": "15px"
   }
 };
-const _hoisted_2$1 = {
+const _hoisted_2$2 = {
   colspan: "100%"
 };
 
@@ -7208,7 +7214,7 @@ const render$5 = /*#__PURE__*/_withId$3((_ctx, _cache, $props, $setup, $data, $o
     class: ["cui-tr-expand", {
       expanded: $data.expanded
     }]
-  }, [createVNode("td", _hoisted_2$1, [renderSlot(_ctx.$slots, "expand")])], 2)) : createCommentVNode("", true)], 64);
+  }, [createVNode("td", _hoisted_2$2, [renderSlot(_ctx.$slots, "expand")])], 2)) : createCommentVNode("", true)], 64);
 });
 
 var css_248z$5 = "\n@keyframes expand-3e3bb049{\nfrom{\n            opacity: 0;\n}\nto{\n            opacity: 1;\n}\n}\n.selected[data-v-3e3bb049] {\n        background-color: var(--cui-primary)!important;\n        color: white;\n        font-weight: bold;\n}\n.clickable[data-v-3e3bb049] {\n        cursor: pointer\n}\n.cui-tr-expand[data-v-3e3bb049] {\n        display: none;\n        transition: all .2s ease\n}\n.cui-tr-expand.expanded[data-v-3e3bb049] {\n        display: table-row;\n        animation: expand-3e3bb049 .2s linear 0s;\n}\n.cui-tr-expand.expanded td[data-v-3e3bb049] {\n        padding: 20px\n}\n";
@@ -7361,6 +7367,7 @@ var script$1 = {
   components: {
     Table: script$7
   },
+  emits: ['change'],
   props: {
     title: {
       default: 'ファイルアップロード',
@@ -7369,6 +7376,10 @@ var script$1 = {
     accept: {
       default: ['.txt', '.csv', '.bmp', '.png', '.jpeg', '.jpg', '.pdf', '.pptx', '.xlsx', '.docx'],
       type: Array
+    },
+    note: {
+      default: '',
+      type: String
     }
   },
 
@@ -7385,7 +7396,8 @@ var script$1 = {
         'application/vnd.openxmlformats-officedocument.presentationml.presentation': 'far fa-file-powerpoint',
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document': 'far fa-file-word',
         'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': 'far fa-file-excel'
-      }
+      },
+      noteDisplay: ''
     };
   },
 
@@ -7406,10 +7418,13 @@ var script$1 = {
       if (this.accept.includes(ext)) {
         this.files.push(file);
       }
+
+      this.$emit('change', this.files);
     },
 
     removeFile(index) {
       this.files.splice(index, 1);
+      this.$emit('change', this.files);
     }
 
   },
@@ -7423,11 +7438,20 @@ var script$1 = {
       return string;
     }
 
+  },
+  watch: {
+    note() {
+      this.noteDisplay = this.note;
+    }
+
   }
 };
 
 const _hoisted_1$1 = {
   class: "cui-file-upload-header"
+};
+const _hoisted_2$1 = {
+  class: "cui-file-upload-note"
 };
 function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_cui_button = resolveComponent("cui-button");
@@ -7461,11 +7485,12 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
       danger: "",
       onClick: $event => $options.removeFile(row._index)
     }, null, 8, ["onClick"])])]),
+    footer: withCtx(() => [createVNode("div", _hoisted_2$1, [createVNode("span", null, toDisplayString($data.noteDisplay), 1)])]),
     _: 1
   }, 8, ["data"]);
 }
 
-var css_248z$1 = "\n.cui-file-upload-header {\n        display: flex;\n        align-items: center;\n}\n.cui-file-upload-native-input {\n        display: none;\n}\n";
+var css_248z$1 = "\n.cui-file-upload-header {\n        display: flex;\n        align-items: center;\n}\n.cui-file-upload-native-input {\n        display: none;\n}\n.cui-file-upload-note {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n\n";
 styleInject(css_248z$1);
 
 script$1.render = render$1;

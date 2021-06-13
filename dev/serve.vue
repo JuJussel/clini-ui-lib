@@ -30,6 +30,7 @@ export default defineComponent({
       check2: false,
       date: {start: '', end: ''},
       menu: "reception",
+      noteA: '',
       activeMenu: '4',
       selectData : [
         {"id":"01","name":"診察"},{"id":"02","name":"薬のみ"},{"id":"03","name":"注射のみ"},{"id":"04","name":"検査のみ"}
@@ -113,7 +114,7 @@ export default defineComponent({
 
           <div style="margin-top: 100px"></div>
 
-          <cui-input v-model="input" label="名前" required icon="fas fa-sign-out-alt" append="kg"></cui-input>
+          <cui-input :note="noteA" v-model="input" label="名前" required icon="fas fa-sign-out-alt" append="kg"></cui-input>
           <cui-input v-model="input" disabled></cui-input>
 
           <div>{{input}}</div>

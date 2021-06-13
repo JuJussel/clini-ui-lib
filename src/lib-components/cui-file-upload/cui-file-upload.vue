@@ -16,6 +16,11 @@
                 <cui-button icon="far fa-trash-alt" danger @click="removeFile(row._index)" />
             </td>
         </template>
+        <template #footer>
+            <div class="cui-file-upload-note">
+                <span> {{ noteDisplay }} </span>
+            </div>
+        </template>
     </Table>
 </template>
 
@@ -25,9 +30,15 @@ import Table from '../cui-table/cui-table.vue'
 
 export default {
     components: {Table},
+    emits: ['change'],
     props: {
         title: {default: 'ファイルアップロード', type: String},
-        accept: {default: ['.txt','.csv','.bmp','.png','.jpeg','.jpg','.pdf','.pptx','.xlsx','.docx'], type: Array}
+        accept: {default: ['.txt','.csv','.bmp','.png','.jpeg','.jpg','.pdf','.pptx','.xlsx','.docx'], type: Array},
+        note: {
+            default: '',
+            type: String
+        },
+
     },
     data() {
         return {
@@ -42,7 +53,8 @@ export default {
                 'application/vnd.openxmlformats-officedocument.presentationml.presentation': 'far fa-file-powerpoint',
                 'application/vnd.openxmlformats-officedocument.wordprocessingml.document': 'far fa-file-word',
                 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' : 'far fa-file-excel'
-            }
+            },
+            noteDisplay: ''
         }
     },
     methods: {
@@ -52,17 +64,16 @@ export default {
         addFile() {
             let file = this.$refs.file.files[0]
             let ext = file.name.split('.');
-            console.log(ext);
             let last = ext.length - 1;
-            console.log(last);
             ext = '.' + ext[last];
-            console.log(ext);
             if (this.accept.includes(ext)) {
                 this.files.push(file);        
             }
+            this.$emit('change', this.files);
         },
         removeFile(index) {
-			this.files.splice(index, 1)
+			this.files.splice(index, 1);
+            this.$emit('change', this.files);
 		}
     },
     computed: {
@@ -73,6 +84,11 @@ export default {
             });
             string = string.slice(0, -1);
             return string;
+        }
+    },
+    watch: {
+        note() {
+            this.noteDisplay = this.note
         }
     }
 }
@@ -86,4 +102,12 @@ export default {
     .cui-file-upload-native-input {
         display: none;
     }
+    .cui-file-upload-note {
+        font-size: 12px;
+        margin-left: 10px;
+        color: var(--cui-danger);
+        height: 15px;
+        line-height: 12px;
+    }
+
 </style>

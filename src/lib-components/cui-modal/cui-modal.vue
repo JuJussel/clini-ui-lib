@@ -2,7 +2,7 @@
     <transition name="modal-trans">
         <div class="cui-modal-overlay" v-if="visible">
             <transition name="modal-content-trans">
-                <div class="cui-modal-content" v-if="showContent" @click="handelClick">
+                <div class="cui-modal-content" v-if="showContent" @mousedown="handelClick">
                     <slot></slot>
                 </div>
             </transition>

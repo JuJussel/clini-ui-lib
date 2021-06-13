@@ -8,7 +8,8 @@
             disabled: disabled || loading,
             loading: loading,
             plain: plain,
-            white: white
+            white: white,
+            bigIcon: bigIcon
         }"
         @click="handelClick"
         >
@@ -57,6 +58,10 @@ export default {
         },
         plain: {
             default: false,
+            type: Boolean
+        },
+        bigIcon: {
+            default: true,
             type: Boolean
         }
     },
@@ -143,5 +148,8 @@ export default {
         height: 100%;
         position: absolute;
         display: flex
+    }
+    .cui-button.bigIcon i {
+        font-size: 20px;
     }
 </style>
