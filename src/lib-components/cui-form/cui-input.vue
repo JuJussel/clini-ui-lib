@@ -17,6 +17,7 @@
                 clearable
                 :pattern="pattern"
                 :placeholder="placeholder"
+                autocomplete="new-password"
             >
             <span :class="icon + ' cui-input-icon'" v-if="icon"></span>
 
