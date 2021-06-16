@@ -24,3 +24,4 @@ Button Group Item props:
 - label: Text on Button
 - icon: Icon to add in front of the text
 - value: Value to be returned when clicked
+- index: index of item. Will be emited on change

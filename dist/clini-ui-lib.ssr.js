@@ -398,6 +398,10 @@ styleInject(css_248z$j);script$g.render = render$g;var script$f = {
     noPadding: {
       default: false,
       type: Boolean
+    },
+    loading: {
+      default: false,
+      type: Boolean
     }
   },
   data: function data() {
@@ -419,13 +423,17 @@ var _hoisted_4$4 = {
   key: 1,
   class: "footer"
 };
+var _hoisted_5$3 = {
+  key: 0,
+  class: "loader"
+};
 function render$f(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("div", _hoisted_1$c, [vue.createVNode("div", _hoisted_2$b, [_ctx.$slots.header ? (vue.openBlock(), vue.createBlock("div", _hoisted_3$6, [vue.renderSlot(_ctx.$slots, "header")])) : vue.createCommentVNode("", true), vue.createVNode("div", {
     class: ["cui-card-body", {
       'no-padding': $props.noPadding
     }]
-  }, [vue.renderSlot(_ctx.$slots, "default")], 2), _ctx.$slots.footer ? (vue.openBlock(), vue.createBlock("div", _hoisted_4$4, [vue.renderSlot(_ctx.$slots, "footer")])) : vue.createCommentVNode("", true)])]);
-}var css_248z$i = "\n.cui-card-padding {\n        padding: 10px;\n        width: calc(100% - 20px);\n        height: calc(100% - 20px)\n}\n.cui-card {\n        border-radius: 20px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        overflow: hidden;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n        background: white;\n}\n.cui-card:not(.adaptive) {\n        height: calc(100%);\n        width: calc(100%);\n}\n.cui-card-header {\n        background: var(--cui-gray-0);\n        padding: 10px;\n        box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 15%);\n        display: flex;\n        align-items: center;\n}\n.cui-card-body {\n        flex: 1;\n        overflow: auto;\n}\n.cui-card-body:not(.no-padding) {\n        padding: 10px\n}\n.cui-card > .footer {\n        padding: 10px;\n        display: flex;\n        align-items: center;\n}\n\n";
+  }, [vue.renderSlot(_ctx.$slots, "default")], 2), _ctx.$slots.footer ? (vue.openBlock(), vue.createBlock("div", _hoisted_4$4, [vue.renderSlot(_ctx.$slots, "footer")])) : vue.createCommentVNode("", true)]), $props.loading ? (vue.openBlock(), vue.createBlock("div", _hoisted_5$3)) : vue.createCommentVNode("", true)]);
+}var css_248z$i = "\n.cui-card-padding {\n        padding: 10px;\n        width: calc(100% - 20px);\n        height: calc(100% - 20px);\n        position: relative;\n}\n.cui-card {\n        border-radius: 20px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        overflow: hidden;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n        background: white;\n}\n.cui-card:not(.adaptive) {\n        height: calc(100%);\n        width: calc(100%);\n}\n.cui-card-header {\n        background: var(--cui-gray-0);\n        padding: 10px;\n        box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 15%);\n        display: flex;\n        align-items: center;\n}\n.cui-card-body {\n        flex: 1;\n        overflow: auto;\n}\n.cui-card-body:not(.no-padding) {\n        padding: 10px\n}\n.cui-card > .footer {\n        padding: 10px;\n        display: flex;\n        align-items: center;\n}\n\n";
 styleInject(css_248z$i);script$f.render = render$f;var script$e = {
   name: 'CuiModal',
   props: {

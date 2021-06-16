@@ -11,6 +11,8 @@
                 <slot name="footer"></slot>
             </div>
         </div>
+        <div class="loader" v-if="loading"></div>
+
     </div>
 </template>
 
@@ -19,6 +21,10 @@ export default {
     name: "CuiCard",
     props: {
         noPadding: {
+            default: false,
+            type: Boolean
+        },
+        loading: {
             default: false,
             type: Boolean
         }
@@ -33,7 +39,8 @@ export default {
     .cui-card-padding {
         padding: 10px;
         width: calc(100% - 20px);
-        height: calc(100% - 20px)
+        height: calc(100% - 20px);
+        position: relative;
     }
     .cui-card {
         border-radius: 20px;

@@ -374,6 +374,10 @@ var script$f = {
     noPadding: {
       default: false,
       type: Boolean
+    },
+    loading: {
+      default: false,
+      type: Boolean
     }
   },
 
@@ -399,15 +403,19 @@ const _hoisted_4$4 = {
   key: 1,
   class: "footer"
 };
+const _hoisted_5$3 = {
+  key: 0,
+  class: "loader"
+};
 function render$f(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock("div", _hoisted_1$c, [createVNode("div", _hoisted_2$b, [_ctx.$slots.header ? (openBlock(), createBlock("div", _hoisted_3$6, [renderSlot(_ctx.$slots, "header")])) : createCommentVNode("", true), createVNode("div", {
     class: ["cui-card-body", {
       'no-padding': $props.noPadding
     }]
-  }, [renderSlot(_ctx.$slots, "default")], 2), _ctx.$slots.footer ? (openBlock(), createBlock("div", _hoisted_4$4, [renderSlot(_ctx.$slots, "footer")])) : createCommentVNode("", true)])]);
+  }, [renderSlot(_ctx.$slots, "default")], 2), _ctx.$slots.footer ? (openBlock(), createBlock("div", _hoisted_4$4, [renderSlot(_ctx.$slots, "footer")])) : createCommentVNode("", true)]), $props.loading ? (openBlock(), createBlock("div", _hoisted_5$3)) : createCommentVNode("", true)]);
 }
 
-var css_248z$i = "\n.cui-card-padding {\n        padding: 10px;\n        width: calc(100% - 20px);\n        height: calc(100% - 20px)\n}\n.cui-card {\n        border-radius: 20px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        overflow: hidden;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n        background: white;\n}\n.cui-card:not(.adaptive) {\n        height: calc(100%);\n        width: calc(100%);\n}\n.cui-card-header {\n        background: var(--cui-gray-0);\n        padding: 10px;\n        box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 15%);\n        display: flex;\n        align-items: center;\n}\n.cui-card-body {\n        flex: 1;\n        overflow: auto;\n}\n.cui-card-body:not(.no-padding) {\n        padding: 10px\n}\n.cui-card > .footer {\n        padding: 10px;\n        display: flex;\n        align-items: center;\n}\n\n";
+var css_248z$i = "\n.cui-card-padding {\n        padding: 10px;\n        width: calc(100% - 20px);\n        height: calc(100% - 20px);\n        position: relative;\n}\n.cui-card {\n        border-radius: 20px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        overflow: hidden;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n        background: white;\n}\n.cui-card:not(.adaptive) {\n        height: calc(100%);\n        width: calc(100%);\n}\n.cui-card-header {\n        background: var(--cui-gray-0);\n        padding: 10px;\n        box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 15%);\n        display: flex;\n        align-items: center;\n}\n.cui-card-body {\n        flex: 1;\n        overflow: auto;\n}\n.cui-card-body:not(.no-padding) {\n        padding: 10px\n}\n.cui-card > .footer {\n        padding: 10px;\n        display: flex;\n        align-items: center;\n}\n\n";
 styleInject(css_248z$i);
 
 script$f.render = render$f;

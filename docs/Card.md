@@ -26,3 +26,4 @@ Example
 
 Props:
 - noPadding: Body will have no padding
+- loading: Loading state
