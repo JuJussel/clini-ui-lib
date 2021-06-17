@@ -47,7 +47,7 @@ var script$k = {
   emits: ['click'],
   methods: {
     handelClick() {
-      if (!this.disabled) {
+      if (!this.disabled && !this.loading) {
         this.$emit('click');
       }
     }
@@ -55,9 +55,9 @@ var script$k = {
   }
 };
 
-const _withId$e = /*#__PURE__*/withScopeId("data-v-2de35a3c");
+const _withId$e = /*#__PURE__*/withScopeId("data-v-264a9b0d");
 
-pushScopeId("data-v-2de35a3c");
+pushScopeId("data-v-264a9b0d");
 
 const _hoisted_1$h = {
   key: 0,
@@ -124,11 +124,11 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z$o = "\n.cui-button-wrapper[data-v-2de35a3c] {\n        width: fit-content;\n}\n.cui-button-wrapper[data-v-2de35a3c]:not(.disabled) {\n        cursor: pointer\n}\n.cui-button-wrapper:hover .cui-button[data-v-2de35a3c]:not(.disabled):not(.plain) {\n        transform: translate(0px, -5px);\n        margin-bottom: 5px;\n        box-shadow: 0 10px 20px -10px var(--cui-dark)\n}\n.cui-button[data-v-2de35a3c] {\n        height: 35px;\n        border: 0px;\n        margin: 5px;\n        border-radius: var(--cui-button-radius);\n        transition: all .2s ease;\n        position: relative;\n        user-select: none;\n        z-index: 1;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 10px;\n        outline: none;\n        font-size: .8rem;\n        box-sizing: border-box;\n        background: var(--cui-dark);\n        color: white;\n        cursor: pointer\n}\n.cui-button.danger[data-v-2de35a3c] {\n        background: var(--cui-danger);\n}\n.cui-button.danger[data-v-2de35a3c]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-danger);\n}\n.cui-button.primary[data-v-2de35a3c] {\n        background: var(--cui-primary);\n}\n.cui-button.primary[data-v-2de35a3c]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-primary);\n}\n.cui-button.warn[data-v-2de35a3c] {\n        background: var(--cui-warn);\n}\n.cui-button.warn[data-v-2de35a3c]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-warn);\n}\n.cui-button > i[data-v-2de35a3c]:not(:last-child) {\n        margin-right: 5px\n}\n.cui-button.disabled[data-v-2de35a3c] {\n        cursor: not-allowed;\n        opacity: 0.7;\n}\n.cui-button.loading[data-v-2de35a3c] {\n        color: rgba(255,255,255,0.5)\n}\n.cui-button.plain[data-v-2de35a3c] {\n        background: none;\n        color: var(--cui-font-color)\n}\n.cui-button.plain[data-v-2de35a3c]:hover {\n        background: var(--cui-gray-1)\n}\n.cui-button.white[data-v-2de35a3c] {\n        background: white;\n        color: var(--cui-font-color)\n}\n.loader-button[data-v-2de35a3c] {\n        justify-content: center;\n        align-items: center;\n        width: 100%;\n        height: 100%;\n        position: absolute;\n        display: flex\n}\n.cui-button.bigIcon i[data-v-2de35a3c] {\n        font-size: 20px;\n}\n";
+var css_248z$o = "\n.cui-button-wrapper[data-v-264a9b0d] {\n        width: fit-content;\n}\n.cui-button-wrapper[data-v-264a9b0d]:not(.disabled) {\n        cursor: pointer\n}\n.cui-button-wrapper:hover .cui-button[data-v-264a9b0d]:not(.disabled):not(.plain) {\n        transform: translate(0px, -5px);\n        margin-bottom: 5px;\n        box-shadow: 0 10px 20px -10px var(--cui-dark)\n}\n.cui-button[data-v-264a9b0d] {\n        height: 35px;\n        border: 0px;\n        margin: 5px;\n        border-radius: var(--cui-button-radius);\n        transition: all .2s ease;\n        position: relative;\n        user-select: none;\n        z-index: 1;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 10px;\n        outline: none;\n        font-size: .8rem;\n        box-sizing: border-box;\n        background: var(--cui-dark);\n        color: white;\n        cursor: pointer\n}\n.cui-button.danger[data-v-264a9b0d] {\n        background: var(--cui-danger);\n}\n.cui-button.danger[data-v-264a9b0d]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-danger);\n}\n.cui-button.primary[data-v-264a9b0d] {\n        background: var(--cui-primary);\n}\n.cui-button.primary[data-v-264a9b0d]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-primary);\n}\n.cui-button.warn[data-v-264a9b0d] {\n        background: var(--cui-warn);\n}\n.cui-button.warn[data-v-264a9b0d]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-warn);\n}\n.cui-button > i[data-v-264a9b0d]:not(:last-child) {\n        margin-right: 5px\n}\n.cui-button.disabled[data-v-264a9b0d] {\n        cursor: not-allowed;\n        opacity: 0.7;\n}\n.cui-button.loading[data-v-264a9b0d] {\n        color: rgba(255,255,255,0.5)\n}\n.cui-button.plain[data-v-264a9b0d] {\n        background: none;\n        color: var(--cui-font-color)\n}\n.cui-button.plain[data-v-264a9b0d]:hover {\n        background: var(--cui-gray-1)\n}\n.cui-button.white[data-v-264a9b0d] {\n        background: white;\n        color: var(--cui-font-color)\n}\n.loader-button[data-v-264a9b0d] {\n        justify-content: center;\n        align-items: center;\n        width: 100%;\n        height: 100%;\n        position: absolute;\n        display: flex\n}\n.cui-button.bigIcon i[data-v-264a9b0d] {\n        font-size: 20px;\n}\n";
 styleInject(css_248z$o);
 
 script$k.render = render$k;
-script$k.__scopeId = "data-v-2de35a3c";
+script$k.__scopeId = "data-v-264a9b0d";
 
 var script$j = {
   name: 'ButtonGroup',

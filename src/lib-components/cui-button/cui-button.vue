@@ -69,7 +69,7 @@ export default {
     emits: ['click'],
     methods: {
         handelClick() {
-            if (!this.disabled) {
+            if (!this.disabled && !this.loading) {
                 this.$emit('click')
             }
         }
