@@ -171,6 +171,9 @@ export default {
         },
         displayValue() {
             let value = this.modelValue
+            if (!value) {
+                return null;
+            }
             if (this.multiple && this.dataIsObject) {
                 value = value.map(function(item) {
                     return item[this.displayValueProp]
@@ -178,8 +181,9 @@ export default {
             } else {
                 if (this.dataIsObject && this.returnValueProp) {
                     value = this.data.find(o => o[this.returnValueProp] === value);
+                    value = value ? value[this.displayValueProp] : null
                 }
-                if (this.dataIsObject) {
+                else if (this.dataIsObject) {
                     value = value[this.displayValueProp]
                 }
             }
