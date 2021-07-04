@@ -86,7 +86,10 @@ export default {
     transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);
 }
 .cui-radio.disabled input + span:before {
-  background: var(--cui-gray-2);
+  background: var(--cui-gray-2)
+}
+.cui-radio.disabled span {
+  color: var(--cui-gray-3)
 }
 
 .cui-radio input + span:after {

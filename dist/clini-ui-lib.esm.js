@@ -2498,7 +2498,6 @@ var script$b = {
         if (this.dataIsObject && this.returnValueProp) {
           value = this.data.find(o => o[this.returnValueProp] === value);
           value = value ? value[this.displayValueProp] : null;
-          console.log(value);
         } else if (this.dataIsObject) {
           value = value[this.displayValueProp];
         }
@@ -2643,9 +2642,9 @@ var script$b = {
   }
 };
 
-const _withId$8 = /*#__PURE__*/withScopeId("data-v-dab56b18");
+const _withId$8 = /*#__PURE__*/withScopeId("data-v-727c5956");
 
-pushScopeId("data-v-dab56b18");
+pushScopeId("data-v-727c5956");
 
 const _hoisted_1$8 = {
   key: 0,
@@ -2797,14 +2796,14 @@ const render$b = /*#__PURE__*/_withId$8((_ctx, _cache, $props, $setup, $data, $o
   }), 128))])) : (openBlock(), createBlock("div", _hoisted_18, [createVNode("div", _hoisted_19, toDisplayString($data.trans.empty), 1)]))], 6), !$props.noNote ? (openBlock(), createBlock("div", _hoisted_20, [createVNode("span", null, toDisplayString($data.noteDisplay), 1)])) : createCommentVNode("", true)], 2);
 });
 
-var css_248z$e = "\n@keyframes expand-dab56b18{\nfrom{\n            margin-top: -10px;\n            opacity: 0\n}\nto{\n            opacity: 1\n}\n}\n@keyframes retract-dab56b18{\nfrom{\n            opacity: 1;\n}\nto{\n            margin-top: -10px;\n            opacity: 0;\n}\n}\n.cui-select-label[data-v-dab56b18] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-select[data-v-dab56b18] {\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        height: 26px;\n        padding: 2px 10px;\n        transition: all .2s ease;\n        font-size: 13.3333px;\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        overflow: hidden;\n        height: fit-content;\n        min-height: 32px;\n        font-weight: normal !important;\n}\n.cui-select:not(.focused).has-color[data-v-dab56b18],\n    .cui-select:not(.focused).has-color .cui-placeholder[data-v-dab56b18],\n    .cui-select:not(.focused).has-color .cui-select-icon[data-v-dab56b18] {\n        color: white\n}\n.cui-select.focused[data-v-dab56b18] {\n        border-bottom-right-radius: 0;\n        border-bottom-left-radius: 0;\n}\n.cui-select-container[data-v-dab56b18] {\n        cursor: pointer\n}\n.cui-select-container.disabled[data-v-dab56b18], .cui-select.disabled[data-v-dab56b18] {\n        cursor: not-allowed\n}\n.cui-select-container:hover .cui-select[data-v-dab56b18]:not(.disabled),\n    .cui-select.focused[data-v-dab56b18] {\n        padding-left: 13px;\n        padding-right: 7px;\n        background: white;\n        transform: translate(0px, -4px);\n        box-shadow: 0px 5px 25px -4px var(--cui-gray-4);\n        cursor: pointer\n}\n.cui-select-list[data-v-dab56b18] {\n        display: none;\n        background: white;\n        border-bottom-right-radius: 12px;\n        border-bottom-left-radius: 12px;\n        box-shadow:0px 14px 13px 2px var(--cui-gray-4);\n        z-index: 10;\n        width: 240px;\n        overflow: auto;\n        max-height: 200px;\n}\n.cui-select-list.expanded[data-v-dab56b18] {\n        display: block;\n        animation: expand-dab56b18 .2s ease-out 0s;\n}\n.cui-select-list.retracted[data-v-dab56b18] {\n        animation: retract-dab56b18 .2s ease-out 0s;\n}\n.cui-select-dropdown-item[data-v-dab56b18] {\n        padding: 8px 10px;\n        transition: all .2s ease;\n        display: flex;\n        font-weight: normal !important;\n        color: var(--cui-font-color)!important\n}\n.cui-select-dropdown-item[data-v-dab56b18]:hover {\n        background: var(--cui-gray-1);\n        cursor: pointer\n}\n.cui-select-input[data-v-dab56b18],\n    .cui-select-input[data-v-dab56b18]:focus {\n        border: none;\n        outline: none\n}\n.cui-select-empty[data-v-dab56b18] {\n        padding: 8px 10px;\n        color: var(--cui-gray-5);\n        font-size: 12px\n}\n.cui-select-icon[data-v-dab56b18] {\n        transition: all .2s ease;\n        font-size: 12px;\n        color: var(--cui-gray-5);\n        padding: 5px\n}\n.cui-select-icon.focused[data-v-dab56b18] {\n        transform: rotate(180deg)\n}\n.cui-select-multiple-cont[data-v-dab56b18] {\n        display: flex;\n        align-items: center;\n        flex-wrap: wrap\n}\n.cui-select-tag-icon[data-v-dab56b18] {\n        margin-left: 2px;\n        color: var(--cui-font-color);\n        opacity: 0.6;\n        transition: all .2s ease;\n}\n.cui-select-tag-icon[data-v-dab56b18]:hover {\n        opacity: 1;\n}\n.cui-select-note[data-v-dab56b18] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n\n";
+var css_248z$e = "\n@keyframes expand-727c5956{\nfrom{\n            margin-top: -10px;\n            opacity: 0\n}\nto{\n            opacity: 1\n}\n}\n@keyframes retract-727c5956{\nfrom{\n            opacity: 1;\n}\nto{\n            margin-top: -10px;\n            opacity: 0;\n}\n}\n.cui-select-label[data-v-727c5956] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-select[data-v-727c5956] {\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        height: 26px;\n        padding: 2px 10px;\n        transition: all .2s ease;\n        font-size: 13.3333px;\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        overflow: hidden;\n        height: fit-content;\n        min-height: 32px;\n        font-weight: normal !important;\n}\n.cui-select:not(.focused).has-color[data-v-727c5956],\n    .cui-select:not(.focused).has-color .cui-placeholder[data-v-727c5956],\n    .cui-select:not(.focused).has-color .cui-select-icon[data-v-727c5956] {\n        color: white\n}\n.cui-select.focused[data-v-727c5956] {\n        border-bottom-right-radius: 0;\n        border-bottom-left-radius: 0;\n}\n.cui-select-container[data-v-727c5956] {\n        cursor: pointer\n}\n.cui-select-container.disabled[data-v-727c5956], .cui-select.disabled[data-v-727c5956] {\n        cursor: not-allowed\n}\n.cui-select-container:hover .cui-select[data-v-727c5956]:not(.disabled),\n    .cui-select.focused[data-v-727c5956] {\n        padding-left: 13px;\n        padding-right: 7px;\n        background: white;\n        transform: translate(0px, -4px);\n        box-shadow: 0px 5px 25px -4px var(--cui-gray-4);\n        cursor: pointer\n}\n.cui-select-list[data-v-727c5956] {\n        display: none;\n        background: white;\n        border-bottom-right-radius: 12px;\n        border-bottom-left-radius: 12px;\n        box-shadow:0px 14px 13px 2px var(--cui-gray-4);\n        z-index: 10;\n        width: 240px;\n        overflow: auto;\n        max-height: 200px;\n}\n.cui-select-list.expanded[data-v-727c5956] {\n        display: block;\n        animation: expand-727c5956 .2s ease-out 0s;\n}\n.cui-select-list.retracted[data-v-727c5956] {\n        animation: retract-727c5956 .2s ease-out 0s;\n}\n.cui-select-dropdown-item[data-v-727c5956] {\n        padding: 8px 10px;\n        transition: all .2s ease;\n        display: flex;\n        font-weight: normal !important;\n        color: var(--cui-font-color)!important\n}\n.cui-select-dropdown-item[data-v-727c5956]:hover {\n        background: var(--cui-gray-1);\n        cursor: pointer\n}\n.cui-select-input[data-v-727c5956],\n    .cui-select-input[data-v-727c5956]:focus {\n        border: none;\n        outline: none\n}\n.cui-select-empty[data-v-727c5956] {\n        padding: 8px 10px;\n        color: var(--cui-gray-5);\n        font-size: 12px\n}\n.cui-select-icon[data-v-727c5956] {\n        transition: all .2s ease;\n        font-size: 12px;\n        color: var(--cui-gray-5);\n        padding: 5px\n}\n.cui-select-icon.focused[data-v-727c5956] {\n        transform: rotate(180deg)\n}\n.cui-select-multiple-cont[data-v-727c5956] {\n        display: flex;\n        align-items: center;\n        flex-wrap: wrap\n}\n.cui-select-tag-icon[data-v-727c5956] {\n        margin-left: 2px;\n        color: var(--cui-font-color);\n        opacity: 0.6;\n        transition: all .2s ease;\n}\n.cui-select-tag-icon[data-v-727c5956]:hover {\n        opacity: 1;\n}\n.cui-select-note[data-v-727c5956] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n\n";
 styleInject(css_248z$e);
 
 var css_248z$d = "\n.cui-select-tag {\n        font-size: 12px!important;\n        height: 28px!important;\n        background: var(--cui-gray-3)!important;\n        color: var(--cui-font-color)!important;\n        margin: 2px!important;\n        padding: 0 5px!important\n}\n";
 styleInject(css_248z$d);
 
 script$b.render = render$b;
-script$b.__scopeId = "data-v-dab56b18";
+script$b.__scopeId = "data-v-727c5956";
 
 function isDate(value) {
   return value instanceof Date || Object.prototype.toString.call(value) === '[object Date]';
@@ -6750,9 +6749,9 @@ var script$9 = {
   }
 };
 
-const _withId$7 = /*#__PURE__*/withScopeId("data-v-513df46f");
+const _withId$7 = /*#__PURE__*/withScopeId("data-v-42032ceb");
 
-pushScopeId("data-v-513df46f");
+pushScopeId("data-v-42032ceb");
 
 const _hoisted_1$6 = {
   key: 0,
@@ -6792,14 +6791,14 @@ const render$9 = /*#__PURE__*/_withId$7((_ctx, _cache, $props, $setup, $data, $o
   }, null, 8, ["disabled", "modelValue", "placeholder", "format", "type", "timePickerOptions", "range", "onInput", "value-type"]), createVNode("div", _hoisted_4$1, [createVNode("span", null, toDisplayString($data.noteDisplay), 1)])]);
 });
 
-var css_248z$b = "\n.cui-datepicker-note[data-v-513df46f] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px\n}\n";
+var css_248z$b = "\n.cui-datepicker-note[data-v-42032ceb] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px\n}\n";
 styleInject(css_248z$b);
 
-var css_248z$a = "\n.cui-datepicker-label {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-datepicker {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease;\n        width: calc(100% - 20px);\n}\n.cui-datepicker-input {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 0;\n        transition: all .2s ease\n}\n.cui-datepicker-input:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n}\n.cui-datepicker-popup {\n            border-radius: 12px;\n            color: var(--cui-font-color);\n            overflow: hidden\n}\n.cui-datepicker-popup .cell,\n    .mx-time-option {\n        transition: all .1s ease\n}\n.cui-datepicker-popup .mx-time-option.active {\n        color: var(--cui-primary)\n}\n.cui-datepicker-popup .cell.today {\n        color: var(--cui-primary);\n}\n.cui-datepicker-popup .cell.active,\n    .cui-datepicker-popup .cell.in-range,\n    .cui-datepicker-popup .cell:hover,\n    .mx-time-option:hover {\n        background: var(--cui-primary);\n        color: white;\n}\n\n";
+var css_248z$a = "\n.cui-datepicker-label {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-datepicker {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease;\n        width: calc(100% - 20px);\n}\n.cui-datepicker.disabled input {\n        color: var(--cui-gray-3)\n}\n.cui-datepicker-input {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 0;\n        transition: all .2s ease\n}\n.cui-datepicker-input:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n}\n.cui-datepicker-popup {\n            border-radius: 12px;\n            color: var(--cui-font-color);\n            overflow: hidden\n}\n.cui-datepicker-popup .cell,\n    .mx-time-option {\n        transition: all .1s ease\n}\n.cui-datepicker-popup .mx-time-option.active {\n        color: var(--cui-primary)\n}\n.cui-datepicker-popup .cell.today {\n        color: var(--cui-primary);\n}\n.cui-datepicker-popup .cell.active,\n    .cui-datepicker-popup .cell.in-range,\n    .cui-datepicker-popup .cell:hover,\n    .mx-time-option:hover {\n        background: var(--cui-primary);\n        color: white;\n}\n\n";
 styleInject(css_248z$a);
 
 script$9.render = render$9;
-script$9.__scopeId = "data-v-513df46f";
+script$9.__scopeId = "data-v-42032ceb";
 
 var script$8 = {
   props: {
@@ -6838,9 +6837,9 @@ var script$8 = {
   }
 };
 
-const _withId$6 = /*#__PURE__*/withScopeId("data-v-fa1c4062");
+const _withId$6 = /*#__PURE__*/withScopeId("data-v-7dfec3ea");
 
-pushScopeId("data-v-fa1c4062");
+pushScopeId("data-v-7dfec3ea");
 
 const _hoisted_1$5 = {
   style: {
@@ -6873,11 +6872,11 @@ const render$8 = /*#__PURE__*/_withId$6((_ctx, _cache, $props, $setup, $data, $o
   }, null, 40, ["checked", "value", "disabled"]), createVNode("span", null, toDisplayString($props.label), 1)], 2)]);
 });
 
-var css_248z$9 = "\n.cui-radio-label[data-v-fa1c4062] {\n    font-size: 14px;\n    margin-left: 10px;\n    margin-bottom: 5px\n}\n.cui-radio[data-v-fa1c4062] {\n  margin: 0;\n  display: block;\n  cursor: pointer;\n  font-size: 14px;\n}\n.cui-radio.disabled[data-v-fa1c4062] {\n  cursor: not-allowed;\n}\n.cui-radio input[data-v-fa1c4062] {\n  display: none;\n}\n.cui-radio input + span[data-v-fa1c4062] {\n  line-height: 18px;\n  height: 18px;\n  padding-left: 18px;\n  display: block;\n  position: relative;\n}\n.cui-radio input + span[data-v-fa1c4062]:not(:empty) {\n  padding-left: 25px;\n}\n.cui-radio input + span[data-v-fa1c4062]:before,\n.cui-radio input + span[data-v-fa1c4062]:after {\n  content: \"\";\n  width: 18px;\n  height: 18px;\n  display: block;\n  border-radius: 50%;\n  left: 0;\n  top: 0;\n  position: absolute;\n}\n.cui-radio input + span[data-v-fa1c4062]:before {\n  background: var(--cui-gray-5);\n  transition: background 0.2s ease,\n    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);\n}\n.cui-radio.disabled input + span[data-v-fa1c4062]:before {\n  background: var(--cui-gray-2);\n}\n.cui-radio input + span[data-v-fa1c4062]:after {\n  background: #fff;\n  transform: scale(0.78);\n  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);\n}\n.cui-radio input:checked + span[data-v-fa1c4062]:before {\n  transform: scale(1.04);\n  background: var(--cui-primary);\n}\n.cui-radio input:checked + span[data-v-fa1c4062]:after {\n  transform: scale(0.4);\n  transition: transform 0.3s ease;\n}\n.cui-radio:not(.disabled):hover input + span[data-v-fa1c4062]:before {\n  transform: scale(0.92);\n}\n.cui-radio:not(.disabled):hover input + span[data-v-fa1c4062]:after {\n  transform: scale(0.74);\n}\n.cui-radio:not(.disabled):hover input:checked + span[data-v-fa1c4062]:after {\n  transform: scale(0.4);\n}\n";
+var css_248z$9 = "\n.cui-radio-label[data-v-7dfec3ea] {\n    font-size: 14px;\n    margin-left: 10px;\n    margin-bottom: 5px\n}\n.cui-radio[data-v-7dfec3ea] {\n  margin: 0;\n  display: block;\n  cursor: pointer;\n  font-size: 14px;\n}\n.cui-radio.disabled[data-v-7dfec3ea] {\n  cursor: not-allowed;\n}\n.cui-radio input[data-v-7dfec3ea] {\n  display: none;\n}\n.cui-radio input + span[data-v-7dfec3ea] {\n  line-height: 18px;\n  height: 18px;\n  padding-left: 18px;\n  display: block;\n  position: relative;\n}\n.cui-radio input + span[data-v-7dfec3ea]:not(:empty) {\n  padding-left: 25px;\n}\n.cui-radio input + span[data-v-7dfec3ea]:before,\n.cui-radio input + span[data-v-7dfec3ea]:after {\n  content: \"\";\n  width: 18px;\n  height: 18px;\n  display: block;\n  border-radius: 50%;\n  left: 0;\n  top: 0;\n  position: absolute;\n}\n.cui-radio input + span[data-v-7dfec3ea]:before {\n  background: var(--cui-gray-5);\n  transition: background 0.2s ease,\n    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);\n}\n.cui-radio.disabled input + span[data-v-7dfec3ea]:before {\n  background: var(--cui-gray-2)\n}\n.cui-radio.disabled span[data-v-7dfec3ea] {\n  color: var(--cui-gray-3)\n}\n.cui-radio input + span[data-v-7dfec3ea]:after {\n  background: #fff;\n  transform: scale(0.78);\n  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);\n}\n.cui-radio input:checked + span[data-v-7dfec3ea]:before {\n  transform: scale(1.04);\n  background: var(--cui-primary);\n}\n.cui-radio input:checked + span[data-v-7dfec3ea]:after {\n  transform: scale(0.4);\n  transition: transform 0.3s ease;\n}\n.cui-radio:not(.disabled):hover input + span[data-v-7dfec3ea]:before {\n  transform: scale(0.92);\n}\n.cui-radio:not(.disabled):hover input + span[data-v-7dfec3ea]:after {\n  transform: scale(0.74);\n}\n.cui-radio:not(.disabled):hover input:checked + span[data-v-7dfec3ea]:after {\n  transform: scale(0.4);\n}\n";
 styleInject(css_248z$9);
 
 script$8.render = render$8;
-script$8.__scopeId = "data-v-fa1c4062";
+script$8.__scopeId = "data-v-7dfec3ea";
 
 var script$7 = {
   name: 'CuiTable',

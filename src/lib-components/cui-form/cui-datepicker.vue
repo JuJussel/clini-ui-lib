@@ -126,6 +126,9 @@ export default {
         transition: all .2s ease;
         width: calc(100% - 20px);
     }
+    .cui-datepicker.disabled input {
+        color: var(--cui-gray-3)
+    }
     .cui-datepicker-input {
         background: var(--cui-gray-0);
         border: none;
