@@ -91,7 +91,9 @@ export default defineComponent({
       <cui-button-group-item label="Button3" value="3"></cui-button-group-item>
       <cui-button-group-item label="Button4" value="4"></cui-button-group-item>
     </cui-button-group>
-
+    <cui-card style="height: 500px; width: 600px">
+      <cui-editor></cui-editor>
+    </cui-card>
     <div style="height: 400px; width: 600px">
       <cui-card>
         <template v-slot:header>
