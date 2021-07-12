@@ -1,7 +1,7 @@
 <template>
     <div v-if="editor">
-        <menu-bar :editor="editor"></menu-bar>
-        <editor-content :editor="editor" />
+        <menu-bar :editor="editor" style="height: 40px"></menu-bar>
+        <editor-content :editor="editor" style="height: calc(100% - 70px)"/>
     </div>
 </template>
 
@@ -43,5 +43,8 @@ export default {
 <style>
     .ProseMirror {
         outline: none !important;
+        height: 100%;
+        overflow: auto;
+        padding: 10px
     }
 </style>

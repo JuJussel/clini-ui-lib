@@ -1,4 +1,4 @@
-'use strict';var vue=require('vue');function _typeof$1(obj) {
+'use strict';var vue=require('vue'),vue3=require('@tiptap/vue-3'),StarterKit=require('@tiptap/starter-kit');function _interopDefaultLegacy(e){return e&&typeof e==='object'&&'default'in e?e:{'default':e}}var StarterKit__default=/*#__PURE__*/_interopDefaultLegacy(StarterKit);function _typeof$1(obj) {
   "@babel/helpers - typeof";
 
   if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
@@ -71,7 +71,7 @@ function _arrayLikeToArray$1(arr, len) {
 
 function _nonIterableRest$2() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}var script$k = {
+}var script$n = {
   name: 'CuiButton',
   props: {
     label: {
@@ -123,16 +123,16 @@ function _nonIterableRest$2() {
       }
     }
   }
-};var _withId$e = /*#__PURE__*/vue.withScopeId("data-v-264a9b0d");
+};var _withId$g = /*#__PURE__*/vue.withScopeId("data-v-264a9b0d");
 
 vue.pushScopeId("data-v-264a9b0d");
 
-var _hoisted_1$h = {
+var _hoisted_1$j = {
   key: 0,
   class: "loader-button"
 };
 
-var _hoisted_2$f = /*#__PURE__*/vue.createVNode("div", {
+var _hoisted_2$g = /*#__PURE__*/vue.createVNode("div", {
   class: "ripple"
 }, null, -1);
 
@@ -142,7 +142,7 @@ var _hoisted_3$9 = {
 
 vue.popScopeId();
 
-var render$k = /*#__PURE__*/_withId$e(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$n = /*#__PURE__*/_withId$g(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("div", {
     class: ["cui-button-wrapper", {
       disabled: $props.disabled
@@ -161,7 +161,7 @@ var render$k = /*#__PURE__*/_withId$e(function (_ctx, _cache, $props, $setup, $d
       white: $props.white,
       bigIcon: $props.bigIcon
     }]
-  }, [$props.loading ? (vue.openBlock(), vue.createBlock("div", _hoisted_1$h)) : vue.createCommentVNode("", true), _hoisted_2$f, $props.icon !== '' ? (vue.openBlock(), vue.createBlock("i", {
+  }, [$props.loading ? (vue.openBlock(), vue.createBlock("div", _hoisted_1$j)) : vue.createCommentVNode("", true), _hoisted_2$g, $props.icon !== '' ? (vue.openBlock(), vue.createBlock("i", {
     key: 1,
     class: $props.icon
   }, null, 2)) : vue.createCommentVNode("", true), $props.label !== '' ? (vue.openBlock(), vue.createBlock("span", _hoisted_3$9, vue.toDisplayString($props.label), 1)) : vue.createCommentVNode("", true)], 2)], 2);
@@ -190,9 +190,9 @@ var render$k = /*#__PURE__*/_withId$e(function (_ctx, _cache, $props, $setup, $d
   } else {
     style.appendChild(document.createTextNode(css));
   }
-}var css_248z$o = "\n.cui-button-wrapper[data-v-264a9b0d] {\n        width: fit-content;\n}\n.cui-button-wrapper[data-v-264a9b0d]:not(.disabled) {\n        cursor: pointer\n}\n.cui-button-wrapper:hover .cui-button[data-v-264a9b0d]:not(.disabled):not(.plain) {\n        transform: translate(0px, -5px);\n        margin-bottom: 5px;\n        box-shadow: 0 10px 20px -10px var(--cui-dark)\n}\n.cui-button[data-v-264a9b0d] {\n        height: 35px;\n        border: 0px;\n        margin: 5px;\n        border-radius: var(--cui-button-radius);\n        transition: all .2s ease;\n        position: relative;\n        user-select: none;\n        z-index: 1;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 10px;\n        outline: none;\n        font-size: .8rem;\n        box-sizing: border-box;\n        background: var(--cui-dark);\n        color: white;\n        cursor: pointer\n}\n.cui-button.danger[data-v-264a9b0d] {\n        background: var(--cui-danger);\n}\n.cui-button.danger[data-v-264a9b0d]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-danger);\n}\n.cui-button.primary[data-v-264a9b0d] {\n        background: var(--cui-primary);\n}\n.cui-button.primary[data-v-264a9b0d]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-primary);\n}\n.cui-button.warn[data-v-264a9b0d] {\n        background: var(--cui-warn);\n}\n.cui-button.warn[data-v-264a9b0d]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-warn);\n}\n.cui-button > i[data-v-264a9b0d]:not(:last-child) {\n        margin-right: 5px\n}\n.cui-button.disabled[data-v-264a9b0d] {\n        cursor: not-allowed;\n        opacity: 0.7;\n}\n.cui-button.loading[data-v-264a9b0d] {\n        color: rgba(255,255,255,0.5)\n}\n.cui-button.plain[data-v-264a9b0d] {\n        background: none;\n        color: var(--cui-font-color)\n}\n.cui-button.plain[data-v-264a9b0d]:hover {\n        background: var(--cui-gray-1)\n}\n.cui-button.white[data-v-264a9b0d] {\n        background: white;\n        color: var(--cui-font-color)\n}\n.loader-button[data-v-264a9b0d] {\n        justify-content: center;\n        align-items: center;\n        width: 100%;\n        height: 100%;\n        position: absolute;\n        display: flex\n}\n.cui-button.bigIcon i[data-v-264a9b0d] {\n        font-size: 20px;\n}\n";
-styleInject(css_248z$o);script$k.render = render$k;
-script$k.__scopeId = "data-v-264a9b0d";var script$j = {
+}var css_248z$r = "\n.cui-button-wrapper[data-v-264a9b0d] {\n        width: fit-content;\n}\n.cui-button-wrapper[data-v-264a9b0d]:not(.disabled) {\n        cursor: pointer\n}\n.cui-button-wrapper:hover .cui-button[data-v-264a9b0d]:not(.disabled):not(.plain) {\n        transform: translate(0px, -5px);\n        margin-bottom: 5px;\n        box-shadow: 0 10px 20px -10px var(--cui-dark)\n}\n.cui-button[data-v-264a9b0d] {\n        height: 35px;\n        border: 0px;\n        margin: 5px;\n        border-radius: var(--cui-button-radius);\n        transition: all .2s ease;\n        position: relative;\n        user-select: none;\n        z-index: 1;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 10px;\n        outline: none;\n        font-size: .8rem;\n        box-sizing: border-box;\n        background: var(--cui-dark);\n        color: white;\n        cursor: pointer\n}\n.cui-button.danger[data-v-264a9b0d] {\n        background: var(--cui-danger);\n}\n.cui-button.danger[data-v-264a9b0d]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-danger);\n}\n.cui-button.primary[data-v-264a9b0d] {\n        background: var(--cui-primary);\n}\n.cui-button.primary[data-v-264a9b0d]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-primary);\n}\n.cui-button.warn[data-v-264a9b0d] {\n        background: var(--cui-warn);\n}\n.cui-button.warn[data-v-264a9b0d]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-warn);\n}\n.cui-button > i[data-v-264a9b0d]:not(:last-child) {\n        margin-right: 5px\n}\n.cui-button.disabled[data-v-264a9b0d] {\n        cursor: not-allowed;\n        opacity: 0.7;\n}\n.cui-button.loading[data-v-264a9b0d] {\n        color: rgba(255,255,255,0.5)\n}\n.cui-button.plain[data-v-264a9b0d] {\n        background: none;\n        color: var(--cui-font-color)\n}\n.cui-button.plain[data-v-264a9b0d]:hover {\n        background: var(--cui-gray-1)\n}\n.cui-button.white[data-v-264a9b0d] {\n        background: white;\n        color: var(--cui-font-color)\n}\n.loader-button[data-v-264a9b0d] {\n        justify-content: center;\n        align-items: center;\n        width: 100%;\n        height: 100%;\n        position: absolute;\n        display: flex\n}\n.cui-button.bigIcon i[data-v-264a9b0d] {\n        font-size: 20px;\n}\n";
+styleInject(css_248z$r);script$n.render = render$n;
+script$n.__scopeId = "data-v-264a9b0d";var script$m = {
   name: 'ButtonGroup',
   props: {
     modelValue: {
@@ -226,22 +226,22 @@ script$k.__scopeId = "data-v-264a9b0d";var script$j = {
       this.selectItem();
     }
   }
-};var _withId$d = /*#__PURE__*/vue.withScopeId("data-v-faeef8f4");
+};var _withId$f = /*#__PURE__*/vue.withScopeId("data-v-faeef8f4");
 
 vue.pushScopeId("data-v-faeef8f4");
 
-var _hoisted_1$g = {
+var _hoisted_1$i = {
   class: "cui-button-group"
 };
 
 vue.popScopeId();
 
-var render$j = /*#__PURE__*/_withId$d(function (_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createBlock("div", _hoisted_1$g, [vue.renderSlot(_ctx.$slots, "default")]);
-});var css_248z$n = "\n.cui-button-group[data-v-faeef8f4] {\n        display:flex;\n        margin: 5px 0\n}\n";
-styleInject(css_248z$n);var css_248z$m = "\n.cui-button-group .cui-button  {\n        margin-left: 0;\n        margin-right: 0;\n        border-radius: 0\n}\n.cui-button-group .cui-button:first-of-type {\n        margin-left: 5px;\n        border-top-left-radius:15px;\n        border-bottom-left-radius: 15px;\n}\n.cui-button-group .cui-button:last-of-type {\n        border-top-left-radius: 0px!important;\n        border-bottom-left-radius: 0px!important;\n}\n\n";
-styleInject(css_248z$m);script$j.render = render$j;
-script$j.__scopeId = "data-v-faeef8f4";var script$i = {
+var render$m = /*#__PURE__*/_withId$f(function (_ctx, _cache, $props, $setup, $data, $options) {
+  return vue.openBlock(), vue.createBlock("div", _hoisted_1$i, [vue.renderSlot(_ctx.$slots, "default")]);
+});var css_248z$q = "\n.cui-button-group[data-v-faeef8f4] {\n        display:flex;\n        margin: 5px 0\n}\n";
+styleInject(css_248z$q);var css_248z$p = "\n.cui-button-group .cui-button  {\n        margin-left: 0;\n        margin-right: 0;\n        border-radius: 0\n}\n.cui-button-group .cui-button:first-of-type {\n        margin-left: 5px;\n        border-top-left-radius:15px;\n        border-bottom-left-radius: 15px;\n}\n.cui-button-group .cui-button:last-of-type {\n        border-top-left-radius: 0px!important;\n        border-bottom-left-radius: 0px!important;\n}\n\n";
+styleInject(css_248z$p);script$m.render = render$m;
+script$m.__scopeId = "data-v-faeef8f4";var script$l = {
   name: 'ButtonGroupItem',
   props: {
     label: {
@@ -261,21 +261,21 @@ script$j.__scopeId = "data-v-faeef8f4";var script$i = {
       this.$parent.changeValue(this.value);
     }
   }
-};var _withId$c = /*#__PURE__*/vue.withScopeId("data-v-1f8e1c39");
+};var _withId$e = /*#__PURE__*/vue.withScopeId("data-v-1f8e1c39");
 
 vue.pushScopeId("data-v-1f8e1c39");
 
-var _hoisted_1$f = /*#__PURE__*/vue.createVNode("div", {
+var _hoisted_1$h = /*#__PURE__*/vue.createVNode("div", {
   class: "ripple"
 }, null, -1);
 
-var _hoisted_2$e = {
+var _hoisted_2$f = {
   key: 1
 };
 
 vue.popScopeId();
 
-var render$i = /*#__PURE__*/_withId$c(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$l = /*#__PURE__*/_withId$e(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("div", {
     class: "cui-button-group-item",
     onClick: _cache[1] || (_cache[1] = function () {
@@ -283,13 +283,13 @@ var render$i = /*#__PURE__*/_withId$c(function (_ctx, _cache, $props, $setup, $d
     }),
     ref: "item",
     value: $props.value
-  }, [_hoisted_1$f, $props.icon !== '' ? (vue.openBlock(), vue.createBlock("i", {
+  }, [_hoisted_1$h, $props.icon !== '' ? (vue.openBlock(), vue.createBlock("i", {
     key: 0,
     class: $props.icon
-  }, null, 2)) : vue.createCommentVNode("", true), $props.label !== '' ? (vue.openBlock(), vue.createBlock("span", _hoisted_2$e, vue.toDisplayString($props.label), 1)) : vue.createCommentVNode("", true)], 8, ["value"]);
-});var css_248z$l = "\n.cui-button-group-item[data-v-1f8e1c39] {\n        height: 35px;\n        border: 0px;\n        margin: 5px 0;\n        transition: all .2s ease;\n        position: relative;\n        user-select: none;\n        z-index: 1;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 10px;\n        outline: none;\n        font-size: .8rem;\n        box-sizing: border-box;\n        background: white;\n        cursor: pointer;\n        border: solid 2px var(--cui-dark);\n        border-right: none\n}\n.cui-button-group-item[data-v-1f8e1c39]:first-of-type {\n        margin-left: 5px;\n        border-top-left-radius: var(--cui-button-radius);\n        border-bottom-left-radius: var(--cui-button-radius);\n}\n.cui-button-group-item[data-v-1f8e1c39]:last-of-type {\n        margin-right: 5px;\n        border-top-right-radius: var(--cui-button-radius);\n        border-bottom-right-radius: var(--cui-button-radius);\n        border-right: solid 2px var(--cui-dark)\n}\n.selected[data-v-1f8e1c39] {\n        background: var(--cui-dark);\n        color: white\n}\n.cui-button-group-item > i[data-v-1f8e1c39]:not(:last-child) {\n        margin-right: 5px\n}\n\n\n";
-styleInject(css_248z$l);script$i.render = render$i;
-script$i.__scopeId = "data-v-1f8e1c39";var script$h = {
+  }, null, 2)) : vue.createCommentVNode("", true), $props.label !== '' ? (vue.openBlock(), vue.createBlock("span", _hoisted_2$f, vue.toDisplayString($props.label), 1)) : vue.createCommentVNode("", true)], 8, ["value"]);
+});var css_248z$o = "\n.cui-button-group-item[data-v-1f8e1c39] {\n        height: 35px;\n        border: 0px;\n        margin: 5px 0;\n        transition: all .2s ease;\n        position: relative;\n        user-select: none;\n        z-index: 1;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 10px;\n        outline: none;\n        font-size: .8rem;\n        box-sizing: border-box;\n        background: white;\n        cursor: pointer;\n        border: solid 2px var(--cui-dark);\n        border-right: none\n}\n.cui-button-group-item[data-v-1f8e1c39]:first-of-type {\n        margin-left: 5px;\n        border-top-left-radius: var(--cui-button-radius);\n        border-bottom-left-radius: var(--cui-button-radius);\n}\n.cui-button-group-item[data-v-1f8e1c39]:last-of-type {\n        margin-right: 5px;\n        border-top-right-radius: var(--cui-button-radius);\n        border-bottom-right-radius: var(--cui-button-radius);\n        border-right: solid 2px var(--cui-dark)\n}\n.selected[data-v-1f8e1c39] {\n        background: var(--cui-dark);\n        color: white\n}\n.cui-button-group-item > i[data-v-1f8e1c39]:not(:last-child) {\n        margin-right: 5px\n}\n\n\n";
+styleInject(css_248z$o);script$l.render = render$l;
+script$l.__scopeId = "data-v-1f8e1c39";var script$k = {
   props: {
     value: {
       default: null
@@ -321,15 +321,15 @@ script$i.__scopeId = "data-v-1f8e1c39";var script$h = {
       this.propChange();
     }
   }
-};var _withId$b = /*#__PURE__*/vue.withScopeId("data-v-4289ed8a");
+};var _withId$d = /*#__PURE__*/vue.withScopeId("data-v-4289ed8a");
 
 vue.pushScopeId("data-v-4289ed8a");
 
-var _hoisted_1$e = {
+var _hoisted_1$g = {
   class: "cui-menu-bar",
   ref: "menuBar"
 };
-var _hoisted_2$d = {
+var _hoisted_2$e = {
   class: "menu-item"
 };
 var _hoisted_3$8 = {
@@ -341,11 +341,11 @@ var _hoisted_4$6 = {
 
 vue.popScopeId();
 
-var render$h = /*#__PURE__*/_withId$b(function (_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createBlock("div", _hoisted_1$e, [vue.createVNode("div", _hoisted_2$d, [vue.renderSlot(_ctx.$slots, "left")]), vue.createVNode("div", _hoisted_3$8, [vue.renderSlot(_ctx.$slots, "center")]), vue.createVNode("div", _hoisted_4$6, [vue.renderSlot(_ctx.$slots, "right")])], 512);
-});var css_248z$k = "\n.cui-menu-bar[data-v-4289ed8a] {\n        background: var(--cui-dark);\n        height: 45px;\n        border-bottom-left-radius: 15px;\n        border-bottom-right-radius: 15px;\n        padding: 0 15px;\n        position: relative;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        color: var(--cui-gray-2);\n        font-weight: bold;\n        font-size: 16px;\n}\n.cui-menu-bar > .menu-item[data-v-4289ed8a] {\n        display: flex;\n        align-items: center;\n}\n";
-styleInject(css_248z$k);script$h.render = render$h;
-script$h.__scopeId = "data-v-4289ed8a";var script$g = {
+var render$k = /*#__PURE__*/_withId$d(function (_ctx, _cache, $props, $setup, $data, $options) {
+  return vue.openBlock(), vue.createBlock("div", _hoisted_1$g, [vue.createVNode("div", _hoisted_2$e, [vue.renderSlot(_ctx.$slots, "left")]), vue.createVNode("div", _hoisted_3$8, [vue.renderSlot(_ctx.$slots, "center")]), vue.createVNode("div", _hoisted_4$6, [vue.renderSlot(_ctx.$slots, "right")])], 512);
+});var css_248z$n = "\n.cui-menu-bar[data-v-4289ed8a] {\n        background: var(--cui-dark);\n        height: 45px;\n        border-bottom-left-radius: 15px;\n        border-bottom-right-radius: 15px;\n        padding: 0 15px;\n        position: relative;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        color: var(--cui-gray-2);\n        font-weight: bold;\n        font-size: 16px;\n}\n.cui-menu-bar > .menu-item[data-v-4289ed8a] {\n        display: flex;\n        align-items: center;\n}\n";
+styleInject(css_248z$n);script$k.render = render$k;
+script$k.__scopeId = "data-v-4289ed8a";var script$j = {
   name: 'CuiMenuBarItem',
   props: {
     label: {
@@ -365,11 +365,11 @@ script$h.__scopeId = "data-v-4289ed8a";var script$g = {
       this.$parent.changeValue(this.value);
     }
   }
-};var _hoisted_1$d = /*#__PURE__*/vue.createVNode("div", {
+};var _hoisted_1$f = /*#__PURE__*/vue.createVNode("div", {
   class: "ripple"
 }, null, -1);
 
-var _hoisted_2$c = /*#__PURE__*/vue.createVNode("div", {
+var _hoisted_2$d = /*#__PURE__*/vue.createVNode("div", {
   class: "menu-bar-line"
 }, null, -1);
 
@@ -379,7 +379,7 @@ var _hoisted_3$7 = {
 var _hoisted_4$5 = {
   key: 1
 };
-function render$g(_ctx, _cache, $props, $setup, $data, $options) {
+function render$j(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("span", {
     class: "cui-menu-bar-item",
     onClick: _cache[1] || (_cache[1] = function () {
@@ -387,12 +387,12 @@ function render$g(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     ref: "item",
     value: $props.value
-  }, [_hoisted_1$d, _hoisted_2$c, vue.createVNode("div", _hoisted_3$7, [$props.icon !== '' ? (vue.openBlock(), vue.createBlock("i", {
+  }, [_hoisted_1$f, _hoisted_2$d, vue.createVNode("div", _hoisted_3$7, [$props.icon !== '' ? (vue.openBlock(), vue.createBlock("i", {
     key: 0,
     class: $props.icon
   }, null, 2)) : vue.createCommentVNode("", true), $props.label !== '' ? (vue.openBlock(), vue.createBlock("span", _hoisted_4$5, vue.toDisplayString($props.label), 1)) : vue.createCommentVNode("", true)])], 8, ["value"]);
-}var css_248z$j = "\n.cui-menu-bar-item {\n        height: 45px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        margin: 0 10px;\n        position: relative;\n        padding: 0;\n        transition: all .2s ease\n}\n.cui-menu-bar-item:not(.selected):hover {\n        cursor: pointer;\n        color: white;\n        transform: translateY(-3px);\n}\n.cui-menu-bar-item > .content {\n        transition: all .2s ease;\n}\n.cui-menu-bar-item:hover > .content {\n        padding-bottom: 5px;\n}\n.cui-menu-bar-item > i:not(:last-child) {\n        margin-right: 5px\n}\n.cui-menu-bar-item.selected {\n        color: white;\n}\n.menu-bar-line {\n        opacity: 0;\n        transition: all .2s;\n        background: white;\n        width: 100%;\n        height: 2px;\n        bottom: 0;\n        position: absolute;\n}\n.cui-menu-bar-item.selected > .menu-bar-line {\n        opacity: 100\n}\n.cui-menu-bar-item-content i {\n        margin-right: 5px;\n}\n";
-styleInject(css_248z$j);script$g.render = render$g;var script$f = {
+}var css_248z$m = "\n.cui-menu-bar-item {\n        height: 45px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        margin: 0 10px;\n        position: relative;\n        padding: 0;\n        transition: all .2s ease\n}\n.cui-menu-bar-item:not(.selected):hover {\n        cursor: pointer;\n        color: white;\n        transform: translateY(-3px);\n}\n.cui-menu-bar-item > .content {\n        transition: all .2s ease;\n}\n.cui-menu-bar-item:hover > .content {\n        padding-bottom: 5px;\n}\n.cui-menu-bar-item > i:not(:last-child) {\n        margin-right: 5px\n}\n.cui-menu-bar-item.selected {\n        color: white;\n}\n.menu-bar-line {\n        opacity: 0;\n        transition: all .2s;\n        background: white;\n        width: 100%;\n        height: 2px;\n        bottom: 0;\n        position: absolute;\n}\n.cui-menu-bar-item.selected > .menu-bar-line {\n        opacity: 100\n}\n.cui-menu-bar-item-content i {\n        margin-right: 5px;\n}\n";
+styleInject(css_248z$m);script$j.render = render$j;var script$i = {
   name: "CuiCard",
   props: {
     noPadding: {
@@ -409,10 +409,10 @@ styleInject(css_248z$j);script$g.render = render$g;var script$f = {
       test: false
     };
   }
-};var _hoisted_1$c = {
+};var _hoisted_1$e = {
   class: "cui-card-padding"
 };
-var _hoisted_2$b = {
+var _hoisted_2$c = {
   class: "cui-card"
 };
 var _hoisted_3$6 = {
@@ -427,14 +427,14 @@ var _hoisted_5$3 = {
   key: 0,
   class: "loader"
 };
-function render$f(_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createBlock("div", _hoisted_1$c, [vue.createVNode("div", _hoisted_2$b, [_ctx.$slots.header ? (vue.openBlock(), vue.createBlock("div", _hoisted_3$6, [vue.renderSlot(_ctx.$slots, "header")])) : vue.createCommentVNode("", true), vue.createVNode("div", {
+function render$i(_ctx, _cache, $props, $setup, $data, $options) {
+  return vue.openBlock(), vue.createBlock("div", _hoisted_1$e, [vue.createVNode("div", _hoisted_2$c, [_ctx.$slots.header ? (vue.openBlock(), vue.createBlock("div", _hoisted_3$6, [vue.renderSlot(_ctx.$slots, "header")])) : vue.createCommentVNode("", true), vue.createVNode("div", {
     class: ["cui-card-body", {
       'no-padding': $props.noPadding
     }]
   }, [vue.renderSlot(_ctx.$slots, "default")], 2), _ctx.$slots.footer ? (vue.openBlock(), vue.createBlock("div", _hoisted_4$4, [vue.renderSlot(_ctx.$slots, "footer")])) : vue.createCommentVNode("", true)]), $props.loading ? (vue.openBlock(), vue.createBlock("div", _hoisted_5$3)) : vue.createCommentVNode("", true)]);
-}var css_248z$i = "\n.cui-card-padding {\n        padding: 10px;\n        width: calc(100% - 20px);\n        height: calc(100% - 20px);\n        position: relative;\n}\n.cui-card {\n        border-radius: 20px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        overflow: hidden;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n        background: white;\n}\n.cui-card:not(.adaptive) {\n        height: calc(100%);\n        width: calc(100%);\n}\n.cui-card-header {\n        background: var(--cui-gray-0);\n        padding: 10px;\n        box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 15%);\n        display: flex;\n        align-items: center;\n}\n.cui-card-body {\n        flex: 1;\n        overflow: auto;\n}\n.cui-card-body:not(.no-padding) {\n        padding: 10px\n}\n.cui-card > .footer {\n        padding: 10px;\n        display: flex;\n        align-items: center;\n}\n\n";
-styleInject(css_248z$i);script$f.render = render$f;var script$e = {
+}var css_248z$l = "\n.cui-card-padding {\n        padding: 10px;\n        width: calc(100% - 20px);\n        height: calc(100% - 20px);\n        position: relative;\n}\n.cui-card {\n        border-radius: 20px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        overflow: hidden;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n        background: white;\n}\n.cui-card:not(.adaptive) {\n        height: calc(100%);\n        width: calc(100%);\n}\n.cui-card-header {\n        background: var(--cui-gray-0);\n        padding: 10px;\n        box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 15%);\n        display: flex;\n        align-items: center;\n}\n.cui-card-body {\n        flex: 1;\n        overflow: auto;\n}\n.cui-card-body:not(.no-padding) {\n        padding: 10px\n}\n.cui-card > .footer {\n        padding: 10px;\n        display: flex;\n        align-items: center;\n}\n\n";
+styleInject(css_248z$l);script$i.render = render$i;var script$h = {
   name: 'CuiModal',
   props: {
     visible: {
@@ -469,16 +469,16 @@ styleInject(css_248z$i);script$f.render = render$f;var script$e = {
       }
     }
   }
-};var _hoisted_1$b = {
+};var _hoisted_1$d = {
   key: 0,
   class: "cui-modal-overlay"
 };
-function render$e(_ctx, _cache, $props, $setup, $data, $options) {
+function render$h(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock(vue.Transition, {
     name: "modal-trans"
   }, {
     default: vue.withCtx(function () {
-      return [$props.visible ? (vue.openBlock(), vue.createBlock("div", _hoisted_1$b, [vue.createVNode(vue.Transition, {
+      return [$props.visible ? (vue.openBlock(), vue.createBlock("div", _hoisted_1$d, [vue.createVNode(vue.Transition, {
         name: "modal-content-trans"
       }, {
         default: vue.withCtx(function () {
@@ -495,8 +495,8 @@ function render$e(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     _: 1
   });
-}var css_248z$h = "\n.cui-modal-overlay {\n        position: fixed;\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        z-index: 100;\n        background: rgba(0,0,0,.2);\n        backdrop-filter: saturate(180%) blur(10px);\n        overflow: hidden\n}\n.cui-modal-content {\n        position: relative;\n        width: 100%;\n        height: 100%;\n        padding: 100px;\n        box-sizing: border-box;\n        display: flex;\n        justify-content: center;\n        align-items: center;\n}\n.modal-trans-enter-active, \n    .modal-content-trans-enter-active {\n        transition: all .15s ease;\n}\n.modal-content-trans-enter-active {        \n        animation: rebound .3s\n}\n.modal-trans-leave-active, \n    .modal-content-trans-leave-active {\n        transition: all .15s ease\n}\n.modal-trans-enter-from,\n    .modal-trans-leave-to {\n        opacity: 0;\n}\n.modal-content-trans-enter-from,\n    .modal-content-trans-leave-to {\n        transform: scale(.7)\n}\n@keyframes rebound {\n0% {transform: scale(.8)}\n40% {transform: scale(1.08)}\n80% {transform: scale(0.98)}\n100% {transform: scale(1)}\n}\n";
-styleInject(css_248z$h);script$e.render = render$e;var script$d = {
+}var css_248z$k = "\n.cui-modal-overlay {\n        position: fixed;\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        z-index: 100;\n        background: rgba(0,0,0,.2);\n        backdrop-filter: saturate(180%) blur(10px);\n        overflow: hidden\n}\n.cui-modal-content {\n        position: relative;\n        width: 100%;\n        height: 100%;\n        padding: 100px;\n        box-sizing: border-box;\n        display: flex;\n        justify-content: center;\n        align-items: center;\n}\n.modal-trans-enter-active, \n    .modal-content-trans-enter-active {\n        transition: all .15s ease;\n}\n.modal-content-trans-enter-active {        \n        animation: rebound .3s\n}\n.modal-trans-leave-active, \n    .modal-content-trans-leave-active {\n        transition: all .15s ease\n}\n.modal-trans-enter-from,\n    .modal-trans-leave-to {\n        opacity: 0;\n}\n.modal-content-trans-enter-from,\n    .modal-content-trans-leave-to {\n        transform: scale(.7)\n}\n@keyframes rebound {\n0% {transform: scale(.8)}\n40% {transform: scale(1.08)}\n80% {transform: scale(0.98)}\n100% {transform: scale(1)}\n}\n";
+styleInject(css_248z$k);script$h.render = render$h;var script$g = {
   name: 'CuiInput',
   props: {
     modelValue: {
@@ -565,15 +565,15 @@ styleInject(css_248z$h);script$e.render = render$e;var script$d = {
       this.noteDisplay = this.note;
     }
   }
-};var _withId$a = /*#__PURE__*/vue.withScopeId("data-v-6242c9e6");
+};var _withId$c = /*#__PURE__*/vue.withScopeId("data-v-6242c9e6");
 
 vue.pushScopeId("data-v-6242c9e6");
 
-var _hoisted_1$a = {
+var _hoisted_1$c = {
   key: 0,
   class: "cui-input-label"
 };
-var _hoisted_2$a = {
+var _hoisted_2$b = {
   style: {
     "margin-right": "10px"
   }
@@ -597,8 +597,8 @@ var _hoisted_6$2 = {
 
 vue.popScopeId();
 
-var render$d = /*#__PURE__*/_withId$a(function (_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createBlock("div", null, [$props.label ? (vue.openBlock(), vue.createBlock("label", _hoisted_1$a, [vue.createVNode("span", _hoisted_2$a, vue.toDisplayString($props.label), 1), $props.required ? (vue.openBlock(), vue.createBlock("span", _hoisted_3$5, vue.toDisplayString($data.trans.required), 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), vue.createVNode("div", _hoisted_4$3, [$props.append ? (vue.openBlock(), vue.createBlock("span", _hoisted_5$2, vue.toDisplayString($props.append), 1)) : vue.createCommentVNode("", true), vue.withDirectives(vue.createVNode("input", {
+var render$g = /*#__PURE__*/_withId$c(function (_ctx, _cache, $props, $setup, $data, $options) {
+  return vue.openBlock(), vue.createBlock("div", null, [$props.label ? (vue.openBlock(), vue.createBlock("label", _hoisted_1$c, [vue.createVNode("span", _hoisted_2$b, vue.toDisplayString($props.label), 1), $props.required ? (vue.openBlock(), vue.createBlock("span", _hoisted_3$5, vue.toDisplayString($data.trans.required), 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), vue.createVNode("div", _hoisted_4$3, [$props.append ? (vue.openBlock(), vue.createBlock("span", _hoisted_5$2, vue.toDisplayString($props.append), 1)) : vue.createCommentVNode("", true), vue.withDirectives(vue.createVNode("input", {
     class: ["cui-input", {
       'has-icon': $props.icon,
       disabled: $props.disabled,
@@ -623,9 +623,9 @@ var render$d = /*#__PURE__*/_withId$a(function (_ctx, _cache, $props, $setup, $d
     key: 1,
     class: $props.icon + ' cui-input-icon'
   }, null, 2)) : vue.createCommentVNode("", true)]), !$props.noNote ? (vue.openBlock(), vue.createBlock("div", _hoisted_6$2, [vue.createVNode("span", null, vue.toDisplayString($data.noteDisplay), 1)])) : vue.createCommentVNode("", true)]);
-});var css_248z$g = "\n.cui-input-label[data-v-6242c9e6] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-input[data-v-6242c9e6] {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease\n}\n.cui-input.darker[data-v-6242c9e6] {\n        background: var(--cui-gray-3);\n}\n.cui-input.disabled[data-v-6242c9e6] {\n        color: var(--cui-gray-3)\n}\n.cui-input[data-v-6242c9e6]:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n        background: var(--cui-gray-1)\n}\n.cui-input.darker[data-v-6242c9e6]:focus {\n        background: var(--cui-gray-4)\n}\n.cui-input.darker[data-v-6242c9e6]:hover {\n        background: var(--cui-gray-4)\n}\n.cui-input-note[data-v-6242c9e6] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n.cui-input-icon[data-v-6242c9e6] {\n        position: absolute;\n        left:0;\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        padding: 10px;\n        transition: all .2s ease;\n}\n.has-icon[data-v-6242c9e6] {\n        text-indent: 28px;\n}\n.cui-input:focus + .cui-input-icon[data-v-6242c9e6] {\n        margin: -3px;\n        box-shadow: 0 10px 20px -10px var(--cui-dark);\n        background: white;\n}\n.cui-input-append[data-v-6242c9e6] {\n        position: absolute;\n        right: 0;\n        height: 34px;\n        background: white;\n        border-radius: 12px;\n        line-height: 34px;\n        padding: 0 10px;\n        border: solid 1px var(--cui-gray-1);\n        font-size: 14px\n}\n";
-styleInject(css_248z$g);script$d.render = render$d;
-script$d.__scopeId = "data-v-6242c9e6";var script$c = {
+});var css_248z$j = "\n.cui-input-label[data-v-6242c9e6] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-input[data-v-6242c9e6] {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease\n}\n.cui-input.darker[data-v-6242c9e6] {\n        background: var(--cui-gray-3);\n}\n.cui-input.disabled[data-v-6242c9e6] {\n        color: var(--cui-gray-3)\n}\n.cui-input[data-v-6242c9e6]:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n        background: var(--cui-gray-1)\n}\n.cui-input.darker[data-v-6242c9e6]:focus {\n        background: var(--cui-gray-4)\n}\n.cui-input.darker[data-v-6242c9e6]:hover {\n        background: var(--cui-gray-4)\n}\n.cui-input-note[data-v-6242c9e6] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n.cui-input-icon[data-v-6242c9e6] {\n        position: absolute;\n        left:0;\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        padding: 10px;\n        transition: all .2s ease;\n}\n.has-icon[data-v-6242c9e6] {\n        text-indent: 28px;\n}\n.cui-input:focus + .cui-input-icon[data-v-6242c9e6] {\n        margin: -3px;\n        box-shadow: 0 10px 20px -10px var(--cui-dark);\n        background: white;\n}\n.cui-input-append[data-v-6242c9e6] {\n        position: absolute;\n        right: 0;\n        height: 34px;\n        background: white;\n        border-radius: 12px;\n        line-height: 34px;\n        padding: 0 10px;\n        border: solid 1px var(--cui-gray-1);\n        font-size: 14px\n}\n";
+styleInject(css_248z$j);script$g.render = render$g;
+script$g.__scopeId = "data-v-6242c9e6";var script$f = {
   name: 'CuiCheckbox',
   props: {
     modelValue: {
@@ -654,30 +654,30 @@ script$d.__scopeId = "data-v-6242c9e6";var script$c = {
   mounted: function mounted() {
     this.id = Math.floor(Math.random() * 100000);
   }
-};var _withId$9 = /*#__PURE__*/vue.withScopeId("data-v-6b76e5f7");
+};var _withId$b = /*#__PURE__*/vue.withScopeId("data-v-6b76e5f7");
 
 vue.pushScopeId("data-v-6b76e5f7");
 
-var _hoisted_1$9 = /*#__PURE__*/vue.createVNode("div", {
+var _hoisted_1$b = /*#__PURE__*/vue.createVNode("div", {
   class: "cui-checkbox-con"
 }, [/*#__PURE__*/vue.createVNode("i", {
   class: "cui-checkbox-icon fas fa-check"
 })], -1);
 
-var _hoisted_2$9 = {
+var _hoisted_2$a = {
   class: "cui-checkbox-label"
 };
 
 vue.popScopeId();
 
-var render$c = /*#__PURE__*/_withId$9(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$f = /*#__PURE__*/_withId$b(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("label", {
     class: ["cui-checkbox-container", {
       selected: $props.modelValue,
       disabled: $props.disabled
     }],
     for: $data.id
-  }, [_hoisted_1$9, vue.withDirectives(vue.createVNode("input", {
+  }, [_hoisted_1$b, vue.withDirectives(vue.createVNode("input", {
     onChange: _cache[1] || (_cache[1] = function () {
       return $options.toggleSelected && $options.toggleSelected.apply($options, arguments);
     }),
@@ -688,10 +688,10 @@ var render$c = /*#__PURE__*/_withId$9(function (_ctx, _cache, $props, $setup, $d
       return $props.modelValue = $event;
     }),
     disabled: $props.disabled
-  }, null, 40, ["id", "disabled"]), [[vue.vModelCheckbox, $props.modelValue]]), vue.createVNode("div", _hoisted_2$9, vue.toDisplayString($props.label), 1)], 10, ["for"]);
-});var css_248z$f = "\n\n    /* Base State */\n.cui-checkbox-container[data-v-6b76e5f7] {\n        display: flex;\n        align-items: center;\n        width: fit-content; \n        margin: 5px 0;\n        position: relative\n}\n.cui-checkbox-container[data-v-6b76e5f7]:not(.disabled) {\n        cursor: pointer\n}\n.cui-checkbox[data-v-6b76e5f7] {\n        display: none\n}\n.cui-checkbox-con[data-v-6b76e5f7] {\n        position: absolute;\n        width: 15px;\n        height: 15px;\n        border-radius: 5px;\n        border: solid 2px var(--cui-gray-2);\n        transition: all .2s ease;\n        display: flex\n}\n.cui-checkbox-label[data-v-6b76e5f7] {\n        padding-left: 25px\n}\n\n    /* Hover State */\n.cui-checkbox-container:not(.disabled):not(.selected):hover .cui-checkbox-con[data-v-6b76e5f7],\n    .cui-checkbox-container.disabled .cui-checkbox-con[data-v-6b76e5f7] {\n        background: var(--cui-gray-1)\n}\n\n    /* Selected State */\n.cui-checkbox-container.selected .cui-checkbox-con[data-v-6b76e5f7] {\n        background: var(--cui-primary);\n        border-color: var(--cui-primary);\n        box-shadow: 0 0 0 0 var(--cui-primary);\n}\n.cui-checkbox-icon[data-v-6b76e5f7] {\n        color: white;\n        transform: scale(.1);\n        opacity: 0;\n        transition: all .2s ease\n}\n.cui-checkbox-container.selected .cui-checkbox-icon[data-v-6b76e5f7] {\n        transform: scale(.8);\n        opacity: 1\n}\n\n\n";
-styleInject(css_248z$f);script$c.render = render$c;
-script$c.__scopeId = "data-v-6b76e5f7";var top = 'top';
+  }, null, 40, ["id", "disabled"]), [[vue.vModelCheckbox, $props.modelValue]]), vue.createVNode("div", _hoisted_2$a, vue.toDisplayString($props.label), 1)], 10, ["for"]);
+});var css_248z$i = "\n\n    /* Base State */\n.cui-checkbox-container[data-v-6b76e5f7] {\n        display: flex;\n        align-items: center;\n        width: fit-content; \n        margin: 5px 0;\n        position: relative\n}\n.cui-checkbox-container[data-v-6b76e5f7]:not(.disabled) {\n        cursor: pointer\n}\n.cui-checkbox[data-v-6b76e5f7] {\n        display: none\n}\n.cui-checkbox-con[data-v-6b76e5f7] {\n        position: absolute;\n        width: 15px;\n        height: 15px;\n        border-radius: 5px;\n        border: solid 2px var(--cui-gray-2);\n        transition: all .2s ease;\n        display: flex\n}\n.cui-checkbox-label[data-v-6b76e5f7] {\n        padding-left: 25px\n}\n\n    /* Hover State */\n.cui-checkbox-container:not(.disabled):not(.selected):hover .cui-checkbox-con[data-v-6b76e5f7],\n    .cui-checkbox-container.disabled .cui-checkbox-con[data-v-6b76e5f7] {\n        background: var(--cui-gray-1)\n}\n\n    /* Selected State */\n.cui-checkbox-container.selected .cui-checkbox-con[data-v-6b76e5f7] {\n        background: var(--cui-primary);\n        border-color: var(--cui-primary);\n        box-shadow: 0 0 0 0 var(--cui-primary);\n}\n.cui-checkbox-icon[data-v-6b76e5f7] {\n        color: white;\n        transform: scale(.1);\n        opacity: 0;\n        transition: all .2s ease\n}\n.cui-checkbox-container.selected .cui-checkbox-icon[data-v-6b76e5f7] {\n        transform: scale(.8);\n        opacity: 1\n}\n\n\n";
+styleInject(css_248z$i);script$f.render = render$f;
+script$f.__scopeId = "data-v-6b76e5f7";var top = 'top';
 var bottom = 'bottom';
 var right = 'right';
 var left = 'left';
@@ -2294,7 +2294,7 @@ function popperGenerator(generatorOptions) {
 var createPopper = /*#__PURE__*/popperGenerator({
   defaultModifiers: defaultModifiers
 }); // eslint-disable-next-line import/no-unused-modules
-var script$b = {
+var script$e = {
   name: 'CuiSelect',
   props: {
     modelValue: {
@@ -2521,15 +2521,15 @@ var script$b = {
       this.$emit('input', this.searchValue);
     }
   }
-};var _withId$8 = /*#__PURE__*/vue.withScopeId("data-v-727c5956");
+};var _withId$a = /*#__PURE__*/vue.withScopeId("data-v-727c5956");
 
 vue.pushScopeId("data-v-727c5956");
 
-var _hoisted_1$8 = {
+var _hoisted_1$a = {
   key: 0,
   class: "cui-select-label"
 };
-var _hoisted_2$8 = {
+var _hoisted_2$9 = {
   style: {
     "margin-right": "10px"
   }
@@ -2597,7 +2597,7 @@ var _hoisted_20 = {
 
 vue.popScopeId();
 
-var render$b = /*#__PURE__*/_withId$8(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$e = /*#__PURE__*/_withId$a(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_cui_tag = vue.resolveComponent("cui-tag");
 
   var _component_cui_checkbox = vue.resolveComponent("cui-checkbox");
@@ -2609,7 +2609,7 @@ var render$b = /*#__PURE__*/_withId$8(function (_ctx, _cache, $props, $setup, $d
     onClick: _cache[5] || (_cache[5] = vue.withModifiers(function () {
       return $options.handleClick && $options.handleClick.apply($options, arguments);
     }, ["stop"]))
-  }, [$props.label ? (vue.openBlock(), vue.createBlock("label", _hoisted_1$8, [vue.createVNode("span", _hoisted_2$8, vue.toDisplayString($props.label), 1), $props.required ? (vue.openBlock(), vue.createBlock("span", _hoisted_3$4, vue.toDisplayString($data.trans.required), 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), vue.createVNode("div", {
+  }, [$props.label ? (vue.openBlock(), vue.createBlock("label", _hoisted_1$a, [vue.createVNode("span", _hoisted_2$9, vue.toDisplayString($props.label), 1), $props.required ? (vue.openBlock(), vue.createBlock("span", _hoisted_3$4, vue.toDisplayString($data.trans.required), 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), vue.createVNode("div", {
     ref: "select",
     class: ["cui-select", {
       focused: $data.focused,
@@ -2624,7 +2624,7 @@ var render$b = /*#__PURE__*/_withId$8(function (_ctx, _cache, $props, $setup, $d
       class: "cui-select-tag",
       key: index
     }, {
-      default: _withId$8(function () {
+      default: _withId$a(function () {
         return [vue.createTextVNode(vue.toDisplayString(valueItem[$props.displayValueProp]) + " ", 1), vue.createVNode("i", {
           class: "cui-select-tag-icon fas fa-times-circle",
           onClick: vue.withModifiers(function ($event) {
@@ -2650,7 +2650,7 @@ var render$b = /*#__PURE__*/_withId$8(function (_ctx, _cache, $props, $setup, $d
       class: "cui-select-tag",
       key: index
     }, {
-      default: _withId$8(function () {
+      default: _withId$a(function () {
         return [vue.createTextVNode(vue.toDisplayString(valueItem[$props.displayValueProp]) + " ", 1), vue.createVNode("i", {
           class: "cui-select-tag-icon fas fa-times-circle",
           onClick: vue.withModifiers(function ($event) {
@@ -2691,10 +2691,10 @@ var render$b = /*#__PURE__*/_withId$8(function (_ctx, _cache, $props, $setup, $d
       item: item
     })], 8, ["onClick"]);
   }), 128))])) : (vue.openBlock(), vue.createBlock("div", _hoisted_18, [vue.createVNode("div", _hoisted_19, vue.toDisplayString($data.trans.empty), 1)]))], 6), !$props.noNote ? (vue.openBlock(), vue.createBlock("div", _hoisted_20, [vue.createVNode("span", null, vue.toDisplayString($data.noteDisplay), 1)])) : vue.createCommentVNode("", true)], 2);
-});var css_248z$e = "\n@keyframes expand-727c5956{\nfrom{\n            margin-top: -10px;\n            opacity: 0\n}\nto{\n            opacity: 1\n}\n}\n@keyframes retract-727c5956{\nfrom{\n            opacity: 1;\n}\nto{\n            margin-top: -10px;\n            opacity: 0;\n}\n}\n.cui-select-label[data-v-727c5956] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-select[data-v-727c5956] {\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        height: 26px;\n        padding: 2px 10px;\n        transition: all .2s ease;\n        font-size: 13.3333px;\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        overflow: hidden;\n        height: fit-content;\n        min-height: 32px;\n        font-weight: normal !important;\n}\n.cui-select:not(.focused).has-color[data-v-727c5956],\n    .cui-select:not(.focused).has-color .cui-placeholder[data-v-727c5956],\n    .cui-select:not(.focused).has-color .cui-select-icon[data-v-727c5956] {\n        color: white\n}\n.cui-select.focused[data-v-727c5956] {\n        border-bottom-right-radius: 0;\n        border-bottom-left-radius: 0;\n}\n.cui-select-container[data-v-727c5956] {\n        cursor: pointer\n}\n.cui-select-container.disabled[data-v-727c5956], .cui-select.disabled[data-v-727c5956] {\n        cursor: not-allowed\n}\n.cui-select-container:hover .cui-select[data-v-727c5956]:not(.disabled),\n    .cui-select.focused[data-v-727c5956] {\n        padding-left: 13px;\n        padding-right: 7px;\n        background: white;\n        transform: translate(0px, -4px);\n        box-shadow: 0px 5px 25px -4px var(--cui-gray-4);\n        cursor: pointer\n}\n.cui-select-list[data-v-727c5956] {\n        display: none;\n        background: white;\n        border-bottom-right-radius: 12px;\n        border-bottom-left-radius: 12px;\n        box-shadow:0px 14px 13px 2px var(--cui-gray-4);\n        z-index: 10;\n        width: 240px;\n        overflow: auto;\n        max-height: 200px;\n}\n.cui-select-list.expanded[data-v-727c5956] {\n        display: block;\n        animation: expand-727c5956 .2s ease-out 0s;\n}\n.cui-select-list.retracted[data-v-727c5956] {\n        animation: retract-727c5956 .2s ease-out 0s;\n}\n.cui-select-dropdown-item[data-v-727c5956] {\n        padding: 8px 10px;\n        transition: all .2s ease;\n        display: flex;\n        font-weight: normal !important;\n        color: var(--cui-font-color)!important\n}\n.cui-select-dropdown-item[data-v-727c5956]:hover {\n        background: var(--cui-gray-1);\n        cursor: pointer\n}\n.cui-select-input[data-v-727c5956],\n    .cui-select-input[data-v-727c5956]:focus {\n        border: none;\n        outline: none\n}\n.cui-select-empty[data-v-727c5956] {\n        padding: 8px 10px;\n        color: var(--cui-gray-5);\n        font-size: 12px\n}\n.cui-select-icon[data-v-727c5956] {\n        transition: all .2s ease;\n        font-size: 12px;\n        color: var(--cui-gray-5);\n        padding: 5px\n}\n.cui-select-icon.focused[data-v-727c5956] {\n        transform: rotate(180deg)\n}\n.cui-select-multiple-cont[data-v-727c5956] {\n        display: flex;\n        align-items: center;\n        flex-wrap: wrap\n}\n.cui-select-tag-icon[data-v-727c5956] {\n        margin-left: 2px;\n        color: var(--cui-font-color);\n        opacity: 0.6;\n        transition: all .2s ease;\n}\n.cui-select-tag-icon[data-v-727c5956]:hover {\n        opacity: 1;\n}\n.cui-select-note[data-v-727c5956] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n\n";
-styleInject(css_248z$e);var css_248z$d = "\n.cui-select-tag {\n        font-size: 12px!important;\n        height: 28px!important;\n        background: var(--cui-gray-3)!important;\n        color: var(--cui-font-color)!important;\n        margin: 2px!important;\n        padding: 0 5px!important\n}\n";
-styleInject(css_248z$d);script$b.render = render$b;
-script$b.__scopeId = "data-v-727c5956";function isDate(value) {
+});var css_248z$h = "\n@keyframes expand-727c5956{\nfrom{\n            margin-top: -10px;\n            opacity: 0\n}\nto{\n            opacity: 1\n}\n}\n@keyframes retract-727c5956{\nfrom{\n            opacity: 1;\n}\nto{\n            margin-top: -10px;\n            opacity: 0;\n}\n}\n.cui-select-label[data-v-727c5956] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-select[data-v-727c5956] {\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        height: 26px;\n        padding: 2px 10px;\n        transition: all .2s ease;\n        font-size: 13.3333px;\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        overflow: hidden;\n        height: fit-content;\n        min-height: 32px;\n        font-weight: normal !important;\n}\n.cui-select:not(.focused).has-color[data-v-727c5956],\n    .cui-select:not(.focused).has-color .cui-placeholder[data-v-727c5956],\n    .cui-select:not(.focused).has-color .cui-select-icon[data-v-727c5956] {\n        color: white\n}\n.cui-select.focused[data-v-727c5956] {\n        border-bottom-right-radius: 0;\n        border-bottom-left-radius: 0;\n}\n.cui-select-container[data-v-727c5956] {\n        cursor: pointer\n}\n.cui-select-container.disabled[data-v-727c5956], .cui-select.disabled[data-v-727c5956] {\n        cursor: not-allowed\n}\n.cui-select-container:hover .cui-select[data-v-727c5956]:not(.disabled),\n    .cui-select.focused[data-v-727c5956] {\n        padding-left: 13px;\n        padding-right: 7px;\n        background: white;\n        transform: translate(0px, -4px);\n        box-shadow: 0px 5px 25px -4px var(--cui-gray-4);\n        cursor: pointer\n}\n.cui-select-list[data-v-727c5956] {\n        display: none;\n        background: white;\n        border-bottom-right-radius: 12px;\n        border-bottom-left-radius: 12px;\n        box-shadow:0px 14px 13px 2px var(--cui-gray-4);\n        z-index: 10;\n        width: 240px;\n        overflow: auto;\n        max-height: 200px;\n}\n.cui-select-list.expanded[data-v-727c5956] {\n        display: block;\n        animation: expand-727c5956 .2s ease-out 0s;\n}\n.cui-select-list.retracted[data-v-727c5956] {\n        animation: retract-727c5956 .2s ease-out 0s;\n}\n.cui-select-dropdown-item[data-v-727c5956] {\n        padding: 8px 10px;\n        transition: all .2s ease;\n        display: flex;\n        font-weight: normal !important;\n        color: var(--cui-font-color)!important\n}\n.cui-select-dropdown-item[data-v-727c5956]:hover {\n        background: var(--cui-gray-1);\n        cursor: pointer\n}\n.cui-select-input[data-v-727c5956],\n    .cui-select-input[data-v-727c5956]:focus {\n        border: none;\n        outline: none\n}\n.cui-select-empty[data-v-727c5956] {\n        padding: 8px 10px;\n        color: var(--cui-gray-5);\n        font-size: 12px\n}\n.cui-select-icon[data-v-727c5956] {\n        transition: all .2s ease;\n        font-size: 12px;\n        color: var(--cui-gray-5);\n        padding: 5px\n}\n.cui-select-icon.focused[data-v-727c5956] {\n        transform: rotate(180deg)\n}\n.cui-select-multiple-cont[data-v-727c5956] {\n        display: flex;\n        align-items: center;\n        flex-wrap: wrap\n}\n.cui-select-tag-icon[data-v-727c5956] {\n        margin-left: 2px;\n        color: var(--cui-font-color);\n        opacity: 0.6;\n        transition: all .2s ease;\n}\n.cui-select-tag-icon[data-v-727c5956]:hover {\n        opacity: 1;\n}\n.cui-select-note[data-v-727c5956] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n\n";
+styleInject(css_248z$h);var css_248z$g = "\n.cui-select-tag {\n        font-size: 12px!important;\n        height: 28px!important;\n        background: var(--cui-gray-3)!important;\n        color: var(--cui-font-color)!important;\n        margin: 2px!important;\n        padding: 0 5px!important\n}\n";
+styleInject(css_248z$g);script$e.render = render$e;
+script$e.__scopeId = "data-v-727c5956";function isDate(value) {
   return value instanceof Date || Object.prototype.toString.call(value) === '[object Date]';
 }
 function toDate(value) {
@@ -3797,7 +3797,7 @@ function getScrollParent(node) {
   return scroll ? node : getScrollParent(node.parentNode, until);
 }
 
-var script$a = {
+var script$d = {
   name: 'Popup',
   inject: {
     prefixClass: {
@@ -3899,7 +3899,7 @@ var script$a = {
   }
 };
 
-function render$a(_ctx, _cache, $props, $setup, $data, $options) {
+function render$d(_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock(vue.Transition, {
     name: "".concat($options.prefixClass, "-zoom-in-down")
   }, {
@@ -3918,21 +3918,21 @@ function render$a(_ctx, _cache, $props, $setup, $data, $options) {
   }, 8, ["name"]);
 }
 
-script$a.render = render$a;
+script$d.render = render$d;
 
-var _hoisted_1$7 = {
+var _hoisted_1$9 = {
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 1024 1024",
   width: "1em",
   height: "1em"
 };
 
-var _hoisted_2$7 = /*#__PURE__*/vue.createVNode("path", {
+var _hoisted_2$8 = /*#__PURE__*/vue.createVNode("path", {
   d: "M940.218182 107.054545h-209.454546V46.545455h-65.163636v60.50909H363.054545V46.545455H297.890909v60.50909H83.781818c-18.618182 0-32.581818 13.963636-32.581818 32.581819v805.236363c0 18.618182 13.963636 32.581818 32.581818 32.581818h861.090909c18.618182 0 32.581818-13.963636 32.581818-32.581818V139.636364c-4.654545-18.618182-18.618182-32.581818-37.236363-32.581819zM297.890909 172.218182V232.727273h65.163636V172.218182h307.2V232.727273h65.163637V172.218182h176.872727v204.8H116.363636V172.218182h181.527273zM116.363636 912.290909V442.181818h795.927273v470.109091H116.363636z"
 }, null, -1);
 
 function render$1$1(_ctx, _cache) {
-  return vue.openBlock(), vue.createBlock("svg", _hoisted_1$7, [_hoisted_2$7]);
+  return vue.openBlock(), vue.createBlock("svg", _hoisted_1$9, [_hoisted_2$8]);
 }
 
 var script$1$1 = {};
@@ -6431,7 +6431,7 @@ var DatePicker = {
     }, [this.hasSlot('header') ? this.renderHeader() : null, this.renderContent(), this.hasSlot('footer') || this.confirm ? this.renderFooter() : null]);
     return vue.createVNode("div", {
       "class": (_ref = {}, _defineProperty(_ref, "".concat(prefixClass, "-datepicker"), true), _defineProperty(_ref, "".concat(prefixClass, "-datepicker-range"), this.range), _defineProperty(_ref, "".concat(prefixClass, "-datepicker-inline"), inline), _defineProperty(_ref, "disabled", disabled), _ref)
-    }, [!inline ? this.renderInput() : null, !inline ? vue.createVNode(script$a, {
+    }, [!inline ? this.renderInput() : null, !inline ? vue.createVNode(script$d, {
       "ref": "popup",
       "class": this.popupClass,
       "style": this.popupStyle,
@@ -6461,8 +6461,8 @@ _extends(DatePicker, {
   TimeRange: TimeRange,
   DatetimePanel: DatetimePanel,
   DatetimeRange: DatetimeRange
-});var index_esm=/*#__PURE__*/Object.freeze({__proto__:null,'default': DatePicker});var css_248z$c = ".mx-icon-left:before,.mx-icon-right:before,.mx-icon-double-left:before,.mx-icon-double-right:before,.mx-icon-double-left:after,.mx-icon-double-right:after{content:\"\";position:relative;top:-1px;display:inline-block;width:10px;height:10px;vertical-align:middle;border-style:solid;border-color:currentColor;border-width:2px 0 0 2px;border-radius:1px;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-transform-origin:center;transform-origin:center;-webkit-transform:rotate(-45deg) scale(0.7);transform:rotate(-45deg) scale(0.7)}.mx-icon-double-left:after{left:-4px}.mx-icon-double-right:before{left:4px}.mx-icon-right:before,.mx-icon-double-right:before,.mx-icon-double-right:after{-webkit-transform:rotate(135deg) scale(0.7);transform:rotate(135deg) scale(0.7)}.mx-btn{-webkit-box-sizing:border-box;box-sizing:border-box;line-height:1;font-size:14px;font-weight:500;padding:7px 15px;margin:0;cursor:pointer;background-color:transparent;outline:none;border:1px solid rgba(0,0,0,.1);border-radius:4px;color:#73879c;white-space:nowrap}.mx-btn:hover{border-color:#1284e7;color:#1284e7}.mx-btn-text{border:0;padding:0 4px;text-align:left;line-height:inherit}.mx-scrollbar{height:100%}.mx-scrollbar:hover .mx-scrollbar-track{opacity:1}.mx-scrollbar-wrap{height:100%;overflow-x:hidden;overflow-y:auto}.mx-scrollbar-track{position:absolute;top:2px;right:2px;bottom:2px;width:6px;z-index:1;border-radius:4px;opacity:0;-webkit-transition:opacity .24s ease-out;transition:opacity .24s ease-out}.mx-scrollbar-track .mx-scrollbar-thumb{position:absolute;width:100%;height:0;cursor:pointer;border-radius:inherit;background-color:rgba(144,147,153,.3);-webkit-transition:background-color .3s;transition:background-color .3s}.mx-zoom-in-down-enter-active,.mx-zoom-in-down-leave-active{opacity:1;-webkit-transform:scaleY(1);transform:scaleY(1);-webkit-transition:opacity .3s cubic-bezier(0.23, 1, 0.32, 1),-webkit-transform .3s cubic-bezier(0.23, 1, 0.32, 1);transition:opacity .3s cubic-bezier(0.23, 1, 0.32, 1),-webkit-transform .3s cubic-bezier(0.23, 1, 0.32, 1);transition:transform .3s cubic-bezier(0.23, 1, 0.32, 1),opacity .3s cubic-bezier(0.23, 1, 0.32, 1);transition:transform .3s cubic-bezier(0.23, 1, 0.32, 1),opacity .3s cubic-bezier(0.23, 1, 0.32, 1),-webkit-transform .3s cubic-bezier(0.23, 1, 0.32, 1);-webkit-transform-origin:center top;transform-origin:center top}.mx-zoom-in-down-enter,.mx-zoom-in-down-leave-to{opacity:0;-webkit-transform:scaleY(0);transform:scaleY(0)}.mx-datepicker{position:relative;display:inline-block;width:210px}.mx-datepicker svg{width:1em;height:1em;vertical-align:-0.15em;fill:currentColor;overflow:hidden}.mx-datepicker-range{width:320px}.mx-datepicker-inline{width:auto}.mx-input-wrapper{position:relative}.mx-input-wrapper .mx-icon-clear{display:none}.mx-input-wrapper:hover .mx-icon-clear{display:block}.mx-input-wrapper:hover .mx-icon-clear+.mx-icon-calendar{display:none}.mx-input{display:inline-block;-webkit-box-sizing:border-box;box-sizing:border-box;width:100%;height:34px;padding:6px 30px;padding-left:10px;font-size:14px;line-height:1.4;color:#555;background-color:#fff;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075)}.mx-input:hover,.mx-input:focus{border-color:#409aff}.mx-input:disabled,.mx-input.disabled{color:#ccc;background-color:#f3f3f3;border-color:#ccc;cursor:not-allowed}.mx-input:focus{outline:none}.mx-input::-ms-clear{display:none}.mx-icon-calendar,.mx-icon-clear{position:absolute;top:50%;right:8px;-webkit-transform:translateY(-50%);transform:translateY(-50%);font-size:16px;line-height:1;color:rgba(0,0,0,.5);vertical-align:middle}.mx-icon-clear{cursor:pointer}.mx-icon-clear:hover{color:rgba(0,0,0,.8)}.mx-datepicker-main{font:14px/1.5 \"Helvetica Neue\",Helvetica,Arial,\"Microsoft Yahei\",sans-serif;color:#73879c;background-color:#fff;border:1px solid #e8e8e8}.mx-datepicker-popup{position:absolute;margin-top:1px;margin-bottom:1px;-webkit-box-shadow:0 6px 12px rgba(0,0,0,.175);box-shadow:0 6px 12px rgba(0,0,0,.175);z-index:2001}.mx-datepicker-sidebar{float:left;-webkit-box-sizing:border-box;box-sizing:border-box;width:100px;padding:6px;overflow:auto}.mx-datepicker-sidebar+.mx-datepicker-content{margin-left:100px;border-left:1px solid #e8e8e8}.mx-datepicker-body{position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.mx-btn-shortcut{display:block;padding:0 6px;line-height:24px}.mx-range-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex}@media(max-width: 750px){.mx-range-wrapper{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}}.mx-datepicker-header{padding:6px 8px;border-bottom:1px solid #e8e8e8}.mx-datepicker-footer{padding:6px 8px;text-align:right;border-top:1px solid #e8e8e8}.mx-calendar{-webkit-box-sizing:border-box;box-sizing:border-box;width:248px;padding:6px 12px}.mx-calendar+.mx-calendar{border-left:1px solid #e8e8e8}.mx-calendar-header,.mx-time-header{-webkit-box-sizing:border-box;box-sizing:border-box;height:34px;line-height:34px;text-align:center;overflow:hidden}.mx-btn-icon-left,.mx-btn-icon-double-left{float:left}.mx-btn-icon-right,.mx-btn-icon-double-right{float:right}.mx-calendar-header-label{font-size:14px}.mx-calendar-decade-separator{margin:0 2px}.mx-calendar-decade-separator:after{content:\"~\"}.mx-calendar-content{position:relative;height:224px;-webkit-box-sizing:border-box;box-sizing:border-box}.mx-calendar-content .cell{cursor:pointer}.mx-calendar-content .cell:hover{color:#73879c;background-color:#f3f9fe}.mx-calendar-content .cell.active{color:#fff;background-color:#1284e7}.mx-calendar-content .cell.in-range{color:#73879c;background-color:#dbedfb}.mx-calendar-content .cell.disabled{cursor:not-allowed;color:#ccc;background-color:#f3f3f3}.mx-calendar-week-mode .mx-date-row{cursor:pointer}.mx-calendar-week-mode .mx-date-row:hover{background-color:#f3f9fe}.mx-calendar-week-mode .mx-date-row.mx-active-week{background-color:#dbedfb}.mx-calendar-week-mode .mx-date-row .cell:hover{color:inherit;background-color:transparent}.mx-calendar-week-mode .mx-date-row .cell.active{color:inherit;background-color:transparent}.mx-week-number{opacity:.5}.mx-table{table-layout:fixed;border-collapse:separate;border-spacing:0;width:100%;height:100%;-webkit-box-sizing:border-box;box-sizing:border-box;text-align:center;vertical-align:middle}.mx-table th{padding:0;font-weight:500}.mx-table td{padding:0}.mx-table-date td,.mx-table-date th{height:32px;font-size:12px}.mx-table-date .today{color:#2a90e9}.mx-table-date .cell.not-current-month{color:#ccc}.mx-time{-webkit-box-flex:1;-ms-flex:1;flex:1;width:224px;background:#fff}.mx-time+.mx-time{border-left:1px solid #e8e8e8}.mx-calendar-time{position:absolute;top:0;left:0;width:100%;height:100%}.mx-time-header{border-bottom:1px solid #e8e8e8}.mx-time-content{height:224px;-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden}.mx-time-columns{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;height:100%;overflow:hidden}.mx-time-column{-webkit-box-flex:1;-ms-flex:1;flex:1;position:relative;border-left:1px solid #e8e8e8;text-align:center}.mx-time-column:first-child{border-left:0}.mx-time-column .mx-time-list{margin:0;padding:0;list-style:none}.mx-time-column .mx-time-list::after{content:\"\";display:block;height:192px}.mx-time-column .mx-time-item{cursor:pointer;font-size:12px;height:32px;line-height:32px}.mx-time-column .mx-time-item:hover{color:#73879c;background-color:#f3f9fe}.mx-time-column .mx-time-item.active{color:#1284e7;background-color:transparent;font-weight:700}.mx-time-column .mx-time-item.disabled{cursor:not-allowed;color:#ccc;background-color:#f3f3f3}.mx-time-option{cursor:pointer;padding:8px 10px;font-size:14px;line-height:20px}.mx-time-option:hover{color:#73879c;background-color:#f3f9fe}.mx-time-option.active{color:#1284e7;background-color:transparent;font-weight:700}.mx-time-option.disabled{cursor:not-allowed;color:#ccc;background-color:#f3f3f3}\n";
-styleInject(css_248z$c);var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+});var index_esm=/*#__PURE__*/Object.freeze({__proto__:null,'default': DatePicker});var css_248z$f = ".mx-icon-left:before,.mx-icon-right:before,.mx-icon-double-left:before,.mx-icon-double-right:before,.mx-icon-double-left:after,.mx-icon-double-right:after{content:\"\";position:relative;top:-1px;display:inline-block;width:10px;height:10px;vertical-align:middle;border-style:solid;border-color:currentColor;border-width:2px 0 0 2px;border-radius:1px;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-transform-origin:center;transform-origin:center;-webkit-transform:rotate(-45deg) scale(0.7);transform:rotate(-45deg) scale(0.7)}.mx-icon-double-left:after{left:-4px}.mx-icon-double-right:before{left:4px}.mx-icon-right:before,.mx-icon-double-right:before,.mx-icon-double-right:after{-webkit-transform:rotate(135deg) scale(0.7);transform:rotate(135deg) scale(0.7)}.mx-btn{-webkit-box-sizing:border-box;box-sizing:border-box;line-height:1;font-size:14px;font-weight:500;padding:7px 15px;margin:0;cursor:pointer;background-color:transparent;outline:none;border:1px solid rgba(0,0,0,.1);border-radius:4px;color:#73879c;white-space:nowrap}.mx-btn:hover{border-color:#1284e7;color:#1284e7}.mx-btn-text{border:0;padding:0 4px;text-align:left;line-height:inherit}.mx-scrollbar{height:100%}.mx-scrollbar:hover .mx-scrollbar-track{opacity:1}.mx-scrollbar-wrap{height:100%;overflow-x:hidden;overflow-y:auto}.mx-scrollbar-track{position:absolute;top:2px;right:2px;bottom:2px;width:6px;z-index:1;border-radius:4px;opacity:0;-webkit-transition:opacity .24s ease-out;transition:opacity .24s ease-out}.mx-scrollbar-track .mx-scrollbar-thumb{position:absolute;width:100%;height:0;cursor:pointer;border-radius:inherit;background-color:rgba(144,147,153,.3);-webkit-transition:background-color .3s;transition:background-color .3s}.mx-zoom-in-down-enter-active,.mx-zoom-in-down-leave-active{opacity:1;-webkit-transform:scaleY(1);transform:scaleY(1);-webkit-transition:opacity .3s cubic-bezier(0.23, 1, 0.32, 1),-webkit-transform .3s cubic-bezier(0.23, 1, 0.32, 1);transition:opacity .3s cubic-bezier(0.23, 1, 0.32, 1),-webkit-transform .3s cubic-bezier(0.23, 1, 0.32, 1);transition:transform .3s cubic-bezier(0.23, 1, 0.32, 1),opacity .3s cubic-bezier(0.23, 1, 0.32, 1);transition:transform .3s cubic-bezier(0.23, 1, 0.32, 1),opacity .3s cubic-bezier(0.23, 1, 0.32, 1),-webkit-transform .3s cubic-bezier(0.23, 1, 0.32, 1);-webkit-transform-origin:center top;transform-origin:center top}.mx-zoom-in-down-enter,.mx-zoom-in-down-leave-to{opacity:0;-webkit-transform:scaleY(0);transform:scaleY(0)}.mx-datepicker{position:relative;display:inline-block;width:210px}.mx-datepicker svg{width:1em;height:1em;vertical-align:-0.15em;fill:currentColor;overflow:hidden}.mx-datepicker-range{width:320px}.mx-datepicker-inline{width:auto}.mx-input-wrapper{position:relative}.mx-input-wrapper .mx-icon-clear{display:none}.mx-input-wrapper:hover .mx-icon-clear{display:block}.mx-input-wrapper:hover .mx-icon-clear+.mx-icon-calendar{display:none}.mx-input{display:inline-block;-webkit-box-sizing:border-box;box-sizing:border-box;width:100%;height:34px;padding:6px 30px;padding-left:10px;font-size:14px;line-height:1.4;color:#555;background-color:#fff;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075)}.mx-input:hover,.mx-input:focus{border-color:#409aff}.mx-input:disabled,.mx-input.disabled{color:#ccc;background-color:#f3f3f3;border-color:#ccc;cursor:not-allowed}.mx-input:focus{outline:none}.mx-input::-ms-clear{display:none}.mx-icon-calendar,.mx-icon-clear{position:absolute;top:50%;right:8px;-webkit-transform:translateY(-50%);transform:translateY(-50%);font-size:16px;line-height:1;color:rgba(0,0,0,.5);vertical-align:middle}.mx-icon-clear{cursor:pointer}.mx-icon-clear:hover{color:rgba(0,0,0,.8)}.mx-datepicker-main{font:14px/1.5 \"Helvetica Neue\",Helvetica,Arial,\"Microsoft Yahei\",sans-serif;color:#73879c;background-color:#fff;border:1px solid #e8e8e8}.mx-datepicker-popup{position:absolute;margin-top:1px;margin-bottom:1px;-webkit-box-shadow:0 6px 12px rgba(0,0,0,.175);box-shadow:0 6px 12px rgba(0,0,0,.175);z-index:2001}.mx-datepicker-sidebar{float:left;-webkit-box-sizing:border-box;box-sizing:border-box;width:100px;padding:6px;overflow:auto}.mx-datepicker-sidebar+.mx-datepicker-content{margin-left:100px;border-left:1px solid #e8e8e8}.mx-datepicker-body{position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.mx-btn-shortcut{display:block;padding:0 6px;line-height:24px}.mx-range-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex}@media(max-width: 750px){.mx-range-wrapper{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}}.mx-datepicker-header{padding:6px 8px;border-bottom:1px solid #e8e8e8}.mx-datepicker-footer{padding:6px 8px;text-align:right;border-top:1px solid #e8e8e8}.mx-calendar{-webkit-box-sizing:border-box;box-sizing:border-box;width:248px;padding:6px 12px}.mx-calendar+.mx-calendar{border-left:1px solid #e8e8e8}.mx-calendar-header,.mx-time-header{-webkit-box-sizing:border-box;box-sizing:border-box;height:34px;line-height:34px;text-align:center;overflow:hidden}.mx-btn-icon-left,.mx-btn-icon-double-left{float:left}.mx-btn-icon-right,.mx-btn-icon-double-right{float:right}.mx-calendar-header-label{font-size:14px}.mx-calendar-decade-separator{margin:0 2px}.mx-calendar-decade-separator:after{content:\"~\"}.mx-calendar-content{position:relative;height:224px;-webkit-box-sizing:border-box;box-sizing:border-box}.mx-calendar-content .cell{cursor:pointer}.mx-calendar-content .cell:hover{color:#73879c;background-color:#f3f9fe}.mx-calendar-content .cell.active{color:#fff;background-color:#1284e7}.mx-calendar-content .cell.in-range{color:#73879c;background-color:#dbedfb}.mx-calendar-content .cell.disabled{cursor:not-allowed;color:#ccc;background-color:#f3f3f3}.mx-calendar-week-mode .mx-date-row{cursor:pointer}.mx-calendar-week-mode .mx-date-row:hover{background-color:#f3f9fe}.mx-calendar-week-mode .mx-date-row.mx-active-week{background-color:#dbedfb}.mx-calendar-week-mode .mx-date-row .cell:hover{color:inherit;background-color:transparent}.mx-calendar-week-mode .mx-date-row .cell.active{color:inherit;background-color:transparent}.mx-week-number{opacity:.5}.mx-table{table-layout:fixed;border-collapse:separate;border-spacing:0;width:100%;height:100%;-webkit-box-sizing:border-box;box-sizing:border-box;text-align:center;vertical-align:middle}.mx-table th{padding:0;font-weight:500}.mx-table td{padding:0}.mx-table-date td,.mx-table-date th{height:32px;font-size:12px}.mx-table-date .today{color:#2a90e9}.mx-table-date .cell.not-current-month{color:#ccc}.mx-time{-webkit-box-flex:1;-ms-flex:1;flex:1;width:224px;background:#fff}.mx-time+.mx-time{border-left:1px solid #e8e8e8}.mx-calendar-time{position:absolute;top:0;left:0;width:100%;height:100%}.mx-time-header{border-bottom:1px solid #e8e8e8}.mx-time-content{height:224px;-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden}.mx-time-columns{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;height:100%;overflow:hidden}.mx-time-column{-webkit-box-flex:1;-ms-flex:1;flex:1;position:relative;border-left:1px solid #e8e8e8;text-align:center}.mx-time-column:first-child{border-left:0}.mx-time-column .mx-time-list{margin:0;padding:0;list-style:none}.mx-time-column .mx-time-list::after{content:\"\";display:block;height:192px}.mx-time-column .mx-time-item{cursor:pointer;font-size:12px;height:32px;line-height:32px}.mx-time-column .mx-time-item:hover{color:#73879c;background-color:#f3f9fe}.mx-time-column .mx-time-item.active{color:#1284e7;background-color:transparent;font-weight:700}.mx-time-column .mx-time-item.disabled{cursor:not-allowed;color:#ccc;background-color:#f3f3f3}.mx-time-option{cursor:pointer;padding:8px 10px;font-size:14px;line-height:20px}.mx-time-option:hover{color:#73879c;background-color:#f3f9fe}.mx-time-option.active{color:#1284e7;background-color:transparent;font-weight:700}.mx-time-option.disabled{cursor:not-allowed;color:#ccc;background-color:#f3f3f3}\n";
+styleInject(css_248z$f);var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
 function getAugmentedNamespace(n) {
 	if (n.__esModule) return n;
@@ -6541,7 +6541,7 @@ function createCommonjsModule(fn) {
 	return lang;
 
 })));
-});var script$9 = {
+});var script$c = {
   name: 'CuiDatepicker',
   components: {
     DatePicker: DatePicker
@@ -6609,15 +6609,15 @@ function createCommonjsModule(fn) {
       this.noteDisplay = this.note;
     }
   }
-};var _withId$7 = /*#__PURE__*/vue.withScopeId("data-v-42032ceb");
+};var _withId$9 = /*#__PURE__*/vue.withScopeId("data-v-42032ceb");
 
 vue.pushScopeId("data-v-42032ceb");
 
-var _hoisted_1$6 = {
+var _hoisted_1$8 = {
   key: 0,
   class: "cui-datepicker-label"
 };
-var _hoisted_2$6 = {
+var _hoisted_2$7 = {
   style: {
     "margin-right": "10px"
   }
@@ -6631,10 +6631,10 @@ var _hoisted_4$1 = {
 
 vue.popScopeId();
 
-var render$9 = /*#__PURE__*/_withId$7(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$c = /*#__PURE__*/_withId$9(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_date_picker = vue.resolveComponent("date-picker");
 
-  return vue.openBlock(), vue.createBlock("div", null, [$props.label ? (vue.openBlock(), vue.createBlock("label", _hoisted_1$6, [vue.createVNode("span", _hoisted_2$6, vue.toDisplayString($props.label), 1), $props.required ? (vue.openBlock(), vue.createBlock("span", _hoisted_3$3, vue.toDisplayString($data.trans.required), 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), vue.createVNode(_component_date_picker, {
+  return vue.openBlock(), vue.createBlock("div", null, [$props.label ? (vue.openBlock(), vue.createBlock("label", _hoisted_1$8, [vue.createVNode("span", _hoisted_2$7, vue.toDisplayString($props.label), 1), $props.required ? (vue.openBlock(), vue.createBlock("span", _hoisted_3$3, vue.toDisplayString($data.trans.required), 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), vue.createVNode(_component_date_picker, {
     disabled: $props.disabled,
     modelValue: $props.modelValue,
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
@@ -6651,10 +6651,10 @@ var render$9 = /*#__PURE__*/_withId$7(function (_ctx, _cache, $props, $setup, $d
     "popup-class": "cui-datepicker-popup",
     class: "cui-datepicker"
   }, null, 8, ["disabled", "modelValue", "placeholder", "format", "type", "timePickerOptions", "range", "onInput", "value-type"]), vue.createVNode("div", _hoisted_4$1, [vue.createVNode("span", null, vue.toDisplayString($data.noteDisplay), 1)])]);
-});var css_248z$b = "\n.cui-datepicker-note[data-v-42032ceb] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px\n}\n";
-styleInject(css_248z$b);var css_248z$a = "\n.cui-datepicker-label {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-datepicker {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease;\n        width: calc(100% - 20px);\n}\n.cui-datepicker.disabled input {\n        color: var(--cui-gray-3)\n}\n.cui-datepicker-input {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 0;\n        transition: all .2s ease\n}\n.cui-datepicker-input:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n}\n.cui-datepicker-popup {\n            border-radius: 12px;\n            color: var(--cui-font-color);\n            overflow: hidden\n}\n.cui-datepicker-popup .cell,\n    .mx-time-option {\n        transition: all .1s ease\n}\n.cui-datepicker-popup .mx-time-option.active {\n        color: var(--cui-primary)\n}\n.cui-datepicker-popup .cell.today {\n        color: var(--cui-primary);\n}\n.cui-datepicker-popup .cell.active,\n    .cui-datepicker-popup .cell.in-range,\n    .cui-datepicker-popup .cell:hover,\n    .mx-time-option:hover {\n        background: var(--cui-primary);\n        color: white;\n}\n\n";
-styleInject(css_248z$a);script$9.render = render$9;
-script$9.__scopeId = "data-v-42032ceb";var script$8 = {
+});var css_248z$e = "\n.cui-datepicker-note[data-v-42032ceb] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px\n}\n";
+styleInject(css_248z$e);var css_248z$d = "\n.cui-datepicker-label {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-datepicker {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease;\n        width: calc(100% - 20px);\n}\n.cui-datepicker.disabled input {\n        color: var(--cui-gray-3)\n}\n.cui-datepicker-input {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 0;\n        transition: all .2s ease\n}\n.cui-datepicker-input:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n}\n.cui-datepicker-popup {\n            border-radius: 12px;\n            color: var(--cui-font-color);\n            overflow: hidden\n}\n.cui-datepicker-popup .cell,\n    .mx-time-option {\n        transition: all .1s ease\n}\n.cui-datepicker-popup .mx-time-option.active {\n        color: var(--cui-primary)\n}\n.cui-datepicker-popup .cell.today {\n        color: var(--cui-primary);\n}\n.cui-datepicker-popup .cell.active,\n    .cui-datepicker-popup .cell.in-range,\n    .cui-datepicker-popup .cell:hover,\n    .mx-time-option:hover {\n        background: var(--cui-primary);\n        color: white;\n}\n\n";
+styleInject(css_248z$d);script$c.render = render$c;
+script$c.__scopeId = "data-v-42032ceb";var script$b = {
   props: {
     label: {
       type: String,
@@ -6687,16 +6687,16 @@ script$9.__scopeId = "data-v-42032ceb";var script$8 = {
       this.$emit("update:modelValue", this.value);
     }
   }
-};var _withId$6 = /*#__PURE__*/vue.withScopeId("data-v-7dfec3ea");
+};var _withId$8 = /*#__PURE__*/vue.withScopeId("data-v-7dfec3ea");
 
 vue.pushScopeId("data-v-7dfec3ea");
 
-var _hoisted_1$5 = {
+var _hoisted_1$7 = {
   style: {
     "margin": "10px 0"
   }
 };
-var _hoisted_2$5 = {
+var _hoisted_2$6 = {
   key: 0,
   class: "cui-radio-label"
 };
@@ -6708,8 +6708,8 @@ var _hoisted_3$2 = {
 
 vue.popScopeId();
 
-var render$8 = /*#__PURE__*/_withId$6(function (_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createBlock("div", _hoisted_1$5, [$props.caption ? (vue.openBlock(), vue.createBlock("div", _hoisted_2$5, [vue.createVNode("span", _hoisted_3$2, vue.toDisplayString($props.caption), 1)])) : vue.createCommentVNode("", true), vue.createVNode("label", {
+var render$b = /*#__PURE__*/_withId$8(function (_ctx, _cache, $props, $setup, $data, $options) {
+  return vue.openBlock(), vue.createBlock("div", _hoisted_1$7, [$props.caption ? (vue.openBlock(), vue.createBlock("div", _hoisted_2$6, [vue.createVNode("span", _hoisted_3$2, vue.toDisplayString($props.caption), 1)])) : vue.createCommentVNode("", true), vue.createVNode("label", {
     class: ["cui-radio", {
       disabled: $props.disabled
     }]
@@ -6722,9 +6722,9 @@ var render$8 = /*#__PURE__*/_withId$6(function (_ctx, _cache, $props, $setup, $d
     }),
     disabled: $props.disabled
   }, null, 40, ["checked", "value", "disabled"]), vue.createVNode("span", null, vue.toDisplayString($props.label), 1)], 2)]);
-});var css_248z$9 = "\n.cui-radio-label[data-v-7dfec3ea] {\n    font-size: 14px;\n    margin-left: 10px;\n    margin-bottom: 5px\n}\n.cui-radio[data-v-7dfec3ea] {\n  margin: 0;\n  display: block;\n  cursor: pointer;\n  font-size: 14px;\n}\n.cui-radio.disabled[data-v-7dfec3ea] {\n  cursor: not-allowed;\n}\n.cui-radio input[data-v-7dfec3ea] {\n  display: none;\n}\n.cui-radio input + span[data-v-7dfec3ea] {\n  line-height: 18px;\n  height: 18px;\n  padding-left: 18px;\n  display: block;\n  position: relative;\n}\n.cui-radio input + span[data-v-7dfec3ea]:not(:empty) {\n  padding-left: 25px;\n}\n.cui-radio input + span[data-v-7dfec3ea]:before,\n.cui-radio input + span[data-v-7dfec3ea]:after {\n  content: \"\";\n  width: 18px;\n  height: 18px;\n  display: block;\n  border-radius: 50%;\n  left: 0;\n  top: 0;\n  position: absolute;\n}\n.cui-radio input + span[data-v-7dfec3ea]:before {\n  background: var(--cui-gray-5);\n  transition: background 0.2s ease,\n    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);\n}\n.cui-radio.disabled input + span[data-v-7dfec3ea]:before {\n  background: var(--cui-gray-2)\n}\n.cui-radio.disabled span[data-v-7dfec3ea] {\n  color: var(--cui-gray-3)\n}\n.cui-radio input + span[data-v-7dfec3ea]:after {\n  background: #fff;\n  transform: scale(0.78);\n  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);\n}\n.cui-radio input:checked + span[data-v-7dfec3ea]:before {\n  transform: scale(1.04);\n  background: var(--cui-primary);\n}\n.cui-radio input:checked + span[data-v-7dfec3ea]:after {\n  transform: scale(0.4);\n  transition: transform 0.3s ease;\n}\n.cui-radio:not(.disabled):hover input + span[data-v-7dfec3ea]:before {\n  transform: scale(0.92);\n}\n.cui-radio:not(.disabled):hover input + span[data-v-7dfec3ea]:after {\n  transform: scale(0.74);\n}\n.cui-radio:not(.disabled):hover input:checked + span[data-v-7dfec3ea]:after {\n  transform: scale(0.4);\n}\n";
-styleInject(css_248z$9);script$8.render = render$8;
-script$8.__scopeId = "data-v-7dfec3ea";var script$7 = {
+});var css_248z$c = "\n.cui-radio-label[data-v-7dfec3ea] {\n    font-size: 14px;\n    margin-left: 10px;\n    margin-bottom: 5px\n}\n.cui-radio[data-v-7dfec3ea] {\n  margin: 0;\n  display: block;\n  cursor: pointer;\n  font-size: 14px;\n}\n.cui-radio.disabled[data-v-7dfec3ea] {\n  cursor: not-allowed;\n}\n.cui-radio input[data-v-7dfec3ea] {\n  display: none;\n}\n.cui-radio input + span[data-v-7dfec3ea] {\n  line-height: 18px;\n  height: 18px;\n  padding-left: 18px;\n  display: block;\n  position: relative;\n}\n.cui-radio input + span[data-v-7dfec3ea]:not(:empty) {\n  padding-left: 25px;\n}\n.cui-radio input + span[data-v-7dfec3ea]:before,\n.cui-radio input + span[data-v-7dfec3ea]:after {\n  content: \"\";\n  width: 18px;\n  height: 18px;\n  display: block;\n  border-radius: 50%;\n  left: 0;\n  top: 0;\n  position: absolute;\n}\n.cui-radio input + span[data-v-7dfec3ea]:before {\n  background: var(--cui-gray-5);\n  transition: background 0.2s ease,\n    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);\n}\n.cui-radio.disabled input + span[data-v-7dfec3ea]:before {\n  background: var(--cui-gray-2)\n}\n.cui-radio.disabled span[data-v-7dfec3ea] {\n  color: var(--cui-gray-3)\n}\n.cui-radio input + span[data-v-7dfec3ea]:after {\n  background: #fff;\n  transform: scale(0.78);\n  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);\n}\n.cui-radio input:checked + span[data-v-7dfec3ea]:before {\n  transform: scale(1.04);\n  background: var(--cui-primary);\n}\n.cui-radio input:checked + span[data-v-7dfec3ea]:after {\n  transform: scale(0.4);\n  transition: transform 0.3s ease;\n}\n.cui-radio:not(.disabled):hover input + span[data-v-7dfec3ea]:before {\n  transform: scale(0.92);\n}\n.cui-radio:not(.disabled):hover input + span[data-v-7dfec3ea]:after {\n  transform: scale(0.74);\n}\n.cui-radio:not(.disabled):hover input:checked + span[data-v-7dfec3ea]:after {\n  transform: scale(0.4);\n}\n";
+styleInject(css_248z$c);script$b.render = render$b;
+script$b.__scopeId = "data-v-7dfec3ea";var script$a = {
   name: 'CuiTable',
   props: {
     data: {
@@ -6827,15 +6827,15 @@ script$8.__scopeId = "data-v-7dfec3ea";var script$7 = {
       return data;
     }
   }
-};var _withId$5 = /*#__PURE__*/vue.withScopeId("data-v-dce7b21a");
+};var _withId$7 = /*#__PURE__*/vue.withScopeId("data-v-dce7b21a");
 
 vue.pushScopeId("data-v-dce7b21a");
 
-var _hoisted_1$4 = {
+var _hoisted_1$6 = {
   key: 0,
   class: "cui-table-header"
 };
-var _hoisted_2$4 = {
+var _hoisted_2$5 = {
   class: "cui-table-container"
 };
 var _hoisted_3$1 = {
@@ -6875,7 +6875,7 @@ var _hoisted_12 = {
 
 vue.popScopeId();
 
-var render$7 = /*#__PURE__*/_withId$5(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$a = /*#__PURE__*/_withId$7(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_cui_tr = vue.resolveComponent("cui-tr");
 
   return vue.openBlock(), vue.createBlock("div", {
@@ -6884,7 +6884,7 @@ var render$7 = /*#__PURE__*/_withId$5(function (_ctx, _cache, $props, $setup, $d
       select: $props.singleSelect,
       square: $props.square
     }]
-  }, [_ctx.$slots.header ? (vue.openBlock(), vue.createBlock("div", _hoisted_1$4, [vue.renderSlot(_ctx.$slots, "header")])) : vue.createCommentVNode("", true), vue.createVNode("div", _hoisted_2$4, [vue.createVNode("table", {
+  }, [_ctx.$slots.header ? (vue.openBlock(), vue.createBlock("div", _hoisted_1$6, [vue.renderSlot(_ctx.$slots, "header")])) : vue.createCommentVNode("", true), vue.createVNode("div", _hoisted_2$5, [vue.createVNode("table", {
     class: {
       loading: $props.loading
     }
@@ -6899,7 +6899,7 @@ var render$7 = /*#__PURE__*/_withId$5(function (_ctx, _cache, $props, $setup, $d
       multipleSelect: $props.multipleSelect,
       clickable: $props.clickable
     }, vue.createSlots({
-      parentRow: _withId$5(function () {
+      parentRow: _withId$7(function () {
         return [vue.renderSlot(_ctx.$slots, "row", vue.mergeProps({
           row: Object.assign(row, {
             _index: index
@@ -6909,17 +6909,17 @@ var render$7 = /*#__PURE__*/_withId$5(function (_ctx, _cache, $props, $setup, $d
       _: 2
     }, [_ctx.$slots.expand ? {
       name: "expand",
-      fn: _withId$5(function () {
+      fn: _withId$7(function () {
         return [vue.renderSlot(_ctx.$slots, "expand", {
           expand: row
         })];
       })
     } : undefined]), 1032, ["rowData", "onClick", "multipleSelect", "clickable"]);
   }), 128))], 512)], 2)]), _ctx.$slots.footer ? (vue.openBlock(), vue.createBlock("div", _hoisted_12, [vue.renderSlot(_ctx.$slots, "footer")])) : vue.createCommentVNode("", true)], 2);
-});var css_248z$8 = "\n.cui-table[data-v-dce7b21a] {\n        border-radius: 20px;\n        overflow: hidden;\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n}\n.cui-table.square[data-v-dce7b21a] {\n        border-radius: 0\n}\n.cui-table-header[data-v-dce7b21a], \n    .cui-table-footer[data-v-dce7b21a] {\n        background: var(--cui-gray-0);\n        padding: 10px;\n        display: flex;\n        justify-content: space-between;\n        align-items: center\n}\n.cui-table table[data-v-dce7b21a] {\n        border-collapse: collapse;\n        width: 100%;\n}\n.cui-table thead tr[data-v-dce7b21a] {\n        background: var(--cui-gray-0);\n}\n.cui-table-container[data-v-dce7b21a] {\n        overflow: auto;\n        flex: 1\n}\n.cui-table-empty-content[data-v-dce7b21a] {\n        display: flex;\n        flex-direction: column;\n        align-items: center\n}\n.cui-table-loader-td[data-v-dce7b21a] {\n        position: relative;\n        height: 100px\n}\n";
-styleInject(css_248z$8);var css_248z$7 = "\n.cui-table th:not([scope=row]) {\n        position: -webkit-sticky;\n        position: sticky;\n        top: 0;\n        z-index: 2;\n        background: var(--cui-gray-0);\n        box-shadow: 0 2px 4px -2px rgb(0 0 0 / 15%)\n}\n.cui-table th,\n    .cui-table td {\n        text-align: left;\n        padding: 10px\n}\n.cui-table.select tbody tr {\n        cursor: pointer\n}\n.cui-table tbody tr:not(.no-border, .noHover) {\n        border-bottom: 1px solid var(--cui-gray-2);\n        transition: background .2s ease;\n}\n.cui-table tbody tr:not(.selected, .expanded, .noHover):hover {\n        background: var(--cui-gray-1)!important;\n        font-weight: bold\n}\n.cui-table.striped tbody tr:nth-of-type(even) {\n        background-color: var(--cui-gray-0);\n}\n.cui-table tbody tr:last-of-type {\n        border-bottom: 2px solid var(--cui-gray-2);\n}\n";
-styleInject(css_248z$7);script$7.render = render$7;
-script$7.__scopeId = "data-v-dce7b21a";var script$6 = {
+});var css_248z$b = "\n.cui-table[data-v-dce7b21a] {\n        border-radius: 20px;\n        overflow: hidden;\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n}\n.cui-table.square[data-v-dce7b21a] {\n        border-radius: 0\n}\n.cui-table-header[data-v-dce7b21a], \n    .cui-table-footer[data-v-dce7b21a] {\n        background: var(--cui-gray-0);\n        padding: 10px;\n        display: flex;\n        justify-content: space-between;\n        align-items: center\n}\n.cui-table table[data-v-dce7b21a] {\n        border-collapse: collapse;\n        width: 100%;\n}\n.cui-table thead tr[data-v-dce7b21a] {\n        background: var(--cui-gray-0);\n}\n.cui-table-container[data-v-dce7b21a] {\n        overflow: auto;\n        flex: 1\n}\n.cui-table-empty-content[data-v-dce7b21a] {\n        display: flex;\n        flex-direction: column;\n        align-items: center\n}\n.cui-table-loader-td[data-v-dce7b21a] {\n        position: relative;\n        height: 100px\n}\n";
+styleInject(css_248z$b);var css_248z$a = "\n.cui-table th:not([scope=row]) {\n        position: -webkit-sticky;\n        position: sticky;\n        top: 0;\n        z-index: 2;\n        background: var(--cui-gray-0);\n        box-shadow: 0 2px 4px -2px rgb(0 0 0 / 15%)\n}\n.cui-table th,\n    .cui-table td {\n        text-align: left;\n        padding: 10px\n}\n.cui-table.select tbody tr {\n        cursor: pointer\n}\n.cui-table tbody tr:not(.no-border, .noHover) {\n        border-bottom: 1px solid var(--cui-gray-2);\n        transition: background .2s ease;\n}\n.cui-table tbody tr:not(.selected, .expanded, .noHover):hover {\n        background: var(--cui-gray-1)!important;\n        font-weight: bold\n}\n.cui-table.striped tbody tr:nth-of-type(even) {\n        background-color: var(--cui-gray-0);\n}\n.cui-table tbody tr:last-of-type {\n        border-bottom: 2px solid var(--cui-gray-2);\n}\n";
+styleInject(css_248z$a);script$a.render = render$a;
+script$a.__scopeId = "data-v-dce7b21a";var script$9 = {
   name: 'CuiTh',
   props: {
     sort: {
@@ -6945,15 +6945,15 @@ script$7.__scopeId = "data-v-dce7b21a";var script$6 = {
       this.$parent.toggleSort(this.sortDirection, this.sort);
     }
   }
-};var _withId$4 = /*#__PURE__*/vue.withScopeId("data-v-33b1bfbf");
+};var _withId$6 = /*#__PURE__*/vue.withScopeId("data-v-33b1bfbf");
 
 vue.pushScopeId("data-v-33b1bfbf");
 
-var _hoisted_1$3 = {
+var _hoisted_1$5 = {
   class: "cui-th"
 };
 
-var _hoisted_2$3 = /*#__PURE__*/vue.createVNode("i", {
+var _hoisted_2$4 = /*#__PURE__*/vue.createVNode("i", {
   class: "cui-th-sort-icon-1 fas fa-chevron-up"
 }, null, -1);
 
@@ -6963,8 +6963,8 @@ var _hoisted_3 = /*#__PURE__*/vue.createVNode("i", {
 
 vue.popScopeId();
 
-var render$6 = /*#__PURE__*/_withId$4(function (_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createBlock("th", null, [vue.createVNode("div", _hoisted_1$3, [vue.renderSlot(_ctx.$slots, "default"), $props.sort ? (vue.openBlock(), vue.createBlock("div", {
+var render$9 = /*#__PURE__*/_withId$6(function (_ctx, _cache, $props, $setup, $data, $options) {
+  return vue.openBlock(), vue.createBlock("th", null, [vue.createVNode("div", _hoisted_1$5, [vue.renderSlot(_ctx.$slots, "default"), $props.sort ? (vue.openBlock(), vue.createBlock("div", {
     key: 0,
     class: ["cui-th-sort", {
       desc: $data.sortDirection === 'desc',
@@ -6973,10 +6973,10 @@ var render$6 = /*#__PURE__*/_withId$4(function (_ctx, _cache, $props, $setup, $d
     onClick: _cache[1] || (_cache[1] = function () {
       return $options.toggleSort && $options.toggleSort.apply($options, arguments);
     })
-  }, [_hoisted_2$3, _hoisted_3], 2)) : vue.createCommentVNode("", true)])]);
-});var css_248z$6 = "\n.cui-th[data-v-33b1bfbf] {\n        display: flex\n}\n.cui-th-sort[data-v-33b1bfbf] {\n        display: flex;\n        flex-direction: column;\n        font-size: 10px;\n        align-items: center;\n        justify-content: center;\n        margin-left: 5px;\n        cursor: pointer;\n        height: 23px;\n        overflow: hidden\n}\n.cui-th-sort i[data-v-33b1bfbf] {\n        transition: all .2s ease\n}\n.cui-th-sort.desc .cui-th-sort-icon-2[data-v-33b1bfbf],\n    .cui-th-sort.asc .cui-th-sort-icon-2[data-v-33b1bfbf] {\n        opacity: 0;\n        transform: rotate(180deg);\n        margin-top: -11px\n}\n.cui-th-sort.desc .cui-th-sort-icon-1[data-v-33b1bfbf] {\n        transform: rotate(180deg)\n}\n.cui-th-sort.asc .cui-th-sort-icon-1[data-v-33b1bfbf] {\n        transform: rotate(0deg)\n}   \n\n";
-styleInject(css_248z$6);script$6.render = render$6;
-script$6.__scopeId = "data-v-33b1bfbf";var script$5 = {
+  }, [_hoisted_2$4, _hoisted_3], 2)) : vue.createCommentVNode("", true)])]);
+});var css_248z$9 = "\n.cui-th[data-v-33b1bfbf] {\n        display: flex\n}\n.cui-th-sort[data-v-33b1bfbf] {\n        display: flex;\n        flex-direction: column;\n        font-size: 10px;\n        align-items: center;\n        justify-content: center;\n        margin-left: 5px;\n        cursor: pointer;\n        height: 23px;\n        overflow: hidden\n}\n.cui-th-sort i[data-v-33b1bfbf] {\n        transition: all .2s ease\n}\n.cui-th-sort.desc .cui-th-sort-icon-2[data-v-33b1bfbf],\n    .cui-th-sort.asc .cui-th-sort-icon-2[data-v-33b1bfbf] {\n        opacity: 0;\n        transform: rotate(180deg);\n        margin-top: -11px\n}\n.cui-th-sort.desc .cui-th-sort-icon-1[data-v-33b1bfbf] {\n        transform: rotate(180deg)\n}\n.cui-th-sort.asc .cui-th-sort-icon-1[data-v-33b1bfbf] {\n        transform: rotate(0deg)\n}   \n\n";
+styleInject(css_248z$9);script$9.render = render$9;
+script$9.__scopeId = "data-v-33b1bfbf";var script$8 = {
   name: 'CuiTr',
   emits: ["click"],
   props: {
@@ -7024,23 +7024,23 @@ script$6.__scopeId = "data-v-33b1bfbf";var script$5 = {
       }
     }
   }
-};var _withId$3 = /*#__PURE__*/vue.withScopeId("data-v-3e3bb049");
+};var _withId$5 = /*#__PURE__*/vue.withScopeId("data-v-3e3bb049");
 
 vue.pushScopeId("data-v-3e3bb049");
 
-var _hoisted_1$2 = {
+var _hoisted_1$4 = {
   key: 0,
   style: {
     "width": "15px"
   }
 };
-var _hoisted_2$2 = {
+var _hoisted_2$3 = {
   colspan: "100%"
 };
 
 vue.popScopeId();
 
-var render$5 = /*#__PURE__*/_withId$3(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$8 = /*#__PURE__*/_withId$5(function (_ctx, _cache, $props, $setup, $data, $options) {
   var _component_cui_checkbox = vue.resolveComponent("cui-checkbox");
 
   return vue.openBlock(), vue.createBlock(vue.Fragment, null, [vue.createVNode("tr", {
@@ -7052,7 +7052,7 @@ var render$5 = /*#__PURE__*/_withId$3(function (_ctx, _cache, $props, $setup, $d
     onClick: _cache[3] || (_cache[3] = function () {
       return $options.handleClick && $options.handleClick.apply($options, arguments);
     })
-  }, [$props.multipleSelect ? (vue.openBlock(), vue.createBlock("td", _hoisted_1$2, [vue.createVNode(_component_cui_checkbox, {
+  }, [$props.multipleSelect ? (vue.openBlock(), vue.createBlock("td", _hoisted_1$4, [vue.createVNode(_component_cui_checkbox, {
     onClick: _cache[1] || (_cache[1] = vue.withModifiers(function () {}, ["stop"])),
     modelValue: $data.selected,
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
@@ -7063,10 +7063,10 @@ var render$5 = /*#__PURE__*/_withId$3(function (_ctx, _cache, $props, $setup, $d
     class: ["cui-tr-expand", {
       expanded: $data.expanded
     }]
-  }, [vue.createVNode("td", _hoisted_2$2, [vue.renderSlot(_ctx.$slots, "expand")])], 2)) : vue.createCommentVNode("", true)], 64);
-});var css_248z$5 = "\n@keyframes expand-3e3bb049{\nfrom{\n            opacity: 0;\n}\nto{\n            opacity: 1;\n}\n}\n.selected[data-v-3e3bb049] {\n        background-color: var(--cui-primary)!important;\n        color: white;\n        font-weight: bold;\n}\n.clickable[data-v-3e3bb049] {\n        cursor: pointer\n}\n.cui-tr-expand[data-v-3e3bb049] {\n        display: none;\n        transition: all .2s ease\n}\n.cui-tr-expand.expanded[data-v-3e3bb049] {\n        display: table-row;\n        animation: expand-3e3bb049 .2s linear 0s;\n}\n.cui-tr-expand.expanded td[data-v-3e3bb049] {\n        padding: 20px\n}\n";
-styleInject(css_248z$5);script$5.render = render$5;
-script$5.__scopeId = "data-v-3e3bb049";var script$4 = {
+  }, [vue.createVNode("td", _hoisted_2$3, [vue.renderSlot(_ctx.$slots, "expand")])], 2)) : vue.createCommentVNode("", true)], 64);
+});var css_248z$8 = "\n@keyframes expand-3e3bb049{\nfrom{\n            opacity: 0;\n}\nto{\n            opacity: 1;\n}\n}\n.selected[data-v-3e3bb049] {\n        background-color: var(--cui-primary)!important;\n        color: white;\n        font-weight: bold;\n}\n.clickable[data-v-3e3bb049] {\n        cursor: pointer\n}\n.cui-tr-expand[data-v-3e3bb049] {\n        display: none;\n        transition: all .2s ease\n}\n.cui-tr-expand.expanded[data-v-3e3bb049] {\n        display: table-row;\n        animation: expand-3e3bb049 .2s linear 0s;\n}\n.cui-tr-expand.expanded td[data-v-3e3bb049] {\n        padding: 20px\n}\n";
+styleInject(css_248z$8);script$8.render = render$8;
+script$8.__scopeId = "data-v-3e3bb049";var script$7 = {
   name: "CuiTag",
   props: {
     danger: {
@@ -7082,9 +7082,9 @@ script$5.__scopeId = "data-v-3e3bb049";var script$4 = {
       type: Boolean
     }
   }
-};var _withId$2 = /*#__PURE__*/vue.withScopeId("data-v-4f05fbf4");
+};var _withId$4 = /*#__PURE__*/vue.withScopeId("data-v-4f05fbf4");
 
-var render$4 = /*#__PURE__*/_withId$2(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$7 = /*#__PURE__*/_withId$4(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("span", {
     class: ["cui-tag", {
       danger: $props.danger,
@@ -7092,9 +7092,9 @@ var render$4 = /*#__PURE__*/_withId$2(function (_ctx, _cache, $props, $setup, $d
       warn: $props.warn
     }]
   }, [vue.renderSlot(_ctx.$slots, "default")], 2);
-});var css_248z$4 = "\n.cui-tag[data-v-4f05fbf4] {\n        height: 35px;\n        border: 0px;\n        margin: 5px;\n        border-radius: var(--cui-button-radius);\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        font-size: .8rem;\n        background: var(--cui-dark);\n        color: white;\n        width: fit-content;\n        padding: 0 10px;\n        font-weight: normal;\n}\n.cui-tag.danger[data-v-4f05fbf4] {\n        background: var(--cui-danger);\n}\n.cui-tag.primary[data-v-4f05fbf4] {\n        background: var(--cui-primary);\n}\n.cui-tag.warn[data-v-4f05fbf4] {\n        background: var(--cui-warn);\n}\n\n";
-styleInject(css_248z$4);script$4.render = render$4;
-script$4.__scopeId = "data-v-4f05fbf4";var script$3 = {
+});var css_248z$7 = "\n.cui-tag[data-v-4f05fbf4] {\n        height: 35px;\n        border: 0px;\n        margin: 5px;\n        border-radius: var(--cui-button-radius);\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        font-size: .8rem;\n        background: var(--cui-dark);\n        color: white;\n        width: fit-content;\n        padding: 0 10px;\n        font-weight: normal;\n}\n.cui-tag.danger[data-v-4f05fbf4] {\n        background: var(--cui-danger);\n}\n.cui-tag.primary[data-v-4f05fbf4] {\n        background: var(--cui-primary);\n}\n.cui-tag.warn[data-v-4f05fbf4] {\n        background: var(--cui-warn);\n}\n\n";
+styleInject(css_248z$7);script$7.render = render$7;
+script$7.__scopeId = "data-v-4f05fbf4";var script$6 = {
   name: "CuiAvatar",
   props: {
     image: {
@@ -7107,18 +7107,18 @@ script$4.__scopeId = "data-v-4f05fbf4";var script$3 = {
       return 'url(' + this.image + ')';
     }
   }
-};var _withId$1 = /*#__PURE__*/vue.withScopeId("data-v-2d42819a");
+};var _withId$3 = /*#__PURE__*/vue.withScopeId("data-v-2d42819a");
 
-var render$3 = /*#__PURE__*/_withId$1(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$6 = /*#__PURE__*/_withId$3(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("span", {
     class: "cui-avatar",
     style: {
       'background-image': $options.src
     }
   }, null, 4);
-});var css_248z$3 = "\n.cui-avatar[data-v-2d42819a] {\n        height: 35px;\n        width: 35px;\n        background-size: cover;\n        background-position: center;\n        display: inline-block;\n        border-radius: var(--cui-button-radius)\n}\n\n";
-styleInject(css_248z$3);script$3.render = render$3;
-script$3.__scopeId = "data-v-2d42819a";var script$2 = {
+});var css_248z$6 = "\n.cui-avatar[data-v-2d42819a] {\n        height: 35px;\n        width: 35px;\n        background-size: cover;\n        background-position: center;\n        display: inline-block;\n        border-radius: var(--cui-button-radius)\n}\n\n";
+styleInject(css_248z$6);script$6.render = render$6;
+script$6.__scopeId = "data-v-2d42819a";var script$5 = {
   name: 'CuiTooltip',
   props: {
     position: {
@@ -7160,9 +7160,9 @@ script$3.__scopeId = "data-v-2d42819a";var script$2 = {
       }
     }
   }
-};var _withId = /*#__PURE__*/vue.withScopeId("data-v-14d4a248");
+};var _withId$2 = /*#__PURE__*/vue.withScopeId("data-v-14d4a248");
 
-var render$2 = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
+var render$5 = /*#__PURE__*/_withId$2(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("div", null, [vue.createVNode("div", {
     ref: "parent",
     onClick: _cache[1] || (_cache[1] = vue.withModifiers(function () {
@@ -7176,11 +7176,11 @@ var render$2 = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $dat
   }, [vue.renderSlot(_ctx.$slots, "tooltip"), vue.createVNode("div", {
     class: ["arrow", $props.position]
   }, null, 2)], 2)]);
-});var css_248z$2 = "\n.tooltip-cont[data-v-14d4a248] {\n        display: none;\n        padding: 10px;\n        background: white;\n        border-radius: 20px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        z-index: 5\n}\n.visible[data-v-14d4a248] {\n        display: block;\n}\n.arrow[data-v-14d4a248],\n    .arrow[data-v-14d4a248]::before {\n        position: absolute;\n        width: 8px;\n        height: 8px;\n        background: inherit;\n}\n.arrow[data-v-14d4a248] {\n        visibility: hidden;\n}\n.arrow[data-v-14d4a248]::before {\n        visibility: visible;\n        content: '';\n        transform: rotate(45deg);\n}\n.arrow.top[data-v-14d4a248] {\n        bottom: -4px;\n        left: calc(50% - 4px);\n}\n.arrow.bottom[data-v-14d4a248] {\n        top: -4px;\n        left: calc(50% - 4px);\n}\n.arrow.left[data-v-14d4a248] {\n        right: -4px;\n        top: calc(50% - 4px);\n}\n.arrow.right[data-v-14d4a248] {\n        left: -4px;\n        top: calc(50% - 4px);\n}\n\n";
-styleInject(css_248z$2);script$2.render = render$2;
-script$2.__scopeId = "data-v-14d4a248";var script$1 = {
+});var css_248z$5 = "\n.tooltip-cont[data-v-14d4a248] {\n        display: none;\n        padding: 10px;\n        background: white;\n        border-radius: 20px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        z-index: 5\n}\n.visible[data-v-14d4a248] {\n        display: block;\n}\n.arrow[data-v-14d4a248],\n    .arrow[data-v-14d4a248]::before {\n        position: absolute;\n        width: 8px;\n        height: 8px;\n        background: inherit;\n}\n.arrow[data-v-14d4a248] {\n        visibility: hidden;\n}\n.arrow[data-v-14d4a248]::before {\n        visibility: visible;\n        content: '';\n        transform: rotate(45deg);\n}\n.arrow.top[data-v-14d4a248] {\n        bottom: -4px;\n        left: calc(50% - 4px);\n}\n.arrow.bottom[data-v-14d4a248] {\n        top: -4px;\n        left: calc(50% - 4px);\n}\n.arrow.left[data-v-14d4a248] {\n        right: -4px;\n        top: calc(50% - 4px);\n}\n.arrow.right[data-v-14d4a248] {\n        left: -4px;\n        top: calc(50% - 4px);\n}\n\n";
+styleInject(css_248z$5);script$5.render = render$5;
+script$5.__scopeId = "data-v-14d4a248";var script$4 = {
   components: {
-    Table: script$7
+    Table: script$a
   },
   emits: ['change'],
   props: {
@@ -7250,13 +7250,13 @@ script$2.__scopeId = "data-v-14d4a248";var script$1 = {
       this.noteDisplay = this.note;
     }
   }
-};var _hoisted_1$1 = {
+};var _hoisted_1$3 = {
   class: "cui-file-upload-header"
 };
-var _hoisted_2$1 = {
+var _hoisted_2$2 = {
   class: "cui-file-upload-note"
 };
-function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+function render$4(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_cui_button = vue.resolveComponent("cui-button");
 
   var _component_Table = vue.resolveComponent("Table");
@@ -7265,7 +7265,7 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
     data: $data.files
   }, {
     header: vue.withCtx(function () {
-      return [vue.createVNode("div", _hoisted_1$1, [vue.createTextVNode(vue.toDisplayString($props.title) + " ", 1), vue.createVNode(_component_cui_button, {
+      return [vue.createVNode("div", _hoisted_1$3, [vue.createTextVNode(vue.toDisplayString($props.title) + " ", 1), vue.createVNode(_component_cui_button, {
         style: {
           "margin-left": "20px"
         },
@@ -7297,12 +7297,220 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8, ["onClick"])])];
     }),
     footer: vue.withCtx(function () {
-      return [vue.createVNode("div", _hoisted_2$1, [vue.createVNode("span", null, vue.toDisplayString($data.noteDisplay), 1)])];
+      return [vue.createVNode("div", _hoisted_2$2, [vue.createVNode("span", null, vue.toDisplayString($data.noteDisplay), 1)])];
     }),
     _: 1
   }, 8, ["data"]);
-}var css_248z$1 = "\n.cui-file-upload-header {\n        display: flex;\n        align-items: center;\n}\n.cui-file-upload-native-input {\n        display: none;\n}\n.cui-file-upload-note {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n\n";
-styleInject(css_248z$1);script$1.render = render$1;/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,CuiButton: script$k,CuiButtonGroup: script$j,CuiButtonGroupItem: script$i,CuiMenuBar: script$h,CuiMenuBarItem: script$g,CuiCard: script$f,CuiModal: script$e,CuiInput: script$d,CuiCheckbox: script$c,CuiSelect: script$b,CuiDatepicker: script$9,CuiRadio: script$8,CuiTable: script$7,CuiTh: script$6,CuiTr: script$5,CuiTag: script$4,CuiAvatar: script$3,CuiTooltip: script$2,CuiFileUpload: script$1});var script = {
+}var css_248z$4 = "\n.cui-file-upload-header {\n        display: flex;\n        align-items: center;\n}\n.cui-file-upload-native-input {\n        display: none;\n}\n.cui-file-upload-note {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n\n";
+styleInject(css_248z$4);script$4.render = render$4;var script$3 = {
+  props: {
+    icon: {
+      type: String,
+      required: true
+    },
+    title: {
+      type: String,
+      required: true
+    },
+    action: {
+      type: Function,
+      required: true
+    },
+    isActive: {
+      type: Function,
+      default: null
+    }
+  }
+};var _withId$1 = /*#__PURE__*/vue.withScopeId("data-v-260a5466");
+
+var render$3 = /*#__PURE__*/_withId$1(function (_ctx, _cache, $props, $setup, $data, $options) {
+  return vue.openBlock(), vue.createBlock("button", {
+    class: ["menu-item", {
+      'is-active': $props.isActive ? $props.isActive() : null
+    }],
+    onClick: _cache[1] || (_cache[1] = function () {
+      return $props.action && $props.action.apply($props, arguments);
+    }),
+    title: $props.title
+  }, [vue.createVNode("i", {
+    class: $props.icon
+  }, null, 2)], 10, ["title"]);
+});var css_248z$3 = "\n.menu-item[data-v-260a5466] {\n  width: 1.75rem;\n  height: 1.75rem;\n  color: var(--cui-font-color);\n  border: none;\n  background-color: transparent;\n  border-radius: 0.4rem;\n  padding: 0.25rem;\n  margin-right: 0.25rem;\n  cursor: pointer\n}\n.menu-item.is-active[data-v-260a5466],\n.menu-item[data-v-260a5466]:hover {\n    color: #FFF;\n    background-color: var(--cui-dark);\n}\n";
+styleInject(css_248z$3);script$3.render = render$3;
+script$3.__scopeId = "data-v-260a5466";var script$2 = {
+  components: {
+    MenuItem: script$3
+  },
+  props: {
+    editor: {
+      type: Object,
+      required: true
+    }
+  },
+  data: function data() {
+    var _this = this;
+
+    return {
+      items: [{
+        icon: 'fas fa-bold',
+        title: 'Bold',
+        action: function action() {
+          return _this.editor.chain().focus().toggleBold().run();
+        },
+        isActive: function isActive() {
+          return _this.editor.isActive('bold');
+        }
+      }, {
+        icon: 'fas fa-italic',
+        title: 'Italic',
+        action: function action() {
+          return _this.editor.chain().focus().toggleItalic().run();
+        },
+        isActive: function isActive() {
+          return _this.editor.isActive('italic');
+        }
+      }, {
+        icon: 'fas fa-pen-alt',
+        title: 'Highlight',
+        action: function action() {
+          return _this.editor.chain().focus().toggleHighlight().run();
+        },
+        isActive: function isActive() {
+          return _this.editor.isActive('highlight');
+        }
+      }, {
+        type: 'divider'
+      }, {
+        icon: 'fas fa-heading',
+        title: 'Heading 1',
+        action: function action() {
+          return _this.editor.chain().focus().toggleHeading({
+            level: 1
+          }).run();
+        },
+        isActive: function isActive() {
+          return _this.editor.isActive('heading', {
+            level: 1
+          });
+        }
+      }, {
+        icon: 'fas fa-paragraph',
+        title: 'Paragraph',
+        action: function action() {
+          return _this.editor.chain().focus().setParagraph().run();
+        },
+        isActive: function isActive() {
+          return _this.editor.isActive('paragraph');
+        }
+      }, {
+        icon: 'fas fa-list-ul',
+        title: 'Bullet List',
+        action: function action() {
+          return _this.editor.chain().focus().toggleBulletList().run();
+        },
+        isActive: function isActive() {
+          return _this.editor.isActive('bulletList');
+        }
+      }, {
+        icon: 'fas fa-list-ol',
+        title: 'Ordered List',
+        action: function action() {
+          return _this.editor.chain().focus().toggleOrderedList().run();
+        },
+        isActive: function isActive() {
+          return _this.editor.isActive('orderedList');
+        }
+      }, {
+        icon: 'fas fa-tasks',
+        title: 'Task List',
+        action: function action() {
+          return _this.editor.chain().focus().toggleTaskList().run();
+        },
+        isActive: function isActive() {
+          return _this.editor.isActive('taskList');
+        }
+      }, {
+        type: 'divider'
+      }, {
+        icon: 'fas fa-undo-alt',
+        title: 'Undo',
+        action: function action() {
+          return _this.editor.chain().focus().undo().run();
+        }
+      }, {
+        icon: 'fas fa-redo-alt',
+        title: 'Redo',
+        action: function action() {
+          return _this.editor.chain().focus().redo().run();
+        }
+      }]
+    };
+  }
+};var _withId = /*#__PURE__*/vue.withScopeId("data-v-14d082d6");
+
+vue.pushScopeId("data-v-14d082d6");
+
+var _hoisted_1$2 = {
+  class: "cui-editor-menu-bar-bar"
+};
+var _hoisted_2$1 = {
+  key: 0,
+  class: "cui-editor-menu-bar-divider"
+};
+
+vue.popScopeId();
+
+var render$2 = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_menu_item = vue.resolveComponent("menu-item");
+
+  return vue.openBlock(), vue.createBlock("div", _hoisted_1$2, [(vue.openBlock(true), vue.createBlock(vue.Fragment, null, vue.renderList($data.items, function (item, index) {
+    return vue.openBlock(), vue.createBlock(vue.Fragment, {
+      key: index
+    }, [item.type === 'divider' ? (vue.openBlock(), vue.createBlock("div", _hoisted_2$1)) : (vue.openBlock(), vue.createBlock(_component_menu_item, vue.mergeProps({
+      key: 1
+    }, item), null, 16))], 64);
+  }), 128))]);
+});var css_248z$2 = "\n.cui-editor-menu-bar-bar[data-v-14d082d6] {\n    display: flex;\n    align-items: center\n}\n.cui-editor-menu-bar-divider[data-v-14d082d6] {\n  width: 2px;\n  height: 1.25rem;\n  background-color: var(--cui-dark);\n  margin-left: 0.5rem;\n  margin-right: 0.75rem;\n}\n";
+styleInject(css_248z$2);script$2.render = render$2;
+script$2.__scopeId = "data-v-14d082d6";var script$1 = {
+  components: {
+    EditorContent: vue3.EditorContent,
+    MenuBar: script$2
+  },
+  props: {
+    options: {
+      type: Object,
+      default: {
+        extensions: [StarterKit__default['default']]
+      }
+    }
+  },
+  data: function data() {
+    return {
+      editor: null
+    };
+  },
+  mounted: function mounted() {
+    this.editor = new vue3.Editor(this.options);
+  },
+  beforeUnmount: function beforeUnmount() {
+    this.editor.destroy();
+  }
+};var _hoisted_1$1 = {
+  key: 0
+};
+function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_menu_bar = vue.resolveComponent("menu-bar");
+
+  var _component_editor_content = vue.resolveComponent("editor-content");
+
+  return $data.editor ? (vue.openBlock(), vue.createBlock("div", _hoisted_1$1, [vue.createVNode(_component_menu_bar, {
+    editor: $data.editor
+  }, null, 8, ["editor"]), vue.createVNode(_component_editor_content, {
+    editor: $data.editor
+  }, null, 8, ["editor"])])) : vue.createCommentVNode("", true);
+}var css_248z$1 = "\n.ProseMirror {\n        outline: none !important;\n}\n";
+styleInject(css_248z$1);script$1.render = render$1;/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,CuiButton: script$n,CuiButtonGroup: script$m,CuiButtonGroupItem: script$l,CuiMenuBar: script$k,CuiMenuBarItem: script$j,CuiCard: script$i,CuiModal: script$h,CuiInput: script$g,CuiCheckbox: script$f,CuiSelect: script$e,CuiDatepicker: script$c,CuiRadio: script$b,CuiTable: script$a,CuiTh: script$9,CuiTr: script$8,CuiTag: script$7,CuiAvatar: script$6,CuiTooltip: script$5,CuiFileUpload: script$4,CuiEditor: script$1});var script = {
   name: 'CuiNotification',
   data: function data() {
     return {
@@ -7368,7 +7576,7 @@ styleInject(css_248z);script.render = render;function notification(props) {
     app.component(componentName, component);
   });
 }; // Create module definition for Vue.use()
-var components=/*#__PURE__*/Object.freeze({__proto__:null,'default': install,CuiButton: script$k,CuiButtonGroup: script$j,CuiButtonGroupItem: script$i,CuiMenuBar: script$h,CuiMenuBarItem: script$g,CuiCard: script$f,CuiModal: script$e,CuiInput: script$d,CuiCheckbox: script$c,CuiSelect: script$b,CuiDatepicker: script$9,CuiRadio: script$8,CuiTable: script$7,CuiTh: script$6,CuiTr: script$5,CuiTag: script$4,CuiAvatar: script$3,CuiTooltip: script$2,CuiFileUpload: script$1});// only expose one global var, with component exports exposed as properties of
+var components=/*#__PURE__*/Object.freeze({__proto__:null,'default': install,CuiButton: script$n,CuiButtonGroup: script$m,CuiButtonGroupItem: script$l,CuiMenuBar: script$k,CuiMenuBarItem: script$j,CuiCard: script$i,CuiModal: script$h,CuiInput: script$g,CuiCheckbox: script$f,CuiSelect: script$e,CuiDatepicker: script$c,CuiRadio: script$b,CuiTable: script$a,CuiTh: script$9,CuiTr: script$8,CuiTag: script$7,CuiAvatar: script$6,CuiTooltip: script$5,CuiFileUpload: script$4,CuiEditor: script$1});// only expose one global var, with component exports exposed as properties of
 // that global var (eg. plugin.component)
 
 Object.entries(components).forEach(function (_ref) {

@@ -92,7 +92,7 @@ export default defineComponent({
       <cui-button-group-item label="Button4" value="4"></cui-button-group-item>
     </cui-button-group>
     <cui-card style="height: 500px; width: 600px">
-      <cui-editor></cui-editor>
+      <cui-editor style="height: 100%"></cui-editor>
     </cui-card>
     <div style="height: 400px; width: 600px">
       <cui-card>

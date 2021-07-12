@@ -95,7 +95,9 @@ export default {
 <style scoped>
 .cui-editor-menu-bar-bar {
     display: flex;
-    align-items: center
+    align-items: center;
+    border-bottom: solid 1px var(--cui-dark);
+    padding: 5px
 }
 .cui-editor-menu-bar-divider {
   width: 2px;
