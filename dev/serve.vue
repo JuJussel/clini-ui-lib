@@ -11,6 +11,12 @@ export default defineComponent({
   data() {
     CuiAvatar
     return{
+      editorMenuItems: [{
+        icon: 'fas fa-redo-alt',
+        title: 'Redo',
+        action: () => alert('RRRR'),
+
+      }],
       visible: false,
       input: 'Hello',
       tableData: [
@@ -64,7 +70,7 @@ export default defineComponent({
         text: 'You did it!',
         color: 'primary'
       })
-    }
+    },
   }
 
 });
@@ -92,7 +98,7 @@ export default defineComponent({
       <cui-button-group-item label="Button4" value="4"></cui-button-group-item>
     </cui-button-group>
     <cui-card style="height: 500px; width: 600px">
-      <cui-editor style="height: 100%"></cui-editor>
+      <cui-editor style="height: 100%" :customMenuItems="editorMenuItems"></cui-editor>
     </cui-card>
     <div style="height: 400px; width: 600px">
       <cui-card>

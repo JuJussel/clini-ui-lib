@@ -1,9 +1,14 @@
 <template>
   <div class="cui-editor-menu-bar-bar">
-    <template v-for="(item, index) in items" :key="index">
+    <div v-for="(item, index) in items" :key="index">
       <div class="cui-editor-menu-bar-divider" v-if="item.type === 'divider'" />
       <menu-item v-else v-bind="item" />
-    </template>
+    </div>
+    <div v-for="(item, index) in customMenuItems" :key="index">
+      <div class="cui-editor-menu-bar-divider" v-if="item.type === 'divider'" />
+      <menu-item v-else v-bind="item" />
+    </div>
+
   </div>
 </template>
 
@@ -18,6 +23,10 @@ export default {
       type: Object,
       required: true,
     },
+    customMenuItems: {
+        type: Array,
+        default: []
+    }
   },
   data() {
     return {

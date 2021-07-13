@@ -1,6 +1,6 @@
 <template>
     <div v-if="editor">
-        <menu-bar :editor="editor" style="height: 40px"></menu-bar>
+        <menu-bar :editor="editor" :customMenuItems="customMenuItems" style="height: 40px"></menu-bar>
         <editor-content :editor="editor" style="height: calc(100% - 70px)"/>
     </div>
 </template>
@@ -16,21 +16,27 @@ export default {
         MenuBar
     },
     props: {
-        options: {
-            type: Object,
-            default: {
-                extensions: [
-                    StarterKit,
-                ]
-            }
+        customExtensions: {
+            type: Array,
+            default: []
+        },
+        customMenuItems: {
+            type: Array,
+            default: []
         }
     },
     data() {
         return {
             editor: null,
+            options: {
+                extensions: [
+                    StarterKit                
+                ]
+            },
         };
     },
     mounted() {
+        this.options.extensions = this.options.extensions.concat(this.customExtensions);
         this.editor = new Editor(this.options)
     },
 
