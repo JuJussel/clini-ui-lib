@@ -106,7 +106,8 @@ export default {
     display: flex;
     align-items: center;
     border-bottom: solid 1px var(--cui-dark);
-    padding: 5px
+    padding: 5px;
+    flex-wrap: wrap
 }
 .cui-editor-menu-bar-divider {
   width: 2px;

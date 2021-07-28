@@ -1,6 +1,6 @@
 <template>
     <div v-if="editor">
-        <menu-bar :editor="editor" :customMenuItems="customMenuItems" style="height: 40px"></menu-bar>
+        <menu-bar :editor="editor" :customMenuItems="customMenuItems"></menu-bar>
         <editor-content :editor="editor" style="height: calc(100% - 70px)"/>
     </div>
 </template>

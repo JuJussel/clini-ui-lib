@@ -26549,9 +26549,9 @@ script$3.__scopeId = "data-v-260a5466";var script$2 = {
       }]
     };
   }
-};var _withId = /*#__PURE__*/vue.withScopeId("data-v-3d84ba6e");
+};var _withId = /*#__PURE__*/vue.withScopeId("data-v-6fa363bb");
 
-vue.pushScopeId("data-v-3d84ba6e");
+vue.pushScopeId("data-v-6fa363bb");
 
 var _hoisted_1$2 = {
   class: "cui-editor-menu-bar-bar"
@@ -26583,9 +26583,9 @@ var render$2 = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $dat
       key: 1
     }, item), null, 16))]);
   }), 128))]);
-});var css_248z$2 = "\n.cui-editor-menu-bar-bar[data-v-3d84ba6e] {\n    display: flex;\n    align-items: center;\n    border-bottom: solid 1px var(--cui-dark);\n    padding: 5px\n}\n.cui-editor-menu-bar-divider[data-v-3d84ba6e] {\n  width: 2px;\n  height: 1.25rem;\n  background-color: var(--cui-dark);\n  margin-left: 0.5rem;\n  margin-right: 0.75rem;\n}\n";
+});var css_248z$2 = "\n.cui-editor-menu-bar-bar[data-v-6fa363bb] {\n    display: flex;\n    align-items: center;\n    border-bottom: solid 1px var(--cui-dark);\n    padding: 5px;\n    flex-wrap: wrap\n}\n.cui-editor-menu-bar-divider[data-v-6fa363bb] {\n  width: 2px;\n  height: 1.25rem;\n  background-color: var(--cui-dark);\n  margin-left: 0.5rem;\n  margin-right: 0.75rem;\n}\n";
 styleInject(css_248z$2);script$2.render = render$2;
-script$2.__scopeId = "data-v-3d84ba6e";var script$1 = {
+script$2.__scopeId = "data-v-6fa363bb";var script$1 = {
   components: {
     EditorContent: EditorContent,
     MenuBar: script$2
@@ -26625,10 +26625,7 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
 
   return $data.editor ? (vue.openBlock(), vue.createBlock("div", _hoisted_1$1, [vue.createVNode(_component_menu_bar, {
     editor: $data.editor,
-    customMenuItems: $props.customMenuItems,
-    style: {
-      "height": "40px"
-    }
+    customMenuItems: $props.customMenuItems
   }, null, 8, ["editor", "customMenuItems"]), vue.createVNode(_component_editor_content, {
     editor: $data.editor,
     style: {
