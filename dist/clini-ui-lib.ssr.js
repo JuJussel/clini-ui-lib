@@ -26590,6 +26590,7 @@ script$2.__scopeId = "data-v-6fa363bb";var script$1 = {
     EditorContent: EditorContent,
     MenuBar: script$2
   },
+  emits: ['update'],
   props: {
     customExtensions: {
       type: Array,
@@ -26603,8 +26604,19 @@ script$2.__scopeId = "data-v-6fa363bb";var script$1 = {
   data: function data() {
     return {
       editor: null,
+      timeout: null,
       options: {
-        extensions: [StarterKit]
+        extensions: [StarterKit],
+        onUpdate: function (_ref) {
+          var editor = _ref.editor;
+          clearTimeout(this.timeout);
+          this.timeout = setTimeout(function () {
+            this.$emit('update', {
+              html: editor.getHTML(),
+              json: editor.getJSON()
+            });
+          }.bind(this), 2000);
+        }.bind(this)
       }
     };
   },

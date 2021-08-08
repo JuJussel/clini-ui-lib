@@ -15,6 +15,9 @@ export default {
         EditorContent,
         MenuBar
     },
+    emits: [
+        'update'
+    ],
     props: {
         customExtensions: {
             type: Array,
@@ -28,10 +31,20 @@ export default {
     data() {
         return {
             editor: null,
+            timeout: null,
             options: {
                 extensions: [
                     StarterKit                
-                ]
+                ],
+                onUpdate: function({editor}) {
+                    clearTimeout(this.timeout);
+                    this.timeout = setTimeout(function() {
+                        this.$emit('update', {
+                            html: editor.getHTML(),
+                            json: editor.getJSON()
+                        })
+                    }.bind(this), 2000)
+                }.bind(this)
             },
         };
     },
