@@ -26854,6 +26854,9 @@ var script$1 = {
   },
   emits: ['update'],
   props: {
+    content: {
+      default: null
+    },
     customExtensions: {
       type: Array,
       default: []
@@ -26869,6 +26872,7 @@ var script$1 = {
       editor: null,
       timeout: null,
       options: {
+        content: this.content,
         extensions: [StarterKit],
         onUpdate: function ({
           editor
@@ -26885,9 +26889,17 @@ var script$1 = {
     };
   },
 
+  methods: {
+    setContent(content) {
+      this.editor.commands.setContent(content);
+    }
+
+  },
+
   mounted() {
     this.options.extensions = this.options.extensions.concat(this.customExtensions);
     this.editor = new Editor(this.options);
+    if (this.content) this.setContent(this.content);
   },
 
   beforeUnmount() {

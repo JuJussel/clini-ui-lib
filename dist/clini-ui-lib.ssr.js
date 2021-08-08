@@ -26592,6 +26592,9 @@ script$2.__scopeId = "data-v-6fa363bb";var script$1 = {
   },
   emits: ['update'],
   props: {
+    content: {
+      default: null
+    },
     customExtensions: {
       type: Array,
       default: []
@@ -26606,6 +26609,7 @@ script$2.__scopeId = "data-v-6fa363bb";var script$1 = {
       editor: null,
       timeout: null,
       options: {
+        content: this.content,
         extensions: [StarterKit],
         onUpdate: function (_ref) {
           var editor = _ref.editor;
@@ -26620,9 +26624,15 @@ script$2.__scopeId = "data-v-6fa363bb";var script$1 = {
       }
     };
   },
+  methods: {
+    setContent: function setContent(content) {
+      this.editor.commands.setContent(content);
+    }
+  },
   mounted: function mounted() {
     this.options.extensions = this.options.extensions.concat(this.customExtensions);
     this.editor = new Editor(this.options);
+    if (this.content) this.setContent(this.content);
   },
   beforeUnmount: function beforeUnmount() {
     this.editor.destroy();
