@@ -218,9 +218,10 @@ export default {
     methods: {
         setInitialValue() {
             if (this.dataIsObject) {
-                const value = this.data.find(
-                    item => item[this.returnValueProp] === this.modelValue
-                )
+                let value = this.modelValue;
+                if (this.returnValueProp) {
+                    value = this.data.find(item => item[this.returnValueProp] === this.modelValue);                    
+                }
                 this.value = value
             } else {
                 this.value = this.modelValue
