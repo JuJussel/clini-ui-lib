@@ -33,6 +33,7 @@
                         v-on:click="rowClick(row, index)"
                         :multipleSelect="multipleSelect"
                         :clickable="clickable"
+                        :disabled="disabledFunct(row)"
                         >
                         <template #parentRow>
                             <slot name="row" :row="Object.assign(row, {_index: index})" v-bind="row"></slot>
@@ -81,6 +82,10 @@ export default {
         square: {
             default: false,
             type: Boolean
+        },
+        disabledFunct: {
+            default: () => {return false},
+            type: Function
         }
     },
     data() {

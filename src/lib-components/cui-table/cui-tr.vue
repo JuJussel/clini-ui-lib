@@ -2,6 +2,7 @@
     <tr 
         class="cui-tr-parent" 
         v-bind:class="{
+            disabled: disabled,
             selected: selected, 
             clickable: clickable || $slots.expand,
             'no-border': expanded
@@ -35,6 +36,10 @@ export default {
         },
         rowData: {
             default: null,
+        },
+        disabled: {
+            default: false,
+            type: Boolean
         }
     },
     data() {
@@ -45,6 +50,9 @@ export default {
     },
     methods: {
         handleClick() {
+            if (this.disabled) {
+                return
+            }
             this.$emit('click')
             if (this.$slots.expand) {
                 this.expanded = !this.expanded
@@ -96,5 +104,8 @@ export default {
     }
     .cui-tr-expand.expanded td {
         padding: 20px
+    }
+    .disabled {
+        cursor: not-allowed!important;
     }
 </style>

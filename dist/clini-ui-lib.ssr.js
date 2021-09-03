@@ -6759,6 +6759,12 @@ script$b.__scopeId = "data-v-7dfec3ea";var script$a = {
     square: {
       default: false,
       type: Boolean
+    },
+    disabledFunct: {
+      default: function _default() {
+        return false;
+      },
+      type: Function
     }
   },
   data: function data() {
@@ -6832,9 +6838,9 @@ script$b.__scopeId = "data-v-7dfec3ea";var script$a = {
       return data;
     }
   }
-};var _withId$7 = /*#__PURE__*/vue.withScopeId("data-v-dce7b21a");
+};var _withId$7 = /*#__PURE__*/vue.withScopeId("data-v-3859c3d1");
 
-vue.pushScopeId("data-v-dce7b21a");
+vue.pushScopeId("data-v-3859c3d1");
 
 var _hoisted_1$6 = {
   key: 0,
@@ -6902,7 +6908,8 @@ var render$b = /*#__PURE__*/_withId$7(function (_ctx, _cache, $props, $setup, $d
         return $options.rowClick(row, index);
       },
       multipleSelect: $props.multipleSelect,
-      clickable: $props.clickable
+      clickable: $props.clickable,
+      disabled: $props.disabledFunct(row)
     }, vue.createSlots({
       parentRow: _withId$7(function () {
         return [vue.renderSlot(_ctx.$slots, "row", vue.mergeProps({
@@ -6919,12 +6926,12 @@ var render$b = /*#__PURE__*/_withId$7(function (_ctx, _cache, $props, $setup, $d
           expand: row
         })];
       })
-    } : undefined]), 1032, ["rowData", "onClick", "multipleSelect", "clickable"]);
+    } : undefined]), 1032, ["rowData", "onClick", "multipleSelect", "clickable", "disabled"]);
   }), 128))], 512)], 2)]), _ctx.$slots.footer ? (vue.openBlock(), vue.createBlock("div", _hoisted_12, [vue.renderSlot(_ctx.$slots, "footer")])) : vue.createCommentVNode("", true)], 2);
-});var css_248z$b = "\n.cui-table[data-v-dce7b21a] {\n        border-radius: 20px;\n        overflow: hidden;\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n}\n.cui-table.square[data-v-dce7b21a] {\n        border-radius: 0\n}\n.cui-table-header[data-v-dce7b21a], \n    .cui-table-footer[data-v-dce7b21a] {\n        background: var(--cui-gray-0);\n        padding: 10px;\n        display: flex;\n        justify-content: space-between;\n        align-items: center\n}\n.cui-table table[data-v-dce7b21a] {\n        border-collapse: collapse;\n        width: 100%;\n}\n.cui-table thead tr[data-v-dce7b21a] {\n        background: var(--cui-gray-0);\n}\n.cui-table-container[data-v-dce7b21a] {\n        overflow: auto;\n        flex: 1\n}\n.cui-table-empty-content[data-v-dce7b21a] {\n        display: flex;\n        flex-direction: column;\n        align-items: center\n}\n.cui-table-loader-td[data-v-dce7b21a] {\n        position: relative;\n        height: 100px\n}\n";
+});var css_248z$b = "\n.cui-table[data-v-3859c3d1] {\n        border-radius: 20px;\n        overflow: hidden;\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n}\n.cui-table.square[data-v-3859c3d1] {\n        border-radius: 0\n}\n.cui-table-header[data-v-3859c3d1], \n    .cui-table-footer[data-v-3859c3d1] {\n        background: var(--cui-gray-0);\n        padding: 10px;\n        display: flex;\n        justify-content: space-between;\n        align-items: center\n}\n.cui-table table[data-v-3859c3d1] {\n        border-collapse: collapse;\n        width: 100%;\n}\n.cui-table thead tr[data-v-3859c3d1] {\n        background: var(--cui-gray-0);\n}\n.cui-table-container[data-v-3859c3d1] {\n        overflow: auto;\n        flex: 1\n}\n.cui-table-empty-content[data-v-3859c3d1] {\n        display: flex;\n        flex-direction: column;\n        align-items: center\n}\n.cui-table-loader-td[data-v-3859c3d1] {\n        position: relative;\n        height: 100px\n}\n";
 styleInject(css_248z$b);var css_248z$a = "\n.cui-table th:not([scope=row]) {\n        position: -webkit-sticky;\n        position: sticky;\n        top: 0;\n        z-index: 2;\n        background: var(--cui-gray-0);\n        box-shadow: 0 2px 4px -2px rgb(0 0 0 / 15%)\n}\n.cui-table th,\n    .cui-table td {\n        text-align: left;\n        padding: 10px\n}\n.cui-table.select tbody tr {\n        cursor: pointer\n}\n.cui-table tbody tr:not(.no-border, .noHover) {\n        border-bottom: 1px solid var(--cui-gray-2);\n        transition: background .2s ease;\n}\n.cui-table tbody tr:not(.selected, .expanded, .noHover):hover {\n        background: var(--cui-gray-1)!important;\n        font-weight: bold\n}\n.cui-table.striped tbody tr:nth-of-type(even) {\n        background-color: var(--cui-gray-0);\n}\n.cui-table tbody tr:last-of-type {\n        border-bottom: 2px solid var(--cui-gray-2);\n}\n";
 styleInject(css_248z$a);script$a.render = render$b;
-script$a.__scopeId = "data-v-dce7b21a";var script$9 = {
+script$a.__scopeId = "data-v-3859c3d1";var script$9 = {
   name: 'CuiTh',
   props: {
     sort: {
@@ -6995,6 +7002,10 @@ script$9.__scopeId = "data-v-33b1bfbf";var script$8 = {
     },
     rowData: {
       default: null
+    },
+    disabled: {
+      default: false,
+      type: Boolean
     }
   },
   data: function data() {
@@ -7005,6 +7016,10 @@ script$9.__scopeId = "data-v-33b1bfbf";var script$8 = {
   },
   methods: {
     handleClick: function handleClick() {
+      if (this.disabled) {
+        return;
+      }
+
       this.$emit('click');
 
       if (this.$slots.expand) {
@@ -7029,9 +7044,9 @@ script$9.__scopeId = "data-v-33b1bfbf";var script$8 = {
       }
     }
   }
-};var _withId$5 = /*#__PURE__*/vue.withScopeId("data-v-3e3bb049");
+};var _withId$5 = /*#__PURE__*/vue.withScopeId("data-v-7a49dc6e");
 
-vue.pushScopeId("data-v-3e3bb049");
+vue.pushScopeId("data-v-7a49dc6e");
 
 var _hoisted_1$4 = {
   key: 0,
@@ -7050,6 +7065,7 @@ var render$9 = /*#__PURE__*/_withId$5(function (_ctx, _cache, $props, $setup, $d
 
   return vue.openBlock(), vue.createBlock(vue.Fragment, null, [vue.createVNode("tr", {
     class: ["cui-tr-parent", {
+      disabled: $props.disabled,
       selected: $data.selected,
       clickable: $props.clickable || _ctx.$slots.expand,
       'no-border': $data.expanded
@@ -7069,9 +7085,9 @@ var render$9 = /*#__PURE__*/_withId$5(function (_ctx, _cache, $props, $setup, $d
       expanded: $data.expanded
     }]
   }, [vue.createVNode("td", _hoisted_2$3, [vue.renderSlot(_ctx.$slots, "expand")])], 2)) : vue.createCommentVNode("", true)], 64);
-});var css_248z$8 = "\n@keyframes expand-3e3bb049{\nfrom{\n            opacity: 0;\n}\nto{\n            opacity: 1;\n}\n}\n.selected[data-v-3e3bb049] {\n        background-color: var(--cui-primary)!important;\n        color: white;\n        font-weight: bold;\n}\n.clickable[data-v-3e3bb049] {\n        cursor: pointer\n}\n.cui-tr-expand[data-v-3e3bb049] {\n        display: none;\n        transition: all .2s ease\n}\n.cui-tr-expand.expanded[data-v-3e3bb049] {\n        display: table-row;\n        animation: expand-3e3bb049 .2s linear 0s;\n}\n.cui-tr-expand.expanded td[data-v-3e3bb049] {\n        padding: 20px\n}\n";
+});var css_248z$8 = "\n@keyframes expand-7a49dc6e{\nfrom{\n            opacity: 0;\n}\nto{\n            opacity: 1;\n}\n}\n.selected[data-v-7a49dc6e] {\n        background-color: var(--cui-primary)!important;\n        color: white;\n        font-weight: bold;\n}\n.clickable[data-v-7a49dc6e] {\n        cursor: pointer\n}\n.cui-tr-expand[data-v-7a49dc6e] {\n        display: none;\n        transition: all .2s ease\n}\n.cui-tr-expand.expanded[data-v-7a49dc6e] {\n        display: table-row;\n        animation: expand-7a49dc6e .2s linear 0s;\n}\n.cui-tr-expand.expanded td[data-v-7a49dc6e] {\n        padding: 20px\n}\n.disabled[data-v-7a49dc6e] {\n        cursor: not-allowed!important;\n}\n";
 styleInject(css_248z$8);script$8.render = render$9;
-script$8.__scopeId = "data-v-3e3bb049";var script$7 = {
+script$8.__scopeId = "data-v-7a49dc6e";var script$7 = {
   name: "CuiTag",
   props: {
     danger: {

@@ -50,6 +50,10 @@ export default defineComponent({
     }
   },
   methods: {
+    disabledFunct(row) {
+      console.log(row);
+      return true;
+    },
     handleClose() {
       this.visible = false
     },
@@ -155,7 +159,7 @@ export default defineComponent({
       </cui-card>
     </div>
     <cui-card style="height: 500px" noPadding>
-      <cui-table :data="tableData" singleSelect :loading="tableLoading">
+      <cui-table :data="tableData" singleSelect :loading="tableLoading" :disabledFunct="disabledFunct">
         <template #header>
           <h2>The Table</h2>
           <cui-input darker></cui-input>
