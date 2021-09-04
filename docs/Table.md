@@ -65,6 +65,7 @@ Props:
 - clickable: Adds clickable class (pointer)
 - loading: Set loading state
 - square: Will remove rounded corners
+- disabledFunct: Make row disabled for click. Function that returns true or falls. Takes current row as input.
 
 Th properties:
 - sort: if set, sort by prop used.
