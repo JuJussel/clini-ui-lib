@@ -2,7 +2,7 @@
     <span class="cui-menu-bar-item" @click="handelClick" ref="item" :value="value">
         <div class="ripple"></div>
         <div class="cui-menu-bar-item-content">
-            <i :class="icon" v-if="icon !== ''"></i>
+            <i :class="icon + ' item-icon'" v-bind:class="{'plain-icon': plainIcon}" v-if="icon !== ''"></i>
             <span v-if="label !==''"> {{ label }} </span>
         </div>
     </span>
@@ -22,6 +22,10 @@ export default {
         },
         value: {
             default: null
+        },
+        plainIcon: {
+            type: Boolean,
+            default: false
         }
     },
     methods: {
@@ -58,7 +62,7 @@ export default {
         display: flex;
         align-items: center;
     }
-    .cui-menu-bar-item-content i {
+    .cui-menu-bar-item-content .item-icon {
         color: var(--cui-primary);
         margin-right: 12px;
         border-radius: 12px;
@@ -74,8 +78,13 @@ export default {
         box-shadow: rgb(0 0 0 / 4%) 0px 7px 11px;
         color: var(--cui-font-color);
     }
-    .selected i {
+    .selected .item-icon {
         background-color: var(--cui-primary);
         color: white;
+    }
+    .plain-icon {
+        color: var(--cui-gray-5)!important;
+        background-color: transparent!important;
+        margin-right: 0!important;
     }
 </style>

@@ -358,6 +358,10 @@ script$k.__scopeId = "data-v-68e6e552";var script$j = {
     },
     value: {
       default: null
+    },
+    plainIcon: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
@@ -365,9 +369,9 @@ script$k.__scopeId = "data-v-68e6e552";var script$j = {
       this.$parent.changeValue(this.value);
     }
   }
-};var _withId$d = /*#__PURE__*/vue.withScopeId("data-v-040bc13f");
+};var _withId$d = /*#__PURE__*/vue.withScopeId("data-v-44202c55");
 
-vue.pushScopeId("data-v-040bc13f");
+vue.pushScopeId("data-v-44202c55");
 
 var _hoisted_1$f = /*#__PURE__*/vue.createVNode("div", {
   class: "ripple"
@@ -392,11 +396,13 @@ var render$k = /*#__PURE__*/_withId$d(function (_ctx, _cache, $props, $setup, $d
     value: $props.value
   }, [_hoisted_1$f, vue.createVNode("div", _hoisted_2$d, [$props.icon !== '' ? (vue.openBlock(), vue.createBlock("i", {
     key: 0,
-    class: $props.icon
+    class: [$props.icon + ' item-icon', {
+      'plain-icon': $props.plainIcon
+    }]
   }, null, 2)) : vue.createCommentVNode("", true), $props.label !== '' ? (vue.openBlock(), vue.createBlock("span", _hoisted_3$8, vue.toDisplayString($props.label), 1)) : vue.createCommentVNode("", true)])], 8, ["value"]);
-});var css_248z$m = "\n.cui-menu-bar-item[data-v-040bc13f] {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        border-radius: 15px;\n        margin:  10px 5px;\n        position: relative;\n        padding: 10px 20px;\n        transition: all .2s ease;\n        color: var(--cui-gray-5)\n}\n.cui-menu-bar-item[data-v-040bc13f]:not(.selected):hover {\n        cursor: pointer;\n        transform: translateY(-3px);\n}\n.cui-menu-bar-item > .content[data-v-040bc13f] {\n        transition: all .2s ease;\n}\n.cui-menu-bar-item:hover > .content[data-v-040bc13f] {\n        padding-bottom: 5px;\n}\n.cui-menu-bar-item-content[data-v-040bc13f] {\n        display: flex;\n        align-items: center;\n}\n.cui-menu-bar-item-content i[data-v-040bc13f] {\n        color: var(--cui-primary);\n        margin-right: 12px;\n        border-radius: 12px;\n        background-color: white;\n        height: 30px;\n        width: 30px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n}\n.selected[data-v-040bc13f] {\n        background-color: white;\n        box-shadow: rgb(0 0 0 / 4%) 0px 7px 11px;\n        color: var(--cui-font-color);\n}\n.selected i[data-v-040bc13f] {\n        background-color: var(--cui-primary);\n        color: white;\n}\n";
+});var css_248z$m = "\n.cui-menu-bar-item[data-v-44202c55] {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        border-radius: 15px;\n        margin:  10px 5px;\n        position: relative;\n        padding: 10px 20px;\n        transition: all .2s ease;\n        color: var(--cui-gray-5)\n}\n.cui-menu-bar-item[data-v-44202c55]:not(.selected):hover {\n        cursor: pointer;\n        transform: translateY(-3px);\n}\n.cui-menu-bar-item > .content[data-v-44202c55] {\n        transition: all .2s ease;\n}\n.cui-menu-bar-item:hover > .content[data-v-44202c55] {\n        padding-bottom: 5px;\n}\n.cui-menu-bar-item-content[data-v-44202c55] {\n        display: flex;\n        align-items: center;\n}\n.cui-menu-bar-item-content .item-icon[data-v-44202c55] {\n        color: var(--cui-primary);\n        margin-right: 12px;\n        border-radius: 12px;\n        background-color: white;\n        height: 30px;\n        width: 30px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n}\n.selected[data-v-44202c55] {\n        background-color: white;\n        box-shadow: rgb(0 0 0 / 4%) 0px 7px 11px;\n        color: var(--cui-font-color);\n}\n.selected .item-icon[data-v-44202c55] {\n        background-color: var(--cui-primary);\n        color: white;\n}\n.plain-icon[data-v-44202c55] {\n        color: var(--cui-gray-5)!important;\n        background-color: transparent!important;\n        margin-right: 0!important;\n}\n";
 styleInject(css_248z$m);script$j.render = render$k;
-script$j.__scopeId = "data-v-040bc13f";var script$i = {
+script$j.__scopeId = "data-v-44202c55";var script$i = {
   name: "CuiCard",
   props: {
     noPadding: {
