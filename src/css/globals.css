@@ -9,18 +9,18 @@
   
 :root {
     --cui-dark: #37474f;
-    --cui-primary: #2ec1ac;
+    --cui-primary: #4fd1c5;
     --cui-danger: #d81b60;
     --cui-warn: #ff8f00;
 
     --cui-font-color: #2c3e50;
 
     --cui-gray-0: #f7f7f9;
-    --cui-gray-1: #f3f3f5;
-    --cui-gray-2: #e9e9eb;
-    --cui-gray-3: #dfdfe1;
-    --cui-gray-4: #d5d5d7;
-    --cui-gray-5: #cbcbcd;
+    --cui-gray-1: #F7FAFC;
+    --cui-gray-2: #EDF2F7;
+    --cui-gray-3: #E2E8F0;
+    --cui-gray-4: #CBD5E0;
+    --cui-gray-5: #A0AEC0;
 
     --cui-button-radius: 12px
 
@@ -55,7 +55,8 @@ html, body, #app {
 }
 body {
     margin: 0;
-    color: var(--cui-font-color)
+    color: var(--cui-font-color);
+    background-color: var(--cui-gray-1);
 }
 h2 {
     margin: 0;

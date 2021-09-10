@@ -44,7 +44,7 @@ export default {
     }
     .cui-card {
         border-radius: 20px;
-        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);
+        box-shadow: rgb(0 0 0 / 5%) 0px 3.5px 5.5px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -56,9 +56,9 @@ export default {
         width: calc(100%);
     }
     .cui-card-header {
-        background: var(--cui-gray-0);
+        /* background: var(--cui-gray-0); */
         padding: 10px;
-        box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 15%);
+        /* box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 15%); */
         display: flex;
         align-items: center;
     }

@@ -47,8 +47,8 @@ export default {
 
 <style scoped>
     .cui-menu-bar {
-        background: var(--cui-dark);
-        height: 45px;
+        /* background: var(--cui-dark); */
+        /* height: 45px; */
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
         padding: 0 15px;
@@ -56,7 +56,7 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        color: var(--cui-gray-2);
+        color: var(--cui-font-color);
         font-weight: bold;
         font-size: 16px;
     }
