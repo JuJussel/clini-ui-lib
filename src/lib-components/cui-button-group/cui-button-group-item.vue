@@ -1,6 +1,5 @@
 <template>
     <div class="cui-button-group-item" @click="handelClick" ref="item" :value="value">
-        <div class="ripple"></div>
         <i :class="icon" v-if="icon !== ''"></i>
         <span v-if="label !==''"> {{ label }} </span> 
     </div>
@@ -33,44 +32,42 @@ export default {
 
 <style scoped>
     .cui-button-group-item {
-        height: 35px;
-        border: 0px;
-        margin: 5px 0;
-        transition: all .2s ease;
-        position: relative;
-        user-select: none;
-        z-index: 1;
-        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
+        border-radius: 15px;
+        position: relative;
         padding: 10px;
-        outline: none;
-        font-size: .8rem;
-        box-sizing: border-box;
-        background: white;
+        transition: all .2s ease;
+        color: var(--cui-gray-5);
         cursor: pointer;
-        border: solid 2px var(--cui-dark);
-        border-right: none
+        font-size: 14px;
     }
-    .cui-button-group-item:first-of-type {
-        margin-left: 5px;
-        border-top-left-radius: var(--cui-button-radius);
-        border-bottom-left-radius: var(--cui-button-radius);
+    .cui-button-group-item:not(.selected):hover {
+        cursor: pointer;
+        transform: translateY(-3px);
     }
-    .cui-button-group-item:last-of-type {
+    .cui-button-group-item i {
+        color: var(--cui-primary);
         margin-right: 5px;
-        border-top-right-radius: var(--cui-button-radius);
-        border-bottom-right-radius: var(--cui-button-radius);
-        border-right: solid 2px var(--cui-dark)
-    }
-    .selected {
-        background: var(--cui-dark);
-        color: white
-    }
-    .cui-button-group-item > i:not(:last-child) {
-        margin-right: 5px
+        border-radius: 12px;
+        background-color: white;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
+    .selected {
+        background-color: white;
+        box-shadow: rgb(0 0 0 / 4%) 0px 0px 11px 2px;
+        color: var(--cui-font-color);
+        font-weight: bold;
+    }
+    .selected i {
+        background-color: var(--cui-primary);
+        color: white;
+    }
 
 </style>

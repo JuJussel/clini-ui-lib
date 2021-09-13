@@ -49,7 +49,8 @@ export default {
 
 <style scoped>
     .cui-th {
-        display: flex
+        display: flex;
+        color: var(--cui-gray-5)
     }
     .cui-th-sort {
         display: flex;

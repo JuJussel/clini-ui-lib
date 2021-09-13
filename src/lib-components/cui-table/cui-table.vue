@@ -159,7 +159,7 @@ export default {
     }
     .cui-table-header, 
     .cui-table-footer {
-        background: var(--cui-gray-0);
+        background: white;
         padding: 10px;
         display: flex;
         justify-content: space-between;
@@ -170,7 +170,7 @@ export default {
         width: 100%;
     }
     .cui-table thead tr {
-        background: var(--cui-gray-0);
+        background: white;
         
     }
     .cui-table-container {
@@ -195,8 +195,9 @@ export default {
         position: sticky;
         top: 0;
         z-index: 2;
-        background: var(--cui-gray-0);
-        box-shadow: 0 2px 4px -2px rgb(0 0 0 / 15%)
+        background: white;
+        box-shadow: 0 2px 4px -2px rgb(0 0 0 / 15%);
+        border-bottom: 1px solid var(--cui-gray-2)
     }
     .cui-table th,
     .cui-table td {

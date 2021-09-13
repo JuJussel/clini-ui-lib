@@ -141,7 +141,8 @@ export default {
     }
     .cui-button.plain {
         background: none;
-        color: var(--cui-font-color)
+        color: var(--cui-font-color);
+        font-weight: normal;
     }
     .cui-button.plain:hover {
         background: var(--cui-gray-1)

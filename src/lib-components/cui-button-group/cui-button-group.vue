@@ -1,5 +1,5 @@
 <template>
-    <div class="cui-button-group">
+    <div :class="'cui-button-group ' + id">
         <slot></slot>
     </div>
 </template>
@@ -14,13 +14,18 @@ export default {
         }
     },
     emits: ['update:modelValue', 'change'],
+    data() {
+        return {
+            id: null
+        }
+    },
     methods: {
         changeValue(value) {
             this.$emit('change', value)
             this.$emit('update:modelValue', value)
         },
         selectItem() {
-            let menuItems = document.querySelectorAll(".cui-button-group-item");
+            let menuItems = document.querySelectorAll("." + this.id + " .cui-button-group-item");
             menuItems.forEach(item => {
                 item.classList.remove('selected')
                 if (item.attributes.value.value == this.modelValue) {
@@ -30,7 +35,8 @@ export default {
         }
     },
     mounted() {
-        this.selectItem()
+        this.selectItem();
+        this.id = 'c' + Math.random().toString(36).substring(2,7);
     },
     watch: {
         modelValue() {
@@ -43,7 +49,8 @@ export default {
 <style scoped>
     .cui-button-group {
         display:flex;
-        margin: 5px 0
+        margin: 5px 0;
+        height: 50px
     }
 </style>
 
@@ -56,11 +63,11 @@ export default {
     .cui-button-group .cui-button:first-of-type {
         margin-left: 5px;
         border-top-left-radius:15px;
-        border-bottom-left-radius: 15px;
+        border-bottom-left-radius: 15px
     }
     .cui-button-group .cui-button:last-of-type {
         border-top-left-radius: 0px!important;
-        border-bottom-left-radius: 0px!important;
+        border-bottom-left-radius: 0px!important
     }
 
 </style>
