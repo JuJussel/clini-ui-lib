@@ -232,16 +232,16 @@ script$p.__scopeId = "data-v-38204dd5";var script$o = {
       this.selectItem();
     }
   }
-};var _withId$g = /*#__PURE__*/vue.withScopeId("data-v-6b75aa04");
+};var _withId$g = /*#__PURE__*/vue.withScopeId("data-v-21c88667");
 
 var render$n = /*#__PURE__*/_withId$g(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("div", {
     class: 'cui-button-group ' + $data.id
   }, [vue.renderSlot(_ctx.$slots, "default")], 2);
-});var css_248z$q = "\n.cui-button-group[data-v-6b75aa04] {\n        display:flex;\n        margin: 5px 0;\n        height: 50px\n}\n";
+});var css_248z$q = "\n.cui-button-group[data-v-21c88667] {\n        display:flex;\n        margin: 5px 0;\n        flex-wrap: wrap;\n}\n";
 styleInject(css_248z$q);var css_248z$p = "\n.cui-button-group .cui-button  {\n        margin-left: 0;\n        margin-right: 0;\n        border-radius: 0\n}\n.cui-button-group .cui-button:first-of-type {\n        margin-left: 5px;\n        border-top-left-radius:15px;\n        border-bottom-left-radius: 15px\n}\n.cui-button-group .cui-button:last-of-type {\n        border-top-left-radius: 0px!important;\n        border-bottom-left-radius: 0px!important\n}\n\n";
 styleInject(css_248z$p);script$o.render = render$n;
-script$o.__scopeId = "data-v-6b75aa04";var script$n = {
+script$o.__scopeId = "data-v-21c88667";var script$n = {
   name: 'ButtonGroupItem',
   props: {
     label: {
@@ -261,9 +261,9 @@ script$o.__scopeId = "data-v-6b75aa04";var script$n = {
       this.$parent.changeValue(this.value);
     }
   }
-};var _withId$f = /*#__PURE__*/vue.withScopeId("data-v-14f088ca");
+};var _withId$f = /*#__PURE__*/vue.withScopeId("data-v-be2f2db2");
 
-vue.pushScopeId("data-v-14f088ca");
+vue.pushScopeId("data-v-be2f2db2");
 
 var _hoisted_1$h = {
   key: 1
@@ -283,9 +283,9 @@ var render$m = /*#__PURE__*/_withId$f(function (_ctx, _cache, $props, $setup, $d
     key: 0,
     class: $props.icon
   }, null, 2)) : vue.createCommentVNode("", true), $props.label !== '' ? (vue.openBlock(), vue.createBlock("span", _hoisted_1$h, vue.toDisplayString($props.label), 1)) : vue.createCommentVNode("", true)], 8, ["value"]);
-});var css_248z$o = "\n.cui-button-group-item[data-v-14f088ca] {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        border-radius: 15px;\n        position: relative;\n        padding: 10px;\n        transition: all .2s ease;\n        color: var(--cui-gray-5);\n        cursor: pointer;\n        font-size: 14px;\n}\n.cui-button-group-item[data-v-14f088ca]:not(.selected):hover {\n        cursor: pointer;\n        transform: translateY(-3px);\n}\n.cui-button-group-item i[data-v-14f088ca] {\n        color: var(--cui-primary);\n        margin-right: 5px;\n        border-radius: 12px;\n        background-color: white;\n        height: 30px;\n        width: 30px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n}\n.selected[data-v-14f088ca] {\n        background-color: white;\n        box-shadow: rgb(0 0 0 / 4%) 0px 0px 11px 2px;\n        color: var(--cui-font-color);\n        font-weight: bold;\n}\n.selected i[data-v-14f088ca] {\n        background-color: var(--cui-primary);\n        color: white;\n}\n\n";
+});var css_248z$o = "\n.cui-button-group-item[data-v-be2f2db2] {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        border-radius: 15px;\n        position: relative;\n        padding: 10px;\n        transition: all .2s ease;\n        color: var(--cui-gray-5);\n        cursor: pointer;\n        font-size: 14px;\n        flex-grow: 0\n}\n.cui-button-group-item[data-v-be2f2db2]:not(.selected):hover {\n        cursor: pointer;\n        transform: translateY(-3px);\n}\n.cui-button-group-item i[data-v-be2f2db2] {\n        color: var(--cui-primary);\n        margin-right: 5px;\n        border-radius: 12px;\n        background-color: white;\n        height: 30px;\n        width: 30px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n}\n.selected[data-v-be2f2db2] {\n        background-color: white;\n        box-shadow: rgb(0 0 0 / 4%) 0px 0px 11px 2px;\n        color: var(--cui-font-color);\n        font-weight: bold;\n}\n.selected i[data-v-be2f2db2] {\n        background-color: var(--cui-primary);\n        color: white;\n}\n\n";
 styleInject(css_248z$o);script$n.render = render$m;
-script$n.__scopeId = "data-v-14f088ca";var script$m = {
+script$n.__scopeId = "data-v-be2f2db2";var script$m = {
   props: {
     value: {
       default: null

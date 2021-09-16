@@ -50,7 +50,7 @@ export default {
     .cui-button-group {
         display:flex;
         margin: 5px 0;
-        height: 50px
+        flex-wrap: wrap;
     }
 </style>
 

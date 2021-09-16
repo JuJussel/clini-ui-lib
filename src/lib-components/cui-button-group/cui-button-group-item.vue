@@ -42,6 +42,7 @@ export default {
         color: var(--cui-gray-5);
         cursor: pointer;
         font-size: 14px;
+        flex-grow: 0
     }
     .cui-button-group-item:not(.selected):hover {
         cursor: pointer;
