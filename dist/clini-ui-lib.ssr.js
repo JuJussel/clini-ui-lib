@@ -232,16 +232,16 @@ script$p.__scopeId = "data-v-38204dd5";var script$o = {
       this.selectItem();
     }
   }
-};var _withId$g = /*#__PURE__*/vue.withScopeId("data-v-21c88667");
+};var _withId$g = /*#__PURE__*/vue.withScopeId("data-v-009e49e7");
 
 var render$n = /*#__PURE__*/_withId$g(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("div", {
     class: 'cui-button-group ' + $data.id
   }, [vue.renderSlot(_ctx.$slots, "default")], 2);
-});var css_248z$q = "\n.cui-button-group[data-v-21c88667] {\n        display:flex;\n        margin: 5px 0;\n        flex-wrap: wrap;\n}\n";
+});var css_248z$q = "\n.cui-button-group[data-v-009e49e7] {\n        display:flex;\n        margin: 5px 0;\n        flex-wrap: wrap;\n}\n";
 styleInject(css_248z$q);var css_248z$p = "\n.cui-button-group .cui-button  {\n        margin-left: 0;\n        margin-right: 0;\n        border-radius: 0\n}\n.cui-button-group .cui-button:first-of-type {\n        margin-left: 5px;\n        border-top-left-radius:15px;\n        border-bottom-left-radius: 15px\n}\n.cui-button-group .cui-button:last-of-type {\n        border-top-left-radius: 0px!important;\n        border-bottom-left-radius: 0px!important\n}\n\n";
 styleInject(css_248z$p);script$o.render = render$n;
-script$o.__scopeId = "data-v-21c88667";var script$n = {
+script$o.__scopeId = "data-v-009e49e7";var script$n = {
   name: 'ButtonGroupItem',
   props: {
     label: {
@@ -439,7 +439,7 @@ function render$j(_ctx, _cache, $props, $setup, $data, $options) {
       'no-padding': $props.noPadding
     }]
   }, [vue.renderSlot(_ctx.$slots, "default")], 2), _ctx.$slots.footer ? (vue.openBlock(), vue.createBlock("div", _hoisted_4$4, [vue.renderSlot(_ctx.$slots, "footer")])) : vue.createCommentVNode("", true)]), $props.loading ? (vue.openBlock(), vue.createBlock("div", _hoisted_5$3)) : vue.createCommentVNode("", true)]);
-}var css_248z$l = "\n.cui-card-padding {\n        padding: 10px;\n        width: calc(100% - 20px);\n        height: calc(100% - 20px);\n        position: relative;\n}\n.cui-card {\n        border-radius: 20px;\n        box-shadow: rgb(0 0 0 / 5%) 0px 3.5px 5.5px;\n        overflow: hidden;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n        background: white;\n}\n.cui-card:not(.adaptive) {\n        height: calc(100%);\n        width: calc(100%);\n}\n.cui-card-header {\n        /* background: var(--cui-gray-0); */\n        padding: 10px;\n        /* box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 15%); */\n        display: flex;\n        align-items: center;\n}\n.cui-card-body {\n        flex: 1;\n        overflow: auto;\n}\n.cui-card-body:not(.no-padding) {\n        padding: 10px\n}\n.cui-card > .footer {\n        padding: 10px;\n        display: flex;\n        align-items: center;\n}\n\n";
+}var css_248z$l = "\n.cui-card-padding {\n        padding: 10px;\n        width: calc(100% - 20px);\n        height: calc(100% - 20px);\n        position: relative;\n}\n.cui-card {\n        border-radius: 20px;\n        box-shadow: rgb(0 0 0 / 5%) 0px 3.5px 5.5px;\n        overflow: hidden;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n        background: white;\n}\n.cui-card:not(.adaptive) {\n        height: calc(100%);\n        width: calc(100%);\n}\n.cui-card-header {\n        /* background: var(--cui-gray-0); */\n        padding: 10px;\n        /* box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 15%); */\n        display: flex;\n        align-items: center;\n}\n.cui-card-body {\n        flex: 1;\n        overflow: auto;\n}\n.cui-card-body:not(.no-padding) {\n        padding: 10px\n}\n.cui-card > .footer {\n        padding: 10px;\n        display: flex;\n        align-items: center;\n        justify-content: end;\n}\n\n";
 styleInject(css_248z$l);script$k.render = render$j;var script$j = {
   name: 'CuiModal',
   props: {

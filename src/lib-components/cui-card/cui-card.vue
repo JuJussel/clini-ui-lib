@@ -73,6 +73,7 @@ export default {
         padding: 10px;
         display: flex;
         align-items: center;
+        justify-content: end;
     }
 
 </style>
