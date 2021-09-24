@@ -26,6 +26,7 @@ export default {
         },
         selectItem() {
             let menuItems = document.querySelectorAll("." + this.id + " .cui-button-group-item");
+            console.log(this.id);
             menuItems.forEach(item => {
                 item.classList.remove('selected')
                 if (item.attributes.value.value == this.modelValue) {
@@ -35,8 +36,10 @@ export default {
         }
     },
     mounted() {
-        this.selectItem();
         this.id = 'c' + Math.random().toString(36).substring(2,7);
+        setTimeout(function() {
+            this.selectItem();
+        }.bind(this), 100)
     },
     watch: {
         modelValue() {

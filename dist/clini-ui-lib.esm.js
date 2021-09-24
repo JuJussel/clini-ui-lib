@@ -153,6 +153,7 @@ var script$o = {
 
     selectItem() {
       let menuItems = document.querySelectorAll("." + this.id + " .cui-button-group-item");
+      console.log(this.id);
       menuItems.forEach(item => {
         item.classList.remove('selected');
 
@@ -165,8 +166,10 @@ var script$o = {
   },
 
   mounted() {
-    this.selectItem();
     this.id = 'c' + Math.random().toString(36).substring(2, 7);
+    setTimeout(function () {
+      this.selectItem();
+    }.bind(this), 100);
   },
 
   watch: {
@@ -177,7 +180,7 @@ var script$o = {
   }
 };
 
-const _withId$g = /*#__PURE__*/withScopeId("data-v-009e49e7");
+const _withId$g = /*#__PURE__*/withScopeId("data-v-0584855a");
 
 const render$n = /*#__PURE__*/_withId$g((_ctx, _cache, $props, $setup, $data, $options) => {
   return openBlock(), createBlock("div", {
@@ -185,14 +188,14 @@ const render$n = /*#__PURE__*/_withId$g((_ctx, _cache, $props, $setup, $data, $o
   }, [renderSlot(_ctx.$slots, "default")], 2);
 });
 
-var css_248z$q = "\n.cui-button-group[data-v-009e49e7] {\n        display:flex;\n        margin: 5px 0;\n        flex-wrap: wrap;\n}\n";
+var css_248z$q = "\n.cui-button-group[data-v-0584855a] {\n        display:flex;\n        margin: 5px 0;\n        flex-wrap: wrap;\n}\n";
 styleInject(css_248z$q);
 
 var css_248z$p = "\n.cui-button-group .cui-button  {\n        margin-left: 0;\n        margin-right: 0;\n        border-radius: 0\n}\n.cui-button-group .cui-button:first-of-type {\n        margin-left: 5px;\n        border-top-left-radius:15px;\n        border-bottom-left-radius: 15px\n}\n.cui-button-group .cui-button:last-of-type {\n        border-top-left-radius: 0px!important;\n        border-bottom-left-radius: 0px!important\n}\n\n";
 styleInject(css_248z$p);
 
 script$o.render = render$n;
-script$o.__scopeId = "data-v-009e49e7";
+script$o.__scopeId = "data-v-0584855a";
 
 var script$n = {
   name: 'ButtonGroupItem',
