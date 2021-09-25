@@ -26,7 +26,6 @@ export default {
         },
         selectItem() {
             let menuItems = document.querySelectorAll("." + this.id + " .cui-button-group-item");
-            console.log(this.id);
             menuItems.forEach(item => {
                 item.classList.remove('selected')
                 if (item.attributes.value.value == this.modelValue) {

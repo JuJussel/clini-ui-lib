@@ -33,7 +33,6 @@ Example
     </cui-menu-bar>
 
     changeMenu(value) {
-      console.log(value);
       this.menu = value
     },
 

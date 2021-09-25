@@ -214,7 +214,6 @@ script$p.__scopeId = "data-v-38204dd5";var script$o = {
       var _this = this;
 
       var menuItems = document.querySelectorAll("." + this.id + " .cui-button-group-item");
-      console.log(this.id);
       menuItems.forEach(function (item) {
         item.classList.remove('selected');
 
@@ -235,16 +234,16 @@ script$p.__scopeId = "data-v-38204dd5";var script$o = {
       this.selectItem();
     }
   }
-};var _withId$g = /*#__PURE__*/vue.withScopeId("data-v-0584855a");
+};var _withId$g = /*#__PURE__*/vue.withScopeId("data-v-a00ba90a");
 
 var render$n = /*#__PURE__*/_withId$g(function (_ctx, _cache, $props, $setup, $data, $options) {
   return vue.openBlock(), vue.createBlock("div", {
     class: 'cui-button-group ' + $data.id
   }, [vue.renderSlot(_ctx.$slots, "default")], 2);
-});var css_248z$q = "\n.cui-button-group[data-v-0584855a] {\n        display:flex;\n        margin: 5px 0;\n        flex-wrap: wrap;\n}\n";
+});var css_248z$q = "\n.cui-button-group[data-v-a00ba90a] {\n        display:flex;\n        margin: 5px 0;\n        flex-wrap: wrap;\n}\n";
 styleInject(css_248z$q);var css_248z$p = "\n.cui-button-group .cui-button  {\n        margin-left: 0;\n        margin-right: 0;\n        border-radius: 0\n}\n.cui-button-group .cui-button:first-of-type {\n        margin-left: 5px;\n        border-top-left-radius:15px;\n        border-bottom-left-radius: 15px\n}\n.cui-button-group .cui-button:last-of-type {\n        border-top-left-radius: 0px!important;\n        border-bottom-left-radius: 0px!important\n}\n\n";
 styleInject(css_248z$p);script$o.render = render$n;
-script$o.__scopeId = "data-v-0584855a";var script$n = {
+script$o.__scopeId = "data-v-a00ba90a";var script$n = {
   name: 'ButtonGroupItem',
   props: {
     label: {
