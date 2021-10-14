@@ -3,6 +3,9 @@
 UI components used in Clini eco system.
 Tailor made for these apps, so you probably won't find these useful.
 
+
+npm install --save @fortawesome/fontawesome-free
+
 ```
 import { createApp } from 'vue'
 import App from './App.vue'

@@ -114,6 +114,7 @@ export default defineComponent({
           </cui-tooltip>
         </template>
         <div>
+          <cui-textarea></cui-textarea>
           <cui-file-upload></cui-file-upload>
 
 
