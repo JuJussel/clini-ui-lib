@@ -118,6 +118,9 @@ export default {
                 this.$emit('select', {row: row, index: index, selected: this.trRefs[index].selected})
             }
         },
+        clearSelection() {
+            this.trRefs.forEach(item => item.selected = false)
+        },
         toggleSort(direction, prop) {
             this.sort.direction = direction
             this.sort.prop = prop

@@ -6929,6 +6929,11 @@ script$d.__scopeId = "data-v-7dfec3ea";var script$c = {
         });
       }
     },
+    clearSelection: function clearSelection() {
+      this.trRefs.forEach(function (item) {
+        return item.selected = false;
+      });
+    },
     toggleSort: function toggleSort(direction, prop) {
       this.sort.direction = direction;
       this.sort.prop = prop;
@@ -6958,9 +6963,9 @@ script$d.__scopeId = "data-v-7dfec3ea";var script$c = {
       return data;
     }
   }
-};var _withId$7 = /*#__PURE__*/vue.withScopeId("data-v-4fcb1a7d");
+};var _withId$7 = /*#__PURE__*/vue.withScopeId("data-v-af1eaa1c");
 
-vue.pushScopeId("data-v-4fcb1a7d");
+vue.pushScopeId("data-v-af1eaa1c");
 
 var _hoisted_1$6 = {
   key: 0,
@@ -7048,10 +7053,10 @@ var render$b = /*#__PURE__*/_withId$7(function (_ctx, _cache, $props, $setup, $d
       })
     } : undefined]), 1032, ["rowData", "onClick", "multipleSelect", "clickable", "disabled"]);
   }), 128))], 512)], 2)]), _ctx.$slots.footer ? (vue.openBlock(), vue.createBlock("div", _hoisted_12, [vue.renderSlot(_ctx.$slots, "footer")])) : vue.createCommentVNode("", true)], 2);
-});var css_248z$b = "\n.cui-table[data-v-4fcb1a7d] {\n        border-radius: 20px;\n        overflow: hidden;\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n}\n.cui-table.square[data-v-4fcb1a7d] {\n        border-radius: 0\n}\n.cui-table-header[data-v-4fcb1a7d], \n    .cui-table-footer[data-v-4fcb1a7d] {\n        background: white;\n        padding: 10px;\n        display: flex;\n        justify-content: space-between;\n        align-items: center\n}\n.cui-table table[data-v-4fcb1a7d] {\n        border-collapse: collapse;\n        width: 100%;\n}\n.cui-table thead tr[data-v-4fcb1a7d] {\n        background: white;\n}\n.cui-table-container[data-v-4fcb1a7d] {\n        overflow: auto;\n        flex: 1\n}\n.cui-table-empty-content[data-v-4fcb1a7d] {\n        display: flex;\n        flex-direction: column;\n        align-items: center\n}\n.cui-table-loader-td[data-v-4fcb1a7d] {\n        position: relative;\n        height: 100px\n}\n";
+});var css_248z$b = "\n.cui-table[data-v-af1eaa1c] {\n        border-radius: 20px;\n        overflow: hidden;\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n}\n.cui-table.square[data-v-af1eaa1c] {\n        border-radius: 0\n}\n.cui-table-header[data-v-af1eaa1c], \n    .cui-table-footer[data-v-af1eaa1c] {\n        background: white;\n        padding: 10px;\n        display: flex;\n        justify-content: space-between;\n        align-items: center\n}\n.cui-table table[data-v-af1eaa1c] {\n        border-collapse: collapse;\n        width: 100%;\n}\n.cui-table thead tr[data-v-af1eaa1c] {\n        background: white;\n}\n.cui-table-container[data-v-af1eaa1c] {\n        overflow: auto;\n        flex: 1\n}\n.cui-table-empty-content[data-v-af1eaa1c] {\n        display: flex;\n        flex-direction: column;\n        align-items: center\n}\n.cui-table-loader-td[data-v-af1eaa1c] {\n        position: relative;\n        height: 100px\n}\n";
 styleInject(css_248z$b);var css_248z$a = "\n.cui-table th:not([scope=row]) {\n        position: -webkit-sticky;\n        position: sticky;\n        top: 0;\n        z-index: 2;\n        background: white;\n        box-shadow: 0 2px 4px -2px rgb(0 0 0 / 15%);\n        border-bottom: 1px solid var(--cui-gray-2)\n}\n.cui-table th,\n    .cui-table td {\n        text-align: left;\n        padding: 10px\n}\n.cui-table.select tbody tr {\n        cursor: pointer\n}\n.cui-table tbody tr:not(.no-border, .noHover) {\n        border-bottom: 1px solid var(--cui-gray-2);\n        transition: background .2s ease;\n}\n.cui-table tbody tr:not(.selected, .expanded, .noHover):hover {\n        background: var(--cui-gray-1)!important;\n        font-weight: bold\n}\n.cui-table.striped tbody tr:nth-of-type(even) {\n        background-color: var(--cui-gray-0);\n}\n.cui-table tbody tr:last-of-type {\n        border-bottom: 2px solid var(--cui-gray-2);\n}\n";
 styleInject(css_248z$a);script$c.render = render$b;
-script$c.__scopeId = "data-v-4fcb1a7d";var script$b = {
+script$c.__scopeId = "data-v-af1eaa1c";var script$b = {
   name: 'CuiTh',
   props: {
     sort: {
