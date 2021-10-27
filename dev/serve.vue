@@ -95,6 +95,9 @@ export default defineComponent({
         <cui-menu-bar-item icon="fas fa-sign-out-alt" />
       </template>
     </cui-menu-bar>
+    <cui-badge visible>
+      <i class="fas fa-bell"></i>
+    </cui-badge>
     <cui-button-group v-model="activeMenu">
       <cui-button-group-item icon="fas fa-sign-out-alt" label="Button1" value="1"></cui-button-group-item>
       <cui-button-group-item label="Button2" value="2"></cui-button-group-item>
