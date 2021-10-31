@@ -1,12 +1,10 @@
 <template>
-    <div >
-        <div ref="parent" @click.stop="toggleTooltip">
-            <slot></slot>
-        </div>
-        <div ref="tooltip" class="tooltip-cont" v-bind:class="{visible: isVisible}">
-            <slot name="tooltip"></slot>
-            <div class="arrow" :class="position"></div>
-        </div>
+    <div ref="parent" @click.stop="toggleTooltip">
+        <slot></slot>
+    </div>
+    <div ref="tooltip" class="tooltip-cont" v-bind:class="{visible: isVisible}">
+        <slot name="tooltip"></slot>
+        <!-- <div class="arrow" :class="position"></div> -->
     </div>
 </template>
 
@@ -37,14 +35,14 @@ export default {
             const tooltip = this.$refs.tooltip
             createPopper(parent, tooltip, {
                 placement: this.position,
-                modifiers: [
-                    {
-                        name: 'preventOverflow',
-                        options: {
-                            mainAxis: false
-                        },
-                    }
-                ]
+                // modifiers: [
+                //     {
+                //         name: 'preventOverflow',
+                //         options: {
+                //             mainAxis: false
+                //         },
+                //     }
+                // ]
             })
         },
         handleOutsideClick(event) {
@@ -73,7 +71,7 @@ export default {
     .visible {
         display: block;
     }
-    .arrow,
+    /* .arrow,
     .arrow::before {
         position: absolute;
         width: 8px;
@@ -109,6 +107,6 @@ export default {
     .arrow.right {
         left: -4px;
         top: calc(50% - 4px);
-    }
+    } */
 
 </style>

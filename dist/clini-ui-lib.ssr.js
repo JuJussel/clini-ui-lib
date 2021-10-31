@@ -7285,13 +7285,15 @@ script$9.__scopeId = "data-v-2d42819a";var script$8 = {
       var parent = this.$refs.parent;
       var tooltip = this.$refs.tooltip;
       createPopper(parent, tooltip, {
-        placement: this.position,
-        modifiers: [{
-          name: 'preventOverflow',
-          options: {
-            mainAxis: false
-          }
-        }]
+        placement: this.position // modifiers: [
+        //     {
+        //         name: 'preventOverflow',
+        //         options: {
+        //             mainAxis: false
+        //         },
+        //     }
+        // ]
+
       });
     },
     handleOutsideClick: function handleOutsideClick(event) {
@@ -7306,10 +7308,10 @@ script$9.__scopeId = "data-v-2d42819a";var script$8 = {
       }
     }
   }
-};var _withId$3 = /*#__PURE__*/vue.withScopeId("data-v-14d4a248");
+};var _withId$3 = /*#__PURE__*/vue.withScopeId("data-v-13c1a1de");
 
 var render$7 = /*#__PURE__*/_withId$3(function (_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createBlock("div", null, [vue.createVNode("div", {
+  return vue.openBlock(), vue.createBlock(vue.Fragment, null, [vue.createVNode("div", {
     ref: "parent",
     onClick: _cache[1] || (_cache[1] = vue.withModifiers(function () {
       return $options.toggleTooltip && $options.toggleTooltip.apply($options, arguments);
@@ -7319,12 +7321,10 @@ var render$7 = /*#__PURE__*/_withId$3(function (_ctx, _cache, $props, $setup, $d
     class: ["tooltip-cont", {
       visible: $data.isVisible
     }]
-  }, [vue.renderSlot(_ctx.$slots, "tooltip"), vue.createVNode("div", {
-    class: ["arrow", $props.position]
-  }, null, 2)], 2)]);
-});var css_248z$6 = "\n.tooltip-cont[data-v-14d4a248] {\n        display: none;\n        padding: 10px;\n        background: white;\n        border-radius: 20px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        z-index: 5\n}\n.visible[data-v-14d4a248] {\n        display: block;\n}\n.arrow[data-v-14d4a248],\n    .arrow[data-v-14d4a248]::before {\n        position: absolute;\n        width: 8px;\n        height: 8px;\n        background: inherit;\n}\n.arrow[data-v-14d4a248] {\n        visibility: hidden;\n}\n.arrow[data-v-14d4a248]::before {\n        visibility: visible;\n        content: '';\n        transform: rotate(45deg);\n}\n.arrow.top[data-v-14d4a248] {\n        bottom: -4px;\n        left: calc(50% - 4px);\n}\n.arrow.bottom[data-v-14d4a248] {\n        top: -4px;\n        left: calc(50% - 4px);\n}\n.arrow.left[data-v-14d4a248] {\n        right: -4px;\n        top: calc(50% - 4px);\n}\n.arrow.right[data-v-14d4a248] {\n        left: -4px;\n        top: calc(50% - 4px);\n}\n\n";
+  }, [vue.renderSlot(_ctx.$slots, "tooltip")], 2)], 64);
+});var css_248z$6 = "\n.tooltip-cont[data-v-13c1a1de] {\n        display: none;\n        padding: 10px;\n        background: white;\n        border-radius: 20px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        z-index: 5\n}\n.visible[data-v-13c1a1de] {\n        display: block;\n}\n    /* .arrow,\n    .arrow::before {\n        position: absolute;\n        width: 8px;\n        height: 8px;\n        background: inherit;\n    }\n\n    .arrow {\n        visibility: hidden;\n    }\n\n    .arrow::before {\n        visibility: visible;\n        content: '';\n        transform: rotate(45deg);\n    }\n\n    .arrow.top {\n        bottom: -4px;\n        left: calc(50% - 4px);\n    }\n\n    .arrow.bottom {\n        top: -4px;\n        left: calc(50% - 4px);\n    }\n\n    .arrow.left {\n        right: -4px;\n        top: calc(50% - 4px);\n    }\n\n    .arrow.right {\n        left: -4px;\n        top: calc(50% - 4px);\n    } */\n\n";
 styleInject(css_248z$6);script$8.render = render$7;
-script$8.__scopeId = "data-v-14d4a248";var script$7 = {
+script$8.__scopeId = "data-v-13c1a1de";var script$7 = {
   components: {
     Table: script$d
   },
