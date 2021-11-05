@@ -109,3 +109,14 @@ export default {
         cursor: not-allowed!important;
     }
 </style>
+
+<style>
+    .cui-table-hover-button {
+        opacity: 0;
+        transition: all .2s ease;
+    }
+    .cui-tr-parent:hover .cui-table-hover-button {
+        opacity: 1;
+    }
+
+</style>
