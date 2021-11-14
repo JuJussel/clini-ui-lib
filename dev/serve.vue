@@ -17,6 +17,7 @@ export default defineComponent({
         action: () => alert('RRRR'),
 
       }],
+      switch: false,
       visible: false,
       input: 'Hello',
       tableData: [
@@ -118,6 +119,7 @@ export default defineComponent({
         </template>
         <div>
           <cui-textarea></cui-textarea>
+          <cui-switch v-model="switch" trueLabel="Yes" falseLabel="No" label="test"></cui-switch>
           <cui-file-upload></cui-file-upload>
 
 

@@ -9,6 +9,7 @@ export { default as CuiModal } from './cui-modal/cui-modal.vue';
 export { default as CuiInput } from './cui-form/cui-input.vue';
 export { default as CuiTextarea } from './cui-form/cui-textarea.vue';
 export { default as CuiCheckbox } from './cui-form/cui-checkbox.vue';
+export { default as CuiSwitch } from './cui-form/cui-switch.vue';
 export { default as CuiSelect } from './cui-form/cui-select.vue';
 export { default as CuiDatepicker } from './cui-form/cui-datepicker.vue';
 export { default as CuiRadio } from './cui-form/cui-radio.vue';
