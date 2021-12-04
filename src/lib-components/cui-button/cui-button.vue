@@ -1,6 +1,7 @@
 <template>
     <div class="cui-button-wrapper" @click="handelClick" v-bind:class="{disabled}">
         <button
+            tabindex="-1"
             class="cui-button"
             v-bind:class="{
                 danger: danger,

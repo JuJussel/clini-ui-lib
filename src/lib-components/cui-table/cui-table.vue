@@ -86,6 +86,10 @@ export default {
         disabledFunct: {
             default: () => {return false},
             type: Function
+        },
+        compact: {
+            default: false,
+            type: Boolean
         }
     },
     data() {
@@ -127,6 +131,12 @@ export default {
         }
     },
     computed: {
+        tdPadding() {
+            if(this.compact) {
+                return("0");
+            }
+            return("10px");
+        },
         displayData() {
 
             if(this.loading) {
@@ -205,7 +215,7 @@ export default {
     .cui-table th,
     .cui-table td {
         text-align: left;
-        padding: 10px
+        padding: v-bind(tdPadding)
     }
     .cui-table.select tbody tr {
         cursor: pointer
