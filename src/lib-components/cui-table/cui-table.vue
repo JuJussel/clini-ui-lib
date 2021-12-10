@@ -133,7 +133,7 @@ export default {
     computed: {
         tdPadding() {
             if(this.compact) {
-                return("0");
+                return("3px");
             }
             return("10px");
         },
