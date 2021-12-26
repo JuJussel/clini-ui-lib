@@ -105,6 +105,29 @@ export default defineComponent({
       <cui-button-group-item label="Button3" value="3"></cui-button-group-item>
       <cui-button-group-item label="Button4" value="4"></cui-button-group-item>
     </cui-button-group>
+    <cui-card style="height: 900px">
+      <cui-table outline :data="tableData" singleSelect :loading="tableLoading" :disabledFunct="disabledFunct" style="height: 300px; width: 350px; margin: 40px">
+        <template #header>
+          <h2>The Table</h2>
+        </template>
+        <template #thead>
+          <cui-th sort="name">Name</cui-th>
+          <cui-th sort="age">Age</cui-th>
+          <cui-th sort="name">Performance</cui-th>
+        </template>
+        <template v-slot:row="{ row }">
+            <td> {{ row.name }} </td>
+            <td> {{ row.type }} </td>
+            <td> 
+              <cui-tag primary>
+                Content
+              </cui-tag>
+            </td>
+        </template>
+      </cui-table>
+
+    </cui-card>
+
     <cui-card style="height: 500px; width: 600px">
       <cui-editor style="height: 100%" :customMenuItems="editorMenuItems"></cui-editor>
     </cui-card>

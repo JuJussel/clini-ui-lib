@@ -1,6 +1,6 @@
-import { pushScopeId, popScopeId, openBlock, createBlock, createVNode, createCommentVNode, toDisplayString, withScopeId, renderSlot, Transition, withCtx, withDirectives, vModelDynamic, vModelText, vModelCheckbox, resolveComponent, withModifiers, Fragment as Fragment$1, renderList, createTextVNode, mergeProps, useCssVars, createSlots, defineComponent, ref, onMounted, onBeforeUnmount, h, reactive, customRef, markRaw, getCurrentInstance, watchEffect, nextTick, unref, Teleport, createApp } from 'vue';
+import { openBlock, createElementBlock, normalizeClass, createElementVNode, createCommentVNode, toDisplayString, pushScopeId, popScopeId, renderSlot, createBlock, Transition, withCtx, createVNode, withDirectives, normalizeStyle, vModelDynamic, vModelText, vModelCheckbox, resolveComponent, withModifiers, Fragment as Fragment$1, renderList, createTextVNode, mergeProps, useCssVars, createSlots, defineComponent, ref, onMounted, onBeforeUnmount, h, reactive, customRef, markRaw, getCurrentInstance, watchEffect, nextTick, unref, Teleport, normalizeProps, createApp } from 'vue';
 
-var script$r = {
+var script$u = {
   name: 'CuiButton',
   props: {
     label: {
@@ -55,34 +55,31 @@ var script$r = {
   }
 };
 
-const _withId$k = /*#__PURE__*/withScopeId("data-v-7629e5fa");
+const _withScopeId$4 = n => (pushScopeId("data-v-7629e5fa"), n = n(), popScopeId(), n);
 
-pushScopeId("data-v-7629e5fa");
-
-const _hoisted_1$l = {
+const _hoisted_1$m = {
   key: 0,
   class: "loader-button"
 };
 
-const _hoisted_2$h = /*#__PURE__*/createVNode("div", {
+const _hoisted_2$i = /*#__PURE__*/_withScopeId$4(() => /*#__PURE__*/createElementVNode("div", {
   class: "ripple"
-}, null, -1);
+}, null, -1));
 
-const _hoisted_3$c = {
+const _hoisted_3$e = {
   key: 2
 };
-
-popScopeId();
-
-const render$r = /*#__PURE__*/_withId$k((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("div", {
-    class: ["cui-button-wrapper", {
+function render$r(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", {
+    class: normalizeClass(["cui-button-wrapper", {
       disabled: $props.disabled
-    }],
-    onClick: _cache[1] || (_cache[1] = (...args) => $options.handelClick && $options.handelClick(...args))
-  }, [createVNode("button", {
+    }]),
+    onClick: _cache[0] || (_cache[0] = function () {
+      return $options.handelClick && $options.handelClick(...arguments);
+    })
+  }, [createElementVNode("button", {
     tabindex: "-1",
-    class: ["cui-button", {
+    class: normalizeClass(["cui-button", {
       danger: $props.danger,
       primary: $props.primary,
       warn: $props.warn,
@@ -91,12 +88,12 @@ const render$r = /*#__PURE__*/_withId$k((_ctx, _cache, $props, $setup, $data, $o
       plain: $props.plain,
       white: $props.white,
       bigIcon: $props.bigIcon
-    }]
-  }, [$props.loading ? (openBlock(), createBlock("div", _hoisted_1$l)) : createCommentVNode("", true), _hoisted_2$h, $props.icon !== '' ? (openBlock(), createBlock("i", {
+    }])
+  }, [$props.loading ? (openBlock(), createElementBlock("div", _hoisted_1$m)) : createCommentVNode("", true), _hoisted_2$i, $props.icon !== '' ? (openBlock(), createElementBlock("i", {
     key: 1,
-    class: $props.icon
-  }, null, 2)) : createCommentVNode("", true), $props.label !== '' ? (openBlock(), createBlock("span", _hoisted_3$c, toDisplayString($props.label), 1)) : createCommentVNode("", true)], 2)], 2);
-});
+    class: normalizeClass($props.icon)
+  }, null, 2)) : createCommentVNode("", true), $props.label !== '' ? (openBlock(), createElementBlock("span", _hoisted_3$e, toDisplayString($props.label), 1)) : createCommentVNode("", true)], 2)], 2);
+}
 
 function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
@@ -128,10 +125,10 @@ function styleInject(css, ref) {
 var css_248z$v = "\n.cui-button-wrapper[data-v-7629e5fa] {\n        width: fit-content;\n}\n.cui-button-wrapper[data-v-7629e5fa]:not(.disabled) {\n        cursor: pointer\n}\n.cui-button-wrapper:hover .cui-button[data-v-7629e5fa]:not(.disabled):not(.plain) {\n        transform: translate(0px, -5px);\n        margin-bottom: 5px;\n        box-shadow: 0 10px 20px -10px var(--cui-dark)\n}\n.cui-button[data-v-7629e5fa] {\n        height: 35px;\n        border: 0px;\n        margin: 5px;\n        border-radius: var(--cui-button-radius);\n        transition: all .2s ease;\n        position: relative;\n        user-select: none;\n        z-index: 1;\n        overflow: hidden;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        padding: 15px;\n        outline: none;\n        font-size: .8rem;\n        font-weight: bold;\n        box-sizing: border-box;\n        background: var(--cui-dark);\n        color: white;\n        cursor: pointer\n}\n.cui-button.danger[data-v-7629e5fa] {\n        background: var(--cui-danger);\n}\n.cui-button.danger[data-v-7629e5fa]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-danger);\n}\n.cui-button.primary[data-v-7629e5fa] {\n        background: var(--cui-primary);\n}\n.cui-button.primary[data-v-7629e5fa]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-primary);\n}\n.cui-button.warn[data-v-7629e5fa] {\n        background: var(--cui-warn);\n}\n.cui-button.warn[data-v-7629e5fa]:not(.disabled):hover {\n        box-shadow: 0 10px 20px -10px var(--cui-warn);\n}\n.cui-button > i[data-v-7629e5fa]:not(:last-child) {\n        margin-right: 5px\n}\n.cui-button.disabled[data-v-7629e5fa] {\n        cursor: not-allowed;\n        opacity: 0.7;\n}\n.cui-button.loading[data-v-7629e5fa] {\n        color: rgba(255,255,255,0.5)\n}\n.cui-button.plain[data-v-7629e5fa] {\n        background: none;\n        color: var(--cui-font-color);\n        font-weight: normal;\n}\n.cui-button.plain[data-v-7629e5fa]:hover {\n        background: var(--cui-gray-1)\n}\n.cui-button.white[data-v-7629e5fa] {\n        background: white;\n        color: var(--cui-font-color)\n}\n.loader-button[data-v-7629e5fa] {\n        justify-content: center;\n        align-items: center;\n        width: 100%;\n        height: 100%;\n        position: absolute;\n        display: flex\n}\n.cui-button.bigIcon i[data-v-7629e5fa] {\n        font-size: 20px;\n}\n";
 styleInject(css_248z$v);
 
-script$r.render = render$r;
-script$r.__scopeId = "data-v-7629e5fa";
+script$u.render = render$r;
+script$u.__scopeId = "data-v-7629e5fa";
 
-var script$q = {
+var script$t = {
   name: 'ButtonGroup',
   props: {
     modelValue: {
@@ -180,13 +177,11 @@ var script$q = {
   }
 };
 
-const _withId$j = /*#__PURE__*/withScopeId("data-v-a00ba90a");
-
-const render$q = /*#__PURE__*/_withId$j((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("div", {
-    class: 'cui-button-group ' + $data.id
+function render$q(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", {
+    class: normalizeClass('cui-button-group ' + $data.id)
   }, [renderSlot(_ctx.$slots, "default")], 2);
-});
+}
 
 var css_248z$u = "\n.cui-button-group[data-v-a00ba90a] {\n        display:flex;\n        margin: 5px 0;\n        flex-wrap: wrap;\n}\n";
 styleInject(css_248z$u);
@@ -194,10 +189,10 @@ styleInject(css_248z$u);
 var css_248z$t = "\n.cui-button-group .cui-button  {\n        margin-left: 0;\n        margin-right: 0;\n        border-radius: 0\n}\n.cui-button-group .cui-button:first-of-type {\n        margin-left: 5px;\n        border-top-left-radius:15px;\n        border-bottom-left-radius: 15px\n}\n.cui-button-group .cui-button:last-of-type {\n        border-top-left-radius: 0px!important;\n        border-bottom-left-radius: 0px!important\n}\n\n";
 styleInject(css_248z$t);
 
-script$q.render = render$q;
-script$q.__scopeId = "data-v-a00ba90a";
+script$t.render = render$q;
+script$t.__scopeId = "data-v-a00ba90a";
 
-var script$p = {
+var script$s = {
   name: 'ButtonGroupItem',
   props: {
     label: {
@@ -220,35 +215,31 @@ var script$p = {
   }
 };
 
-const _withId$i = /*#__PURE__*/withScopeId("data-v-be2f2db2");
-
-pushScopeId("data-v-be2f2db2");
-
-const _hoisted_1$k = {
+const _hoisted_1$l = ["value"];
+const _hoisted_2$h = {
   key: 1
 };
-
-popScopeId();
-
-const render$p = /*#__PURE__*/_withId$i((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("div", {
+function render$p(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", {
     class: "cui-button-group-item",
-    onClick: _cache[1] || (_cache[1] = (...args) => $options.handelClick && $options.handelClick(...args)),
+    onClick: _cache[0] || (_cache[0] = function () {
+      return $options.handelClick && $options.handelClick(...arguments);
+    }),
     ref: "item",
     value: $props.value
-  }, [$props.icon !== '' ? (openBlock(), createBlock("i", {
+  }, [$props.icon !== '' ? (openBlock(), createElementBlock("i", {
     key: 0,
-    class: $props.icon
-  }, null, 2)) : createCommentVNode("", true), $props.label !== '' ? (openBlock(), createBlock("span", _hoisted_1$k, toDisplayString($props.label), 1)) : createCommentVNode("", true)], 8, ["value"]);
-});
+    class: normalizeClass($props.icon)
+  }, null, 2)) : createCommentVNode("", true), $props.label !== '' ? (openBlock(), createElementBlock("span", _hoisted_2$h, toDisplayString($props.label), 1)) : createCommentVNode("", true)], 8, _hoisted_1$l);
+}
 
 var css_248z$s = "\n.cui-button-group-item[data-v-be2f2db2] {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        border-radius: 15px;\n        position: relative;\n        padding: 10px;\n        transition: all .2s ease;\n        color: var(--cui-gray-5);\n        cursor: pointer;\n        font-size: 14px;\n        flex-grow: 0\n}\n.cui-button-group-item[data-v-be2f2db2]:not(.selected):hover {\n        cursor: pointer;\n        transform: translateY(-3px);\n}\n.cui-button-group-item i[data-v-be2f2db2] {\n        color: var(--cui-primary);\n        margin-right: 5px;\n        border-radius: 12px;\n        background-color: white;\n        height: 30px;\n        width: 30px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n}\n.selected[data-v-be2f2db2] {\n        background-color: white;\n        box-shadow: rgb(0 0 0 / 4%) 0px 0px 11px 2px;\n        color: var(--cui-font-color);\n        font-weight: bold;\n}\n.selected i[data-v-be2f2db2] {\n        background-color: var(--cui-primary);\n        color: white;\n}\n\n";
 styleInject(css_248z$s);
 
-script$p.render = render$p;
-script$p.__scopeId = "data-v-be2f2db2";
+script$s.render = render$p;
+script$s.__scopeId = "data-v-be2f2db2";
 
-var script$o = {
+var script$r = {
   props: {
     value: {
       default: null
@@ -285,37 +276,30 @@ var script$o = {
   }
 };
 
-const _withId$h = /*#__PURE__*/withScopeId("data-v-68e6e552");
-
-pushScopeId("data-v-68e6e552");
-
-const _hoisted_1$j = {
+const _hoisted_1$k = {
   class: "cui-menu-bar",
   ref: "menuBar"
 };
 const _hoisted_2$g = {
   class: "menu-item"
 };
-const _hoisted_3$b = {
+const _hoisted_3$d = {
   class: "menu-item"
 };
-const _hoisted_4$7 = {
+const _hoisted_4$b = {
   class: "menu-item"
 };
-
-popScopeId();
-
-const render$o = /*#__PURE__*/_withId$h((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("div", _hoisted_1$j, [createVNode("div", _hoisted_2$g, [renderSlot(_ctx.$slots, "left")]), createVNode("div", _hoisted_3$b, [renderSlot(_ctx.$slots, "center")]), createVNode("div", _hoisted_4$7, [renderSlot(_ctx.$slots, "right")])], 512);
-});
+function render$o(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$k, [createElementVNode("div", _hoisted_2$g, [renderSlot(_ctx.$slots, "left")]), createElementVNode("div", _hoisted_3$d, [renderSlot(_ctx.$slots, "center")]), createElementVNode("div", _hoisted_4$b, [renderSlot(_ctx.$slots, "right")])], 512);
+}
 
 var css_248z$r = "\n.cui-menu-bar[data-v-68e6e552] {\n        /* background: var(--cui-dark); */\n        /* height: 45px; */\n        border-bottom-left-radius: 15px;\n        border-bottom-right-radius: 15px;\n        padding: 0 15px;\n        position: relative;\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        color: var(--cui-font-color);\n        font-weight: bold;\n        font-size: 16px;\n}\n.cui-menu-bar > .menu-item[data-v-68e6e552] {\n        display: flex;\n        align-items: center;\n}\n";
 styleInject(css_248z$r);
 
-script$o.render = render$o;
-script$o.__scopeId = "data-v-68e6e552";
+script$r.render = render$o;
+script$r.__scopeId = "data-v-68e6e552";
 
-var script$n = {
+var script$q = {
   name: 'CuiMenuBarItem',
   props: {
     label: {
@@ -342,44 +326,43 @@ var script$n = {
   }
 };
 
-const _withId$g = /*#__PURE__*/withScopeId("data-v-44202c55");
+const _withScopeId$3 = n => (pushScopeId("data-v-44202c55"), n = n(), popScopeId(), n);
 
-pushScopeId("data-v-44202c55");
+const _hoisted_1$j = ["value"];
 
-const _hoisted_1$i = /*#__PURE__*/createVNode("div", {
+const _hoisted_2$f = /*#__PURE__*/_withScopeId$3(() => /*#__PURE__*/createElementVNode("div", {
   class: "ripple"
-}, null, -1);
+}, null, -1));
 
-const _hoisted_2$f = {
+const _hoisted_3$c = {
   class: "cui-menu-bar-item-content"
 };
-const _hoisted_3$a = {
+const _hoisted_4$a = {
   key: 1
 };
-
-popScopeId();
-
-const render$n = /*#__PURE__*/_withId$g((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("span", {
+function render$n(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("span", {
     class: "cui-menu-bar-item",
-    onClick: _cache[1] || (_cache[1] = (...args) => $options.handelClick && $options.handelClick(...args)),
+    onClick: _cache[0] || (_cache[0] = function () {
+      return $options.handelClick && $options.handelClick(...arguments);
+    }),
     ref: "item",
     value: $props.value
-  }, [_hoisted_1$i, createVNode("div", _hoisted_2$f, [$props.icon !== '' ? (openBlock(), createBlock("i", {
+  }, [_hoisted_2$f, createElementVNode("div", _hoisted_3$c, [$props.icon !== '' ? (openBlock(), createElementBlock("i", {
     key: 0,
-    class: [$props.icon + ' item-icon', {
+    class: normalizeClass([$props.icon + ' item-icon', {
       'plain-icon': $props.plainIcon
-    }]
-  }, null, 2)) : createCommentVNode("", true), $props.label !== '' ? (openBlock(), createBlock("span", _hoisted_3$a, toDisplayString($props.label), 1)) : createCommentVNode("", true)])], 8, ["value"]);
-});
+    }])
+  }, null, 2)) : createCommentVNode("", true), $props.label !== '' ? (openBlock(), createElementBlock("span", _hoisted_4$a, toDisplayString($props.label), 1)) : createCommentVNode("", true)])], 8, _hoisted_1$j);
+}
 
 var css_248z$q = "\n.cui-menu-bar-item[data-v-44202c55] {\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        border-radius: 15px;\n        margin:  10px 5px;\n        position: relative;\n        padding: 10px 20px;\n        transition: all .2s ease;\n        color: var(--cui-gray-5)\n}\n.cui-menu-bar-item[data-v-44202c55]:not(.selected):hover {\n        cursor: pointer;\n        transform: translateY(-3px);\n}\n.cui-menu-bar-item > .content[data-v-44202c55] {\n        transition: all .2s ease;\n}\n.cui-menu-bar-item:hover > .content[data-v-44202c55] {\n        padding-bottom: 5px;\n}\n.cui-menu-bar-item-content[data-v-44202c55] {\n        display: flex;\n        align-items: center;\n}\n.cui-menu-bar-item-content .item-icon[data-v-44202c55] {\n        color: var(--cui-primary);\n        margin-right: 12px;\n        border-radius: 12px;\n        background-color: white;\n        height: 30px;\n        width: 30px;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n}\n.selected[data-v-44202c55] {\n        background-color: white;\n        box-shadow: rgb(0 0 0 / 4%) 0px 7px 11px;\n        color: var(--cui-font-color);\n}\n.selected .item-icon[data-v-44202c55] {\n        background-color: var(--cui-primary);\n        color: white;\n}\n.plain-icon[data-v-44202c55] {\n        color: var(--cui-gray-5)!important;\n        background-color: transparent!important;\n        margin-right: 0!important;\n}\n";
 styleInject(css_248z$q);
 
-script$n.render = render$n;
-script$n.__scopeId = "data-v-44202c55";
+script$q.render = render$n;
+script$q.__scopeId = "data-v-44202c55";
 
-var script$m = {
+var script$p = {
   name: "CuiCard",
   props: {
     noPadding: {
@@ -400,38 +383,38 @@ var script$m = {
 
 };
 
-const _hoisted_1$h = {
+const _hoisted_1$i = {
   class: "cui-card-padding"
 };
 const _hoisted_2$e = {
   class: "cui-card"
 };
-const _hoisted_3$9 = {
+const _hoisted_3$b = {
   key: 0,
   class: "cui-card-header"
 };
-const _hoisted_4$6 = {
+const _hoisted_4$9 = {
   key: 1,
   class: "footer"
 };
-const _hoisted_5$4 = {
+const _hoisted_5$5 = {
   key: 0,
   class: "loader"
 };
 function render$m(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createBlock("div", _hoisted_1$h, [createVNode("div", _hoisted_2$e, [_ctx.$slots.header ? (openBlock(), createBlock("div", _hoisted_3$9, [renderSlot(_ctx.$slots, "header")])) : createCommentVNode("", true), createVNode("div", {
-    class: ["cui-card-body", {
+  return openBlock(), createElementBlock("div", _hoisted_1$i, [createElementVNode("div", _hoisted_2$e, [_ctx.$slots.header ? (openBlock(), createElementBlock("div", _hoisted_3$b, [renderSlot(_ctx.$slots, "header")])) : createCommentVNode("", true), createElementVNode("div", {
+    class: normalizeClass(["cui-card-body", {
       'no-padding': $props.noPadding
-    }]
-  }, [renderSlot(_ctx.$slots, "default")], 2), _ctx.$slots.footer ? (openBlock(), createBlock("div", _hoisted_4$6, [renderSlot(_ctx.$slots, "footer")])) : createCommentVNode("", true)]), $props.loading ? (openBlock(), createBlock("div", _hoisted_5$4)) : createCommentVNode("", true)]);
+    }])
+  }, [renderSlot(_ctx.$slots, "default")], 2), _ctx.$slots.footer ? (openBlock(), createElementBlock("div", _hoisted_4$9, [renderSlot(_ctx.$slots, "footer")])) : createCommentVNode("", true)]), $props.loading ? (openBlock(), createElementBlock("div", _hoisted_5$5)) : createCommentVNode("", true)]);
 }
 
 var css_248z$p = "\n.cui-card-padding {\n        padding: 10px;\n        width: calc(100% - 20px);\n        height: calc(100% - 20px);\n        position: relative;\n}\n.cui-card {\n        border-radius: 20px;\n        box-shadow: rgb(0 0 0 / 5%) 0px 3.5px 5.5px;\n        overflow: hidden;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n        background: white;\n}\n.cui-card:not(.adaptive) {\n        height: calc(100%);\n        width: calc(100%);\n}\n.cui-card-header {\n        /* background: var(--cui-gray-0); */\n        padding: 10px;\n        /* box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 15%); */\n        display: flex;\n        align-items: center;\n}\n.cui-card-body {\n        flex: 1;\n        overflow: auto;\n}\n.cui-card-body:not(.no-padding) {\n        padding: 10px\n}\n.cui-card > .footer {\n        padding: 10px;\n        display: flex;\n        align-items: center;\n        justify-content: end;\n}\n\n";
 styleInject(css_248z$p);
 
-script$m.render = render$m;
+script$p.render = render$m;
 
-var script$l = {
+var script$o = {
   name: 'CuiModal',
   props: {
     visible: {
@@ -472,7 +455,7 @@ var script$l = {
   }
 };
 
-const _hoisted_1$g = {
+const _hoisted_1$h = {
   key: 0,
   class: "cui-modal-overlay"
 };
@@ -480,26 +463,28 @@ function render$l(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock(Transition, {
     name: "modal-trans"
   }, {
-    default: withCtx(() => [$props.visible ? (openBlock(), createBlock("div", _hoisted_1$g, [createVNode(Transition, {
+    default: withCtx(() => [$props.visible ? (openBlock(), createElementBlock("div", _hoisted_1$h, [createVNode(Transition, {
       name: "modal-content-trans"
     }, {
-      default: withCtx(() => [$data.showContent ? (openBlock(), createBlock("div", {
+      default: withCtx(() => [$data.showContent ? (openBlock(), createElementBlock("div", {
         key: 0,
         class: "cui-modal-content",
-        onMousedown: _cache[1] || (_cache[1] = (...args) => $options.handelClick && $options.handelClick(...args))
+        onMousedown: _cache[0] || (_cache[0] = function () {
+          return $options.handelClick && $options.handelClick(...arguments);
+        })
       }, [renderSlot(_ctx.$slots, "default")], 32)) : createCommentVNode("", true)]),
       _: 3
     })])) : createCommentVNode("", true)]),
-    _: 1
+    _: 3
   });
 }
 
 var css_248z$o = "\n.cui-modal-overlay {\n        position: fixed;\n        width: 100%;\n        height: 100%;\n        top: 0;\n        left: 0;\n        z-index: 100;\n        background: rgba(0,0,0,.2);\n        backdrop-filter: saturate(180%) blur(10px);\n        overflow: hidden\n}\n.cui-modal-content {\n        position: relative;\n        width: 100%;\n        height: 100%;\n        padding: 100px;\n        box-sizing: border-box;\n        display: flex;\n        justify-content: center;\n        align-items: center;\n}\n.modal-trans-enter-active, \n    .modal-content-trans-enter-active {\n        transition: all .15s ease;\n}\n.modal-content-trans-enter-active {        \n        animation: rebound .3s\n}\n.modal-trans-leave-active, \n    .modal-content-trans-leave-active {\n        transition: all .15s ease\n}\n.modal-trans-enter-from,\n    .modal-trans-leave-to {\n        opacity: 0;\n}\n.modal-content-trans-enter-from,\n    .modal-content-trans-leave-to {\n        transform: scale(.7)\n}\n@keyframes rebound {\n0% {transform: scale(.8)}\n40% {transform: scale(1.08)}\n80% {transform: scale(0.98)}\n100% {transform: scale(1)}\n}\n";
 styleInject(css_248z$o);
 
-script$l.render = render$l;
+script$o.render = render$l;
 
-var script$k = {
+var script$n = {
   name: 'CuiInput',
   props: {
     modelValue: {
@@ -574,11 +559,7 @@ var script$k = {
   }
 };
 
-const _withId$f = /*#__PURE__*/withScopeId("data-v-6242c9e6");
-
-pushScopeId("data-v-6242c9e6");
-
-const _hoisted_1$f = {
+const _hoisted_1$g = {
   key: 0,
   class: "cui-input-label"
 };
@@ -587,56 +568,56 @@ const _hoisted_2$d = {
     "margin-right": "10px"
   }
 };
-const _hoisted_3$8 = {
+const _hoisted_3$a = {
   key: 0
 };
-const _hoisted_4$5 = {
+const _hoisted_4$8 = {
   style: {
     "position": "relative"
   }
 };
-const _hoisted_5$3 = {
+const _hoisted_5$4 = {
   key: 0,
   class: "cui-input-append"
 };
-const _hoisted_6$2 = {
+const _hoisted_6$4 = ["type", "disabled", "pattern", "placeholder"];
+const _hoisted_7$2 = {
   key: 1,
   class: "cui-input-note"
 };
-
-popScopeId();
-
-const render$k = /*#__PURE__*/_withId$f((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("div", null, [$props.label ? (openBlock(), createBlock("label", _hoisted_1$f, [createVNode("span", _hoisted_2$d, toDisplayString($props.label), 1), $props.required ? (openBlock(), createBlock("span", _hoisted_3$8, toDisplayString($data.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createVNode("div", _hoisted_4$5, [$props.append ? (openBlock(), createBlock("span", _hoisted_5$3, toDisplayString($props.append), 1)) : createCommentVNode("", true), withDirectives(createVNode("input", {
-    class: ["cui-input", {
+function render$k(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, [$props.label ? (openBlock(), createElementBlock("label", _hoisted_1$g, [createElementVNode("span", _hoisted_2$d, toDisplayString($props.label), 1), $props.required ? (openBlock(), createElementBlock("span", _hoisted_3$a, toDisplayString($data.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createElementVNode("div", _hoisted_4$8, [$props.append ? (openBlock(), createElementBlock("span", _hoisted_5$4, toDisplayString($props.append), 1)) : createCommentVNode("", true), withDirectives(createElementVNode("input", {
+    class: normalizeClass(["cui-input", {
       'has-icon': $props.icon,
       disabled: $props.disabled,
       darker: $props.darker
-    }],
-    style: {
+    }]),
+    style: normalizeStyle({
       width: $props.width
-    },
+    }),
     type: $props.type,
-    "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $props.modelValue = $event),
-    onInput: _cache[2] || (_cache[2] = (...args) => $options.changeValue && $options.changeValue(...args)),
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $props.modelValue = $event),
+    onInput: _cache[1] || (_cache[1] = function () {
+      return $options.changeValue && $options.changeValue(...arguments);
+    }),
     disabled: $props.disabled,
     clearable: "",
     pattern: $props.pattern,
     placeholder: $props.placeholder,
     autocomplete: "new-password"
-  }, null, 46, ["type", "disabled", "pattern", "placeholder"]), [[vModelDynamic, $props.modelValue]]), $props.icon ? (openBlock(), createBlock("span", {
+  }, null, 46, _hoisted_6$4), [[vModelDynamic, $props.modelValue]]), $props.icon ? (openBlock(), createElementBlock("span", {
     key: 1,
-    class: $props.icon + ' cui-input-icon'
-  }, null, 2)) : createCommentVNode("", true)]), !$props.noNote ? (openBlock(), createBlock("div", _hoisted_6$2, [createVNode("span", null, toDisplayString($data.noteDisplay), 1)])) : createCommentVNode("", true)]);
-});
+    class: normalizeClass($props.icon + ' cui-input-icon')
+  }, null, 2)) : createCommentVNode("", true)]), !$props.noNote ? (openBlock(), createElementBlock("div", _hoisted_7$2, [createElementVNode("span", null, toDisplayString($data.noteDisplay), 1)])) : createCommentVNode("", true)]);
+}
 
 var css_248z$n = "\n.cui-input-label[data-v-6242c9e6] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-input[data-v-6242c9e6] {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease\n}\n.cui-input.darker[data-v-6242c9e6] {\n        background: var(--cui-gray-3);\n}\n.cui-input.disabled[data-v-6242c9e6] {\n        color: var(--cui-gray-3)\n}\n.cui-input[data-v-6242c9e6]:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n        background: var(--cui-gray-1)\n}\n.cui-input.darker[data-v-6242c9e6]:focus {\n        background: var(--cui-gray-4)\n}\n.cui-input.darker[data-v-6242c9e6]:hover {\n        background: var(--cui-gray-4)\n}\n.cui-input-note[data-v-6242c9e6] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n.cui-input-icon[data-v-6242c9e6] {\n        position: absolute;\n        left:0;\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        padding: 10px;\n        transition: all .2s ease;\n}\n.has-icon[data-v-6242c9e6] {\n        text-indent: 28px;\n}\n.cui-input:focus + .cui-input-icon[data-v-6242c9e6] {\n        margin: -3px;\n        box-shadow: 0 10px 20px -10px var(--cui-dark);\n        background: white;\n}\n.cui-input-append[data-v-6242c9e6] {\n        position: absolute;\n        right: 0;\n        height: 34px;\n        background: white;\n        border-radius: 12px;\n        line-height: 34px;\n        padding: 0 10px;\n        border: solid 1px var(--cui-gray-1);\n        font-size: 14px\n}\n";
 styleInject(css_248z$n);
 
-script$k.render = render$k;
-script$k.__scopeId = "data-v-6242c9e6";
+script$n.render = render$k;
+script$n.__scopeId = "data-v-6242c9e6";
 
-var script$j = {
+var script$m = {
   name: 'CuiTextarea',
   props: {
     modelValue: {
@@ -706,11 +687,7 @@ var script$j = {
   }
 };
 
-const _withId$e = /*#__PURE__*/withScopeId("data-v-d4c91e66");
-
-pushScopeId("data-v-d4c91e66");
-
-const _hoisted_1$e = {
+const _hoisted_1$f = {
   key: 0,
   class: "cui-textarea-label"
 };
@@ -719,44 +696,44 @@ const _hoisted_2$c = {
     "margin-right": "10px"
   }
 };
-const _hoisted_3$7 = {
+const _hoisted_3$9 = {
   key: 0
 };
-const _hoisted_4$4 = {
+const _hoisted_4$7 = {
   style: {
     "position": "relative"
   }
 };
-const _hoisted_5$2 = {
+const _hoisted_5$3 = ["disabled", "placeholder", "rows", "cols"];
+const _hoisted_6$3 = {
   key: 1,
   class: "cui-textarea-note"
 };
-
-popScopeId();
-
-const render$j = /*#__PURE__*/_withId$e((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("div", null, [$props.label ? (openBlock(), createBlock("label", _hoisted_1$e, [createVNode("span", _hoisted_2$c, toDisplayString($props.label), 1), $props.required ? (openBlock(), createBlock("span", _hoisted_3$7, toDisplayString($data.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createVNode("div", _hoisted_4$4, [withDirectives(createVNode("textarea", {
-    class: ["cui-textarea", {
+function render$j(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, [$props.label ? (openBlock(), createElementBlock("label", _hoisted_1$f, [createElementVNode("span", _hoisted_2$c, toDisplayString($props.label), 1), $props.required ? (openBlock(), createElementBlock("span", _hoisted_3$9, toDisplayString($data.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createElementVNode("div", _hoisted_4$7, [withDirectives(createElementVNode("textarea", {
+    class: normalizeClass(["cui-textarea", {
       disabled: $props.disabled,
       darker: $props.darker
-    }],
-    "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $props.modelValue = $event),
-    onInput: _cache[2] || (_cache[2] = (...args) => $options.changeValue && $options.changeValue(...args)),
+    }]),
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $props.modelValue = $event),
+    onInput: _cache[1] || (_cache[1] = function () {
+      return $options.changeValue && $options.changeValue(...arguments);
+    }),
     disabled: $props.disabled,
     clearable: "",
     placeholder: $props.placeholder,
     rows: $props.rows,
     cols: $props.cols
-  }, null, 42, ["disabled", "placeholder", "rows", "cols"]), [[vModelText, $props.modelValue]])]), !$props.noNote ? (openBlock(), createBlock("div", _hoisted_5$2, [createVNode("span", null, toDisplayString($data.noteDisplay), 1)])) : createCommentVNode("", true)]);
-});
+  }, null, 42, _hoisted_5$3), [[vModelText, $props.modelValue]])]), !$props.noNote ? (openBlock(), createElementBlock("div", _hoisted_6$3, [createElementVNode("span", null, toDisplayString($data.noteDisplay), 1)])) : createCommentVNode("", true)]);
+}
 
 var css_248z$m = "\n.cui-textarea-label[data-v-d4c91e66] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-textarea[data-v-d4c91e66] {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        padding: 5px 10px;\n        transition: all .2s ease\n}\n.cui-textarea.darker[data-v-d4c91e66] {\n        background: var(--cui-gray-3);\n}\n.cui-textarea.disabled[data-v-d4c91e66] {\n        color: var(--cui-gray-3)\n}\n.cui-textarea[data-v-d4c91e66]:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n        background: var(--cui-gray-1)\n}\n.cui-textarea.darker[data-v-d4c91e66]:focus {\n        background: var(--cui-gray-4)\n}\n.cui-textarea.darker[data-v-d4c91e66]:hover {\n        background: var(--cui-gray-4)\n}\n.cui-textarea-note[data-v-d4c91e66] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n";
 styleInject(css_248z$m);
 
-script$j.render = render$j;
-script$j.__scopeId = "data-v-d4c91e66";
+script$m.render = render$j;
+script$m.__scopeId = "data-v-d4c91e66";
 
-var script$i = {
+var script$l = {
   name: 'CuiCheckbox',
   props: {
     modelValue: {
@@ -791,46 +768,46 @@ var script$i = {
 
 };
 
-const _withId$d = /*#__PURE__*/withScopeId("data-v-6b76e5f7");
+const _withScopeId$2 = n => (pushScopeId("data-v-6b76e5f7"), n = n(), popScopeId(), n);
 
-pushScopeId("data-v-6b76e5f7");
+const _hoisted_1$e = ["for"];
 
-const _hoisted_1$d = /*#__PURE__*/createVNode("div", {
+const _hoisted_2$b = /*#__PURE__*/_withScopeId$2(() => /*#__PURE__*/createElementVNode("div", {
   class: "cui-checkbox-con"
-}, [/*#__PURE__*/createVNode("i", {
+}, [/*#__PURE__*/createElementVNode("i", {
   class: "cui-checkbox-icon fas fa-check"
-})], -1);
+})], -1));
 
-const _hoisted_2$b = {
+const _hoisted_3$8 = ["id", "disabled"];
+const _hoisted_4$6 = {
   class: "cui-checkbox-label"
 };
-
-popScopeId();
-
-const render$i = /*#__PURE__*/_withId$d((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("label", {
-    class: ["cui-checkbox-container", {
+function render$i(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("label", {
+    class: normalizeClass(["cui-checkbox-container", {
       selected: $props.modelValue,
       disabled: $props.disabled
-    }],
+    }]),
     for: $data.id
-  }, [_hoisted_1$d, withDirectives(createVNode("input", {
-    onChange: _cache[1] || (_cache[1] = (...args) => $options.toggleSelected && $options.toggleSelected(...args)),
+  }, [_hoisted_2$b, withDirectives(createElementVNode("input", {
+    onChange: _cache[0] || (_cache[0] = function () {
+      return $options.toggleSelected && $options.toggleSelected(...arguments);
+    }),
     class: "cui-checkbox",
     type: "checkbox",
     id: $data.id,
-    "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $props.modelValue = $event),
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $props.modelValue = $event),
     disabled: $props.disabled
-  }, null, 40, ["id", "disabled"]), [[vModelCheckbox, $props.modelValue]]), createVNode("div", _hoisted_2$b, toDisplayString($props.label), 1)], 10, ["for"]);
-});
+  }, null, 40, _hoisted_3$8), [[vModelCheckbox, $props.modelValue]]), createElementVNode("div", _hoisted_4$6, toDisplayString($props.label), 1)], 10, _hoisted_1$e);
+}
 
 var css_248z$l = "\n\n    /* Base State */\n.cui-checkbox-container[data-v-6b76e5f7] {\n        display: flex;\n        align-items: center;\n        width: fit-content; \n        margin: 5px 0;\n        position: relative\n}\n.cui-checkbox-container[data-v-6b76e5f7]:not(.disabled) {\n        cursor: pointer\n}\n.cui-checkbox[data-v-6b76e5f7] {\n        display: none\n}\n.cui-checkbox-con[data-v-6b76e5f7] {\n        position: absolute;\n        width: 15px;\n        height: 15px;\n        border-radius: 5px;\n        border: solid 2px var(--cui-gray-2);\n        transition: all .2s ease;\n        display: flex\n}\n.cui-checkbox-label[data-v-6b76e5f7] {\n        padding-left: 25px\n}\n\n    /* Hover State */\n.cui-checkbox-container:not(.disabled):not(.selected):hover .cui-checkbox-con[data-v-6b76e5f7],\n    .cui-checkbox-container.disabled .cui-checkbox-con[data-v-6b76e5f7] {\n        background: var(--cui-gray-1)\n}\n\n    /* Selected State */\n.cui-checkbox-container.selected .cui-checkbox-con[data-v-6b76e5f7] {\n        background: var(--cui-primary);\n        border-color: var(--cui-primary);\n        box-shadow: 0 0 0 0 var(--cui-primary);\n}\n.cui-checkbox-icon[data-v-6b76e5f7] {\n        color: white;\n        transform: scale(.1);\n        opacity: 0;\n        transition: all .2s ease\n}\n.cui-checkbox-container.selected .cui-checkbox-icon[data-v-6b76e5f7] {\n        transform: scale(.8);\n        opacity: 1\n}\n\n\n";
 styleInject(css_248z$l);
 
-script$i.render = render$i;
-script$i.__scopeId = "data-v-6b76e5f7";
+script$l.render = render$i;
+script$l.__scopeId = "data-v-6b76e5f7";
 
-var script$h = {
+var script$k = {
   name: 'CuiSwitch',
   props: {
     modelValue: {
@@ -872,48 +849,45 @@ var script$h = {
 
 };
 
-const _withId$c = /*#__PURE__*/withScopeId("data-v-d5d1517c");
-
-pushScopeId("data-v-d5d1517c");
-
-const _hoisted_1$c = {
+const _hoisted_1$d = {
   class: "cui-switch-wrapper"
 };
 const _hoisted_2$a = {
   key: 0,
   class: "cui-switch-label"
 };
-const _hoisted_3$6 = {
+const _hoisted_3$7 = {
   style: {
     "margin-right": "10px"
   }
 };
-const _hoisted_4$3 = {
+const _hoisted_4$5 = {
   class: "cui-switch-button"
 };
-
-popScopeId();
-
-const render$h = /*#__PURE__*/_withId$c((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("div", _hoisted_1$c, [$props.label ? (openBlock(), createBlock("label", _hoisted_2$a, [createVNode("span", _hoisted_3$6, toDisplayString($props.label), 1)])) : createCommentVNode("", true), createVNode("div", _hoisted_4$3, [withDirectives(createVNode("input", {
-    onChange: _cache[1] || (_cache[1] = (...args) => $options.toggleSelected && $options.toggleSelected(...args)),
+const _hoisted_5$2 = ["id", "disabled"];
+const _hoisted_6$2 = ["true-label", "false-label"];
+function render$h(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$d, [$props.label ? (openBlock(), createElementBlock("label", _hoisted_2$a, [createElementVNode("span", _hoisted_3$7, toDisplayString($props.label), 1)])) : createCommentVNode("", true), createElementVNode("div", _hoisted_4$5, [withDirectives(createElementVNode("input", {
+    onChange: _cache[0] || (_cache[0] = function () {
+      return $options.toggleSelected && $options.toggleSelected(...arguments);
+    }),
     class: "cui-switch-checkbox",
     type: "checkbox",
     id: $data.id,
-    "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $props.modelValue = $event),
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $props.modelValue = $event),
     disabled: $props.disabled
-  }, null, 40, ["id", "disabled"]), [[vModelCheckbox, $props.modelValue]]), createVNode("div", {
+  }, null, 40, _hoisted_5$2), [[vModelCheckbox, $props.modelValue]]), createElementVNode("div", {
     class: "cui-switch-knobs",
     "true-label": $props.trueLabel,
     "false-label": $props.falseLabel
-  }, null, 8, ["true-label", "false-label"])])]);
-});
+  }, null, 8, _hoisted_6$2)])]);
+}
 
 var css_248z$k = "\n.cui-switch-wrapper[data-v-d5d1517c] {\n        display: flex;\n        align-items: center;\n}\n.cui-switch-label[data-v-d5d1517c] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-switch-button[data-v-d5d1517c]\n    {\n        position: relative;\n        width: 74px;\n        height: 36px;\n        overflow: hidden;\n        background: var(--cui-gray-2);\n}\n.cui-switch-button[data-v-d5d1517c], .cui-switch-button[data-v-d5d1517c] {\n        border-radius: 100px;\n}\n.cui-switch-checkbox[data-v-d5d1517c]\n    {\n        position: relative;\n        width: 100%;\n        height: 100%;\n        padding: 0;\n        margin: 0;\n        opacity: 0;\n        cursor: pointer;\n        z-index: 3;\n}\n.cui-switch-knobs[data-v-d5d1517c]\n    {\n        z-index: 2;\n}\n.cui-switch-knobs[data-v-d5d1517c]:before\n    {\n        content: attr(false-label);\n        position: absolute;\n        top: 4px;\n        left: 4px;\n        width: 20px;\n        height: 10px;\n        color: #fff;\n        font-size: 10px;\n        font-weight: bold;\n        text-align: center;\n        line-height: 1;\n        padding: 9px 4px;\n        background-color: var(--cui-gray-5);\n        border-radius: 50%;\n        transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);\n}\n.cui-switch-checkbox:active + .cui-switch-knobs[data-v-d5d1517c]:before\n    {\n        width: 46px;\n        border-radius: 100px;\n}\n.cui-switch-checkbox:checked:active + .cui-switch-knobs[data-v-d5d1517c]:before\n    {\n        margin-left: -26px;\n}\n.cui-switch-checkbox:checked + .cui-switch-knobs[data-v-d5d1517c]:before\n    {\n        content: attr(true-label);\n        left: 42px;\n        background-color: var(--cui-primary);\n}\n\n";
 styleInject(css_248z$k);
 
-script$h.render = render$h;
-script$h.__scopeId = "data-v-d5d1517c";
+script$k.render = render$h;
+script$k.__scopeId = "data-v-d5d1517c";
 
 var top = 'top';
 var bottom = 'bottom';
@@ -1071,17 +1045,39 @@ function getBasePlacement$1(placement) {
   return placement.split('-')[0];
 }
 
-function getBoundingClientRect(element) {
+// import { isHTMLElement } from './instanceOf';
+function getBoundingClientRect(element, // eslint-disable-next-line unused-imports/no-unused-vars
+includeScale) {
+
   var rect = element.getBoundingClientRect();
+  var scaleX = 1;
+  var scaleY = 1; // FIXME:
+  // `offsetWidth` returns an integer while `getBoundingClientRect`
+  // returns a float. This results in `scaleX` or `scaleY` being
+  // non-1 when it should be for elements that aren't a full pixel in
+  // width or height.
+  // if (isHTMLElement(element) && includeScale) {
+  //   const offsetHeight = element.offsetHeight;
+  //   const offsetWidth = element.offsetWidth;
+  //   // Do not attempt to divide by 0, otherwise we get `Infinity` as scale
+  //   // Fallback to 1 in case both values are `0`
+  //   if (offsetWidth > 0) {
+  //     scaleX = rect.width / offsetWidth || 1;
+  //   }
+  //   if (offsetHeight > 0) {
+  //     scaleY = rect.height / offsetHeight || 1;
+  //   }
+  // }
+
   return {
-    width: rect.width,
-    height: rect.height,
-    top: rect.top,
-    right: rect.right,
-    bottom: rect.bottom,
-    left: rect.left,
-    x: rect.left,
-    y: rect.top
+    width: rect.width / scaleX,
+    height: rect.height / scaleY,
+    top: rect.top / scaleY,
+    right: rect.right / scaleX,
+    bottom: rect.bottom / scaleY,
+    left: rect.left / scaleX,
+    x: rect.left / scaleX,
+    y: rect.top / scaleY
   };
 }
 
@@ -1336,6 +1332,10 @@ var arrow$2 = {
   requiresIfExists: ['preventOverflow']
 };
 
+function getVariation(placement) {
+  return placement.split('-')[1];
+}
+
 var unsetSides = {
   top: 'auto',
   right: 'auto',
@@ -1362,6 +1362,7 @@ function mapToStyles(_ref2) {
   var popper = _ref2.popper,
       popperRect = _ref2.popperRect,
       placement = _ref2.placement,
+      variation = _ref2.variation,
       offsets = _ref2.offsets,
       position = _ref2.position,
       gpuAcceleration = _ref2.gpuAcceleration,
@@ -1388,7 +1389,7 @@ function mapToStyles(_ref2) {
     if (offsetParent === getWindow(popper)) {
       offsetParent = getDocumentElement(popper);
 
-      if (getComputedStyle$1(offsetParent).position !== 'static') {
+      if (getComputedStyle$1(offsetParent).position !== 'static' && position === 'absolute') {
         heightProp = 'scrollHeight';
         widthProp = 'scrollWidth';
       }
@@ -1397,14 +1398,14 @@ function mapToStyles(_ref2) {
 
     offsetParent = offsetParent;
 
-    if (placement === top) {
+    if (placement === top || (placement === left || placement === right) && variation === end) {
       sideY = bottom; // $FlowFixMe[prop-missing]
 
       y -= offsetParent[heightProp] - popperRect.height;
       y *= gpuAcceleration ? 1 : -1;
     }
 
-    if (placement === left) {
+    if (placement === left || (placement === top || placement === bottom) && variation === end) {
       sideX = right; // $FlowFixMe[prop-missing]
 
       x -= offsetParent[widthProp] - popperRect.width;
@@ -1419,7 +1420,7 @@ function mapToStyles(_ref2) {
   if (gpuAcceleration) {
     var _Object$assign;
 
-    return Object.assign({}, commonStyles, (_Object$assign = {}, _Object$assign[sideY] = hasY ? '0' : '', _Object$assign[sideX] = hasX ? '0' : '', _Object$assign.transform = (win.devicePixelRatio || 1) < 2 ? "translate(" + x + "px, " + y + "px)" : "translate3d(" + x + "px, " + y + "px, 0)", _Object$assign));
+    return Object.assign({}, commonStyles, (_Object$assign = {}, _Object$assign[sideY] = hasY ? '0' : '', _Object$assign[sideX] = hasX ? '0' : '', _Object$assign.transform = (win.devicePixelRatio || 1) <= 1 ? "translate(" + x + "px, " + y + "px)" : "translate3d(" + x + "px, " + y + "px, 0)", _Object$assign));
   }
 
   return Object.assign({}, commonStyles, (_Object$assign2 = {}, _Object$assign2[sideY] = hasY ? y + "px" : '', _Object$assign2[sideX] = hasX ? x + "px" : '', _Object$assign2.transform = '', _Object$assign2));
@@ -1437,6 +1438,7 @@ function computeStyles(_ref4) {
 
   var commonStyles = {
     placement: getBasePlacement$1(state.placement),
+    variation: getVariation(state.placement),
     popper: state.elements.popper,
     popperRect: state.rects.popper,
     gpuAcceleration: gpuAcceleration
@@ -1739,10 +1741,6 @@ function getClippingRect(element, boundary, rootBoundary) {
   return clippingRect;
 }
 
-function getVariation(placement) {
-  return placement.split('-')[1];
-}
-
 function computeOffsets(_ref) {
   var reference = _ref.reference,
       element = _ref.element,
@@ -1828,11 +1826,10 @@ function detectOverflow(state, options) {
       padding = _options$padding === void 0 ? 0 : _options$padding;
   var paddingObject = mergePaddingObject(typeof padding !== 'number' ? padding : expandToHashMap(padding, basePlacements));
   var altContext = elementContext === popper ? reference : popper;
-  var referenceElement = state.elements.reference;
   var popperRect = state.rects.popper;
   var element = state.elements[altBoundary ? altContext : elementContext];
   var clippingClientRect = getClippingRect(isElement$1(element) ? element : element.contextElement || getDocumentElement(state.elements.popper), boundary, rootBoundary);
-  var referenceClientRect = getBoundingClientRect(referenceElement);
+  var referenceClientRect = getBoundingClientRect(state.elements.reference);
   var popperOffsets = computeOffsets({
     reference: referenceClientRect,
     element: popperRect,
@@ -2309,16 +2306,24 @@ function getNodeScroll(node) {
   }
 }
 
+function isElementScaled(element) {
+  var rect = element.getBoundingClientRect();
+  var scaleX = rect.width / element.offsetWidth || 1;
+  var scaleY = rect.height / element.offsetHeight || 1;
+  return scaleX !== 1 || scaleY !== 1;
+} // Returns the composite rect of an element relative to its offsetParent.
 // Composite means it takes into account transforms as well as layout.
+
 
 function getCompositeRect(elementOrVirtualElement, offsetParent, isFixed) {
   if (isFixed === void 0) {
     isFixed = false;
   }
 
+  var isOffsetParentAnElement = isHTMLElement(offsetParent);
+  isHTMLElement(offsetParent) && isElementScaled(offsetParent);
   var documentElement = getDocumentElement(offsetParent);
   var rect = getBoundingClientRect(elementOrVirtualElement);
-  var isOffsetParentAnElement = isHTMLElement(offsetParent);
   var scroll = {
     scrollLeft: 0,
     scrollTop: 0
@@ -2472,7 +2477,8 @@ function popperGenerator(generatorOptions) {
     var isDestroyed = false;
     var instance = {
       state: state,
-      setOptions: function setOptions(options) {
+      setOptions: function setOptions(setOptionsAction) {
+        var options = typeof setOptionsAction === 'function' ? setOptionsAction(state.options) : setOptionsAction;
         cleanupModifierEffects();
         state.options = Object.assign({}, defaultOptions, state.options, options);
         state.scrollParents = {
@@ -2622,7 +2628,7 @@ var createPopper = /*#__PURE__*/popperGenerator({
 }); // eslint-disable-next-line import/no-unused-modules
 
 //If multiple NEEDS to have slected key in object value!!
-var script$g = {
+var script$j = {
   name: 'CuiSelect',
   props: {
     modelValue: {
@@ -2863,11 +2869,7 @@ var script$g = {
   }
 };
 
-const _withId$b = /*#__PURE__*/withScopeId("data-v-5c7a37d4");
-
-pushScopeId("data-v-5c7a37d4");
-
-const _hoisted_1$b = {
+const _hoisted_1$c = {
   key: 0,
   class: "cui-select-label"
 };
@@ -2876,10 +2878,10 @@ const _hoisted_2$9 = {
     "margin-right": "10px"
   }
 };
-const _hoisted_3$5 = {
+const _hoisted_3$6 = {
   key: 0
 };
-const _hoisted_4$2 = {
+const _hoisted_4$4 = {
   key: 0
 };
 const _hoisted_5$1 = {
@@ -2890,119 +2892,124 @@ const _hoisted_6$1 = {
   key: 1,
   class: "cui-select-multiple-cont"
 };
-const _hoisted_7$1 = {
+const _hoisted_7$1 = ["onClick"];
+const _hoisted_8$1 = {
   key: 2
 };
-const _hoisted_8$1 = {
+const _hoisted_9$1 = {
   key: 1
 };
-const _hoisted_9$1 = {
+const _hoisted_10$1 = {
   key: 0
 };
-const _hoisted_10$1 = {
+const _hoisted_11$1 = ["plcaeholder"];
+const _hoisted_12$1 = {
   key: 1,
   class: "cui-placeholder"
 };
-const _hoisted_11$1 = {
+const _hoisted_13 = {
   key: 2,
   class: "cui-select-multiple-cont"
 };
-const _hoisted_12$1 = {
+const _hoisted_14 = ["onClick"];
+const _hoisted_15 = {
   key: 3
 };
-const _hoisted_13 = {
+const _hoisted_16 = {
   key: 0,
   class: "loader"
-};
-const _hoisted_14 = {
-  key: 1
-};
-const _hoisted_15 = {
-  key: 1
-};
-const _hoisted_16 = {
-  key: 0
 };
 const _hoisted_17 = {
   key: 1
 };
-const _hoisted_18 = {
-  key: 2
-};
+const _hoisted_18 = ["onClick"];
 const _hoisted_19 = {
-  class: "cui-select-empty"
+  key: 1
 };
 const _hoisted_20 = {
+  key: 0
+};
+const _hoisted_21 = {
+  key: 1
+};
+const _hoisted_22 = {
+  key: 2
+};
+const _hoisted_23 = {
+  class: "cui-select-empty"
+};
+const _hoisted_24 = {
   key: 1,
   class: "cui-select-note"
 };
-
-popScopeId();
-
-const render$g = /*#__PURE__*/_withId$b((_ctx, _cache, $props, $setup, $data, $options) => {
+function render$g(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_cui_tag = resolveComponent("cui-tag");
 
   const _component_cui_checkbox = resolveComponent("cui-checkbox");
 
-  return openBlock(), createBlock("div", {
-    class: ["cui-select-container", {
+  return openBlock(), createElementBlock("div", {
+    class: normalizeClass(["cui-select-container", {
       disabled: $props.disabled
-    }],
-    onClick: _cache[5] || (_cache[5] = withModifiers((...args) => $options.handleClick && $options.handleClick(...args), ["stop"]))
-  }, [$props.label ? (openBlock(), createBlock("label", _hoisted_1$b, [createVNode("span", _hoisted_2$9, toDisplayString($props.label), 1), $props.required ? (openBlock(), createBlock("span", _hoisted_3$5, toDisplayString($data.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createVNode("div", {
+    }]),
+    onClick: _cache[4] || (_cache[4] = withModifiers(function () {
+      return $options.handleClick && $options.handleClick(...arguments);
+    }, ["stop"]))
+  }, [$props.label ? (openBlock(), createElementBlock("label", _hoisted_1$c, [createElementVNode("span", _hoisted_2$9, toDisplayString($props.label), 1), $props.required ? (openBlock(), createElementBlock("span", _hoisted_3$6, toDisplayString($data.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createElementVNode("div", {
     ref: "select",
-    class: ["cui-select", {
+    class: normalizeClass(["cui-select", {
       focused: $data.focused,
       'has-color': $props.color,
       disabled: $props.disabled
-    }],
-    style: {
+    }]),
+    style: normalizeStyle({
       background: $options.selectBackground
-    }
-  }, [!$data.focused ? (openBlock(), createBlock("div", _hoisted_4$2, [!$data.value || $data.value.length < 1 ? (openBlock(), createBlock("div", _hoisted_5$1, toDisplayString($props.placeholder), 1)) : $props.multiple ? (openBlock(), createBlock("div", _hoisted_6$1, [(openBlock(true), createBlock(Fragment$1, null, renderList($data.value, (valueItem, index) => {
+    })
+  }, [!$data.focused ? (openBlock(), createElementBlock("div", _hoisted_4$4, [!$data.value || $data.value.length < 1 ? (openBlock(), createElementBlock("div", _hoisted_5$1, toDisplayString($props.placeholder), 1)) : $props.multiple ? (openBlock(), createElementBlock("div", _hoisted_6$1, [(openBlock(true), createElementBlock(Fragment$1, null, renderList($data.value, (valueItem, index) => {
     return openBlock(), createBlock(_component_cui_tag, {
       class: "cui-select-tag",
       key: index
     }, {
-      default: _withId$b(() => [createTextVNode(toDisplayString(valueItem[$props.displayValueProp]) + " ", 1), createVNode("i", {
+      default: withCtx(() => [createTextVNode(toDisplayString(valueItem[$props.displayValueProp]) + " ", 1), createElementVNode("i", {
         class: "cui-select-tag-icon fas fa-times-circle",
         onClick: withModifiers($event => $options.selectItem(valueItem), ["stop"])
-      }, null, 8, ["onClick"])]),
+      }, null, 8, _hoisted_7$1)]),
       _: 2
     }, 1024);
-  }), 128))])) : (openBlock(), createBlock("div", _hoisted_7$1, toDisplayString($options.displayValue), 1))])) : (openBlock(), createBlock("div", _hoisted_8$1, [$props.search && !$props.multiple ? (openBlock(), createBlock("div", _hoisted_9$1, [withDirectives(createVNode("input", {
+  }), 128))])) : (openBlock(), createElementBlock("div", _hoisted_8$1, toDisplayString($options.displayValue), 1))])) : (openBlock(), createElementBlock("div", _hoisted_9$1, [$props.search && !$props.multiple ? (openBlock(), createElementBlock("div", _hoisted_10$1, [withDirectives(createElementVNode("input", {
     ref: "input",
     class: "cui-select-input",
-    "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $data.searchValue = $event),
-    onClick: _cache[2] || (_cache[2] = withModifiers(() => {}, ["stop"])),
-    onInput: _cache[3] || (_cache[3] = (...args) => $options.searchInput && $options.searchInput(...args)),
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $data.searchValue = $event),
+    onClick: _cache[1] || (_cache[1] = withModifiers(() => {}, ["stop"])),
+    onInput: _cache[2] || (_cache[2] = function () {
+      return $options.searchInput && $options.searchInput(...arguments);
+    }),
     plcaeholder: $props.placeholder
-  }, null, 40, ["plcaeholder"]), [[vModelText, $data.searchValue]])])) : !$data.value ? (openBlock(), createBlock("div", _hoisted_10$1, toDisplayString($props.placeholder), 1)) : $props.multiple ? (openBlock(), createBlock("div", _hoisted_11$1, [(openBlock(true), createBlock(Fragment$1, null, renderList($props.modelValue, (valueItem, index) => {
+  }, null, 40, _hoisted_11$1), [[vModelText, $data.searchValue]])])) : !$data.value ? (openBlock(), createElementBlock("div", _hoisted_12$1, toDisplayString($props.placeholder), 1)) : $props.multiple ? (openBlock(), createElementBlock("div", _hoisted_13, [(openBlock(true), createElementBlock(Fragment$1, null, renderList($props.modelValue, (valueItem, index) => {
     return openBlock(), createBlock(_component_cui_tag, {
       class: "cui-select-tag",
       key: index
     }, {
-      default: _withId$b(() => [createTextVNode(toDisplayString(valueItem[$props.displayValueProp]) + " ", 1), createVNode("i", {
+      default: withCtx(() => [createTextVNode(toDisplayString(valueItem[$props.displayValueProp]) + " ", 1), createElementVNode("i", {
         class: "cui-select-tag-icon fas fa-times-circle",
         onClick: withModifiers($event => $options.selectItem(valueItem), ["stop"])
-      }, null, 8, ["onClick"])]),
+      }, null, 8, _hoisted_14)]),
       _: 2
     }, 1024);
-  }), 128))])) : (openBlock(), createBlock("div", _hoisted_12$1, toDisplayString($options.displayValue), 1))])), createVNode("div", null, [createVNode("i", {
-    class: ["cui-select-icon fas fa-chevron-down", {
+  }), 128))])) : (openBlock(), createElementBlock("div", _hoisted_15, toDisplayString($options.displayValue), 1))])), createElementVNode("div", null, [createElementVNode("i", {
+    class: normalizeClass(["cui-select-icon fas fa-chevron-down", {
       focused: $data.focused
-    }]
-  }, null, 2)])], 6), createVNode("div", {
+    }])
+  }, null, 2)])], 6), createElementVNode("div", {
     ref: "dropdown",
-    class: ["cui-select-list", {
+    class: normalizeClass(["cui-select-list", {
       expanded: $data.focused,
       retracted: $data.retracting
-    }],
-    style: {
+    }]),
+    style: normalizeStyle({
       width: $data.dropdownWidth + 'px'
-    }
-  }, [$props.loading ? (openBlock(), createBlock("div", _hoisted_13)) : createCommentVNode("", true), $props.data.length > 0 ? (openBlock(), createBlock("div", _hoisted_14, [(openBlock(true), createBlock(Fragment$1, null, renderList($data.dropdownValues, (item, index) => {
-    return openBlock(), createBlock("div", {
+    })
+  }, [$props.loading ? (openBlock(), createElementBlock("div", _hoisted_16)) : createCommentVNode("", true), $props.data.length > 0 ? (openBlock(), createElementBlock("div", _hoisted_17, [(openBlock(true), createElementBlock(Fragment$1, null, renderList($data.dropdownValues, (item, index) => {
+    return openBlock(), createElementBlock("div", {
       class: "cui-select-dropdown-item",
       key: index,
       onClick: withModifiers($event => $options.selectItem(item, index), ["stop"])
@@ -3010,12 +3017,12 @@ const render$g = /*#__PURE__*/_withId$b((_ctx, _cache, $props, $setup, $data, $o
       key: 0,
       modelValue: item.selected,
       "onUpdate:modelValue": $event => item.selected = $event,
-      onClick: _cache[4] || (_cache[4] = withModifiers(() => {}, ["stop"]))
-    }, null, 8, ["modelValue", "onUpdate:modelValue"])) : createCommentVNode("", true), !_ctx.$slots.dropdownItem ? (openBlock(), createBlock("span", _hoisted_15, [$options.dataIsObject ? (openBlock(), createBlock("span", _hoisted_16, toDisplayString(item[$props.displayValueProp]), 1)) : (openBlock(), createBlock("span", _hoisted_17, toDisplayString(item), 1))])) : createCommentVNode("", true), renderSlot(_ctx.$slots, "dropdownItem", {
+      onClick: _cache[3] || (_cache[3] = withModifiers(() => {}, ["stop"]))
+    }, null, 8, ["modelValue", "onUpdate:modelValue"])) : createCommentVNode("", true), !_ctx.$slots.dropdownItem ? (openBlock(), createElementBlock("span", _hoisted_19, [$options.dataIsObject ? (openBlock(), createElementBlock("span", _hoisted_20, toDisplayString(item[$props.displayValueProp]), 1)) : (openBlock(), createElementBlock("span", _hoisted_21, toDisplayString(item), 1))])) : createCommentVNode("", true), renderSlot(_ctx.$slots, "dropdownItem", {
       item: item
-    })], 8, ["onClick"]);
-  }), 128))])) : (openBlock(), createBlock("div", _hoisted_18, [createVNode("div", _hoisted_19, toDisplayString($data.trans.empty), 1)]))], 6), !$props.noNote ? (openBlock(), createBlock("div", _hoisted_20, [createVNode("span", null, toDisplayString($data.noteDisplay), 1)])) : createCommentVNode("", true)], 2);
-});
+    })], 8, _hoisted_18);
+  }), 128))])) : (openBlock(), createElementBlock("div", _hoisted_22, [createElementVNode("div", _hoisted_23, toDisplayString($data.trans.empty), 1)]))], 6), !$props.noNote ? (openBlock(), createElementBlock("div", _hoisted_24, [createElementVNode("span", null, toDisplayString($data.noteDisplay), 1)])) : createCommentVNode("", true)], 2);
+}
 
 var css_248z$j = "\n@keyframes expand-5c7a37d4{\nfrom{\n            margin-top: -10px;\n            opacity: 0\n}\nto{\n            opacity: 1\n}\n}\n@keyframes retract-5c7a37d4{\nfrom{\n            opacity: 1;\n}\nto{\n            margin-top: -10px;\n            opacity: 0;\n}\n}\n.cui-select-label[data-v-5c7a37d4] {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-select[data-v-5c7a37d4] {\n        background: var(--cui-gray-0);\n        border-radius: 12px;\n        height: 26px;\n        padding: 2px 10px;\n        transition: all .2s ease;\n        font-size: 13.3333px;\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        overflow: hidden;\n        height: fit-content;\n        min-height: 32px;\n        font-weight: normal !important;\n}\n.cui-select:not(.focused).has-color[data-v-5c7a37d4],\n    .cui-select:not(.focused).has-color .cui-placeholder[data-v-5c7a37d4],\n    .cui-select:not(.focused).has-color .cui-select-icon[data-v-5c7a37d4] {\n        color: white\n}\n.cui-select.focused[data-v-5c7a37d4] {\n        border-bottom-right-radius: 0;\n        border-bottom-left-radius: 0;\n}\n.cui-select-container[data-v-5c7a37d4] {\n        cursor: pointer\n}\n.cui-select-container.disabled[data-v-5c7a37d4], .cui-select.disabled[data-v-5c7a37d4] {\n        cursor: not-allowed\n}\n.cui-select-container:hover .cui-select[data-v-5c7a37d4]:not(.disabled),\n    .cui-select.focused[data-v-5c7a37d4] {\n        padding-left: 13px;\n        padding-right: 7px;\n        background: white;\n        transform: translate(0px, -4px);\n        box-shadow: 0px 5px 25px -4px var(--cui-gray-4);\n        cursor: pointer\n}\n.cui-select-list[data-v-5c7a37d4] {\n        display: none;\n        background: white;\n        border-bottom-right-radius: 12px;\n        border-bottom-left-radius: 12px;\n        box-shadow:0px 14px 13px 2px var(--cui-gray-4);\n        z-index: 10;\n        width: 240px;\n        overflow: auto;\n        max-height: 200px;\n}\n.cui-select-list.expanded[data-v-5c7a37d4] {\n        display: block;\n        animation: expand-5c7a37d4 .2s ease-out 0s;\n}\n.cui-select-list.retracted[data-v-5c7a37d4] {\n        animation: retract-5c7a37d4 .2s ease-out 0s;\n}\n.cui-select-dropdown-item[data-v-5c7a37d4] {\n        padding: 8px 10px;\n        transition: all .2s ease;\n        display: flex;\n        font-weight: normal !important;\n        color: var(--cui-font-color)!important\n}\n.cui-select-dropdown-item[data-v-5c7a37d4]:hover {\n        background: var(--cui-gray-1);\n        cursor: pointer\n}\n.cui-select-input[data-v-5c7a37d4],\n    .cui-select-input[data-v-5c7a37d4]:focus {\n        border: none;\n        outline: none\n}\n.cui-select-empty[data-v-5c7a37d4] {\n        padding: 8px 10px;\n        color: var(--cui-gray-5);\n        font-size: 12px\n}\n.cui-select-icon[data-v-5c7a37d4] {\n        transition: all .2s ease;\n        font-size: 12px;\n        color: var(--cui-gray-5);\n        padding: 5px\n}\n.cui-select-icon.focused[data-v-5c7a37d4] {\n        transform: rotate(180deg)\n}\n.cui-select-multiple-cont[data-v-5c7a37d4] {\n        display: flex;\n        align-items: center;\n        flex-wrap: wrap\n}\n.cui-select-tag-icon[data-v-5c7a37d4] {\n        margin-left: 2px;\n        color: var(--cui-font-color);\n        opacity: 0.6;\n        transition: all .2s ease;\n}\n.cui-select-tag-icon[data-v-5c7a37d4]:hover {\n        opacity: 1;\n}\n.cui-select-note[data-v-5c7a37d4] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n\n";
 styleInject(css_248z$j);
@@ -3023,8 +3030,8 @@ styleInject(css_248z$j);
 var css_248z$i = "\n.cui-select-tag {\n        font-size: 12px!important;\n        height: 28px!important;\n        background: var(--cui-gray-3)!important;\n        color: var(--cui-font-color)!important;\n        margin: 2px!important;\n        padding: 0 5px!important\n}\n";
 styleInject(css_248z$i);
 
-script$g.render = render$g;
-script$g.__scopeId = "data-v-5c7a37d4";
+script$j.render = render$g;
+script$j.__scopeId = "data-v-5c7a37d4";
 
 function isDate(value) {
   return value instanceof Date || Object.prototype.toString.call(value) === '[object Date]';
@@ -3123,6 +3130,10 @@ function pad(val) {
   }
 
   return sign + output;
+}
+
+function getOffset(date) {
+  return Math.round(date.getTimezoneOffset() / 15) * 15;
 }
 
 function formatTimezone(offset) {
@@ -3257,11 +3268,11 @@ var formatFlags = {
   },
   // Timezone: -01:00, +00:00, ... +12:00
   Z: function Z(date) {
-    return formatTimezone(date.getTimezoneOffset(), ':');
+    return formatTimezone(getOffset(date), ':');
   },
   // Timezone: -0100, +0000, ... +1200
   ZZ: function ZZ(date) {
-    return formatTimezone(date.getTimezoneOffset());
+    return formatTimezone(getOffset(date));
   },
   // Seconds timestamp: 512969520
   X: function X(date) {
@@ -3281,7 +3292,6 @@ var formatFlags = {
     return pad(formatFlags.w(date, locale), 2);
   }
 };
-
 function format(val, str) {
   var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
   var formatStr = str ? String(str) : 'YYYY-MM-DDTHH:mm:ss.SSSZ';
@@ -3523,6 +3533,22 @@ function getFullInputArray(input) {
   return result;
 }
 
+function createDate$1(y, m, d, h, M, s, ms) {
+  var date;
+
+  if (y < 100 && y >= 0) {
+    date = new Date(y + 400, m, d, h, M, s, ms);
+
+    if (isFinite(date.getFullYear())) {
+      date.setFullYear(y);
+    }
+  } else {
+    date = new Date(y, m, d, h, M, s, ms);
+  }
+
+  return date;
+}
+
 function createUTCDate() {
   var date;
 
@@ -3620,9 +3646,16 @@ function parse(str, format) {
       return new Date(firstDate.getTime() + (week - 1) * 7 * 24 * 3600 * 1000);
     }
 
-    var utcDate = createUTCDate.apply(void 0, _toConsumableArray(getFullInputArray(inputArray, backupDate)));
-    var offsetMilliseconds = (offset === undefined ? utcDate.getTimezoneOffset() : offset) * 60 * 1000;
-    var parsedDate = new Date(utcDate.getTime() + offsetMilliseconds); // check weekday
+    var parsedDate;
+    var result = getFullInputArray(inputArray, backupDate);
+
+    if (offset !== undefined) {
+      result[6] += offset * 60 * 1000;
+      parsedDate = createUTCDate.apply(void 0, _toConsumableArray(result));
+    } else {
+      parsedDate = createDate$1.apply(void 0, _toConsumableArray(result));
+    } // check weekday
+
 
     if (weekday !== undefined && parsedDate.getDay() !== weekday) {
       return new Date(NaN);
@@ -3907,7 +3940,7 @@ function chunk(arr, size) {
  * @returns {Boolean}
  */
 
-function isObject$1(obj) {
+function isObject$2(obj) {
   return Object.prototype.toString.call(obj) === '[object Object]';
 }
 /**
@@ -3917,7 +3950,7 @@ function isObject$1(obj) {
  */
 
 function pick(obj, props) {
-  if (!isObject$1(obj)) return {};
+  if (!isObject$2(obj)) return {};
 
   if (!Array.isArray(props)) {
     props = [props];
@@ -3938,17 +3971,17 @@ function pick(obj, props) {
  */
 
 function mergeDeep$1(target, source) {
-  if (!isObject$1(target)) {
+  if (!isObject$2(target)) {
     return {};
   }
 
   var result = target;
 
-  if (isObject$1(source)) {
+  if (isObject$2(source)) {
     Object.keys(source).forEach(function (key) {
       var value = source[key];
 
-      if (isObject$1(value) && isObject$1(target[key])) {
+      if (isObject$2(value) && isObject$2(target[key])) {
         value = mergeDeep$1(target[key], value);
       }
 
@@ -4137,7 +4170,7 @@ function getScrollParent(node) {
   return scroll ? node : getScrollParent(node.parentNode, until);
 }
 
-var script$f = {
+var script$i = {
   name: 'Popup',
   inject: {
     prefixClass: {
@@ -4258,9 +4291,9 @@ function render$f(_ctx, _cache, $props, $setup, $data, $options) {
   }, 8, ["name"]);
 }
 
-script$f.render = render$f;
+script$i.render = render$f;
 
-var _hoisted_1$a = {
+var _hoisted_1$b = {
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 1024 1024",
   width: "1em",
@@ -4272,7 +4305,7 @@ var _hoisted_2$8 = /*#__PURE__*/createVNode("path", {
 }, null, -1);
 
 function render$1$1(_ctx, _cache) {
-  return openBlock(), createBlock("svg", _hoisted_1$a, [_hoisted_2$8]);
+  return openBlock(), createBlock("svg", _hoisted_1$b, [_hoisted_2$8]);
 }
 
 var script$1$1 = {};
@@ -6301,7 +6334,7 @@ var DatePicker = {
       type: Array,
       validator: function validator(value) {
         return Array.isArray(value) && value.every(function (v) {
-          return isObject$1(v) && typeof v.text === 'string' && typeof v.onClick === 'function';
+          return isObject$2(v) && typeof v.text === 'string' && typeof v.onClick === 'function';
         });
       },
       default: function _default() {
@@ -6378,7 +6411,7 @@ var DatePicker = {
       return !this.disabled && this.clearable && this.text;
     },
     locale: function locale() {
-      if (isObject$1(this.lang)) {
+      if (isObject$2(this.lang)) {
         return mergeDeep$1(getLocale(), this.lang);
       }
 
@@ -6411,7 +6444,7 @@ var DatePicker = {
       }
     },
     getFormatter: function getFormatter(key) {
-      return isObject$1(this.formatter) && this.formatter[key] || isObject$1(this.format) && this.format[key];
+      return isObject$2(this.formatter) && this.formatter[key] || isObject$2(this.format) && this.format[key];
     },
     getWeek: function getWeek$1(date, options) {
       if (typeof this.getFormatter('getWeek') === 'function') {
@@ -6565,7 +6598,7 @@ var DatePicker = {
       var index = evt.currentTarget.getAttribute('data-index');
       var item = this.shortcuts[parseInt(index, 10)];
 
-      if (isObject$1(item) && typeof item.onClick === 'function') {
+      if (isObject$2(item) && typeof item.onClick === 'function') {
         var date = item.onClick(this);
 
         if (date) {
@@ -6771,7 +6804,7 @@ var DatePicker = {
     }, [this.hasSlot('header') ? this.renderHeader() : null, this.renderContent(), this.hasSlot('footer') || this.confirm ? this.renderFooter() : null]);
     return createVNode("div", {
       "class": (_ref = {}, _defineProperty(_ref, "".concat(prefixClass, "-datepicker"), true), _defineProperty(_ref, "".concat(prefixClass, "-datepicker-range"), this.range), _defineProperty(_ref, "".concat(prefixClass, "-datepicker-inline"), inline), _defineProperty(_ref, "disabled", disabled), _ref)
-    }, [!inline ? this.renderInput() : null, !inline ? createVNode(script$f, {
+    }, [!inline ? this.renderInput() : null, !inline ? createVNode(script$i, {
       "ref": "popup",
       "class": this.popupClass,
       "style": this.popupStyle,
@@ -6803,9 +6836,11 @@ _extends(DatePicker, {
   DatetimeRange: DatetimeRange
 });
 
+var DatePicker$1 = DatePicker;
+
 var index_esm = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    'default': DatePicker
+    'default': DatePicker$1
 });
 
 var css_248z$h = ".mx-icon-left:before,.mx-icon-right:before,.mx-icon-double-left:before,.mx-icon-double-right:before,.mx-icon-double-left:after,.mx-icon-double-right:after{content:\"\";position:relative;top:-1px;display:inline-block;width:10px;height:10px;vertical-align:middle;border-style:solid;border-color:currentColor;border-width:2px 0 0 2px;border-radius:1px;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-transform-origin:center;transform-origin:center;-webkit-transform:rotate(-45deg) scale(0.7);transform:rotate(-45deg) scale(0.7)}.mx-icon-double-left:after{left:-4px}.mx-icon-double-right:before{left:4px}.mx-icon-right:before,.mx-icon-double-right:before,.mx-icon-double-right:after{-webkit-transform:rotate(135deg) scale(0.7);transform:rotate(135deg) scale(0.7)}.mx-btn{-webkit-box-sizing:border-box;box-sizing:border-box;line-height:1;font-size:14px;font-weight:500;padding:7px 15px;margin:0;cursor:pointer;background-color:transparent;outline:none;border:1px solid rgba(0,0,0,.1);border-radius:4px;color:#73879c;white-space:nowrap}.mx-btn:hover{border-color:#1284e7;color:#1284e7}.mx-btn-text{border:0;padding:0 4px;text-align:left;line-height:inherit}.mx-scrollbar{height:100%}.mx-scrollbar:hover .mx-scrollbar-track{opacity:1}.mx-scrollbar-wrap{height:100%;overflow-x:hidden;overflow-y:auto}.mx-scrollbar-track{position:absolute;top:2px;right:2px;bottom:2px;width:6px;z-index:1;border-radius:4px;opacity:0;-webkit-transition:opacity .24s ease-out;transition:opacity .24s ease-out}.mx-scrollbar-track .mx-scrollbar-thumb{position:absolute;width:100%;height:0;cursor:pointer;border-radius:inherit;background-color:rgba(144,147,153,.3);-webkit-transition:background-color .3s;transition:background-color .3s}.mx-zoom-in-down-enter-active,.mx-zoom-in-down-leave-active{opacity:1;-webkit-transform:scaleY(1);transform:scaleY(1);-webkit-transition:opacity .3s cubic-bezier(0.23, 1, 0.32, 1),-webkit-transform .3s cubic-bezier(0.23, 1, 0.32, 1);transition:opacity .3s cubic-bezier(0.23, 1, 0.32, 1),-webkit-transform .3s cubic-bezier(0.23, 1, 0.32, 1);transition:transform .3s cubic-bezier(0.23, 1, 0.32, 1),opacity .3s cubic-bezier(0.23, 1, 0.32, 1);transition:transform .3s cubic-bezier(0.23, 1, 0.32, 1),opacity .3s cubic-bezier(0.23, 1, 0.32, 1),-webkit-transform .3s cubic-bezier(0.23, 1, 0.32, 1);-webkit-transform-origin:center top;transform-origin:center top}.mx-zoom-in-down-enter,.mx-zoom-in-down-leave-to{opacity:0;-webkit-transform:scaleY(0);transform:scaleY(0)}.mx-datepicker{position:relative;display:inline-block;width:210px}.mx-datepicker svg{width:1em;height:1em;vertical-align:-0.15em;fill:currentColor;overflow:hidden}.mx-datepicker-range{width:320px}.mx-datepicker-inline{width:auto}.mx-input-wrapper{position:relative}.mx-input-wrapper .mx-icon-clear{display:none}.mx-input-wrapper:hover .mx-icon-clear{display:block}.mx-input-wrapper:hover .mx-icon-clear+.mx-icon-calendar{display:none}.mx-input{display:inline-block;-webkit-box-sizing:border-box;box-sizing:border-box;width:100%;height:34px;padding:6px 30px;padding-left:10px;font-size:14px;line-height:1.4;color:#555;background-color:#fff;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075)}.mx-input:hover,.mx-input:focus{border-color:#409aff}.mx-input:disabled,.mx-input.disabled{color:#ccc;background-color:#f3f3f3;border-color:#ccc;cursor:not-allowed}.mx-input:focus{outline:none}.mx-input::-ms-clear{display:none}.mx-icon-calendar,.mx-icon-clear{position:absolute;top:50%;right:8px;-webkit-transform:translateY(-50%);transform:translateY(-50%);font-size:16px;line-height:1;color:rgba(0,0,0,.5);vertical-align:middle}.mx-icon-clear{cursor:pointer}.mx-icon-clear:hover{color:rgba(0,0,0,.8)}.mx-datepicker-main{font:14px/1.5 \"Helvetica Neue\",Helvetica,Arial,\"Microsoft Yahei\",sans-serif;color:#73879c;background-color:#fff;border:1px solid #e8e8e8}.mx-datepicker-popup{position:absolute;margin-top:1px;margin-bottom:1px;-webkit-box-shadow:0 6px 12px rgba(0,0,0,.175);box-shadow:0 6px 12px rgba(0,0,0,.175);z-index:2001}.mx-datepicker-sidebar{float:left;-webkit-box-sizing:border-box;box-sizing:border-box;width:100px;padding:6px;overflow:auto}.mx-datepicker-sidebar+.mx-datepicker-content{margin-left:100px;border-left:1px solid #e8e8e8}.mx-datepicker-body{position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.mx-btn-shortcut{display:block;padding:0 6px;line-height:24px}.mx-range-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex}@media(max-width: 750px){.mx-range-wrapper{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}}.mx-datepicker-header{padding:6px 8px;border-bottom:1px solid #e8e8e8}.mx-datepicker-footer{padding:6px 8px;text-align:right;border-top:1px solid #e8e8e8}.mx-calendar{-webkit-box-sizing:border-box;box-sizing:border-box;width:248px;padding:6px 12px}.mx-calendar+.mx-calendar{border-left:1px solid #e8e8e8}.mx-calendar-header,.mx-time-header{-webkit-box-sizing:border-box;box-sizing:border-box;height:34px;line-height:34px;text-align:center;overflow:hidden}.mx-btn-icon-left,.mx-btn-icon-double-left{float:left}.mx-btn-icon-right,.mx-btn-icon-double-right{float:right}.mx-calendar-header-label{font-size:14px}.mx-calendar-decade-separator{margin:0 2px}.mx-calendar-decade-separator:after{content:\"~\"}.mx-calendar-content{position:relative;height:224px;-webkit-box-sizing:border-box;box-sizing:border-box}.mx-calendar-content .cell{cursor:pointer}.mx-calendar-content .cell:hover{color:#73879c;background-color:#f3f9fe}.mx-calendar-content .cell.active{color:#fff;background-color:#1284e7}.mx-calendar-content .cell.in-range{color:#73879c;background-color:#dbedfb}.mx-calendar-content .cell.disabled{cursor:not-allowed;color:#ccc;background-color:#f3f3f3}.mx-calendar-week-mode .mx-date-row{cursor:pointer}.mx-calendar-week-mode .mx-date-row:hover{background-color:#f3f9fe}.mx-calendar-week-mode .mx-date-row.mx-active-week{background-color:#dbedfb}.mx-calendar-week-mode .mx-date-row .cell:hover{color:inherit;background-color:transparent}.mx-calendar-week-mode .mx-date-row .cell.active{color:inherit;background-color:transparent}.mx-week-number{opacity:.5}.mx-table{table-layout:fixed;border-collapse:separate;border-spacing:0;width:100%;height:100%;-webkit-box-sizing:border-box;box-sizing:border-box;text-align:center;vertical-align:middle}.mx-table th{padding:0;font-weight:500}.mx-table td{padding:0}.mx-table-date td,.mx-table-date th{height:32px;font-size:12px}.mx-table-date .today{color:#2a90e9}.mx-table-date .cell.not-current-month{color:#ccc}.mx-time{-webkit-box-flex:1;-ms-flex:1;flex:1;width:224px;background:#fff}.mx-time+.mx-time{border-left:1px solid #e8e8e8}.mx-calendar-time{position:absolute;top:0;left:0;width:100%;height:100%}.mx-time-header{border-bottom:1px solid #e8e8e8}.mx-time-content{height:224px;-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden}.mx-time-columns{display:-webkit-box;display:-ms-flexbox;display:flex;width:100%;height:100%;overflow:hidden}.mx-time-column{-webkit-box-flex:1;-ms-flex:1;flex:1;position:relative;border-left:1px solid #e8e8e8;text-align:center}.mx-time-column:first-child{border-left:0}.mx-time-column .mx-time-list{margin:0;padding:0;list-style:none}.mx-time-column .mx-time-list::after{content:\"\";display:block;height:192px}.mx-time-column .mx-time-item{cursor:pointer;font-size:12px;height:32px;line-height:32px}.mx-time-column .mx-time-item:hover{color:#73879c;background-color:#f3f9fe}.mx-time-column .mx-time-item.active{color:#1284e7;background-color:transparent;font-weight:700}.mx-time-column .mx-time-item.disabled{cursor:not-allowed;color:#ccc;background-color:#f3f3f3}.mx-time-option{cursor:pointer;padding:8px 10px;font-size:14px;line-height:20px}.mx-time-option:hover{color:#73879c;background-color:#f3f9fe}.mx-time-option.active{color:#1284e7;background-color:transparent;font-weight:700}.mx-time-option.disabled{cursor:not-allowed;color:#ccc;background-color:#f3f3f3}\n";
@@ -6896,10 +6931,10 @@ createCommonjsModule(function (module, exports) {
 })));
 });
 
-var script$e = {
+var script$h = {
   name: 'CuiDatepicker',
   components: {
-    DatePicker
+    DatePicker: DatePicker$1
   },
   props: {
     modelValue: {
@@ -6970,11 +7005,7 @@ var script$e = {
   }
 };
 
-const _withId$a = /*#__PURE__*/withScopeId("data-v-42032ceb");
-
-pushScopeId("data-v-42032ceb");
-
-const _hoisted_1$9 = {
+const _hoisted_1$a = {
   key: 0,
   class: "cui-datepicker-label"
 };
@@ -6983,22 +7014,19 @@ const _hoisted_2$7 = {
     "margin-right": "10px"
   }
 };
-const _hoisted_3$4 = {
+const _hoisted_3$5 = {
   key: 0
 };
-const _hoisted_4$1 = {
+const _hoisted_4$3 = {
   class: "cui-datepicker-note"
 };
-
-popScopeId();
-
-const render$e = /*#__PURE__*/_withId$a((_ctx, _cache, $props, $setup, $data, $options) => {
+function render$e(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_date_picker = resolveComponent("date-picker");
 
-  return openBlock(), createBlock("div", null, [$props.label ? (openBlock(), createBlock("label", _hoisted_1$9, [createVNode("span", _hoisted_2$7, toDisplayString($props.label), 1), $props.required ? (openBlock(), createBlock("span", _hoisted_3$4, toDisplayString($data.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createVNode(_component_date_picker, {
+  return openBlock(), createElementBlock("div", null, [$props.label ? (openBlock(), createElementBlock("label", _hoisted_1$a, [createElementVNode("span", _hoisted_2$7, toDisplayString($props.label), 1), $props.required ? (openBlock(), createElementBlock("span", _hoisted_3$5, toDisplayString($data.trans.required), 1)) : createCommentVNode("", true)])) : createCommentVNode("", true), createVNode(_component_date_picker, {
     disabled: $props.disabled,
     modelValue: $props.modelValue,
-    "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $props.modelValue = $event),
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $props.modelValue = $event),
     placeholder: $props.placeholder,
     format: $props.format,
     type: $props.type,
@@ -7009,8 +7037,8 @@ const render$e = /*#__PURE__*/_withId$a((_ctx, _cache, $props, $setup, $data, $o
     "input-class": "cui-datepicker-input",
     "popup-class": "cui-datepicker-popup",
     class: "cui-datepicker"
-  }, null, 8, ["disabled", "modelValue", "placeholder", "format", "type", "timePickerOptions", "range", "onInput", "value-type"]), createVNode("div", _hoisted_4$1, [createVNode("span", null, toDisplayString($data.noteDisplay), 1)])]);
-});
+  }, null, 8, ["disabled", "modelValue", "placeholder", "format", "type", "timePickerOptions", "range", "onInput", "value-type"]), createElementVNode("div", _hoisted_4$3, [createElementVNode("span", null, toDisplayString($data.noteDisplay), 1)])]);
+}
 
 var css_248z$g = "\n.cui-datepicker-note[data-v-42032ceb] {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px\n}\n";
 styleInject(css_248z$g);
@@ -7018,10 +7046,10 @@ styleInject(css_248z$g);
 var css_248z$f = "\n.cui-datepicker-label {\n        font-size: 14px;\n        margin-left: 10px\n}\n.cui-datepicker {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 5px 10px;\n        transition: all .2s ease;\n        width: calc(100% - 20px);\n}\n.cui-datepicker.disabled input {\n        color: var(--cui-gray-3)\n}\n.cui-datepicker-input {\n        background: var(--cui-gray-0);\n        border: none;\n        border-radius: 12px;\n        height: 26px;\n        padding: 0;\n        transition: all .2s ease\n}\n.cui-datepicker-input:focus {\n        outline: none;\n        padding-left: 13px;\n        padding-right: 7px;\n}\n.cui-datepicker-popup {\n            border-radius: 12px;\n            color: var(--cui-font-color);\n            overflow: hidden\n}\n.cui-datepicker-popup .cell,\n    .mx-time-option {\n        transition: all .1s ease\n}\n.cui-datepicker-popup .mx-time-option.active {\n        color: var(--cui-primary)\n}\n.cui-datepicker-popup .cell.today {\n        color: var(--cui-primary);\n}\n.cui-datepicker-popup .cell.active,\n    .cui-datepicker-popup .cell.in-range,\n    .cui-datepicker-popup .cell:hover,\n    .mx-time-option:hover {\n        background: var(--cui-primary);\n        color: white;\n}\n\n";
 styleInject(css_248z$f);
 
-script$e.render = render$e;
-script$e.__scopeId = "data-v-42032ceb";
+script$h.render = render$e;
+script$h.__scopeId = "data-v-42032ceb";
 
-var script$d = {
+var script$g = {
   props: {
     label: {
       type: String,
@@ -7058,11 +7086,7 @@ var script$d = {
   }
 };
 
-const _withId$9 = /*#__PURE__*/withScopeId("data-v-7dfec3ea");
-
-pushScopeId("data-v-7dfec3ea");
-
-const _hoisted_1$8 = {
+const _hoisted_1$9 = {
   style: {
     "margin": "10px 0"
   }
@@ -7071,33 +7095,33 @@ const _hoisted_2$6 = {
   key: 0,
   class: "cui-radio-label"
 };
-const _hoisted_3$3 = {
+const _hoisted_3$4 = {
   style: {
     "margin-right": "10px"
   }
 };
-
-popScopeId();
-
-const render$d = /*#__PURE__*/_withId$9((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("div", _hoisted_1$8, [$props.caption ? (openBlock(), createBlock("div", _hoisted_2$6, [createVNode("span", _hoisted_3$3, toDisplayString($props.caption), 1)])) : createCommentVNode("", true), createVNode("label", {
-    class: ["cui-radio", {
+const _hoisted_4$2 = ["checked", "value", "disabled"];
+function render$d(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$9, [$props.caption ? (openBlock(), createElementBlock("div", _hoisted_2$6, [createElementVNode("span", _hoisted_3$4, toDisplayString($props.caption), 1)])) : createCommentVNode("", true), createElementVNode("label", {
+    class: normalizeClass(["cui-radio", {
       disabled: $props.disabled
-    }]
-  }, [createVNode("input", {
+    }])
+  }, [createElementVNode("input", {
     type: "radio",
     checked: $options.isChecked,
     value: $props.value,
-    onChange: _cache[1] || (_cache[1] = (...args) => $options.select && $options.select(...args)),
+    onChange: _cache[0] || (_cache[0] = function () {
+      return $options.select && $options.select(...arguments);
+    }),
     disabled: $props.disabled
-  }, null, 40, ["checked", "value", "disabled"]), createVNode("span", null, toDisplayString($props.label), 1)], 2)]);
-});
+  }, null, 40, _hoisted_4$2), createElementVNode("span", null, toDisplayString($props.label), 1)], 2)]);
+}
 
 var css_248z$e = "\n.cui-radio-label[data-v-7dfec3ea] {\n    font-size: 14px;\n    margin-left: 10px;\n    margin-bottom: 5px\n}\n.cui-radio[data-v-7dfec3ea] {\n  margin: 0;\n  display: block;\n  cursor: pointer;\n  font-size: 14px;\n}\n.cui-radio.disabled[data-v-7dfec3ea] {\n  cursor: not-allowed;\n}\n.cui-radio input[data-v-7dfec3ea] {\n  display: none;\n}\n.cui-radio input + span[data-v-7dfec3ea] {\n  line-height: 18px;\n  height: 18px;\n  padding-left: 18px;\n  display: block;\n  position: relative;\n}\n.cui-radio input + span[data-v-7dfec3ea]:not(:empty) {\n  padding-left: 25px;\n}\n.cui-radio input + span[data-v-7dfec3ea]:before,\n.cui-radio input + span[data-v-7dfec3ea]:after {\n  content: \"\";\n  width: 18px;\n  height: 18px;\n  display: block;\n  border-radius: 50%;\n  left: 0;\n  top: 0;\n  position: absolute;\n}\n.cui-radio input + span[data-v-7dfec3ea]:before {\n  background: var(--cui-gray-5);\n  transition: background 0.2s ease,\n    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);\n}\n.cui-radio.disabled input + span[data-v-7dfec3ea]:before {\n  background: var(--cui-gray-2)\n}\n.cui-radio.disabled span[data-v-7dfec3ea] {\n  color: var(--cui-gray-3)\n}\n.cui-radio input + span[data-v-7dfec3ea]:after {\n  background: #fff;\n  transform: scale(0.78);\n  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);\n}\n.cui-radio input:checked + span[data-v-7dfec3ea]:before {\n  transform: scale(1.04);\n  background: var(--cui-primary);\n}\n.cui-radio input:checked + span[data-v-7dfec3ea]:after {\n  transform: scale(0.4);\n  transition: transform 0.3s ease;\n}\n.cui-radio:not(.disabled):hover input + span[data-v-7dfec3ea]:before {\n  transform: scale(0.92);\n}\n.cui-radio:not(.disabled):hover input + span[data-v-7dfec3ea]:after {\n  transform: scale(0.74);\n}\n.cui-radio:not(.disabled):hover input:checked + span[data-v-7dfec3ea]:after {\n  transform: scale(0.4);\n}\n";
 styleInject(css_248z$e);
 
-script$d.render = render$d;
-script$d.__scopeId = "data-v-7dfec3ea";
+script$g.render = render$d;
+script$g.__scopeId = "data-v-7dfec3ea";
 
 const __default__ = {
   name: 'CuiTable',
@@ -7137,6 +7161,10 @@ const __default__ = {
       type: Function
     },
     compact: {
+      default: false,
+      type: Boolean
+    },
+    outline: {
       default: false,
       type: Boolean
     }
@@ -7227,7 +7255,7 @@ const __default__ = {
 
 const __injectCSSVars__ = () => {
   useCssVars(_ctx => ({
-    "6b67bf72": _ctx.tdPadding
+    "1bbb1852": _ctx.tdPadding
   }));
 };
 
@@ -7237,22 +7265,21 @@ __default__.setup = __setup__ ? (props, ctx) => {
 
   return __setup__(props, ctx);
 } : __injectCSSVars__;
+var script$f = __default__;
 
-const _withId$8 = /*#__PURE__*/withScopeId("data-v-0823c905");
+const _withScopeId$1 = n => (pushScopeId("data-v-d91a5b46"), n = n(), popScopeId(), n);
 
-pushScopeId("data-v-0823c905");
-
-const _hoisted_1$7 = {
+const _hoisted_1$8 = {
   key: 0,
   class: "cui-table-header"
 };
 const _hoisted_2$5 = {
   class: "cui-table-container"
 };
-const _hoisted_3$2 = {
+const _hoisted_3$3 = {
   key: 0
 };
-const _hoisted_4 = {
+const _hoisted_4$1 = {
   ref: "body"
 };
 const _hoisted_5 = {
@@ -7277,29 +7304,27 @@ const _hoisted_10 = {
   class: "cui-table-empty-content"
 };
 
-const _hoisted_11 = /*#__PURE__*/createVNode("b", null, "データなし", -1);
+const _hoisted_11 = /*#__PURE__*/_withScopeId$1(() => /*#__PURE__*/createElementVNode("b", null, "データなし", -1));
 
 const _hoisted_12 = {
   key: 1,
   class: "cui-table-footer"
 };
-
-popScopeId();
-
-const render$c = /*#__PURE__*/_withId$8((_ctx, _cache, $props, $setup, $data, $options) => {
+function render$c(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_cui_tr = resolveComponent("cui-tr");
 
-  return openBlock(), createBlock("div", {
-    class: ["cui-table", {
+  return openBlock(), createElementBlock("div", {
+    class: normalizeClass(["cui-table", {
       striped: $props.striped,
       select: $props.singleSelect,
-      square: $props.square
-    }]
-  }, [_ctx.$slots.header ? (openBlock(), createBlock("div", _hoisted_1$7, [renderSlot(_ctx.$slots, "header")])) : createCommentVNode("", true), createVNode("div", _hoisted_2$5, [createVNode("table", {
-    class: {
+      square: $props.square,
+      outline: $props.outline
+    }])
+  }, [_ctx.$slots.header ? (openBlock(), createElementBlock("div", _hoisted_1$8, [renderSlot(_ctx.$slots, "header")])) : createCommentVNode("", true), createElementVNode("div", _hoisted_2$5, [createElementVNode("table", {
+    class: normalizeClass({
       loading: $props.loading
-    }
-  }, [createVNode("thead", null, [createVNode("tr", null, [$props.multipleSelect ? (openBlock(), createBlock("th", _hoisted_3$2)) : createCommentVNode("", true), renderSlot(_ctx.$slots, "thead")])]), createVNode("tbody", _hoisted_4, [$props.loading ? (openBlock(), createBlock("tr", _hoisted_5, [createVNode("td", _hoisted_6, [$props.loading ? (openBlock(), createBlock("div", _hoisted_7)) : createCommentVNode("", true)])])) : createCommentVNode("", true), $props.data.length < 1 && !$props.loading ? (openBlock(), createBlock("tr", _hoisted_8, [createVNode("td", _hoisted_9, [createVNode("div", _hoisted_10, [renderSlot(_ctx.$slots, "emptyImage"), _hoisted_11])])])) : createCommentVNode("", true), (openBlock(true), createBlock(Fragment$1, null, renderList($options.displayData, (row, index) => {
+    })
+  }, [createElementVNode("thead", null, [createElementVNode("tr", null, [$props.multipleSelect ? (openBlock(), createElementBlock("th", _hoisted_3$3)) : createCommentVNode("", true), renderSlot(_ctx.$slots, "thead")])]), createElementVNode("tbody", _hoisted_4$1, [$props.loading ? (openBlock(), createElementBlock("tr", _hoisted_5, [createElementVNode("td", _hoisted_6, [$props.loading ? (openBlock(), createElementBlock("div", _hoisted_7)) : createCommentVNode("", true)])])) : createCommentVNode("", true), $props.data.length < 1 && !$props.loading ? (openBlock(), createElementBlock("tr", _hoisted_8, [createElementVNode("td", _hoisted_9, [createElementVNode("div", _hoisted_10, [renderSlot(_ctx.$slots, "emptyImage"), _hoisted_11])])])) : createCommentVNode("", true), (openBlock(true), createElementBlock(Fragment$1, null, renderList($options.displayData, (row, index) => {
     return openBlock(), createBlock(_component_cui_tr, {
       key: index,
       rowData: row,
@@ -7309,7 +7334,7 @@ const render$c = /*#__PURE__*/_withId$8((_ctx, _cache, $props, $setup, $data, $o
       clickable: $props.clickable,
       disabled: $props.disabledFunct(row)
     }, createSlots({
-      parentRow: _withId$8(() => [renderSlot(_ctx.$slots, "row", mergeProps({
+      parentRow: withCtx(() => [renderSlot(_ctx.$slots, "row", mergeProps({
         row: Object.assign(row, {
           _index: index
         })
@@ -7317,23 +7342,23 @@ const render$c = /*#__PURE__*/_withId$8((_ctx, _cache, $props, $setup, $data, $o
       _: 2
     }, [_ctx.$slots.expand ? {
       name: "expand",
-      fn: _withId$8(() => [renderSlot(_ctx.$slots, "expand", {
+      fn: withCtx(() => [renderSlot(_ctx.$slots, "expand", {
         expand: row
       })])
     } : undefined]), 1032, ["rowData", "onClick", "multipleSelect", "clickable", "disabled"]);
-  }), 128))], 512)], 2)]), _ctx.$slots.footer ? (openBlock(), createBlock("div", _hoisted_12, [renderSlot(_ctx.$slots, "footer")])) : createCommentVNode("", true)], 2);
-});
+  }), 128))], 512)], 2)]), _ctx.$slots.footer ? (openBlock(), createElementBlock("div", _hoisted_12, [renderSlot(_ctx.$slots, "footer")])) : createCommentVNode("", true)], 2);
+}
 
-var css_248z$d = "\n.cui-table[data-v-0823c905] {\n        border-radius: 20px;\n        overflow: hidden;\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n}\n.cui-table.square[data-v-0823c905] {\n        border-radius: 0\n}\n.cui-table-header[data-v-0823c905], \n    .cui-table-footer[data-v-0823c905] {\n        background: white;\n        padding: 10px;\n        display: flex;\n        justify-content: space-between;\n        align-items: center\n}\n.cui-table table[data-v-0823c905] {\n        border-collapse: collapse;\n        width: 100%;\n}\n.cui-table thead tr[data-v-0823c905] {\n        background: white;\n}\n.cui-table-container[data-v-0823c905] {\n        overflow: auto;\n        flex: 1\n}\n.cui-table-empty-content[data-v-0823c905] {\n        display: flex;\n        flex-direction: column;\n        align-items: center\n}\n.cui-table-loader-td[data-v-0823c905] {\n        position: relative;\n        height: 100px\n}\n";
+var css_248z$d = "\n.cui-table[data-v-d91a5b46] {\n        border-radius: 20px;\n        overflow: hidden;\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n}\n.cui-table.square[data-v-d91a5b46] {\n        border-radius: 0\n}\n.cui-table-header[data-v-d91a5b46], \n    .cui-table-footer[data-v-d91a5b46] {\n        background: white;\n        padding: 10px;\n        display: flex;\n        justify-content: space-between;\n        align-items: center\n}\n.cui-table table[data-v-d91a5b46] {\n        border-collapse: collapse;\n        width: 100%;\n}\n.cui-table thead tr[data-v-d91a5b46] {\n        background: white;\n}\n.cui-table-container[data-v-d91a5b46] {\n        overflow: auto;\n        flex: 1\n}\n.cui-table-empty-content[data-v-d91a5b46] {\n        display: flex;\n        flex-direction: column;\n        align-items: center\n}\n.cui-table-loader-td[data-v-d91a5b46] {\n        position: relative;\n        height: 100px\n}\n";
 styleInject(css_248z$d);
 
-var css_248z$c = "\n.cui-table th:not([scope=row]) {\n        position: -webkit-sticky;\n        position: sticky;\n        top: 0;\n        z-index: 2;\n        background: white;\n        box-shadow: 0 2px 4px -2px rgb(0 0 0 / 15%);\n        border-bottom: 1px solid var(--cui-gray-2)\n}\n.cui-table th,\n    .cui-table td {\n        text-align: left;\n        padding: var(--6b67bf72)\n}\n.cui-table.select tbody tr {\n        cursor: pointer\n}\n.cui-table tbody tr:not(.no-border, .noHover) {\n        border-bottom: 1px solid var(--cui-gray-2);\n        transition: background .2s ease;\n}\n.cui-table tbody tr:not(.selected, .expanded, .noHover):hover {\n        background: var(--cui-gray-1)!important;\n        font-weight: bold\n}\n.cui-table.striped tbody tr:nth-of-type(even) {\n        background-color: var(--cui-gray-0);\n}\n.cui-table tbody tr:last-of-type {\n        border-bottom: 2px solid var(--cui-gray-2);\n}\n";
+var css_248z$c = "\n.cui-table th:not([scope=row]) {\n        position: -webkit-sticky;\n        position: sticky;\n        top: 0;\n        z-index: 2;\n        background: white;\n        box-shadow: 0 2px 4px -2px rgb(0 0 0 / 15%);\n        border-bottom: 1px solid var(--cui-gray-2)\n}\n.outline {\n        border: solid 1px var(--cui-gray-2)\n}\n.cui-table th,\n    .cui-table td {\n        text-align: left;\n        padding: var(--1bbb1852)\n}\n.cui-table.select tbody tr {\n        cursor: pointer\n}\n.cui-table tbody tr:not(.no-border, .noHover) {\n        border-bottom: 1px solid var(--cui-gray-2);\n        transition: background .2s ease;\n}\n.cui-table tbody tr:not(.selected, .expanded, .noHover):hover {\n        background: var(--cui-gray-1)!important;\n        font-weight: bold\n}\n.cui-table.striped tbody tr:nth-of-type(even) {\n        background-color: var(--cui-gray-0);\n}\n.cui-table tbody tr:last-of-type {\n        border-bottom: 2px solid var(--cui-gray-2);\n}\n";
 styleInject(css_248z$c);
 
-__default__.render = render$c;
-__default__.__scopeId = "data-v-0823c905";
+script$f.render = render$c;
+script$f.__scopeId = "data-v-d91a5b46";
 
-var script$c = {
+var script$e = {
   name: 'CuiTh',
   props: {
     sort: {
@@ -7364,42 +7389,41 @@ var script$c = {
   }
 };
 
-const _withId$7 = /*#__PURE__*/withScopeId("data-v-7cc6cd12");
+const _withScopeId = n => (pushScopeId("data-v-7cc6cd12"), n = n(), popScopeId(), n);
 
-pushScopeId("data-v-7cc6cd12");
-
-const _hoisted_1$6 = {
+const _hoisted_1$7 = {
   class: "cui-th"
 };
 
-const _hoisted_2$4 = /*#__PURE__*/createVNode("i", {
+const _hoisted_2$4 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/createElementVNode("i", {
   class: "cui-th-sort-icon-1 fas fa-chevron-up"
-}, null, -1);
+}, null, -1));
 
-const _hoisted_3$1 = /*#__PURE__*/createVNode("i", {
+const _hoisted_3$2 = /*#__PURE__*/_withScopeId(() => /*#__PURE__*/createElementVNode("i", {
   class: "cui-th-sort-icon-2 fas fa-chevron-down"
-}, null, -1);
+}, null, -1));
 
-popScopeId();
-
-const render$b = /*#__PURE__*/_withId$7((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("th", null, [createVNode("div", _hoisted_1$6, [renderSlot(_ctx.$slots, "default"), $props.sort ? (openBlock(), createBlock("div", {
+const _hoisted_4 = [_hoisted_2$4, _hoisted_3$2];
+function render$b(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("th", null, [createElementVNode("div", _hoisted_1$7, [renderSlot(_ctx.$slots, "default"), $props.sort ? (openBlock(), createElementBlock("div", {
     key: 0,
-    class: ["cui-th-sort", {
+    class: normalizeClass(["cui-th-sort", {
       desc: $data.sortDirection === 'desc',
       asc: $data.sortDirection === 'asc'
-    }],
-    onClick: _cache[1] || (_cache[1] = (...args) => $options.toggleSort && $options.toggleSort(...args))
-  }, [_hoisted_2$4, _hoisted_3$1], 2)) : createCommentVNode("", true)])]);
-});
+    }]),
+    onClick: _cache[0] || (_cache[0] = function () {
+      return $options.toggleSort && $options.toggleSort(...arguments);
+    })
+  }, _hoisted_4, 2)) : createCommentVNode("", true)])]);
+}
 
 var css_248z$b = "\n.cui-th[data-v-7cc6cd12] {\n        display: flex;\n        color: var(--cui-gray-5)\n}\n.cui-th-sort[data-v-7cc6cd12] {\n        display: flex;\n        flex-direction: column;\n        font-size: 10px;\n        align-items: center;\n        justify-content: center;\n        margin-left: 5px;\n        cursor: pointer;\n        height: 23px;\n        overflow: hidden\n}\n.cui-th-sort i[data-v-7cc6cd12] {\n        transition: all .2s ease\n}\n.cui-th-sort.desc .cui-th-sort-icon-2[data-v-7cc6cd12],\n    .cui-th-sort.asc .cui-th-sort-icon-2[data-v-7cc6cd12] {\n        opacity: 0;\n        transform: rotate(180deg);\n        margin-top: -11px\n}\n.cui-th-sort.desc .cui-th-sort-icon-1[data-v-7cc6cd12] {\n        transform: rotate(180deg)\n}\n.cui-th-sort.asc .cui-th-sort-icon-1[data-v-7cc6cd12] {\n        transform: rotate(0deg)\n}   \n\n";
 styleInject(css_248z$b);
 
-script$c.render = render$b;
-script$c.__scopeId = "data-v-7cc6cd12";
+script$e.render = render$b;
+script$e.__scopeId = "data-v-7cc6cd12";
 
-var script$b = {
+var script$d = {
   name: 'CuiTr',
   emits: ["click"],
   props: {
@@ -7462,11 +7486,7 @@ var script$b = {
   }
 };
 
-const _withId$6 = /*#__PURE__*/withScopeId("data-v-6d61f8d2");
-
-pushScopeId("data-v-6d61f8d2");
-
-const _hoisted_1$5 = {
+const _hoisted_1$6 = {
   key: 0,
   style: {
     "width": "15px"
@@ -7475,31 +7495,30 @@ const _hoisted_1$5 = {
 const _hoisted_2$3 = {
   colspan: "100%"
 };
-
-popScopeId();
-
-const render$a = /*#__PURE__*/_withId$6((_ctx, _cache, $props, $setup, $data, $options) => {
+function render$a(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_cui_checkbox = resolveComponent("cui-checkbox");
 
-  return openBlock(), createBlock(Fragment$1, null, [createVNode("tr", {
-    class: ["cui-tr-parent", {
+  return openBlock(), createElementBlock(Fragment$1, null, [createElementVNode("tr", {
+    class: normalizeClass(["cui-tr-parent", {
       disabled: $props.disabled,
       selected: $data.selected,
       clickable: $props.clickable || _ctx.$slots.expand,
       'no-border': $data.expanded
-    }],
-    onClick: _cache[3] || (_cache[3] = (...args) => $options.handleClick && $options.handleClick(...args))
-  }, [$props.multipleSelect ? (openBlock(), createBlock("td", _hoisted_1$5, [createVNode(_component_cui_checkbox, {
-    onClick: _cache[1] || (_cache[1] = withModifiers(() => {}, ["stop"])),
+    }]),
+    onClick: _cache[2] || (_cache[2] = function () {
+      return $options.handleClick && $options.handleClick(...arguments);
+    })
+  }, [$props.multipleSelect ? (openBlock(), createElementBlock("td", _hoisted_1$6, [createVNode(_component_cui_checkbox, {
+    onClick: _cache[0] || (_cache[0] = withModifiers(() => {}, ["stop"])),
     modelValue: $data.selected,
-    "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => $data.selected = $event)
-  }, null, 8, ["modelValue"])])) : createCommentVNode("", true), renderSlot(_ctx.$slots, "parentRow")], 2), _ctx.$slots.expand ? (openBlock(), createBlock("tr", {
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => $data.selected = $event)
+  }, null, 8, ["modelValue"])])) : createCommentVNode("", true), renderSlot(_ctx.$slots, "parentRow")], 2), _ctx.$slots.expand ? (openBlock(), createElementBlock("tr", {
     key: 0,
-    class: ["cui-tr-expand", {
+    class: normalizeClass(["cui-tr-expand", {
       expanded: $data.expanded
-    }]
-  }, [createVNode("td", _hoisted_2$3, [renderSlot(_ctx.$slots, "expand")])], 2)) : createCommentVNode("", true)], 64);
-});
+    }])
+  }, [createElementVNode("td", _hoisted_2$3, [renderSlot(_ctx.$slots, "expand")])], 2)) : createCommentVNode("", true)], 64);
+}
 
 var css_248z$a = "\n@keyframes expand-6d61f8d2{\nfrom{\n            opacity: 0;\n}\nto{\n            opacity: 1;\n}\n}\n.selected[data-v-6d61f8d2] {\n        background-color: var(--cui-primary)!important;\n        color: white;\n        font-weight: bold;\n}\n.clickable[data-v-6d61f8d2] {\n        cursor: pointer\n}\n.cui-tr-expand[data-v-6d61f8d2] {\n        display: none;\n        transition: all .2s ease\n}\n.cui-tr-expand.expanded[data-v-6d61f8d2] {\n        display: table-row;\n        animation: expand-6d61f8d2 .2s linear 0s;\n}\n.cui-tr-expand.expanded td[data-v-6d61f8d2] {\n        padding: 20px\n}\n.disabled[data-v-6d61f8d2] {\n        cursor: not-allowed!important;\n}\n";
 styleInject(css_248z$a);
@@ -7507,10 +7526,10 @@ styleInject(css_248z$a);
 var css_248z$9 = "\n.cui-table-hover-button {\n        opacity: 0;\n        transition: all .2s ease;\n}\n.cui-tr-parent:hover .cui-table-hover-button {\n        opacity: 1;\n}\n\n";
 styleInject(css_248z$9);
 
-script$b.render = render$a;
-script$b.__scopeId = "data-v-6d61f8d2";
+script$d.render = render$a;
+script$d.__scopeId = "data-v-6d61f8d2";
 
-var script$a = {
+var script$c = {
   name: "CuiTag",
   props: {
     danger: {
@@ -7528,25 +7547,23 @@ var script$a = {
   }
 };
 
-const _withId$5 = /*#__PURE__*/withScopeId("data-v-4f05fbf4");
-
-const render$9 = /*#__PURE__*/_withId$5((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("span", {
-    class: ["cui-tag", {
+function render$9(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("span", {
+    class: normalizeClass(["cui-tag", {
       danger: $props.danger,
       primary: $props.primary,
       warn: $props.warn
-    }]
+    }])
   }, [renderSlot(_ctx.$slots, "default")], 2);
-});
+}
 
 var css_248z$8 = "\n.cui-tag[data-v-4f05fbf4] {\n        height: 35px;\n        border: 0px;\n        margin: 5px;\n        border-radius: var(--cui-button-radius);\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        font-size: .8rem;\n        background: var(--cui-dark);\n        color: white;\n        width: fit-content;\n        padding: 0 10px;\n        font-weight: normal;\n}\n.cui-tag.danger[data-v-4f05fbf4] {\n        background: var(--cui-danger);\n}\n.cui-tag.primary[data-v-4f05fbf4] {\n        background: var(--cui-primary);\n}\n.cui-tag.warn[data-v-4f05fbf4] {\n        background: var(--cui-warn);\n}\n\n";
 styleInject(css_248z$8);
 
-script$a.render = render$9;
-script$a.__scopeId = "data-v-4f05fbf4";
+script$c.render = render$9;
+script$c.__scopeId = "data-v-4f05fbf4";
 
-var script$9 = {
+var script$b = {
   name: "CuiAvatar",
   props: {
     image: {
@@ -7562,24 +7579,22 @@ var script$9 = {
   }
 };
 
-const _withId$4 = /*#__PURE__*/withScopeId("data-v-2d42819a");
-
-const render$8 = /*#__PURE__*/_withId$4((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("span", {
+function render$8(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("span", {
     class: "cui-avatar",
-    style: {
+    style: normalizeStyle({
       'background-image': $options.src
-    }
+    })
   }, null, 4);
-});
+}
 
 var css_248z$7 = "\n.cui-avatar[data-v-2d42819a] {\n        height: 35px;\n        width: 35px;\n        background-size: cover;\n        background-position: center;\n        display: inline-block;\n        border-radius: var(--cui-button-radius)\n}\n\n";
 styleInject(css_248z$7);
 
-script$9.render = render$8;
-script$9.__scopeId = "data-v-2d42819a";
+script$b.render = render$8;
+script$b.__scopeId = "data-v-2d42819a";
 
-var script$8 = {
+var script$a = {
   name: 'CuiTooltip',
   props: {
     position: {
@@ -7630,29 +7645,29 @@ var script$8 = {
   }
 };
 
-const _withId$3 = /*#__PURE__*/withScopeId("data-v-13c1a1de");
-
-const render$7 = /*#__PURE__*/_withId$3((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock(Fragment$1, null, [createVNode("div", {
+function render$7(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock(Fragment$1, null, [createElementVNode("div", {
     ref: "parent",
-    onClick: _cache[1] || (_cache[1] = withModifiers((...args) => $options.toggleTooltip && $options.toggleTooltip(...args), ["stop"]))
-  }, [renderSlot(_ctx.$slots, "default")], 512), createVNode("div", {
+    onClick: _cache[0] || (_cache[0] = withModifiers(function () {
+      return $options.toggleTooltip && $options.toggleTooltip(...arguments);
+    }, ["stop"]))
+  }, [renderSlot(_ctx.$slots, "default")], 512), createElementVNode("div", {
     ref: "tooltip",
-    class: ["tooltip-cont", {
+    class: normalizeClass(["tooltip-cont", {
       visible: $data.isVisible
-    }]
+    }])
   }, [renderSlot(_ctx.$slots, "tooltip")], 2)], 64);
-});
+}
 
 var css_248z$6 = "\n.tooltip-cont[data-v-13c1a1de] {\n        display: none;\n        padding: 10px;\n        background: white;\n        border-radius: 20px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        z-index: 5\n}\n.visible[data-v-13c1a1de] {\n        display: block;\n}\n    /* .arrow,\n    .arrow::before {\n        position: absolute;\n        width: 8px;\n        height: 8px;\n        background: inherit;\n    }\n\n    .arrow {\n        visibility: hidden;\n    }\n\n    .arrow::before {\n        visibility: visible;\n        content: '';\n        transform: rotate(45deg);\n    }\n\n    .arrow.top {\n        bottom: -4px;\n        left: calc(50% - 4px);\n    }\n\n    .arrow.bottom {\n        top: -4px;\n        left: calc(50% - 4px);\n    }\n\n    .arrow.left {\n        right: -4px;\n        top: calc(50% - 4px);\n    }\n\n    .arrow.right {\n        left: -4px;\n        top: calc(50% - 4px);\n    } */\n\n";
 styleInject(css_248z$6);
 
-script$8.render = render$7;
-script$8.__scopeId = "data-v-13c1a1de";
+script$a.render = render$7;
+script$a.__scopeId = "data-v-13c1a1de";
 
-var script$7 = {
+var script$9 = {
   components: {
-    Table: __default__
+    Table: script$f
   },
   emits: ['change'],
   props: {
@@ -7731,10 +7746,11 @@ var script$7 = {
   }
 };
 
-const _hoisted_1$4 = {
+const _hoisted_1$5 = {
   class: "cui-file-upload-header"
 };
-const _hoisted_2$2 = {
+const _hoisted_2$2 = ["accept"];
+const _hoisted_3$1 = {
   class: "cui-file-upload-note"
 };
 function render$6(_ctx, _cache, $props, $setup, $data, $options) {
@@ -7745,31 +7761,31 @@ function render$6(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock(_component_Table, {
     data: $data.files
   }, {
-    header: withCtx(() => [createVNode("div", _hoisted_1$4, [createTextVNode(toDisplayString($props.title) + " ", 1), createVNode(_component_cui_button, {
+    header: withCtx(() => [createElementVNode("div", _hoisted_1$5, [createTextVNode(toDisplayString($props.title) + " ", 1), createVNode(_component_cui_button, {
       style: {
         "margin-left": "20px"
       },
       label: "ファイル選択",
       onClick: $options.triggerFileSelect
-    }, null, 8, ["onClick"]), createVNode("input", {
+    }, null, 8, ["onClick"]), createElementVNode("input", {
       accept: $options.acceptedFiles,
       class: "cui-file-upload-native-input",
       type: "file",
       ref: "file",
-      onChange: _cache[1] || (_cache[1] = $event => $options.addFile())
-    }, null, 40, ["accept"])])]),
-    row: withCtx(row => [createVNode("td", null, [createVNode("i", {
-      class: $data.fileTypes[row.type],
+      onChange: _cache[0] || (_cache[0] = $event => $options.addFile())
+    }, null, 40, _hoisted_2$2)])]),
+    row: withCtx(row => [createElementVNode("td", null, [createElementVNode("i", {
+      class: normalizeClass($data.fileTypes[row.type]),
       style: {
         "margin-right": "10px",
         "font-size": "20px"
       }
-    }, null, 2), createTextVNode(" " + toDisplayString(row.name), 1)]), createVNode("td", null, [createVNode(_component_cui_button, {
+    }, null, 2), createTextVNode(" " + toDisplayString(row.name), 1)]), createElementVNode("td", null, [createVNode(_component_cui_button, {
       icon: "far fa-trash-alt",
       danger: "",
       onClick: $event => $options.removeFile(row._index)
     }, null, 8, ["onClick"])])]),
-    footer: withCtx(() => [createVNode("div", _hoisted_2$2, [createVNode("span", null, toDisplayString($data.noteDisplay), 1)])]),
+    footer: withCtx(() => [createElementVNode("div", _hoisted_3$1, [createElementVNode("span", null, toDisplayString($data.noteDisplay), 1)])]),
     _: 1
   }, 8, ["data"]);
 }
@@ -7777,7 +7793,7 @@ function render$6(_ctx, _cache, $props, $setup, $data, $options) {
 var css_248z$5 = "\n.cui-file-upload-header {\n        display: flex;\n        align-items: center;\n}\n.cui-file-upload-native-input {\n        display: none;\n}\n.cui-file-upload-note {\n        font-size: 12px;\n        margin-left: 10px;\n        color: var(--cui-danger);\n        height: 15px;\n        line-height: 12px;\n}\n\n";
 styleInject(css_248z$5);
 
-script$7.render = render$6;
+script$9.render = render$6;
 
 // ::- Persistent data structure representing an ordered mapping from
 // strings to values, with some convenient update methods.
@@ -8003,7 +8019,7 @@ Fragment.prototype.descendants = function descendants (f) {
   this.nodesBetween(0, this.size, f);
 };
 
-// :: (number, number, ?string, ?string) → string
+// :: (number, number, ?string, ?string | ?(leafNode: Node) -> string) → string
 // Extract the text between `from` and `to`. See the same method on
 // [`Node`](#model.Node.textBetween).
 Fragment.prototype.textBetween = function textBetween (from, to, blockSeparator, leafText) {
@@ -8013,7 +8029,7 @@ Fragment.prototype.textBetween = function textBetween (from, to, blockSeparator,
       text += node.text.slice(Math.max(from, pos) - pos, to - pos);
       separated = !blockSeparator;
     } else if (node.isLeaf && leafText) {
-      text += leafText;
+      text += typeof leafText === 'function' ? leafText(node): leafText;
       separated = !blockSeparator;
     } else if (!separated && node.isBlock) {
       text += blockSeparator;
@@ -8498,7 +8514,7 @@ function insertInto(content, dist, insert, parent) {
 // The empty slice.
 Slice.empty = new Slice(Fragment.empty, 0, 0);
 
-function replace$2($from, $to, slice) {
+function replace($from, $to, slice) {
   if (slice.openStart > $from.depth)
     { throw new ReplaceError("Inserted content deeper than insertion position") }
   if ($from.depth - slice.openStart != $to.depth - slice.openEnd)
@@ -8992,7 +9008,7 @@ Node$1.prototype.descendants = function descendants (f) {
 // children.
 prototypeAccessors$3$1.textContent.get = function () { return this.textBetween(0, this.content.size, "") };
 
-// :: (number, number, ?string, ?string) → string
+// :: (number, number, ?string, ?string | ?(leafNode: Node) -> string) → string
 // Get all text between positions `from` and `to`. When
 // `blockSeparator` is given, it will be inserted whenever a new
 // block node is started. When `leafText` is given, it'll be
@@ -9083,7 +9099,7 @@ Node$1.prototype.slice = function slice (from, to, includeParents) {
 // into. If any of this is violated, an error of type
 // [`ReplaceError`](#model.ReplaceError) is thrown.
 Node$1.prototype.replace = function replace$1 (from, to, slice) {
-  return replace$2(this.resolve(from), this.resolve(to), slice)
+  return replace(this.resolve(from), this.resolve(to), slice)
 };
 
 // :: (number) → ?Node
@@ -10476,7 +10492,7 @@ function gatherMarks(schema, marks) {
 // a ProseMirror document conforming to a given schema. Its behavior
 // is defined by an array of [rules](#model.ParseRule).
 var DOMParser = function DOMParser(schema, rules) {
-  var this$1 = this;
+  var this$1$1 = this;
 
   // :: Schema
   // The schema into which the parser parses.
@@ -10489,8 +10505,8 @@ var DOMParser = function DOMParser(schema, rules) {
   this.styles = [];
 
   rules.forEach(function (rule) {
-    if (rule.tag) { this$1.tags.push(rule); }
-    else if (rule.style) { this$1.styles.push(rule); }
+    if (rule.tag) { this$1$1.tags.push(rule); }
+    else if (rule.style) { this$1$1.styles.push(rule); }
   });
 
   // Only normalize list elements when lists in the schema can't directly contain themselves
@@ -10841,7 +10857,7 @@ ParseContext.prototype.readStyles = function readStyles (styles) {
 // false. Otherwise, apply it, use its return value to drive the way
 // the node's content is wrapped, and return true.
 ParseContext.prototype.addElementByRule = function addElementByRule (dom, rule, continueAfter) {
-    var this$1 = this;
+    var this$1$1 = this;
 
   var sync, nodeType, markType, mark;
   if (rule.node) {
@@ -10864,7 +10880,7 @@ ParseContext.prototype.addElementByRule = function addElementByRule (dom, rule, 
     this.addElement(dom, continueAfter);
   } else if (rule.getContent) {
     this.findInside(dom);
-    rule.getContent(dom, this.parser.schema).forEach(function (node) { return this$1.insertNode(node); });
+    rule.getContent(dom, this.parser.schema).forEach(function (node) { return this$1$1.insertNode(node); });
   } else {
     var contentDOM = rule.contentElement;
     if (typeof contentDOM == "string") { contentDOM = dom.querySelector(contentDOM); }
@@ -11029,7 +11045,7 @@ ParseContext.prototype.findInText = function findInText (textNode) {
 // Determines whether the given [context
 // string](#ParseRule.context) matches this context.
 ParseContext.prototype.matchesContext = function matchesContext (context) {
-    var this$1 = this;
+    var this$1$1 = this;
 
   if (context.indexOf("|") > -1)
     { return context.split(/\s*\|\s*/).some(this.matchesContext, this) }
@@ -11047,7 +11063,7 @@ ParseContext.prototype.matchesContext = function matchesContext (context) {
           { if (match(i - 1, depth)) { return true } }
         return false
       } else {
-        var next = depth > 0 || (depth == 0 && useRoot) ? this$1.nodes[depth].type
+        var next = depth > 0 || (depth == 0 && useRoot) ? this$1$1.nodes[depth].type
             : option && depth >= minDepth ? option.node(depth - minDepth).type
             : null;
         if (!next || (next.name != part && next.groups.indexOf(part) == -1))
@@ -11201,7 +11217,7 @@ var DOMSerializer = function DOMSerializer(nodes, marks) {
 // document, should be passed so that the serializer can create
 // nodes.
 DOMSerializer.prototype.serializeFragment = function serializeFragment (fragment, options, target) {
-    var this$1 = this;
+    var this$1$1 = this;
     if ( options === void 0 ) options = {};
 
   if (!target) { target = doc(options).createDocumentFragment(); }
@@ -11213,7 +11229,7 @@ DOMSerializer.prototype.serializeFragment = function serializeFragment (fragment
       var keep = 0, rendered = 0;
       while (keep < active.length && rendered < node.marks.length) {
         var next = node.marks[rendered];
-        if (!this$1.marks[next.type.name]) { rendered++; continue }
+        if (!this$1$1.marks[next.type.name]) { rendered++; continue }
         if (!next.eq(active[keep]) || next.type.spec.spanning === false) { break }
         keep += 2; rendered++;
       }
@@ -11223,7 +11239,7 @@ DOMSerializer.prototype.serializeFragment = function serializeFragment (fragment
       }
       while (rendered < node.marks.length) {
         var add = node.marks[rendered++];
-        var markDOM = this$1.serializeMark(add, node.isInline, options);
+        var markDOM = this$1$1.serializeMark(add, node.isInline, options);
         if (markDOM) {
           active.push(add, top);
           top.appendChild(markDOM.dom);
@@ -11231,19 +11247,13 @@ DOMSerializer.prototype.serializeFragment = function serializeFragment (fragment
         }
       }
     }
-    top.appendChild(this$1.serializeNode(node, options));
+    top.appendChild(this$1$1.serializeNodeInner(node, options));
   });
 
   return target
 };
 
-// :: (Node, ?Object) → dom.Node
-// Serialize this node to a DOM node. This can be useful when you
-// need to serialize a part of a document, as opposed to the whole
-// document. To serialize a whole document, use
-// [`serializeFragment`](#model.DOMSerializer.serializeFragment) on
-// its [content](#model.Node.content).
-DOMSerializer.prototype.serializeNode = function serializeNode (node, options) {
+DOMSerializer.prototype.serializeNodeInner = function serializeNodeInner (node, options) {
     if ( options === void 0 ) options = {};
 
   var ref =
@@ -11261,10 +11271,16 @@ DOMSerializer.prototype.serializeNode = function serializeNode (node, options) {
   return dom
 };
 
-DOMSerializer.prototype.serializeNodeAndMarks = function serializeNodeAndMarks (node, options) {
+// :: (Node, ?Object) → dom.Node
+// Serialize this node to a DOM node. This can be useful when you
+// need to serialize a part of a document, as opposed to the whole
+// document. To serialize a whole document, use
+// [`serializeFragment`](#model.DOMSerializer.serializeFragment) on
+// its [content](#model.Node.content).
+DOMSerializer.prototype.serializeNode = function serializeNode (node, options) {
     if ( options === void 0 ) options = {};
 
-  var dom = this.serializeNode(node, options);
+  var dom = this.serializeNodeInner(node, options);
   for (var i = node.marks.length - 1; i >= 0; i--) {
     var wrap = this.serializeMark(node.marks[i], node.isInline, options);
     if (wrap) {
@@ -12098,18 +12114,18 @@ Transform.prototype.wrap = function(range, wrappers) {
 // Set the type of all textblocks (partly) between `from` and `to` to
 // the given node type with the given attributes.
 Transform.prototype.setBlockType = function(from, to, type, attrs) {
-  var this$1 = this;
+  var this$1$1 = this;
   if ( to === void 0 ) to = from;
 
   if (!type.isTextblock) { throw new RangeError("Type given to setBlockType should be a textblock") }
   var mapFrom = this.steps.length;
   this.doc.nodesBetween(from, to, function (node, pos) {
-    if (node.isTextblock && !node.hasMarkup(type, attrs) && canChangeType(this$1.doc, this$1.mapping.slice(mapFrom).map(pos), type)) {
+    if (node.isTextblock && !node.hasMarkup(type, attrs) && canChangeType(this$1$1.doc, this$1$1.mapping.slice(mapFrom).map(pos), type)) {
       // Ensure all markup that isn't allowed in the new node type is cleared
-      this$1.clearIncompatible(this$1.mapping.slice(mapFrom).map(pos, 1), type);
-      var mapping = this$1.mapping.slice(mapFrom);
+      this$1$1.clearIncompatible(this$1$1.mapping.slice(mapFrom).map(pos, 1), type);
+      var mapping = this$1$1.mapping.slice(mapFrom);
       var startM = mapping.map(pos, 1), endM = mapping.map(pos + node.nodeSize, 1);
-      this$1.step(new ReplaceAroundStep(startM, endM, startM + 1, endM - 1,
+      this$1$1.step(new ReplaceAroundStep(startM, endM, startM + 1, endM - 1,
                                       new Slice(Fragment.from(type.create(attrs, null, node.marks)), 0, 0), 1, true));
       return false
     }
@@ -12288,13 +12304,13 @@ var AddMarkStep = /*@__PURE__*/(function (Step) {
   AddMarkStep.prototype.constructor = AddMarkStep;
 
   AddMarkStep.prototype.apply = function apply (doc) {
-    var this$1 = this;
+    var this$1$1 = this;
 
     var oldSlice = doc.slice(this.from, this.to), $from = doc.resolve(this.from);
     var parent = $from.node($from.sharedDepth(this.to));
     var slice = new Slice(mapFragment(oldSlice.content, function (node, parent) {
-      if (!node.isAtom || !parent.type.allowsMarkType(this$1.mark.type)) { return node }
-      return node.mark(this$1.mark.addToSet(node.marks))
+      if (!node.isAtom || !parent.type.allowsMarkType(this$1$1.mark.type)) { return node }
+      return node.mark(this$1$1.mark.addToSet(node.marks))
     }, parent), oldSlice.openStart, oldSlice.openEnd);
     return StepResult.fromReplace(doc, this.from, this.to, slice)
   };
@@ -12353,11 +12369,11 @@ var RemoveMarkStep = /*@__PURE__*/(function (Step) {
   RemoveMarkStep.prototype.constructor = RemoveMarkStep;
 
   RemoveMarkStep.prototype.apply = function apply (doc) {
-    var this$1 = this;
+    var this$1$1 = this;
 
     var oldSlice = doc.slice(this.from, this.to);
     var slice = new Slice(mapFragment(oldSlice.content, function (node) {
-      return node.mark(this$1.mark.removeFromSet(node.marks))
+      return node.mark(this$1$1.mark.removeFromSet(node.marks))
     }), oldSlice.openStart, oldSlice.openEnd);
     return StepResult.fromReplace(doc, this.from, this.to, slice)
   };
@@ -12399,7 +12415,7 @@ Step.jsonID("removeMark", RemoveMarkStep);
 // :: (number, number, Mark) → this
 // Add the given mark to the inline content between `from` and `to`.
 Transform.prototype.addMark = function(from, to, mark) {
-  var this$1 = this;
+  var this$1$1 = this;
 
   var removed = [], added = [], removing = null, adding = null;
   this.doc.nodesBetween(from, to, function (node, pos, parent) {
@@ -12425,8 +12441,8 @@ Transform.prototype.addMark = function(from, to, mark) {
     }
   });
 
-  removed.forEach(function (s) { return this$1.step(s); });
-  added.forEach(function (s) { return this$1.step(s); });
+  removed.forEach(function (s) { return this$1$1.step(s); });
+  added.forEach(function (s) { return this$1$1.step(s); });
   return this
 };
 
@@ -12436,7 +12452,7 @@ Transform.prototype.addMark = function(from, to, mark) {
 // remove all marks of that type. When it is null, remove all marks of
 // any type.
 Transform.prototype.removeMark = function(from, to, mark) {
-  var this$1 = this;
+  var this$1$1 = this;
   if ( mark === void 0 ) mark = null;
 
   var matched = [], step = 0;
@@ -12472,7 +12488,7 @@ Transform.prototype.removeMark = function(from, to, mark) {
       }
     }
   });
-  matched.forEach(function (m) { return this$1.step(new RemoveMarkStep(m.from, m.to, m.style)); });
+  matched.forEach(function (m) { return this$1$1.step(new RemoveMarkStep(m.from, m.to, m.style)); });
   return this
 };
 
@@ -13016,7 +13032,10 @@ function coveredDepths($from, $to) {
         $to.end(d) > $to.pos + ($to.depth - d) ||
         $from.node(d).type.spec.isolating ||
         $to.node(d).type.spec.isolating) { break }
-    if (start == $to.start(d)) { result.push(d); }
+    if (start == $to.start(d) ||
+        (d == $from.depth && d == $to.depth && $from.parent.inlineContent && $to.parent.inlineContent &&
+         d && $to.start(d - 1) == start - 1))
+      { result.push(d); }
   }
   return result
 }
@@ -13770,19 +13789,19 @@ var baseFields = [
 // Object wrapping the part of a state object that stays the same
 // across transactions. Stored in the state's `config` property.
 var Configuration = function Configuration(schema, plugins) {
-  var this$1 = this;
+  var this$1$1 = this;
 
   this.schema = schema;
   this.fields = baseFields.concat();
   this.plugins = [];
   this.pluginsByKey = Object.create(null);
   if (plugins) { plugins.forEach(function (plugin) {
-    if (this$1.pluginsByKey[plugin.key])
+    if (this$1$1.pluginsByKey[plugin.key])
       { throw new RangeError("Adding different instances of a keyed plugin (" + plugin.key + ")") }
-    this$1.plugins.push(plugin);
-    this$1.pluginsByKey[plugin.key] = plugin;
+    this$1$1.plugins.push(plugin);
+    this$1$1.pluginsByKey[plugin.key] = plugin;
     if (plugin.spec.state)
-      { this$1.fields.push(new FieldDesc(plugin.key, plugin.spec.state, plugin)); }
+      { this$1$1.fields.push(new FieldDesc(plugin.key, plugin.spec.state, plugin)); }
   }); }
 };
 
@@ -14150,6 +14169,648 @@ PluginKey.prototype.get = function get (state) { return state.config.pluginsByKe
 // Get the plugin's state from an editor state.
 PluginKey.prototype.getState = function getState (state) { return state[this.key] };
 
+// :: (EditorState, ?(tr: Transaction)) → bool
+// Delete the selection, if there is one.
+function deleteSelection$2(state, dispatch) {
+  if (state.selection.empty) { return false }
+  if (dispatch) { dispatch(state.tr.deleteSelection().scrollIntoView()); }
+  return true
+}
+
+// :: (EditorState, ?(tr: Transaction), ?EditorView) → bool
+// If the selection is empty and at the start of a textblock, try to
+// reduce the distance between that block and the one before it—if
+// there's a block directly before it that can be joined, join them.
+// If not, try to move the selected block closer to the next one in
+// the document structure by lifting it out of its parent or moving it
+// into a parent of the previous block. Will use the view for accurate
+// (bidi-aware) start-of-textblock detection if given.
+function joinBackward$2(state, dispatch, view) {
+  var ref = state.selection;
+  var $cursor = ref.$cursor;
+  if (!$cursor || (view ? !view.endOfTextblock("backward", state)
+                        : $cursor.parentOffset > 0))
+    { return false }
+
+  var $cut = findCutBefore($cursor);
+
+  // If there is no node before this, try to lift
+  if (!$cut) {
+    var range = $cursor.blockRange(), target = range && liftTarget(range);
+    if (target == null) { return false }
+    if (dispatch) { dispatch(state.tr.lift(range, target).scrollIntoView()); }
+    return true
+  }
+
+  var before = $cut.nodeBefore;
+  // Apply the joining algorithm
+  if (!before.type.spec.isolating && deleteBarrier(state, $cut, dispatch))
+    { return true }
+
+  // If the node below has no content and the node above is
+  // selectable, delete the node below and select the one above.
+  if ($cursor.parent.content.size == 0 &&
+      (textblockAt(before, "end") || NodeSelection.isSelectable(before))) {
+    if (dispatch) {
+      var tr = state.tr.deleteRange($cursor.before(), $cursor.after());
+      tr.setSelection(textblockAt(before, "end") ? Selection.findFrom(tr.doc.resolve(tr.mapping.map($cut.pos, -1)), -1)
+                      : NodeSelection.create(tr.doc, $cut.pos - before.nodeSize));
+      dispatch(tr.scrollIntoView());
+    }
+    return true
+  }
+
+  // If the node before is an atom, delete it
+  if (before.isAtom && $cut.depth == $cursor.depth - 1) {
+    if (dispatch) { dispatch(state.tr.delete($cut.pos - before.nodeSize, $cut.pos).scrollIntoView()); }
+    return true
+  }
+
+  return false
+}
+
+function textblockAt(node, side, only) {
+  for (; node; node = (side == "start" ? node.firstChild : node.lastChild)) {
+    if (node.isTextblock) { return true }
+    if (only && node.childCount != 1) { return false }
+  }
+  return false
+}
+
+// :: (EditorState, ?(tr: Transaction), ?EditorView) → bool
+// When the selection is empty and at the start of a textblock, select
+// the node before that textblock, if possible. This is intended to be
+// bound to keys like backspace, after
+// [`joinBackward`](#commands.joinBackward) or other deleting
+// commands, as a fall-back behavior when the schema doesn't allow
+// deletion at the selected point.
+function selectNodeBackward$2(state, dispatch, view) {
+  var ref = state.selection;
+  var $head = ref.$head;
+  var empty = ref.empty;
+  var $cut = $head;
+  if (!empty) { return false }
+
+  if ($head.parent.isTextblock) {
+    if (view ? !view.endOfTextblock("backward", state) : $head.parentOffset > 0) { return false }
+    $cut = findCutBefore($head);
+  }
+  var node = $cut && $cut.nodeBefore;
+  if (!node || !NodeSelection.isSelectable(node)) { return false }
+  if (dispatch)
+    { dispatch(state.tr.setSelection(NodeSelection.create(state.doc, $cut.pos - node.nodeSize)).scrollIntoView()); }
+  return true
+}
+
+function findCutBefore($pos) {
+  if (!$pos.parent.type.spec.isolating) { for (var i = $pos.depth - 1; i >= 0; i--) {
+    if ($pos.index(i) > 0) { return $pos.doc.resolve($pos.before(i + 1)) }
+    if ($pos.node(i).type.spec.isolating) { break }
+  } }
+  return null
+}
+
+// :: (EditorState, ?(tr: Transaction), ?EditorView) → bool
+// If the selection is empty and the cursor is at the end of a
+// textblock, try to reduce or remove the boundary between that block
+// and the one after it, either by joining them or by moving the other
+// block closer to this one in the tree structure. Will use the view
+// for accurate start-of-textblock detection if given.
+function joinForward$2(state, dispatch, view) {
+  var ref = state.selection;
+  var $cursor = ref.$cursor;
+  if (!$cursor || (view ? !view.endOfTextblock("forward", state)
+                        : $cursor.parentOffset < $cursor.parent.content.size))
+    { return false }
+
+  var $cut = findCutAfter($cursor);
+
+  // If there is no node after this, there's nothing to do
+  if (!$cut) { return false }
+
+  var after = $cut.nodeAfter;
+  // Try the joining algorithm
+  if (deleteBarrier(state, $cut, dispatch)) { return true }
+
+  // If the node above has no content and the node below is
+  // selectable, delete the node above and select the one below.
+  if ($cursor.parent.content.size == 0 &&
+      (textblockAt(after, "start") || NodeSelection.isSelectable(after))) {
+    if (dispatch) {
+      var tr = state.tr.deleteRange($cursor.before(), $cursor.after());
+      tr.setSelection(textblockAt(after, "start") ? Selection.findFrom(tr.doc.resolve(tr.mapping.map($cut.pos)), 1)
+                      : NodeSelection.create(tr.doc, tr.mapping.map($cut.pos)));
+      dispatch(tr.scrollIntoView());
+    }
+    return true
+  }
+
+  // If the next node is an atom, delete it
+  if (after.isAtom && $cut.depth == $cursor.depth - 1) {
+    if (dispatch) { dispatch(state.tr.delete($cut.pos, $cut.pos + after.nodeSize).scrollIntoView()); }
+    return true
+  }
+
+  return false
+}
+
+// :: (EditorState, ?(tr: Transaction), ?EditorView) → bool
+// When the selection is empty and at the end of a textblock, select
+// the node coming after that textblock, if possible. This is intended
+// to be bound to keys like delete, after
+// [`joinForward`](#commands.joinForward) and similar deleting
+// commands, to provide a fall-back behavior when the schema doesn't
+// allow deletion at the selected point.
+function selectNodeForward$2(state, dispatch, view) {
+  var ref = state.selection;
+  var $head = ref.$head;
+  var empty = ref.empty;
+  var $cut = $head;
+  if (!empty) { return false }
+  if ($head.parent.isTextblock) {
+    if (view ? !view.endOfTextblock("forward", state) : $head.parentOffset < $head.parent.content.size)
+      { return false }
+    $cut = findCutAfter($head);
+  }
+  var node = $cut && $cut.nodeAfter;
+  if (!node || !NodeSelection.isSelectable(node)) { return false }
+  if (dispatch)
+    { dispatch(state.tr.setSelection(NodeSelection.create(state.doc, $cut.pos)).scrollIntoView()); }
+  return true
+}
+
+function findCutAfter($pos) {
+  if (!$pos.parent.type.spec.isolating) { for (var i = $pos.depth - 1; i >= 0; i--) {
+    var parent = $pos.node(i);
+    if ($pos.index(i) + 1 < parent.childCount) { return $pos.doc.resolve($pos.after(i + 1)) }
+    if (parent.type.spec.isolating) { break }
+  } }
+  return null
+}
+
+// :: (EditorState, ?(tr: Transaction)) → bool
+// Lift the selected block, or the closest ancestor block of the
+// selection that can be lifted, out of its parent node.
+function lift$2(state, dispatch) {
+  var ref = state.selection;
+  var $from = ref.$from;
+  var $to = ref.$to;
+  var range = $from.blockRange($to), target = range && liftTarget(range);
+  if (target == null) { return false }
+  if (dispatch) { dispatch(state.tr.lift(range, target).scrollIntoView()); }
+  return true
+}
+
+// :: (EditorState, ?(tr: Transaction)) → bool
+// If the selection is in a node whose type has a truthy
+// [`code`](#model.NodeSpec.code) property in its spec, replace the
+// selection with a newline character.
+function newlineInCode$2(state, dispatch) {
+  var ref = state.selection;
+  var $head = ref.$head;
+  var $anchor = ref.$anchor;
+  if (!$head.parent.type.spec.code || !$head.sameParent($anchor)) { return false }
+  if (dispatch) { dispatch(state.tr.insertText("\n").scrollIntoView()); }
+  return true
+}
+
+function defaultBlockAt$1(match) {
+  for (var i = 0; i < match.edgeCount; i++) {
+    var ref = match.edge(i);
+    var type = ref.type;
+    if (type.isTextblock && !type.hasRequiredAttrs()) { return type }
+  }
+  return null
+}
+
+// :: (EditorState, ?(tr: Transaction)) → bool
+// When the selection is in a node with a truthy
+// [`code`](#model.NodeSpec.code) property in its spec, create a
+// default block after the code block, and move the cursor there.
+function exitCode$2(state, dispatch) {
+  var ref = state.selection;
+  var $head = ref.$head;
+  var $anchor = ref.$anchor;
+  if (!$head.parent.type.spec.code || !$head.sameParent($anchor)) { return false }
+  var above = $head.node(-1), after = $head.indexAfter(-1), type = defaultBlockAt$1(above.contentMatchAt(after));
+  if (!above.canReplaceWith(after, after, type)) { return false }
+  if (dispatch) {
+    var pos = $head.after(), tr = state.tr.replaceWith(pos, pos, type.createAndFill());
+    tr.setSelection(Selection.near(tr.doc.resolve(pos), 1));
+    dispatch(tr.scrollIntoView());
+  }
+  return true
+}
+
+// :: (EditorState, ?(tr: Transaction)) → bool
+// If a block node is selected, create an empty paragraph before (if
+// it is its parent's first child) or after it.
+function createParagraphNear$2(state, dispatch) {
+  var sel = state.selection;
+  var $from = sel.$from;
+  var $to = sel.$to;
+  if (sel instanceof AllSelection || $from.parent.inlineContent || $to.parent.inlineContent) { return false }
+  var type = defaultBlockAt$1($to.parent.contentMatchAt($to.indexAfter()));
+  if (!type || !type.isTextblock) { return false }
+  if (dispatch) {
+    var side = (!$from.parentOffset && $to.index() < $to.parent.childCount ? $from : $to).pos;
+    var tr = state.tr.insert(side, type.createAndFill());
+    tr.setSelection(TextSelection.create(tr.doc, side + 1));
+    dispatch(tr.scrollIntoView());
+  }
+  return true
+}
+
+// :: (EditorState, ?(tr: Transaction)) → bool
+// If the cursor is in an empty textblock that can be lifted, lift the
+// block.
+function liftEmptyBlock$2(state, dispatch) {
+  var ref = state.selection;
+  var $cursor = ref.$cursor;
+  if (!$cursor || $cursor.parent.content.size) { return false }
+  if ($cursor.depth > 1 && $cursor.after() != $cursor.end(-1)) {
+    var before = $cursor.before();
+    if (canSplit(state.doc, before)) {
+      if (dispatch) { dispatch(state.tr.split(before).scrollIntoView()); }
+      return true
+    }
+  }
+  var range = $cursor.blockRange(), target = range && liftTarget(range);
+  if (target == null) { return false }
+  if (dispatch) { dispatch(state.tr.lift(range, target).scrollIntoView()); }
+  return true
+}
+
+// :: (EditorState, ?(tr: Transaction)) → bool
+// Split the parent block of the selection. If the selection is a text
+// selection, also delete its content.
+function splitBlock$2(state, dispatch) {
+  var ref = state.selection;
+  var $from = ref.$from;
+  var $to = ref.$to;
+  if (state.selection instanceof NodeSelection && state.selection.node.isBlock) {
+    if (!$from.parentOffset || !canSplit(state.doc, $from.pos)) { return false }
+    if (dispatch) { dispatch(state.tr.split($from.pos).scrollIntoView()); }
+    return true
+  }
+
+  if (!$from.parent.isBlock) { return false }
+
+  if (dispatch) {
+    var atEnd = $to.parentOffset == $to.parent.content.size;
+    var tr = state.tr;
+    if (state.selection instanceof TextSelection || state.selection instanceof AllSelection) { tr.deleteSelection(); }
+    var deflt = $from.depth == 0 ? null : defaultBlockAt$1($from.node(-1).contentMatchAt($from.indexAfter(-1)));
+    var types = atEnd && deflt ? [{type: deflt}] : null;
+    var can = canSplit(tr.doc, tr.mapping.map($from.pos), 1, types);
+    if (!types && !can && canSplit(tr.doc, tr.mapping.map($from.pos), 1, deflt && [{type: deflt}])) {
+      types = [{type: deflt}];
+      can = true;
+    }
+    if (can) {
+      tr.split(tr.mapping.map($from.pos), 1, types);
+      if (!atEnd && !$from.parentOffset && $from.parent.type != deflt) {
+        var first = tr.mapping.map($from.before()), $first = tr.doc.resolve(first);
+        if ($from.node(-1).canReplaceWith($first.index(), $first.index() + 1, deflt))
+          { tr.setNodeMarkup(tr.mapping.map($from.before()), deflt); }
+      }
+    }
+    dispatch(tr.scrollIntoView());
+  }
+  return true
+}
+
+// :: (EditorState, ?(tr: Transaction)) → bool
+// Move the selection to the node wrapping the current selection, if
+// any. (Will not select the document node.)
+function selectParentNode$2(state, dispatch) {
+  var ref = state.selection;
+  var $from = ref.$from;
+  var to = ref.to;
+  var pos;
+  var same = $from.sharedDepth(to);
+  if (same == 0) { return false }
+  pos = $from.before(same);
+  if (dispatch) { dispatch(state.tr.setSelection(NodeSelection.create(state.doc, pos))); }
+  return true
+}
+
+// :: (EditorState, ?(tr: Transaction)) → bool
+// Select the whole document.
+function selectAll$2(state, dispatch) {
+  if (dispatch) { dispatch(state.tr.setSelection(new AllSelection(state.doc))); }
+  return true
+}
+
+function joinMaybeClear(state, $pos, dispatch) {
+  var before = $pos.nodeBefore, after = $pos.nodeAfter, index = $pos.index();
+  if (!before || !after || !before.type.compatibleContent(after.type)) { return false }
+  if (!before.content.size && $pos.parent.canReplace(index - 1, index)) {
+    if (dispatch) { dispatch(state.tr.delete($pos.pos - before.nodeSize, $pos.pos).scrollIntoView()); }
+    return true
+  }
+  if (!$pos.parent.canReplace(index, index + 1) || !(after.isTextblock || canJoin(state.doc, $pos.pos)))
+    { return false }
+  if (dispatch)
+    { dispatch(state.tr
+             .clearIncompatible($pos.pos, before.type, before.contentMatchAt(before.childCount))
+             .join($pos.pos)
+             .scrollIntoView()); }
+  return true
+}
+
+function deleteBarrier(state, $cut, dispatch) {
+  var before = $cut.nodeBefore, after = $cut.nodeAfter, conn, match;
+  if (before.type.spec.isolating || after.type.spec.isolating) { return false }
+  if (joinMaybeClear(state, $cut, dispatch)) { return true }
+
+  var canDelAfter = $cut.parent.canReplace($cut.index(), $cut.index() + 1);
+  if (canDelAfter &&
+      (conn = (match = before.contentMatchAt(before.childCount)).findWrapping(after.type)) &&
+      match.matchType(conn[0] || after.type).validEnd) {
+    if (dispatch) {
+      var end = $cut.pos + after.nodeSize, wrap = Fragment.empty;
+      for (var i = conn.length - 1; i >= 0; i--)
+        { wrap = Fragment.from(conn[i].create(null, wrap)); }
+      wrap = Fragment.from(before.copy(wrap));
+      var tr = state.tr.step(new ReplaceAroundStep($cut.pos - 1, end, $cut.pos, end, new Slice(wrap, 1, 0), conn.length, true));
+      var joinAt = end + 2 * conn.length;
+      if (canJoin(tr.doc, joinAt)) { tr.join(joinAt); }
+      dispatch(tr.scrollIntoView());
+    }
+    return true
+  }
+
+  var selAfter = Selection.findFrom($cut, 1);
+  var range = selAfter && selAfter.$from.blockRange(selAfter.$to), target = range && liftTarget(range);
+  if (target != null && target >= $cut.depth) {
+    if (dispatch) { dispatch(state.tr.lift(range, target).scrollIntoView()); }
+    return true
+  }
+
+  if (canDelAfter && textblockAt(after, "start", true) && textblockAt(before, "end")) {
+    var at = before, wrap$1 = [];
+    for (;;) {
+      wrap$1.push(at);
+      if (at.isTextblock) { break }
+      at = at.lastChild;
+    }
+    var afterText = after, afterDepth = 1;
+    for (; !afterText.isTextblock; afterText = afterText.firstChild) { afterDepth++; }
+    if (at.canReplace(at.childCount, at.childCount, afterText.content)) {
+      if (dispatch) {
+        var end$1 = Fragment.empty;
+        for (var i$1 = wrap$1.length - 1; i$1 >= 0; i$1--) { end$1 = Fragment.from(wrap$1[i$1].copy(end$1)); }
+        var tr$1 = state.tr.step(new ReplaceAroundStep($cut.pos - wrap$1.length, $cut.pos + after.nodeSize,
+                                                     $cut.pos + afterDepth, $cut.pos + after.nodeSize - afterDepth,
+                                                     new Slice(end$1, wrap$1.length, 0), 0, true));
+        dispatch(tr$1.scrollIntoView());
+      }
+      return true
+    }
+  }
+
+  return false
+}
+
+// Parameterized commands
+
+// :: (NodeType, ?Object) → (state: EditorState, dispatch: ?(tr: Transaction)) → bool
+// Wrap the selection in a node of the given type with the given
+// attributes.
+function wrapIn$2(nodeType, attrs) {
+  return function(state, dispatch) {
+    var ref = state.selection;
+    var $from = ref.$from;
+    var $to = ref.$to;
+    var range = $from.blockRange($to), wrapping = range && findWrapping(range, nodeType, attrs);
+    if (!wrapping) { return false }
+    if (dispatch) { dispatch(state.tr.wrap(range, wrapping).scrollIntoView()); }
+    return true
+  }
+}
+
+// :: (NodeType, ?Object) → (state: EditorState, dispatch: ?(tr: Transaction)) → bool
+// Returns a command that tries to set the selected textblocks to the
+// given node type with the given attributes.
+function setBlockType(nodeType, attrs) {
+  return function(state, dispatch) {
+    var ref = state.selection;
+    var from = ref.from;
+    var to = ref.to;
+    var applicable = false;
+    state.doc.nodesBetween(from, to, function (node, pos) {
+      if (applicable) { return false }
+      if (!node.isTextblock || node.hasMarkup(nodeType, attrs)) { return }
+      if (node.type == nodeType) {
+        applicable = true;
+      } else {
+        var $pos = state.doc.resolve(pos), index = $pos.index();
+        applicable = $pos.parent.canReplaceWith(index, index + 1, nodeType);
+      }
+    });
+    if (!applicable) { return false }
+    if (dispatch) { dispatch(state.tr.setBlockType(from, to, nodeType, attrs).scrollIntoView()); }
+    return true
+  }
+}
+
+// :: (...[(EditorState, ?(tr: Transaction), ?EditorView) → bool]) → (EditorState, ?(tr: Transaction), ?EditorView) → bool
+// Combine a number of command functions into a single function (which
+// calls them one by one until one returns true).
+function chainCommands() {
+  var commands = [], len = arguments.length;
+  while ( len-- ) commands[ len ] = arguments[ len ];
+
+  return function(state, dispatch, view) {
+    for (var i = 0; i < commands.length; i++)
+      { if (commands[i](state, dispatch, view)) { return true } }
+    return false
+  }
+}
+
+var backspace = chainCommands(deleteSelection$2, joinBackward$2, selectNodeBackward$2);
+var del = chainCommands(deleteSelection$2, joinForward$2, selectNodeForward$2);
+
+// :: Object
+// A basic keymap containing bindings not specific to any schema.
+// Binds the following keys (when multiple commands are listed, they
+// are chained with [`chainCommands`](#commands.chainCommands)):
+//
+// * **Enter** to `newlineInCode`, `createParagraphNear`, `liftEmptyBlock`, `splitBlock`
+// * **Mod-Enter** to `exitCode`
+// * **Backspace** and **Mod-Backspace** to `deleteSelection`, `joinBackward`, `selectNodeBackward`
+// * **Delete** and **Mod-Delete** to `deleteSelection`, `joinForward`, `selectNodeForward`
+// * **Mod-Delete** to `deleteSelection`, `joinForward`, `selectNodeForward`
+// * **Mod-a** to `selectAll`
+var pcBaseKeymap = {
+  "Enter": chainCommands(newlineInCode$2, createParagraphNear$2, liftEmptyBlock$2, splitBlock$2),
+  "Mod-Enter": exitCode$2,
+  "Backspace": backspace,
+  "Mod-Backspace": backspace,
+  "Shift-Backspace": backspace,
+  "Delete": del,
+  "Mod-Delete": del,
+  "Mod-a": selectAll$2
+};
+
+// :: Object
+// A copy of `pcBaseKeymap` that also binds **Ctrl-h** like Backspace,
+// **Ctrl-d** like Delete, **Alt-Backspace** like Ctrl-Backspace, and
+// **Ctrl-Alt-Backspace**, **Alt-Delete**, and **Alt-d** like
+// Ctrl-Delete.
+var macBaseKeymap = {
+  "Ctrl-h": pcBaseKeymap["Backspace"],
+  "Alt-Backspace": pcBaseKeymap["Mod-Backspace"],
+  "Ctrl-d": pcBaseKeymap["Delete"],
+  "Ctrl-Alt-Backspace": pcBaseKeymap["Mod-Delete"],
+  "Alt-Delete": pcBaseKeymap["Mod-Delete"],
+  "Alt-d": pcBaseKeymap["Mod-Delete"]
+};
+for (var key in pcBaseKeymap) { macBaseKeymap[key] = pcBaseKeymap[key]; }
+
+// declare global: os, navigator
+typeof navigator != "undefined" ? /Mac|iP(hone|[oa]d)/.test(navigator.platform)
+          : typeof os != "undefined" ? os.platform() == "darwin" : false;
+
+// :: (NodeType, ?Object) → (state: EditorState, dispatch: ?(tr: Transaction)) → bool
+// Returns a command function that wraps the selection in a list with
+// the given type an attributes. If `dispatch` is null, only return a
+// value to indicate whether this is possible, but don't actually
+// perform the change.
+function wrapInList$2(listType, attrs) {
+  return function(state, dispatch) {
+    var ref = state.selection;
+    var $from = ref.$from;
+    var $to = ref.$to;
+    var range = $from.blockRange($to), doJoin = false, outerRange = range;
+    if (!range) { return false }
+    // This is at the top of an existing list item
+    if (range.depth >= 2 && $from.node(range.depth - 1).type.compatibleContent(listType) && range.startIndex == 0) {
+      // Don't do anything if this is the top of the list
+      if ($from.index(range.depth - 1) == 0) { return false }
+      var $insert = state.doc.resolve(range.start - 2);
+      outerRange = new NodeRange($insert, $insert, range.depth);
+      if (range.endIndex < range.parent.childCount)
+        { range = new NodeRange($from, state.doc.resolve($to.end(range.depth)), range.depth); }
+      doJoin = true;
+    }
+    var wrap = findWrapping(outerRange, listType, attrs, range);
+    if (!wrap) { return false }
+    if (dispatch) { dispatch(doWrapInList(state.tr, range, wrap, doJoin, listType).scrollIntoView()); }
+    return true
+  }
+}
+
+function doWrapInList(tr, range, wrappers, joinBefore, listType) {
+  var content = Fragment.empty;
+  for (var i = wrappers.length - 1; i >= 0; i--)
+    { content = Fragment.from(wrappers[i].type.create(wrappers[i].attrs, content)); }
+
+  tr.step(new ReplaceAroundStep(range.start - (joinBefore ? 2 : 0), range.end, range.start, range.end,
+                                new Slice(content, 0, 0), wrappers.length, true));
+
+  var found = 0;
+  for (var i$1 = 0; i$1 < wrappers.length; i$1++) { if (wrappers[i$1].type == listType) { found = i$1 + 1; } }
+  var splitDepth = wrappers.length - found;
+
+  var splitPos = range.start + wrappers.length - (joinBefore ? 2 : 0), parent = range.parent;
+  for (var i$2 = range.startIndex, e = range.endIndex, first = true; i$2 < e; i$2++, first = false) {
+    if (!first && canSplit(tr.doc, splitPos, splitDepth)) {
+      tr.split(splitPos, splitDepth);
+      splitPos += 2 * splitDepth;
+    }
+    splitPos += parent.child(i$2).nodeSize;
+  }
+  return tr
+}
+
+// :: (NodeType) → (state: EditorState, dispatch: ?(tr: Transaction)) → bool
+// Create a command to lift the list item around the selection up into
+// a wrapping list.
+function liftListItem$2(itemType) {
+  return function(state, dispatch) {
+    var ref = state.selection;
+    var $from = ref.$from;
+    var $to = ref.$to;
+    var range = $from.blockRange($to, function (node) { return node.childCount && node.firstChild.type == itemType; });
+    if (!range) { return false }
+    if (!dispatch) { return true }
+    if ($from.node(range.depth - 1).type == itemType) // Inside a parent list
+      { return liftToOuterList(state, dispatch, itemType, range) }
+    else // Outer list node
+      { return liftOutOfList(state, dispatch, range) }
+  }
+}
+
+function liftToOuterList(state, dispatch, itemType, range) {
+  var tr = state.tr, end = range.end, endOfList = range.$to.end(range.depth);
+  if (end < endOfList) {
+    // There are siblings after the lifted items, which must become
+    // children of the last item
+    tr.step(new ReplaceAroundStep(end - 1, endOfList, end, endOfList,
+                                  new Slice(Fragment.from(itemType.create(null, range.parent.copy())), 1, 0), 1, true));
+    range = new NodeRange(tr.doc.resolve(range.$from.pos), tr.doc.resolve(endOfList), range.depth);
+  }
+  dispatch(tr.lift(range, liftTarget(range)).scrollIntoView());
+  return true
+}
+
+function liftOutOfList(state, dispatch, range) {
+  var tr = state.tr, list = range.parent;
+  // Merge the list items into a single big item
+  for (var pos = range.end, i = range.endIndex - 1, e = range.startIndex; i > e; i--) {
+    pos -= list.child(i).nodeSize;
+    tr.delete(pos - 1, pos + 1);
+  }
+  var $start = tr.doc.resolve(range.start), item = $start.nodeAfter;
+  if (tr.mapping.map(range.end) != range.start + $start.nodeAfter.nodeSize) { return false }
+  var atStart = range.startIndex == 0, atEnd = range.endIndex == list.childCount;
+  var parent = $start.node(-1), indexBefore = $start.index(-1);
+  if (!parent.canReplace(indexBefore + (atStart ? 0 : 1), indexBefore + 1,
+                         item.content.append(atEnd ? Fragment.empty : Fragment.from(list))))
+    { return false }
+  var start = $start.pos, end = start + item.nodeSize;
+  // Strip off the surrounding list. At the sides where we're not at
+  // the end of the list, the existing list is closed. At sides where
+  // this is the end, it is overwritten to its end.
+  tr.step(new ReplaceAroundStep(start - (atStart ? 1 : 0), end + (atEnd ? 1 : 0), start + 1, end - 1,
+                                new Slice((atStart ? Fragment.empty : Fragment.from(list.copy(Fragment.empty)))
+                                          .append(atEnd ? Fragment.empty : Fragment.from(list.copy(Fragment.empty))),
+                                          atStart ? 0 : 1, atEnd ? 0 : 1), atStart ? 0 : 1));
+  dispatch(tr.scrollIntoView());
+  return true
+}
+
+// :: (NodeType) → (state: EditorState, dispatch: ?(tr: Transaction)) → bool
+// Create a command to sink the list item around the selection down
+// into an inner list.
+function sinkListItem$2(itemType) {
+  return function(state, dispatch) {
+    var ref = state.selection;
+    var $from = ref.$from;
+    var $to = ref.$to;
+    var range = $from.blockRange($to, function (node) { return node.childCount && node.firstChild.type == itemType; });
+    if (!range) { return false }
+    var startIndex = range.startIndex;
+    if (startIndex == 0) { return false }
+    var parent = range.parent, nodeBefore = parent.child(startIndex - 1);
+    if (nodeBefore.type != itemType) { return false }
+
+    if (dispatch) {
+      var nestedBefore = nodeBefore.lastChild && nodeBefore.lastChild.type == parent.type;
+      var inner = Fragment.from(nestedBefore ? itemType.create() : null);
+      var slice = new Slice(Fragment.from(itemType.create(null, Fragment.from(parent.type.create(null, inner)))),
+                            nestedBefore ? 3 : 1, 0);
+      var before = range.start, after = range.end;
+      dispatch(state.tr.step(new ReplaceAroundStep(before - (nestedBefore ? 3 : 1), after,
+                                                   before, after, slice, 1, true))
+               .scrollIntoView());
+    }
+    return true
+  }
+}
+
 var result = {};
 
 if (typeof navigator != "undefined" && typeof document != "undefined") {
@@ -14157,7 +14818,6 @@ if (typeof navigator != "undefined" && typeof document != "undefined") {
   var ie_upto10 = /MSIE \d/.test(navigator.userAgent);
   var ie_11up = /Trident\/(?:[7-9]|\d{2,})\..*rv:(\d+)/.exec(navigator.userAgent);
 
-  result.mac = /Mac/.test(navigator.platform);
   var ie$1 = result.ie = !!(ie_upto10 || ie_11up || ie_edge);
   result.ie_version = ie_upto10 ? document.documentMode || 6 : ie_11up ? +ie_11up[1] : ie_edge ? +ie_edge[1] : null;
   result.gecko = !ie$1 && /gecko\/(\d+)/i.test(navigator.userAgent);
@@ -14168,6 +14828,7 @@ if (typeof navigator != "undefined" && typeof document != "undefined") {
   // Is true for both iOS and iPadOS for convenience
   result.safari = !ie$1 && /Apple Computer/.test(navigator.vendor);
   result.ios = result.safari && (/Mobile\/\w+/.test(navigator.userAgent) || navigator.maxTouchPoints > 2);
+  result.mac = result.ios || /Mac/.test(navigator.platform);
   result.android = /Android \d/.test(navigator.userAgent);
   result.webkit = "webkitFontSmoothing" in document.documentElement.style;
   result.webkit_version = result.webkit && +(/\bAppleWebKit\/(\d+)/.exec(navigator.userAgent) || [0, 0])[1];
@@ -14505,19 +15166,19 @@ function elementFromPoint(element, coords, box) {
 function posAtCoords(view, coords) {
   var assign, assign$1;
 
-  var root = view.root, node, offset;
-  if (root.caretPositionFromPoint) {
+  var doc = view.dom.ownerDocument, node, offset;
+  if (doc.caretPositionFromPoint) {
     try { // Firefox throws for this call in hard-to-predict circumstances (#994)
-      var pos$1 = root.caretPositionFromPoint(coords.left, coords.top);
+      var pos$1 = doc.caretPositionFromPoint(coords.left, coords.top);
       if (pos$1) { ((assign = pos$1, node = assign.offsetNode, offset = assign.offset)); }
     } catch (_) {}
   }
-  if (!node && root.caretRangeFromPoint) {
-    var range = root.caretRangeFromPoint(coords.left, coords.top);
+  if (!node && doc.caretRangeFromPoint) {
+    var range = doc.caretRangeFromPoint(coords.left, coords.top);
     if (range) { ((assign$1 = range, node = assign$1.startContainer, offset = assign$1.startOffset)); }
   }
 
-  var elt = root.elementFromPoint(coords.left, coords.top + 1), pos;
+  var elt = (view.root.elementFromPoint ? view.root : doc).elementFromPoint(coords.left, coords.top + 1), pos;
   if (!elt || !view.dom.contains(elt.nodeType != 1 ? elt.parentNode : elt)) {
     var box = view.dom.getBoundingClientRect();
     if (!inRect(coords, box)) { return null }
@@ -14628,7 +15289,8 @@ function coordsAtPos(view, pos, side) {
   }
   if (offset < nodeSize(node)) {
     var after$1 = node.childNodes[offset];
-    var target$1 = after$1.nodeType == 3 ? textRange(after$1, 0, (supportEmptyRange ? 0 : 1))
+    while (after$1.pmViewDesc && after$1.pmViewDesc.ignoreForCoords) { after$1 = after$1.nextSibling; }
+    var target$1 = !after$1 ? null : after$1.nodeType == 3 ? textRange(after$1, 0, (supportEmptyRange ? 0 : 1))
         : after$1.nodeType == 1 ? after$1 : null;
     if (target$1) { return flattenV(singleRect(target$1, -1), true) }
   }
@@ -14683,7 +15345,9 @@ function endOfTextblockVertical(view, state, dir) {
       else { continue }
       for (var i = 0; i < boxes.length; i++) {
         var box = boxes[i];
-        if (box.bottom > box.top && (dir == "up" ? box.bottom < coords.top + 1 : box.top > coords.bottom - 1))
+        if (box.bottom > box.top + 1 &&
+            (dir == "up" ? coords.top - box.top > (box.bottom - coords.top) * 2
+             : box.bottom - coords.bottom > (coords.bottom - box.top) * 2))
           { return false }
       }
     }
@@ -14698,7 +15362,7 @@ function endOfTextblockHorizontal(view, state, dir) {
   var $head = ref.$head;
   if (!$head.parent.isTextblock) { return false }
   var offset = $head.parentOffset, atStart = !offset, atEnd = offset == $head.parent.content.size;
-  var sel = getSelection();
+  var sel = view.root.getSelection();
   // If the textblock is all LTR, or the browser doesn't support
   // Selection.modify (Edge), fall back to a primitive approach
   if (!maybeRTL.test($head.parent.textContent) || !sel.modify)
@@ -14835,7 +15499,7 @@ var ViewDesc = function ViewDesc(parent, children, dom, contentDOM) {
   this.dirty = NOT_DIRTY;
 };
 
-var prototypeAccessors = { beforePosition: { configurable: true },size: { configurable: true },border: { configurable: true },posBefore: { configurable: true },posAtStart: { configurable: true },posAfter: { configurable: true },posAtEnd: { configurable: true },contentLost: { configurable: true },domAtom: { configurable: true } };
+var prototypeAccessors = { size: { configurable: true },border: { configurable: true },posBefore: { configurable: true },posAtStart: { configurable: true },posAfter: { configurable: true },posAtEnd: { configurable: true },contentLost: { configurable: true },domAtom: { configurable: true },ignoreForCoords: { configurable: true } };
 
 // Used to check whether a given description corresponds to a
 // widget/mark/node.
@@ -14843,8 +15507,6 @@ ViewDesc.prototype.matchesWidget = function matchesWidget () { return false };
 ViewDesc.prototype.matchesMark = function matchesMark () { return false };
 ViewDesc.prototype.matchesNode = function matchesNode () { return false };
 ViewDesc.prototype.matchesHack = function matchesHack (_nodeName) { return false };
-
-prototypeAccessors.beforePosition.get = function () { return false };
 
 // : () → ?ParseRule
 // When parsing in-editor content (in domchange.js), we allow
@@ -14994,23 +15656,34 @@ ViewDesc.prototype.descAt = function descAt (pos) {
 // : (number, number) → {node: dom.Node, offset: number}
 ViewDesc.prototype.domFromPos = function domFromPos (pos, side) {
   if (!this.contentDOM) { return {node: this.dom, offset: 0} }
-  for (var offset = 0, i = 0, first = true;; i++, first = false) {
-    // Skip removed or always-before children
-    while (i < this.children.length && (this.children[i].beforePosition ||
-                                        this.children[i].dom.parentNode != this.contentDOM))
-      { offset += this.children[i++].size; }
-    var child = i == this.children.length ? null : this.children[i];
-    if (offset == pos && (side == 0 || !child || !child.size || child.border || (side < 0 && first)) ||
-        child && child.domAtom && pos < offset + child.size) { return {
-      node: this.contentDOM,
-      offset: child ? domIndex(child.dom) : this.contentDOM.childNodes.length
-    } }
-    if (!child) { throw new Error("Invalid position " + pos) }
-    var end = offset + child.size;
-    if (!child.domAtom && (side < 0 && !child.border ? end >= pos : end > pos) &&
-        (end > pos || i + 1 >= this.children.length || !this.children[i + 1].beforePosition))
-      { return child.domFromPos(pos - offset - child.border, side) }
-    offset = end;
+  // First find the position in the child array
+  var i = 0, offset = 0;
+  for (var curPos = 0; i < this.children.length; i++) {
+    var child = this.children[i], end = curPos + child.size;
+    if (end > pos || child instanceof TrailingHackViewDesc) { offset = pos - curPos; break }
+    curPos = end;
+  }
+  // If this points into the middle of a child, call through
+  if (offset) { return this.children[i].domFromPos(offset - this.children[i].border, side) }
+  // Go back if there were any zero-length widgets with side >= 0 before this point
+  for (var prev = (void 0); i && !(prev = this.children[i - 1]).size && prev instanceof WidgetViewDesc && prev.widget.type.side >= 0; i--) {}
+  // Scan towards the first useable node
+  if (side <= 0) {
+    var prev$1, enter = true;
+    for (;; i--, enter = false) {
+      prev$1 = i ? this.children[i - 1] : null;
+      if (!prev$1 || prev$1.dom.parentNode == this.contentDOM) { break }
+    }
+    if (prev$1 && side && enter && !prev$1.border && !prev$1.domAtom) { return prev$1.domFromPos(prev$1.size, side) }
+    return {node: this.contentDOM, offset: prev$1 ? domIndex(prev$1.dom) + 1 : 0}
+  } else {
+    var next, enter$1 = true;
+    for (;; i++, enter$1 = false) {
+      next = i < this.children.length ? this.children[i] : null;
+      if (!next || next.dom.parentNode == this.contentDOM) { break }
+    }
+    if (next && enter$1 && !next.border && !next.domAtom) { return next.domFromPos(0, side) }
+    return {node: this.contentDOM, offset: next ? domIndex(next.dom) : this.contentDOM.childNodes.length}
   }
 };
 
@@ -15187,7 +15860,7 @@ ViewDesc.prototype.markDirty = function markDirty (from, to) {
         else { child.markDirty(from - startInside, to - startInside); }
         return
       } else {
-        child.dirty = NODE_DIRTY;
+        child.dirty = child.dom == child.contentDOM && child.dom.parentNode == this.contentDOM ? CONTENT_DIRTY : NODE_DIRTY;
       }
     }
     offset = end;
@@ -15204,6 +15877,8 @@ ViewDesc.prototype.markParentsDirty = function markParentsDirty () {
 };
 
 prototypeAccessors.domAtom.get = function () { return false };
+
+prototypeAccessors.ignoreForCoords.get = function () { return false };
 
 Object.defineProperties( ViewDesc.prototype, prototypeAccessors );
 
@@ -15238,11 +15913,7 @@ var WidgetViewDesc = /*@__PURE__*/(function (ViewDesc) {
   WidgetViewDesc.prototype = Object.create( ViewDesc && ViewDesc.prototype );
   WidgetViewDesc.prototype.constructor = WidgetViewDesc;
 
-  var prototypeAccessors$1 = { beforePosition: { configurable: true },domAtom: { configurable: true } };
-
-  prototypeAccessors$1.beforePosition.get = function () {
-    return this.widget.type.side < 0
-  };
+  var prototypeAccessors$1 = { domAtom: { configurable: true } };
 
   WidgetViewDesc.prototype.matchesWidget = function matchesWidget (widget) {
     return this.dirty == NOT_DIRTY && widget.type.eq(this.widget.type)
@@ -15257,6 +15928,11 @@ var WidgetViewDesc = /*@__PURE__*/(function (ViewDesc) {
 
   WidgetViewDesc.prototype.ignoreMutation = function ignoreMutation (mutation) {
     return mutation.type != "selection" || this.widget.spec.ignoreSelection
+  };
+
+  WidgetViewDesc.prototype.destroy = function destroy () {
+    this.widget.type.destroy(this.dom);
+    ViewDesc.prototype.destroy.call(this);
   };
 
   prototypeAccessors$1.domAtom.get = function () { return true };
@@ -15375,7 +16051,7 @@ var NodeViewDesc = /*@__PURE__*/(function (ViewDesc) {
   // the way the node works.
   //
   // (Using subclassing for this was intentionally decided against,
-  // since it'd require exposing a whole slew of finnicky
+  // since it'd require exposing a whole slew of finicky
   // implementation details to the user code that they probably will
   // never need.)
   NodeViewDesc.create = function create (parent, node, outerDeco, innerDeco, view, pos) {
@@ -15414,7 +16090,7 @@ var NodeViewDesc = /*@__PURE__*/(function (ViewDesc) {
   };
 
   NodeViewDesc.prototype.parseRule = function parseRule () {
-    var this$1 = this;
+    var this$1$1 = this;
 
     // Experimental kludge to allow opt-in re-parsing of nodes
     if (this.node.type.spec.reparseInView) { return null }
@@ -15425,7 +16101,7 @@ var NodeViewDesc = /*@__PURE__*/(function (ViewDesc) {
     var rule = {node: this.node.type.name, attrs: this.node.attrs};
     if (this.node.type.spec.code) { rule.preserveWhitespace = "full"; }
     if (this.contentDOM && !this.contentLost) { rule.contentElement = this.contentDOM; }
-    else { rule.getContent = function () { return this$1.contentDOM ? Fragment.empty : this$1.node.content; }; }
+    else { rule.getContent = function () { return this$1$1.contentDOM ? Fragment.empty : this$1$1.node.content; }; }
     return rule
   };
 
@@ -15443,29 +16119,33 @@ var NodeViewDesc = /*@__PURE__*/(function (ViewDesc) {
   // separate step, syncs the DOM inside `this.contentDOM` to
   // `this.children`.
   NodeViewDesc.prototype.updateChildren = function updateChildren (view, pos) {
-    var this$1 = this;
+    var this$1$1 = this;
 
     var inline = this.node.inlineContent, off = pos;
-    var composition = inline && view.composing && this.localCompositionNode(view, pos);
-    var updater = new ViewTreeUpdater(this, composition && composition.node);
+    var composition = view.composing && this.localCompositionInfo(view, pos);
+    var localComposition = composition && composition.pos > -1 ? composition : null;
+    var compositionInChild = composition && composition.pos < 0;
+    var updater = new ViewTreeUpdater(this, localComposition && localComposition.node);
     iterDeco(this.node, this.innerDeco, function (widget, i, insideNode) {
       if (widget.spec.marks)
         { updater.syncToMarks(widget.spec.marks, inline, view); }
       else if (widget.type.side >= 0 && !insideNode)
-        { updater.syncToMarks(i == this$1.node.childCount ? Mark$1.none : this$1.node.child(i).marks, inline, view); }
+        { updater.syncToMarks(i == this$1$1.node.childCount ? Mark$1.none : this$1$1.node.child(i).marks, inline, view); }
       // If the next node is a desc matching this widget, reuse it,
       // otherwise insert the widget as a new view desc.
       updater.placeWidget(widget, view, off);
     }, function (child, outerDeco, innerDeco, i) {
       // Make sure the wrapping mark descs match the node's marks.
       updater.syncToMarks(child.marks, inline, view);
-      // Either find an existing desc that exactly matches this node,
-      // and drop the descs before it.
-      updater.findNodeMatch(child, outerDeco, innerDeco, i) ||
-        // Or try updating the next desc to reflect this node.
-        updater.updateNextNode(child, outerDeco, innerDeco, view, i) ||
-        // Or just add it as a new desc.
+      // Try several strategies for drawing this node
+      var compIndex;
+      if (updater.findNodeMatch(child, outerDeco, innerDeco, i)) ; else if (compositionInChild && view.state.selection.from > off &&
+                 view.state.selection.to < off + child.nodeSize &&
+                 (compIndex = updater.findIndexWithChild(composition.node)) > -1 &&
+                 updater.updateNodeAt(child, outerDeco, innerDeco, compIndex, view)) ; else if (updater.updateNextNode(child, outerDeco, innerDeco, view, i)) ; else {
+        // Add it as a new view
         updater.addNode(child, outerDeco, innerDeco, view, off);
+      }
       off += child.nodeSize;
     });
     // Drop all remaining descs after the current position.
@@ -15476,16 +16156,15 @@ var NodeViewDesc = /*@__PURE__*/(function (ViewDesc) {
     // Sync the DOM if anything changed
     if (updater.changed || this.dirty == CONTENT_DIRTY) {
       // May have to protect focused DOM from being changed if a composition is active
-      if (composition) { this.protectLocalComposition(view, composition); }
+      if (localComposition) { this.protectLocalComposition(view, localComposition); }
       renderDescs(this.contentDOM, this.children, view);
       if (result.ios) { iosHacks(this.dom); }
     }
   };
 
-  NodeViewDesc.prototype.localCompositionNode = function localCompositionNode (view, pos) {
+  NodeViewDesc.prototype.localCompositionInfo = function localCompositionInfo (view, pos) {
     // Only do something if both the selection and a focused text node
-    // are inside of this node, and the node isn't already part of a
-    // view that's a child of this view
+    // are inside of this node
     var ref = view.state.selection;
     var from = ref.from;
     var to = ref.to;
@@ -15494,13 +16173,16 @@ var NodeViewDesc = /*@__PURE__*/(function (ViewDesc) {
     var textNode = nearbyTextNode(sel.focusNode, sel.focusOffset);
     if (!textNode || !this.dom.contains(textNode.parentNode)) { return }
 
-    // Find the text in the focused node in the node, stop if it's not
-    // there (may have been modified through other means, in which
-    // case it should overwritten)
-    var text = textNode.nodeValue;
-    var textPos = findTextInFragment(this.node.content, text, from - pos, to - pos);
-
-    return textPos < 0 ? null : {node: textNode, pos: textPos, text: text}
+    if (this.node.inlineContent) {
+      // Find the text in the focused node in the node, stop if it's not
+      // there (may have been modified through other means, in which
+      // case it should overwritten)
+      var text = textNode.nodeValue;
+      var textPos = findTextInFragment(this.node.content, text, from - pos, to - pos);
+      return textPos < 0 ? null : {node: textNode, pos: textPos, text: text}
+    } else {
+      return {node: textNode, pos: -1}
+    }
   };
 
   NodeViewDesc.prototype.protectLocalComposition = function protectLocalComposition (view, ref) {
@@ -15662,11 +16344,12 @@ var TrailingHackViewDesc = /*@__PURE__*/(function (ViewDesc) {
   TrailingHackViewDesc.prototype = Object.create( ViewDesc && ViewDesc.prototype );
   TrailingHackViewDesc.prototype.constructor = TrailingHackViewDesc;
 
-  var prototypeAccessors$5 = { domAtom: { configurable: true } };
+  var prototypeAccessors$5 = { domAtom: { configurable: true },ignoreForCoords: { configurable: true } };
 
   TrailingHackViewDesc.prototype.parseRule = function parseRule () { return {ignore: true} };
   TrailingHackViewDesc.prototype.matchesHack = function matchesHack (nodeName) { return this.dirty == NOT_DIRTY && this.dom.nodeName == nodeName };
   prototypeAccessors$5.domAtom.get = function () { return true };
+  prototypeAccessors$5.ignoreForCoords.get = function () { return this.dom.nodeName == "IMG" };
 
   Object.defineProperties( TrailingHackViewDesc.prototype, prototypeAccessors$5 );
 
@@ -15827,6 +16510,8 @@ function patchAttributes(dom, prev, cur) {
       { dom.classList.remove(prevList[i]); } }
     for (var i$1 = 0; i$1 < curList.length; i$1++) { if (prevList.indexOf(curList[i$1]) == -1)
       { dom.classList.add(curList[i$1]); } }
+    if (dom.classList.length == 0)
+      { dom.removeAttribute("class"); }
   }
   if (prev.style != cur.style) {
     if (prev.style) {
@@ -15934,10 +16619,12 @@ ViewTreeUpdater.prototype.syncToMarks = function syncToMarks (marks, inline, vie
 ViewTreeUpdater.prototype.findNodeMatch = function findNodeMatch (node, outerDeco, innerDeco, index) {
   var children = this.top.children, found = -1;
   if (index >= this.preMatch.index) {
-    for (var i = this.index; i < children.length; i++) { if (children[i].matchesNode(node, outerDeco, innerDeco)) {
-      found = i;
-      break
-    } }
+    for (var i = this.index; i < children.length; i++) {
+      if (this.preMatch.matched.get(children[i]) == index) {
+        if (children[i].matchesNode(node, outerDeco, innerDeco)) { found = i; }
+        break
+      }
+    }
   } else {
     for (var i$1 = this.index, e = Math.min(children.length, i$1 + 1); i$1 < e; i$1++) {
       var child = children[i$1];
@@ -15951,6 +16638,29 @@ ViewTreeUpdater.prototype.findNodeMatch = function findNodeMatch (node, outerDec
   this.destroyBetween(this.index, found);
   this.index++;
   return true
+};
+
+ViewTreeUpdater.prototype.updateNodeAt = function updateNodeAt (node, outerDeco, innerDeco, index, view) {
+  var child = this.top.children[index];
+  if (!child.update(node, outerDeco, innerDeco, view)) { return false }
+  this.destroyBetween(this.index, index);
+  this.index = index + 1;
+  return true
+};
+
+ViewTreeUpdater.prototype.findIndexWithChild = function findIndexWithChild (domNode) {
+  for (;;) {
+    var parent = domNode.parentNode;
+    if (!parent) { return -1 }
+    if (parent == this.top.contentDOM) {
+      var desc = domNode.pmViewDesc;
+      if (desc) { for (var i = this.index; i < this.top.children.length; i++) {
+        if (this.top.children[i] == desc) { return i }
+      } }
+      return -1
+    }
+    domNode = parent;
+  }
 };
 
 // : (Node, [Decoration], DecorationSource, EditorView, Fragment, number) → bool
@@ -16009,8 +16719,8 @@ ViewTreeUpdater.prototype.addTextblockHacks = function addTextblockHacks () {
   if (!lastChild || // Empty textblock
       !(lastChild instanceof TextViewDesc) ||
       /\n$/.test(lastChild.node.text)) {
-    // Avoid a bug in Safari's cursor drawing (#1165)
-    if (result.safari && lastChild && lastChild.dom.contentEditable == "false")
+    // Avoid bugs in Safari's cursor drawing (#1165) and Chrome's mouse selection (#1152)
+    if ((result.safari || result.chrome) && lastChild && lastChild.dom.contentEditable == "false")
       { this.addHackNode("IMG"); }
     this.addHackNode("BR");
   }
@@ -16021,6 +16731,8 @@ ViewTreeUpdater.prototype.addHackNode = function addHackNode (nodeName) {
     this.index++;
   } else {
     var dom = document.createElement(nodeName);
+    if (nodeName == "IMG") { dom.className = "ProseMirror-separator"; }
+    if (nodeName == "BR") { dom.className = "ProseMirror-trailingBreak"; }
     this.top.children.splice(this.index++, 0, new TrailingHackViewDesc(this.top, nothing, dom, null));
     this.changed = true;
   }
@@ -16225,6 +16937,12 @@ function selectionToDOM(view, force) {
   syncNodeSelection(view, sel);
 
   if (!editorOwnsSelection(view)) { return }
+
+  if (!force && view.mouseDown && view.mouseDown.allowDefault) {
+    view.mouseDown.delayedSelectionSync = true;
+    view.domObserver.setCurSelection();
+    return
+  }
 
   view.domObserver.disconnectSelection();
 
@@ -17016,6 +17734,10 @@ function serializeForClipboard(view, slice) {
       var wrapper = doc.createElement(needsWrap[i]);
       while (wrap.firstChild) { wrapper.appendChild(wrap.firstChild); }
       wrap.appendChild(wrapper);
+      if (needsWrap[i] != "tbody") {
+        openStart++;
+        openEnd++;
+      }
     }
     firstChild = wrap.firstChild;
   }
@@ -17037,31 +17759,52 @@ function parseFromClipboard(view, text, html, plainText, $context) {
   var asText = text && (plainText || inCode || !html);
   if (asText) {
     view.someProp("transformPastedText", function (f) { text = f(text, inCode || plainText); });
-    if (inCode) { return new Slice(Fragment.from(view.state.schema.text(text.replace(/\r\n?/g, "\n"))), 0, 0) }
+    if (inCode) { return text ? new Slice(Fragment.from(view.state.schema.text(text.replace(/\r\n?/g, "\n"))), 0, 0) : Slice.empty }
     var parsed = view.someProp("clipboardTextParser", function (f) { return f(text, $context, plainText); });
     if (parsed) {
       slice = parsed;
     } else {
+      var marks = $context.marks();
+      var ref = view.state;
+      var schema = ref.schema;
+      var serializer = DOMSerializer.fromSchema(schema);
       dom = document.createElement("div");
-      text.trim().split(/(?:\r\n?|\n)+/).forEach(function (block) {
-        dom.appendChild(document.createElement("p")).textContent = block;
+      text.split(/(?:\r\n?|\n)+/).forEach(function (block) {
+        var p = dom.appendChild(document.createElement("p"));
+        if (block) { p.appendChild(serializer.serializeNode(schema.text(block, marks))); }
       });
     }
   } else {
     view.someProp("transformPastedHTML", function (f) { html = f(html); });
     dom = readHTML(html);
+    if (result.webkit) { restoreReplacedSpaces(dom); }
   }
 
   var contextNode = dom && dom.querySelector("[data-pm-slice]");
   var sliceData = contextNode && /^(\d+) (\d+) (.*)/.exec(contextNode.getAttribute("data-pm-slice"));
   if (!slice) {
     var parser = view.someProp("clipboardParser") || view.someProp("domParser") || DOMParser.fromSchema(view.state.schema);
-    slice = parser.parseSlice(dom, {preserveWhitespace: !!(asText || sliceData), context: $context});
+    slice = parser.parseSlice(dom, {
+      preserveWhitespace: !!(asText || sliceData),
+      context: $context,
+      ruleFromNode: function ruleFromNode(dom) {
+        if (dom.nodeName == "BR" && !dom.nextSibling) { return {ignore: true} }
+      }
+    });
   }
-  if (sliceData)
-    { slice = addContext(closeSlice(slice, +sliceData[1], +sliceData[2]), sliceData[3]); }
-  else // HTML wasn't created by ProseMirror. Make sure top-level siblings are coherent
-    { slice = Slice.maxOpen(normalizeSiblings(slice.content, $context), false); }
+  if (sliceData) {
+    slice = addContext(closeSlice(slice, +sliceData[1], +sliceData[2]), sliceData[3]);
+  } else { // HTML wasn't created by ProseMirror. Make sure top-level siblings are coherent
+    slice = Slice.maxOpen(normalizeSiblings(slice.content, $context), true);
+    if (slice.openStart || slice.openEnd) {
+      var openStart = 0, openEnd = 0;
+      for (var node = slice.content.firstChild; openStart < slice.openStart && !node.type.spec.isolating;
+           openStart++, node = node.firstChild) {}
+      for (var node$1 = slice.content.lastChild; openEnd < slice.openEnd && !node$1.type.spec.isolating;
+           openEnd++, node$1 = node$1.lastChild) {}
+      slice = closeSlice(slice, openStart, openEnd);
+    }
+  }
 
   view.someProp("transformPasted", function (f) { slice = f(slice); });
   return slice
@@ -17182,6 +17925,20 @@ function readHTML(html) {
   return elt
 }
 
+// Webkit browsers do some hard-to-predict replacement of regular
+// spaces with non-breaking spaces when putting content on the
+// clipboard. This tries to convert such non-breaking spaces (which
+// will be wrapped in a plain span on Chrome, a span with class
+// Apple-converted-space on Safari) back to regular spaces.
+function restoreReplacedSpaces(dom) {
+  var nodes = dom.querySelectorAll(result.chrome ? "span:not([class]):not([style])" : "span.Apple-converted-space");
+  for (var i = 0; i < nodes.length; i++) {
+    var node = nodes[i];
+    if (node.childNodes.length == 1 && node.textContent == "\u00a0" && node.parentNode)
+      { node.parentNode.replaceChild(dom.ownerDocument.createTextNode(" "), node); }
+  }
+}
+
 function addContext(slice, context) {
   if (!slice.size) { return slice }
   var schema = slice.content.firstChild.type.schema, array;
@@ -17225,7 +17982,7 @@ SelectionState.prototype.eq = function eq (sel) {
 };
 
 var DOMObserver = function DOMObserver(view, handleDOMChange) {
-  var this$1 = this;
+  var this$1$1 = this;
 
   this.view = view;
   this.handleDOMChange = handleDOMChange;
@@ -17233,7 +17990,7 @@ var DOMObserver = function DOMObserver(view, handleDOMChange) {
   this.flushingSoon = -1;
   this.observer = window.MutationObserver &&
     new window.MutationObserver(function (mutations) {
-      for (var i = 0; i < mutations.length; i++) { this$1.queue.push(mutations[i]); }
+      for (var i = 0; i < mutations.length; i++) { this$1$1.queue.push(mutations[i]); }
       // IE11 will sometimes (on backspacing out a single character
       // text node after a BR node) call the observer callback
       // before actually updating the DOM, which will cause
@@ -17241,15 +17998,15 @@ var DOMObserver = function DOMObserver(view, handleDOMChange) {
       if (result.ie && result.ie_version <= 11 && mutations.some(
         function (m) { return m.type == "childList" && m.removedNodes.length ||
              m.type == "characterData" && m.oldValue.length > m.target.nodeValue.length; }))
-        { this$1.flushSoon(); }
+        { this$1$1.flushSoon(); }
       else
-        { this$1.flush(); }
+        { this$1$1.flush(); }
     });
   this.currentSelection = new SelectionState;
   if (useCharData) {
     this.onCharData = function (e) {
-      this$1.queue.push({target: e.target, type: "characterData", oldValue: e.prevValue});
-      this$1.flushSoon();
+      this$1$1.queue.push({target: e.target, type: "characterData", oldValue: e.prevValue});
+      this$1$1.flushSoon();
     };
   }
   this.onSelectionChange = this.onSelectionChange.bind(this);
@@ -17257,10 +18014,10 @@ var DOMObserver = function DOMObserver(view, handleDOMChange) {
 };
 
 DOMObserver.prototype.flushSoon = function flushSoon () {
-    var this$1 = this;
+    var this$1$1 = this;
 
   if (this.flushingSoon < 0)
-    { this.flushingSoon = window.setTimeout(function () { this$1.flushingSoon = -1; this$1.flush(); }, 20); }
+    { this.flushingSoon = window.setTimeout(function () { this$1$1.flushingSoon = -1; this$1$1.flush(); }, 20); }
 };
 
 DOMObserver.prototype.forceFlush = function forceFlush () {
@@ -17280,13 +18037,13 @@ DOMObserver.prototype.start = function start () {
 };
 
 DOMObserver.prototype.stop = function stop () {
-    var this$1 = this;
+    var this$1$1 = this;
 
   if (this.observer) {
     var take = this.observer.takeRecords();
     if (take.length) {
       for (var i = 0; i < take.length; i++) { this.queue.push(take[i]); }
-      window.setTimeout(function () { return this$1.flush(); }, 20);
+      window.setTimeout(function () { return this$1$1.flush(); }, 20);
     }
     this.observer.disconnect();
   }
@@ -17303,10 +18060,10 @@ DOMObserver.prototype.disconnectSelection = function disconnectSelection () {
 };
 
 DOMObserver.prototype.suppressSelectionUpdates = function suppressSelectionUpdates () {
-    var this$1 = this;
+    var this$1$1 = this;
 
   this.suppressingSelectionUpdates = true;
-  setTimeout(function () { return this$1.suppressingSelectionUpdates = false; }, 50);
+  setTimeout(function () { return this$1$1.suppressingSelectionUpdates = false; }, 50);
 };
 
 DOMObserver.prototype.onSelectionChange = function onSelectionChange () {
@@ -17717,7 +18474,7 @@ handlers.mousedown = function (view, event) {
 };
 
 var MouseDown = function MouseDown(view, pos, event, flushed) {
-  var this$1 = this;
+  var this$1$1 = this;
 
   this.view = view;
   this.startDoc = view.state.doc;
@@ -17726,6 +18483,7 @@ var MouseDown = function MouseDown(view, pos, event, flushed) {
   this.flushed = flushed;
   this.selectNode = event[selectNodeModifier];
   this.allowDefault = event.shiftKey;
+  this.delayedSelectionSync = false;
 
   var targetNode, targetPos;
   if (pos.inside > -1) {
@@ -17758,7 +18516,7 @@ var MouseDown = function MouseDown(view, pos, event, flushed) {
     if (this.mightDrag.addAttr) { this.target.draggable = true; }
     if (this.mightDrag.setUneditable)
       { setTimeout(function () {
-        if (this$1.view.mouseDown == this$1) { this$1.target.setAttribute("contentEditable", "false"); }
+        if (this$1$1.view.mouseDown == this$1$1) { this$1$1.target.setAttribute("contentEditable", "false"); }
       }, 20); }
     this.view.domObserver.start();
   }
@@ -17769,6 +18527,8 @@ var MouseDown = function MouseDown(view, pos, event, flushed) {
 };
 
 MouseDown.prototype.done = function done () {
+    var this$1$1 = this;
+
   this.view.root.removeEventListener("mouseup", this.up);
   this.view.root.removeEventListener("mousemove", this.move);
   if (this.mightDrag && this.target) {
@@ -17777,6 +18537,7 @@ MouseDown.prototype.done = function done () {
     if (this.mightDrag.setUneditable) { this.target.removeAttribute("contentEditable"); }
     this.view.domObserver.start();
   }
+  if (this.delayedSelectionSync) { setTimeout(function () { return selectionToDOM(this$1$1.view); }); }
   this.view.mouseDown = null;
 };
 
@@ -17902,8 +18663,17 @@ function scheduleComposeEnd(view, delay) {
 }
 
 function clearComposition(view) {
-  view.composing = false;
+  if (view.composing) {
+    view.composing = false;
+    view.compositionEndedAt = timestampFromCustomEvent();
+  }
   while (view.compositionNodes.length > 0) { view.compositionNodes.pop().markParentsDirty(); }
+}
+
+function timestampFromCustomEvent() {
+  var event = document.createEvent("Event");
+  event.initEvent("event", true, true);
+  return event.timeStamp
 }
 
 function endComposition(view, forceUpdate) {
@@ -18020,8 +18790,8 @@ handlers.dragstart = function (view, e) {
     view.dispatch(view.state.tr.setSelection(NodeSelection.create(view.state.doc, mouseDown.mightDrag.pos)));
   } else if (e.target && e.target.nodeType == 1) {
     var desc = view.docView.nearestDesc(e.target, true);
-    if (!desc || !desc.node.type.spec.draggable || desc == view.docView) { return }
-    view.dispatch(view.state.tr.setSelection(NodeSelection.create(view.state.doc, desc.posBefore)));
+    if (desc && desc.node.type.spec.draggable && desc != view.docView)
+      { view.dispatch(view.state.tr.setSelection(NodeSelection.create(view.state.doc, desc.posBefore))); }
   }
   var slice = view.state.selection.content();
   var ref = serializeForClipboard(view, slice);
@@ -18110,12 +18880,13 @@ handlers.focus = function (view) {
   }
 };
 
-handlers.blur = function (view) {
+handlers.blur = function (view, e) {
   if (view.focused) {
     view.domObserver.stop();
     view.dom.classList.remove("ProseMirror-focused");
     view.domObserver.start();
-    view.domObserver.currentSelection.set({});
+    if (e.relatedTarget && view.dom.contains(e.relatedTarget))
+      { view.domObserver.currentSelection.set({}); }
     view.focused = false;
   }
 };
@@ -18174,6 +18945,10 @@ WidgetType.prototype.eq = function eq (other) {
       this.toDOM == other.toDOM && compareObjs(this.spec, other.spec)))
 };
 
+WidgetType.prototype.destroy = function destroy (node) {
+  if (this.spec.destroy) { this.spec.destroy(node); }
+};
+
 var InlineType = function InlineType(attrs, spec) {
   this.spec = spec || noSpec;
   this.attrs = attrs;
@@ -18212,7 +18987,8 @@ NodeType.prototype.valid = function valid (node, span) {
   var ref = node.content.findIndex(span.from);
     var index = ref.index;
     var offset = ref.offset;
-  return offset == span.from && offset + node.child(index).nodeSize == span.to
+    var child;
+  return offset == span.from && !(child = node.child(index)).isText && offset + child.nodeSize == span.to
 };
 
 NodeType.prototype.eq = function eq (other) {
@@ -18300,6 +19076,10 @@ Decoration.prototype.map = function map (mapping, offset, oldOffset) {
 //   key are interchangeable—if widgets differ in, for example,
 //   the behavior of some event handler, they should get
 //   different keys.
+//
+//   destroy:: ?(node: dom.Node)
+//   Called when the widget decoration is removed as a result of
+//   mapping
 Decoration.widget = function widget (pos, toDOM, spec) {
   return new Decoration(pos, pos, new WidgetType(toDOM, spec))
 };
@@ -18449,14 +19229,14 @@ DecorationSet.prototype.add = function add (doc, decorations) {
 };
 
 DecorationSet.prototype.addInner = function addInner (doc, decorations, offset) {
-    var this$1 = this;
+    var this$1$1 = this;
 
   var children, childIndex = 0;
   doc.forEach(function (childNode, childOffset) {
     var baseOffset = childOffset + offset, found;
     if (!(found = takeSpansForNode(decorations, childNode, baseOffset))) { return }
 
-    if (!children) { children = this$1.children.slice(); }
+    if (!children) { children = this$1$1.children.slice(); }
     while (childIndex < children.length && children[childIndex] < childOffset) { childIndex += 3; }
     if (children[childIndex] == childOffset)
       { children[childIndex + 2] = children[childIndex + 2].addInner(childNode, found, baseOffset + 1); }
@@ -18567,6 +19347,10 @@ DecorationSet.prototype.localsInner = function localsInner (node) {
 // An object that can [provide](#view.EditorProps.decorations)
 // decorations. Implemented by [`DecorationSet`](#view.DecorationSet),
 // and passed to [node views](#view.EditorProps.nodeViews).
+//
+//   map:: (Mapping, Node) → DecorationSource
+//   Map the set of decorations in response to a change in the
+//   document.
 
 var empty = new DecorationSet();
 
@@ -18581,6 +19365,13 @@ DecorationSet.removeOverlap = removeOverlap;
 // with (a subset of) the same interface.
 var DecorationGroup = function DecorationGroup(members) {
   this.members = members;
+};
+
+DecorationGroup.prototype.map = function map (mapping, doc) {
+  var mappedDecos = this.members.map(
+    function (member) { return member.map(mapping, doc, noSpec); }
+  );
+  return DecorationGroup.from(mappedDecos)
 };
 
 DecorationGroup.prototype.forChild = function forChild (offset, child) {
@@ -18749,7 +19540,7 @@ function withoutNulls(array) {
 
 // : ([Decoration], Node, number) → DecorationSet
 // Build up a tree that corresponds to a set of decorations. `offset`
-// is a base offset that should be subtractet from the `from` and `to`
+// is a base offset that should be subtracted from the `from` and `to`
 // positions in the spans (so that we don't have to allocate new spans
 // for recursive calls).
 function buildTree(spans, node, offset, options) {
@@ -18841,6 +19632,9 @@ var EditorView = function EditorView(place, props) {
   // The view's current [state](#state.EditorState).
   this.state = props.state;
 
+  this.directPlugins = props.plugins || [];
+  this.directPlugins.forEach(checkStateComponent);
+
   this.dispatch = this.dispatch.bind(this);
 
   this._root = null;
@@ -18876,11 +19670,12 @@ var EditorView = function EditorView(place, props) {
 
   initInput(this);
 
+  this.prevDirectPlugins = [];
   this.pluginViews = [];
   this.updatePluginViews();
 };
 
-var prototypeAccessors$2 = { props: { configurable: true },root: { configurable: true } };
+var prototypeAccessors$2 = { props: { configurable: true },root: { configurable: true },isDestroyed: { configurable: true } };
 
 // composing:: boolean
 // Holds `true` when a
@@ -18905,6 +19700,10 @@ prototypeAccessors$2.props.get = function () {
 EditorView.prototype.update = function update (props) {
   if (props.handleDOMEvents != this._props.handleDOMEvents) { ensureListeners(this); }
   this._props = props;
+  if (props.plugins) {
+    props.plugins.forEach(checkStateComponent);
+    this.directPlugins = props.plugins;
+  }
   this.updateStateInner(props.state, true);
 };
 
@@ -18928,7 +19727,7 @@ EditorView.prototype.updateState = function updateState (state) {
 };
 
 EditorView.prototype.updateStateInner = function updateStateInner (state, reconfigured) {
-    var this$1 = this;
+    var this$1$1 = this;
 
   var prev = this.state, redraw = false, updateSel = false;
   // When stored marks are added, stop composition, so that they can
@@ -18999,7 +19798,7 @@ EditorView.prototype.updateStateInner = function updateStateInner (state, reconf
     this.dom.scrollTop = 0;
   } else if (scroll == "to selection") {
     var startDOM = this.root.getSelection().focusNode;
-    if (this.someProp("handleScrollToSelection", function (f) { return f(this$1); }))
+    if (this.someProp("handleScrollToSelection", function (f) { return f(this$1$1); }))
       ; // Handled
     else if (state.selection instanceof NodeSelection)
       { scrollRectIntoView(this, this.docView.domAfterPos(state.selection.from).getBoundingClientRect(), startDOM); }
@@ -19016,15 +19815,20 @@ EditorView.prototype.destroyPluginViews = function destroyPluginViews () {
 };
 
 EditorView.prototype.updatePluginViews = function updatePluginViews (prevState) {
-  if (!prevState || prevState.plugins != this.state.plugins) {
+  if (!prevState || prevState.plugins != this.state.plugins || this.directPlugins != this.prevDirectPlugins) {
+    this.prevDirectPlugins = this.directPlugins;
     this.destroyPluginViews();
-    for (var i = 0; i < this.state.plugins.length; i++) {
-      var plugin = this.state.plugins[i];
+    for (var i = 0; i < this.directPlugins.length; i++) {
+      var plugin = this.directPlugins[i];
       if (plugin.spec.view) { this.pluginViews.push(plugin.spec.view(this)); }
     }
+    for (var i$1 = 0; i$1 < this.state.plugins.length; i$1++) {
+      var plugin$1 = this.state.plugins[i$1];
+      if (plugin$1.spec.view) { this.pluginViews.push(plugin$1.spec.view(this)); }
+    }
   } else {
-    for (var i$1 = 0; i$1 < this.pluginViews.length; i$1++) {
-      var pluginView = this.pluginViews[i$1];
+    for (var i$2 = 0; i$2 < this.pluginViews.length; i$2++) {
+      var pluginView = this.pluginViews[i$2];
       if (pluginView.update) { pluginView.update(this, prevState); }
     }
   }
@@ -19032,18 +19836,22 @@ EditorView.prototype.updatePluginViews = function updatePluginViews (prevState) 
 
 // :: (string, ?(prop: *) → *) → *
 // Goes over the values of a prop, first those provided directly,
-// then those from plugins (in order), and calls `f` every time a
-// non-undefined value is found. When `f` returns a truthy value,
-// that is immediately returned. When `f` isn't provided, it is
-// treated as the identity function (the prop value is returned
-// directly).
+// then those from plugins given to the view, then from plugins in
+// the state (in order), and calls `f` every time a non-undefined
+// value is found. When `f` returns a truthy value, that is
+// immediately returned. When `f` isn't provided, it is treated as
+// the identity function (the prop value is returned directly).
 EditorView.prototype.someProp = function someProp (propName, f) {
   var prop = this._props && this._props[propName], value;
   if (prop != null && (value = f ? f(prop) : prop)) { return value }
-  var plugins = this.state.plugins;
-  if (plugins) { for (var i = 0; i < plugins.length; i++) {
-    var prop$1 = plugins[i].props[propName];
+  for (var i = 0; i < this.directPlugins.length; i++) {
+    var prop$1 = this.directPlugins[i].props[propName];
     if (prop$1 != null && (value = f ? f(prop$1) : prop$1)) { return value }
+  }
+  var plugins = this.state.plugins;
+  if (plugins) { for (var i$1 = 0; i$1 < plugins.length; i$1++) {
+    var prop$2 = plugins[i$1].props[propName];
+    if (prop$2 != null && (value = f ? f(prop$2) : prop$2)) { return value }
   } }
 };
 
@@ -19177,6 +19985,14 @@ EditorView.prototype.destroy = function destroy () {
   this.docView = null;
 };
 
+// :: boolean
+// This is true when the view has been
+// [destroyed](#view.EditorView.destroy) (and thus should not be
+// used anymore).
+prototypeAccessors$2.isDestroyed.get = function () {
+  return this.docView == null
+};
+
 // Used for testing.
 EditorView.prototype.dispatchEvent = function dispatchEvent$1 (event) {
   return dispatchEvent(this, event)
@@ -19202,12 +20018,16 @@ function computeDocDeco(view) {
   var attrs = Object.create(null);
   attrs.class = "ProseMirror";
   attrs.contenteditable = String(view.editable);
+  attrs.translate = "no";
 
   view.someProp("attributes", function (value) {
     if (typeof value == "function") { value = value(view.state); }
     if (value) { for (var attr in value) {
       if (attr == "class")
         { attrs.class += " " + value[attr]; }
+      if (attr == "style") {
+        attrs.style = (attrs.style ? attrs.style + ";" : "") + value[attr];
+      }
       else if (!attrs[attr] && attr != "contenteditable" && attr != "nodeName")
         { attrs[attr] = String(value[attr]); }
     } }
@@ -19219,6 +20039,7 @@ function computeDocDeco(view) {
 function updateCursorWrapper(view) {
   if (view.markCursor) {
     var dom = document.createElement("img");
+    dom.className = "ProseMirror-separator";
     dom.setAttribute("mark-placeholder", "true");
     view.cursorWrapper = {dom: dom, deco: Decoration.widget(view.state.selection.head, dom, {raw: true, marks: view.markCursor})};
   } else {
@@ -19252,6 +20073,11 @@ function changedNodeViews(a, b) {
   }
   for (var _ in b) { nB++; }
   return nA != nB
+}
+
+function checkStateComponent(plugin) {
+  if (plugin.spec.state || plugin.spec.filterTransaction || plugin.spec.appendTransaction)
+    { throw new RangeError("Plugins passed directly to the view must not have a state component") }
 }
 
 var base = {
@@ -19381,7 +20207,7 @@ function keyName(event) {
 
 // declare global: navigator
 
-var mac$1 = typeof navigator != "undefined" ? /Mac/.test(navigator.platform) : false;
+var mac$1 = typeof navigator != "undefined" ? /Mac|iP(hone|[oa]d)/.test(navigator.platform) : false;
 
 function normalizeKeyName$1(name) {
   var parts = name.split(/-(?!$)/), result = parts[parts.length - 1];
@@ -19453,7 +20279,7 @@ function keymap(bindings) {
 
 // :: (Object) → (view: EditorView, event: dom.Event) → bool
 // Given a set of bindings (using the same format as
-// [`keymap`](#keymap.keymap), return a [keydown
+// [`keymap`](#keymap.keymap)), return a [keydown
 // handler](#view.EditorProps.handleKeyDown) that handles them.
 function keydownHandler(bindings) {
   var map = normalize(bindings);
@@ -19479,1775 +20305,14 @@ function keydownHandler(bindings) {
   }
 }
 
-// ::- Input rules are regular expressions describing a piece of text
-// that, when typed, causes something to happen. This might be
-// changing two dashes into an emdash, wrapping a paragraph starting
-// with `"> "` into a blockquote, or something entirely different.
-var InputRule = function InputRule(match, handler) {
-  this.match = match;
-  this.handler = typeof handler == "string" ? stringHandler(handler) : handler;
-};
-
-function stringHandler(string) {
-  return function(state, match, start, end) {
-    var insert = string;
-    if (match[1]) {
-      var offset = match[0].lastIndexOf(match[1]);
-      insert += match[0].slice(offset + match[1].length);
-      start += offset;
-      var cutOff = start - end;
-      if (cutOff > 0) {
-        insert = match[0].slice(offset - cutOff, offset) + insert;
-        start = end;
-      }
-    }
-    return state.tr.insertText(insert, start, end)
-  }
-}
-
-var MAX_MATCH = 500;
-
-// :: (config: {rules: [InputRule]}) → Plugin
-// Create an input rules plugin. When enabled, it will cause text
-// input that matches any of the given rules to trigger the rule's
-// action.
-function inputRules(ref) {
-  var rules = ref.rules;
-
-  var plugin = new Plugin({
-    state: {
-      init: function init() { return null },
-      apply: function apply(tr, prev) {
-        var stored = tr.getMeta(this);
-        if (stored) { return stored }
-        return tr.selectionSet || tr.docChanged ? null : prev
-      }
-    },
-
-    props: {
-      handleTextInput: function handleTextInput(view, from, to, text) {
-        return run(view, from, to, text, rules, plugin)
-      },
-      handleDOMEvents: {
-        compositionend: function (view) {
-          setTimeout(function () {
-            var ref = view.state.selection;
-            var $cursor = ref.$cursor;
-            if ($cursor) { run(view, $cursor.pos, $cursor.pos, "", rules, plugin); }
-          });
-        }
-      }
-    },
-
-    isInputRules: true
-  });
-  return plugin
-}
-
-function run(view, from, to, text, rules, plugin) {
-  if (view.composing) { return false }
-  var state = view.state, $from = state.doc.resolve(from);
-  if ($from.parent.type.spec.code) { return false }
-  var textBefore = $from.parent.textBetween(Math.max(0, $from.parentOffset - MAX_MATCH), $from.parentOffset,
-                                            null, "\ufffc") + text;
-  for (var i = 0; i < rules.length; i++) {
-    var match = rules[i].match.exec(textBefore);
-    var tr = match && rules[i].handler(state, match, from - (match[0].length - text.length), to);
-    if (!tr) { continue }
-    view.dispatch(tr.setMeta(plugin, {transform: tr, from: from, to: to, text: text}));
-    return true
-  }
-  return false
-}
-
-// :: (EditorState, ?(Transaction)) → bool
-// This is a command that will undo an input rule, if applying such a
-// rule was the last thing that the user did.
-function undoInputRule$2(state, dispatch) {
-  var plugins = state.plugins;
-  for (var i = 0; i < plugins.length; i++) {
-    var plugin = plugins[i], undoable = (void 0);
-    if (plugin.spec.isInputRules && (undoable = plugin.getState(state))) {
-      if (dispatch) {
-        var tr = state.tr, toUndo = undoable.transform;
-        for (var j = toUndo.steps.length - 1; j >= 0; j--)
-          { tr.step(toUndo.steps[j].invert(toUndo.docs[j])); }
-        if (undoable.text) {
-          var marks = tr.doc.resolve(undoable.from).marks();
-          tr.replaceWith(undoable.from, undoable.to, state.schema.text(undoable.text, marks));
-        } else {
-          tr.delete(undoable.from, undoable.to);
-        }
-        dispatch(tr);
-      }
-      return true
-    }
-  }
-  return false
-}
-
-// :: (RegExp, NodeType, ?union<Object, ([string]) → ?Object>, ?([string], Node) → bool) → InputRule
-// Build an input rule for automatically wrapping a textblock when a
-// given string is typed. The `regexp` argument is
-// directly passed through to the `InputRule` constructor. You'll
-// probably want the regexp to start with `^`, so that the pattern can
-// only occur at the start of a textblock.
-//
-// `nodeType` is the type of node to wrap in. If it needs attributes,
-// you can either pass them directly, or pass a function that will
-// compute them from the regular expression match.
-//
-// By default, if there's a node with the same type above the newly
-// wrapped node, the rule will try to [join](#transform.Transform.join) those
-// two nodes. You can pass a join predicate, which takes a regular
-// expression match and the node before the wrapped node, and can
-// return a boolean to indicate whether a join should happen.
-function wrappingInputRule(regexp, nodeType, getAttrs, joinPredicate) {
-  return new InputRule(regexp, function (state, match, start, end) {
-    var attrs = getAttrs instanceof Function ? getAttrs(match) : getAttrs;
-    var tr = state.tr.delete(start, end);
-    var $start = tr.doc.resolve(start), range = $start.blockRange(), wrapping = range && findWrapping(range, nodeType, attrs);
-    if (!wrapping) { return null }
-    tr.wrap(range, wrapping);
-    var before = tr.doc.resolve(start - 1).nodeBefore;
-    if (before && before.type == nodeType && canJoin(tr.doc, start - 1) &&
-        (!joinPredicate || joinPredicate(match, before)))
-      { tr.join(start - 1); }
-    return tr
-  })
-}
-
-// :: (RegExp, NodeType, ?union<Object, ([string]) → ?Object>) → InputRule
-// Build an input rule that changes the type of a textblock when the
-// matched text is typed into it. You'll usually want to start your
-// regexp with `^` to that it is only matched at the start of a
-// textblock. The optional `getAttrs` parameter can be used to compute
-// the new node's attributes, and works the same as in the
-// `wrappingInputRule` function.
-function textblockTypeInputRule(regexp, nodeType, getAttrs) {
-  return new InputRule(regexp, function (state, match, start, end) {
-    var $start = state.doc.resolve(start);
-    var attrs = getAttrs instanceof Function ? getAttrs(match) : getAttrs;
-    if (!$start.node(-1).canReplaceWith($start.index(-1), $start.indexAfter(-1), nodeType)) { return null }
-    return state.tr
-      .delete(start, end)
-      .setBlockType(start, start, nodeType, attrs)
-  })
-}
-
-// :: (EditorState, ?(tr: Transaction)) → bool
-// Delete the selection, if there is one.
-function deleteSelection$2(state, dispatch) {
-  if (state.selection.empty) { return false }
-  if (dispatch) { dispatch(state.tr.deleteSelection().scrollIntoView()); }
-  return true
-}
-
-// :: (EditorState, ?(tr: Transaction), ?EditorView) → bool
-// If the selection is empty and at the start of a textblock, try to
-// reduce the distance between that block and the one before it—if
-// there's a block directly before it that can be joined, join them.
-// If not, try to move the selected block closer to the next one in
-// the document structure by lifting it out of its parent or moving it
-// into a parent of the previous block. Will use the view for accurate
-// (bidi-aware) start-of-textblock detection if given.
-function joinBackward$2(state, dispatch, view) {
-  var ref = state.selection;
-  var $cursor = ref.$cursor;
-  if (!$cursor || (view ? !view.endOfTextblock("backward", state)
-                        : $cursor.parentOffset > 0))
-    { return false }
-
-  var $cut = findCutBefore($cursor);
-
-  // If there is no node before this, try to lift
-  if (!$cut) {
-    var range = $cursor.blockRange(), target = range && liftTarget(range);
-    if (target == null) { return false }
-    if (dispatch) { dispatch(state.tr.lift(range, target).scrollIntoView()); }
-    return true
-  }
-
-  var before = $cut.nodeBefore;
-  // Apply the joining algorithm
-  if (!before.type.spec.isolating && deleteBarrier(state, $cut, dispatch))
-    { return true }
-
-  // If the node below has no content and the node above is
-  // selectable, delete the node below and select the one above.
-  if ($cursor.parent.content.size == 0 &&
-      (textblockAt(before, "end") || NodeSelection.isSelectable(before))) {
-    if (dispatch) {
-      var tr = state.tr.deleteRange($cursor.before(), $cursor.after());
-      tr.setSelection(textblockAt(before, "end") ? Selection.findFrom(tr.doc.resolve(tr.mapping.map($cut.pos, -1)), -1)
-                      : NodeSelection.create(tr.doc, $cut.pos - before.nodeSize));
-      dispatch(tr.scrollIntoView());
-    }
-    return true
-  }
-
-  // If the node before is an atom, delete it
-  if (before.isAtom && $cut.depth == $cursor.depth - 1) {
-    if (dispatch) { dispatch(state.tr.delete($cut.pos - before.nodeSize, $cut.pos).scrollIntoView()); }
-    return true
-  }
-
-  return false
-}
-
-function textblockAt(node, side, only) {
-  for (; node; node = (side == "start" ? node.firstChild : node.lastChild)) {
-    if (node.isTextblock) { return true }
-    if (only && node.childCount != 1) { return false }
-  }
-  return false
-}
-
-// :: (EditorState, ?(tr: Transaction), ?EditorView) → bool
-// When the selection is empty and at the start of a textblock, select
-// the node before that textblock, if possible. This is intended to be
-// bound to keys like backspace, after
-// [`joinBackward`](#commands.joinBackward) or other deleting
-// commands, as a fall-back behavior when the schema doesn't allow
-// deletion at the selected point.
-function selectNodeBackward$2(state, dispatch, view) {
-  var ref = state.selection;
-  var $head = ref.$head;
-  var empty = ref.empty;
-  var $cut = $head;
-  if (!empty) { return false }
-
-  if ($head.parent.isTextblock) {
-    if (view ? !view.endOfTextblock("backward", state) : $head.parentOffset > 0) { return false }
-    $cut = findCutBefore($head);
-  }
-  var node = $cut && $cut.nodeBefore;
-  if (!node || !NodeSelection.isSelectable(node)) { return false }
-  if (dispatch)
-    { dispatch(state.tr.setSelection(NodeSelection.create(state.doc, $cut.pos - node.nodeSize)).scrollIntoView()); }
-  return true
-}
-
-function findCutBefore($pos) {
-  if (!$pos.parent.type.spec.isolating) { for (var i = $pos.depth - 1; i >= 0; i--) {
-    if ($pos.index(i) > 0) { return $pos.doc.resolve($pos.before(i + 1)) }
-    if ($pos.node(i).type.spec.isolating) { break }
-  } }
-  return null
-}
-
-// :: (EditorState, ?(tr: Transaction), ?EditorView) → bool
-// If the selection is empty and the cursor is at the end of a
-// textblock, try to reduce or remove the boundary between that block
-// and the one after it, either by joining them or by moving the other
-// block closer to this one in the tree structure. Will use the view
-// for accurate start-of-textblock detection if given.
-function joinForward$2(state, dispatch, view) {
-  var ref = state.selection;
-  var $cursor = ref.$cursor;
-  if (!$cursor || (view ? !view.endOfTextblock("forward", state)
-                        : $cursor.parentOffset < $cursor.parent.content.size))
-    { return false }
-
-  var $cut = findCutAfter($cursor);
-
-  // If there is no node after this, there's nothing to do
-  if (!$cut) { return false }
-
-  var after = $cut.nodeAfter;
-  // Try the joining algorithm
-  if (deleteBarrier(state, $cut, dispatch)) { return true }
-
-  // If the node above has no content and the node below is
-  // selectable, delete the node above and select the one below.
-  if ($cursor.parent.content.size == 0 &&
-      (textblockAt(after, "start") || NodeSelection.isSelectable(after))) {
-    if (dispatch) {
-      var tr = state.tr.deleteRange($cursor.before(), $cursor.after());
-      tr.setSelection(textblockAt(after, "start") ? Selection.findFrom(tr.doc.resolve(tr.mapping.map($cut.pos)), 1)
-                      : NodeSelection.create(tr.doc, tr.mapping.map($cut.pos)));
-      dispatch(tr.scrollIntoView());
-    }
-    return true
-  }
-
-  // If the next node is an atom, delete it
-  if (after.isAtom && $cut.depth == $cursor.depth - 1) {
-    if (dispatch) { dispatch(state.tr.delete($cut.pos, $cut.pos + after.nodeSize).scrollIntoView()); }
-    return true
-  }
-
-  return false
-}
-
-// :: (EditorState, ?(tr: Transaction), ?EditorView) → bool
-// When the selection is empty and at the end of a textblock, select
-// the node coming after that textblock, if possible. This is intended
-// to be bound to keys like delete, after
-// [`joinForward`](#commands.joinForward) and similar deleting
-// commands, to provide a fall-back behavior when the schema doesn't
-// allow deletion at the selected point.
-function selectNodeForward$2(state, dispatch, view) {
-  var ref = state.selection;
-  var $head = ref.$head;
-  var empty = ref.empty;
-  var $cut = $head;
-  if (!empty) { return false }
-  if ($head.parent.isTextblock) {
-    if (view ? !view.endOfTextblock("forward", state) : $head.parentOffset < $head.parent.content.size)
-      { return false }
-    $cut = findCutAfter($head);
-  }
-  var node = $cut && $cut.nodeAfter;
-  if (!node || !NodeSelection.isSelectable(node)) { return false }
-  if (dispatch)
-    { dispatch(state.tr.setSelection(NodeSelection.create(state.doc, $cut.pos)).scrollIntoView()); }
-  return true
-}
-
-function findCutAfter($pos) {
-  if (!$pos.parent.type.spec.isolating) { for (var i = $pos.depth - 1; i >= 0; i--) {
-    var parent = $pos.node(i);
-    if ($pos.index(i) + 1 < parent.childCount) { return $pos.doc.resolve($pos.after(i + 1)) }
-    if (parent.type.spec.isolating) { break }
-  } }
-  return null
-}
-
-// :: (EditorState, ?(tr: Transaction)) → bool
-// Lift the selected block, or the closest ancestor block of the
-// selection that can be lifted, out of its parent node.
-function lift$2(state, dispatch) {
-  var ref = state.selection;
-  var $from = ref.$from;
-  var $to = ref.$to;
-  var range = $from.blockRange($to), target = range && liftTarget(range);
-  if (target == null) { return false }
-  if (dispatch) { dispatch(state.tr.lift(range, target).scrollIntoView()); }
-  return true
-}
-
-// :: (EditorState, ?(tr: Transaction)) → bool
-// If the selection is in a node whose type has a truthy
-// [`code`](#model.NodeSpec.code) property in its spec, replace the
-// selection with a newline character.
-function newlineInCode$2(state, dispatch) {
-  var ref = state.selection;
-  var $head = ref.$head;
-  var $anchor = ref.$anchor;
-  if (!$head.parent.type.spec.code || !$head.sameParent($anchor)) { return false }
-  if (dispatch) { dispatch(state.tr.insertText("\n").scrollIntoView()); }
-  return true
-}
-
-function defaultBlockAt$1(match) {
-  for (var i = 0; i < match.edgeCount; i++) {
-    var ref = match.edge(i);
-    var type = ref.type;
-    if (type.isTextblock && !type.hasRequiredAttrs()) { return type }
-  }
-  return null
-}
-
-// :: (EditorState, ?(tr: Transaction)) → bool
-// When the selection is in a node with a truthy
-// [`code`](#model.NodeSpec.code) property in its spec, create a
-// default block after the code block, and move the cursor there.
-function exitCode$2(state, dispatch) {
-  var ref = state.selection;
-  var $head = ref.$head;
-  var $anchor = ref.$anchor;
-  if (!$head.parent.type.spec.code || !$head.sameParent($anchor)) { return false }
-  var above = $head.node(-1), after = $head.indexAfter(-1), type = defaultBlockAt$1(above.contentMatchAt(after));
-  if (!above.canReplaceWith(after, after, type)) { return false }
-  if (dispatch) {
-    var pos = $head.after(), tr = state.tr.replaceWith(pos, pos, type.createAndFill());
-    tr.setSelection(Selection.near(tr.doc.resolve(pos), 1));
-    dispatch(tr.scrollIntoView());
-  }
-  return true
-}
-
-// :: (EditorState, ?(tr: Transaction)) → bool
-// If a block node is selected, create an empty paragraph before (if
-// it is its parent's first child) or after it.
-function createParagraphNear$2(state, dispatch) {
-  var sel = state.selection;
-  var $from = sel.$from;
-  var $to = sel.$to;
-  if (sel instanceof AllSelection || $from.parent.inlineContent || $to.parent.inlineContent) { return false }
-  var type = defaultBlockAt$1($to.parent.contentMatchAt($to.indexAfter()));
-  if (!type || !type.isTextblock) { return false }
-  if (dispatch) {
-    var side = (!$from.parentOffset && $to.index() < $to.parent.childCount ? $from : $to).pos;
-    var tr = state.tr.insert(side, type.createAndFill());
-    tr.setSelection(TextSelection.create(tr.doc, side + 1));
-    dispatch(tr.scrollIntoView());
-  }
-  return true
-}
-
-// :: (EditorState, ?(tr: Transaction)) → bool
-// If the cursor is in an empty textblock that can be lifted, lift the
-// block.
-function liftEmptyBlock$2(state, dispatch) {
-  var ref = state.selection;
-  var $cursor = ref.$cursor;
-  if (!$cursor || $cursor.parent.content.size) { return false }
-  if ($cursor.depth > 1 && $cursor.after() != $cursor.end(-1)) {
-    var before = $cursor.before();
-    if (canSplit(state.doc, before)) {
-      if (dispatch) { dispatch(state.tr.split(before).scrollIntoView()); }
-      return true
-    }
-  }
-  var range = $cursor.blockRange(), target = range && liftTarget(range);
-  if (target == null) { return false }
-  if (dispatch) { dispatch(state.tr.lift(range, target).scrollIntoView()); }
-  return true
-}
-
-// :: (EditorState, ?(tr: Transaction)) → bool
-// Split the parent block of the selection. If the selection is a text
-// selection, also delete its content.
-function splitBlock$2(state, dispatch) {
-  var ref = state.selection;
-  var $from = ref.$from;
-  var $to = ref.$to;
-  if (state.selection instanceof NodeSelection && state.selection.node.isBlock) {
-    if (!$from.parentOffset || !canSplit(state.doc, $from.pos)) { return false }
-    if (dispatch) { dispatch(state.tr.split($from.pos).scrollIntoView()); }
-    return true
-  }
-
-  if (!$from.parent.isBlock) { return false }
-
-  if (dispatch) {
-    var atEnd = $to.parentOffset == $to.parent.content.size;
-    var tr = state.tr;
-    if (state.selection instanceof TextSelection || state.selection instanceof AllSelection) { tr.deleteSelection(); }
-    var deflt = $from.depth == 0 ? null : defaultBlockAt$1($from.node(-1).contentMatchAt($from.indexAfter(-1)));
-    var types = atEnd && deflt ? [{type: deflt}] : null;
-    var can = canSplit(tr.doc, tr.mapping.map($from.pos), 1, types);
-    if (!types && !can && canSplit(tr.doc, tr.mapping.map($from.pos), 1, deflt && [{type: deflt}])) {
-      types = [{type: deflt}];
-      can = true;
-    }
-    if (can) {
-      tr.split(tr.mapping.map($from.pos), 1, types);
-      if (!atEnd && !$from.parentOffset && $from.parent.type != deflt) {
-        var first = tr.mapping.map($from.before()), $first = tr.doc.resolve(first);
-        if ($from.node(-1).canReplaceWith($first.index(), $first.index() + 1, deflt))
-          { tr.setNodeMarkup(tr.mapping.map($from.before()), deflt); }
-      }
-    }
-    dispatch(tr.scrollIntoView());
-  }
-  return true
-}
-
-// :: (EditorState, ?(tr: Transaction)) → bool
-// Move the selection to the node wrapping the current selection, if
-// any. (Will not select the document node.)
-function selectParentNode$2(state, dispatch) {
-  var ref = state.selection;
-  var $from = ref.$from;
-  var to = ref.to;
-  var pos;
-  var same = $from.sharedDepth(to);
-  if (same == 0) { return false }
-  pos = $from.before(same);
-  if (dispatch) { dispatch(state.tr.setSelection(NodeSelection.create(state.doc, pos))); }
-  return true
-}
-
-// :: (EditorState, ?(tr: Transaction)) → bool
-// Select the whole document.
-function selectAll$2(state, dispatch) {
-  if (dispatch) { dispatch(state.tr.setSelection(new AllSelection(state.doc))); }
-  return true
-}
-
-function joinMaybeClear(state, $pos, dispatch) {
-  var before = $pos.nodeBefore, after = $pos.nodeAfter, index = $pos.index();
-  if (!before || !after || !before.type.compatibleContent(after.type)) { return false }
-  if (!before.content.size && $pos.parent.canReplace(index - 1, index)) {
-    if (dispatch) { dispatch(state.tr.delete($pos.pos - before.nodeSize, $pos.pos).scrollIntoView()); }
-    return true
-  }
-  if (!$pos.parent.canReplace(index, index + 1) || !(after.isTextblock || canJoin(state.doc, $pos.pos)))
-    { return false }
-  if (dispatch)
-    { dispatch(state.tr
-             .clearIncompatible($pos.pos, before.type, before.contentMatchAt(before.childCount))
-             .join($pos.pos)
-             .scrollIntoView()); }
-  return true
-}
-
-function deleteBarrier(state, $cut, dispatch) {
-  var before = $cut.nodeBefore, after = $cut.nodeAfter, conn, match;
-  if (before.type.spec.isolating || after.type.spec.isolating) { return false }
-  if (joinMaybeClear(state, $cut, dispatch)) { return true }
-
-  var canDelAfter = $cut.parent.canReplace($cut.index(), $cut.index() + 1);
-  if (canDelAfter &&
-      (conn = (match = before.contentMatchAt(before.childCount)).findWrapping(after.type)) &&
-      match.matchType(conn[0] || after.type).validEnd) {
-    if (dispatch) {
-      var end = $cut.pos + after.nodeSize, wrap = Fragment.empty;
-      for (var i = conn.length - 1; i >= 0; i--)
-        { wrap = Fragment.from(conn[i].create(null, wrap)); }
-      wrap = Fragment.from(before.copy(wrap));
-      var tr = state.tr.step(new ReplaceAroundStep($cut.pos - 1, end, $cut.pos, end, new Slice(wrap, 1, 0), conn.length, true));
-      var joinAt = end + 2 * conn.length;
-      if (canJoin(tr.doc, joinAt)) { tr.join(joinAt); }
-      dispatch(tr.scrollIntoView());
-    }
-    return true
-  }
-
-  var selAfter = Selection.findFrom($cut, 1);
-  var range = selAfter && selAfter.$from.blockRange(selAfter.$to), target = range && liftTarget(range);
-  if (target != null && target >= $cut.depth) {
-    if (dispatch) { dispatch(state.tr.lift(range, target).scrollIntoView()); }
-    return true
-  }
-
-  if (canDelAfter && textblockAt(after, "start", true) && textblockAt(before, "end")) {
-    var at = before, wrap$1 = [];
-    for (;;) {
-      wrap$1.push(at);
-      if (at.isTextblock) { break }
-      at = at.lastChild;
-    }
-    var afterText = after, afterDepth = 1;
-    for (; !afterText.isTextblock; afterText = afterText.firstChild) { afterDepth++; }
-    if (at.canReplace(at.childCount, at.childCount, afterText.content)) {
-      if (dispatch) {
-        var end$1 = Fragment.empty;
-        for (var i$1 = wrap$1.length - 1; i$1 >= 0; i$1--) { end$1 = Fragment.from(wrap$1[i$1].copy(end$1)); }
-        var tr$1 = state.tr.step(new ReplaceAroundStep($cut.pos - wrap$1.length, $cut.pos + after.nodeSize,
-                                                     $cut.pos + afterDepth, $cut.pos + after.nodeSize - afterDepth,
-                                                     new Slice(end$1, wrap$1.length, 0), 0, true));
-        dispatch(tr$1.scrollIntoView());
-      }
-      return true
-    }
-  }
-
-  return false
-}
-
-// Parameterized commands
-
-// :: (NodeType, ?Object) → (state: EditorState, dispatch: ?(tr: Transaction)) → bool
-// Wrap the selection in a node of the given type with the given
-// attributes.
-function wrapIn$2(nodeType, attrs) {
-  return function(state, dispatch) {
-    var ref = state.selection;
-    var $from = ref.$from;
-    var $to = ref.$to;
-    var range = $from.blockRange($to), wrapping = range && findWrapping(range, nodeType, attrs);
-    if (!wrapping) { return false }
-    if (dispatch) { dispatch(state.tr.wrap(range, wrapping).scrollIntoView()); }
-    return true
-  }
-}
-
-// :: (NodeType, ?Object) → (state: EditorState, dispatch: ?(tr: Transaction)) → bool
-// Returns a command that tries to set the selected textblocks to the
-// given node type with the given attributes.
-function setBlockType(nodeType, attrs) {
-  return function(state, dispatch) {
-    var ref = state.selection;
-    var from = ref.from;
-    var to = ref.to;
-    var applicable = false;
-    state.doc.nodesBetween(from, to, function (node, pos) {
-      if (applicable) { return false }
-      if (!node.isTextblock || node.hasMarkup(nodeType, attrs)) { return }
-      if (node.type == nodeType) {
-        applicable = true;
-      } else {
-        var $pos = state.doc.resolve(pos), index = $pos.index();
-        applicable = $pos.parent.canReplaceWith(index, index + 1, nodeType);
-      }
-    });
-    if (!applicable) { return false }
-    if (dispatch) { dispatch(state.tr.setBlockType(from, to, nodeType, attrs).scrollIntoView()); }
-    return true
-  }
-}
-
-// :: (...[(EditorState, ?(tr: Transaction), ?EditorView) → bool]) → (EditorState, ?(tr: Transaction), ?EditorView) → bool
-// Combine a number of command functions into a single function (which
-// calls them one by one until one returns true).
-function chainCommands() {
-  var commands = [], len = arguments.length;
-  while ( len-- ) commands[ len ] = arguments[ len ];
-
-  return function(state, dispatch, view) {
-    for (var i = 0; i < commands.length; i++)
-      { if (commands[i](state, dispatch, view)) { return true } }
-    return false
-  }
-}
-
-var backspace = chainCommands(deleteSelection$2, joinBackward$2, selectNodeBackward$2);
-var del = chainCommands(deleteSelection$2, joinForward$2, selectNodeForward$2);
-
-// :: Object
-// A basic keymap containing bindings not specific to any schema.
-// Binds the following keys (when multiple commands are listed, they
-// are chained with [`chainCommands`](#commands.chainCommands)):
-//
-// * **Enter** to `newlineInCode`, `createParagraphNear`, `liftEmptyBlock`, `splitBlock`
-// * **Mod-Enter** to `exitCode`
-// * **Backspace** and **Mod-Backspace** to `deleteSelection`, `joinBackward`, `selectNodeBackward`
-// * **Delete** and **Mod-Delete** to `deleteSelection`, `joinForward`, `selectNodeForward`
-// * **Mod-Delete** to `deleteSelection`, `joinForward`, `selectNodeForward`
-// * **Mod-a** to `selectAll`
-({
-  "Enter": chainCommands(newlineInCode$2, createParagraphNear$2, liftEmptyBlock$2, splitBlock$2),
-  "Mod-Enter": exitCode$2,
-  "Backspace": backspace,
-  "Mod-Backspace": backspace,
-  "Delete": del,
-  "Mod-Delete": del,
-  "Mod-a": selectAll$2
-});
-
-// declare global: os, navigator
-typeof navigator != "undefined" ? /Mac/.test(navigator.platform)
-          : typeof os != "undefined" ? os.platform() == "darwin" : false;
-
-// :: (NodeType, ?Object) → (state: EditorState, dispatch: ?(tr: Transaction)) → bool
-// Returns a command function that wraps the selection in a list with
-// the given type an attributes. If `dispatch` is null, only return a
-// value to indicate whether this is possible, but don't actually
-// perform the change.
-function wrapInList$2(listType, attrs) {
-  return function(state, dispatch) {
-    var ref = state.selection;
-    var $from = ref.$from;
-    var $to = ref.$to;
-    var range = $from.blockRange($to), doJoin = false, outerRange = range;
-    if (!range) { return false }
-    // This is at the top of an existing list item
-    if (range.depth >= 2 && $from.node(range.depth - 1).type.compatibleContent(listType) && range.startIndex == 0) {
-      // Don't do anything if this is the top of the list
-      if ($from.index(range.depth - 1) == 0) { return false }
-      var $insert = state.doc.resolve(range.start - 2);
-      outerRange = new NodeRange($insert, $insert, range.depth);
-      if (range.endIndex < range.parent.childCount)
-        { range = new NodeRange($from, state.doc.resolve($to.end(range.depth)), range.depth); }
-      doJoin = true;
-    }
-    var wrap = findWrapping(outerRange, listType, attrs, range);
-    if (!wrap) { return false }
-    if (dispatch) { dispatch(doWrapInList(state.tr, range, wrap, doJoin, listType).scrollIntoView()); }
-    return true
-  }
-}
-
-function doWrapInList(tr, range, wrappers, joinBefore, listType) {
-  var content = Fragment.empty;
-  for (var i = wrappers.length - 1; i >= 0; i--)
-    { content = Fragment.from(wrappers[i].type.create(wrappers[i].attrs, content)); }
-
-  tr.step(new ReplaceAroundStep(range.start - (joinBefore ? 2 : 0), range.end, range.start, range.end,
-                                new Slice(content, 0, 0), wrappers.length, true));
-
-  var found = 0;
-  for (var i$1 = 0; i$1 < wrappers.length; i$1++) { if (wrappers[i$1].type == listType) { found = i$1 + 1; } }
-  var splitDepth = wrappers.length - found;
-
-  var splitPos = range.start + wrappers.length - (joinBefore ? 2 : 0), parent = range.parent;
-  for (var i$2 = range.startIndex, e = range.endIndex, first = true; i$2 < e; i$2++, first = false) {
-    if (!first && canSplit(tr.doc, splitPos, splitDepth)) {
-      tr.split(splitPos, splitDepth);
-      splitPos += 2 * splitDepth;
-    }
-    splitPos += parent.child(i$2).nodeSize;
-  }
-  return tr
-}
-
-// :: (NodeType) → (state: EditorState, dispatch: ?(tr: Transaction)) → bool
-// Create a command to lift the list item around the selection up into
-// a wrapping list.
-function liftListItem$2(itemType) {
-  return function(state, dispatch) {
-    var ref = state.selection;
-    var $from = ref.$from;
-    var $to = ref.$to;
-    var range = $from.blockRange($to, function (node) { return node.childCount && node.firstChild.type == itemType; });
-    if (!range) { return false }
-    if (!dispatch) { return true }
-    if ($from.node(range.depth - 1).type == itemType) // Inside a parent list
-      { return liftToOuterList(state, dispatch, itemType, range) }
-    else // Outer list node
-      { return liftOutOfList(state, dispatch, range) }
-  }
-}
-
-function liftToOuterList(state, dispatch, itemType, range) {
-  var tr = state.tr, end = range.end, endOfList = range.$to.end(range.depth);
-  if (end < endOfList) {
-    // There are siblings after the lifted items, which must become
-    // children of the last item
-    tr.step(new ReplaceAroundStep(end - 1, endOfList, end, endOfList,
-                                  new Slice(Fragment.from(itemType.create(null, range.parent.copy())), 1, 0), 1, true));
-    range = new NodeRange(tr.doc.resolve(range.$from.pos), tr.doc.resolve(endOfList), range.depth);
-  }
-  dispatch(tr.lift(range, liftTarget(range)).scrollIntoView());
-  return true
-}
-
-function liftOutOfList(state, dispatch, range) {
-  var tr = state.tr, list = range.parent;
-  // Merge the list items into a single big item
-  for (var pos = range.end, i = range.endIndex - 1, e = range.startIndex; i > e; i--) {
-    pos -= list.child(i).nodeSize;
-    tr.delete(pos - 1, pos + 1);
-  }
-  var $start = tr.doc.resolve(range.start), item = $start.nodeAfter;
-  var atStart = range.startIndex == 0, atEnd = range.endIndex == list.childCount;
-  var parent = $start.node(-1), indexBefore = $start.index(-1);
-  if (!parent.canReplace(indexBefore + (atStart ? 0 : 1), indexBefore + 1,
-                         item.content.append(atEnd ? Fragment.empty : Fragment.from(list))))
-    { return false }
-  var start = $start.pos, end = start + item.nodeSize;
-  // Strip off the surrounding list. At the sides where we're not at
-  // the end of the list, the existing list is closed. At sides where
-  // this is the end, it is overwritten to its end.
-  tr.step(new ReplaceAroundStep(start - (atStart ? 1 : 0), end + (atEnd ? 1 : 0), start + 1, end - 1,
-                                new Slice((atStart ? Fragment.empty : Fragment.from(list.copy(Fragment.empty)))
-                                          .append(atEnd ? Fragment.empty : Fragment.from(list.copy(Fragment.empty))),
-                                          atStart ? 0 : 1, atEnd ? 0 : 1), atStart ? 0 : 1));
-  dispatch(tr.scrollIntoView());
-  return true
-}
-
-// :: (NodeType) → (state: EditorState, dispatch: ?(tr: Transaction)) → bool
-// Create a command to sink the list item around the selection down
-// into an inner list.
-function sinkListItem$2(itemType) {
-  return function(state, dispatch) {
-    var ref = state.selection;
-    var $from = ref.$from;
-    var $to = ref.$to;
-    var range = $from.blockRange($to, function (node) { return node.childCount && node.firstChild.type == itemType; });
-    if (!range) { return false }
-    var startIndex = range.startIndex;
-    if (startIndex == 0) { return false }
-    var parent = range.parent, nodeBefore = parent.child(startIndex - 1);
-    if (nodeBefore.type != itemType) { return false }
-
-    if (dispatch) {
-      var nestedBefore = nodeBefore.lastChild && nodeBefore.lastChild.type == parent.type;
-      var inner = Fragment.from(nestedBefore ? itemType.create() : null);
-      var slice = new Slice(Fragment.from(itemType.create(null, Fragment.from(parent.type.create(null, inner)))),
-                            nestedBefore ? 3 : 1, 0);
-      var before = range.start, after = range.end;
-      dispatch(state.tr.step(new ReplaceAroundStep(before - (nestedBefore ? 3 : 1), after,
-                                                   before, after, slice, 1, true))
-               .scrollIntoView());
-    }
-    return true
-  }
-}
-
-function getSchemaTypeNameByName(name, schema) {
-    if (schema.nodes[name]) {
-        return 'node';
-    }
-    if (schema.marks[name]) {
-        return 'mark';
-    }
-    return null;
-}
-
-function getNodeType(nameOrType, schema) {
-    if (typeof nameOrType === 'string') {
-        if (!schema.nodes[nameOrType]) {
-            throw Error(`There is no node type named '${nameOrType}'. Maybe you forgot to add the extension?`);
-        }
-        return schema.nodes[nameOrType];
-    }
-    return nameOrType;
-}
-
-function getNodeAttributes(state, typeOrName) {
-    const type = getNodeType(typeOrName, state.schema);
-    const { from, to } = state.selection;
-    let nodes = [];
-    state.doc.nodesBetween(from, to, node => {
-        nodes = [...nodes, node];
-    });
-    const node = nodes
-        .reverse()
-        .find(nodeItem => nodeItem.type.name === type.name);
-    if (node) {
-        return { ...node.attrs };
-    }
-    return {};
-}
-
-function getMarkType(nameOrType, schema) {
-    if (typeof nameOrType === 'string') {
-        if (!schema.marks[nameOrType]) {
-            throw Error(`There is no mark type named '${nameOrType}'. Maybe you forgot to add the extension?`);
-        }
-        return schema.marks[nameOrType];
-    }
-    return nameOrType;
-}
-
-function getMarkAttributes(state, typeOrName) {
-    const type = getMarkType(typeOrName, state.schema);
-    const { from, to, empty } = state.selection;
-    let marks = [];
-    if (empty) {
-        marks = state.selection.$head.marks();
-    }
-    else {
-        state.doc.nodesBetween(from, to, node => {
-            marks = [...marks, ...node.marks];
-        });
-    }
-    const mark = marks.find(markItem => markItem.type.name === type.name);
-    if (mark) {
-        return { ...mark.attrs };
-    }
-    return {};
-}
-
-function getAttributes(state, typeOrName) {
-    const schemaType = getSchemaTypeNameByName(typeof typeOrName === 'string'
-        ? typeOrName
-        : typeOrName.name, state.schema);
-    if (schemaType === 'node') {
-        return getNodeAttributes(state, typeOrName);
-    }
-    if (schemaType === 'mark') {
-        return getMarkAttributes(state, typeOrName);
-    }
-    return {};
-}
-
-/**
- * Check if object1 includes object2
- * @param object1 Object
- * @param object2 Object
- */
-function objectIncludes(object1, object2) {
-    const keys = Object.keys(object2);
-    if (!keys.length) {
-        return true;
-    }
-    return !!keys
-        .filter(key => object2[key] === object1[key])
-        .length;
-}
-
-function isNodeActive(state, typeOrName, attributes = {}) {
-    const { from, to, empty } = state.selection;
-    const type = typeOrName
-        ? getNodeType(typeOrName, state.schema)
-        : null;
-    let nodeRanges = [];
-    state.doc.nodesBetween(from, to, (node, pos) => {
-        if (!node.isText) {
-            const relativeFrom = Math.max(from, pos);
-            const relativeTo = Math.min(to, pos + node.nodeSize);
-            nodeRanges = [...nodeRanges, {
-                    node,
-                    from: relativeFrom,
-                    to: relativeTo,
-                }];
-        }
-    });
-    if (empty) {
-        return !!nodeRanges
-            .filter(nodeRange => {
-            if (!type) {
-                return true;
-            }
-            return type.name === nodeRange.node.type.name;
-        })
-            .find(nodeRange => objectIncludes(nodeRange.node.attrs, attributes));
-    }
-    const selectionRange = to - from;
-    const range = nodeRanges
-        .filter(nodeRange => {
-        if (!type) {
-            return true;
-        }
-        return type.name === nodeRange.node.type.name;
-    })
-        .filter(nodeRange => objectIncludes(nodeRange.node.attrs, attributes))
-        .reduce((sum, nodeRange) => {
-        const size = nodeRange.to - nodeRange.from;
-        return sum + size;
-    }, 0);
-    return range >= selectionRange;
-}
-
-function isMarkActive(state, typeOrName, attributes = {}) {
-    const { from, to, empty } = state.selection;
-    const type = typeOrName
-        ? getMarkType(typeOrName, state.schema)
-        : null;
-    if (empty) {
-        return !!(state.storedMarks || state.selection.$from.marks())
-            .filter(mark => {
-            if (!type) {
-                return true;
-            }
-            return type.name === mark.type.name;
-        })
-            .find(mark => objectIncludes(mark.attrs, attributes));
-    }
-    let selectionRange = 0;
-    let markRanges = [];
-    state.doc.nodesBetween(from, to, (node, pos) => {
-        if (node.isText) {
-            const relativeFrom = Math.max(from, pos);
-            const relativeTo = Math.min(to, pos + node.nodeSize);
-            const range = relativeTo - relativeFrom;
-            selectionRange += range;
-            markRanges = [...markRanges, ...node.marks.map(mark => ({
-                    mark,
-                    from: relativeFrom,
-                    to: relativeTo,
-                }))];
-        }
-    });
-    if (selectionRange === 0) {
-        return false;
-    }
-    // calculate range of matched mark
-    const matchedRange = markRanges
-        .filter(markRange => {
-        if (!type) {
-            return true;
-        }
-        return type.name === markRange.mark.type.name;
-    })
-        .filter(markRange => objectIncludes(markRange.mark.attrs, attributes))
-        .reduce((sum, markRange) => {
-        const size = markRange.to - markRange.from;
-        return sum + size;
-    }, 0);
-    // calculate range of marks that excludes the searched mark
-    // for example `code` doesn’t allow any other marks
-    const excludedRange = markRanges
-        .filter(markRange => {
-        if (!type) {
-            return true;
-        }
-        return markRange.mark.type !== type
-            && markRange.mark.type.excludes(type);
-    })
-        .reduce((sum, markRange) => {
-        const size = markRange.to - markRange.from;
-        return sum + size;
-    }, 0);
-    // we only include the result of `excludedRange`
-    // if there is a match at all
-    const range = matchedRange > 0
-        ? matchedRange + excludedRange
-        : matchedRange;
-    return range >= selectionRange;
-}
-
-function isActive(state, name, attributes = {}) {
-    if (!name) {
-        return isNodeActive(state, null, attributes) || isMarkActive(state, null, attributes);
-    }
-    const schemaType = getSchemaTypeNameByName(name, state.schema);
-    if (schemaType === 'node') {
-        return isNodeActive(state, name, attributes);
-    }
-    if (schemaType === 'mark') {
-        return isMarkActive(state, name, attributes);
-    }
-    return false;
-}
-
-function removeElement(element) {
-    if (element && element.parentNode) {
-        element.parentNode.removeChild(element);
-    }
-}
-
-function elementFromString(value) {
-    // add a wrapper to preserve leading and trailing whitespace
-    const wrappedValue = `<body>${value}</body>`;
-    return new window.DOMParser().parseFromString(wrappedValue, 'text/html').body;
-}
-
-function createNodeFromContent(content, schema, options) {
-    options = {
-        slice: true,
-        parseOptions: {},
-        ...options,
-    };
-    if (typeof content === 'object' && content !== null) {
-        try {
-            if (Array.isArray(content)) {
-                return Fragment.fromArray(content.map(item => schema.nodeFromJSON(item)));
-            }
-            return schema.nodeFromJSON(content);
-        }
-        catch (error) {
-            console.warn('[tiptap warn]: Invalid content.', 'Passed value:', content, 'Error:', error);
-            return createNodeFromContent('', schema, options);
-        }
-    }
-    if (typeof content === 'string') {
-        const parser = DOMParser.fromSchema(schema);
-        return options.slice
-            ? parser.parseSlice(elementFromString(content), options.parseOptions).content
-            : parser.parse(elementFromString(content), options.parseOptions);
-    }
-    return createNodeFromContent('', schema, options);
-}
-
-function createDocument(content, schema, parseOptions = {}) {
-    return createNodeFromContent(content, schema, { slice: false, parseOptions });
-}
-
-function getHTMLFromFragment(doc, schema) {
-    const fragment = DOMSerializer
-        .fromSchema(schema)
-        .serializeFragment(doc.content);
-    const temporaryDocument = document.implementation.createHTMLDocument();
-    const container = temporaryDocument.createElement('div');
-    container.appendChild(fragment);
-    return container.innerHTML;
-}
-
-function isNodeEmpty(node) {
-    var _a;
-    const defaultContent = (_a = node.type.createAndFill()) === null || _a === void 0 ? void 0 : _a.toJSON();
-    const content = node.toJSON();
-    return JSON.stringify(defaultContent) === JSON.stringify(content);
-}
-
-function createStyleTag(style) {
-    const tipTapStyleTag = document.querySelector('style[data-tiptap-style]');
-    if (tipTapStyleTag !== null) {
-        return tipTapStyleTag;
-    }
-    const styleNode = document.createElement('style');
-    styleNode.setAttribute('data-tiptap-style', '');
-    styleNode.innerHTML = style;
-    document.getElementsByTagName('head')[0].appendChild(styleNode);
-    return styleNode;
-}
-
-class CommandManager {
-    constructor(editor, commands) {
-        this.editor = editor;
-        this.commands = commands;
-    }
-    createCommands() {
-        const { commands, editor } = this;
-        const { state, view } = editor;
-        const { tr } = state;
-        const props = this.buildProps(tr);
-        return Object.fromEntries(Object
-            .entries(commands)
-            .map(([name, command]) => {
-            const method = (...args) => {
-                const callback = command(...args)(props);
-                if (!tr.getMeta('preventDispatch')) {
-                    view.dispatch(tr);
-                }
-                return callback;
-            };
-            return [name, method];
-        }));
-    }
-    createChain(startTr, shouldDispatch = true) {
-        const { commands, editor } = this;
-        const { state, view } = editor;
-        const callbacks = [];
-        const hasStartTransaction = !!startTr;
-        const tr = startTr || state.tr;
-        const run = () => {
-            if (!hasStartTransaction && shouldDispatch && !tr.getMeta('preventDispatch')) {
-                view.dispatch(tr);
-            }
-            return callbacks.every(callback => callback === true);
-        };
-        const chain = {
-            ...Object.fromEntries(Object.entries(commands).map(([name, command]) => {
-                const chainedCommand = (...args) => {
-                    const props = this.buildProps(tr, shouldDispatch);
-                    const callback = command(...args)(props);
-                    callbacks.push(callback);
-                    return chain;
-                };
-                return [name, chainedCommand];
-            })),
-            run,
-        };
-        return chain;
-    }
-    createCan(startTr) {
-        const { commands, editor } = this;
-        const { state } = editor;
-        const dispatch = undefined;
-        const tr = startTr || state.tr;
-        const props = this.buildProps(tr, dispatch);
-        const formattedCommands = Object.fromEntries(Object
-            .entries(commands)
-            .map(([name, command]) => {
-            return [name, (...args) => command(...args)({ ...props, dispatch })];
-        }));
-        return {
-            ...formattedCommands,
-            chain: () => this.createChain(tr, dispatch),
-        };
-    }
-    buildProps(tr, shouldDispatch = true) {
-        const { editor, commands } = this;
-        const { state, view } = editor;
-        if (state.storedMarks) {
-            tr.setStoredMarks(state.storedMarks);
-        }
-        const props = {
-            tr,
-            editor,
-            view,
-            state: this.chainableState(tr, state),
-            dispatch: shouldDispatch
-                ? () => undefined
-                : undefined,
-            chain: () => this.createChain(tr),
-            can: () => this.createCan(tr),
-            get commands() {
-                return Object.fromEntries(Object
-                    .entries(commands)
-                    .map(([name, command]) => {
-                    return [name, (...args) => command(...args)(props)];
-                }));
-            },
-        };
-        return props;
-    }
-    chainableState(tr, state) {
-        let { selection } = tr;
-        let { doc } = tr;
-        let { storedMarks } = tr;
-        return {
-            ...state,
-            schema: state.schema,
-            plugins: state.plugins,
-            apply: state.apply.bind(state),
-            applyTransaction: state.applyTransaction.bind(state),
-            reconfigure: state.reconfigure.bind(state),
-            toJSON: state.toJSON.bind(state),
-            get storedMarks() {
-                return storedMarks;
-            },
-            get selection() {
-                return selection;
-            },
-            get doc() {
-                return doc;
-            },
-            get tr() {
-                selection = tr.selection;
-                doc = tr.doc;
-                storedMarks = tr.storedMarks;
-                return tr;
-            },
-        };
-    }
-}
-
-function getExtensionField(extension, field, context = {}) {
-    if (extension.config[field] === undefined && extension.parent) {
-        return getExtensionField(extension.parent, field, context);
-    }
-    if (typeof extension.config[field] === 'function') {
-        const value = extension.config[field].bind({
-            ...context,
-            parent: extension.parent
-                ? getExtensionField(extension.parent, field, context)
-                : null,
-        });
-        return value;
-    }
-    return extension.config[field];
-}
-
-function splitExtensions(extensions) {
-    const baseExtensions = extensions.filter(extension => extension.type === 'extension');
-    const nodeExtensions = extensions.filter(extension => extension.type === 'node');
-    const markExtensions = extensions.filter(extension => extension.type === 'mark');
-    return {
-        baseExtensions,
-        nodeExtensions,
-        markExtensions,
-    };
-}
-
-/**
- * Get a list of all extension attributes defined in `addAttribute` and `addGlobalAttribute`.
- * @param extensions List of extensions
- */
-function getAttributesFromExtensions(extensions) {
-    const extensionAttributes = [];
-    const { nodeExtensions, markExtensions } = splitExtensions(extensions);
-    const nodeAndMarkExtensions = [...nodeExtensions, ...markExtensions];
-    const defaultAttribute = {
-        default: null,
-        rendered: true,
-        renderHTML: null,
-        parseHTML: null,
-        keepOnSplit: true,
-    };
-    extensions.forEach(extension => {
-        const context = {
-            name: extension.name,
-            options: extension.options,
-        };
-        const addGlobalAttributes = getExtensionField(extension, 'addGlobalAttributes', context);
-        if (!addGlobalAttributes) {
-            return;
-        }
-        // TODO: remove `as GlobalAttributes`
-        const globalAttributes = addGlobalAttributes();
-        globalAttributes.forEach(globalAttribute => {
-            globalAttribute.types.forEach(type => {
-                Object
-                    .entries(globalAttribute.attributes)
-                    .forEach(([name, attribute]) => {
-                    extensionAttributes.push({
-                        type,
-                        name,
-                        attribute: {
-                            ...defaultAttribute,
-                            ...attribute,
-                        },
-                    });
-                });
-            });
-        });
-    });
-    nodeAndMarkExtensions.forEach(extension => {
-        const context = {
-            name: extension.name,
-            options: extension.options,
-        };
-        const addAttributes = getExtensionField(extension, 'addAttributes', context);
-        if (!addAttributes) {
-            return;
-        }
-        // TODO: remove `as Attributes`
-        const attributes = addAttributes();
-        Object
-            .entries(attributes)
-            .forEach(([name, attribute]) => {
-            extensionAttributes.push({
-                type: extension.name,
-                name,
-                attribute: {
-                    ...defaultAttribute,
-                    ...attribute,
-                },
-            });
-        });
-    });
-    return extensionAttributes;
-}
-
-function mergeAttributes(...objects) {
-    return objects
-        .filter(item => !!item)
-        .reduce((items, item) => {
-        const mergedAttributes = { ...items };
-        Object.entries(item).forEach(([key, value]) => {
-            const exists = mergedAttributes[key];
-            if (!exists) {
-                mergedAttributes[key] = value;
-                return;
-            }
-            if (key === 'class') {
-                mergedAttributes[key] = [mergedAttributes[key], value].join(' ');
-            }
-            else if (key === 'style') {
-                mergedAttributes[key] = [mergedAttributes[key], value].join('; ');
-            }
-            else {
-                mergedAttributes[key] = value;
-            }
-        });
-        return mergedAttributes;
-    }, {});
-}
-
-function getRenderedAttributes(nodeOrMark, extensionAttributes) {
-    return extensionAttributes
-        .filter(item => item.attribute.rendered)
-        .map(item => {
-        if (!item.attribute.renderHTML) {
-            return {
-                [item.name]: nodeOrMark.attrs[item.name],
-            };
-        }
-        return item.attribute.renderHTML(nodeOrMark.attrs) || {};
-    })
-        .reduce((attributes, attribute) => {
-        return mergeAttributes(attributes, attribute);
-    }, {});
-}
-
-function isEmptyObject(object = {}) {
-    return Object.keys(object).length === 0 && object.constructor === Object;
-}
-
-function fromString(value) {
-    if (typeof value !== 'string') {
-        return value;
-    }
-    if (value.match(/^\d*(\.\d+)?$/)) {
-        return Number(value);
-    }
-    if (value === 'true') {
-        return true;
-    }
-    if (value === 'false') {
-        return false;
-    }
-    return value;
-}
-
-/**
- * This function merges extension attributes into parserule attributes (`attrs` or `getAttrs`).
- * Cancels when `getAttrs` returned `false`.
- * @param parseRule ProseMirror ParseRule
- * @param extensionAttributes List of attributes to inject
- */
-function injectExtensionAttributesToParseRule(parseRule, extensionAttributes) {
-    if (parseRule.style) {
-        return parseRule;
-    }
-    return {
-        ...parseRule,
-        getAttrs: node => {
-            const oldAttributes = parseRule.getAttrs
-                ? parseRule.getAttrs(node)
-                : parseRule.attrs;
-            if (oldAttributes === false) {
-                return false;
-            }
-            const newAttributes = extensionAttributes
-                .filter(item => item.attribute.rendered)
-                .reduce((items, item) => {
-                const attributes = item.attribute.parseHTML
-                    ? item.attribute.parseHTML(node) || {}
-                    : {
-                        [item.name]: fromString(node.getAttribute(item.name)),
-                    };
-                const filteredAttributes = Object.fromEntries(Object.entries(attributes)
-                    .filter(([, value]) => value !== undefined && value !== null));
-                return {
-                    ...items,
-                    ...filteredAttributes,
-                };
-            }, {});
-            return { ...oldAttributes, ...newAttributes };
-        },
-    };
-}
-
-/**
- * Optionally calls `value` as a function.
- * Otherwise it is returned directly.
- * @param value Function or any value.
- * @param context Optional context to bind to function.
- * @param props Optional props to pass to function.
- */
-function callOrReturn(value, context = undefined, ...props) {
-    if (typeof value === 'function') {
-        if (context) {
-            return value.bind(context)(...props);
-        }
-        return value(...props);
-    }
-    return value;
-}
-
-function cleanUpSchemaItem(data) {
-    return Object.fromEntries(Object.entries(data).filter(([key, value]) => {
-        if (key === 'attrs' && isEmptyObject(value)) {
-            return false;
-        }
-        return value !== null && value !== undefined;
-    }));
-}
-function getSchemaByResolvedExtensions(extensions) {
-    var _a;
-    const allAttributes = getAttributesFromExtensions(extensions);
-    const { nodeExtensions, markExtensions } = splitExtensions(extensions);
-    const topNode = (_a = nodeExtensions.find(extension => getExtensionField(extension, 'topNode'))) === null || _a === void 0 ? void 0 : _a.name;
-    const nodes = Object.fromEntries(nodeExtensions.map(extension => {
-        const extensionAttributes = allAttributes.filter(attribute => attribute.type === extension.name);
-        const context = {
-            name: extension.name,
-            options: extension.options,
-        };
-        const extraNodeFields = extensions.reduce((fields, e) => {
-            const extendNodeSchema = getExtensionField(e, 'extendNodeSchema', context);
-            return {
-                ...fields,
-                ...(extendNodeSchema ? extendNodeSchema(extension) : {}),
-            };
-        }, {});
-        const schema = cleanUpSchemaItem({
-            ...extraNodeFields,
-            content: callOrReturn(getExtensionField(extension, 'content', context)),
-            marks: callOrReturn(getExtensionField(extension, 'marks', context)),
-            group: callOrReturn(getExtensionField(extension, 'group', context)),
-            inline: callOrReturn(getExtensionField(extension, 'inline', context)),
-            atom: callOrReturn(getExtensionField(extension, 'atom', context)),
-            selectable: callOrReturn(getExtensionField(extension, 'selectable', context)),
-            draggable: callOrReturn(getExtensionField(extension, 'draggable', context)),
-            code: callOrReturn(getExtensionField(extension, 'code', context)),
-            defining: callOrReturn(getExtensionField(extension, 'defining', context)),
-            isolating: callOrReturn(getExtensionField(extension, 'isolating', context)),
-            attrs: Object.fromEntries(extensionAttributes.map(extensionAttribute => {
-                var _a;
-                return [extensionAttribute.name, { default: (_a = extensionAttribute === null || extensionAttribute === void 0 ? void 0 : extensionAttribute.attribute) === null || _a === void 0 ? void 0 : _a.default }];
-            })),
-        });
-        const parseHTML = callOrReturn(getExtensionField(extension, 'parseHTML', context));
-        if (parseHTML) {
-            schema.parseDOM = parseHTML
-                .map(parseRule => injectExtensionAttributesToParseRule(parseRule, extensionAttributes));
-        }
-        const renderHTML = getExtensionField(extension, 'renderHTML', context);
-        if (renderHTML) {
-            schema.toDOM = node => renderHTML({
-                node,
-                HTMLAttributes: getRenderedAttributes(node, extensionAttributes),
-            });
-        }
-        return [extension.name, schema];
-    }));
-    const marks = Object.fromEntries(markExtensions.map(extension => {
-        const extensionAttributes = allAttributes.filter(attribute => attribute.type === extension.name);
-        const context = {
-            name: extension.name,
-            options: extension.options,
-        };
-        const extraMarkFields = extensions.reduce((fields, e) => {
-            const extendMarkSchema = getExtensionField(e, 'extendMarkSchema', context);
-            return {
-                ...fields,
-                ...(extendMarkSchema ? extendMarkSchema(extension) : {}),
-            };
-        }, {});
-        const schema = cleanUpSchemaItem({
-            ...extraMarkFields,
-            inclusive: callOrReturn(getExtensionField(extension, 'inclusive', context)),
-            excludes: callOrReturn(getExtensionField(extension, 'excludes', context)),
-            group: callOrReturn(getExtensionField(extension, 'group', context)),
-            spanning: callOrReturn(getExtensionField(extension, 'spanning', context)),
-            attrs: Object.fromEntries(extensionAttributes.map(extensionAttribute => {
-                var _a;
-                return [extensionAttribute.name, { default: (_a = extensionAttribute === null || extensionAttribute === void 0 ? void 0 : extensionAttribute.attribute) === null || _a === void 0 ? void 0 : _a.default }];
-            })),
-        });
-        const parseHTML = callOrReturn(getExtensionField(extension, 'parseHTML', context));
-        if (parseHTML) {
-            schema.parseDOM = parseHTML
-                .map(parseRule => injectExtensionAttributesToParseRule(parseRule, extensionAttributes));
-        }
-        const renderHTML = getExtensionField(extension, 'renderHTML', context);
-        if (renderHTML) {
-            schema.toDOM = mark => renderHTML({
-                mark,
-                HTMLAttributes: getRenderedAttributes(mark, extensionAttributes),
-            });
-        }
-        return [extension.name, schema];
-    }));
-    return new Schema({
-        topNode,
-        nodes,
-        marks,
-    });
-}
-
-function getSchemaTypeByName(name, schema) {
-    if (schema.nodes[name]) {
-        return schema.nodes[name];
-    }
-    if (schema.marks[name]) {
-        return schema.marks[name];
-    }
-    return null;
-}
-
-class ExtensionManager {
-    constructor(extensions, editor) {
-        this.splittableMarks = [];
-        this.editor = editor;
-        this.extensions = ExtensionManager.resolve(extensions);
-        this.schema = getSchemaByResolvedExtensions(this.extensions);
-        this.extensions.forEach(extension => {
-            var _a;
-            const context = {
-                name: extension.name,
-                options: extension.options,
-                editor: this.editor,
-                type: getSchemaTypeByName(extension.name, this.schema),
-            };
-            if (extension.type === 'mark') {
-                const keepOnSplit = (_a = callOrReturn(getExtensionField(extension, 'keepOnSplit', context))) !== null && _a !== void 0 ? _a : true;
-                if (keepOnSplit) {
-                    this.splittableMarks.push(extension.name);
-                }
-            }
-            const onBeforeCreate = getExtensionField(extension, 'onBeforeCreate', context);
-            if (onBeforeCreate) {
-                this.editor.on('beforeCreate', onBeforeCreate);
-            }
-            const onCreate = getExtensionField(extension, 'onCreate', context);
-            if (onCreate) {
-                this.editor.on('create', onCreate);
-            }
-            const onUpdate = getExtensionField(extension, 'onUpdate', context);
-            if (onUpdate) {
-                this.editor.on('update', onUpdate);
-            }
-            const onSelectionUpdate = getExtensionField(extension, 'onSelectionUpdate', context);
-            if (onSelectionUpdate) {
-                this.editor.on('selectionUpdate', onSelectionUpdate);
-            }
-            const onTransaction = getExtensionField(extension, 'onTransaction', context);
-            if (onTransaction) {
-                this.editor.on('transaction', onTransaction);
-            }
-            const onFocus = getExtensionField(extension, 'onFocus', context);
-            if (onFocus) {
-                this.editor.on('focus', onFocus);
-            }
-            const onBlur = getExtensionField(extension, 'onBlur', context);
-            if (onBlur) {
-                this.editor.on('blur', onBlur);
-            }
-            const onDestroy = getExtensionField(extension, 'onDestroy', context);
-            if (onDestroy) {
-                this.editor.on('destroy', onDestroy);
-            }
-        });
-    }
-    static resolve(extensions) {
-        return ExtensionManager.sort(ExtensionManager.flatten(extensions));
-    }
-    static flatten(extensions) {
-        return extensions
-            .map(extension => {
-            const context = {
-                name: extension.name,
-                options: extension.options,
-            };
-            const addExtensions = getExtensionField(extension, 'addExtensions', context);
-            if (addExtensions) {
-                return [
-                    extension,
-                    ...this.flatten(addExtensions()),
-                ];
-            }
-            return extension;
-        })
-            // `Infinity` will break TypeScript so we set a number that is probably high enough
-            .flat(10);
-    }
-    static sort(extensions) {
-        const defaultPriority = 100;
-        return extensions.sort((a, b) => {
-            const priorityA = getExtensionField(a, 'priority') || defaultPriority;
-            const priorityB = getExtensionField(b, 'priority') || defaultPriority;
-            if (priorityA > priorityB) {
-                return -1;
-            }
-            if (priorityA < priorityB) {
-                return 1;
-            }
-            return 0;
-        });
-    }
-    get commands() {
-        return this.extensions.reduce((commands, extension) => {
-            const context = {
-                name: extension.name,
-                options: extension.options,
-                editor: this.editor,
-                type: getSchemaTypeByName(extension.name, this.schema),
-            };
-            const addCommands = getExtensionField(extension, 'addCommands', context);
-            if (!addCommands) {
-                return commands;
-            }
-            return {
-                ...commands,
-                ...addCommands(),
-            };
-        }, {});
-    }
-    get plugins() {
-        return [...this.extensions]
-            .reverse()
-            .map(extension => {
-            const context = {
-                name: extension.name,
-                options: extension.options,
-                editor: this.editor,
-                type: getSchemaTypeByName(extension.name, this.schema),
-            };
-            const plugins = [];
-            const addKeyboardShortcuts = getExtensionField(extension, 'addKeyboardShortcuts', context);
-            if (addKeyboardShortcuts) {
-                const bindings = Object.fromEntries(Object
-                    .entries(addKeyboardShortcuts())
-                    .map(([shortcut, method]) => {
-                    return [shortcut, () => method({ editor: this.editor })];
-                }));
-                const keyMapPlugin = keymap(bindings);
-                plugins.push(keyMapPlugin);
-            }
-            const addInputRules = getExtensionField(extension, 'addInputRules', context);
-            if (this.editor.options.enableInputRules && addInputRules) {
-                const inputRules$1 = addInputRules();
-                const inputRulePlugins = inputRules$1.length
-                    ? [inputRules({ rules: inputRules$1 })]
-                    : [];
-                plugins.push(...inputRulePlugins);
-            }
-            const addPasteRules = getExtensionField(extension, 'addPasteRules', context);
-            if (this.editor.options.enablePasteRules && addPasteRules) {
-                const pasteRulePlugins = addPasteRules();
-                plugins.push(...pasteRulePlugins);
-            }
-            const addProseMirrorPlugins = getExtensionField(extension, 'addProseMirrorPlugins', context);
-            if (addProseMirrorPlugins) {
-                const proseMirrorPlugins = addProseMirrorPlugins();
-                plugins.push(...proseMirrorPlugins);
-            }
-            return plugins;
-        })
-            .flat();
-    }
-    get attributes() {
-        return getAttributesFromExtensions(this.extensions);
-    }
-    get nodeViews() {
-        const { editor } = this;
-        const { nodeExtensions } = splitExtensions(this.extensions);
-        return Object.fromEntries(nodeExtensions
-            .filter(extension => !!getExtensionField(extension, 'addNodeView'))
-            .map(extension => {
-            const extensionAttributes = this.attributes.filter(attribute => attribute.type === extension.name);
-            const context = {
-                name: extension.name,
-                options: extension.options,
-                editor,
-                type: getNodeType(extension.name, this.schema),
-            };
-            const addNodeView = getExtensionField(extension, 'addNodeView', context);
-            if (!addNodeView) {
-                return [];
-            }
-            const nodeview = (node, view, getPos, decorations) => {
-                const HTMLAttributes = getRenderedAttributes(node, extensionAttributes);
-                return addNodeView()({
-                    editor,
-                    node,
-                    getPos,
-                    decorations,
-                    HTMLAttributes,
-                    extension,
-                });
-            };
-            return [extension.name, nodeview];
-        }));
-    }
-    get textSerializers() {
-        const { editor } = this;
-        const { nodeExtensions } = splitExtensions(this.extensions);
-        return Object.fromEntries(nodeExtensions
-            .filter(extension => !!getExtensionField(extension, 'renderText'))
-            .map(extension => {
-            const context = {
-                name: extension.name,
-                options: extension.options,
-                editor,
-                type: getNodeType(extension.name, this.schema),
-            };
-            const renderText = getExtensionField(extension, 'renderText', context);
-            if (!renderText) {
-                return [];
-            }
-            const textSerializer = (props) => renderText(props);
-            return [extension.name, textSerializer];
-        }));
-    }
-}
-
-class EventEmitter {
-    constructor() {
-        this.callbacks = {};
-    }
-    on(event, fn) {
-        if (!this.callbacks[event]) {
-            this.callbacks[event] = [];
-        }
-        this.callbacks[event].push(fn);
-        return this;
-    }
-    emit(event, ...args) {
-        const callbacks = this.callbacks[event];
-        if (callbacks) {
-            callbacks.forEach(callback => callback.apply(this, args));
-        }
-        return this;
-    }
-    off(event, fn) {
-        const callbacks = this.callbacks[event];
-        if (callbacks) {
-            if (fn) {
-                this.callbacks[event] = callbacks.filter(callback => callback !== fn);
-            }
-            else {
-                delete this.callbacks[event];
-            }
-        }
-        return this;
-    }
-    removeAllListeners() {
-        this.callbacks = {};
-    }
-}
-
 // see: https://github.com/mesqueeb/is-what/blob/88d6e4ca92fb2baab6003c54e02eedf4e729e5ab/src/index.ts
-function getType(payload) {
-    return Object.prototype.toString.call(payload).slice(8, -1);
+function getType(value) {
+    return Object.prototype.toString.call(value).slice(8, -1);
 }
-function isPlainObject(payload) {
-    if (getType(payload) !== 'Object')
+function isPlainObject(value) {
+    if (getType(value) !== 'Object')
         return false;
-    return payload.constructor === Object && Object.getPrototypeOf(payload) === Object.prototype;
+    return value.constructor === Object && Object.getPrototypeOf(value) === Object.prototype;
 }
 
 function mergeDeep(target, source) {
@@ -21270,6 +20335,43 @@ function mergeDeep(target, source) {
     return output;
 }
 
+function isObject$1(value) {
+    return typeof value === 'function';
+}
+
+/**
+ * Optionally calls `value` as a function.
+ * Otherwise it is returned directly.
+ * @param value Function or any value.
+ * @param context Optional context to bind to function.
+ * @param props Optional props to pass to function.
+ */
+function callOrReturn(value, context = undefined, ...props) {
+    if (isObject$1(value)) {
+        if (context) {
+            return value.bind(context)(...props);
+        }
+        return value(...props);
+    }
+    return value;
+}
+
+function getExtensionField(extension, field, context) {
+    if (extension.config[field] === undefined && extension.parent) {
+        return getExtensionField(extension.parent, field, context);
+    }
+    if (typeof extension.config[field] === 'function') {
+        const value = extension.config[field].bind({
+            ...context,
+            parent: extension.parent
+                ? getExtensionField(extension.parent, field, context)
+                : null,
+        });
+        return value;
+    }
+    return extension.config[field];
+}
+
 class Extension {
     constructor(config = {}) {
         this.type = 'extension';
@@ -21285,7 +20387,20 @@ class Extension {
             ...config,
         };
         this.name = this.config.name;
+        if (config.defaultOptions) {
+            console.warn(`[tiptap warn]: BREAKING CHANGE: "defaultOptions" is deprecated. Please use "addOptions" instead. Found in extension: "${this.name}".`);
+        }
+        // TODO: remove `addOptions` fallback
         this.options = this.config.defaultOptions;
+        if (this.config.addOptions) {
+            this.options = callOrReturn(getExtensionField(this, 'addOptions', {
+                name: this.name,
+            }));
+        }
+        this.storage = callOrReturn(getExtensionField(this, 'addStorage', {
+            name: this.name,
+            options: this.options,
+        })) || {};
     }
     static create(config = {}) {
         return new Extension(config);
@@ -21295,6 +20410,10 @@ class Extension {
         // with different calls of `configure`
         const extension = this.extend();
         extension.options = mergeDeep(this.options, options);
+        extension.storage = callOrReturn(getExtensionField(extension, 'addStorage', {
+            name: extension.name,
+            options: extension.options,
+        }));
         return extension;
     }
     extend(extendedConfig = {}) {
@@ -21304,40 +20423,67 @@ class Extension {
         extension.name = extendedConfig.name
             ? extendedConfig.name
             : extension.parent.name;
+        if (extendedConfig.defaultOptions) {
+            console.warn(`[tiptap warn]: BREAKING CHANGE: "defaultOptions" is deprecated. Please use "addOptions" instead. Found in extension: "${extension.name}".`);
+        }
+        // TODO: remove `addOptions` fallback
         extension.options = extendedConfig.defaultOptions
             ? extendedConfig.defaultOptions
             : extension.parent.options;
+        if (extendedConfig.addOptions) {
+            extension.options = callOrReturn(getExtensionField(extension, 'addOptions', {
+                name: extension.name,
+            }));
+        }
+        extension.storage = callOrReturn(getExtensionField(extension, 'addStorage', {
+            name: extension.name,
+            options: extension.options,
+        }));
         return extension;
     }
 }
 
-const textBetween = (editor, from, to, blockSeparator, leafText) => {
+function getTextBetween(startNode, range, options) {
+    const { from, to } = range;
+    const { blockSeparator = '\n\n', textSerializers = {}, } = options || {};
     let text = '';
     let separated = true;
-    editor.state.doc.nodesBetween(from, to, (node, pos) => {
+    startNode.nodesBetween(from, to, (node, pos, parent, index) => {
         var _a;
-        const textSerializer = editor.extensionManager.textSerializers[node.type.name];
+        const textSerializer = textSerializers === null || textSerializers === void 0 ? void 0 : textSerializers[node.type.name];
         if (textSerializer) {
-            text += textSerializer({ node });
-            separated = !blockSeparator;
+            if (node.isBlock && !separated) {
+                text += blockSeparator;
+                separated = true;
+            }
+            text += textSerializer({
+                node,
+                pos,
+                parent,
+                index,
+            });
         }
         else if (node.isText) {
             text += (_a = node === null || node === void 0 ? void 0 : node.text) === null || _a === void 0 ? void 0 : _a.slice(Math.max(from, pos) - pos, to - pos);
-            separated = !blockSeparator;
+            separated = false;
         }
-        else if (node.isLeaf && leafText) {
-            text += leafText;
-            separated = !blockSeparator;
-        }
-        else if (!separated && node.isBlock) {
+        else if (node.isBlock && !separated) {
             text += blockSeparator;
             separated = true;
         }
-    }, 0);
+    });
     return text;
-};
+}
+
+function getTextSeralizersFromSchema(schema) {
+    return Object.fromEntries(Object
+        .entries(schema.nodes)
+        .filter(([, node]) => node.spec.toText)
+        .map(([name, node]) => [name, node.spec.toText]));
+}
+
 const ClipboardTextSerializer = Extension.create({
-    name: 'editable',
+    name: 'clipboardTextSerializer',
     addProseMirrorPlugins() {
         return [
             new Plugin({
@@ -21345,8 +20491,14 @@ const ClipboardTextSerializer = Extension.create({
                 props: {
                     clipboardTextSerializer: () => {
                         const { editor } = this;
-                        const { from, to } = editor.state.selection;
-                        return textBetween(editor, from, to, '\n');
+                        const { state, schema } = editor;
+                        const { doc, selection } = state;
+                        const { from, to } = selection;
+                        const textSerializers = getTextSeralizersFromSchema(schema);
+                        const range = { from, to };
+                        return getTextBetween(doc, range, {
+                            textSerializers,
+                        });
                     },
                 },
             }),
@@ -21354,9 +20506,12 @@ const ClipboardTextSerializer = Extension.create({
     },
 });
 
-const blur = () => ({ view }) => {
-    const element = view.dom;
-    element.blur();
+const blur = () => ({ editor, view }) => {
+    requestAnimationFrame(() => {
+        if (!editor.isDestroyed) {
+            view.dom.blur();
+        }
+    });
     return true;
 };
 
@@ -21424,6 +20579,38 @@ var createParagraphNear$1 = /*#__PURE__*/Object.freeze({
   createParagraphNear: createParagraphNear
 });
 
+function getNodeType(nameOrType, schema) {
+    if (typeof nameOrType === 'string') {
+        if (!schema.nodes[nameOrType]) {
+            throw Error(`There is no node type named '${nameOrType}'. Maybe you forgot to add the extension?`);
+        }
+        return schema.nodes[nameOrType];
+    }
+    return nameOrType;
+}
+
+const deleteNode = typeOrName => ({ tr, state, dispatch }) => {
+    const type = getNodeType(typeOrName, state.schema);
+    const $pos = tr.selection.$anchor;
+    for (let depth = $pos.depth; depth > 0; depth -= 1) {
+        const node = $pos.node(depth);
+        if (node.type === type) {
+            if (dispatch) {
+                const from = $pos.before(depth);
+                const to = $pos.after(depth);
+                tr.delete(from, to).scrollIntoView();
+            }
+            return true;
+        }
+    }
+    return false;
+};
+
+var deleteNode$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  deleteNode: deleteNode
+});
+
 const deleteRange = range => ({ tr, dispatch }) => {
     const { from, to } = range;
     if (dispatch) {
@@ -21463,6 +20650,41 @@ var exitCode$1 = /*#__PURE__*/Object.freeze({
   __proto__: null,
   exitCode: exitCode
 });
+
+function getMarkType(nameOrType, schema) {
+    if (typeof nameOrType === 'string') {
+        if (!schema.marks[nameOrType]) {
+            throw Error(`There is no mark type named '${nameOrType}'. Maybe you forgot to add the extension?`);
+        }
+        return schema.marks[nameOrType];
+    }
+    return nameOrType;
+}
+
+function isRegExp(value) {
+    return Object.prototype.toString.call(value) === '[object RegExp]';
+}
+
+/**
+ * Check if object1 includes object2
+ * @param object1 Object
+ * @param object2 Object
+ */
+function objectIncludes(object1, object2, options = { strict: true }) {
+    const keys = Object.keys(object2);
+    if (!keys.length) {
+        return true;
+    }
+    return keys.every(key => {
+        if (options.strict) {
+            return object2[key] === object1[key];
+        }
+        if (isRegExp(object2[key])) {
+            return object2[key].test(object1[key]);
+        }
+        return object2[key] === object1[key];
+    });
+}
 
 function findMarkInSet(marks, type, attributes = {}) {
     return marks.find(item => {
@@ -21544,23 +20766,36 @@ function minMax(value = 0, min = 0, max = 0) {
     return Math.min(Math.max(value, min), max);
 }
 
-function isClass(item) {
+function isClass(value) {
     var _a;
-    if (((_a = item.constructor) === null || _a === void 0 ? void 0 : _a.toString().substring(0, 5)) !== 'class') {
+    if (((_a = value.constructor) === null || _a === void 0 ? void 0 : _a.toString().substring(0, 5)) !== 'class') {
         return false;
     }
     return true;
 }
 
-function isObject(item) {
-    return (item
-        && typeof item === 'object'
-        && !Array.isArray(item)
-        && !isClass(item));
+function isObject(value) {
+    return (value
+        && typeof value === 'object'
+        && !Array.isArray(value)
+        && !isClass(value));
 }
 
 function isTextSelection(value) {
     return isObject(value) && value instanceof TextSelection;
+}
+
+function isiOS() {
+    return [
+        'iPad Simulator',
+        'iPhone Simulator',
+        'iPod Simulator',
+        'iPad',
+        'iPhone',
+        'iPod',
+    ].includes(navigator.platform)
+        // iPad on iOS 13 detection
+        || (navigator.userAgent.includes('Mac') && 'ontouchend' in document);
 }
 
 function resolveSelection(state, position = null) {
@@ -21586,28 +20821,47 @@ function resolveSelection(state, position = null) {
     };
 }
 const focus = (position = null) => ({ editor, view, tr, dispatch, }) => {
+    const delayedFocus = () => {
+        // focus within `requestAnimationFrame` breaks focus on iOS
+        // so we have to call this
+        if (isiOS()) {
+            view.dom.focus();
+        }
+        // For React we have to focus asynchronously. Otherwise wild things happen.
+        // see: https://github.com/ueberdosis/tiptap/issues/1520
+        requestAnimationFrame(() => {
+            if (!editor.isDestroyed) {
+                view.focus();
+                editor.commands.scrollIntoView();
+            }
+        });
+    };
     if ((view.hasFocus() && position === null) || position === false) {
         return true;
     }
     // we don’t try to resolve a NodeSelection or CellSelection
     if (dispatch && position === null && !isTextSelection(editor.state.selection)) {
-        view.focus();
+        delayedFocus();
         return true;
     }
     const { from, to } = resolveSelection(editor.state, position) || editor.state.selection;
     const { doc, storedMarks } = tr;
-    const resolvedFrom = minMax(from, 0, doc.content.size);
-    const resolvedEnd = minMax(to, 0, doc.content.size);
+    const minPos = Selection.atStart(doc).from;
+    const maxPos = Selection.atEnd(doc).to;
+    const resolvedFrom = minMax(from, minPos, maxPos);
+    const resolvedEnd = minMax(to, minPos, maxPos);
     const selection = TextSelection.create(doc, resolvedFrom, resolvedEnd);
     const isSameSelection = editor.state.selection.eq(selection);
     if (dispatch) {
-        tr.setSelection(selection);
+        if (!isSameSelection) {
+            tr.setSelection(selection);
+        }
         // `tr.setSelection` resets the stored marks
         // so we’ll restore them if the selection is the same as before
         if (isSameSelection && storedMarks) {
             tr.setStoredMarks(storedMarks);
         }
-        view.focus();
+        delayedFocus();
     }
     return true;
 };
@@ -21626,14 +20880,47 @@ var forEach$1 = /*#__PURE__*/Object.freeze({
   forEach: forEach
 });
 
-const insertContent = value => ({ tr, commands }) => {
-    return commands.insertContentAt({ from: tr.selection.from, to: tr.selection.to }, value);
+const insertContent = (value, options) => ({ tr, commands }) => {
+    return commands.insertContentAt({ from: tr.selection.from, to: tr.selection.to }, value, options);
 };
 
 var insertContent$1 = /*#__PURE__*/Object.freeze({
   __proto__: null,
   insertContent: insertContent
 });
+
+function elementFromString(value) {
+    // add a wrapper to preserve leading and trailing whitespace
+    const wrappedValue = `<body>${value}</body>`;
+    return new window.DOMParser().parseFromString(wrappedValue, 'text/html').body;
+}
+
+function createNodeFromContent(content, schema, options) {
+    options = {
+        slice: true,
+        parseOptions: {},
+        ...options,
+    };
+    if (typeof content === 'object' && content !== null) {
+        try {
+            if (Array.isArray(content)) {
+                return Fragment.fromArray(content.map(item => schema.nodeFromJSON(item)));
+            }
+            return schema.nodeFromJSON(content);
+        }
+        catch (error) {
+            console.warn('[tiptap warn]: Invalid content.', 'Passed value:', content, 'Error:', error);
+            return createNodeFromContent('', schema, options);
+        }
+    }
+    if (typeof content === 'string') {
+        const parser = DOMParser.fromSchema(schema);
+        return options.slice
+            ? parser.parseSlice(elementFromString(content), options.parseOptions).content
+            : parser.parse(elementFromString(content), options.parseOptions);
+    }
+    return createNodeFromContent('', schema, options);
+}
 
 // source: https://github.com/ProseMirror/prosemirror-state/blob/master/src/selection.js#L466
 function selectionToInsertionEnd(tr, startLen, bias) {
@@ -21655,23 +20942,58 @@ function selectionToInsertionEnd(tr, startLen, bias) {
     tr.setSelection(Selection.near(tr.doc.resolve(end), bias));
 }
 
-const insertContentAt = (position, value) => ({ tr, dispatch, editor }) => {
+const isFragment = (nodeOrFragment) => {
+    return nodeOrFragment.toString().startsWith('<');
+};
+const insertContentAt = (position, value, options) => ({ tr, dispatch, editor }) => {
     if (dispatch) {
+        options = {
+            parseOptions: {},
+            updateSelection: true,
+            ...options,
+        };
         const content = createNodeFromContent(value, editor.schema, {
             parseOptions: {
                 preserveWhitespace: 'full',
+                ...options.parseOptions,
             },
         });
         // don’t dispatch an empty fragment because this can lead to strange errors
         if (content.toString() === '<>') {
             return true;
         }
-        const { from, to } = typeof position === 'number'
+        let { from, to } = typeof position === 'number'
             ? { from: position, to: position }
             : position;
+        let isOnlyBlockContent = true;
+        const nodes = isFragment(content)
+            ? content
+            : [content];
+        nodes.forEach(node => {
+            isOnlyBlockContent = isOnlyBlockContent
+                ? node.isBlock
+                : false;
+        });
+        // check if we can replace the wrapping node by
+        // the newly inserted content
+        // example:
+        // replace an empty paragraph by an inserted image
+        // instead of inserting the image below the paragraph
+        if (from === to && isOnlyBlockContent) {
+            const { parent } = tr.doc.resolve(from);
+            const isEmptyTextBlock = parent.isTextblock
+                && !parent.type.spec.code
+                && !parent.childCount;
+            if (isEmptyTextBlock) {
+                from -= 1;
+                to += 1;
+            }
+        }
         tr.replaceWith(from, to, content);
         // set cursor at end of inserted content
-        selectionToInsertionEnd(tr, tr.steps.length - 1, 1);
+        if (options.updateSelection) {
+            selectionToInsertionEnd(tr, tr.steps.length - 1, -1);
+        }
     }
     return true;
 };
@@ -21781,6 +21103,41 @@ var keyboardShortcut$1 = /*#__PURE__*/Object.freeze({
   keyboardShortcut: keyboardShortcut
 });
 
+function isNodeActive(state, typeOrName, attributes = {}) {
+    const { from, to, empty } = state.selection;
+    const type = typeOrName
+        ? getNodeType(typeOrName, state.schema)
+        : null;
+    const nodeRanges = [];
+    state.doc.nodesBetween(from, to, (node, pos) => {
+        if (node.isText) {
+            return;
+        }
+        const relativeFrom = Math.max(from, pos);
+        const relativeTo = Math.min(to, pos + node.nodeSize);
+        nodeRanges.push({
+            node,
+            from: relativeFrom,
+            to: relativeTo,
+        });
+    });
+    const selectionRange = to - from;
+    const matchedNodeRanges = nodeRanges
+        .filter(nodeRange => {
+        if (!type) {
+            return true;
+        }
+        return type.name === nodeRange.node.type.name;
+    })
+        .filter(nodeRange => objectIncludes(nodeRange.node.attrs, attributes, { strict: false }));
+    if (empty) {
+        return !!matchedNodeRanges.length;
+    }
+    const range = matchedNodeRanges
+        .reduce((sum, nodeRange) => sum + nodeRange.to - nodeRange.from, 0);
+    return range >= selectionRange;
+}
+
 const lift = (typeOrName, attributes = {}) => ({ state, dispatch }) => {
     const type = getNodeType(typeOrName, state.schema);
     const isActive = isNodeActive(state, type, attributes);
@@ -21823,37 +21180,15 @@ var newlineInCode$1 = /*#__PURE__*/Object.freeze({
   newlineInCode: newlineInCode
 });
 
-const replace = (typeOrName, attributes = {}) => ({ state, commands }) => {
-    console.warn('[tiptap warn]: replace() is deprecated. please use insertContent() instead.');
-    const { from, to } = state.selection;
-    const range = { from, to };
-    return commands.replaceRange(range, typeOrName, attributes);
-};
-
-var replace$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  replace: replace
-});
-
-const replaceRange = (range, typeOrName, attributes = {}) => ({ tr, state, dispatch }) => {
-    console.warn('[tiptap warn]: replaceRange() is deprecated. please use insertContent() instead.');
-    const type = getNodeType(typeOrName, state.schema);
-    const { from, to } = range;
-    // const $from = tr.doc.resolve(from)
-    // const index = $from.index()
-    // if (!$from.parent.canReplaceWith(index, index, type)) {
-    //   return false
-    // }
-    if (dispatch) {
-        tr.replaceRangeWith(from, to, type.create(attributes));
+function getSchemaTypeNameByName(name, schema) {
+    if (schema.nodes[name]) {
+        return 'node';
     }
-    return true;
-};
-
-var replaceRange$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  replaceRange: replaceRange
-});
+    if (schema.marks[name]) {
+        return 'mark';
+    }
+    return null;
+}
 
 /**
  * Remove a property or an array of properties from an object
@@ -21925,8 +21260,11 @@ var scrollIntoView$1 = /*#__PURE__*/Object.freeze({
   scrollIntoView: scrollIntoView
 });
 
-const selectAll = () => ({ state, dispatch }) => {
-    return selectAll$2(state, dispatch);
+const selectAll = () => ({ tr, commands }) => {
+    return commands.setTextSelection({
+        from: 0,
+        to: tr.doc.content.size,
+    });
 };
 
 var selectAll$1 = /*#__PURE__*/Object.freeze({
@@ -21961,6 +21299,10 @@ var selectParentNode$1 = /*#__PURE__*/Object.freeze({
   selectParentNode: selectParentNode
 });
 
+function createDocument(content, schema, parseOptions = {}) {
+    return createNodeFromContent(content, schema, { slice: false, parseOptions });
+}
+
 const setContent$1 = (content, emitUpdate = false, parseOptions = {}) => ({ tr, editor, dispatch }) => {
     const { doc } = tr;
     const document = createDocument(content, editor.schema, parseOptions);
@@ -21977,6 +21319,28 @@ var setContent$1$1 = /*#__PURE__*/Object.freeze({
   __proto__: null,
   setContent: setContent$1
 });
+
+function getMarkAttributes(state, typeOrName) {
+    const type = getMarkType(typeOrName, state.schema);
+    const { from, to, empty } = state.selection;
+    const marks = [];
+    if (empty) {
+        if (state.storedMarks) {
+            marks.push(...state.storedMarks);
+        }
+        marks.push(...state.selection.$head.marks());
+    }
+    else {
+        state.doc.nodesBetween(from, to, node => {
+            marks.push(...node.marks);
+        });
+    }
+    const mark = marks.find(markItem => markItem.type.name === type.name);
+    if (!mark) {
+        return {};
+    }
+    return { ...mark.attrs };
+}
 
 const setMark = (typeOrName, attributes = {}) => ({ tr, state, dispatch }) => {
     const { selection } = tr;
@@ -22049,8 +21413,10 @@ var setNode$1 = /*#__PURE__*/Object.freeze({
 const setNodeSelection = position => ({ tr, dispatch }) => {
     if (dispatch) {
         const { doc } = tr;
-        const from = minMax(position, 0, doc.content.size);
-        const selection = NodeSelection.create(doc, from);
+        const minPos = Selection.atStart(doc).from;
+        const maxPos = Selection.atEnd(doc).to;
+        const resolvedPos = minMax(position, minPos, maxPos);
+        const selection = NodeSelection.create(doc, resolvedPos);
         tr.setSelection(selection);
     }
     return true;
@@ -22067,9 +21433,11 @@ const setTextSelection = position => ({ tr, dispatch }) => {
         const { from, to } = typeof position === 'number'
             ? { from: position, to: position }
             : position;
-        const boundedFrom = minMax(from, 0, doc.content.size);
-        const boundedTo = minMax(to, 0, doc.content.size);
-        const selection = TextSelection.create(doc, boundedFrom, boundedTo);
+        const minPos = Selection.atStart(doc).from;
+        const maxPos = Selection.atEnd(doc).to;
+        const resolvedFrom = minMax(from, minPos, maxPos);
+        const resolvedEnd = minMax(to, minPos, maxPos);
+        const selection = TextSelection.create(doc, resolvedFrom, resolvedEnd);
         tr.setSelection(selection);
     }
     return true;
@@ -22299,6 +21667,17 @@ function findParentNode(predicate) {
     return (selection) => findParentNodeClosestToPos(selection.$from, predicate);
 }
 
+function splitExtensions(extensions) {
+    const baseExtensions = extensions.filter(extension => extension.type === 'extension');
+    const nodeExtensions = extensions.filter(extension => extension.type === 'node');
+    const markExtensions = extensions.filter(extension => extension.type === 'mark');
+    return {
+        baseExtensions,
+        nodeExtensions,
+        markExtensions,
+    };
+}
+
 function isList(name, extensions) {
     const { nodeExtensions } = splitExtensions(extensions);
     const extension = nodeExtensions.find(item => item.name === name);
@@ -22308,6 +21687,7 @@ function isList(name, extensions) {
     const context = {
         name: extension.name,
         options: extension.options,
+        storage: extension.storage,
     };
     const group = callOrReturn(getExtensionField(extension, 'group', context));
     if (typeof group !== 'string') {
@@ -22356,11 +21736,79 @@ var toggleList$1 = /*#__PURE__*/Object.freeze({
   toggleList: toggleList
 });
 
-const toggleMark = (typeOrName, attributes = {}) => ({ state, commands }) => {
+function isMarkActive(state, typeOrName, attributes = {}) {
+    const { empty, ranges } = state.selection;
+    const type = typeOrName
+        ? getMarkType(typeOrName, state.schema)
+        : null;
+    if (empty) {
+        return !!(state.storedMarks || state.selection.$from.marks())
+            .filter(mark => {
+            if (!type) {
+                return true;
+            }
+            return type.name === mark.type.name;
+        })
+            .find(mark => objectIncludes(mark.attrs, attributes, { strict: false }));
+    }
+    let selectionRange = 0;
+    const markRanges = [];
+    ranges.forEach(({ $from, $to }) => {
+        const from = $from.pos;
+        const to = $to.pos;
+        state.doc.nodesBetween(from, to, (node, pos) => {
+            if (!node.isText && !node.marks.length) {
+                return;
+            }
+            const relativeFrom = Math.max(from, pos);
+            const relativeTo = Math.min(to, pos + node.nodeSize);
+            const range = relativeTo - relativeFrom;
+            selectionRange += range;
+            markRanges.push(...node.marks.map(mark => ({
+                mark,
+                from: relativeFrom,
+                to: relativeTo,
+            })));
+        });
+    });
+    if (selectionRange === 0) {
+        return false;
+    }
+    // calculate range of matched mark
+    const matchedRange = markRanges
+        .filter(markRange => {
+        if (!type) {
+            return true;
+        }
+        return type.name === markRange.mark.type.name;
+    })
+        .filter(markRange => objectIncludes(markRange.mark.attrs, attributes, { strict: false }))
+        .reduce((sum, markRange) => sum + markRange.to - markRange.from, 0);
+    // calculate range of marks that excludes the searched mark
+    // for example `code` doesn’t allow any other marks
+    const excludedRange = markRanges
+        .filter(markRange => {
+        if (!type) {
+            return true;
+        }
+        return markRange.mark.type !== type
+            && markRange.mark.type.excludes(type);
+    })
+        .reduce((sum, markRange) => sum + markRange.to - markRange.from, 0);
+    // we only include the result of `excludedRange`
+    // if there is a match at all
+    const range = matchedRange > 0
+        ? matchedRange + excludedRange
+        : matchedRange;
+    return range >= selectionRange;
+}
+
+const toggleMark = (typeOrName, attributes = {}, options = {}) => ({ state, commands }) => {
+    const { extendEmptyMarkRange = false } = options;
     const type = getMarkType(typeOrName, state.schema);
     const isActive = isMarkActive(state, type, attributes);
     if (isActive) {
-        return commands.unsetMark(type);
+        return commands.unsetMark(type, { extendEmptyMarkRange });
     }
     return commands.setMark(type, attributes);
 };
@@ -22400,7 +21848,31 @@ var toggleWrap$1 = /*#__PURE__*/Object.freeze({
 });
 
 const undoInputRule = () => ({ state, dispatch }) => {
-    return undoInputRule$2(state, dispatch);
+    const plugins = state.plugins;
+    for (let i = 0; i < plugins.length; i += 1) {
+        const plugin = plugins[i];
+        let undoable;
+        // @ts-ignore
+        // eslint-disable-next-line
+        if (plugin.spec.isInputRules && (undoable = plugin.getState(state))) {
+            if (dispatch) {
+                const tr = state.tr;
+                const toUndo = undoable.transform;
+                for (let j = toUndo.steps.length - 1; j >= 0; j -= 1) {
+                    tr.step(toUndo.steps[j].invert(toUndo.docs[j]));
+                }
+                if (undoable.text) {
+                    const marks = tr.doc.resolve(undoable.from).marks();
+                    tr.replaceWith(undoable.from, undoable.to, state.schema.text(undoable.text, marks));
+                }
+                else {
+                    tr.delete(undoable.from, undoable.to);
+                }
+            }
+            return true;
+        }
+    }
+    return false;
 };
 
 var undoInputRule$1 = /*#__PURE__*/Object.freeze({
@@ -22431,27 +21903,31 @@ var unsetAllMarks$1 = /*#__PURE__*/Object.freeze({
   unsetAllMarks: unsetAllMarks
 });
 
-const unsetMark = typeOrName => ({ tr, state, dispatch }) => {
+const unsetMark = (typeOrName, options = {}) => ({ tr, state, dispatch }) => {
+    var _a;
+    const { extendEmptyMarkRange = false } = options;
     const { selection } = tr;
     const type = getMarkType(typeOrName, state.schema);
     const { $from, empty, ranges } = selection;
-    if (dispatch) {
-        if (empty) {
-            let { from, to } = selection;
-            const range = getMarkRange($from, type);
-            if (range) {
-                from = range.from;
-                to = range.to;
-            }
-            tr.removeMark(from, to, type);
-        }
-        else {
-            ranges.forEach(range => {
-                tr.removeMark(range.$from.pos, range.$to.pos, type);
-            });
-        }
-        tr.removeStoredMark(type);
+    if (!dispatch) {
+        return true;
     }
+    if (empty && extendEmptyMarkRange) {
+        let { from, to } = selection;
+        const attrs = (_a = $from.marks().find(mark => mark.type === type)) === null || _a === void 0 ? void 0 : _a.attrs;
+        const range = getMarkRange($from, type, attrs);
+        if (range) {
+            from = range.from;
+            to = range.to;
+        }
+        tr.removeMark(from, to, type);
+    }
+    else {
+        ranges.forEach(range => {
+            tr.removeMark(range.$from.pos, range.$to.pos, type);
+        });
+    }
+    tr.removeStoredMark(type);
     return true;
 };
 
@@ -22542,6 +22018,7 @@ const Commands = Extension.create({
             ...clearNodes$1,
             ...command$1,
             ...createParagraphNear$1,
+            ...deleteNode$1,
             ...deleteRange$1,
             ...deleteSelection$1,
             ...enter$1,
@@ -22559,8 +22036,6 @@ const Commands = Extension.create({
             ...liftEmptyBlock$1,
             ...liftListItem$1,
             ...newlineInCode$1,
-            ...replace$1,
-            ...replaceRange$1,
             ...resetAttributes$1,
             ...scrollIntoView$1,
             ...selectAll$1,
@@ -22612,9 +22087,6 @@ const FocusEvents = Extension.create({
             new Plugin({
                 key: new PluginKey('focusEvents'),
                 props: {
-                    attributes: {
-                        tabindex: '0',
-                    },
                     handleDOMEvents: {
                         focus: (view, event) => {
                             editor.isFocused = true;
@@ -22661,13 +22133,29 @@ const Keymap = Extension.create({
                 () => commands.splitBlock(),
             ]),
             'Mod-Enter': () => this.editor.commands.exitCode(),
-            Backspace: () => handleBackspace(),
-            'Mod-Backspace': () => handleBackspace(),
-            Delete: () => handleDelete(),
-            'Mod-Delete': () => handleDelete(),
-            // we don’t need a custom `selectAll` for now
-            // 'Mod-a': () => this.editor.commands.selectAll(),
+            Backspace: handleBackspace,
+            'Mod-Backspace': handleBackspace,
+            'Shift-Backspace': handleBackspace,
+            Delete: handleDelete,
+            'Mod-Delete': handleDelete,
+            'Mod-a': () => this.editor.commands.selectAll(),
         };
+    },
+});
+
+const Tabindex = Extension.create({
+    name: 'tabindex',
+    addProseMirrorPlugins() {
+        return [
+            new Plugin({
+                key: new PluginKey('tabindex'),
+                props: {
+                    attributes: {
+                        tabindex: '0',
+                    },
+                },
+            }),
+        ];
     },
 });
 
@@ -22677,8 +22165,1064 @@ var extensions = /*#__PURE__*/Object.freeze({
   Commands: Commands,
   Editable: Editable,
   FocusEvents: FocusEvents,
-  Keymap: Keymap
+  Keymap: Keymap,
+  Tabindex: Tabindex
 });
+
+function getNodeAttributes(state, typeOrName) {
+    const type = getNodeType(typeOrName, state.schema);
+    const { from, to } = state.selection;
+    const nodes = [];
+    state.doc.nodesBetween(from, to, node => {
+        nodes.push(node);
+    });
+    const node = nodes
+        .reverse()
+        .find(nodeItem => nodeItem.type.name === type.name);
+    if (!node) {
+        return {};
+    }
+    return { ...node.attrs };
+}
+
+function getAttributes(state, typeOrName) {
+    const schemaType = getSchemaTypeNameByName(typeof typeOrName === 'string'
+        ? typeOrName
+        : typeOrName.name, state.schema);
+    if (schemaType === 'node') {
+        return getNodeAttributes(state, typeOrName);
+    }
+    if (schemaType === 'mark') {
+        return getMarkAttributes(state, typeOrName);
+    }
+    return {};
+}
+
+function isActive(state, name, attributes = {}) {
+    if (!name) {
+        return isNodeActive(state, null, attributes) || isMarkActive(state, null, attributes);
+    }
+    const schemaType = getSchemaTypeNameByName(name, state.schema);
+    if (schemaType === 'node') {
+        return isNodeActive(state, name, attributes);
+    }
+    if (schemaType === 'mark') {
+        return isMarkActive(state, name, attributes);
+    }
+    return false;
+}
+
+function getHTMLFromFragment(fragment, schema) {
+    const documentFragment = DOMSerializer
+        .fromSchema(schema)
+        .serializeFragment(fragment);
+    const temporaryDocument = document.implementation.createHTMLDocument();
+    const container = temporaryDocument.createElement('div');
+    container.appendChild(documentFragment);
+    return container.innerHTML;
+}
+
+function getText(node, options) {
+    const range = {
+        from: 0,
+        to: node.content.size,
+    };
+    return getTextBetween(node, range, options);
+}
+
+function isNodeEmpty(node) {
+    var _a;
+    const defaultContent = (_a = node.type.createAndFill()) === null || _a === void 0 ? void 0 : _a.toJSON();
+    const content = node.toJSON();
+    return JSON.stringify(defaultContent) === JSON.stringify(content);
+}
+
+function createStyleTag(style) {
+    const tipTapStyleTag = document.querySelector('style[data-tiptap-style]');
+    if (tipTapStyleTag !== null) {
+        return tipTapStyleTag;
+    }
+    const styleNode = document.createElement('style');
+    styleNode.setAttribute('data-tiptap-style', '');
+    styleNode.innerHTML = style;
+    document.getElementsByTagName('head')[0].appendChild(styleNode);
+    return styleNode;
+}
+
+function createChainableState(config) {
+    const { state, transaction } = config;
+    let { selection } = transaction;
+    let { doc } = transaction;
+    let { storedMarks } = transaction;
+    return {
+        ...state,
+        schema: state.schema,
+        plugins: state.plugins,
+        apply: state.apply.bind(state),
+        applyTransaction: state.applyTransaction.bind(state),
+        reconfigure: state.reconfigure.bind(state),
+        toJSON: state.toJSON.bind(state),
+        get storedMarks() {
+            return storedMarks;
+        },
+        get selection() {
+            return selection;
+        },
+        get doc() {
+            return doc;
+        },
+        get tr() {
+            selection = transaction.selection;
+            doc = transaction.doc;
+            storedMarks = transaction.storedMarks;
+            return transaction;
+        },
+    };
+}
+
+class CommandManager {
+    constructor(props) {
+        this.editor = props.editor;
+        this.rawCommands = this.editor.extensionManager.commands;
+        this.customState = props.state;
+    }
+    get hasCustomState() {
+        return !!this.customState;
+    }
+    get state() {
+        return this.customState || this.editor.state;
+    }
+    get commands() {
+        const { rawCommands, editor, state } = this;
+        const { view } = editor;
+        const { tr } = state;
+        const props = this.buildProps(tr);
+        return Object.fromEntries(Object
+            .entries(rawCommands)
+            .map(([name, command]) => {
+            const method = (...args) => {
+                const callback = command(...args)(props);
+                if (!tr.getMeta('preventDispatch') && !this.hasCustomState) {
+                    view.dispatch(tr);
+                }
+                return callback;
+            };
+            return [name, method];
+        }));
+    }
+    get chain() {
+        return () => this.createChain();
+    }
+    get can() {
+        return () => this.createCan();
+    }
+    createChain(startTr, shouldDispatch = true) {
+        const { rawCommands, editor, state } = this;
+        const { view } = editor;
+        const callbacks = [];
+        const hasStartTransaction = !!startTr;
+        const tr = startTr || state.tr;
+        const run = () => {
+            if (!hasStartTransaction
+                && shouldDispatch
+                && !tr.getMeta('preventDispatch')
+                && !this.hasCustomState) {
+                view.dispatch(tr);
+            }
+            return callbacks.every(callback => callback === true);
+        };
+        const chain = {
+            ...Object.fromEntries(Object.entries(rawCommands).map(([name, command]) => {
+                const chainedCommand = (...args) => {
+                    const props = this.buildProps(tr, shouldDispatch);
+                    const callback = command(...args)(props);
+                    callbacks.push(callback);
+                    return chain;
+                };
+                return [name, chainedCommand];
+            })),
+            run,
+        };
+        return chain;
+    }
+    createCan(startTr) {
+        const { rawCommands, state } = this;
+        const dispatch = undefined;
+        const tr = startTr || state.tr;
+        const props = this.buildProps(tr, dispatch);
+        const formattedCommands = Object.fromEntries(Object
+            .entries(rawCommands)
+            .map(([name, command]) => {
+            return [name, (...args) => command(...args)({ ...props, dispatch })];
+        }));
+        return {
+            ...formattedCommands,
+            chain: () => this.createChain(tr, dispatch),
+        };
+    }
+    buildProps(tr, shouldDispatch = true) {
+        const { rawCommands, editor, state } = this;
+        const { view } = editor;
+        if (state.storedMarks) {
+            tr.setStoredMarks(state.storedMarks);
+        }
+        const props = {
+            tr,
+            editor,
+            view,
+            state: createChainableState({
+                state,
+                transaction: tr,
+            }),
+            dispatch: shouldDispatch
+                ? () => undefined
+                : undefined,
+            chain: () => this.createChain(tr),
+            can: () => this.createCan(tr),
+            get commands() {
+                return Object.fromEntries(Object
+                    .entries(rawCommands)
+                    .map(([name, command]) => {
+                    return [name, (...args) => command(...args)(props)];
+                }));
+            },
+        };
+        return props;
+    }
+}
+
+class InputRule {
+    constructor(config) {
+        this.find = config.find;
+        this.handler = config.handler;
+    }
+}
+const inputRuleMatcherHandler = (text, find) => {
+    if (isRegExp(find)) {
+        return find.exec(text);
+    }
+    const inputRuleMatch = find(text);
+    if (!inputRuleMatch) {
+        return null;
+    }
+    const result = [];
+    result.push(inputRuleMatch.text);
+    result.index = inputRuleMatch.index;
+    result.input = text;
+    result.data = inputRuleMatch.data;
+    if (inputRuleMatch.replaceWith) {
+        if (!inputRuleMatch.text.includes(inputRuleMatch.replaceWith)) {
+            console.warn('[tiptap warn]: "inputRuleMatch.replaceWith" must be part of "inputRuleMatch.text".');
+        }
+        result.push(inputRuleMatch.replaceWith);
+    }
+    return result;
+};
+function run$1(config) {
+    var _a;
+    const { editor, from, to, text, rules, plugin, } = config;
+    const { view } = editor;
+    if (view.composing) {
+        return false;
+    }
+    const $from = view.state.doc.resolve(from);
+    if (
+    // check for code node
+    $from.parent.type.spec.code
+        // check for code mark
+        || !!((_a = ($from.nodeBefore || $from.nodeAfter)) === null || _a === void 0 ? void 0 : _a.marks.find(mark => mark.type.spec.code))) {
+        return false;
+    }
+    let matched = false;
+    const maxMatch = 500;
+    const textBefore = $from.parent.textBetween(Math.max(0, $from.parentOffset - maxMatch), $from.parentOffset, undefined, '\ufffc') + text;
+    rules.forEach(rule => {
+        if (matched) {
+            return;
+        }
+        const match = inputRuleMatcherHandler(textBefore, rule.find);
+        if (!match) {
+            return;
+        }
+        const tr = view.state.tr;
+        const state = createChainableState({
+            state: view.state,
+            transaction: tr,
+        });
+        const range = {
+            from: from - (match[0].length - text.length),
+            to,
+        };
+        const { commands, chain, can } = new CommandManager({
+            editor,
+            state,
+        });
+        rule.handler({
+            state,
+            range,
+            match,
+            commands,
+            chain,
+            can,
+        });
+        // stop if there are no changes
+        if (!tr.steps.length) {
+            return;
+        }
+        // store transform as meta data
+        // so we can undo input rules within the `undoInputRules` command
+        tr.setMeta(plugin, {
+            transform: tr,
+            from,
+            to,
+            text,
+        });
+        view.dispatch(tr);
+        matched = true;
+    });
+    return matched;
+}
+/**
+ * Create an input rules plugin. When enabled, it will cause text
+ * input that matches any of the given rules to trigger the rule’s
+ * action.
+ */
+function inputRulesPlugin(props) {
+    const { editor, rules } = props;
+    const plugin = new Plugin({
+        state: {
+            init() {
+                return null;
+            },
+            apply(tr, prev) {
+                const stored = tr.getMeta(this);
+                if (stored) {
+                    return stored;
+                }
+                return tr.selectionSet || tr.docChanged
+                    ? null
+                    : prev;
+            },
+        },
+        props: {
+            handleTextInput(view, from, to, text) {
+                return run$1({
+                    editor,
+                    from,
+                    to,
+                    text,
+                    rules,
+                    plugin,
+                });
+            },
+            handleDOMEvents: {
+                compositionend: view => {
+                    setTimeout(() => {
+                        const { $cursor } = view.state.selection;
+                        if ($cursor) {
+                            run$1({
+                                editor,
+                                from: $cursor.pos,
+                                to: $cursor.pos,
+                                text: '',
+                                rules,
+                                plugin,
+                            });
+                        }
+                    });
+                    return false;
+                },
+            },
+            // add support for input rules to trigger on enter
+            // this is useful for example for code blocks
+            handleKeyDown(view, event) {
+                if (event.key !== 'Enter') {
+                    return false;
+                }
+                const { $cursor } = view.state.selection;
+                if ($cursor) {
+                    return run$1({
+                        editor,
+                        from: $cursor.pos,
+                        to: $cursor.pos,
+                        text: '\n',
+                        rules,
+                        plugin,
+                    });
+                }
+                return false;
+            },
+        },
+        // @ts-ignore
+        isInputRules: true,
+    });
+    return plugin;
+}
+
+function isNumber(value) {
+    return typeof value === 'number';
+}
+
+class PasteRule {
+    constructor(config) {
+        this.find = config.find;
+        this.handler = config.handler;
+    }
+}
+const pasteRuleMatcherHandler = (text, find) => {
+    if (isRegExp(find)) {
+        return [...text.matchAll(find)];
+    }
+    const matches = find(text);
+    if (!matches) {
+        return [];
+    }
+    return matches.map(pasteRuleMatch => {
+        const result = [];
+        result.push(pasteRuleMatch.text);
+        result.index = pasteRuleMatch.index;
+        result.input = text;
+        result.data = pasteRuleMatch.data;
+        if (pasteRuleMatch.replaceWith) {
+            if (!pasteRuleMatch.text.includes(pasteRuleMatch.replaceWith)) {
+                console.warn('[tiptap warn]: "pasteRuleMatch.replaceWith" must be part of "pasteRuleMatch.text".');
+            }
+            result.push(pasteRuleMatch.replaceWith);
+        }
+        return result;
+    });
+};
+function run(config) {
+    const { editor, state, from, to, rules, } = config;
+    const { commands, chain, can } = new CommandManager({
+        editor,
+        state,
+    });
+    state.doc.nodesBetween(from, to, (node, pos) => {
+        if (!node.isTextblock || node.type.spec.code) {
+            return;
+        }
+        const resolvedFrom = Math.max(from, pos);
+        const resolvedTo = Math.min(to, pos + node.content.size);
+        const textToMatch = node.textBetween(resolvedFrom - pos, resolvedTo - pos, undefined, '\ufffc');
+        rules.forEach(rule => {
+            const matches = pasteRuleMatcherHandler(textToMatch, rule.find);
+            matches.forEach(match => {
+                if (match.index === undefined) {
+                    return;
+                }
+                const start = resolvedFrom + match.index + 1;
+                const end = start + match[0].length;
+                const range = {
+                    from: state.tr.mapping.map(start),
+                    to: state.tr.mapping.map(end),
+                };
+                rule.handler({
+                    state,
+                    range,
+                    match,
+                    commands,
+                    chain,
+                    can,
+                });
+            });
+        });
+    });
+}
+/**
+ * Create an paste rules plugin. When enabled, it will cause pasted
+ * text that matches any of the given rules to trigger the rule’s
+ * action.
+ */
+function pasteRulesPlugin(props) {
+    const { editor, rules } = props;
+    let isProseMirrorHTML = false;
+    const plugin = new Plugin({
+        props: {
+            handlePaste: (view, event) => {
+                var _a;
+                const html = (_a = event.clipboardData) === null || _a === void 0 ? void 0 : _a.getData('text/html');
+                isProseMirrorHTML = !!(html === null || html === void 0 ? void 0 : html.includes('data-pm-slice'));
+                return false;
+            },
+        },
+        appendTransaction: (transactions, oldState, state) => {
+            const transaction = transactions[0];
+            // stop if there is not a paste event
+            if (!transaction.getMeta('paste') || isProseMirrorHTML) {
+                return;
+            }
+            // stop if there is no changed range
+            const { doc, before } = transaction;
+            const from = before.content.findDiffStart(doc.content);
+            const to = before.content.findDiffEnd(doc.content);
+            if (!isNumber(from) || !to || from === to.b) {
+                return;
+            }
+            // build a chainable state
+            // so we can use a single transaction for all paste rules
+            const tr = state.tr;
+            const chainableState = createChainableState({
+                state,
+                transaction: tr,
+            });
+            run({
+                editor,
+                state: chainableState,
+                from: Math.max(from - 1, 0),
+                to: to.b,
+                rules,
+                plugin,
+            });
+            // stop if there are no changes
+            if (!tr.steps.length) {
+                return;
+            }
+            return tr;
+        },
+        // @ts-ignore
+        isPasteRules: true,
+    });
+    return plugin;
+}
+
+/**
+ * Get a list of all extension attributes defined in `addAttribute` and `addGlobalAttribute`.
+ * @param extensions List of extensions
+ */
+function getAttributesFromExtensions(extensions) {
+    const extensionAttributes = [];
+    const { nodeExtensions, markExtensions } = splitExtensions(extensions);
+    const nodeAndMarkExtensions = [...nodeExtensions, ...markExtensions];
+    const defaultAttribute = {
+        default: null,
+        rendered: true,
+        renderHTML: null,
+        parseHTML: null,
+        keepOnSplit: true,
+    };
+    extensions.forEach(extension => {
+        const context = {
+            name: extension.name,
+            options: extension.options,
+            storage: extension.storage,
+        };
+        const addGlobalAttributes = getExtensionField(extension, 'addGlobalAttributes', context);
+        if (!addGlobalAttributes) {
+            return;
+        }
+        // TODO: remove `as GlobalAttributes`
+        const globalAttributes = addGlobalAttributes();
+        globalAttributes.forEach(globalAttribute => {
+            globalAttribute.types.forEach(type => {
+                Object
+                    .entries(globalAttribute.attributes)
+                    .forEach(([name, attribute]) => {
+                    extensionAttributes.push({
+                        type,
+                        name,
+                        attribute: {
+                            ...defaultAttribute,
+                            ...attribute,
+                        },
+                    });
+                });
+            });
+        });
+    });
+    nodeAndMarkExtensions.forEach(extension => {
+        const context = {
+            name: extension.name,
+            options: extension.options,
+            storage: extension.storage,
+        };
+        const addAttributes = getExtensionField(extension, 'addAttributes', context);
+        if (!addAttributes) {
+            return;
+        }
+        // TODO: remove `as Attributes`
+        const attributes = addAttributes();
+        Object
+            .entries(attributes)
+            .forEach(([name, attribute]) => {
+            extensionAttributes.push({
+                type: extension.name,
+                name,
+                attribute: {
+                    ...defaultAttribute,
+                    ...attribute,
+                },
+            });
+        });
+    });
+    return extensionAttributes;
+}
+
+function mergeAttributes(...objects) {
+    return objects
+        .filter(item => !!item)
+        .reduce((items, item) => {
+        const mergedAttributes = { ...items };
+        Object.entries(item).forEach(([key, value]) => {
+            const exists = mergedAttributes[key];
+            if (!exists) {
+                mergedAttributes[key] = value;
+                return;
+            }
+            if (key === 'class') {
+                mergedAttributes[key] = [mergedAttributes[key], value].join(' ');
+            }
+            else if (key === 'style') {
+                mergedAttributes[key] = [mergedAttributes[key], value].join('; ');
+            }
+            else {
+                mergedAttributes[key] = value;
+            }
+        });
+        return mergedAttributes;
+    }, {});
+}
+
+function getRenderedAttributes(nodeOrMark, extensionAttributes) {
+    return extensionAttributes
+        .filter(item => item.attribute.rendered)
+        .map(item => {
+        if (!item.attribute.renderHTML) {
+            return {
+                [item.name]: nodeOrMark.attrs[item.name],
+            };
+        }
+        return item.attribute.renderHTML(nodeOrMark.attrs) || {};
+    })
+        .reduce((attributes, attribute) => mergeAttributes(attributes, attribute), {});
+}
+
+function isEmptyObject(value = {}) {
+    return Object.keys(value).length === 0 && value.constructor === Object;
+}
+
+function fromString(value) {
+    if (typeof value !== 'string') {
+        return value;
+    }
+    if (value.match(/^[+-]?(?:\d*\.)?\d+$/)) {
+        return Number(value);
+    }
+    if (value === 'true') {
+        return true;
+    }
+    if (value === 'false') {
+        return false;
+    }
+    return value;
+}
+
+/**
+ * This function merges extension attributes into parserule attributes (`attrs` or `getAttrs`).
+ * Cancels when `getAttrs` returned `false`.
+ * @param parseRule ProseMirror ParseRule
+ * @param extensionAttributes List of attributes to inject
+ */
+function injectExtensionAttributesToParseRule(parseRule, extensionAttributes) {
+    if (parseRule.style) {
+        return parseRule;
+    }
+    return {
+        ...parseRule,
+        getAttrs: node => {
+            const oldAttributes = parseRule.getAttrs
+                ? parseRule.getAttrs(node)
+                : parseRule.attrs;
+            if (oldAttributes === false) {
+                return false;
+            }
+            const newAttributes = extensionAttributes
+                .filter(item => item.attribute.rendered)
+                .reduce((items, item) => {
+                const value = item.attribute.parseHTML
+                    ? item.attribute.parseHTML(node)
+                    : fromString(node.getAttribute(item.name));
+                if (isObject(value)) {
+                    console.warn(`[tiptap warn]: BREAKING CHANGE: "parseHTML" for your attribute "${item.name}" returns an object but should return the value itself. If this is expected you can ignore this message. This warning will be removed in one of the next releases. Further information: https://github.com/ueberdosis/tiptap/issues/1863`);
+                }
+                if (value === null || value === undefined) {
+                    return items;
+                }
+                return {
+                    ...items,
+                    [item.name]: value,
+                };
+            }, {});
+            return { ...oldAttributes, ...newAttributes };
+        },
+    };
+}
+
+function cleanUpSchemaItem(data) {
+    return Object.fromEntries(Object.entries(data).filter(([key, value]) => {
+        if (key === 'attrs' && isEmptyObject(value)) {
+            return false;
+        }
+        return value !== null && value !== undefined;
+    }));
+}
+function getSchemaByResolvedExtensions(extensions) {
+    var _a;
+    const allAttributes = getAttributesFromExtensions(extensions);
+    const { nodeExtensions, markExtensions } = splitExtensions(extensions);
+    const topNode = (_a = nodeExtensions.find(extension => getExtensionField(extension, 'topNode'))) === null || _a === void 0 ? void 0 : _a.name;
+    const nodes = Object.fromEntries(nodeExtensions.map(extension => {
+        const extensionAttributes = allAttributes.filter(attribute => attribute.type === extension.name);
+        const context = {
+            name: extension.name,
+            options: extension.options,
+            storage: extension.storage,
+        };
+        const extraNodeFields = extensions.reduce((fields, e) => {
+            const extendNodeSchema = getExtensionField(e, 'extendNodeSchema', context);
+            return {
+                ...fields,
+                ...(extendNodeSchema ? extendNodeSchema(extension) : {}),
+            };
+        }, {});
+        const schema = cleanUpSchemaItem({
+            ...extraNodeFields,
+            content: callOrReturn(getExtensionField(extension, 'content', context)),
+            marks: callOrReturn(getExtensionField(extension, 'marks', context)),
+            group: callOrReturn(getExtensionField(extension, 'group', context)),
+            inline: callOrReturn(getExtensionField(extension, 'inline', context)),
+            atom: callOrReturn(getExtensionField(extension, 'atom', context)),
+            selectable: callOrReturn(getExtensionField(extension, 'selectable', context)),
+            draggable: callOrReturn(getExtensionField(extension, 'draggable', context)),
+            code: callOrReturn(getExtensionField(extension, 'code', context)),
+            defining: callOrReturn(getExtensionField(extension, 'defining', context)),
+            isolating: callOrReturn(getExtensionField(extension, 'isolating', context)),
+            attrs: Object.fromEntries(extensionAttributes.map(extensionAttribute => {
+                var _a;
+                return [extensionAttribute.name, { default: (_a = extensionAttribute === null || extensionAttribute === void 0 ? void 0 : extensionAttribute.attribute) === null || _a === void 0 ? void 0 : _a.default }];
+            })),
+        });
+        const parseHTML = callOrReturn(getExtensionField(extension, 'parseHTML', context));
+        if (parseHTML) {
+            schema.parseDOM = parseHTML
+                .map(parseRule => injectExtensionAttributesToParseRule(parseRule, extensionAttributes));
+        }
+        const renderHTML = getExtensionField(extension, 'renderHTML', context);
+        if (renderHTML) {
+            schema.toDOM = node => renderHTML({
+                node,
+                HTMLAttributes: getRenderedAttributes(node, extensionAttributes),
+            });
+        }
+        const renderText = getExtensionField(extension, 'renderText', context);
+        if (renderText) {
+            schema.toText = renderText;
+        }
+        return [extension.name, schema];
+    }));
+    const marks = Object.fromEntries(markExtensions.map(extension => {
+        const extensionAttributes = allAttributes.filter(attribute => attribute.type === extension.name);
+        const context = {
+            name: extension.name,
+            options: extension.options,
+            storage: extension.storage,
+        };
+        const extraMarkFields = extensions.reduce((fields, e) => {
+            const extendMarkSchema = getExtensionField(e, 'extendMarkSchema', context);
+            return {
+                ...fields,
+                ...(extendMarkSchema ? extendMarkSchema(extension) : {}),
+            };
+        }, {});
+        const schema = cleanUpSchemaItem({
+            ...extraMarkFields,
+            inclusive: callOrReturn(getExtensionField(extension, 'inclusive', context)),
+            excludes: callOrReturn(getExtensionField(extension, 'excludes', context)),
+            group: callOrReturn(getExtensionField(extension, 'group', context)),
+            spanning: callOrReturn(getExtensionField(extension, 'spanning', context)),
+            code: callOrReturn(getExtensionField(extension, 'code', context)),
+            attrs: Object.fromEntries(extensionAttributes.map(extensionAttribute => {
+                var _a;
+                return [extensionAttribute.name, { default: (_a = extensionAttribute === null || extensionAttribute === void 0 ? void 0 : extensionAttribute.attribute) === null || _a === void 0 ? void 0 : _a.default }];
+            })),
+        });
+        const parseHTML = callOrReturn(getExtensionField(extension, 'parseHTML', context));
+        if (parseHTML) {
+            schema.parseDOM = parseHTML
+                .map(parseRule => injectExtensionAttributesToParseRule(parseRule, extensionAttributes));
+        }
+        const renderHTML = getExtensionField(extension, 'renderHTML', context);
+        if (renderHTML) {
+            schema.toDOM = mark => renderHTML({
+                mark,
+                HTMLAttributes: getRenderedAttributes(mark, extensionAttributes),
+            });
+        }
+        return [extension.name, schema];
+    }));
+    return new Schema({
+        topNode,
+        nodes,
+        marks,
+    });
+}
+
+function getSchemaTypeByName(name, schema) {
+    return schema.nodes[name] || schema.marks[name] || null;
+}
+
+function findDuplicates(items) {
+    const filtered = items.filter((el, index) => items.indexOf(el) !== index);
+    return [...new Set(filtered)];
+}
+
+class ExtensionManager {
+    constructor(extensions, editor) {
+        this.splittableMarks = [];
+        this.editor = editor;
+        this.extensions = ExtensionManager.resolve(extensions);
+        this.schema = getSchemaByResolvedExtensions(this.extensions);
+        this.extensions.forEach(extension => {
+            var _a;
+            // store extension storage in editor
+            this.editor.extensionStorage[extension.name] = extension.storage;
+            const context = {
+                name: extension.name,
+                options: extension.options,
+                storage: extension.storage,
+                editor: this.editor,
+                type: getSchemaTypeByName(extension.name, this.schema),
+            };
+            if (extension.type === 'mark') {
+                const keepOnSplit = (_a = callOrReturn(getExtensionField(extension, 'keepOnSplit', context))) !== null && _a !== void 0 ? _a : true;
+                if (keepOnSplit) {
+                    this.splittableMarks.push(extension.name);
+                }
+            }
+            const onBeforeCreate = getExtensionField(extension, 'onBeforeCreate', context);
+            if (onBeforeCreate) {
+                this.editor.on('beforeCreate', onBeforeCreate);
+            }
+            const onCreate = getExtensionField(extension, 'onCreate', context);
+            if (onCreate) {
+                this.editor.on('create', onCreate);
+            }
+            const onUpdate = getExtensionField(extension, 'onUpdate', context);
+            if (onUpdate) {
+                this.editor.on('update', onUpdate);
+            }
+            const onSelectionUpdate = getExtensionField(extension, 'onSelectionUpdate', context);
+            if (onSelectionUpdate) {
+                this.editor.on('selectionUpdate', onSelectionUpdate);
+            }
+            const onTransaction = getExtensionField(extension, 'onTransaction', context);
+            if (onTransaction) {
+                this.editor.on('transaction', onTransaction);
+            }
+            const onFocus = getExtensionField(extension, 'onFocus', context);
+            if (onFocus) {
+                this.editor.on('focus', onFocus);
+            }
+            const onBlur = getExtensionField(extension, 'onBlur', context);
+            if (onBlur) {
+                this.editor.on('blur', onBlur);
+            }
+            const onDestroy = getExtensionField(extension, 'onDestroy', context);
+            if (onDestroy) {
+                this.editor.on('destroy', onDestroy);
+            }
+        });
+    }
+    static resolve(extensions) {
+        const resolvedExtensions = ExtensionManager.sort(ExtensionManager.flatten(extensions));
+        const duplicatedNames = findDuplicates(resolvedExtensions.map(extension => extension.name));
+        if (duplicatedNames.length) {
+            console.warn(`[tiptap warn]: Duplicate extension names found: [${duplicatedNames.map(item => `'${item}'`).join(', ')}]. This can lead to issues.`);
+        }
+        return resolvedExtensions;
+    }
+    static flatten(extensions) {
+        return extensions
+            .map(extension => {
+            const context = {
+                name: extension.name,
+                options: extension.options,
+                storage: extension.storage,
+            };
+            const addExtensions = getExtensionField(extension, 'addExtensions', context);
+            if (addExtensions) {
+                return [
+                    extension,
+                    ...this.flatten(addExtensions()),
+                ];
+            }
+            return extension;
+        })
+            // `Infinity` will break TypeScript so we set a number that is probably high enough
+            .flat(10);
+    }
+    static sort(extensions) {
+        const defaultPriority = 100;
+        return extensions.sort((a, b) => {
+            const priorityA = getExtensionField(a, 'priority') || defaultPriority;
+            const priorityB = getExtensionField(b, 'priority') || defaultPriority;
+            if (priorityA > priorityB) {
+                return -1;
+            }
+            if (priorityA < priorityB) {
+                return 1;
+            }
+            return 0;
+        });
+    }
+    get commands() {
+        return this.extensions.reduce((commands, extension) => {
+            const context = {
+                name: extension.name,
+                options: extension.options,
+                storage: extension.storage,
+                editor: this.editor,
+                type: getSchemaTypeByName(extension.name, this.schema),
+            };
+            const addCommands = getExtensionField(extension, 'addCommands', context);
+            if (!addCommands) {
+                return commands;
+            }
+            return {
+                ...commands,
+                ...addCommands(),
+            };
+        }, {});
+    }
+    get plugins() {
+        const { editor } = this;
+        // With ProseMirror, first plugins within an array are executed first.
+        // In tiptap, we provide the ability to override plugins,
+        // so it feels more natural to run plugins at the end of an array first.
+        // That’s why we have to reverse the `extensions` array and sort again
+        // based on the `priority` option.
+        const extensions = ExtensionManager.sort([...this.extensions].reverse());
+        const inputRules = [];
+        const pasteRules = [];
+        const allPlugins = extensions
+            .map(extension => {
+            const context = {
+                name: extension.name,
+                options: extension.options,
+                storage: extension.storage,
+                editor,
+                type: getSchemaTypeByName(extension.name, this.schema),
+            };
+            const plugins = [];
+            const addKeyboardShortcuts = getExtensionField(extension, 'addKeyboardShortcuts', context);
+            if (addKeyboardShortcuts) {
+                const bindings = Object.fromEntries(Object
+                    .entries(addKeyboardShortcuts())
+                    .map(([shortcut, method]) => {
+                    return [shortcut, () => method({ editor })];
+                }));
+                const keyMapPlugin = keymap(bindings);
+                plugins.push(keyMapPlugin);
+            }
+            const addInputRules = getExtensionField(extension, 'addInputRules', context);
+            if (editor.options.enableInputRules && addInputRules) {
+                inputRules.push(...addInputRules());
+            }
+            const addPasteRules = getExtensionField(extension, 'addPasteRules', context);
+            if (editor.options.enablePasteRules && addPasteRules) {
+                pasteRules.push(...addPasteRules());
+            }
+            const addProseMirrorPlugins = getExtensionField(extension, 'addProseMirrorPlugins', context);
+            if (addProseMirrorPlugins) {
+                const proseMirrorPlugins = addProseMirrorPlugins();
+                plugins.push(...proseMirrorPlugins);
+            }
+            return plugins;
+        })
+            .flat();
+        return [
+            inputRulesPlugin({
+                editor,
+                rules: inputRules,
+            }),
+            pasteRulesPlugin({
+                editor,
+                rules: pasteRules,
+            }),
+            ...allPlugins,
+        ];
+    }
+    get attributes() {
+        return getAttributesFromExtensions(this.extensions);
+    }
+    get nodeViews() {
+        const { editor } = this;
+        const { nodeExtensions } = splitExtensions(this.extensions);
+        return Object.fromEntries(nodeExtensions
+            .filter(extension => !!getExtensionField(extension, 'addNodeView'))
+            .map(extension => {
+            const extensionAttributes = this.attributes.filter(attribute => attribute.type === extension.name);
+            const context = {
+                name: extension.name,
+                options: extension.options,
+                storage: extension.storage,
+                editor,
+                type: getNodeType(extension.name, this.schema),
+            };
+            const addNodeView = getExtensionField(extension, 'addNodeView', context);
+            if (!addNodeView) {
+                return [];
+            }
+            const nodeview = (node, view, getPos, decorations) => {
+                const HTMLAttributes = getRenderedAttributes(node, extensionAttributes);
+                return addNodeView()({
+                    editor,
+                    node,
+                    getPos,
+                    decorations,
+                    HTMLAttributes,
+                    extension,
+                });
+            };
+            return [extension.name, nodeview];
+        }));
+    }
+}
+
+class EventEmitter {
+    constructor() {
+        this.callbacks = {};
+    }
+    on(event, fn) {
+        if (!this.callbacks[event]) {
+            this.callbacks[event] = [];
+        }
+        this.callbacks[event].push(fn);
+        return this;
+    }
+    emit(event, ...args) {
+        const callbacks = this.callbacks[event];
+        if (callbacks) {
+            callbacks.forEach(callback => callback.apply(this, args));
+        }
+        return this;
+    }
+    off(event, fn) {
+        const callbacks = this.callbacks[event];
+        if (callbacks) {
+            if (fn) {
+                this.callbacks[event] = callbacks.filter(callback => callback !== fn);
+            }
+            else {
+                delete this.callbacks[event];
+            }
+        }
+        return this;
+    }
+    removeAllListeners() {
+        this.callbacks = {};
+    }
+}
 
 const style = `.ProseMirror {
   position: relative;
@@ -22687,8 +23231,10 @@ const style = `.ProseMirror {
 .ProseMirror {
   word-wrap: break-word;
   white-space: pre-wrap;
+  white-space: break-spaces;
   -webkit-font-variant-ligatures: none;
   font-variant-ligatures: none;
+  font-feature-settings: "liga" 0; /* the above doesn't seem to work in Edge */
 }
 
 .ProseMirror [contenteditable="false"] {
@@ -22701,6 +23247,14 @@ const style = `.ProseMirror {
 
 .ProseMirror pre {
   white-space: pre-wrap;
+}
+
+img.ProseMirror-separator {
+  display: inline !important;
+  border: none !important;
+  margin: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
 }
 
 .ProseMirror-gapcursor {
@@ -22749,6 +23303,7 @@ class Editor$1 extends EventEmitter {
     constructor(options = {}) {
         super();
         this.isFocused = false;
+        this.extensionStorage = {};
         this.options = {
             element: document.createElement('div'),
             content: '',
@@ -22760,6 +23315,7 @@ class Editor$1 extends EventEmitter {
             parseOptions: {},
             enableInputRules: true,
             enablePasteRules: true,
+            enableCoreExtensions: true,
             onBeforeCreate: () => null,
             onCreate: () => null,
             onUpdate: () => null,
@@ -22795,22 +23351,28 @@ class Editor$1 extends EventEmitter {
         }, 0);
     }
     /**
+     * Returns the editor storage.
+     */
+    get storage() {
+        return this.extensionStorage;
+    }
+    /**
      * An object of all registered commands.
      */
     get commands() {
-        return this.commandManager.createCommands();
+        return this.commandManager.commands;
     }
     /**
      * Create a command chain to call multiple commands at once.
      */
     chain() {
-        return this.commandManager.createChain();
+        return this.commandManager.chain();
     }
     /**
      * Check if a command or a command chain can be executed. Without executing it.
      */
     can() {
-        return this.commandManager.createCan();
+        return this.commandManager.can();
     }
     /**
      * Inject CSS styles.
@@ -22826,22 +23388,34 @@ class Editor$1 extends EventEmitter {
      * @param options A list of options
      */
     setOptions(options = {}) {
-        this.options = { ...this.options, ...options };
+        this.options = {
+            ...this.options,
+            ...options,
+        };
+        if (!this.view || !this.state || this.isDestroyed) {
+            return;
+        }
+        if (this.options.editorProps) {
+            this.view.setProps(this.options.editorProps);
+        }
+        this.view.updateState(this.state);
     }
     /**
      * Update editable state of the editor.
      */
     setEditable(editable) {
         this.setOptions({ editable });
-        if (this.view && this.state && !this.isDestroyed) {
-            this.view.updateState(this.state);
-        }
     }
     /**
      * Returns whether the editor is editable.
      */
     get isEditable() {
-        return this.view && this.view.editable;
+        // since plugins are applied after creating the view
+        // `editable` is always `true` for one tick.
+        // that’s why we also have to check for `options.editable`
+        return this.options.editable
+            && this.view
+            && this.view.editable;
     }
     /**
      * Returns the editor state.
@@ -22856,7 +23430,7 @@ class Editor$1 extends EventEmitter {
      * @param handlePlugins Control how to merge the plugin into the existing plugins.
      */
     registerPlugin(plugin, handlePlugins) {
-        const plugins = typeof handlePlugins === 'function'
+        const plugins = isObject$1(handlePlugins)
             ? handlePlugins(plugin, this.state.plugins)
             : [...this.state.plugins, plugin];
         const state = this.state.reconfigure({ plugins });
@@ -22865,7 +23439,7 @@ class Editor$1 extends EventEmitter {
     /**
      * Unregister a ProseMirror plugin.
      *
-     * @param name The plugins name
+     * @param nameOrPluginKey The plugins name
      */
     unregisterPlugin(nameOrPluginKey) {
         if (this.isDestroyed) {
@@ -22885,7 +23459,9 @@ class Editor$1 extends EventEmitter {
      * Creates an extension manager.
      */
     createExtensionManager() {
-        const coreExtensions = Object.entries(extensions).map(([, extension]) => extension);
+        const coreExtensions = this.options.enableCoreExtensions
+            ? Object.values(extensions)
+            : [];
         const allExtensions = [...coreExtensions, ...this.options.extensions].filter(extension => {
             return ['extension', 'node', 'mark'].includes(extension === null || extension === void 0 ? void 0 : extension.type);
         });
@@ -22895,7 +23471,9 @@ class Editor$1 extends EventEmitter {
      * Creates an command manager.
      */
     createCommandManager() {
-        this.commandManager = new CommandManager(this, this.extensionManager.commands);
+        this.commandManager = new CommandManager({
+            editor: this,
+        });
     }
     /**
      * Creates a ProseMirror schema.
@@ -22966,6 +23544,7 @@ class Editor$1 extends EventEmitter {
         if (selectionHasChanged) {
             this.emit('selectionUpdate', {
                 editor: this,
+                transaction,
             });
         }
         const focus = transaction.getMeta('focus');
@@ -22974,12 +23553,14 @@ class Editor$1 extends EventEmitter {
             this.emit('focus', {
                 editor: this,
                 event: focus.event,
+                transaction,
             });
         }
         if (blur) {
             this.emit('blur', {
                 editor: this,
                 event: blur.event,
+                transaction,
             });
         }
         if (!transaction.docChanged || transaction.getMeta('preventUpdate')) {
@@ -22995,24 +23576,6 @@ class Editor$1 extends EventEmitter {
      */
     getAttributes(nameOrType) {
         return getAttributes(this.state, nameOrType);
-    }
-    /**
-     * Get attributes of the currently selected node.
-     *
-     * @param name Name of the node
-     */
-    getNodeAttributes(name) {
-        console.warn('[tiptap warn]: editor.getNodeAttributes() is deprecated. please use editor.getAttributes() instead.');
-        return getNodeAttributes(this.state, name);
-    }
-    /**
-     * Get attributes of the currently selected mark.
-     *
-     * @param name Name of the mark
-     */
-    getMarkAttributes(name) {
-        console.warn('[tiptap warn]: editor.getMarkAttributes() is deprecated. please use editor.getAttributes() instead.');
-        return getMarkAttributes(this.state, name);
     }
     isActive(nameOrAttributes, attributesOrUndefined) {
         const name = typeof nameOrAttributes === 'string'
@@ -23033,7 +23596,20 @@ class Editor$1 extends EventEmitter {
      * Get the document as HTML.
      */
     getHTML() {
-        return getHTMLFromFragment(this.state.doc, this.schema);
+        return getHTMLFromFragment(this.state.doc.content, this.schema);
+    }
+    /**
+     * Get the document as text.
+     */
+    getText(options) {
+        const { blockSeparator = '\n\n', textSerializers = {}, } = options || {};
+        return getText(this.state.doc, {
+            blockSeparator,
+            textSerializers: {
+                ...textSerializers,
+                ...getTextSeralizersFromSchema(this.schema),
+            },
+        });
     }
     /**
      * Check if there is no content.
@@ -23056,7 +23632,6 @@ class Editor$1 extends EventEmitter {
             this.view.destroy();
         }
         this.removeAllListeners();
-        removeElement(this.css);
     }
     /**
      * Check if the editor is already destroyed.
@@ -23083,7 +23658,20 @@ class Node {
             ...config,
         };
         this.name = this.config.name;
+        if (config.defaultOptions) {
+            console.warn(`[tiptap warn]: BREAKING CHANGE: "defaultOptions" is deprecated. Please use "addOptions" instead. Found in extension: "${this.name}".`);
+        }
+        // TODO: remove `addOptions` fallback
         this.options = this.config.defaultOptions;
+        if (this.config.addOptions) {
+            this.options = callOrReturn(getExtensionField(this, 'addOptions', {
+                name: this.name,
+            }));
+        }
+        this.storage = callOrReturn(getExtensionField(this, 'addStorage', {
+            name: this.name,
+            options: this.options,
+        })) || {};
     }
     static create(config = {}) {
         return new Node(config);
@@ -23093,6 +23681,10 @@ class Node {
         // with different calls of `configure`
         const extension = this.extend();
         extension.options = mergeDeep(this.options, options);
+        extension.storage = callOrReturn(getExtensionField(extension, 'addStorage', {
+            name: extension.name,
+            options: extension.options,
+        }));
         return extension;
     }
     extend(extendedConfig = {}) {
@@ -23102,9 +23694,22 @@ class Node {
         extension.name = extendedConfig.name
             ? extendedConfig.name
             : extension.parent.name;
+        if (extendedConfig.defaultOptions) {
+            console.warn(`[tiptap warn]: BREAKING CHANGE: "defaultOptions" is deprecated. Please use "addOptions" instead. Found in extension: "${extension.name}".`);
+        }
+        // TODO: remove `addOptions` fallback
         extension.options = extendedConfig.defaultOptions
             ? extendedConfig.defaultOptions
             : extension.parent.options;
+        if (extendedConfig.addOptions) {
+            extension.options = callOrReturn(getExtensionField(extension, 'addOptions', {
+                name: extension.name,
+            }));
+        }
+        extension.storage = callOrReturn(getExtensionField(extension, 'addStorage', {
+            name: extension.name,
+            options: extension.options,
+        }));
         return extension;
     }
 }
@@ -23124,7 +23729,20 @@ class Mark {
             ...config,
         };
         this.name = this.config.name;
+        if (config.defaultOptions) {
+            console.warn(`[tiptap warn]: BREAKING CHANGE: "defaultOptions" is deprecated. Please use "addOptions" instead. Found in extension: "${this.name}".`);
+        }
+        // TODO: remove `addOptions` fallback
         this.options = this.config.defaultOptions;
+        if (this.config.addOptions) {
+            this.options = callOrReturn(getExtensionField(this, 'addOptions', {
+                name: this.name,
+            }));
+        }
+        this.storage = callOrReturn(getExtensionField(this, 'addStorage', {
+            name: this.name,
+            options: this.options,
+        })) || {};
     }
     static create(config = {}) {
         return new Mark(config);
@@ -23134,6 +23752,10 @@ class Mark {
         // with different calls of `configure`
         const extension = this.extend();
         extension.options = mergeDeep(this.options, options);
+        extension.storage = callOrReturn(getExtensionField(extension, 'addStorage', {
+            name: extension.name,
+            options: extension.options,
+        }));
         return extension;
     }
     extend(extendedConfig = {}) {
@@ -23143,125 +23765,216 @@ class Mark {
         extension.name = extendedConfig.name
             ? extendedConfig.name
             : extension.parent.name;
+        if (extendedConfig.defaultOptions) {
+            console.warn(`[tiptap warn]: BREAKING CHANGE: "defaultOptions" is deprecated. Please use "addOptions" instead. Found in extension: "${extension.name}".`);
+        }
+        // TODO: remove `addOptions` fallback
         extension.options = extendedConfig.defaultOptions
             ? extendedConfig.defaultOptions
             : extension.parent.options;
+        if (extendedConfig.addOptions) {
+            extension.options = callOrReturn(getExtensionField(extension, 'addOptions', {
+                name: extension.name,
+            }));
+        }
+        extension.storage = callOrReturn(getExtensionField(extension, 'addStorage', {
+            name: extension.name,
+            options: extension.options,
+        }));
         return extension;
     }
 }
 
-function nodeInputRule (regexp, type, getAttributes) {
-    return new InputRule(regexp, (state, match, start, end) => {
-        const attributes = getAttributes instanceof Function
-            ? getAttributes(match)
-            : getAttributes;
-        const { tr } = state;
-        if (match[0]) {
-            tr.replaceWith(start - 1, end, type.create(attributes));
-        }
-        return tr;
+/**
+ * Build an input rule that adds a node when the
+ * matched text is typed into it.
+ */
+function nodeInputRule(config) {
+    return new InputRule({
+        find: config.find,
+        handler: ({ state, range, match }) => {
+            const attributes = callOrReturn(config.getAttributes, undefined, match) || {};
+            const { tr } = state;
+            const start = range.from;
+            let end = range.to;
+            if (match[1]) {
+                const offset = match[0].lastIndexOf(match[1]);
+                let matchStart = start + offset;
+                if (matchStart > end) {
+                    matchStart = end;
+                }
+                else {
+                    end = matchStart + match[1].length;
+                }
+                // insert last typed character
+                const lastChar = match[0][match[0].length - 1];
+                tr.insertText(lastChar, start + match[0].length - 1);
+                // insert node from input rule
+                tr.replaceWith(matchStart, end, config.type.create(attributes));
+            }
+            else if (match[0]) {
+                tr.replaceWith(start, end, config.type.create(attributes));
+            }
+        },
     });
 }
 
 function getMarksBetween(from, to, state) {
-    let marks = [];
+    const marks = [];
     state.doc.nodesBetween(from, to, (node, pos) => {
-        marks = [...marks, ...node.marks.map(mark => ({
-                from: pos,
-                to: pos + node.nodeSize,
-                mark,
-            }))];
+        marks.push(...node.marks.map(mark => ({
+            from: pos,
+            to: pos + node.nodeSize,
+            mark,
+        })));
     });
     return marks;
 }
 
-function markInputRule (regexp, markType, getAttributes) {
-    return new InputRule(regexp, (state, match, start, end) => {
-        const attributes = getAttributes instanceof Function
-            ? getAttributes(match)
-            : getAttributes;
-        const { tr } = state;
-        const captureGroup = match[match.length - 1];
-        const fullMatch = match[0];
-        let markEnd = end;
-        if (captureGroup) {
-            const startSpaces = fullMatch.search(/\S/);
-            const textStart = start + fullMatch.indexOf(captureGroup);
-            const textEnd = textStart + captureGroup.length;
-            const excludedMarks = getMarksBetween(start, end, state)
-                .filter(item => {
-                // TODO: PR to add excluded to MarkType
-                // @ts-ignore
-                const { excluded } = item.mark.type;
-                return excluded.find((type) => type.name === markType.name);
-            })
-                .filter(item => item.to > textStart);
-            if (excludedMarks.length) {
-                return null;
+/**
+ * Build an input rule that adds a mark when the
+ * matched text is typed into it.
+ */
+function markInputRule(config) {
+    return new InputRule({
+        find: config.find,
+        handler: ({ state, range, match }) => {
+            const attributes = callOrReturn(config.getAttributes, undefined, match);
+            if (attributes === false || attributes === null) {
+                return;
             }
-            if (textEnd < end) {
-                tr.delete(textEnd, end);
+            const { tr } = state;
+            const captureGroup = match[match.length - 1];
+            const fullMatch = match[0];
+            let markEnd = range.to;
+            if (captureGroup) {
+                const startSpaces = fullMatch.search(/\S/);
+                const textStart = range.from + fullMatch.indexOf(captureGroup);
+                const textEnd = textStart + captureGroup.length;
+                const excludedMarks = getMarksBetween(range.from, range.to, state)
+                    .filter(item => {
+                    // @ts-ignore
+                    const excluded = item.mark.type.excluded;
+                    return excluded.find(type => type === config.type && type !== item.mark.type);
+                })
+                    .filter(item => item.to > textStart);
+                if (excludedMarks.length) {
+                    return null;
+                }
+                if (textEnd < range.to) {
+                    tr.delete(textEnd, range.to);
+                }
+                if (textStart > range.from) {
+                    tr.delete(range.from + startSpaces, textStart);
+                }
+                markEnd = range.from + startSpaces + captureGroup.length;
+                tr.addMark(range.from + startSpaces, markEnd, config.type.create(attributes || {}));
+                tr.removeStoredMark(config.type);
             }
-            if (textStart > start) {
-                tr.delete(start + startSpaces, textStart);
-            }
-            markEnd = start + startSpaces + captureGroup.length;
-            tr.addMark(start + startSpaces, markEnd, markType.create(attributes));
-            tr.removeStoredMark(markType);
-        }
-        return tr;
+        },
     });
 }
 
-function markPasteRule (regexp, type, getAttributes) {
-    const handler = (fragment, parent) => {
-        const nodes = [];
-        fragment.forEach(child => {
-            if (child.isText && child.text) {
-                const { text } = child;
-                let pos = 0;
-                let match;
-                // eslint-disable-next-line
-                while ((match = regexp.exec(text)) !== null) {
-                    const outerMatch = Math.max(match.length - 2, 0);
-                    const innerMatch = Math.max(match.length - 1, 0);
-                    if (parent === null || parent === void 0 ? void 0 : parent.type.allowsMarkType(type)) {
-                        const start = match.index;
-                        const matchStart = start + match[0].indexOf(match[outerMatch]);
-                        const matchEnd = matchStart + match[outerMatch].length;
-                        const textStart = matchStart + match[outerMatch].lastIndexOf(match[innerMatch]);
-                        const textEnd = textStart + match[innerMatch].length;
-                        const attrs = getAttributes instanceof Function
-                            ? getAttributes(match)
-                            : getAttributes;
-                        // adding text before markdown to nodes
-                        if (matchStart > 0) {
-                            nodes.push(child.cut(pos, matchStart));
-                        }
-                        // adding the markdown part to nodes
-                        nodes.push(child
-                            .cut(textStart, textEnd)
-                            .mark(type.create(attrs).addToSet(child.marks)));
-                        pos = matchEnd;
-                    }
-                }
-                // adding rest of text to nodes
-                if (pos < text.length) {
-                    nodes.push(child.cut(pos));
-                }
+/**
+ * Build an input rule that changes the type of a textblock when the
+ * matched text is typed into it. When using a regular expresion you’ll
+ * probably want the regexp to start with `^`, so that the pattern can
+ * only occur at the start of a textblock.
+ */
+function textblockTypeInputRule(config) {
+    return new InputRule({
+        find: config.find,
+        handler: ({ state, range, match }) => {
+            const $start = state.doc.resolve(range.from);
+            const attributes = callOrReturn(config.getAttributes, undefined, match) || {};
+            if (!$start.node(-1).canReplaceWith($start.index(-1), $start.indexAfter(-1), config.type)) {
+                return null;
             }
-            else {
-                nodes.push(child.copy(handler(child.content, child)));
+            state.tr
+                .delete(range.from, range.to)
+                .setBlockType(range.from, range.from, config.type, attributes);
+        },
+    });
+}
+
+/**
+ * Build an input rule for automatically wrapping a textblock when a
+ * given string is typed. When using a regular expresion you’ll
+ * probably want the regexp to start with `^`, so that the pattern can
+ * only occur at the start of a textblock.
+ *
+ * `type` is the type of node to wrap in.
+ *
+ * By default, if there’s a node with the same type above the newly
+ * wrapped node, the rule will try to join those
+ * two nodes. You can pass a join predicate, which takes a regular
+ * expression match and the node before the wrapped node, and can
+ * return a boolean to indicate whether a join should happen.
+ */
+function wrappingInputRule(config) {
+    return new InputRule({
+        find: config.find,
+        handler: ({ state, range, match }) => {
+            const attributes = callOrReturn(config.getAttributes, undefined, match) || {};
+            const tr = state.tr.delete(range.from, range.to);
+            const $start = tr.doc.resolve(range.from);
+            const blockRange = $start.blockRange();
+            const wrapping = blockRange && findWrapping(blockRange, config.type, attributes);
+            if (!wrapping) {
+                return null;
             }
-        });
-        return Fragment.fromArray(nodes);
-    };
-    return new Plugin({
-        key: new PluginKey('markPasteRule'),
-        props: {
-            transformPasted: slice => {
-                return new Slice(handler(slice.content), slice.openStart, slice.openEnd);
-            },
+            tr.wrap(blockRange, wrapping);
+            const before = tr.doc.resolve(range.from - 1).nodeBefore;
+            if (before
+                && before.type === config.type
+                && canJoin(tr.doc, range.from - 1)
+                && (!config.joinPredicate || config.joinPredicate(match, before))) {
+                tr.join(range.from - 1);
+            }
+        },
+    });
+}
+
+/**
+ * Build an paste rule that adds a mark when the
+ * matched text is pasted into it.
+ */
+function markPasteRule(config) {
+    return new PasteRule({
+        find: config.find,
+        handler: ({ state, range, match }) => {
+            const attributes = callOrReturn(config.getAttributes, undefined, match);
+            if (attributes === false || attributes === null) {
+                return;
+            }
+            const { tr } = state;
+            const captureGroup = match[match.length - 1];
+            const fullMatch = match[0];
+            let markEnd = range.to;
+            if (captureGroup) {
+                const startSpaces = fullMatch.search(/\S/);
+                const textStart = range.from + fullMatch.indexOf(captureGroup);
+                const textEnd = textStart + captureGroup.length;
+                const excludedMarks = getMarksBetween(range.from, range.to, state)
+                    .filter(item => {
+                    // @ts-ignore
+                    const excluded = item.mark.type.excluded;
+                    return excluded.find(type => type === config.type && type !== item.mark.type);
+                })
+                    .filter(item => item.to > textStart);
+                if (excludedMarks.length) {
+                    return null;
+                }
+                if (textEnd < range.to) {
+                    tr.delete(textEnd, range.to);
+                }
+                if (textStart > range.from) {
+                    tr.delete(range.from + startSpaces, textStart);
+                }
+                markEnd = range.from + startSpaces + captureGroup.length;
+                tr.addMark(range.from + startSpaces, markEnd, config.type.create(attributes || {}));
+                tr.removeStoredMark(config.type);
+            }
         },
     });
 }
@@ -23271,8 +23984,12 @@ function isNodeSelection(value) {
 }
 
 function posToDOMRect(view, from, to) {
-    const start = view.coordsAtPos(from);
-    const end = view.coordsAtPos(to, -1);
+    const minPos = 0;
+    const maxPos = view.state.doc.content.size;
+    const resolvedFrom = minMax(from, minPos, maxPos);
+    const resolvedEnd = minMax(to, minPos, maxPos);
+    const start = view.coordsAtPos(resolvedFrom);
+    const end = view.coordsAtPos(resolvedEnd, -1);
     const top = Math.min(start.top, end.top);
     const bottom = Math.max(start.bottom, end.bottom);
     const left = Math.min(start.left, end.left);
@@ -23298,7 +24015,7 @@ function posToDOMRect(view, from, to) {
 }
 
 /**!
-* tippy.js v6.3.1
+* tippy.js v6.3.7
 * (c) 2017-2021 atomiks
 * MIT License
 */
@@ -23310,6 +24027,9 @@ var SVG_ARROW_CLASS = "tippy-svg-arrow";
 var TOUCH_OPTIONS = {
   passive: true,
   capture: true
+};
+var TIPPY_DEFAULT_APPEND_TO = function TIPPY_DEFAULT_APPEND_TO() {
+  return document.body;
 };
 function getValueAtIndexOrReturn(value, index, defaultValue) {
   if (Array.isArray(value)) {
@@ -23425,7 +24145,7 @@ function getOwnerDocument(elementOrElements) {
       element = _normalizeToArray[0]; // Elements created via a <template> have an ownerDocument with no reference to the body
 
 
-  return (element == null ? void 0 : (_element$ownerDocumen = element.ownerDocument) == null ? void 0 : _element$ownerDocumen.body) ? element.ownerDocument : document;
+  return element != null && (_element$ownerDocumen = element.ownerDocument) != null && _element$ownerDocumen.body ? element.ownerDocument : document;
 }
 function isCursorOutsideInteractiveBorder(popperTreeData, event) {
   var clientX = event.clientX,
@@ -23460,6 +24180,26 @@ function updateTransitionEndListener(box, action, listener) {
   ['transitionend', 'webkitTransitionEnd'].forEach(function (event) {
     box[method](event, listener);
   });
+}
+/**
+ * Compared to xxx.contains, this function works for dom structures with shadow
+ * dom
+ */
+
+function actualContains(parent, child) {
+  var target = child;
+
+  while (target) {
+    var _target$getRootNode;
+
+    if (parent.contains(target)) {
+      return true;
+    }
+
+    target = target.getRootNode == null ? void 0 : (_target$getRootNode = target.getRootNode()) == null ? void 0 : _target$getRootNode.host;
+  }
+
+  return false;
 }
 
 var currentInput = {
@@ -23524,8 +24264,8 @@ function bindGlobalEventListeners() {
 }
 
 var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined';
-var ua = isBrowser ? navigator.userAgent : '';
-var isIE = /MSIE |Trident\//.test(ua);
+var isIE11 = isBrowser ? // @ts-ignore
+!!window.msCrypto : false;
 
 var pluginProps = {
   animateFill: false,
@@ -23545,9 +24285,7 @@ var renderProps = {
   zIndex: 9999
 };
 var defaultProps = Object.assign({
-  appendTo: function appendTo() {
-    return document.body;
-  },
+  appendTo: TIPPY_DEFAULT_APPEND_TO,
   aria: {
     content: 'auto',
     expanded: 'auto'
@@ -23582,7 +24320,7 @@ var defaultProps = Object.assign({
   touch: true,
   trigger: 'mouseenter focus',
   triggerTarget: null
-}, pluginProps, {}, renderProps);
+}, pluginProps, renderProps);
 var defaultKeys = Object.keys(defaultProps);
 var setDefaultProps = function setDefaultProps(partialProps) {
 
@@ -23598,12 +24336,14 @@ function getExtendedPassedProps(passedProps) {
         defaultValue = plugin.defaultValue;
 
     if (name) {
-      acc[name] = passedProps[name] !== undefined ? passedProps[name] : defaultValue;
+      var _name;
+
+      acc[name] = passedProps[name] !== undefined ? passedProps[name] : (_name = defaultProps[name]) != null ? _name : defaultValue;
     }
 
     return acc;
   }, {});
-  return Object.assign({}, passedProps, {}, pluginProps);
+  return Object.assign({}, passedProps, pluginProps);
 }
 function getDataAttributeProps(reference, plugins) {
   var propKeys = plugins ? Object.keys(getExtendedPassedProps(Object.assign({}, defaultProps, {
@@ -23634,7 +24374,7 @@ function evaluateProps(reference, props) {
   var out = Object.assign({}, props, {
     content: invokeWithArgsOrReturn(props.content, [reference])
   }, props.ignoreAttributes ? {} : getDataAttributeProps(reference, props.plugins));
-  out.aria = Object.assign({}, defaultProps.aria, {}, out.aria);
+  out.aria = Object.assign({}, defaultProps.aria, out.aria);
   out.aria = {
     expanded: out.aria.expanded === 'auto' ? props.interactive : out.aria.expanded,
     content: out.aria.content === 'auto' ? props.interactive ? null : 'describedby' : out.aria.content
@@ -23772,7 +24512,7 @@ var mouseMoveListeners = []; // Used by `hideAll()`
 
 var mountedInstances = [];
 function createTippy(reference, passedProps) {
-  var props = evaluateProps(reference, Object.assign({}, defaultProps, {}, getExtendedPassedProps(removeUndefinedProps(passedProps)))); // ===========================================================================
+  var props = evaluateProps(reference, Object.assign({}, defaultProps, getExtendedPassedProps(removeUndefinedProps(passedProps)))); // ===========================================================================
   // 🔒 Private members
   // ===========================================================================
 
@@ -23869,10 +24609,9 @@ function createTippy(reference, passedProps) {
       instance.clearDelayTimeouts();
     }
   });
-  popper.addEventListener('mouseleave', function (event) {
+  popper.addEventListener('mouseleave', function () {
     if (instance.props.interactive && instance.props.trigger.indexOf('mouseenter') >= 0) {
       getDocument().addEventListener('mousemove', debouncedOnMouseMove);
-      debouncedOnMouseMove(event);
     }
   });
   return instance; // ===========================================================================
@@ -23892,7 +24631,7 @@ function createTippy(reference, passedProps) {
     var _instance$props$rende;
 
     // @ts-ignore
-    return !!((_instance$props$rende = instance.props.render) == null ? void 0 : _instance$props$rende.$$tippy);
+    return !!((_instance$props$rende = instance.props.render) != null && _instance$props$rende.$$tippy);
   }
 
   function getCurrentTarget() {
@@ -23919,8 +24658,12 @@ function createTippy(reference, passedProps) {
     return getValueAtIndexOrReturn(instance.props.delay, isShow ? 0 : 1, defaultProps.delay);
   }
 
-  function handleStyles() {
-    popper.style.pointerEvents = instance.props.interactive && instance.state.isVisible ? '' : 'none';
+  function handleStyles(fromHide) {
+    if (fromHide === void 0) {
+      fromHide = false;
+    }
+
+    popper.style.pointerEvents = instance.props.interactive && !fromHide ? '' : 'none';
     popper.style.zIndex = "" + instance.props.zIndex;
   }
 
@@ -23931,7 +24674,7 @@ function createTippy(reference, passedProps) {
 
     pluginsHooks.forEach(function (pluginHooks) {
       if (pluginHooks[hook]) {
-        pluginHooks[hook].apply(void 0, args);
+        pluginHooks[hook].apply(pluginHooks, args);
       }
     });
 
@@ -23997,15 +24740,18 @@ function createTippy(reference, passedProps) {
       if (didTouchMove || event.type === 'mousedown') {
         return;
       }
-    } // Clicked on interactive popper
+    }
 
+    var actualTarget = event.composedPath && event.composedPath()[0] || event.target; // Clicked on interactive popper
 
-    if (instance.props.interactive && popper.contains(event.target)) {
+    if (instance.props.interactive && actualContains(popper, actualTarget)) {
       return;
     } // Clicked on the event listeners target
 
 
-    if (getCurrentTarget().contains(event.target)) {
+    if (normalizeToArray(instance.props.triggerTarget || reference).some(function (el) {
+      return actualContains(el, actualTarget);
+    })) {
       if (currentInput.isTouch) {
         return;
       }
@@ -24133,7 +24879,7 @@ function createTippy(reference, passedProps) {
           break;
 
         case 'focus':
-          on(isIE ? 'focusout' : 'blur', onBlurOrFocusOut);
+          on(isIE11 ? 'focusout' : 'blur', onBlurOrFocusOut);
           break;
 
         case 'focusin':
@@ -24359,7 +25105,7 @@ function createTippy(reference, passedProps) {
 
     var node = getCurrentTarget();
 
-    if (instance.props.interactive && appendTo === defaultProps.appendTo || appendTo === 'parent') {
+    if (instance.props.interactive && appendTo === TIPPY_DEFAULT_APPEND_TO || appendTo === 'parent') {
       parentNode = node.parentNode;
     } else {
       parentNode = invokeWithArgsOrReturn(appendTo, [node]);
@@ -24371,6 +25117,7 @@ function createTippy(reference, passedProps) {
       parentNode.appendChild(popper);
     }
 
+    instance.state.isMounted = true;
     createPopperInstance();
   }
 
@@ -24468,7 +25215,7 @@ function createTippy(reference, passedProps) {
     invokeHook('onBeforeUpdate', [instance, partialProps]);
     removeListeners();
     var prevProps = instance.props;
-    var nextProps = evaluateProps(reference, Object.assign({}, instance.props, {}, partialProps, {
+    var nextProps = evaluateProps(reference, Object.assign({}, prevProps, removeUndefinedProps(partialProps), {
       ignoreAttributes: true
     }));
     instance.props = nextProps;
@@ -24593,7 +25340,6 @@ function createTippy(reference, passedProps) {
       // popper has been positioned for the first time
 
       (_instance$popperInsta2 = instance.popperInstance) == null ? void 0 : _instance$popperInsta2.forceUpdate();
-      instance.state.isMounted = true;
       invokeHook('onMount', [instance]);
 
       if (instance.props.animation && getIsDefaultRenderFn()) {
@@ -24636,7 +25382,7 @@ function createTippy(reference, passedProps) {
 
     cleanupInteractiveMouseListeners();
     removeDocumentPress();
-    handleStyles();
+    handleStyles(true);
 
     if (getIsDefaultRenderFn()) {
       var _getDefaultTemplateCh4 = getDefaultTemplateChildren(),
@@ -24776,8 +25522,21 @@ tippy.setDefaultProps({
 });
 
 class BubbleMenuView {
-    constructor({ editor, element, view, tippyOptions, }) {
+    constructor({ editor, element, view, tippyOptions = {}, shouldShow, }) {
         this.preventHide = false;
+        this.shouldShow = ({ state, from, to }) => {
+            const { doc, selection } = state;
+            const { empty } = selection;
+            // Sometime check for `empty` is not enough.
+            // Doubleclick an empty paragraph returns a node size of 2.
+            // So we check also for an empty text size.
+            const isEmptyTextBlock = !doc.textBetween(from, to).length
+                && isTextSelection(state.selection);
+            if (empty || isEmptyTextBlock) {
+                return false;
+            }
+            return true;
+        };
         this.mousedownHandler = () => {
             this.preventHide = true;
         };
@@ -24803,15 +25562,25 @@ class BubbleMenuView {
         this.editor = editor;
         this.element = element;
         this.view = view;
+        if (shouldShow) {
+            this.shouldShow = shouldShow;
+        }
         this.element.addEventListener('mousedown', this.mousedownHandler, { capture: true });
         this.view.dom.addEventListener('dragstart', this.dragstartHandler);
         this.editor.on('focus', this.focusHandler);
         this.editor.on('blur', this.blurHandler);
-        this.createTooltip(tippyOptions);
+        this.tippyOptions = tippyOptions;
+        // Detaches menu content from its current parent
+        this.element.remove();
         this.element.style.visibility = 'visible';
     }
-    createTooltip(options = {}) {
-        this.tippy = tippy(this.view.dom, {
+    createTooltip() {
+        const { element: editorElement } = this.editor.options;
+        const editorIsAttached = !!editorElement.parentElement;
+        if (this.tippy || !editorIsAttached) {
+            return;
+        }
+        this.tippy = tippy(editorElement, {
             duration: 0,
             getReferenceClientRect: null,
             content: this.element,
@@ -24819,32 +25588,37 @@ class BubbleMenuView {
             trigger: 'manual',
             placement: 'top',
             hideOnClick: 'toggle',
-            ...options,
+            ...this.tippyOptions,
         });
     }
     update(view, oldState) {
+        var _a, _b;
         const { state, composing } = view;
         const { doc, selection } = state;
         const isSame = oldState && oldState.doc.eq(doc) && oldState.selection.eq(selection);
         if (composing || isSame) {
             return;
         }
-        const { empty, ranges } = selection;
+        this.createTooltip();
         // support for CellSelections
+        const { ranges } = selection;
         const from = Math.min(...ranges.map(range => range.$from.pos));
         const to = Math.max(...ranges.map(range => range.$to.pos));
-        // Sometime check for `empty` is not enough.
-        // Doubleclick an empty paragraph returns a node size of 2.
-        // So we check also for an empty text size.
-        const isEmptyTextBlock = !doc.textBetween(from, to).length
-            && isTextSelection(view.state.selection);
-        if (empty || isEmptyTextBlock) {
+        const shouldShow = (_a = this.shouldShow) === null || _a === void 0 ? void 0 : _a.call(this, {
+            editor: this.editor,
+            view,
+            state,
+            oldState,
+            from,
+            to,
+        });
+        if (!shouldShow) {
             this.hide();
             return;
         }
-        this.tippy.setProps({
+        (_b = this.tippy) === null || _b === void 0 ? void 0 : _b.setProps({
             getReferenceClientRect: () => {
-                if (isNodeSelection(view.state.selection)) {
+                if (isNodeSelection(state.selection)) {
                     const node = view.nodeDOM(from);
                     if (node) {
                         return node.getBoundingClientRect();
@@ -24856,32 +25630,40 @@ class BubbleMenuView {
         this.show();
     }
     show() {
-        this.tippy.show();
+        var _a;
+        (_a = this.tippy) === null || _a === void 0 ? void 0 : _a.show();
     }
     hide() {
-        this.tippy.hide();
+        var _a;
+        (_a = this.tippy) === null || _a === void 0 ? void 0 : _a.hide();
     }
     destroy() {
-        this.tippy.destroy();
-        this.element.removeEventListener('mousedown', this.mousedownHandler);
+        var _a;
+        (_a = this.tippy) === null || _a === void 0 ? void 0 : _a.destroy();
+        this.element.removeEventListener('mousedown', this.mousedownHandler, { capture: true });
         this.view.dom.removeEventListener('dragstart', this.dragstartHandler);
         this.editor.off('focus', this.focusHandler);
         this.editor.off('blur', this.blurHandler);
     }
 }
-const BubbleMenuPluginKey = new PluginKey('menuBubble');
 const BubbleMenuPlugin = (options) => {
     return new Plugin({
-        key: BubbleMenuPluginKey,
+        key: typeof options.pluginKey === 'string'
+            ? new PluginKey(options.pluginKey)
+            : options.pluginKey,
         view: view => new BubbleMenuView({ view, ...options }),
     });
 };
 
 Extension.create({
     name: 'bubbleMenu',
-    defaultOptions: {
-        element: null,
-        tippyOptions: {},
+    addOptions() {
+        return {
+            element: null,
+            tippyOptions: {},
+            pluginKey: 'bubbleMenu',
+            shouldShow: null,
+        };
     },
     addProseMirrorPlugins() {
         if (!this.options.element) {
@@ -24889,17 +25671,31 @@ Extension.create({
         }
         return [
             BubbleMenuPlugin({
+                pluginKey: this.options.pluginKey,
                 editor: this.editor,
                 element: this.options.element,
                 tippyOptions: this.options.tippyOptions,
+                shouldShow: this.options.shouldShow,
             }),
         ];
     },
 });
 
 class FloatingMenuView {
-    constructor({ editor, element, view, tippyOptions, }) {
+    constructor({ editor, element, view, tippyOptions = {}, shouldShow, }) {
         this.preventHide = false;
+        this.shouldShow = ({ state }) => {
+            const { selection } = state;
+            const { $anchor, empty } = selection;
+            const isRootDepth = $anchor.depth === 1;
+            const isEmptyTextBlock = $anchor.parent.isTextblock
+                && !$anchor.parent.type.spec.code
+                && !$anchor.parent.textContent;
+            if (!empty || !isRootDepth || !isEmptyTextBlock) {
+                return false;
+            }
+            return true;
+        };
         this.mousedownHandler = () => {
             this.preventHide = true;
         };
@@ -24922,14 +25718,24 @@ class FloatingMenuView {
         this.editor = editor;
         this.element = element;
         this.view = view;
+        if (shouldShow) {
+            this.shouldShow = shouldShow;
+        }
         this.element.addEventListener('mousedown', this.mousedownHandler, { capture: true });
         this.editor.on('focus', this.focusHandler);
         this.editor.on('blur', this.blurHandler);
-        this.createTooltip(tippyOptions);
+        this.tippyOptions = tippyOptions;
+        // Detaches menu content from its current parent
+        this.element.remove();
         this.element.style.visibility = 'visible';
     }
-    createTooltip(options = {}) {
-        this.tippy = tippy(this.view.dom, {
+    createTooltip() {
+        const { element: editorElement } = this.editor.options;
+        const editorIsAttached = !!editorElement.parentElement;
+        if (this.tippy || !editorIsAttached) {
+            return;
+        }
+        this.tippy = tippy(editorElement, {
             duration: 0,
             getReferenceClientRect: null,
             content: this.element,
@@ -24937,55 +25743,68 @@ class FloatingMenuView {
             trigger: 'manual',
             placement: 'right',
             hideOnClick: 'toggle',
-            ...options,
+            ...this.tippyOptions,
         });
     }
     update(view, oldState) {
-        const { state, composing } = view;
+        var _a, _b;
+        const { state } = view;
         const { doc, selection } = state;
+        const { from, to } = selection;
         const isSame = oldState && oldState.doc.eq(doc) && oldState.selection.eq(selection);
-        if (composing || isSame) {
+        if (isSame) {
             return;
         }
-        const { $anchor, empty, from, to, } = selection;
-        const isRootDepth = $anchor.depth === 1;
-        const isNodeEmpty = !selection.$anchor.parent.isLeaf && !selection.$anchor.parent.textContent;
-        const isActive = isRootDepth && isNodeEmpty;
-        if (!empty || !isActive) {
+        this.createTooltip();
+        const shouldShow = (_a = this.shouldShow) === null || _a === void 0 ? void 0 : _a.call(this, {
+            editor: this.editor,
+            view,
+            state,
+            oldState,
+        });
+        if (!shouldShow) {
             this.hide();
             return;
         }
-        this.tippy.setProps({
+        (_b = this.tippy) === null || _b === void 0 ? void 0 : _b.setProps({
             getReferenceClientRect: () => posToDOMRect(view, from, to),
         });
         this.show();
     }
     show() {
-        this.tippy.show();
+        var _a;
+        (_a = this.tippy) === null || _a === void 0 ? void 0 : _a.show();
     }
     hide() {
-        this.tippy.hide();
+        var _a;
+        (_a = this.tippy) === null || _a === void 0 ? void 0 : _a.hide();
     }
     destroy() {
-        this.tippy.destroy();
-        this.element.removeEventListener('mousedown', this.mousedownHandler);
+        var _a;
+        (_a = this.tippy) === null || _a === void 0 ? void 0 : _a.destroy();
+        this.element.removeEventListener('mousedown', this.mousedownHandler, { capture: true });
         this.editor.off('focus', this.focusHandler);
         this.editor.off('blur', this.blurHandler);
     }
 }
-const FloatingMenuPluginKey = new PluginKey('menuFloating');
 const FloatingMenuPlugin = (options) => {
     return new Plugin({
-        key: FloatingMenuPluginKey,
+        key: typeof options.pluginKey === 'string'
+            ? new PluginKey(options.pluginKey)
+            : options.pluginKey,
         view: view => new FloatingMenuView({ view, ...options }),
     });
 };
 
 Extension.create({
     name: 'floatingMenu',
-    defaultOptions: {
-        element: null,
-        tippyOptions: {},
+    addOptions() {
+        return {
+            element: null,
+            tippyOptions: {},
+            pluginKey: 'floatingMenu',
+            shouldShow: null,
+        };
     },
     addProseMirrorPlugins() {
         if (!this.options.element) {
@@ -24993,9 +25812,11 @@ Extension.create({
         }
         return [
             FloatingMenuPlugin({
+                pluginKey: this.options.pluginKey,
                 editor: this.editor,
                 element: this.options.element,
                 tippyOptions: this.options.tippyOptions,
+                shouldShow: this.options.shouldShow,
             }),
         ];
     },
@@ -25004,6 +25825,12 @@ Extension.create({
 defineComponent({
     name: 'BubbleMenu',
     props: {
+        pluginKey: {
+            // TODO: TypeScript breaks :(
+            // type: [String, Object as PropType<Exclude<BubbleMenuPluginProps['pluginKey'], string>>],
+            type: null,
+            default: 'bubbleMenu',
+        },
         editor: {
             type: Object,
             required: true,
@@ -25012,20 +25839,26 @@ defineComponent({
             type: Object,
             default: () => ({}),
         },
+        shouldShow: {
+            type: Function,
+            default: null,
+        },
     },
     setup(props, { slots }) {
         const root = ref(null);
         onMounted(() => {
-            const { editor, tippyOptions } = props;
+            const { pluginKey, editor, tippyOptions, shouldShow, } = props;
             editor.registerPlugin(BubbleMenuPlugin({
+                pluginKey,
                 editor,
                 element: root.value,
                 tippyOptions,
+                shouldShow,
             }));
         });
         onBeforeUnmount(() => {
-            const { editor } = props;
-            editor.unregisterPlugin(BubbleMenuPluginKey);
+            const { pluginKey, editor } = props;
+            editor.unregisterPlugin(pluginKey);
         });
         return () => { var _a; return h('div', { ref: root }, (_a = slots.default) === null || _a === void 0 ? void 0 : _a.call(slots)); };
     },
@@ -25057,8 +25890,10 @@ class Editor extends Editor$1 {
         this.vueRenderers = reactive(new Map());
         this.contentComponent = null;
         this.reactiveState = useDebouncedRef(this.view.state);
+        this.reactiveExtensionStorage = useDebouncedRef(this.extensionStorage);
         this.on('transaction', () => {
             this.reactiveState.value = this.view.state;
+            this.reactiveExtensionStorage.value = this.extensionStorage;
         });
         return markRaw(this);
     }
@@ -25066,6 +25901,11 @@ class Editor extends Editor$1 {
         return this.reactiveState
             ? this.reactiveState.value
             : this.view.state;
+    }
+    get storage() {
+        return this.reactiveExtensionStorage
+            ? this.reactiveExtensionStorage.value
+            : super.storage;
     }
     /**
      * Register a ProseMirror plugin.
@@ -25158,6 +25998,12 @@ const EditorContent = defineComponent({
 defineComponent({
     name: 'FloatingMenu',
     props: {
+        pluginKey: {
+            // TODO: TypeScript breaks :(
+            // type: [String, Object as PropType<Exclude<FloatingMenuPluginProps['pluginKey'], string>>],
+            type: null,
+            default: 'floatingMenu',
+        },
         editor: {
             type: Object,
             required: true,
@@ -25166,20 +26012,26 @@ defineComponent({
             type: Object,
             default: () => ({}),
         },
+        shouldShow: {
+            type: Function,
+            default: null,
+        },
     },
     setup(props, { slots }) {
         const root = ref(null);
         onMounted(() => {
-            const { editor, tippyOptions } = props;
+            const { pluginKey, editor, tippyOptions, shouldShow, } = props;
             editor.registerPlugin(FloatingMenuPlugin({
+                pluginKey,
                 editor,
                 element: root.value,
                 tippyOptions,
+                shouldShow,
             }));
         });
         onBeforeUnmount(() => {
-            const { editor } = props;
-            editor.unregisterPlugin(FloatingMenuPluginKey);
+            const { pluginKey, editor } = props;
+            editor.unregisterPlugin(pluginKey);
         });
         return () => { var _a; return h('div', { ref: root }, (_a = slots.default) === null || _a === void 0 ? void 0 : _a.call(slots)); };
     },
@@ -25203,7 +26055,7 @@ defineComponent({
             },
             'data-node-view-wrapper': '',
             // @ts-ignore (https://github.com/vuejs/vue-next/issues/3031)
-            onDragStart: this.onDragStart,
+            onDragstart: this.onDragStart,
         }, (_b = (_a = this.$slots).default) === null || _b === void 0 ? void 0 : _b.call(_a));
     },
 });
@@ -25225,10 +26077,377 @@ defineComponent({
     },
 });
 
+const inputRegex$4 = /^\s*>\s$/;
+const Blockquote = Node.create({
+    name: 'blockquote',
+    addOptions() {
+        return {
+            HTMLAttributes: {},
+        };
+    },
+    content: 'block*',
+    group: 'block',
+    defining: true,
+    parseHTML() {
+        return [
+            { tag: 'blockquote' },
+        ];
+    },
+    renderHTML({ HTMLAttributes }) {
+        return ['blockquote', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0];
+    },
+    addCommands() {
+        return {
+            setBlockquote: () => ({ commands }) => {
+                return commands.wrapIn('blockquote');
+            },
+            toggleBlockquote: () => ({ commands }) => {
+                return commands.toggleWrap('blockquote');
+            },
+            unsetBlockquote: () => ({ commands }) => {
+                return commands.lift('blockquote');
+            },
+        };
+    },
+    addKeyboardShortcuts() {
+        return {
+            'Mod-Shift-b': () => this.editor.commands.toggleBlockquote(),
+        };
+    },
+    addInputRules() {
+        return [
+            wrappingInputRule({
+                find: inputRegex$4,
+                type: this.type,
+            }),
+        ];
+    },
+});
+
+const starInputRegex$1 = /(?:^|\s)((?:\*\*)((?:[^*]+))(?:\*\*))$/;
+const starPasteRegex$1 = /(?:^|\s)((?:\*\*)((?:[^*]+))(?:\*\*))/g;
+const underscoreInputRegex$1 = /(?:^|\s)((?:__)((?:[^__]+))(?:__))$/;
+const underscorePasteRegex$1 = /(?:^|\s)((?:__)((?:[^__]+))(?:__))/g;
+const Bold = Mark.create({
+    name: 'bold',
+    addOptions() {
+        return {
+            HTMLAttributes: {},
+        };
+    },
+    parseHTML() {
+        return [
+            {
+                tag: 'strong',
+            },
+            {
+                tag: 'b',
+                getAttrs: node => node.style.fontWeight !== 'normal' && null,
+            },
+            {
+                style: 'font-weight',
+                getAttrs: value => /^(bold(er)?|[5-9]\d{2,})$/.test(value) && null,
+            },
+        ];
+    },
+    renderHTML({ HTMLAttributes }) {
+        return ['strong', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0];
+    },
+    addCommands() {
+        return {
+            setBold: () => ({ commands }) => {
+                return commands.setMark('bold');
+            },
+            toggleBold: () => ({ commands }) => {
+                return commands.toggleMark('bold');
+            },
+            unsetBold: () => ({ commands }) => {
+                return commands.unsetMark('bold');
+            },
+        };
+    },
+    addKeyboardShortcuts() {
+        return {
+            'Mod-b': () => this.editor.commands.toggleBold(),
+        };
+    },
+    addInputRules() {
+        return [
+            markInputRule({
+                find: starInputRegex$1,
+                type: this.type,
+            }),
+            markInputRule({
+                find: underscoreInputRegex$1,
+                type: this.type,
+            }),
+        ];
+    },
+    addPasteRules() {
+        return [
+            markPasteRule({
+                find: starPasteRegex$1,
+                type: this.type,
+            }),
+            markPasteRule({
+                find: underscorePasteRegex$1,
+                type: this.type,
+            }),
+        ];
+    },
+});
+
+const inputRegex$3 = /^\s*([-+*])\s$/;
+const BulletList = Node.create({
+    name: 'bulletList',
+    addOptions() {
+        return {
+            HTMLAttributes: {},
+        };
+    },
+    group: 'block list',
+    content: 'listItem+',
+    parseHTML() {
+        return [
+            { tag: 'ul' },
+        ];
+    },
+    renderHTML({ HTMLAttributes }) {
+        return ['ul', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0];
+    },
+    addCommands() {
+        return {
+            toggleBulletList: () => ({ commands }) => {
+                return commands.toggleList('bulletList', 'listItem');
+            },
+        };
+    },
+    addKeyboardShortcuts() {
+        return {
+            'Mod-Shift-8': () => this.editor.commands.toggleBulletList(),
+        };
+    },
+    addInputRules() {
+        return [
+            wrappingInputRule({
+                find: inputRegex$3,
+                type: this.type,
+            }),
+        ];
+    },
+});
+
+const inputRegex$2 = /(?:^|\s)((?:`)((?:[^`]+))(?:`))$/;
+const pasteRegex$1 = /(?:^|\s)((?:`)((?:[^`]+))(?:`))/g;
+const Code = Mark.create({
+    name: 'code',
+    addOptions() {
+        return {
+            HTMLAttributes: {},
+        };
+    },
+    excludes: '_',
+    code: true,
+    parseHTML() {
+        return [
+            { tag: 'code' },
+        ];
+    },
+    renderHTML({ HTMLAttributes }) {
+        return ['code', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0];
+    },
+    addCommands() {
+        return {
+            setCode: () => ({ commands }) => {
+                return commands.setMark('code');
+            },
+            toggleCode: () => ({ commands }) => {
+                return commands.toggleMark('code');
+            },
+            unsetCode: () => ({ commands }) => {
+                return commands.unsetMark('code');
+            },
+        };
+    },
+    addKeyboardShortcuts() {
+        return {
+            'Mod-e': () => this.editor.commands.toggleCode(),
+        };
+    },
+    addInputRules() {
+        return [
+            markInputRule({
+                find: inputRegex$2,
+                type: this.type,
+            }),
+        ];
+    },
+    addPasteRules() {
+        return [
+            markPasteRule({
+                find: pasteRegex$1,
+                type: this.type,
+            }),
+        ];
+    },
+});
+
+const backtickInputRegex = /^```(?<language>[a-z]*)?[\s\n]$/;
+const tildeInputRegex = /^~~~(?<language>[a-z]*)?[\s\n]$/;
+const CodeBlock = Node.create({
+    name: 'codeBlock',
+    addOptions() {
+        return {
+            languageClassPrefix: 'language-',
+            HTMLAttributes: {},
+        };
+    },
+    content: 'text*',
+    marks: '',
+    group: 'block',
+    code: true,
+    defining: true,
+    addAttributes() {
+        return {
+            language: {
+                default: null,
+                parseHTML: element => {
+                    var _a;
+                    const { languageClassPrefix } = this.options;
+                    const classNames = [...((_a = element.firstElementChild) === null || _a === void 0 ? void 0 : _a.classList) || []];
+                    const languages = classNames
+                        .filter(className => className.startsWith(languageClassPrefix))
+                        .map(className => className.replace(languageClassPrefix, ''));
+                    const language = languages[0];
+                    if (!language) {
+                        return null;
+                    }
+                    return language;
+                },
+                renderHTML: attributes => {
+                    if (!attributes.language) {
+                        return null;
+                    }
+                    return {
+                        class: this.options.languageClassPrefix + attributes.language,
+                    };
+                },
+            },
+        };
+    },
+    parseHTML() {
+        return [
+            {
+                tag: 'pre',
+                preserveWhitespace: 'full',
+            },
+        ];
+    },
+    renderHTML({ HTMLAttributes }) {
+        return ['pre', this.options.HTMLAttributes, ['code', HTMLAttributes, 0]];
+    },
+    addCommands() {
+        return {
+            setCodeBlock: attributes => ({ commands }) => {
+                return commands.setNode('codeBlock', attributes);
+            },
+            toggleCodeBlock: attributes => ({ commands }) => {
+                return commands.toggleNode('codeBlock', 'paragraph', attributes);
+            },
+        };
+    },
+    addKeyboardShortcuts() {
+        return {
+            'Mod-Alt-c': () => this.editor.commands.toggleCodeBlock(),
+            // remove code block when at start of document or code block is empty
+            Backspace: () => {
+                const { empty, $anchor } = this.editor.state.selection;
+                const isAtStart = $anchor.pos === 1;
+                if (!empty || $anchor.parent.type.name !== this.name) {
+                    return false;
+                }
+                if (isAtStart || !$anchor.parent.textContent.length) {
+                    return this.editor.commands.clearNodes();
+                }
+                return false;
+            },
+        };
+    },
+    addInputRules() {
+        return [
+            textblockTypeInputRule({
+                find: backtickInputRegex,
+                type: this.type,
+                getAttributes: ({ groups }) => groups,
+            }),
+            textblockTypeInputRule({
+                find: tildeInputRegex,
+                type: this.type,
+                getAttributes: ({ groups }) => groups,
+            }),
+        ];
+    },
+    addProseMirrorPlugins() {
+        return [
+            // this plugin creates a code block for pasted content from VS Code
+            // we can also detect the copied code language
+            new Plugin({
+                key: new PluginKey('codeBlockVSCodeHandler'),
+                props: {
+                    handlePaste: (view, event) => {
+                        if (!event.clipboardData) {
+                            return false;
+                        }
+                        // don’t create a new code block within code blocks
+                        if (this.editor.isActive(this.type.name)) {
+                            return false;
+                        }
+                        const text = event.clipboardData.getData('text/plain');
+                        const vscode = event.clipboardData.getData('vscode-editor-data');
+                        const vscodeData = vscode
+                            ? JSON.parse(vscode)
+                            : undefined;
+                        const language = vscodeData === null || vscodeData === void 0 ? void 0 : vscodeData.mode;
+                        if (!text || !language) {
+                            return false;
+                        }
+                        const { tr } = view.state;
+                        // create an empty code block
+                        tr.replaceSelectionWith(this.type.create({ language }));
+                        // put cursor inside the newly created code block
+                        tr.setSelection(TextSelection.near(tr.doc.resolve(Math.max(0, tr.selection.from - 2))));
+                        // add text to code block
+                        // strip carriage return chars from text pasted as code
+                        // see: https://github.com/ProseMirror/prosemirror-view/commit/a50a6bcceb4ce52ac8fcc6162488d8875613aacd
+                        tr.insertText(text.replace(/\r\n?/g, '\n'));
+                        // store meta information
+                        // this is useful for other plugins that depends on the paste event
+                        // like the paste rule plugin
+                        tr.setMeta('paste', true);
+                        view.dispatch(tr);
+                        return true;
+                    },
+                },
+            }),
+        ];
+    },
+});
+
+const Document = Node.create({
+    name: 'doc',
+    topNode: true,
+    content: 'block+',
+});
+
 // :: (options: ?Object) → Plugin
 // Create a plugin that, when added to a ProseMirror instance,
 // causes a decoration to show up at the drop position when something
 // is dragged over the editor.
+//
+// Nodes may add a `disableDropCursor` property to their spec to
+// control the showing of a drop cursor inside them. This may be a
+// boolean or a function, which will be called with a view and a
+// position, and should return a boolean.
 //
 //   options::- These options are supported:
 //
@@ -25249,7 +26468,7 @@ function dropCursor(options) {
 }
 
 var DropCursorView = function DropCursorView(editorView, options) {
-  var this$1 = this;
+  var this$1$1 = this;
 
   this.editorView = editorView;
   this.width = options.width || 1;
@@ -25260,20 +26479,20 @@ var DropCursorView = function DropCursorView(editorView, options) {
   this.timeout = null;
 
   this.handlers = ["dragover", "dragend", "drop", "dragleave"].map(function (name) {
-    var handler = function (e) { return this$1[name](e); };
+    var handler = function (e) { return this$1$1[name](e); };
     editorView.dom.addEventListener(name, handler);
     return {name: name, handler: handler}
   });
 };
 
 DropCursorView.prototype.destroy = function destroy () {
-    var this$1 = this;
+    var this$1$1 = this;
 
   this.handlers.forEach(function (ref) {
       var name = ref.name;
       var handler = ref.handler;
 
-      return this$1.editorView.dom.removeEventListener(name, handler);
+      return this$1$1.editorView.dom.removeEventListener(name, handler);
     });
 };
 
@@ -25334,16 +26553,21 @@ DropCursorView.prototype.updateOverlay = function updateOverlay () {
 };
 
 DropCursorView.prototype.scheduleRemoval = function scheduleRemoval (timeout) {
-    var this$1 = this;
+    var this$1$1 = this;
 
   clearTimeout(this.timeout);
-  this.timeout = setTimeout(function () { return this$1.setCursor(null); }, timeout);
+  this.timeout = setTimeout(function () { return this$1$1.setCursor(null); }, timeout);
 };
 
 DropCursorView.prototype.dragover = function dragover (event) {
   if (!this.editorView.editable) { return }
   var pos = this.editorView.posAtCoords({left: event.clientX, top: event.clientY});
-  if (pos) {
+
+  var node = pos && pos.inside >= 0 && this.editorView.state.doc.nodeAt(pos.inside);
+  var disableDropCursor = node && node.type.spec.disableDropCursor;
+  var disabled = typeof disableDropCursor == "function" ? disableDropCursor(this.editorView, pos) : disableDropCursor;
+
+  if (pos && !disabled) {
     var target = pos.pos;
     if (this.editorView.dragging && this.editorView.dragging.slice) {
       target = dropPoint(this.editorView.state.doc, target, this.editorView.dragging.slice);
@@ -25369,10 +26593,12 @@ DropCursorView.prototype.dragleave = function dragleave (event) {
 
 const Dropcursor = Extension.create({
     name: 'dropCursor',
-    defaultOptions: {
-        color: 'currentColor',
-        width: 1,
-        class: null,
+    addOptions() {
+        return {
+            color: 'currentColor',
+            width: 1,
+            class: null,
+        };
     },
     addProseMirrorPlugins() {
         return [
@@ -25584,6 +26810,7 @@ const Gapcursor = Extension.create({
         const context = {
             name: extension.name,
             options: extension.options,
+            storage: extension.storage,
         };
         return {
             allowGapCursor: (_a = callOrReturn(getExtensionField(extension, 'allowGapCursor', context))) !== null && _a !== void 0 ? _a : null,
@@ -25591,45 +26818,134 @@ const Gapcursor = Extension.create({
     },
 });
 
-const Document = Node.create({
-    name: 'doc',
-    topNode: true,
-    content: 'block+',
-});
-
-const Paragraph = Node.create({
-    name: 'paragraph',
-    priority: 1000,
-    defaultOptions: {
-        HTMLAttributes: {},
+const HardBreak = Node.create({
+    name: 'hardBreak',
+    addOptions() {
+        return {
+            keepMarks: true,
+            HTMLAttributes: {},
+        };
     },
-    group: 'block',
-    content: 'inline*',
+    inline: true,
+    group: 'inline',
+    selectable: false,
     parseHTML() {
         return [
-            { tag: 'p' },
+            { tag: 'br' },
         ];
     },
     renderHTML({ HTMLAttributes }) {
-        return ['p', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0];
+        return ['br', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes)];
+    },
+    renderText() {
+        return '\n';
     },
     addCommands() {
         return {
-            setParagraph: () => ({ commands }) => {
-                return commands.toggleNode('paragraph', 'paragraph');
+            setHardBreak: () => ({ commands, chain, state, editor, }) => {
+                return commands.first([
+                    () => commands.exitCode(),
+                    () => commands.command(() => {
+                        const { selection, storedMarks } = state;
+                        if (selection.$from.parent.type.spec.isolating) {
+                            return false;
+                        }
+                        const { keepMarks } = this.options;
+                        const { splittableMarks } = editor.extensionManager;
+                        const marks = storedMarks
+                            || (selection.$to.parentOffset && selection.$from.marks());
+                        return chain()
+                            .insertContent({ type: this.name })
+                            .command(({ tr, dispatch }) => {
+                            if (dispatch && marks && keepMarks) {
+                                const filteredMarks = marks
+                                    .filter(mark => splittableMarks.includes(mark.type.name));
+                                tr.ensureMarks(filteredMarks);
+                            }
+                            return true;
+                        })
+                            .run();
+                    }),
+                ]);
             },
         };
     },
     addKeyboardShortcuts() {
         return {
-            'Mod-Alt-0': () => this.editor.commands.setParagraph(),
+            'Mod-Enter': () => this.editor.commands.setHardBreak(),
+            'Shift-Enter': () => this.editor.commands.setHardBreak(),
         };
     },
 });
 
-const Text = Node.create({
-    name: 'text',
-    group: 'inline',
+const Heading = Node.create({
+    name: 'heading',
+    addOptions() {
+        return {
+            levels: [1, 2, 3, 4, 5, 6],
+            HTMLAttributes: {},
+        };
+    },
+    content: 'inline*',
+    group: 'block',
+    defining: true,
+    addAttributes() {
+        return {
+            level: {
+                default: 1,
+                rendered: false,
+            },
+        };
+    },
+    parseHTML() {
+        return this.options.levels
+            .map((level) => ({
+            tag: `h${level}`,
+            attrs: { level },
+        }));
+    },
+    renderHTML({ node, HTMLAttributes }) {
+        const hasLevel = this.options.levels.includes(node.attrs.level);
+        const level = hasLevel
+            ? node.attrs.level
+            : this.options.levels[0];
+        return [`h${level}`, mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0];
+    },
+    addCommands() {
+        return {
+            setHeading: attributes => ({ commands }) => {
+                if (!this.options.levels.includes(attributes.level)) {
+                    return false;
+                }
+                return commands.setNode('heading', attributes);
+            },
+            toggleHeading: attributes => ({ commands }) => {
+                if (!this.options.levels.includes(attributes.level)) {
+                    return false;
+                }
+                return commands.toggleNode('heading', 'paragraph', attributes);
+            },
+        };
+    },
+    addKeyboardShortcuts() {
+        return this.options.levels.reduce((items, level) => ({
+            ...items,
+            ...{
+                [`Mod-Alt-${level}`]: () => this.editor.commands.toggleHeading({ level }),
+            },
+        }), {});
+    },
+    addInputRules() {
+        return this.options.levels.map(level => {
+            return textblockTypeInputRule({
+                find: new RegExp(`^(#{1,${level}})\\s$`),
+                type: this.type,
+                getAttributes: {
+                    level,
+                },
+            });
+        });
+    },
 });
 
 var GOOD_LEAF_SIZE = 200;
@@ -25868,7 +27184,7 @@ var Branch = function Branch(items, eventCount) {
 // Pop the latest event off the branch's history and apply it
 // to a document transform.
 Branch.prototype.popEvent = function popEvent (state, preserveItems) {
-    var this$1 = this;
+    var this$1$1 = this;
 
   if (this.eventCount == 0) { return null }
 
@@ -25890,7 +27206,7 @@ Branch.prototype.popEvent = function popEvent (state, preserveItems) {
   this.items.forEach(function (item, i) {
     if (!item.step) {
       if (!remap) {
-        remap = this$1.remapping(end, i + 1);
+        remap = this$1$1.remapping(end, i + 1);
         mapFrom = remap.maps.length;
       }
       mapFrom--;
@@ -25914,7 +27230,7 @@ Branch.prototype.popEvent = function popEvent (state, preserveItems) {
 
     if (item.selection) {
       selection = remap ? item.selection.map(remap.slice(mapFrom)) : item.selection;
-      remaining = new Branch(this$1.items.slice(0, end).append(addBefore.reverse().concat(addAfter)), this$1.eventCount - 1);
+      remaining = new Branch(this$1$1.items.slice(0, end).append(addBefore.reverse().concat(addAfter)), this$1$1.eventCount - 1);
       return false
     }
   }, this.items.length, 0);
@@ -26235,7 +27551,18 @@ function history(config) {
       }
     },
 
-    config: config
+    config: config,
+
+    props: {
+      handleDOMEvents: {
+        beforeinput: function beforeinput(view, e) {
+          var handled = e.inputType == "historyUndo" ? undo(view.state, view.dispatch) :
+              e.inputType == "historyRedo" ? redo(view.state, view.dispatch) : false;
+          if (handled) { e.preventDefault(); }
+          return handled
+        }
+      }
+    }
   })
 }
 
@@ -26259,9 +27586,11 @@ function redo(state, dispatch) {
 
 const History = Extension.create({
     name: 'history',
-    defaultOptions: {
-        depth: 100,
-        newGroupDelay: 500,
+    addOptions() {
+        return {
+            depth: 100,
+            newGroupDelay: 500,
+        };
     },
     addCommands() {
         return {
@@ -26283,77 +27612,80 @@ const History = Extension.create({
             'Mod-z': () => this.editor.commands.undo(),
             'Mod-y': () => this.editor.commands.redo(),
             'Shift-Mod-z': () => this.editor.commands.redo(),
+            // Russian keyboard layouts
+            'Mod-я': () => this.editor.commands.undo(),
+            'Shift-Mod-я': () => this.editor.commands.redo(),
         };
     },
 });
 
-const starInputRegex$1 = /(?:^|\s)((?:\*\*)((?:[^*]+))(?:\*\*))$/gm;
-const starPasteRegex$1 = /(?:^|\s)((?:\*\*)((?:[^*]+))(?:\*\*))/gm;
-const underscoreInputRegex$1 = /(?:^|\s)((?:__)((?:[^__]+))(?:__))$/gm;
-const underscorePasteRegex$1 = /(?:^|\s)((?:__)((?:[^__]+))(?:__))/gm;
-const Bold = Mark.create({
-    name: 'bold',
-    defaultOptions: {
-        HTMLAttributes: {},
+const HorizontalRule = Node.create({
+    name: 'horizontalRule',
+    addOptions() {
+        return {
+            HTMLAttributes: {},
+        };
     },
+    group: 'block',
     parseHTML() {
         return [
-            {
-                tag: 'strong',
-            },
-            {
-                tag: 'b',
-                getAttrs: node => node.style.fontWeight !== 'normal' && null,
-            },
-            {
-                style: 'font-weight',
-                getAttrs: value => /^(bold(er)?|[5-9]\d{2,})$/.test(value) && null,
-            },
+            { tag: 'hr' },
         ];
     },
     renderHTML({ HTMLAttributes }) {
-        return ['strong', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0];
+        return ['hr', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes)];
     },
     addCommands() {
         return {
-            setBold: () => ({ commands }) => {
-                return commands.setMark('bold');
+            setHorizontalRule: () => ({ chain }) => {
+                return chain()
+                    .insertContent({ type: this.name })
+                    // set cursor after horizontal rule
+                    .command(({ tr, dispatch }) => {
+                    var _a;
+                    if (dispatch) {
+                        const { parent, pos } = tr.selection.$from;
+                        const posAfter = pos + 1;
+                        const nodeAfter = tr.doc.nodeAt(posAfter);
+                        if (nodeAfter) {
+                            tr.setSelection(TextSelection.create(tr.doc, posAfter));
+                        }
+                        else {
+                            // add node after horizontal rule if it’s the end of the document
+                            const node = (_a = parent.type.contentMatch.defaultType) === null || _a === void 0 ? void 0 : _a.create();
+                            if (node) {
+                                tr.insert(posAfter, node);
+                                tr.setSelection(TextSelection.create(tr.doc, posAfter));
+                            }
+                        }
+                        tr.scrollIntoView();
+                    }
+                    return true;
+                })
+                    .run();
             },
-            toggleBold: () => ({ commands }) => {
-                return commands.toggleMark('bold');
-            },
-            unsetBold: () => ({ commands }) => {
-                return commands.unsetMark('bold');
-            },
-        };
-    },
-    addKeyboardShortcuts() {
-        return {
-            'Mod-b': () => this.editor.commands.toggleBold(),
         };
     },
     addInputRules() {
         return [
-            markInputRule(starInputRegex$1, this.type),
-            markInputRule(underscoreInputRegex$1, this.type),
-        ];
-    },
-    addPasteRules() {
-        return [
-            markPasteRule(starPasteRegex$1, this.type),
-            markPasteRule(underscorePasteRegex$1, this.type),
+            nodeInputRule({
+                find: /^(?:---|—-|___\s|\*\*\*\s)$/,
+                type: this.type,
+            }),
         ];
     },
 });
 
-const starInputRegex = /(?:^|\s)((?:\*)((?:[^*]+))(?:\*))$/gm;
-const starPasteRegex = /(?:^|\s)((?:\*)((?:[^*]+))(?:\*))/gm;
-const underscoreInputRegex = /(?:^|\s)((?:_)((?:[^_]+))(?:_))$/gm;
-const underscorePasteRegex = /(?:^|\s)((?:_)((?:[^_]+))(?:_))/gm;
+const starInputRegex = /(?:^|\s)((?:\*)((?:[^*]+))(?:\*))$/;
+const starPasteRegex = /(?:^|\s)((?:\*)((?:[^*]+))(?:\*))/g;
+const underscoreInputRegex = /(?:^|\s)((?:_)((?:[^_]+))(?:_))$/;
+const underscorePasteRegex = /(?:^|\s)((?:_)((?:[^_]+))(?:_))/g;
 const Italic = Mark.create({
     name: 'italic',
-    defaultOptions: {
-        HTMLAttributes: {},
+    addOptions() {
+        return {
+            HTMLAttributes: {},
+        };
     },
     parseHTML() {
         return [
@@ -26392,98 +27724,76 @@ const Italic = Mark.create({
     },
     addInputRules() {
         return [
-            markInputRule(starInputRegex, this.type),
-            markInputRule(underscoreInputRegex, this.type),
+            markInputRule({
+                find: starInputRegex,
+                type: this.type,
+            }),
+            markInputRule({
+                find: underscoreInputRegex,
+                type: this.type,
+            }),
         ];
     },
     addPasteRules() {
         return [
-            markPasteRule(starPasteRegex, this.type),
-            markPasteRule(underscorePasteRegex, this.type),
+            markPasteRule({
+                find: starPasteRegex,
+                type: this.type,
+            }),
+            markPasteRule({
+                find: underscorePasteRegex,
+                type: this.type,
+            }),
         ];
     },
 });
 
-const inputRegex$4 = /(?:^|\s)((?:`)((?:[^`]+))(?:`))$/gm;
-const Code = Mark.create({
-    name: 'code',
-    defaultOptions: {
-        HTMLAttributes: {},
+const ListItem = Node.create({
+    name: 'listItem',
+    addOptions() {
+        return {
+            HTMLAttributes: {},
+        };
     },
-    excludes: '_',
+    content: 'paragraph block*',
+    defining: true,
     parseHTML() {
         return [
-            { tag: 'code' },
+            {
+                tag: 'li',
+            },
         ];
     },
     renderHTML({ HTMLAttributes }) {
-        return ['code', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0];
-    },
-    addCommands() {
-        return {
-            setCode: () => ({ commands }) => {
-                return commands.setMark('code');
-            },
-            toggleCode: () => ({ commands }) => {
-                return commands.toggleMark('code');
-            },
-            unsetCode: () => ({ commands }) => {
-                return commands.unsetMark('code');
-            },
-        };
+        return ['li', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0];
     },
     addKeyboardShortcuts() {
         return {
-            'Mod-e': () => this.editor.commands.toggleCode(),
+            Enter: () => this.editor.commands.splitListItem('listItem'),
+            Tab: () => this.editor.commands.sinkListItem('listItem'),
+            'Shift-Tab': () => this.editor.commands.liftListItem('listItem'),
         };
-    },
-    addInputRules() {
-        return [
-            markInputRule(inputRegex$4, this.type),
-        ];
-    },
-    addPasteRules() {
-        return [
-            markPasteRule(inputRegex$4, this.type),
-        ];
     },
 });
 
-const backtickInputRegex = /^```(?<language>[a-z]*)? $/;
-const tildeInputRegex = /^~~~(?<language>[a-z]*)? $/;
-const CodeBlock = Node.create({
-    name: 'codeBlock',
-    defaultOptions: {
-        languageClassPrefix: 'language-',
-        HTMLAttributes: {},
+const inputRegex$1 = /^(\d+)\.\s$/;
+const OrderedList = Node.create({
+    name: 'orderedList',
+    addOptions() {
+        return {
+            HTMLAttributes: {},
+        };
     },
-    content: 'text*',
-    marks: '',
-    group: 'block',
-    code: true,
-    defining: true,
+    group: 'block list',
+    content: 'listItem+',
     addAttributes() {
         return {
-            language: {
-                default: null,
+            start: {
+                default: 1,
                 parseHTML: element => {
-                    var _a;
-                    const classAttribute = (_a = element.firstElementChild) === null || _a === void 0 ? void 0 : _a.getAttribute('class');
-                    if (!classAttribute) {
-                        return null;
-                    }
-                    const regexLanguageClassPrefix = new RegExp(`^(${this.options.languageClassPrefix})`);
-                    return {
-                        language: classAttribute.replace(regexLanguageClassPrefix, ''),
-                    };
-                },
-                renderHTML: attributes => {
-                    if (!attributes.language) {
-                        return null;
-                    }
-                    return {
-                        class: this.options.languageClassPrefix + attributes.language,
-                    };
+                    return element.hasAttribute('start')
+                        ? parseInt(element.getAttribute('start') || '', 10)
+                        : 1;
                 },
             },
         };
@@ -26491,151 +27801,80 @@ const CodeBlock = Node.create({
     parseHTML() {
         return [
             {
-                tag: 'pre',
-                preserveWhitespace: 'full',
+                tag: 'ol',
             },
         ];
     },
     renderHTML({ HTMLAttributes }) {
-        return ['pre', this.options.HTMLAttributes, ['code', HTMLAttributes, 0]];
+        const { start, ...attributesWithoutStart } = HTMLAttributes;
+        return start === 1
+            ? ['ol', mergeAttributes(this.options.HTMLAttributes, attributesWithoutStart), 0]
+            : ['ol', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0];
     },
     addCommands() {
         return {
-            setCodeBlock: attributes => ({ commands }) => {
-                return commands.setNode('codeBlock', attributes);
-            },
-            toggleCodeBlock: attributes => ({ commands }) => {
-                return commands.toggleNode('codeBlock', 'paragraph', attributes);
+            toggleOrderedList: () => ({ commands }) => {
+                return commands.toggleList('orderedList', 'listItem');
             },
         };
     },
     addKeyboardShortcuts() {
         return {
-            'Mod-Alt-c': () => this.editor.commands.toggleCodeBlock(),
-            // remove code block when at start of document or code block is empty
-            Backspace: () => {
-                const { empty, $anchor } = this.editor.state.selection;
-                const isAtStart = $anchor.pos === 1;
-                if (!empty || $anchor.parent.type.name !== this.name) {
-                    return false;
-                }
-                if (isAtStart || !$anchor.parent.textContent.length) {
-                    return this.editor.commands.clearNodes();
-                }
-                return false;
-            },
+            'Mod-Shift-7': () => this.editor.commands.toggleOrderedList(),
         };
     },
     addInputRules() {
         return [
-            textblockTypeInputRule(backtickInputRegex, this.type, ({ groups }) => groups),
-            textblockTypeInputRule(tildeInputRegex, this.type, ({ groups }) => groups),
+            wrappingInputRule({
+                find: inputRegex$1,
+                type: this.type,
+                getAttributes: match => ({ start: +match[1] }),
+                joinPredicate: (match, node) => node.childCount + node.attrs.start === +match[1],
+            }),
         ];
     },
 });
 
-const Heading = Node.create({
-    name: 'heading',
-    defaultOptions: {
-        levels: [1, 2, 3, 4, 5, 6],
-        HTMLAttributes: {},
+const Paragraph = Node.create({
+    name: 'paragraph',
+    priority: 1000,
+    addOptions() {
+        return {
+            HTMLAttributes: {},
+        };
     },
-    content: 'inline*',
     group: 'block',
-    defining: true,
-    addAttributes() {
-        return {
-            level: {
-                default: 1,
-                rendered: false,
-            },
-        };
-    },
-    parseHTML() {
-        return this.options.levels
-            .map((level) => ({
-            tag: `h${level}`,
-            attrs: { level },
-        }));
-    },
-    renderHTML({ node, HTMLAttributes }) {
-        const hasLevel = this.options.levels.includes(node.attrs.level);
-        const level = hasLevel
-            ? node.attrs.level
-            : this.options.levels[0];
-        return [`h${level}`, mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0];
-    },
-    addCommands() {
-        return {
-            setHeading: attributes => ({ commands }) => {
-                if (!this.options.levels.includes(attributes.level)) {
-                    return false;
-                }
-                return commands.setNode('heading', attributes);
-            },
-            toggleHeading: attributes => ({ commands }) => {
-                if (!this.options.levels.includes(attributes.level)) {
-                    return false;
-                }
-                return commands.toggleNode('heading', 'paragraph', attributes);
-            },
-        };
-    },
-    addKeyboardShortcuts() {
-        return this.options.levels.reduce((items, level) => ({
-            ...items,
-            ...{
-                [`Mod-Alt-${level}`]: () => this.editor.commands.toggleHeading({ level }),
-            },
-        }), {});
-    },
-    addInputRules() {
-        return this.options.levels.map(level => {
-            return textblockTypeInputRule(new RegExp(`^(#{1,${level}})\\s$`), this.type, { level });
-        });
-    },
-});
-
-const HardBreak = Node.create({
-    name: 'hardBreak',
-    defaultOptions: {
-        HTMLAttributes: {},
-    },
-    inline: true,
-    group: 'inline',
-    selectable: false,
+    content: 'inline*',
     parseHTML() {
         return [
-            { tag: 'br' },
+            { tag: 'p' },
         ];
     },
     renderHTML({ HTMLAttributes }) {
-        return ['br', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes)];
+        return ['p', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0];
     },
     addCommands() {
         return {
-            setHardBreak: () => ({ commands }) => {
-                return commands.first([
-                    () => commands.exitCode(),
-                    () => commands.insertContent({ type: this.name }),
-                ]);
+            setParagraph: () => ({ commands }) => {
+                return commands.setNode('paragraph');
             },
         };
     },
     addKeyboardShortcuts() {
         return {
-            'Mod-Enter': () => this.editor.commands.setHardBreak(),
-            'Shift-Enter': () => this.editor.commands.setHardBreak(),
+            'Mod-Alt-0': () => this.editor.commands.setParagraph(),
         };
     },
 });
 
-const inputRegex$3 = /(?:^|\s)((?:~~)((?:[^~]+))(?:~~))$/gm;
-const pasteRegex = /(?:^|\s)((?:~~)((?:[^~]+))(?:~~))/gm;
+const inputRegex = /(?:^|\s)((?:~~)((?:[^~]+))(?:~~))$/;
+const pasteRegex = /(?:^|\s)((?:~~)((?:[^~]+))(?:~~))/g;
 const Strike = Mark.create({
     name: 'strike',
-    defaultOptions: {
-        HTMLAttributes: {},
+    addOptions() {
+        return {
+            HTMLAttributes: {},
+        };
     },
     parseHTML() {
         return [
@@ -26678,217 +27917,25 @@ const Strike = Mark.create({
     },
     addInputRules() {
         return [
-            markInputRule(inputRegex$3, this.type),
+            markInputRule({
+                find: inputRegex,
+                type: this.type,
+            }),
         ];
     },
     addPasteRules() {
         return [
-            markPasteRule(pasteRegex, this.type),
+            markPasteRule({
+                find: pasteRegex,
+                type: this.type,
+            }),
         ];
     },
 });
 
-const inputRegex$2 = /^\s*>\s$/gm;
-const Blockquote = Node.create({
-    name: 'blockquote',
-    defaultOptions: {
-        HTMLAttributes: {},
-    },
-    content: 'block*',
-    group: 'block',
-    defining: true,
-    parseHTML() {
-        return [
-            { tag: 'blockquote' },
-        ];
-    },
-    renderHTML({ HTMLAttributes }) {
-        return ['blockquote', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0];
-    },
-    addCommands() {
-        return {
-            setBlockquote: () => ({ commands }) => {
-                return commands.wrapIn('blockquote');
-            },
-            toggleBlockquote: () => ({ commands }) => {
-                return commands.toggleWrap('blockquote');
-            },
-            unsetBlockquote: () => ({ commands }) => {
-                return commands.lift('blockquote');
-            },
-        };
-    },
-    addKeyboardShortcuts() {
-        return {
-            'Mod-Shift-b': () => this.editor.commands.toggleBlockquote(),
-        };
-    },
-    addInputRules() {
-        return [
-            wrappingInputRule(inputRegex$2, this.type),
-        ];
-    },
-});
-
-const HorizontalRule = Node.create({
-    name: 'horizontalRule',
-    defaultOptions: {
-        HTMLAttributes: {},
-    },
-    group: 'block',
-    parseHTML() {
-        return [
-            { tag: 'hr' },
-        ];
-    },
-    renderHTML({ HTMLAttributes }) {
-        return ['hr', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes)];
-    },
-    addCommands() {
-        return {
-            setHorizontalRule: () => ({ chain }) => {
-                return chain()
-                    .insertContent({ type: this.name })
-                    .command(({ tr, dispatch }) => {
-                    var _a;
-                    if (dispatch) {
-                        const { parent, pos } = tr.selection.$from;
-                        const posAfter = pos + 1;
-                        const nodeAfter = tr.doc.nodeAt(posAfter);
-                        // end of document
-                        if (!nodeAfter) {
-                            const node = (_a = parent.type.contentMatch.defaultType) === null || _a === void 0 ? void 0 : _a.create();
-                            if (node) {
-                                tr.insert(posAfter, node);
-                                tr.setSelection(TextSelection.create(tr.doc, posAfter));
-                            }
-                        }
-                        tr.scrollIntoView();
-                    }
-                    return true;
-                })
-                    .run();
-            },
-        };
-    },
-    addInputRules() {
-        return [
-            nodeInputRule(/^(?:---|—-|___\s|\*\*\*\s)$/, this.type),
-        ];
-    },
-});
-
-const inputRegex$1 = /^\s*([-+*])\s$/;
-const BulletList = Node.create({
-    name: 'bulletList',
-    defaultOptions: {
-        HTMLAttributes: {},
-    },
-    group: 'block list',
-    content: 'listItem+',
-    parseHTML() {
-        return [
-            { tag: 'ul' },
-        ];
-    },
-    renderHTML({ HTMLAttributes }) {
-        return ['ul', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0];
-    },
-    addCommands() {
-        return {
-            toggleBulletList: () => ({ commands }) => {
-                return commands.toggleList('bulletList', 'listItem');
-            },
-        };
-    },
-    addKeyboardShortcuts() {
-        return {
-            'Mod-Shift-8': () => this.editor.commands.toggleBulletList(),
-        };
-    },
-    addInputRules() {
-        return [
-            wrappingInputRule(inputRegex$1, this.type),
-        ];
-    },
-});
-
-const inputRegex = /^(\d+)\.\s$/;
-const OrderedList = Node.create({
-    name: 'orderedList',
-    defaultOptions: {
-        HTMLAttributes: {},
-    },
-    group: 'block list',
-    content: 'listItem+',
-    addAttributes() {
-        return {
-            start: {
-                default: 1,
-                parseHTML: element => ({
-                    start: element.hasAttribute('start')
-                        ? parseInt(element.getAttribute('start') || '', 10)
-                        : 1,
-                }),
-            },
-        };
-    },
-    parseHTML() {
-        return [
-            {
-                tag: 'ol',
-            },
-        ];
-    },
-    renderHTML({ HTMLAttributes }) {
-        const { start, ...attributesWithoutStart } = HTMLAttributes;
-        return start === 1
-            ? ['ol', mergeAttributes(this.options.HTMLAttributes, attributesWithoutStart), 0]
-            : ['ol', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0];
-    },
-    addCommands() {
-        return {
-            toggleOrderedList: () => ({ commands }) => {
-                return commands.toggleList('orderedList', 'listItem');
-            },
-        };
-    },
-    addKeyboardShortcuts() {
-        return {
-            'Mod-Shift-7': () => this.editor.commands.toggleOrderedList(),
-        };
-    },
-    addInputRules() {
-        return [
-            wrappingInputRule(inputRegex, this.type, match => ({ order: +match[1] }), (match, node) => node.childCount + node.attrs.order === +match[1]),
-        ];
-    },
-});
-
-const ListItem = Node.create({
-    name: 'listItem',
-    defaultOptions: {
-        HTMLAttributes: {},
-    },
-    content: 'paragraph block*',
-    defining: true,
-    parseHTML() {
-        return [
-            {
-                tag: 'li',
-            },
-        ];
-    },
-    renderHTML({ HTMLAttributes }) {
-        return ['li', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0];
-    },
-    addKeyboardShortcuts() {
-        return {
-            Enter: () => this.editor.commands.splitListItem('listItem'),
-            Tab: () => this.editor.commands.sinkListItem('listItem'),
-            'Shift-Tab': () => this.editor.commands.liftListItem('listItem'),
-        };
-    },
+const Text = Node.create({
+    name: 'text',
+    group: 'inline',
 });
 
 const StarterKit = Extension.create({
@@ -26954,7 +28001,7 @@ const StarterKit = Extension.create({
     },
 });
 
-var script$6 = {
+var script$8 = {
   props: {
     icon: {
       type: String,
@@ -26975,29 +28022,30 @@ var script$6 = {
   }
 };
 
-const _withId$2 = /*#__PURE__*/withScopeId("data-v-260a5466");
-
-const render$4 = /*#__PURE__*/_withId$2((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("button", {
-    class: ["menu-item", {
+const _hoisted_1$4 = ["title"];
+function render$4(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("button", {
+    class: normalizeClass(["menu-item", {
       'is-active': $props.isActive ? $props.isActive() : null
-    }],
-    onClick: _cache[1] || (_cache[1] = (...args) => $props.action && $props.action(...args)),
+    }]),
+    onClick: _cache[0] || (_cache[0] = function () {
+      return $props.action && $props.action(...arguments);
+    }),
     title: $props.title
-  }, [createVNode("i", {
-    class: $props.icon
-  }, null, 2)], 10, ["title"]);
-});
+  }, [createElementVNode("i", {
+    class: normalizeClass($props.icon)
+  }, null, 2)], 10, _hoisted_1$4);
+}
 
 var css_248z$4 = "\n.menu-item[data-v-260a5466] {\n  width: 1.75rem;\n  height: 1.75rem;\n  color: var(--cui-font-color);\n  border: none;\n  background-color: transparent;\n  border-radius: 0.4rem;\n  padding: 0.25rem;\n  margin-right: 0.25rem;\n  cursor: pointer\n}\n.menu-item.is-active[data-v-260a5466],\n.menu-item[data-v-260a5466]:hover {\n    color: #FFF;\n    background-color: var(--cui-dark);\n}\n";
 styleInject(css_248z$4);
 
-script$6.render = render$4;
-script$6.__scopeId = "data-v-260a5466";
+script$8.render = render$4;
+script$8.__scopeId = "data-v-260a5466";
 
-var script$5 = {
+var script$7 = {
   components: {
-    MenuItem: script$6
+    MenuItem: script$8
   },
   props: {
     editor: {
@@ -27074,10 +28122,6 @@ var script$5 = {
 
 };
 
-const _withId$1 = /*#__PURE__*/withScopeId("data-v-6fa363bb");
-
-pushScopeId("data-v-6fa363bb");
-
 const _hoisted_1$3 = {
   class: "cui-editor-menu-bar-bar"
 };
@@ -27089,37 +28133,34 @@ const _hoisted_3 = {
   key: 0,
   class: "cui-editor-menu-bar-divider"
 };
-
-popScopeId();
-
-const render$3 = /*#__PURE__*/_withId$1((_ctx, _cache, $props, $setup, $data, $options) => {
+function render$3(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_menu_item = resolveComponent("menu-item");
 
-  return openBlock(), createBlock("div", _hoisted_1$3, [(openBlock(true), createBlock(Fragment$1, null, renderList($data.items, (item, index) => {
-    return openBlock(), createBlock("div", {
+  return openBlock(), createElementBlock("div", _hoisted_1$3, [(openBlock(true), createElementBlock(Fragment$1, null, renderList($data.items, (item, index) => {
+    return openBlock(), createElementBlock("div", {
       key: index
-    }, [item.type === 'divider' ? (openBlock(), createBlock("div", _hoisted_2$1)) : (openBlock(), createBlock(_component_menu_item, mergeProps({
+    }, [item.type === 'divider' ? (openBlock(), createElementBlock("div", _hoisted_2$1)) : (openBlock(), createBlock(_component_menu_item, normalizeProps(mergeProps({
       key: 1
-    }, item), null, 16))]);
-  }), 128)), (openBlock(true), createBlock(Fragment$1, null, renderList($props.customMenuItems, (item, index) => {
-    return openBlock(), createBlock("div", {
+    }, item)), null, 16))]);
+  }), 128)), (openBlock(true), createElementBlock(Fragment$1, null, renderList($props.customMenuItems, (item, index) => {
+    return openBlock(), createElementBlock("div", {
       key: index
-    }, [item.type === 'divider' ? (openBlock(), createBlock("div", _hoisted_3)) : (openBlock(), createBlock(_component_menu_item, mergeProps({
+    }, [item.type === 'divider' ? (openBlock(), createElementBlock("div", _hoisted_3)) : (openBlock(), createBlock(_component_menu_item, normalizeProps(mergeProps({
       key: 1
-    }, item), null, 16))]);
+    }, item)), null, 16))]);
   }), 128))]);
-});
+}
 
 var css_248z$3 = "\n.cui-editor-menu-bar-bar[data-v-6fa363bb] {\n    display: flex;\n    align-items: center;\n    border-bottom: solid 1px var(--cui-dark);\n    padding: 5px;\n    flex-wrap: wrap\n}\n.cui-editor-menu-bar-divider[data-v-6fa363bb] {\n  width: 2px;\n  height: 1.25rem;\n  background-color: var(--cui-dark);\n  margin-left: 0.5rem;\n  margin-right: 0.75rem;\n}\n";
 styleInject(css_248z$3);
 
-script$5.render = render$3;
-script$5.__scopeId = "data-v-6fa363bb";
+script$7.render = render$3;
+script$7.__scopeId = "data-v-6fa363bb";
 
-var script$4 = {
+var script$6 = {
   components: {
     EditorContent,
-    MenuBar: script$5
+    MenuBar: script$7
   },
   emits: ['update'],
   props: {
@@ -27143,9 +28184,10 @@ var script$4 = {
       options: {
         content: this.content,
         extensions: [StarterKit],
-        onUpdate: function ({
-          editor
-        }) {
+        onUpdate: function (_ref) {
+          let {
+            editor
+          } = _ref;
           clearTimeout(this.timeout);
           this.timeout = setTimeout(function () {
             this.$emit('update', {
@@ -27185,7 +28227,7 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
 
   const _component_editor_content = resolveComponent("editor-content");
 
-  return $data.editor ? (openBlock(), createBlock("div", _hoisted_1$2, [createVNode(_component_menu_bar, {
+  return $data.editor ? (openBlock(), createElementBlock("div", _hoisted_1$2, [createVNode(_component_menu_bar, {
     editor: $data.editor,
     customMenuItems: $props.customMenuItems
   }, null, 8, ["editor", "customMenuItems"]), createVNode(_component_editor_content, {
@@ -27199,11 +28241,13 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
 var css_248z$2 = "\n.ProseMirror {\n        outline: none !important;\n        height: 100%;\n        overflow: auto;\n        padding: 10px\n}\n";
 styleInject(css_248z$2);
 
-script$4.render = render$2;
+script$6.render = render$2;
 
-const script$3 = {};
+const script$4 = {};
+var script$5 = script$4;
 
 const script$2 = {};
+var script$3 = script$2;
 
 var script$1 = {
   props: {
@@ -27214,25 +28258,18 @@ var script$1 = {
   }
 };
 
-const _withId = /*#__PURE__*/withScopeId("data-v-163cac4e");
-
-pushScopeId("data-v-163cac4e");
-
 const _hoisted_1$1 = {
   style: {
     "position": "relative"
   }
 };
-
-popScopeId();
-
-const render$1 = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $options) => {
-  return openBlock(), createBlock("span", _hoisted_1$1, [createVNode("span", {
-    class: ["cui-badge-badge", {
+function render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("span", _hoisted_1$1, [createElementVNode("span", {
+    class: normalizeClass(["cui-badge-badge", {
       visible: $props.visible
-    }]
+    }])
   }, null, 2), renderSlot(_ctx.$slots, "default")]);
-});
+}
 
 var css_248z$1 = "\n.cui-badge-badge[data-v-163cac4e] {\n        display: block;\n        position: absolute;\n        width: 10px;\n        height: 10px;\n        background: var(--cui-danger);\n        border-radius: 5px;\n        right: -3px;\n        top: 0px;\n        opacity: 0\n}\n.visible[data-v-163cac4e] {\n        opacity: 1;\n}\n";
 styleInject(css_248z$1);
@@ -27244,30 +28281,30 @@ script$1.__scopeId = "data-v-163cac4e";
 
 var components = /*#__PURE__*/Object.freeze({
     __proto__: null,
-    CuiButton: script$r,
-    CuiButtonGroup: script$q,
-    CuiButtonGroupItem: script$p,
-    CuiMenuBar: script$o,
-    CuiMenuBarItem: script$n,
-    CuiCard: script$m,
-    CuiModal: script$l,
-    CuiInput: script$k,
-    CuiTextarea: script$j,
-    CuiCheckbox: script$i,
-    CuiSwitch: script$h,
-    CuiSelect: script$g,
-    CuiDatepicker: script$e,
-    CuiRadio: script$d,
-    CuiTable: __default__,
-    CuiTh: script$c,
-    CuiTr: script$b,
-    CuiTag: script$a,
-    CuiAvatar: script$9,
-    CuiTooltip: script$8,
-    CuiFileUpload: script$7,
-    CuiEditor: script$4,
-    CuiMenuBarSolid: script$3,
-    CuiMenuBarItemSolid: script$2,
+    CuiButton: script$u,
+    CuiButtonGroup: script$t,
+    CuiButtonGroupItem: script$s,
+    CuiMenuBar: script$r,
+    CuiMenuBarItem: script$q,
+    CuiCard: script$p,
+    CuiModal: script$o,
+    CuiInput: script$n,
+    CuiTextarea: script$m,
+    CuiCheckbox: script$l,
+    CuiSwitch: script$k,
+    CuiSelect: script$j,
+    CuiDatepicker: script$h,
+    CuiRadio: script$g,
+    CuiTable: script$f,
+    CuiTh: script$e,
+    CuiTr: script$d,
+    CuiTag: script$c,
+    CuiAvatar: script$b,
+    CuiTooltip: script$a,
+    CuiFileUpload: script$9,
+    CuiEditor: script$6,
+    CuiMenuBarSolid: script$5,
+    CuiMenuBarItemSolid: script$3,
     CuiBadge: script$1
 });
 
@@ -27299,11 +28336,11 @@ const _hoisted_2 = {
   class: "cui-notification-animation"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createBlock("div", _hoisted_1, [createVNode(Transition, {
+  return openBlock(), createElementBlock("div", _hoisted_1, [createVNode(Transition, {
     name: "notification"
   }, {
-    default: withCtx(() => [$data.show ? (openBlock(), createBlock("div", _hoisted_2, [createVNode("div", {
-      class: ["cui-notification", _ctx.color]
+    default: withCtx(() => [$data.show ? (openBlock(), createElementBlock("div", _hoisted_2, [createElementVNode("div", {
+      class: normalizeClass(["cui-notification", _ctx.color])
     }, toDisplayString(_ctx.text), 3)])) : createCommentVNode("", true)]),
     _: 1
   })]);
@@ -27349,10 +28386,10 @@ var Functions = /*#__PURE__*/Object.freeze({
 
 const install = function installCliniUiLib(app) {
   app.config.globalProperties.$cui = Functions;
-  Object.entries(components).forEach(([componentName, component]) => {
+  Object.entries(components).forEach(_ref => {
+    let [componentName, component] = _ref;
     app.component(componentName, component);
   });
 }; // Create module definition for Vue.use()
 
-export default install;
-export { script$9 as CuiAvatar, script$1 as CuiBadge, script$r as CuiButton, script$q as CuiButtonGroup, script$p as CuiButtonGroupItem, script$m as CuiCard, script$i as CuiCheckbox, script$e as CuiDatepicker, script$4 as CuiEditor, script$7 as CuiFileUpload, script$k as CuiInput, script$o as CuiMenuBar, script$n as CuiMenuBarItem, script$2 as CuiMenuBarItemSolid, script$3 as CuiMenuBarSolid, script$l as CuiModal, script$d as CuiRadio, script$g as CuiSelect, script$h as CuiSwitch, __default__ as CuiTable, script$a as CuiTag, script$j as CuiTextarea, script$c as CuiTh, script$8 as CuiTooltip, script$b as CuiTr };
+export { script$b as CuiAvatar, script$1 as CuiBadge, script$u as CuiButton, script$t as CuiButtonGroup, script$s as CuiButtonGroupItem, script$p as CuiCard, script$l as CuiCheckbox, script$h as CuiDatepicker, script$6 as CuiEditor, script$9 as CuiFileUpload, script$n as CuiInput, script$r as CuiMenuBar, script$q as CuiMenuBarItem, script$3 as CuiMenuBarItemSolid, script$5 as CuiMenuBarSolid, script$o as CuiModal, script$g as CuiRadio, script$j as CuiSelect, script$k as CuiSwitch, script$f as CuiTable, script$c as CuiTag, script$m as CuiTextarea, script$e as CuiTh, script$a as CuiTooltip, script$d as CuiTr, install as default };

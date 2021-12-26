@@ -1,5 +1,5 @@
 <template>
-    <div class="cui-table" v-bind:class="{striped, select: singleSelect, square}">
+    <div class="cui-table" v-bind:class="{striped, select: singleSelect, square, outline}">
         <div class="cui-table-header" v-if="$slots.header">
             <slot name="header"></slot>
         </div>
@@ -88,6 +88,10 @@ export default {
             type: Function
         },
         compact: {
+            default: false,
+            type: Boolean
+        },
+        outline: {
             default: false,
             type: Boolean
         }
@@ -211,6 +215,9 @@ export default {
         background: white;
         box-shadow: 0 2px 4px -2px rgb(0 0 0 / 15%);
         border-bottom: 1px solid var(--cui-gray-2)
+    }
+    .outline {
+        border: solid 1px var(--cui-gray-2)
     }
     .cui-table th,
     .cui-table td {
