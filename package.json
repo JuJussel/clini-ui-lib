@@ -21,7 +21,7 @@
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@fortawesome/fontawesome-free": "^6.2.0",
     "@popperjs/core": "^2.9.2",
     "@tiptap/starter-kit": "^2.0.0-beta.82",
     "@tiptap/vue-3": "^2.0.0-beta.45",

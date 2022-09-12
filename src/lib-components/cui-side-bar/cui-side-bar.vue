@@ -1,5 +1,9 @@
 <template>
-    <div :class="'cui-side-bar-main ' + position">TEST</div>
+    <div :class="'cui-side-bar-main ' + position">
+        <div class="cui-side-bar-label-box">
+            <i :class="icon + ' item-icon'"></i>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -12,6 +16,10 @@ export default {
         marginTop: {
             type: String,
             default: "50px",
+        },
+        icon: {
+            type: String,
+            default: "fa-solid fa-bars",
         },
     },
     name: "CuiSideBar",
@@ -28,7 +36,7 @@ export default {
 
 <style scoped>
 .cui-side-bar-main {
-    background: red;
+    background: white;
     position: fixed;
     height: calc(100vh - v-bind("marginBottom"));
     width: 250px;
@@ -45,5 +53,26 @@ export default {
     left: 0;
     margin-left: -15px;
     padding-left: 20px;
+}
+.cui-side-bar-label-box {
+    height: 50px;
+    background: white;
+    position: absolute;
+    left: -50px;
+    width: 200px;
+    border-radius: 15px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+.item-icon {
+    color: var(--cui-dark);
+    margin-right: 12px;
+    border-radius: 12px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 </style>
