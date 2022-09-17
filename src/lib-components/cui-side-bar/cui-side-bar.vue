@@ -1,7 +1,19 @@
 <template>
     <div :class="'cui-side-bar-main ' + position">
-        <div class="cui-side-bar-label-box">
+        <!-- <div class="cui-side-bar-label-box">
             <i :class="icon + ' item-icon'"></i>
+        </div> -->
+        <div
+            class="cui-sidebar-header"
+            style="margin-left: -10px"
+            v-if="position === 'left'"
+        >
+            <cui-button :icon="icon + ' item-icon'" plain></cui-button>
+            <h2>{{ sidebar }}</h2>
+        </div>
+        <div class="cui-sidebar-header" style="margin-left: -10px" v-else>
+            <cui-button :icon="icon + ' item-icon'" plain></cui-button>
+            <h2>{{ sidebar }}</h2>
         </div>
     </div>
 </template>
@@ -20,6 +32,9 @@ export default {
         icon: {
             type: String,
             default: "fa-solid fa-bars",
+        },
+        sidebar: {
+            default: "Sidebar",
         },
     },
     name: "CuiSideBar",
@@ -43,6 +58,7 @@ export default {
     margin-top: v-bind("marginTop");
     z-index: 100;
     border-radius: 15px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 0px 20px 4px;
 }
 .cui-side-bar-main.right {
     right: 0;
@@ -74,5 +90,9 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.cui-sidebar-header {
+    display: flex;
+    align-items: center;
 }
 </style>
