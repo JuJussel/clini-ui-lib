@@ -113,7 +113,9 @@ export default defineComponent({
 
 <template>
     <div id="app" style="position: relative">
-        <cui-side-bar position="right"></cui-side-bar>
+        <cui-side-bar position="right">
+            <div>Test</div>
+        </cui-side-bar>
 
         <cui-menu-bar :value="menu" @change="changeMenu">
             <template v-slot:left>

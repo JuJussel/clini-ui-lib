@@ -1,8 +1,18 @@
 <template>
-    <div :class="'cui-side-bar-main ' + position">
-        <!-- <div class="cui-side-bar-label-box">
-            <i :class="icon + ' item-icon'"></i>
-        </div> -->
+    <div
+        :class="'cui-side-bar-main ' + position"
+        v-bind:class="{ collapsed: isCollapsed }"
+    >
+        <div
+            :class="'cui-side-bar-label-box ' + position"
+            v-bind:class="{ open: !isCollapsed }"
+        >
+            <cui-button
+                :icon="icon + ' item-icon'"
+                plain
+                @click="isCollapsed = !isCollapsed"
+            ></cui-button>
+        </div>
         <div
             class="cui-sidebar-header"
             style="margin-left: -10px"
@@ -12,9 +22,14 @@
             <h2>{{ sidebar }}</h2>
         </div>
         <div class="cui-sidebar-header" style="margin-left: -10px" v-else>
-            <cui-button :icon="icon + ' item-icon'" plain></cui-button>
+            <cui-button
+                :icon="icon + ' item-icon'"
+                plain
+                @click="isCollapsed = !isCollapsed"
+            ></cui-button>
             <h2>{{ sidebar }}</h2>
         </div>
+        <slot></slot>
     </div>
 </template>
 
@@ -36,8 +51,24 @@ export default {
         sidebar: {
             default: "Sidebar",
         },
+        width: {
+            type: String,
+            default: "250px",
+        },
+        collapsed: {
+            type: Boolean,
+            default: true,
+        },
     },
     name: "CuiSideBar",
+    data() {
+        return {
+            isCollapsed: false,
+        };
+    },
+    created() {
+        this.isCollapsed = this.collapsed;
+    },
     computed: {
         marginBottom() {
             let px = this.marginTop.slice(0, this.marginTop.length - 2);
@@ -45,6 +76,9 @@ export default {
             console.log(px);
             return px + "px";
         },
+    },
+    methods: {
+        collapse() {},
     },
 };
 </script>
@@ -54,33 +88,54 @@ export default {
     background: white;
     position: fixed;
     height: calc(100vh - v-bind("marginBottom"));
-    width: 250px;
+    width: v-bind("width");
     margin-top: v-bind("marginTop");
     z-index: 100;
     border-radius: 15px;
     box-shadow: rgb(0 0 0 / 20%) 0px 0px 20px 4px;
+    transition: all ease 0.5s;
 }
 .cui-side-bar-main.right {
     right: 0;
     margin-right: -15px;
     padding-left: 5px;
 }
+.cui-side-bar-main.right.collapsed {
+    right: calc(0px - v-bind("width"));
+}
 .cui-side-bar-main.left {
     left: 0;
     margin-left: -15px;
     padding-left: 20px;
 }
+.cui-side-bar-main.left.collapsed {
+    left: calc(-10px - v-bind("width"));
+}
 .cui-side-bar-label-box {
-    height: 50px;
     background: white;
     position: absolute;
-    left: -50px;
-    width: 200px;
     border-radius: 15px;
-    padding: 5px;
     display: flex;
     align-items: center;
+    transition: all ease 0.5s;
 }
+.cui-side-bar-label-box.right {
+    left: -80px;
+}
+.cui-side-bar-label-box.right.open {
+    opacity: 0;
+    left: v-bind("width");
+    z-index: -1;
+}
+.cui-side-bar-label-box.left {
+    right: -80px;
+}
+.cui-side-bar-label-box.left.open {
+    opacity: 0;
+    right: v-bind("width");
+    z-index: -1;
+}
+
 .item-icon {
     color: var(--cui-dark);
     margin-right: 12px;
