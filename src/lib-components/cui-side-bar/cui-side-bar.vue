@@ -6,6 +6,7 @@
         <div
             :class="'cui-side-bar-label-box ' + position"
             v-bind:class="{ open: !isCollapsed }"
+            v-if="!noButton"
         >
             <cui-button
                 :icon="icon + ' item-icon'"
@@ -59,6 +60,10 @@ export default {
             type: Boolean,
             default: true,
         },
+        noButton: {
+            type: Boolean,
+            default: false,
+        },
     },
     name: "CuiSideBar",
     data() {
@@ -78,7 +83,9 @@ export default {
         },
     },
     methods: {
-        collapse() {},
+        toggle() {
+            this.isCollapsed = !this.isCollapsed;
+        },
     },
 };
 </script>
@@ -94,6 +101,7 @@ export default {
     border-radius: 15px;
     box-shadow: rgb(0 0 0 / 20%) 0px 0px 20px 4px;
     transition: all ease 0.5s;
+    top: 0;
 }
 .cui-side-bar-main.right {
     right: 0;

@@ -28301,6 +28301,10 @@ const __default__ = {
     collapsed: {
       type: Boolean,
       default: true
+    },
+    noButton: {
+      type: Boolean,
+      default: false
     }
   },
   name: "CuiSideBar",
@@ -28325,16 +28329,18 @@ const __default__ = {
 
   },
   methods: {
-    collapse() {}
+    toggle() {
+      this.isCollapsed = !this.isCollapsed;
+    }
 
   }
 };
 
 const __injectCSSVars__ = () => {
   useCssVars(_ctx => ({
-    "166853b9": _ctx.marginBottom,
-    "991918f4": _ctx.width,
-    "3a53baf2": _ctx.marginTop
+    "7b18889d": _ctx.marginBottom,
+    "4f893722": _ctx.width,
+    "30e8b823": _ctx.marginTop
   }));
 };
 
@@ -28347,14 +28353,14 @@ __default__.setup = __setup__ ? (props, ctx) => {
 var script$1 = __default__;
 
 const _hoisted_1$1 = {
-  key: 0,
+  key: 1,
   class: "cui-sidebar-header",
   style: {
     "margin-left": "-10px"
   }
 };
 const _hoisted_2$1 = {
-  key: 1,
+  key: 2,
   class: "cui-sidebar-header",
   style: {
     "margin-left": "-10px"
@@ -28367,7 +28373,8 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
     class: normalizeClass(['cui-side-bar-main ' + $props.position, {
       collapsed: $data.isCollapsed
     }])
-  }, [createElementVNode("div", {
+  }, [!$props.noButton ? (openBlock(), createElementBlock("div", {
+    key: 0,
     class: normalizeClass(['cui-side-bar-label-box ' + $props.position, {
       open: !$data.isCollapsed
     }])
@@ -28375,7 +28382,7 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
     icon: $props.icon + ' item-icon',
     plain: "",
     onClick: _cache[0] || (_cache[0] = $event => $data.isCollapsed = !$data.isCollapsed)
-  }, null, 8, ["icon"])], 2), $props.position === 'left' ? (openBlock(), createElementBlock("div", _hoisted_1$1, [createVNode(_component_cui_button, {
+  }, null, 8, ["icon"])], 2)) : createCommentVNode("", true), $props.position === 'left' ? (openBlock(), createElementBlock("div", _hoisted_1$1, [createVNode(_component_cui_button, {
     icon: $props.icon + ' item-icon',
     plain: ""
   }, null, 8, ["icon"]), createElementVNode("h2", null, toDisplayString($props.sidebar), 1)])) : (openBlock(), createElementBlock("div", _hoisted_2$1, [createVNode(_component_cui_button, {
@@ -28385,11 +28392,11 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8, ["icon"]), createElementVNode("h2", null, toDisplayString($props.sidebar), 1)])), renderSlot(_ctx.$slots, "default")], 2);
 }
 
-var css_248z$1 = "\n.cui-side-bar-main[data-v-4d5927a2] {\n    background: white;\n    position: fixed;\n    height: calc(100vh - var(--166853b9));\n    width: var(--991918f4);\n    margin-top: var(--3a53baf2);\n    z-index: 100;\n    border-radius: 15px;\n    box-shadow: rgb(0 0 0 / 20%) 0px 0px 20px 4px;\n    transition: all ease 0.5s;\n}\n.cui-side-bar-main.right[data-v-4d5927a2] {\n    right: 0;\n    margin-right: -15px;\n    padding-left: 5px;\n}\n.cui-side-bar-main.right.collapsed[data-v-4d5927a2] {\n    right: calc(0px - var(--991918f4));\n}\n.cui-side-bar-main.left[data-v-4d5927a2] {\n    left: 0;\n    margin-left: -15px;\n    padding-left: 20px;\n}\n.cui-side-bar-main.left.collapsed[data-v-4d5927a2] {\n    left: calc(-10px - var(--991918f4));\n}\n.cui-side-bar-label-box[data-v-4d5927a2] {\n    background: white;\n    position: absolute;\n    border-radius: 15px;\n    display: flex;\n    align-items: center;\n    transition: all ease 0.5s;\n}\n.cui-side-bar-label-box.right[data-v-4d5927a2] {\n    left: -80px;\n}\n.cui-side-bar-label-box.right.open[data-v-4d5927a2] {\n    opacity: 0;\n    left: var(--991918f4);\n    z-index: -1;\n}\n.cui-side-bar-label-box.left[data-v-4d5927a2] {\n    right: -80px;\n}\n.cui-side-bar-label-box.left.open[data-v-4d5927a2] {\n    opacity: 0;\n    right: var(--991918f4);\n    z-index: -1;\n}\n.item-icon[data-v-4d5927a2] {\n    color: var(--cui-dark);\n    margin-right: 12px;\n    border-radius: 12px;\n    height: 30px;\n    width: 30px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n.cui-sidebar-header[data-v-4d5927a2] {\n    display: flex;\n    align-items: center;\n}\n";
+var css_248z$1 = "\n.cui-side-bar-main[data-v-756432e8] {\n    background: white;\n    position: fixed;\n    height: calc(100vh - var(--7b18889d));\n    width: var(--4f893722);\n    margin-top: var(--30e8b823);\n    z-index: 100;\n    border-radius: 15px;\n    box-shadow: rgb(0 0 0 / 20%) 0px 0px 20px 4px;\n    transition: all ease 0.5s;\n    top: 0;\n}\n.cui-side-bar-main.right[data-v-756432e8] {\n    right: 0;\n    margin-right: -15px;\n    padding-left: 5px;\n}\n.cui-side-bar-main.right.collapsed[data-v-756432e8] {\n    right: calc(0px - var(--4f893722));\n}\n.cui-side-bar-main.left[data-v-756432e8] {\n    left: 0;\n    margin-left: -15px;\n    padding-left: 20px;\n}\n.cui-side-bar-main.left.collapsed[data-v-756432e8] {\n    left: calc(-10px - var(--4f893722));\n}\n.cui-side-bar-label-box[data-v-756432e8] {\n    background: white;\n    position: absolute;\n    border-radius: 15px;\n    display: flex;\n    align-items: center;\n    transition: all ease 0.5s;\n}\n.cui-side-bar-label-box.right[data-v-756432e8] {\n    left: -80px;\n}\n.cui-side-bar-label-box.right.open[data-v-756432e8] {\n    opacity: 0;\n    left: var(--4f893722);\n    z-index: -1;\n}\n.cui-side-bar-label-box.left[data-v-756432e8] {\n    right: -80px;\n}\n.cui-side-bar-label-box.left.open[data-v-756432e8] {\n    opacity: 0;\n    right: var(--4f893722);\n    z-index: -1;\n}\n.item-icon[data-v-756432e8] {\n    color: var(--cui-dark);\n    margin-right: 12px;\n    border-radius: 12px;\n    height: 30px;\n    width: 30px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n.cui-sidebar-header[data-v-756432e8] {\n    display: flex;\n    align-items: center;\n}\n";
 styleInject(css_248z$1);
 
 script$1.render = render$1;
-script$1.__scopeId = "data-v-4d5927a2";
+script$1.__scopeId = "data-v-756432e8";
 
 /* eslint-disable import/prefer-default-export */
 

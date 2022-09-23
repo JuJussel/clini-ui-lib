@@ -113,7 +113,7 @@ export default defineComponent({
 
 <template>
     <div id="app" style="position: relative">
-        <cui-side-bar position="right">
+        <cui-side-bar position="right" noButton ref="sideBar">
             <div>Test</div>
         </cui-side-bar>
 
@@ -137,7 +137,10 @@ export default defineComponent({
                 <cui-avatar
                     :image="'https://localhost/files/user4.png?1'"
                 ></cui-avatar>
-                <cui-menu-bar-item icon="fas fa-sign-out-alt" />
+                <cui-menu-bar-item
+                    icon="fas fa-sign-out-alt"
+                    @click="$refs.sideBar.toggle()"
+                />
             </template>
         </cui-menu-bar>
         <cui-badge visible>
