@@ -11,6 +11,28 @@ export default defineComponent({
     data() {
         CuiAvatar;
         return {
+            treeNodes: [
+                { name: 'Gandalf' },
+                {
+                    name: 'Thranduil',
+                    children: [
+                        { name: 'Legolas' },
+                        { name: 'Legolas' }
+                    ]
+                },
+                {
+                    name: 'Groin son of Farin',
+                    children: [
+                        {
+                            name: 'Gloin son of Groin',
+                            children: [
+                                { name: 'Gimli son of Gloin' }
+                            ]
+                        }
+                    ]
+                }
+            ],
+
             editorMenuItems: [
                 {
                     icon: "fas fa-redo-alt",
@@ -146,6 +168,12 @@ export default defineComponent({
         <cui-badge visible>
             <i class="fas fa-bell"></i>
         </cui-badge>
+
+
+        <cui-tree :nodes="treeNodes">
+        </cui-tree>
+
+
         <cui-button-group v-model="activeMenu">
             <cui-button-group-item
                 icon="fas fa-sign-out-alt"
