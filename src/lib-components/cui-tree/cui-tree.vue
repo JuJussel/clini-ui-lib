@@ -1,11 +1,17 @@
 <template>
     <ul class="tree">
-        <li v-for="(node,index) of nodes" :key="index" class="cui-tree-node">
-            <i class="fa-regular fa-folder" style="margin-right: 5px"></i>
-            <span class="name">{{ node.name }}</span>
+        <li v-for="(node,index) of localNode" :key="index" class="cui-tree-node">
+            <span @click="handleClick(node, index)">
+                <i v-if="node.children && node.expanded" class="fa-regular fa-folder-open" style="width: 24px"></i>
+                <i v-else-if="node.children" class="fa-regular fa-folder" style="width: 24px"></i>
+                <i v-else class="fa-regular fa-file" style="width: 24px"></i>
+                <span class="name">{{ node.name }}</span>
+            </span>
             <cui-tree
                 v-if="node.children"
                 :nodes="node.children"
+                class="child-nodes"
+                v-bind:class="{closed: !node.expanded}"
             />
         </li>
     </ul>
@@ -18,19 +24,39 @@ export default {
         nodes: {
             type: Array,
             default: []
+        },
+        showFoldersOnly: {
+            type: Boolean,
+            default: false
         }
     },
-    computed: {
-        localNode() {
-            let localNodeObj = {
-                expanded: false,
-                selected: false,
-                disabled: false
-            };
-            this.nodes.forEach(i => {
-                i = Object.assign(i, localNodeObj)
-            });
-            return this.nodes
+    data() {
+        return {
+            localNode: null
+        }
+    },
+    created() {
+        let localNodeObj = {
+            expanded: false,
+            selected: false,
+            disabled: false
+        };
+        this.localNode = JSON.parse(JSON.stringify(this.nodes))
+        if (this.showFoldersOnly) this.localNode = this.localNode.filter(i => i.children)
+        this.localNode.forEach(i => {
+            i = Object.assign(i, localNodeObj)
+        });
+
+    },
+    methods: {
+        handleClick(node, index) {
+            if(node.children) {
+                node.expanded = !node.expanded
+            }
+            else {
+
+            }
+
         }
     }
 }
@@ -39,6 +65,10 @@ export default {
 <style scoped>
 
 /* original idea http://www.bootply.com/phf8mnMtpe */
+
+.tree {
+    padding-inline-start: 28px
+}
 
 .tree li {
     list-style-type:none;
@@ -65,13 +95,20 @@ export default {
     top:20px;
     width:20px
 }
-.tree li.parent_li>span {
-    cursor:pointer
-}
-.tree>ul>li::before, .tree>ul>li::after {
-    border:0
-}
 .tree li:last-child::before {
     height:20px
 }
+
+.cui-tree-node>span {
+    cursor: pointer
+}
+
+.cui-tree-node>span:hover {
+    font-weight: bold
+}
+
+.child-nodes.closed {
+    display: none
+}
+
 </style>

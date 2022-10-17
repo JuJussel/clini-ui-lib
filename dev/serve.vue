@@ -12,16 +12,15 @@ export default defineComponent({
         CuiAvatar;
         return {
             treeNodes: [
-                { name: 'Gandalf' },
                 {
-                    name: 'Thranduil',
+                    name: 'Images',
                     children: [
                         { name: 'Legolas' },
                         { name: 'Legolas' }
                     ]
                 },
                 {
-                    name: 'Groin son of Farin',
+                    name: 'Documents',
                     children: [
                         {
                             name: 'Gloin son of Groin',
@@ -170,7 +169,7 @@ export default defineComponent({
         </cui-badge>
 
 
-        <cui-tree :nodes="treeNodes">
+        <cui-tree :nodes="treeNodes" style="width: 400px">
         </cui-tree>
 
 
