@@ -13,23 +13,23 @@ export default defineComponent({
         return {
             treeNodes: [
                 {
-                    name: 'Images',
-                    children: [
-                        { name: 'Legolas' },
-                        { name: 'Legolas' }
-                    ]
+                    name: "Images",
+                    icon: "fa-solid fa-plane-lock",
+                    children: [{ name: "Legolas" }, { name: "Legolas" }],
                 },
                 {
-                    name: 'Documents',
+                    name: "Documents",
                     children: [
                         {
-                            name: 'Gloin son of Groin',
-                            children: [
-                                { name: 'Gimli son of Gloin' }
-                            ]
-                        }
-                    ]
-                }
+                            name: "Gloin son of Groin",
+                            children: [{ name: "Gimli son of Gloin" }],
+                        },
+                        {
+                            name: "Gloin son of Groin",
+                            children: [{ name: "Gimli son of Gloin" }],
+                        },
+                    ],
+                },
             ],
 
             editorMenuItems: [
@@ -168,10 +168,12 @@ export default defineComponent({
             <i class="fas fa-bell"></i>
         </cui-badge>
 
-
         <cui-tree :nodes="treeNodes" style="width: 400px">
+            <template v-slot:title
+                ><i class="fa-solid fa-door-closed"></i>
+                Title
+            </template>
         </cui-tree>
-
 
         <cui-button-group v-model="activeMenu">
             <cui-button-group-item
