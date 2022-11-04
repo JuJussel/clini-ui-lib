@@ -30,11 +30,17 @@
                     ></i>
                 </span>
                 <span class="name">{{ node.name }}</span>
+                <span>
+                    <i class="fa-solid fa-plus action-icon"></i>
+                    <i class="fa-solid fa-pen-to-square action-icon"></i>
+                    <i class="fa-solid fa-trash-can action-icon"></i>
+                </span>
             </span>
             <cui-tree
                 v-if="node.children"
                 :nodes="node.children"
                 class="child-nodes"
+                @select="triggerEmit"
                 v-bind:class="{ closed: !node.expanded }"
             />
         </li>
@@ -54,6 +60,9 @@ export default {
             default: false,
         },
     },
+    emits: [
+       'select'
+    ],
     data() {
         return {
             localNode: null,
@@ -80,9 +89,12 @@ export default {
         handleClick(node, index) {
             if (node.children) {
                 node.expanded = !node.expanded;
-            } else {
             }
+            this.triggerEmit(node, index)
         },
+        triggerEmit(node, index) {
+            this.$emit('select', node, index)
+        }
     },
 };
 </script>
@@ -124,6 +136,8 @@ export default {
     height: 20px;
 }
 
+.cui-tree-node:hover > 
+
 .cui-tree-node > span {
     cursor: pointer;
     transition: all ease 0.1s;
@@ -146,5 +160,13 @@ export default {
 
 .child-nodes.closed > .cui-tree-node {
     transform: scaleY(0);
+}
+.action-icon {
+    opacity: 0;
+    margin: 0 5px 0 5px
+}
+
+.action-icon:hover {
+    transform: scale3d(1.2, 1.2, 1.2)
 }
 </style>

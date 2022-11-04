@@ -100,6 +100,10 @@ export default defineComponent({
         };
     },
     methods: {
+        treeClick(item, index) {
+            console.log(item);
+            console.log(index);
+        },
         disabledFunct(row) {
             console.log(row);
             return true;
@@ -168,7 +172,7 @@ export default defineComponent({
             <i class="fas fa-bell"></i>
         </cui-badge>
 
-        <cui-tree :nodes="treeNodes" style="width: 400px">
+        <cui-tree :nodes="treeNodes" style="width: 400px" @select="treeClick">
             <template v-slot:title
                 ><i class="fa-solid fa-door-closed"></i>
                 Title
