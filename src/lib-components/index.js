@@ -21,8 +21,6 @@ export { default as CuiAvatar } from './cui-avatar/cui-avatar.vue';
 export { default as CuiTooltip } from './cui-tooltip/cui-tooltip.vue';
 export { default as CuiFileUpload } from './cui-file-upload/cui-file-upload.vue';
 export { default as CuiEditor } from './cui-editor/cui-editor.vue';
-export { default as CuiMenuBarSolid } from './cui-menu-bar-solid/cui-menu-bar-solid.vue';
-export { default as CuiMenuBarItemSolid } from './cui-menu-bar-solid/cui-menu-bar-solid-item.vue';
 export { default as CuiBadge } from './cui-badge/cui-badge.vue';
 export { default as CuiSideBar } from './cui-side-bar/cui-side-bar.vue';
 export { default as CuiTree } from './cui-tree/cui-tree.vue';

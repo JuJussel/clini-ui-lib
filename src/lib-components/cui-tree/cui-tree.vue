@@ -136,7 +136,6 @@ export default {
     height: 20px;
 }
 
-.cui-tree-node:hover > 
 
 .cui-tree-node > span {
     cursor: pointer;
