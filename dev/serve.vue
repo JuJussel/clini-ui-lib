@@ -11,6 +11,7 @@ export default defineComponent({
     data() {
         CuiAvatar;
         return {
+            textareaval: "ee",
             treeNodes: [
                 {
                     name: "Images",
@@ -101,18 +102,14 @@ export default defineComponent({
     },
     methods: {
         treeClick(item, index) {
-            console.log(item);
-            console.log(index);
         },
         disabledFunct(row) {
-            console.log(row);
             return true;
         },
         handleClose() {
             this.visible = false;
         },
         changeMenu(value) {
-            console.log(value);
             this.menu = value;
         },
         search() {
@@ -241,7 +238,8 @@ export default defineComponent({
                     </cui-tooltip>
                 </template>
                 <div>
-                    <cui-textarea></cui-textarea>
+                    {{ textareaval }}
+                    <cui-textarea v-model="textareaval"></cui-textarea>
                     <cui-switch
                         v-model="switch"
                         trueLabel="Yes"
@@ -260,7 +258,6 @@ export default defineComponent({
                     <cui-radio label="3" value="3" v-model="radio" />
                     <cui-button
                         label="3333"
-                        @click="console.log('click')"
                         disabled
                     ></cui-button>
                     <cui-datepicker

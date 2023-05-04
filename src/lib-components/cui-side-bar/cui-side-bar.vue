@@ -78,7 +78,6 @@ export default {
         marginBottom() {
             let px = this.marginTop.slice(0, this.marginTop.length - 2);
             px = parseInt(px, 10) + 10;
-            console.log(px);
             return px + "px";
         },
     },

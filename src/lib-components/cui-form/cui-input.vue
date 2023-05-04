@@ -77,7 +77,6 @@ export default {
     emits: ["update:modelValue"],
     methods: {
         changeValue(value) {
-            console.log(value);
             this.noteDisplay = "";
             this.$emit("update:modelValue", value);
         },
