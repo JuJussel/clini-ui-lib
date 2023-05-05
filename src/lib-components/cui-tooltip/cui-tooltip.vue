@@ -1,5 +1,5 @@
 <template>
-    <div ref="parent" @click.stop="toggleTooltip">
+    <div ref="parent" @mouseover="handleMouseover" @mouseleave="handleMouseleave" @click.stop="handleClick">
         <slot></slot>
     </div>
     <div ref="tooltip" class="tooltip-cont" v-bind:class="{visible: isVisible}">
@@ -10,6 +10,7 @@
 
 <script>
 
+import { thisExpression } from '@babel/types'
 import { createPopper } from '@popperjs/core'
 
 export default {
@@ -17,6 +18,10 @@ export default {
     props: {
         position: {
             default: 'bottom'
+        },
+        onHover: {
+            type: Boolean,
+            default: false
         }
     },
     mounted() {
@@ -25,11 +30,22 @@ export default {
 
     data() {
         return {
-            isVisible: false
+            isVisible: false,
+            isFixed: false
         }
-    },
+    }, 
     methods: {
-        toggleTooltip() {
+        handleMouseover() {
+            this.onHover ? this.showTooltip() : false
+        },
+        handleMouseleave() {
+            this.onHover && !this.isFixed ? this.isVisible = false : false
+        },
+        handleClick() {
+            this.isFixed = true
+            this.showTooltip()
+        },
+        showTooltip() {
             this.isVisible = true
             const parent = this.$refs.parent
             const tooltip = this.$refs.tooltip
@@ -47,6 +63,7 @@ export default {
         },
         handleOutsideClick(event) {
             if (this.isVisible) {
+                this.isFixed = false
                 const target = event?.target?.classList[0]
                 if (
                     target !== 'tooltip-cont'

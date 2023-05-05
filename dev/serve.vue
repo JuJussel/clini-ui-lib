@@ -235,8 +235,8 @@ export default defineComponent({
             <cui-card>
                 <template v-slot:header>
                     <h2>患者一覧</h2>
-                    <cui-tooltip position="bottom">
-                        <a>Test</a>
+                    <cui-tooltip position="bottom" onHover>
+                        <a>TOOLTIP</a>
                         <template #tooltip>ABC</template>
                     </cui-tooltip>
                 </template>
