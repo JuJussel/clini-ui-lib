@@ -8,7 +8,7 @@
             <textarea
                 class="cui-textarea"
                 v-bind:class="{ disabled, darker }"
-                v-bind="modelValue"
+                v-bind:value="modelValue"
                 @input="changeValue"
                 :disabled="disabled"
                 clearable
