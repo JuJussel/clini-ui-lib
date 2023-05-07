@@ -232,7 +232,7 @@ export default defineComponent({
             <cui-card>
                 <template v-slot:header>
                     <h2>患者一覧</h2>
-                    <cui-tooltip position="bottom" onHover>
+                    <cui-tooltip position="bottom" hoverTrigger>
                         <a>TOOLTIP</a>
                         <template #tooltip>ABC</template>
                     </cui-tooltip>

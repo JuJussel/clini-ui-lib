@@ -1,16 +1,17 @@
 <template>
-    <div ref="parent" @mouseover="handleMouseover" @mouseleave="handleMouseleave" @click.stop="handleClick">
-        <slot></slot>
-    </div>
-    <div ref="tooltip" class="tooltip-cont" v-bind:class="{visible: isVisible}">
-        <slot name="tooltip"></slot>
-        <!-- <div class="arrow" :class="position"></div> -->
-    </div>
+    <span>
+        <div ref="parent" @mouseover="handleMouseover" @mouseleave="handleMouseleave" @click.stop="handleClick">
+            <slot></slot>
+        </div>
+        <div ref="tooltip" class="tooltip-cont" v-bind:class="{visible: isVisible}">
+            <slot name="tooltip"></slot>
+            <!-- <div class="arrow" :class="position"></div> -->
+        </div>
+    </span>
 </template>
 
 <script>
 
-import { thisExpression } from '@babel/types'
 import { createPopper } from '@popperjs/core'
 
 export default {
@@ -19,7 +20,7 @@ export default {
         position: {
             default: 'bottom'
         },
-        onHover: {
+        hoverTrigger: {
             type: Boolean,
             default: false
         }
@@ -36,10 +37,10 @@ export default {
     }, 
     methods: {
         handleMouseover() {
-            this.onHover ? this.showTooltip() : false
+            this.hoverTrigger ? this.showTooltip() : false
         },
         handleMouseleave() {
-            this.onHover && !this.isFixed ? this.isVisible = false : false
+            this.hoverTrigger && !this.isFixed ? this.isVisible = false : false
         },
         handleClick() {
             this.isFixed = true
