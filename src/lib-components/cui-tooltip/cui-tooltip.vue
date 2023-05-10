@@ -13,6 +13,7 @@
 <script>
 
 import { createPopper } from '@popperjs/core'
+import { registerRuntimeCompiler } from 'vue'
 
 export default {
     name: 'CuiTooltip',
@@ -20,9 +21,13 @@ export default {
         position: {
             default: 'bottom'
         },
-        hoverTrigger: {
+        onHover: {
             type: Boolean,
             default: false
+        },
+        hoverDelay: {
+            type: Number,
+            default: 0
         }
     },
     mounted() {
@@ -37,10 +42,11 @@ export default {
     }, 
     methods: {
         handleMouseover() {
-            this.hoverTrigger ? this.showTooltip() : false
+            if (!this.onHover) return
+            setTimeout(() => { this.showTooltip() }, this.hoverDelay)
         },
         handleMouseleave() {
-            this.hoverTrigger && !this.isFixed ? this.isVisible = false : false
+            this.onHover && !this.isFixed ? this.isVisible = false : false
         },
         handleClick() {
             this.isFixed = true

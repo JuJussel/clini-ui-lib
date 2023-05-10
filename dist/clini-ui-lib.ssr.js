@@ -513,7 +513,6 @@ styleInject(css_248z$q);script$m.render = render$n;var script$l = {
   emits: ["update:modelValue"],
   methods: {
     changeValue: function changeValue(value) {
-      console.log(value);
       this.noteDisplay = "";
       this.$emit("update:modelValue", value);
     }
@@ -581,9 +580,9 @@ function render$m(_ctx, _cache, $props, $setup, $data, $options) {
     key: 1,
     class: vue.normalizeClass($props.icon + ' cui-input-icon')
   }, null, 2)) : vue.createCommentVNode("", true)]), !$props.noNote ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_7$3, [vue.createElementVNode("span", null, vue.toDisplayString($data.noteDisplay), 1)])) : vue.createCommentVNode("", true)]);
-}var css_248z$p = "\n.cui-input-label[data-v-bb7869b4] {\n    font-size: 14px;\n    margin-left: 10px;\n}\n.cui-input[data-v-bb7869b4] {\n    background: var(--cui-gray-0);\n    border: none;\n    border-radius: 12px;\n    height: 26px;\n    padding: 5px 10px;\n    transition: all 0.2s ease;\n}\n.cui-input.darker[data-v-bb7869b4] {\n    background: var(--cui-gray-3);\n}\n.cui-input.disabled[data-v-bb7869b4] {\n    color: var(--cui-gray-3);\n}\n.cui-input[data-v-bb7869b4]:focus {\n    outline: none;\n    padding-left: 13px;\n    padding-right: 7px;\n    background: var(--cui-gray-1);\n}\n.cui-input.darker[data-v-bb7869b4]:focus {\n    background: var(--cui-gray-4);\n}\n.cui-input.darker[data-v-bb7869b4]:hover {\n    background: var(--cui-gray-4);\n}\n.cui-input-note[data-v-bb7869b4] {\n    font-size: 12px;\n    margin-left: 10px;\n    color: var(--cui-danger);\n    height: 15px;\n    line-height: 12px;\n}\n.cui-input-icon[data-v-bb7869b4] {\n    position: absolute;\n    left: 0;\n    background: var(--cui-gray-0);\n    border-radius: 12px;\n    padding: 10px;\n    transition: all 0.2s ease;\n}\n.has-icon[data-v-bb7869b4] {\n    text-indent: 28px;\n}\n.cui-input:focus + .cui-input-icon[data-v-bb7869b4] {\n    margin: -3px;\n    box-shadow: 0 10px 20px -10px var(--cui-dark);\n    background: white;\n}\n.cui-input-append[data-v-bb7869b4] {\n    position: absolute;\n    right: 0;\n    height: 34px;\n    background: white;\n    border-radius: 12px;\n    line-height: 34px;\n    padding: 0 10px;\n    border: solid 1px var(--cui-gray-1);\n    font-size: 14px;\n}\n";
+}var css_248z$p = "\n.cui-input-label[data-v-576c13f8] {\n    font-size: 14px;\n    margin-left: 10px;\n}\n.cui-input[data-v-576c13f8] {\n    background: var(--cui-gray-0);\n    border: none;\n    border-radius: 12px;\n    height: 26px;\n    padding: 5px 10px;\n    transition: all 0.2s ease;\n}\n.cui-input.darker[data-v-576c13f8] {\n    background: var(--cui-gray-3);\n}\n.cui-input.disabled[data-v-576c13f8] {\n    color: var(--cui-gray-3);\n}\n.cui-input[data-v-576c13f8]:focus {\n    outline: none;\n    padding-left: 13px;\n    padding-right: 7px;\n    background: var(--cui-gray-1);\n}\n.cui-input.darker[data-v-576c13f8]:focus {\n    background: var(--cui-gray-4);\n}\n.cui-input.darker[data-v-576c13f8]:hover {\n    background: var(--cui-gray-4);\n}\n.cui-input-note[data-v-576c13f8] {\n    font-size: 12px;\n    margin-left: 10px;\n    color: var(--cui-danger);\n    height: 15px;\n    line-height: 12px;\n}\n.cui-input-icon[data-v-576c13f8] {\n    position: absolute;\n    left: 0;\n    background: var(--cui-gray-0);\n    border-radius: 12px;\n    padding: 10px;\n    transition: all 0.2s ease;\n}\n.has-icon[data-v-576c13f8] {\n    text-indent: 28px;\n}\n.cui-input:focus + .cui-input-icon[data-v-576c13f8] {\n    margin: -3px;\n    box-shadow: 0 10px 20px -10px var(--cui-dark);\n    background: white;\n}\n.cui-input-append[data-v-576c13f8] {\n    position: absolute;\n    right: 0;\n    height: 34px;\n    background: white;\n    border-radius: 12px;\n    line-height: 34px;\n    padding: 0 10px;\n    border: solid 1px var(--cui-gray-1);\n    font-size: 14px;\n}\n";
 styleInject(css_248z$p);script$l.render = render$m;
-script$l.__scopeId = "data-v-bb7869b4";var script$k = {
+script$l.__scopeId = "data-v-576c13f8";var script$k = {
   name: "CuiTextarea",
   props: {
     modelValue: {
@@ -664,18 +663,18 @@ var _hoisted_4$8 = {
     "position": "relative"
   }
 };
-var _hoisted_5$4 = ["disabled", "placeholder", "rows", "cols"];
+var _hoisted_5$4 = ["value", "disabled", "placeholder", "rows", "cols"];
 var _hoisted_6$4 = {
   key: 1,
   class: "cui-textarea-note"
 };
 function render$l(_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createElementBlock("div", null, [$props.label ? (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$h, [vue.createElementVNode("span", _hoisted_2$e, vue.toDisplayString($props.label), 1), $props.required ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_3$a, vue.toDisplayString($data.trans.required), 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), vue.createElementVNode("div", _hoisted_4$8, [vue.createElementVNode("textarea", vue.mergeProps({
-    class: ["cui-textarea", {
+  return vue.openBlock(), vue.createElementBlock("div", null, [$props.label ? (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$h, [vue.createElementVNode("span", _hoisted_2$e, vue.toDisplayString($props.label), 1), $props.required ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_3$a, vue.toDisplayString($data.trans.required), 1)) : vue.createCommentVNode("", true)])) : vue.createCommentVNode("", true), vue.createElementVNode("div", _hoisted_4$8, [vue.createElementVNode("textarea", {
+    class: vue.normalizeClass(["cui-textarea", {
       disabled: $props.disabled,
       darker: $props.darker
-    }]
-  }, $props.modelValue, {
+    }]),
+    value: $props.modelValue,
     onInput: _cache[0] || (_cache[0] = function () {
       return $options.changeValue && $options.changeValue.apply($options, arguments);
     }),
@@ -684,10 +683,10 @@ function render$l(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: $props.placeholder,
     rows: $props.rows,
     cols: $props.cols
-  }), null, 16, _hoisted_5$4)]), !$props.noNote ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_6$4, [vue.createElementVNode("span", null, vue.toDisplayString($data.noteDisplay), 1)])) : vue.createCommentVNode("", true)]);
-}var css_248z$o = "\n.cui-textarea-label[data-v-5d77f976] {\n    font-size: 14px;\n    margin-left: 10px;\n}\n.cui-textarea[data-v-5d77f976] {\n    background: var(--cui-gray-0);\n    border: none;\n    border-radius: 12px;\n    padding: 5px 10px;\n    transition: all 0.2s ease;\n}\n.cui-textarea.darker[data-v-5d77f976] {\n    background: var(--cui-gray-3);\n}\n.cui-textarea.disabled[data-v-5d77f976] {\n    color: var(--cui-gray-3);\n}\n.cui-textarea[data-v-5d77f976]:focus {\n    outline: none;\n    padding-left: 13px;\n    padding-right: 7px;\n    background: var(--cui-gray-1);\n}\n.cui-textarea.darker[data-v-5d77f976]:focus {\n    background: var(--cui-gray-4);\n}\n.cui-textarea.darker[data-v-5d77f976]:hover {\n    background: var(--cui-gray-4);\n}\n.cui-textarea-note[data-v-5d77f976] {\n    font-size: 12px;\n    margin-left: 10px;\n    color: var(--cui-danger);\n    height: 15px;\n    line-height: 12px;\n}\n";
+  }, null, 42, _hoisted_5$4)]), !$props.noNote ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_6$4, [vue.createElementVNode("span", null, vue.toDisplayString($data.noteDisplay), 1)])) : vue.createCommentVNode("", true)]);
+}var css_248z$o = "\n.cui-textarea-label[data-v-6cd5576d] {\n    font-size: 14px;\n    margin-left: 10px;\n}\n.cui-textarea[data-v-6cd5576d] {\n    background: var(--cui-gray-0);\n    border: none;\n    border-radius: 12px;\n    padding: 5px 10px;\n    transition: all 0.2s ease;\n}\n.cui-textarea.darker[data-v-6cd5576d] {\n    background: var(--cui-gray-3);\n}\n.cui-textarea.disabled[data-v-6cd5576d] {\n    color: var(--cui-gray-3);\n}\n.cui-textarea[data-v-6cd5576d]:focus {\n    outline: none;\n    padding-left: 13px;\n    padding-right: 7px;\n    background: var(--cui-gray-1);\n}\n.cui-textarea.darker[data-v-6cd5576d]:focus {\n    background: var(--cui-gray-4);\n}\n.cui-textarea.darker[data-v-6cd5576d]:hover {\n    background: var(--cui-gray-4);\n}\n.cui-textarea-note[data-v-6cd5576d] {\n    font-size: 12px;\n    margin-left: 10px;\n    color: var(--cui-danger);\n    height: 15px;\n    line-height: 12px;\n}\n";
 styleInject(css_248z$o);script$k.render = render$l;
-script$k.__scopeId = "data-v-5d77f976";var script$j = {
+script$k.__scopeId = "data-v-6cd5576d";var script$j = {
   name: "CuiCheckbox",
   props: {
     modelValue: {
@@ -7360,6 +7359,14 @@ script$9.__scopeId = "data-v-2d42819a";var script$8 = {
   props: {
     position: {
       default: 'bottom'
+    },
+    onHover: {
+      type: Boolean,
+      default: false
+    },
+    hoverDelay: {
+      type: Number,
+      default: 0
     }
   },
   mounted: function mounted() {
@@ -7367,11 +7374,26 @@ script$9.__scopeId = "data-v-2d42819a";var script$8 = {
   },
   data: function data() {
     return {
-      isVisible: false
+      isVisible: false,
+      isFixed: false
     };
   },
   methods: {
-    toggleTooltip: function toggleTooltip() {
+    handleMouseover: function handleMouseover() {
+      var _this = this;
+      if (!this.onHover) return;
+      setTimeout(function () {
+        _this.showTooltip();
+      }, this.hoverDelay);
+    },
+    handleMouseleave: function handleMouseleave() {
+      this.onHover && !this.isFixed ? this.isVisible = false : false;
+    },
+    handleClick: function handleClick() {
+      this.isFixed = true;
+      this.showTooltip();
+    },
+    showTooltip: function showTooltip() {
       this.isVisible = true;
       var parent = this.$refs.parent;
       var tooltip = this.$refs.tooltip;
@@ -7390,6 +7412,7 @@ script$9.__scopeId = "data-v-2d42819a";var script$8 = {
     handleOutsideClick: function handleOutsideClick(event) {
       if (this.isVisible) {
         var _event$target;
+        this.isFixed = false;
         var target = event === null || event === void 0 ? void 0 : (_event$target = event.target) === null || _event$target === void 0 ? void 0 : _event$target.classList[0];
         if (target !== 'tooltip-cont') {
           this.isVisible = false;
@@ -7398,20 +7421,26 @@ script$9.__scopeId = "data-v-2d42819a";var script$8 = {
     }
   }
 };function render$9(_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [vue.createElementVNode("div", {
+  return vue.openBlock(), vue.createElementBlock("span", null, [vue.createElementVNode("div", {
     ref: "parent",
-    onClick: _cache[0] || (_cache[0] = vue.withModifiers(function () {
-      return $options.toggleTooltip && $options.toggleTooltip.apply($options, arguments);
+    onMouseover: _cache[0] || (_cache[0] = function () {
+      return $options.handleMouseover && $options.handleMouseover.apply($options, arguments);
+    }),
+    onMouseleave: _cache[1] || (_cache[1] = function () {
+      return $options.handleMouseleave && $options.handleMouseleave.apply($options, arguments);
+    }),
+    onClick: _cache[2] || (_cache[2] = vue.withModifiers(function () {
+      return $options.handleClick && $options.handleClick.apply($options, arguments);
     }, ["stop"]))
-  }, [vue.renderSlot(_ctx.$slots, "default")], 512), vue.createElementVNode("div", {
+  }, [vue.renderSlot(_ctx.$slots, "default")], 544), vue.createElementVNode("div", {
     ref: "tooltip",
     class: vue.normalizeClass(["tooltip-cont", {
       visible: $data.isVisible
     }])
-  }, [vue.renderSlot(_ctx.$slots, "tooltip")], 2)], 64);
-}var css_248z$8 = "\n.tooltip-cont[data-v-13c1a1de] {\n        display: none;\n        padding: 10px;\n        background: white;\n        border-radius: 20px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        z-index: 5\n}\n.visible[data-v-13c1a1de] {\n        display: block;\n}\n    /* .arrow,\n    .arrow::before {\n        position: absolute;\n        width: 8px;\n        height: 8px;\n        background: inherit;\n    }\n\n    .arrow {\n        visibility: hidden;\n    }\n\n    .arrow::before {\n        visibility: visible;\n        content: '';\n        transform: rotate(45deg);\n    }\n\n    .arrow.top {\n        bottom: -4px;\n        left: calc(50% - 4px);\n    }\n\n    .arrow.bottom {\n        top: -4px;\n        left: calc(50% - 4px);\n    }\n\n    .arrow.left {\n        right: -4px;\n        top: calc(50% - 4px);\n    }\n\n    .arrow.right {\n        left: -4px;\n        top: calc(50% - 4px);\n    } */\n\n";
+  }, [vue.renderSlot(_ctx.$slots, "tooltip")], 2)]);
+}var css_248z$8 = "\n.tooltip-cont[data-v-e1feeefe] {\n        display: none;\n        padding: 10px;\n        background: white;\n        border-radius: 20px;\n        box-shadow: 0 2px 12px 0 rgb(0 0 0 / 30%);\n        z-index: 5\n}\n.visible[data-v-e1feeefe] {\n        display: block;\n}\n    /* .arrow,\n    .arrow::before {\n        position: absolute;\n        width: 8px;\n        height: 8px;\n        background: inherit;\n    }\n\n    .arrow {\n        visibility: hidden;\n    }\n\n    .arrow::before {\n        visibility: visible;\n        content: '';\n        transform: rotate(45deg);\n    }\n\n    .arrow.top {\n        bottom: -4px;\n        left: calc(50% - 4px);\n    }\n\n    .arrow.bottom {\n        top: -4px;\n        left: calc(50% - 4px);\n    }\n\n    .arrow.left {\n        right: -4px;\n        top: calc(50% - 4px);\n    }\n\n    .arrow.right {\n        left: -4px;\n        top: calc(50% - 4px);\n    } */\n\n";
 styleInject(css_248z$8);script$8.render = render$9;
-script$8.__scopeId = "data-v-13c1a1de";var script$7 = {
+script$8.__scopeId = "data-v-e1feeefe";var script$7 = {
   components: {
     Table: script$d
   },
@@ -28553,7 +28582,6 @@ script$3.__scopeId = "data-v-163cac4e";var __default__ = {
     marginBottom: function marginBottom() {
       var px = this.marginTop.slice(0, this.marginTop.length - 2);
       px = parseInt(px, 10) + 10;
-      console.log(px);
       return px + "px";
     }
   },
@@ -28566,9 +28594,9 @@ script$3.__scopeId = "data-v-163cac4e";var __default__ = {
 var __injectCSSVars__ = function __injectCSSVars__() {
   vue.useCssVars(function (_ctx) {
     return {
-      "7b18889d": _ctx.marginBottom,
-      "4f893722": _ctx.width,
-      "30e8b823": _ctx.marginTop
+      "c1670bb8": _ctx.marginBottom,
+      "579e410a": _ctx.width,
+      "4e628bfc": _ctx.marginTop
     };
   });
 };
@@ -28618,9 +28646,9 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
       return $data.isCollapsed = !$data.isCollapsed;
     })
   }, null, 8, ["icon"]), vue.createElementVNode("h2", null, vue.toDisplayString($props.sidebar), 1)])), vue.renderSlot(_ctx.$slots, "default")], 2);
-}var css_248z$2 = "\n.cui-side-bar-main[data-v-756432e8] {\n    background: white;\n    position: fixed;\n    height: calc(100vh - var(--7b18889d));\n    width: var(--4f893722);\n    margin-top: var(--30e8b823);\n    z-index: 100;\n    border-radius: 15px;\n    box-shadow: rgb(0 0 0 / 20%) 0px 0px 20px 4px;\n    transition: all ease 0.5s;\n    top: 0;\n}\n.cui-side-bar-main.right[data-v-756432e8] {\n    right: 0;\n    margin-right: -15px;\n    padding-left: 5px;\n}\n.cui-side-bar-main.right.collapsed[data-v-756432e8] {\n    right: calc(0px - var(--4f893722));\n}\n.cui-side-bar-main.left[data-v-756432e8] {\n    left: 0;\n    margin-left: -15px;\n    padding-left: 20px;\n}\n.cui-side-bar-main.left.collapsed[data-v-756432e8] {\n    left: calc(-10px - var(--4f893722));\n}\n.cui-side-bar-label-box[data-v-756432e8] {\n    background: white;\n    position: absolute;\n    border-radius: 15px;\n    display: flex;\n    align-items: center;\n    transition: all ease 0.5s;\n}\n.cui-side-bar-label-box.right[data-v-756432e8] {\n    left: -80px;\n}\n.cui-side-bar-label-box.right.open[data-v-756432e8] {\n    opacity: 0;\n    left: var(--4f893722);\n    z-index: -1;\n}\n.cui-side-bar-label-box.left[data-v-756432e8] {\n    right: -80px;\n}\n.cui-side-bar-label-box.left.open[data-v-756432e8] {\n    opacity: 0;\n    right: var(--4f893722);\n    z-index: -1;\n}\n.item-icon[data-v-756432e8] {\n    color: var(--cui-dark);\n    margin-right: 12px;\n    border-radius: 12px;\n    height: 30px;\n    width: 30px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n.cui-sidebar-header[data-v-756432e8] {\n    display: flex;\n    align-items: center;\n}\n";
+}var css_248z$2 = "\n.cui-side-bar-main[data-v-e5246e1e] {\n    background: white;\n    position: fixed;\n    height: calc(100vh - var(--c1670bb8));\n    width: var(--579e410a);\n    margin-top: var(--4e628bfc);\n    z-index: 100;\n    border-radius: 15px;\n    box-shadow: rgb(0 0 0 / 20%) 0px 0px 20px 4px;\n    transition: all ease 0.5s;\n    top: 0;\n}\n.cui-side-bar-main.right[data-v-e5246e1e] {\n    right: 0;\n    margin-right: -15px;\n    padding-left: 5px;\n}\n.cui-side-bar-main.right.collapsed[data-v-e5246e1e] {\n    right: calc(0px - var(--579e410a));\n}\n.cui-side-bar-main.left[data-v-e5246e1e] {\n    left: 0;\n    margin-left: -15px;\n    padding-left: 20px;\n}\n.cui-side-bar-main.left.collapsed[data-v-e5246e1e] {\n    left: calc(-10px - var(--579e410a));\n}\n.cui-side-bar-label-box[data-v-e5246e1e] {\n    background: white;\n    position: absolute;\n    border-radius: 15px;\n    display: flex;\n    align-items: center;\n    transition: all ease 0.5s;\n}\n.cui-side-bar-label-box.right[data-v-e5246e1e] {\n    left: -80px;\n}\n.cui-side-bar-label-box.right.open[data-v-e5246e1e] {\n    opacity: 0;\n    left: var(--579e410a);\n    z-index: -1;\n}\n.cui-side-bar-label-box.left[data-v-e5246e1e] {\n    right: -80px;\n}\n.cui-side-bar-label-box.left.open[data-v-e5246e1e] {\n    opacity: 0;\n    right: var(--579e410a);\n    z-index: -1;\n}\n.item-icon[data-v-e5246e1e] {\n    color: var(--cui-dark);\n    margin-right: 12px;\n    border-radius: 12px;\n    height: 30px;\n    width: 30px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n.cui-sidebar-header[data-v-e5246e1e] {\n    display: flex;\n    align-items: center;\n}\n";
 styleInject(css_248z$2);script$2.render = render$2;
-script$2.__scopeId = "data-v-756432e8";var script$1 = {
+script$2.__scopeId = "data-v-e5246e1e";var script$1 = {
   name: "CuiTree",
   props: {
     nodes: {
@@ -28668,7 +28696,7 @@ script$2.__scopeId = "data-v-756432e8";var script$1 = {
     }
   }
 };var _withScopeId = function _withScopeId(n) {
-  return vue.pushScopeId("data-v-1a24b5fa"), n = n(), vue.popScopeId(), n;
+  return vue.pushScopeId("data-v-3f4c4a28"), n = n(), vue.popScopeId(), n;
 };
 var _hoisted_1$1 = {
   class: "tree"
@@ -28743,9 +28771,9 @@ function render$1(_ctx, _cache, $props, $setup, $data, $options) {
       onSelect: $options.triggerEmit
     }, null, 8, ["nodes", "onSelect", "class"])) : vue.createCommentVNode("", true)]);
   }), 128))]);
-}var css_248z$1 = "\n/* original idea http://www.bootply.com/phf8mnMtpe */\n.tree[data-v-1a24b5fa] {\n    padding-inline-start: 28px;\n}\n.tree li[data-v-1a24b5fa] {\n    list-style-type: none;\n    margin: 0;\n    padding: 10px 5px 0 5px;\n    position: relative;\n}\n.tree li[data-v-1a24b5fa]::before,\n.tree li[data-v-1a24b5fa]::after {\n    content: \"\";\n    left: -20px;\n    position: absolute;\n    right: auto;\n}\n.tree li[data-v-1a24b5fa]::before {\n    border-left: 1px dashed #999;\n    bottom: 50px;\n    height: 100%;\n    top: 0;\n    width: 1px;\n}\n.tree li[data-v-1a24b5fa]::after {\n    border-top: 1px dashed #999;\n    height: 20px;\n    top: 20px;\n    width: 20px;\n}\n.tree li[data-v-1a24b5fa]:last-child::before {\n    height: 20px;\n}\n.cui-tree-node:hover > \n\n.cui-tree-node > span[data-v-1a24b5fa] {\n    cursor: pointer;\n    transition: all ease 0.1s;\n}\n.cui-tree-node > span[data-v-1a24b5fa]:hover {\n    font-weight: bold;\n    padding-left: 2px;\n}\n.child-nodes[data-v-1a24b5fa] {\n    opacity: 1;\n    transition: all ease 0.2s;\n}\n.child-nodes.closed[data-v-1a24b5fa] {\n    opacity: 0;\n    height: 0;\n}\n.child-nodes.closed > .cui-tree-node[data-v-1a24b5fa] {\n    transform: scaleY(0);\n}\n.action-icon[data-v-1a24b5fa] {\n    opacity: 0;\n    margin: 0 5px 0 5px\n}\n.action-icon[data-v-1a24b5fa]:hover {\n    transform: scale3d(1.2, 1.2, 1.2)\n}\n";
+}var css_248z$1 = "\n/* original idea http://www.bootply.com/phf8mnMtpe */\n.tree[data-v-3f4c4a28] {\n    padding-inline-start: 28px;\n}\n.tree li[data-v-3f4c4a28] {\n    list-style-type: none;\n    margin: 0;\n    padding: 10px 5px 0 5px;\n    position: relative;\n}\n.tree li[data-v-3f4c4a28]::before,\n.tree li[data-v-3f4c4a28]::after {\n    content: \"\";\n    left: -20px;\n    position: absolute;\n    right: auto;\n}\n.tree li[data-v-3f4c4a28]::before {\n    border-left: 1px dashed #999;\n    bottom: 50px;\n    height: 100%;\n    top: 0;\n    width: 1px;\n}\n.tree li[data-v-3f4c4a28]::after {\n    border-top: 1px dashed #999;\n    height: 20px;\n    top: 20px;\n    width: 20px;\n}\n.tree li[data-v-3f4c4a28]:last-child::before {\n    height: 20px;\n}\n.cui-tree-node > span[data-v-3f4c4a28] {\n    cursor: pointer;\n    transition: all ease 0.1s;\n}\n.cui-tree-node > span[data-v-3f4c4a28]:hover {\n    font-weight: bold;\n    padding-left: 2px;\n}\n.child-nodes[data-v-3f4c4a28] {\n    opacity: 1;\n    transition: all ease 0.2s;\n}\n.child-nodes.closed[data-v-3f4c4a28] {\n    opacity: 0;\n    height: 0;\n}\n.child-nodes.closed > .cui-tree-node[data-v-3f4c4a28] {\n    transform: scaleY(0);\n}\n.action-icon[data-v-3f4c4a28] {\n    opacity: 0;\n    margin: 0 5px 0 5px\n}\n.action-icon[data-v-3f4c4a28]:hover {\n    transform: scale3d(1.2, 1.2, 1.2)\n}\n";
 styleInject(css_248z$1);script$1.render = render$1;
-script$1.__scopeId = "data-v-1a24b5fa";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,CuiButton:script$s,CuiButtonGroup:script$r,CuiButtonGroupItem:script$q,CuiMenuBar:script$p,CuiMenuBarItem:script$o,CuiCard:script$n,CuiModal:script$m,CuiInput:script$l,CuiTextarea:script$k,CuiCheckbox:script$j,CuiSwitch:script$i,CuiSelect:script$h,CuiDatepicker:script$f,CuiRadio:script$e,CuiTable:script$d,CuiTh:script$c,CuiTr:script$b,CuiTag:script$a,CuiAvatar:script$9,CuiTooltip:script$8,CuiFileUpload:script$7,CuiEditor:script$4,CuiBadge:script$3,CuiSideBar:script$2,CuiTree:script$1});var script = {
+script$1.__scopeId = "data-v-3f4c4a28";/* eslint-disable import/prefer-default-export */var components$1=/*#__PURE__*/Object.freeze({__proto__:null,CuiButton:script$s,CuiButtonGroup:script$r,CuiButtonGroupItem:script$q,CuiMenuBar:script$p,CuiMenuBarItem:script$o,CuiCard:script$n,CuiModal:script$m,CuiInput:script$l,CuiTextarea:script$k,CuiCheckbox:script$j,CuiSwitch:script$i,CuiSelect:script$h,CuiDatepicker:script$f,CuiRadio:script$e,CuiTable:script$d,CuiTh:script$c,CuiTr:script$b,CuiTag:script$a,CuiAvatar:script$9,CuiTooltip:script$8,CuiFileUpload:script$7,CuiEditor:script$4,CuiBadge:script$3,CuiSideBar:script$2,CuiTree:script$1});var script = {
   name: 'CuiNotification',
   data: function data() {
     return {
