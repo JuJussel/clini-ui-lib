@@ -8,7 +8,7 @@
             :key="index"
             class="cui-tree-node"
         >
-            <span @click="handleClick(node, index)">
+            <span @click="handleClick(node, index)" style="display: flex">
                 <span v-if="node.icon">
                     <i :class="node.icon" style="width: 24px"></i>
                 </span>
@@ -29,11 +29,11 @@
                         style="width: 24px"
                     ></i>
                 </span>
-                <span class="name">{{ node.name }}</span>
-                <span>
-                    <i class="fa-solid fa-plus action-icon"></i>
-                    <i class="fa-solid fa-pen-to-square action-icon"></i>
-                    <i class="fa-solid fa-trash-can action-icon"></i>
+                <span class="name">
+                    <span v-if="$slots.item">
+                        <slot name="item" :item="Object.assign(node, {_index: index})" v-bind="node"></slot>
+                    </span>
+                    <span v-else>{{ node.name }}</span>
                 </span>
             </span>
             <cui-tree
@@ -42,7 +42,14 @@
                 class="child-nodes"
                 @select="triggerEmit"
                 v-bind:class="{ closed: !node.expanded }"
-            />
+            >
+                <template v-slot:item="item2">
+                    <span v-if="$slots.item">
+                        <slot name="item" :item="Object.assign(node, {_index: index})" v-bind="item2"></slot>
+                    </span>
+                    <span v-else>{{ item2.name }}</span>
+                </template>
+            </cui-tree>
         </li>
     </ul>
 </template>
@@ -160,12 +167,6 @@ export default {
 .child-nodes.closed > .cui-tree-node {
     transform: scaleY(0);
 }
-.action-icon {
-    opacity: 0;
-    margin: 0 5px 0 5px
-}
 
-.action-icon:hover {
-    transform: scale3d(1.2, 1.2, 1.2)
-}
 </style>
+

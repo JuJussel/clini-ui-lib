@@ -174,6 +174,12 @@ export default defineComponent({
                 ><i class="fa-solid fa-door-closed"></i>
                 Title
             </template>
+            <template v-slot:item="{ item }">
+                <sapn style="display: flex">
+                    <span>{{ item.name }}</span>
+                    <a label="test">ddd</a>
+                </sapn>
+            </template>
         </cui-tree>
 
         <cui-button-group v-model="activeMenu">
