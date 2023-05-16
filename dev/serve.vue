@@ -204,6 +204,7 @@ export default defineComponent({
         <cui-card style="height: 900px">
             <cui-table
                 outline
+                shaded
                 :data="tableData"
                 singleSelect
                 :loading="tableLoading"

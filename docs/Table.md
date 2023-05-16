@@ -66,6 +66,7 @@ Props:
 - loading: Set loading state
 - square: Will remove rounded corners
 - disabledFunct: Make row disabled for click. Function that returns true or falls. Takes current row as input.
+- shaded: Adds shadow around border
 
 Th properties:
 - sort: if set, sort by prop used.

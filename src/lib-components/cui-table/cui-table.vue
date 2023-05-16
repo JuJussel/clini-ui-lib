@@ -1,5 +1,5 @@
 <template>
-    <div class="cui-table" v-bind:class="{striped, select: singleSelect, square, outline}">
+    <div class="cui-table" v-bind:class="{striped, select: singleSelect, square, outline, shaded}">
         <div class="cui-table-header" v-if="$slots.header">
             <slot name="header"></slot>
         </div>
@@ -92,6 +92,10 @@ export default {
             type: Boolean
         },
         outline: {
+            default: false,
+            type: Boolean
+        },
+        shaded: {
             default: false,
             type: Boolean
         }
@@ -219,6 +223,10 @@ export default {
     .outline {
         border: solid 1px var(--cui-gray-2)
     }
+    .shaded {
+        box-shadow: rgb(0 0 0 / 10%) 0px 0px 5.5px
+    }
+
     .cui-table th,
     .cui-table td {
         text-align: left;
