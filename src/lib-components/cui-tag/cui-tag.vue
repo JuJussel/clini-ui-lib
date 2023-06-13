@@ -7,7 +7,7 @@
             warn: warn
         }"
         >
-        <slot></slot>
+        {{ label }}
     </span>
 </template>
 
@@ -15,6 +15,9 @@
 export default {
     name: "CuiTag",
     props: {
+        label: {
+            default: ""
+        },
         danger: {
             default: false,
             type: Boolean

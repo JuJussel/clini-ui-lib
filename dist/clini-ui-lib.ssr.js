@@ -7282,6 +7282,7 @@ script$c.__scopeId = "data-v-7cc6cd12";var script$b = {
   }
 };
 var _hoisted_2$5 = {
+  key: 0,
   colspan: "100%"
 };
 function render$c(_ctx, _cache, $props, $setup, $data, $options) {
@@ -7307,13 +7308,16 @@ function render$c(_ctx, _cache, $props, $setup, $data, $options) {
     class: vue.normalizeClass(["cui-tr-expand", {
       expanded: $data.expanded
     }])
-  }, [vue.createElementVNode("td", _hoisted_2$5, [vue.renderSlot(_ctx.$slots, "expand")])], 2)) : vue.createCommentVNode("", true)], 64);
-}var css_248z$c = "\n@keyframes expand-6d61f8d2{\nfrom{\n            opacity: 0;\n}\nto{\n            opacity: 1;\n}\n}\n.selected[data-v-6d61f8d2] {\n        background-color: var(--cui-primary)!important;\n        color: white;\n        font-weight: bold;\n}\n.clickable[data-v-6d61f8d2] {\n        cursor: pointer\n}\n.cui-tr-expand[data-v-6d61f8d2] {\n        display: none;\n        transition: all .2s ease\n}\n.cui-tr-expand.expanded[data-v-6d61f8d2] {\n        display: table-row;\n        animation: expand-6d61f8d2 .2s linear 0s;\n}\n.cui-tr-expand.expanded td[data-v-6d61f8d2] {\n        padding: 20px\n}\n.disabled[data-v-6d61f8d2] {\n        cursor: not-allowed!important;\n}\n";
+  }, [$data.expanded ? (vue.openBlock(), vue.createElementBlock("td", _hoisted_2$5, [vue.renderSlot(_ctx.$slots, "expand")])) : vue.createCommentVNode("", true)], 2)) : vue.createCommentVNode("", true)], 64);
+}var css_248z$c = "\n@keyframes expand-611bb302{\nfrom{\n            opacity: 0;\n}\nto{\n            opacity: 1;\n}\n}\n.selected[data-v-611bb302] {\n        background-color: var(--cui-primary)!important;\n        color: white;\n        font-weight: bold;\n}\n.clickable[data-v-611bb302] {\n        cursor: pointer\n}\n.cui-tr-expand[data-v-611bb302] {\n        display: none;\n        transition: all .2s ease\n}\n.cui-tr-expand.expanded[data-v-611bb302] {\n        display: table-row;\n        animation: expand-611bb302 .2s linear 0s;\n}\n.cui-tr-expand.expanded td[data-v-611bb302] {\n        padding: 20px\n}\n.disabled[data-v-611bb302] {\n        cursor: not-allowed!important;\n}\n";
 styleInject(css_248z$c);var css_248z$b = "\n.cui-table-hover-button {\n        opacity: 0;\n        transition: all .2s ease;\n}\n.cui-tr-parent:hover .cui-table-hover-button {\n        opacity: 1;\n}\n\n";
 styleInject(css_248z$b);script$b.render = render$c;
-script$b.__scopeId = "data-v-6d61f8d2";var script$a = {
+script$b.__scopeId = "data-v-611bb302";var script$a = {
   name: "CuiTag",
   props: {
+    label: {
+      default: ""
+    },
     danger: {
       default: false,
       type: Boolean
@@ -7334,10 +7338,10 @@ script$b.__scopeId = "data-v-6d61f8d2";var script$a = {
       primary: $props.primary,
       warn: $props.warn
     }])
-  }, [vue.renderSlot(_ctx.$slots, "default")], 2);
-}var css_248z$a = "\n.cui-tag[data-v-4f05fbf4] {\n        height: 35px;\n        border: 0px;\n        margin: 5px;\n        border-radius: var(--cui-button-radius);\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        font-size: .8rem;\n        background: var(--cui-dark);\n        color: white;\n        width: fit-content;\n        padding: 0 10px;\n        font-weight: normal;\n}\n.cui-tag.danger[data-v-4f05fbf4] {\n        background: var(--cui-danger);\n}\n.cui-tag.primary[data-v-4f05fbf4] {\n        background: var(--cui-primary);\n}\n.cui-tag.warn[data-v-4f05fbf4] {\n        background: var(--cui-warn);\n}\n\n";
+  }, vue.toDisplayString($props.label), 3);
+}var css_248z$a = "\n.cui-tag[data-v-0ff76a0c] {\n        height: 35px;\n        border: 0px;\n        margin: 5px;\n        border-radius: var(--cui-button-radius);\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        font-size: .8rem;\n        background: var(--cui-dark);\n        color: white;\n        width: fit-content;\n        padding: 0 10px;\n        font-weight: normal;\n}\n.cui-tag.danger[data-v-0ff76a0c] {\n        background: var(--cui-danger);\n}\n.cui-tag.primary[data-v-0ff76a0c] {\n        background: var(--cui-primary);\n}\n.cui-tag.warn[data-v-0ff76a0c] {\n        background: var(--cui-warn);\n}\n\n";
 styleInject(css_248z$a);script$a.render = render$b;
-script$a.__scopeId = "data-v-4f05fbf4";var script$9 = {
+script$a.__scopeId = "data-v-0ff76a0c";var script$9 = {
   name: "CuiAvatar",
   props: {
     image: {

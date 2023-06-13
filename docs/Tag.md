@@ -13,10 +13,9 @@ Example
     Content
   </cui-tag>
 ```
-Slots:
-- default: Content of tag
 
 Props:
+- label: display label
 - primary: Primary color
 - danger: Danger color
 - warn: Warn color
