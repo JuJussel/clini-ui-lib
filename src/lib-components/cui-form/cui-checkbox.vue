@@ -1,20 +1,10 @@
 <template>
-    <label
-        class="cui-checkbox-container"
-        :for="id"
-        v-bind:class="{ selected: modelValue, disabled: disabled }"
-    >
+    <label class="cui-checkbox-container" :for="id" v-bind:class="{ selected: modelValue, disabled: disabled }">
         <div class="cui-checkbox-con">
             <i class="cui-checkbox-icon fas fa-check"></i>
         </div>
-        <input
-            @change="toggleSelected"
-            class="cui-checkbox"
-            type="checkbox"
-            :id="id"
-            v-bind="modelValue"
-            :disabled="disabled"
-        />
+        <input @change="toggleSelected" class="cui-checkbox" type="checkbox" :id="id" v-bind="modelValue"
+            :disabled="disabled" />
         <div class="cui-checkbox-label">
             {{ label }}
         </div>
@@ -64,21 +54,26 @@ export default {
     margin: 5px 0;
     position: relative;
 }
+
 .cui-checkbox-container:not(.disabled) {
     cursor: pointer;
 }
+
 .cui-checkbox {
     display: none;
 }
+
 .cui-checkbox-con {
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     border-radius: 5px;
     border: solid 2px var(--cui-gray-2);
     transition: all 0.2s ease;
     display: flex;
+    padding-left: 1px
 }
+
 .cui-checkbox-label {
     padding-left: 25px;
 }
@@ -95,12 +90,14 @@ export default {
     border-color: var(--cui-primary);
     box-shadow: 0 0 0 0 var(--cui-primary);
 }
+
 .cui-checkbox-icon {
     color: white;
     transform: scale(0.1);
     opacity: 0;
     transition: all 0.2s ease;
 }
+
 .cui-checkbox-container.selected .cui-checkbox-icon {
     transform: scale(0.8);
     opacity: 1;

@@ -6,19 +6,9 @@
         </label>
         <div style="position: relative">
             <span class="cui-input-append" v-if="append"> {{ append }} </span>
-            <input
-                class="cui-input"
-                v-bind:class="{ 'has-icon': icon, disabled, darker }"
-                v-bind:style="{ width: width }"
-                :type="type"
-                v-bind:value="modelValue"
-                @input="changeValue($event.target.value)"
-                :disabled="disabled"
-                clearable
-                :pattern="pattern"
-                :placeholder="placeholder"
-                autocomplete="new-password"
-            />
+            <input class="cui-input" v-bind:class="{ 'has-icon': icon, disabled, darker }" v-bind:style="{ width: width }"
+                :type="type" v-bind:value="modelValue" @input="changeValue($event.target.value)" :disabled="disabled"
+                clearable :pattern="pattern" :placeholder="placeholder" autocomplete="new-password" />
             <span :class="icon + ' cui-input-icon'" v-if="icon"></span>
         </div>
         <div class="cui-input-note" v-if="!noNote">
@@ -102,32 +92,39 @@ export default {
     font-size: 14px;
     margin-left: 10px;
 }
+
 .cui-input {
     background: var(--cui-gray-0);
     border: none;
     border-radius: 12px;
-    height: 26px;
-    padding: 5px 10px;
+    height: 36px;
+    padding: 10px;
     transition: all 0.2s ease;
 }
+
 .cui-input.darker {
     background: var(--cui-gray-3);
 }
+
 .cui-input.disabled {
     color: var(--cui-gray-3);
 }
+
 .cui-input:focus {
     outline: none;
     padding-left: 13px;
     padding-right: 7px;
     background: var(--cui-gray-1);
 }
+
 .cui-input.darker:focus {
     background: var(--cui-gray-4);
 }
+
 .cui-input.darker:hover {
     background: var(--cui-gray-4);
 }
+
 .cui-input-note {
     font-size: 12px;
     margin-left: 10px;
@@ -135,6 +132,7 @@ export default {
     height: 15px;
     line-height: 12px;
 }
+
 .cui-input-icon {
     position: absolute;
     left: 0;
@@ -143,14 +141,17 @@ export default {
     padding: 10px;
     transition: all 0.2s ease;
 }
+
 .has-icon {
     text-indent: 28px;
 }
-.cui-input:focus + .cui-input-icon {
+
+.cui-input:focus+.cui-input-icon {
     margin: -3px;
     box-shadow: 0 10px 20px -10px var(--cui-dark);
     background: white;
 }
+
 .cui-input-append {
     position: absolute;
     right: 0;

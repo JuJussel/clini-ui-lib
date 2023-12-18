@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @font-face {
     font-family: 'M PLUS Rounded 1c';
@@ -186,6 +189,3 @@ a {
         transform: rotate(360deg)
     }
 }
-
-
-

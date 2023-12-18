@@ -142,27 +142,14 @@ export default defineComponent({
         <cui-menu-bar :value="menu" @change="changeMenu">
             <template v-slot:left>
                 <cui-menu-bar-item icon="fa fa-home menu-icon" value="1" />
-                <cui-menu-bar-item
-                    icon="fas fa-user-clock"
-                    label="受付"
-                    value="reception"
-                />
-                <cui-menu-bar-item
-                    icon="fa fa-home menu-icon"
-                    label="患者"
-                    value="2"
-                />
+                <cui-menu-bar-item icon="fas fa-user-clock" label="受付" value="reception" />
+                <cui-menu-bar-item icon="fa fa-home menu-icon" label="患者" value="2" />
                 <cui-menu-bar-item icon="fa fa-home menu-icon" label="医療" />
             </template>
             <template v-slot:center>CliniClean</template>
             <template v-slot:right>
-                <cui-avatar
-                    :image="'https://localhost/files/user4.png?1'"
-                ></cui-avatar>
-                <cui-menu-bar-item
-                    icon="fas fa-sign-out-alt"
-                    @click="$refs.sideBar.toggle()"
-                />
+                <cui-avatar :image="'https://localhost/files/user4.png?1'"></cui-avatar>
+                <cui-menu-bar-item icon="fas fa-sign-out-alt" @click="$refs.sideBar.toggle()" />
             </template>
         </cui-menu-bar>
         <cui-badge visible>
@@ -170,8 +157,7 @@ export default defineComponent({
         </cui-badge>
 
         <cui-tree :nodes="treeNodes" style="width: 400px" @select="treeClick">
-            <template v-slot:title
-                ><i class="fa-solid fa-door-closed"></i>
+            <template v-slot:title><i class="fa-solid fa-door-closed"></i>
                 Title
             </template>
             <template v-slot:item="{ item }">
@@ -183,34 +169,15 @@ export default defineComponent({
         </cui-tree>
 
         <cui-button-group v-model="activeMenu">
-            <cui-button-group-item
-                icon="fas fa-sign-out-alt"
-                label="Button1"
-                value="1"
-            ></cui-button-group-item>
-            <cui-button-group-item
-                label="Button2"
-                value="2"
-            ></cui-button-group-item>
-            <cui-button-group-item
-                label="Button3"
-                value="3"
-            ></cui-button-group-item>
-            <cui-button-group-item
-                label="Button4"
-                value="4"
-            ></cui-button-group-item>
+            <cui-button-group-item icon="fas fa-sign-out-alt" label="Button1" value="1"></cui-button-group-item>
+            <cui-button-group-item label="Button2" value="2"></cui-button-group-item>
+            <cui-button-group-item label="Button3" value="3"></cui-button-group-item>
+            <cui-button-group-item label="Button4" value="4"></cui-button-group-item>
         </cui-button-group>
+        <cui-switch></cui-switch>
         <cui-card style="height: 900px">
-            <cui-table
-                outline
-                shaded
-                :data="tableData"
-                singleSelect
-                :loading="tableLoading"
-                :disabledFunct="disabledFunct"
-                style="height: 300px; width: 350px; margin: 40px"
-            >
+            <cui-table outline shaded :data="tableData" singleSelect :loading="tableLoading" :disabledFunct="disabledFunct"
+                style="height: 300px; width: 350px; margin: 40px">
                 <template #header>
                     <h2>The Table</h2>
                 </template>
@@ -230,10 +197,12 @@ export default defineComponent({
         </cui-card>
 
         <cui-card style="height: 500px; width: 600px">
-            <cui-editor
-                style="height: 100%"
-                :customMenuItems="editorMenuItems"
-            ></cui-editor>
+            <template #header>Hi</template>
+            <cui-editor style="height: 100%" :customMenuItems="editorMenuItems"></cui-editor>
+            <template #footer>
+                <cui-button label="Cancel"></cui-button>
+                <cui-button label="Cancel"></cui-button>
+            </template>
         </cui-card>
         <div style="height: 400px; width: 600px">
             <cui-card>
@@ -247,62 +216,28 @@ export default defineComponent({
                 <div>
                     {{ textareaval }}
                     <cui-textarea v-model="textareaval"></cui-textarea>
-                    <cui-switch
-                        v-model="switch"
-                        trueLabel="Yes"
-                        falseLabel="No"
-                        label="test"
-                    ></cui-switch>
                     <cui-file-upload></cui-file-upload>
 
-                    <cui-radio
-                        caption="caption"
-                        label="女性"
-                        value="1"
-                        v-model="radio"
-                    />
+                    <cui-radio caption="caption" label="女性" value="1" v-model="radio" />
                     <cui-radio label="2" value="2" v-model="radio" disabled />
                     <cui-radio label="3" value="3" v-model="radio" />
-                    <cui-button
-                        label="3333"
-                        disabled
-                    ></cui-button>
-                    <cui-datepicker
-                        label="Date"
-                        v-model="date"
-                    ></cui-datepicker>
+                    <cui-button label="3333" disabled></cui-button>
+                    <cui-datepicker label="Date" v-model="date"></cui-datepicker>
 
                     <div style="margin-top: 100px"></div>
 
-                    <cui-input
-                        :note="noteA"
-                        v-model="input"
-                        label="名前"
-                        required
-                        icon="fas fa-sign-out-alt"
-                        append="kg"
-                    ></cui-input>
+                    <cui-input :note="noteA" v-model="input" label="名前" required icon="fas fa-sign-out-alt"
+                        append="kg"></cui-input>
                     <cui-input v-model="input" disabled></cui-input>
 
                     <div>{{ input }}</div>
                     <div>{{ check }}</div>
                     <cui-checkbox v-model="check" label="Check"></cui-checkbox>
-                    <cui-checkbox
-                        v-model="check2"
-                        label="Check2"
-                    ></cui-checkbox>
+                    <cui-checkbox v-model="check2" label="Check2"></cui-checkbox>
 
                     {{ selectReturnData }}
-                    <cui-select
-                        label="Select"
-                        :data="selectData"
-                        displayValueProp="name"
-                        returnValueProp="id"
-                        :loading="loading"
-                        v-model="selectReturnData"
-                        color="var(--cui-dark)"
-                        search
-                    >
+                    <cui-select label="Select" :data="selectData" displayValueProp="name" returnValueProp="id"
+                        :loading="loading" v-model="selectReturnData" color="var(--cui-dark)" search>
                         <template v-slot:dropdownItem="{ item }">
                             <span>{{ item.name }}</span>
                         </template>
@@ -315,12 +250,7 @@ export default defineComponent({
             </cui-card>
         </div>
         <cui-card style="height: 500px" noPadding>
-            <cui-table
-                :data="tableData"
-                singleSelect
-                :loading="tableLoading"
-                :disabledFunct="disabledFunct"
-            >
+            <cui-table :data="tableData" singleSelect :loading="tableLoading" :disabledFunct="disabledFunct">
                 <template #header>
                     <h2>The Table</h2>
                     <cui-input darker></cui-input>
@@ -336,15 +266,8 @@ export default defineComponent({
                     <td>{{ row.name }}</td>
                     <td>{{ row.type }}</td>
                     <td>
-                        <cui-select
-                            label="Select"
-                            :data="selectData"
-                            displayValueProp="name"
-                            returnValueProp="id"
-                            :loading="loading"
-                            v-model="row.type"
-                            color="var(--cui-dark)"
-                        >
+                        <cui-select label="Select" :data="selectData" displayValueProp="name" returnValueProp="id"
+                            :loading="loading" v-model="row.type" color="var(--cui-dark)">
                         </cui-select>
                     </td>
                     <td>
