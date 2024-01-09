@@ -7213,7 +7213,7 @@ const __default__$1 = {
 };
 const __injectCSSVars__$1 = () => {
   useCssVars(_ctx => ({
-    "305af742": _ctx.tdPadding
+    "2a655d62": _ctx.tdPadding
   }));
 };
 const __setup__$1 = __default__$1.setup;
@@ -7223,7 +7223,7 @@ __default__$1.setup = __setup__$1 ? (props, ctx) => {
 } : __injectCSSVars__$1;
 var script$d = __default__$1;
 
-const _withScopeId$1 = n => (pushScopeId("data-v-2e60b28d"), n = n(), popScopeId(), n);
+const _withScopeId$1 = n => (pushScopeId("data-v-217583a2"), n = n(), popScopeId(), n);
 const _hoisted_1$a = {
   key: 0,
   class: "cui-table-header"
@@ -7270,7 +7270,7 @@ function render$e(_ctx, _cache, $props, $setup, $data, $options) {
       striped: $props.striped,
       select: $props.singleSelect,
       square: $props.square,
-      outline: $props.outline,
+      'outline-table': $props.outline,
       shaded: $props.shaded
     }])
   }, [_ctx.$slots.header ? (openBlock(), createElementBlock("div", _hoisted_1$a, [renderSlot(_ctx.$slots, "header")])) : createCommentVNode("", true), createElementVNode("div", _hoisted_2$7, [createElementVNode("table", {
@@ -7304,14 +7304,14 @@ function render$e(_ctx, _cache, $props, $setup, $data, $options) {
   }), 128))], 512)], 2)]), _ctx.$slots.footer ? (openBlock(), createElementBlock("div", _hoisted_12$1, [renderSlot(_ctx.$slots, "footer")])) : createCommentVNode("", true)], 2);
 }
 
-var css_248z$f = "\n.cui-table[data-v-2e60b28d] {\n        border-radius: 20px;\n        overflow: hidden;\n        height: 100%;\n        display: flex;\n        flex-direction: column;\n        justify-content: space-between;\n}\n.cui-table.square[data-v-2e60b28d] {\n        border-radius: 0\n}\n.cui-table-header[data-v-2e60b28d], \n    .cui-table-footer[data-v-2e60b28d] {\n        background: white;\n        padding: 10px;\n        display: flex;\n        justify-content: space-between;\n        align-items: center\n}\n.cui-table table[data-v-2e60b28d] {\n        border-collapse: collapse;\n        width: 100%;\n}\n.cui-table thead tr[data-v-2e60b28d] {\n        background: white;\n}\n.cui-table-container[data-v-2e60b28d] {\n        overflow: auto;\n        flex: 1\n}\n.cui-table-empty-content[data-v-2e60b28d] {\n        display: flex;\n        flex-direction: column;\n        align-items: center\n}\n.cui-table-loader-td[data-v-2e60b28d] {\n        position: relative;\n        height: 100px\n}\n";
+var css_248z$f = "\n.cui-table[data-v-217583a2] {\n    border-radius: 20px;\n    overflow: hidden;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    background-color: white;\n}\n.cui-table.square[data-v-217583a2] {\n    border-radius: 0\n}\n.cui-table-header[data-v-217583a2],\n.cui-table-footer[data-v-217583a2] {\n    background: white;\n    padding: 10px;\n    display: flex;\n    justify-content: space-between;\n    align-items: center\n}\n.cui-table table[data-v-217583a2] {\n    border-collapse: collapse;\n    width: 100%;\n}\n.cui-table thead tr[data-v-217583a2] {\n    background: white;\n}\n.cui-table-container[data-v-217583a2] {\n    overflow: auto;\n    flex: 1\n}\n.cui-table-empty-content[data-v-217583a2] {\n    display: flex;\n    flex-direction: column;\n    align-items: center\n}\n.cui-table-loader-td[data-v-217583a2] {\n    position: relative;\n    height: 100px\n}\n";
 styleInject(css_248z$f);
 
-var css_248z$e = "\n.cui-table th:not([scope=row]) {\n        position: sticky;\n        top: 0;\n        z-index: 2;\n        background: white;\n        box-shadow: 0 2px 4px -2px rgb(0 0 0 / 15%);\n        border-bottom: 1px solid var(--cui-gray-2)\n}\n.outline {\n        border: solid 1px var(--cui-gray-2)\n}\n.shaded {\n        box-shadow: rgb(0 0 0 / 10%) 0px 0px 5.5px\n}\n.cui-table th,\n    .cui-table td {\n        text-align: left;\n        padding: var(--305af742)\n}\n.cui-table.select tbody tr {\n        cursor: pointer\n}\n.cui-table tbody tr:not(.no-border, .noHover) {\n        border-bottom: 1px solid var(--cui-gray-2);\n        transition: background .2s ease;\n}\n.cui-table tbody tr:not(.selected, .expanded, .noHover):hover {\n        background: var(--cui-gray-1)!important;\n        font-weight: bold\n}\n.cui-table.striped tbody tr:nth-of-type(even) {\n        background-color: var(--cui-gray-0);\n}\n.cui-table tbody tr:last-of-type {\n        border-bottom: 2px solid var(--cui-gray-2);\n}\n";
+var css_248z$e = "\n.cui-table th:not([scope=row]) {\n    position: sticky;\n    top: 0;\n    z-index: 2;\n    background: white;\n    box-shadow: 0 2px 4px -2px rgb(0 0 0 / 15%);\n    border-bottom: 1px solid var(--cui-gray-2)\n}\n.outline-table {\n    /* border: solid 1px var(--cui-gray-2); */\n    box-shadow: rgb(0 0 0 / 10%) 0px 0px 5.5px;\n}\n.shaded {\n    box-shadow: rgb(0 0 0 / 10%) 0px 0px 5.5px\n}\n.cui-table th,\n.cui-table td {\n    text-align: left;\n    padding: var(--2a655d62)\n}\n.cui-table.select tbody tr {\n    cursor: pointer\n}\n.cui-table tbody tr:not(.no-border, .noHover) {\n    border-bottom: 1px solid var(--cui-gray-2);\n    transition: background .2s ease;\n}\n.cui-table tbody tr:not(.selected, .expanded, .noHover):hover {\n    background: var(--cui-gray-1) !important;\n    font-weight: bold\n}\n.cui-table.striped tbody tr:nth-of-type(even) {\n    background-color: var(--cui-gray-0);\n}\n.cui-table tbody tr:last-of-type {\n    border-bottom: 2px solid var(--cui-gray-2);\n}\n";
 styleInject(css_248z$e);
 
 script$d.render = render$e;
-script$d.__scopeId = "data-v-2e60b28d";
+script$d.__scopeId = "data-v-217583a2";
 
 var script$c = {
   name: 'CuiTh',
